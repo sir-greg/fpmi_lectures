@@ -1,0 +1,175 @@
+\documentclass[a4, 12pt]{article}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{esvect}
+
+% for large comments
+\usepackage{blindtext, xcolor}
+\usepackage{comment}
+
+% for inkscape pictures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+\newtheorem{theorem}{\underline{Теорема}}[section]
+\newtheorem{lemma}[theorem]{\underlind{Лемма}}
+\newtheorem{statement}{\underline{Утверждение}}[section]
+\newtheorem*{note}{\underline{Замечание}}
+\newtheorem*{symb}{\underline{Обозначение}}
+\newtheorem*{example}{\underline{Пример}}
+\newtheorem*{consequence}{\underline{Следствие}}
+\newtheorem*{solution}{\underline{Решение}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{\underline{Определение}}[section]
+
+\title{Алгоритмы и структуры данных. \\ Лекция 1}
+\author{Сергей Григорян}
+
+\begin{document}
+\maketitle
+\section{Телега препода}
+telegram - @EeeDA (Долгов Даниил)
+
+\section{Пояснение за O-нотацию}
+$O(n) \iff T(n) \geq c * n$, n - размер входных данных, c - const
+
+В общем:
+\[
+    f, g \colon \N \rightarrow \N
+.\] 
+\[
+    f \in O(g) \iff \exists c \colon f(n) \leq c * g(n)
+.\] 
+\begin{example}
+
+\[
+    f(n) = 5n
+\]
+\[
+    g(n) = 20n
+\]
+\[
+    f \in O(g), g \in O(f)
+\]
+\end{example}
+\begin{example}
+\[
+f(n) = 5n,
+\] 
+\[
+g(n) = n^2,
+\]     
+\[
+f \in O(g), 5n \leq 5n^2
+.\] 
+\[
+g \not\in O(f), \not\exists c \colon g(n) \leq c * f(n), \forall n 
+.\] 
+\end{example}
+
+\section{Задачи}
+\subsection{Задача 1}
+$a_1, a_2, \cdots, a_n$ - числа, все кроме одного встречаются дважды
+За O(n) найти число, кот. встреч. 1 раз
+
+\begin{solution}
+xor-sum
+\end{solution}
+\subsection{Задача 2}
+--- Кроме двух ----
+\begin{solution}
+Пусть $a, b$ - искомые числа. Считаем $a \oplus b = c$. Пусть i-ый бит $c$ = 1 (Он существует, т. к. иначе $ a = b $). Разбиваем числа на 2 группы (с единицей в i-ом бите и с нулем). Считаем xor этих групп. Эти xor-ы наш ответ.
+\end{solution}
+
+\subsection{Задача 3}
+~\newline
+
+$a_1, a_2, \cdots, a_{n - 2}, a_i \in \{1, 2, \cdots, n\}$ 
+
+Найти $b, c \in \{1, \cdots, n\} \colon $ их нет в ${a}$
+
+Время: $O(n)$ 
+
+Память: $O(1)$
+\begin{solution}
+\begin{itemize}
+    \item[I) ] "Добавить" числа 1..n, и сводим к задаче (2)
+    \item[II) ] $S = \sum_{i = 1}^{n - 2} a_i$ 
+
+          $ b + c = S - \frac{n(n+1)}{2}$
+
+          Пусть $b < c $
+
+          $a_i \leq \frac{b+c}{2}$
+
+          $q = \floor{\frac{b+c}{2}} \Rightarrow b \in \{1, 2, \cdots, q\}$
+
+          Только одно число отсутсвует в этом мн-ве $\Rightarrow$
+          \[
+              b = \floor{\frac{q(q+1))}{2}} - \sum_{i = 1}{q} a_i
+          \]
+          \[
+              c = S - \frac{n(n+1)}{2} - b
+          .\] 
+\end{itemize}
+\end{solution}
+
+\subsection{Задача 4}
+Дана матрица ($n * m$). По горизонталям и вертикалям числа возрастают. Найти данное число $x$.
+
+Время: $O(n + m)$ 
+
+Память: $O(1)$
+
+\begin{solution}
+Идем по контуру. solved.
+\end{solution}
+
+\subsection{Задача 5}
+Есть $n$ бин строк длины $n$. Найти строку $t \colon t \neq s_i, \forall i=1..n$
+
+Время: $O(n)$
+
+\begin{solution}
+Напишем строки в столбец. Возьмём строку $t '\colon  t'_i = s_{ii}$. Тогда $t = inverse(t')$
+\end{solution}
+
+\subsection{Задача 6}
+$a_1, a_2, \cdots, a_n$, есть число, кот. встреч. $ > \floor{\frac{n}{2}}$ раз. Найти его.
+
+\begin{solution}
+Поддерживаем тек. моду и счётчик, сколько раз тек. мода встретилась в массиве. +1, если встрет. она, иначе -1. Если счётчик $ = 0$, то меняем тек. моду на встреч. элем.
+
+Почему работает:
+\begin{proof}
+    Рассм. первый момент обнуления. Увидим, что кол-во истинной моды на ост. суффиксе $> \frac{1}{2}$ размеры, суффикса. После последнего такого открезка, получаем, что, т.к. счётчик не может обнулиться, то полученная мода - истинная.
+\end{proof}
+
+\end{solution}
+
+\subsection{Задача 7}
+Слишком изи, чтобы писать.
+
+\end{document}
+
