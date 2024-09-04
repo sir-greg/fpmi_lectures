@@ -1,4 +1,4 @@
-\documentclass[a4, 12pt]{article}
+\documentclass[12pt]{article}
 \usepackage[T1, T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
@@ -31,9 +31,6 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 
-\DeclareMathOperator{\tg}{tg}
-\DeclareMathOperator{\ctg}{ctg}
-
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
 
@@ -65,6 +62,7 @@
 \newtheorem{theorem}{\underline{Теорема}}[section]
 \newtheorem{lemma}[theorem]{\underlind{Лемма}}
 \newtheorem{statement}{\underline{Утверждение}}[section]
+\newtheorem{axiom}{\underline{Аксиома}}[section]
 \newtheorem*{note}{\underline{Замечание}}
 \newtheorem*{symb}{\underline{Обозначение}}
 \newtheorem*{example}{\underline{Пример}}
@@ -74,12 +72,139 @@
 \theoremstyle{definition}
 \newtheorem{definition}{\underline{Определение}}[section]
 
-\title{Математическая логика и теория алгоритмов. }
+\theoremstyle{definition}
+\newtheorem{task}{\underline{Задача}}[section]
+
+\title{Матлог и теория алгоритмов. \\ Лекция 1}
 \author{Сергей Григорян}
 
 \begin{document}
 \maketitle
 \newpage
-\section{}
+\section{Инфа}
+\textbf{Лектор}: Мусатов \\
+\textbf{Книги}: Верещагин Н. К., Шень А. "Лекции по мат. логике":
+\begin{enumerate}
+    \item [№ 1] Начало теории мн-в
+    \item [№ 2] Языки и исчисления
+    \item [№ 3] Вычислимые ф-ции
+\end{enumerate}
+
+\section{Синтаксис $\leftrightarrow$ Семантика}
+\begin{definition}
+\textbf{Синтаксис} - правила составления форм. выр-ий.
+\end{definition}
+\begin{definition}
+\textbf{Семантика} - соспоставление форм выр-ия некоторого смысла.
+\end{definition}
+\begin{definition}
+\textbf{Алфавит} - мн-во символов. (Непустое, обычно конечное)
+\end{definition}
+\begin{definition}
+\textbf{Слово} - конечная последовательность символов алфавита. (Может быть пустым)
+
+\textbf{Пустое слово} -  $\varepsilon$
+\end{definition}
+\begin{definition}
+\textbf{Язык} - любое мн-во слов.
+
+\textbf{Пустой язык} - $\emptyset$
+ 
+\textbf{Синглетов} - $\{\varepsilon\}$
+\end{definition}
+
+\textbf{Операции} над словами:
+\begin{itemize}
+    \item Конкатенация: $u * v$
+    \item Возведение в степень:  $u^{n} = u * u * \cdots * u$ - n раз ($u^{0} = \varepsilon$)
+    \item Обращение: $u^{R} = u_n u_{n - 1} \cdots  u_1, \text{ если } u = u_1 u_2 \cdots u_n$
+        \[
+            (ab)^{R} = b^{R}a^{R}
+        .\] 
+\end{itemize}
+
+\textbf{Отношения} над словами:
+\begin{itemize}
+    \item Префикс $u \sqsubset v \iff \exists w \colon uw = v$ 
+    \item Суффикс $u \sqsupset v \iff \exists w \colon wu = v$
+    \item Подслово $u (\text{subset}) v \iff \exists t, w \colon tuw = v$
+    \item Подп-ть $u \subset v \iff$ вычеркнута часть символов $v$ и получили $u$
+\end{itemize}
+
+\textbf{Операции} над языками:
+\begin{enumerate}
+    \item [0) ] Теоретико-множ.
+    \item [1) ] Конкатенация:
+        \[
+        L * M = \{u * v | u \in L, v \in M\}
+        .\] 
+        \[
+        L * \emptyset = \emptyset
+        .\] 
+        \begin{example}
+        \[
+        L = \{a, ab\}, M = \{a, ba\}, LM = \{aa, aba, abba\}
+        .\] 
+        \end{example}
+
+    \item [2) ] $L^{n} = L * L * \cdots * L$ - $n$ раз
+        \[
+        L^{0} = \{\varepsilon\} 
+        .\] 
+    \item [3) ] Итерация/Звезда Клини:
+        \[
+        L^{*} = L^{0} \cup L^{1} \cup L^{2} \cup \cdots = \bigcup_{k = 0}^{\infty} L^{k} 
+        .\] 
+        \[
+        L^{+} = \bigcup_{k = 1}^{\infty} L^{k} = L^{*} * L
+        .\] 
+        \[
+        L^{*} = L^{+} * \{\varepsilon\} 
+        .\] 
+        
+\end{enumerate}
+
+\section{Правильные скобочные п-ти (ПСП)}
+
+\begin{definition}
+    \textbf{ПСП} - это п-ть скобок, разбитых на пары, и в каждой паре "(" \textbf{раньше} ")".
+\end{definition}
+\begin{definition}
+    \textbf{ПСП} - это п-ть, получ. из правил:
+    \begin{enumerate}
+        \item $\varepsilon$ - это ПСП;
+        \item $s$ - ПСП $\Rightarrow (s)$ - ПСП;
+        \item $s, t$ -  ПСП, $\Rightarrow st$ - ПСП.
+    \end{enumerate}
+\end{definition}
+\begin{definition}
+\textbf{Баланс СП} - (кол-во "(") - (кол-во ")")
+\end{definition}
+\begin{definition}
+    \textbf{ПСП} - СП, для кот. баланс всей п-ти $ = 0$, а любого др. префикса $ \geq 0$
+\end{definition}
+
+\subsection{ОПР 1 $\Rightarrow$ ОПР 3}
+Все скобки разбиты на пары $\Rightarrow$ баланс $ = 0$.
+
+ "(" левее ")" $\Rightarrow$ в любом префиксе из каждой пары, ни одной, обе или только "(". В любом случае итоговый баланс префикса $\geq 0$.
+
+\subsection{ОПР 2 $\Rightarrow$ ОПР 1}
+
+Скобки, добавленные по правилу $(s)$, будут в паре.
+
+\subsection{ОПР 3 $\Rightarrow$ ОПР 2}
+
+Д-во: индукция по длине СП
+
+\textbf{База:} $s = \varepsilon \Rightarrow $ подх. по опр. 2
+
+\textbf{Осн. случ.:} $|s| > 0 \Rightarrow $ первый символ "(".
+
+Рассм. кратчайший непустой префикс с балансом  $ = 0$:
+\begin{itemize}
+    \item [Случай 1: ] Это вся п-ть: $ s = (s') \Rightarrow $ для $s'$ верно ОПР 3 (т. к. любой другой баланс по случаю $ \geq 1$) $\Rightarrow$ и ОПР 2.
+    \item [Случай 2: ] Это собств. префикс ($\neq \text{всей строке}$): $s = (s')t$. И для $s'$, и для $t$ - выполнено ОПР 3 $ \Rightarrow $ ОПР 2.
+\end{itemize}
 
 \end{document}

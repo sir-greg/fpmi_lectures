@@ -1,4 +1,4 @@
-\documentclass[a4, 12pt]{article}
+\documentclass[12pt]{article}
 \usepackage[T1, T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
@@ -31,11 +31,6 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 
-\DeclareMathOperator{\tg}{tg}
-\DeclareMathOperator{\ctg}{ctg}
-\DeclareMathOperator{\arcctg}{arcctg}
-\DeclareMathOperator{\arctg}{arctg}
-
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
 
@@ -67,6 +62,7 @@
 \newtheorem{theorem}{\underline{Теорема}}[section]
 \newtheorem{lemma}[theorem]{\underlind{Лемма}}
 \newtheorem{statement}{\underline{Утверждение}}[section]
+\newtheorem{axiom}{\underline{Аксиома}}[section]
 \newtheorem*{note}{\underline{Замечание}}
 \newtheorem*{symb}{\underline{Обозначение}}
 \newtheorem*{example}{\underline{Пример}}
@@ -76,5 +72,36 @@
 \theoremstyle{definition}
 \newtheorem{definition}{\underline{Определение}}[section]
 
+\theoremstyle{definition}
+\newtheorem{task}{\underline{Задача}}[section]
+
+\title{ОКТЧ. \\ Лекция 1}
 \author{Сергей Григорян}
 
+\begin{document}
+\maketitle
+\newpage
+\section{Инфа}
+\textbf{Лектор:} Даниил Владимирович Мусатов (ему писать по поводу логики)
+\begin{verbatim}
+telega: @musatych
+\end{verbatim}
+\textbf{Об отсутствии на КР писать в тг заранее}
+
+Задачи на КР:
+\begin{itemize}
+    \item Тестовые 0.8 (Или отдельно написано)
+    \item Обычные (можно пересдать (1(на КР)/0.8(На след. КР)/0.5(В ДЗ)))
+\end{itemize}
+
+Задачи на ДЗ:
+\begin{itemize}
+    \item Перешедшие с КР (0.5)
+    \item Обычные (1)
+    \item Дополн. (1.5)
+\end{itemize}
+\begin{note}
+Чтобы получить доп. задачу, нужно решить \textbf{все} обычные задачи по какой-то теме.
+\end{note}
+
+\end{document}
