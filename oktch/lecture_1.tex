@@ -1,0 +1,269 @@
+\documentclass[12pt]{article}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{esvect}
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+% for large comments
+\usepackage{blindtext, xcolor}
+\usepackage{comment}
+
+% for inkscape pictures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+% style of code listings
+%\definecolor{codegreen}{rgb}{0,0.6,0}
+%\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+%\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%
+%\lstdefinestyle{mystyle}{
+%    backgroundcolor=\color{backcolour},
+%    commentstyle=\color{codegreen},
+%    keywordstyle=\color{magenta},
+%    numberstyle=\tiny\color{codegray},
+%    stringstyle=\color{codepurple},
+%    basicstyle=\ttfamily\footnotesize,
+%    breakatwhitespace=false,
+%    breaklines=true,
+%    captionpos=b,
+%    keepspaces=true,
+%    numbers=left,
+%    numbersep=5pt,
+%    showspaces=false,
+%    showstringspaces=false,
+%    showtabs=false,
+%    tabsize=4
+%}
+
+\newtheorem{theorem}{\underline{Теорема}}[section]
+\newtheorem{lemma}[theorem]{\underlind{Лемма}}
+\newtheorem{statement}{\underline{Утверждение}}[section]
+\newtheorem{axiom}{\underline{Аксиома}}[section]
+\newtheorem*{note}{\underline{Замечание}}
+\newtheorem*{symb}{\underline{Обозначение}}
+\newtheorem*{example}{\underline{Пример}}
+\newtheorem*{consequence}{\underline{Следствие}}
+\newtheorem*{solution}{\underline{Решение}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{\underline{Определение}}[section]
+
+\theoremstyle{definition}
+\newtheorem{task}{\underline{Задача}}[section]
+
+\title{ОКТЧ. \\ Лекция 1}
+\author{Сергей Григорян}
+
+\begin{document}
+\maketitle
+\newpage
+\section{Инфа}
+\textbf{Лектор:} Даниил Владимирович Мусатов (ему писать по поводу логики) и Райгородский Андрей Михайлович.
+\begin{verbatim}
+telega: @musatych
+\end{verbatim}
+\textbf{Об отсутствии на КР писать в тг заранее}
+
+Задачи на КР:
+\begin{itemize}
+    \item Тестовые 0.8 (Или отдельно написано)
+    \item Обычные (можно пересдать (1(на КР)/0.8(На след. КР)/0.5(В ДЗ)))
+\end{itemize}
+
+Задачи на ДЗ:
+\begin{itemize}
+    \item Перешедшие с КР (0.5)
+    \item Обычные (1)
+    \item Дополн. (1.5)
+\end{itemize}
+\begin{note}
+Чтобы получить доп. задачу, нужно решить \textbf{все} обычные задачи по какой-то теме.
+\end{note}
+
+\section{Основные понятия теор. множеств}
+\begin{symb}
+    $x \in A \iff$ \textbf{элемент } $x$ принадлежит \textbf{мн-ву} $A$.
+\end{symb}
+\begin{definition}
+    \textbf{Пустое мн-во} $\emptyset$ - мн-во, не содержащее ни одного эл-та.
+\end{definition}
+\begin{definition}
+    $A$ \textbf{подмн-во} $B$ ($A \subset B$) $\iff$ 
+    \[
+    \forall x (x \in A \Rightarrow x \in B)
+    .\] 
+\end{definition}
+\begin{note}
+    $\forall A \colon \emptyset \subset A$
+\end{note}
+\begin{note}
+\[
+\forall x (x \in \emptyset \Rightarrow x \in A)
+.\] 
+\end{note}
+\textbf{Свойство отношения подмножества:}
+\begin{itemize}
+    \item \textbf{Рефлексивность}: $A \subset A$
+    \item\textbf{Транзитивность}: $A \subset B, B \subset C \Rightarrow A \subset C$ - 
+    \item \textbf{Антисимметричность}: $A \subset B, B \subset A \Rightarrow A = B$
+\end{itemize}
+\begin{definition}[Равенство мн-в]
+$A = B \iff $, если $A$ и $B$ содержат один и те же эл-ты.
+\end{definition}
+\textbf{Запись конечного мн-ва:} $\{a, b, c\}$
+ \begin{note}
+ Из опр. рав-ва следует, что \textbf{кратность и порядок записи не важен}:
+ \begin{example}
+    $\{a, b, c\} = \{a, c, b, b, b, a\}$
+ \end{example}
+ 
+\end{note}
+ 
+\begin{note}
+Отличие $\in$ и $\subset$ :
+\[
+A = \{a, \{b\}, c, \{c\}\}
+.\] 
+\[
+\{a\} \subset A, \{a\} \not\in A
+.\]  
+\[
+\{b\} \not\subset A, \{b\} \in A, \{\{b\}\} \subset A
+.\] 
+\[
+\{c\} \subset A, \{c\}\in A
+.\] 
+\[
+\{d\} \not\in A, \{ d\}\not\in A 
+.\] 
+\end{note}
+
+\textbf{Конструкция нат. чисел на основе мн-в} 
+
+$0 = \emptyset$
+
+$1 = \{\emptyset\}$
+
+$2 = \{\emptyset, \{\emptyset\}\}$
+
+$3 = \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}$
+
+$n + 1 = \{0, 1, 2, \cdots, n\}$
+~\newline
+
+\textbf{Операции над мн-вами}
+\begin{enumerate}
+    \item Объединение: $A \cup B = \{ x \colon x \in A \lor x \in B\}$
+    \item Пересечение: $A \cap B = \{x \colon x \in A \land x \in B\}$ 
+    \item Разность: $A \backslash B = \{x \colon x \in A \land x \not\in B\}$
+    \item Дополнение: $\overline{A} = \{x \colon x \not\in A\}$
+    \item Симметрическая разность: $A \triangle B = \{x \colon (x \in A \lor x \in B) \land (x \not\in A \cap B)\}$
+\end{enumerate}
+
+\begin{statement}
+\[
+A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+.\] 
+\end{statement}
+\begin{proof}
+    В одну сторону:
+\[
+x \in A \cup(B \cap C) \Rightarrow 
+.\] 
+\begin{enumerate}
+    \item $x \in A \Rightarrow x \in A \cup B \text{ и } A \cup C \Rightarrow x \in A \cup B \land x \in A \cup C$
+    \item $x \in B \cap C \Rightarrow x \in B \land x \in C \Rightarrow x \in A \cup B \land  x \in A \cup C \Rightarrow x \in (A \cup B) \cap (A \cup C)$
+\end{enumerate}
+\end{proof}
+
+\section{Упорядоченные пары и кортежи}
+\[
+    (a, b), a - \text{ 1-ый эл-т}, b - \text{ 2-ой эл-т}
+\]
+\textbf{Требование: } $(a, b) = (c, d) \iff a = c \land b = d$
+
+\begin{definition}[Упрощенное определение Куратовского]
+    \[
+        (a, b) = \{\{a, b\}, a\}
+.\] 
+        \[
+            (a, a) = \{\{a\}, a\}
+        .\] 
+
+
+\end{definition}
+\section{Парадокс Рассела}
+\textbf{Определим $I$:}
+\[
+\{\{\{\cdots a\cdots \}\}\} = I \Rightarrow I \in I, \text{(беск. кол-во скобок)}
+.\] 
+\[
+    (I, I) = \{\{I\}, I\} = I
+.\] 
+
+\textbf{Рассмотрим:} $M = \{x \colon x \not\in x\}$
+\[
+    M \overset{\text{?}}{\in } M
+.\] 
+\begin{itemize}
+    \item Пусть $M \in M$. Тогда $x \not\in x$ верно для $x = M$. Тогда $M \not\in M$. Но тогда $x \not\in x$ неверно для $x = M$. Противоречие.
+    \item Аналогично  $M \not\in M \Rightarrow $ получаем парадокс.
+\end{itemize}
+
+\begin{axiom} [Аксиома фундированности]
+    Не сущ. беск цепочки:
+    \[
+        A_1 \ni A_2 \ni A_3 \ni \cdots
+    \]
+\end{axiom}
+\begin{note}
+Это запрещает мн-во $I \text{ и } M \in M$, а также даёт однозначную интерпретацию $(a, b)$ 
+
+Если $\{a, b\} \in a$, то возникает беск. цепочка:
+\[
+\{a, b\} \ni a \ni \{a, b\} \ni a \cdots 
+.\] 
+\end{note}
+
+\begin{definition}
+\textbf{Кортежи} - расширение пары на много эл-ов.
+\begin{example}
+$(a, b, c, d) = (a, (b, (c, d)))$ - кортеж
+\end{example}
+
+\begin{definition}
+\textbf{Декартово произведение} мн-в $A, B$:
+ \[
+A\times B = \{(a, b) \colon a \in A, b \in B\}
+.\] 
+\end{definition}
+
+
+\end{definition}
+
+
+\end{document}

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1725446860.41558 "lecture_1.tex" "lecture_1.pdf" "lecture_1" 1725446860.84372 0
+["pdflatex"] 1725521870.0364 "lecture_1.tex" "lecture_1.pdf" "lecture_1" 1725521870.47018 0
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labi1200.tfm" 1725282838.58337 3592 9415307df98650ffeddaa22e262436dc ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1725258418.94669 3308 eee81981029f67083258db36df06e523 ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1722950259.82679 3304 6a543c07045572737981351171e0505e ""
@@ -113,8 +113,8 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1722811609 5483422 a1ef07ac981a8b7f5985102f2de312a6 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1722811645 8239395 770efc74df93586a44891e8f654c98d2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1722811606.09035 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "lecture_1.aux" 1725446860.78015 1163 3564a21ad8abd66348ee73045c186ada "pdflatex"
-  "lecture_1.tex" 1725446859.06015 10471 41117e35462809d70035b9ad26a2e4d8 ""
+  "lecture_1.aux" 1725521870.40668 1163 3564a21ad8abd66348ee73045c186ada "pdflatex"
+  "lecture_1.tex" 1725521868.80001 10480 17bebf47a9f1614dd3f4e6e835e3dc7a ""
   (generated)
   "lecture_1.aux"
   "lecture_1.log"

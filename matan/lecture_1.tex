@@ -8,6 +8,7 @@
 \usepackage{esvect}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{mathrsfs}
 
 
 % for large comments
@@ -120,7 +121,7 @@ $f: X \rightarrow Y$, $X$ - область опред. ф-ции
 
     \item $B \subset Y$
 
-    $f^{-1}(B) = \{x \in A \colon f(x) \in B\}$ - прообраз $B$.
+    $f^{-1}(B) = \{x \in X \colon f(x) \in B\}$ - прообраз $B$.
 
     \item $f: X \rightarrow Y, g: Z \rightarrow X \Rightarrow f \circ g: Z \rightarrow Y, f \circ g(z) = f(g(z))$ - композиция ф-ций $f$ и $g$.
 \end{enumerate}
@@ -184,7 +185,7 @@ $f^{-1} \circ f = id_X, f \circ f^{-1} = id_Y$
 
 Пишут $A = \{a_\lambda\}_{\lambda \in \Lambda}$, где $a_\lambda = \phi(\lambda)$
  
-$T = \{A_\lambda\}_{\lambda \in \Lambda}$ 
+$\mathscr{A} = \{A_\lambda\}_{\lambda \in \Lambda}$ 
 
 \[
     \bigcup_{\lambda \in \Lambda} A_\lambda = \{x \colon \exists \lambda \in \Lambda (x \in A_\Lambda)\}
@@ -233,7 +234,13 @@ $\bigcap_{n \in \N} A_n - $ мн-во простых чисел.
 \[
     \iff \forall \lambda \in \Lambda (x \in E \land x \not\in A_\lambda) \iff \forall \lambda \in \Lambda (x \in E \backslash A_\lambda) \iff x \in \bigcap (E \backslash A_\lambda)
 \]
-    \item Аналогично
+    \item
+        \[
+            x \in E \backslash \bigcap_{\lambda \in \Lambda}^{}A_\lambda \iff x \in E \land x \not\in \bigcap_{\lambda\in\Lambda}^{}A_\lambda \iff x \in E \land \exists \lambda \in \Lambda (x \not\in A_\lambda)
+        .\] 
+        \[
+        \iff \exists \lambda \in \Lambda (x \in E \land x \not\in A_\lambda) \iff \exists \lambda \in \Lambda (x \in E \backslash A_\lambda) \iff \bigcup_{\lambda \in \Lambda}^{} (E \backslash A_\lambda)
+        .\] 
 \end{enumerate}
 
 \end{proof}
@@ -247,7 +254,7 @@ $\bigcap_{n \in \N} A_n - $ мн-во простых чисел.
     \item [A2: ] $\forall a, b \in \R a + b = b + a$ ;
     \item [A3: ] $\exists 0 \in \R \forall a \in \R a + 0 = a$ ;
     \item [A4: ] $\forall a \in \R \exists (-a) \in \R a + (-a) = 0$.
-    \item [M1: ] $\forall a, b, c \in \R (a * b) * c = a * (b + c),$ 
+    \item [M1: ] $\forall a, b, c \in \R (a * b) * c = a * (b * c),$ 
     \item [M2: ] $\forall a, b \in \R a * b = b * a$,
     \item [M3: ] $\exists 1 \in \R, 1 \neq 0, \forall a \in \R, a * 1 = a$,
     \item [M4: ] $\forall a \in \R, a \neq 0, \exists a^{-1} \in \R a * a^{-1} = 1$,

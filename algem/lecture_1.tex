@@ -136,7 +136,7 @@ $[\lambda A]_{ij} = \lambda a_{ij} = \lambda [A]_{ij}$
     \item Коммутативность сложения: $ A + B = B + A$
     \item Ассоциативность сложения: $ (A + B) + C = A + (B + C)$
     \item Существование нулевой матрицы: $ \exists O \in M_{m * n}$, т. ч. $A + O = A, \forall A \in M_{m * n}$
-    \item Св-во сущ. прот. матрицы: $\forall A \in M_{m * n} \exists (-A) \in M_{m * n}$, т. ч. A + (-A) = (-A) + A = 0
+    \item Св-во сущ. прот. матрицы: $\forall A \in M_{m * n} \exists (-A) \in M_{m * n}$, т. ч. A + (-A) = (-A) + A = O
     \item Унитарность: $1 * A = A$;
     \item Ассоциативность отн-но скалярного мн-ва : $(\lambda * \mu) * A = \lambda * (\mu * A)$ ;
     \item Дистрибутивность $(\lambda + \mu) A = \lambda A + \mu A$ 
@@ -209,15 +209,15 @@ a_{i1} & \cdots & a_{in} \\
         \cdots & b_{nj} & \cdots 
 \end{pmatrix} = 
         \begin{pmatrix} \cdots & \cdots & \cdots \\
-        \vdots & c_{ij} & \vdots \\
-    \cdots & \cdots & \cdots \end{pmatrix}
+          \vdots & c_{ij} & \vdots \\
+          \cdots & \cdots & \cdots \end{pmatrix}
 .\] 
 
 Чтобы получить эл-т $c_{ij}$ матрицы $C$, нужно умножить i-ую строку $A$ на j-ую строку $B$
 
 \begin{example}
 \[
-    \begin{pmatrix} 1 & -1 & 2 \\ 4 & 5 & 3 \end{pmatrix} \begin{pmatrix} 1 & 4 & 2 \\ 2 & 5 & 7 \\ 3 & -1 & -3 \end{pmatrix} = \begin{pmatrix}  5 & -3 & -1 \\ 23 & 38 & 34  \end{pmatrix}
+    \begin{pmatrix} 1 & -1 & 2 \\ 4 & 5 & 3 \end{pmatrix} \begin{pmatrix} 1 & 4 & 2 \\ 2 & 5 & 7 \\ 3 & -1 & -3 \end{pmatrix} = \begin{pmatrix}  5 & -3 & -11 \\ 23 & 38 & 34  \end{pmatrix}
 .\] 
 \end{example}
 
