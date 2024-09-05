@@ -240,7 +240,7 @@ a_{i1} & \cdots & a_{in} \\
 $B^{T} \in M_{k * n}, A^{T} \in M_{n * m} \Rightarrow B^{T}A^{T} \in M_{k * m}$ 
 
 \[
-    [(A * B)^{T}]_{ij} = [AB]_{ji} = \sum_{s = 1}^{n}a_{js}b{si} = \sum_{s = 1}^{n}b_{si}a_{js} =
+    [(A * B)^{T}]_{ij} = [AB]_{ji} = \sum_{s = 1}^{n}a_{js}b_{si} = \sum_{s = 1}^{n}b_{si}a_{js} =
 \] 
 \[
     = \sum_{s = 1}^{n}[B^{T}]_{is}[A^{T}]_{sj} = [B^{T}A^{T}]
@@ -279,10 +279,10 @@ $B^{T} \in M_{k * n}, A^{T} \in M_{n * m} \Rightarrow B^{T}A^{T} \in M_{k * m}$
 Правая и левая часть, очев., имеют смысл.
 
 \[
-[(AB) * C]_{ij} = \sum_{s = 1}^{k} [AB]_{is}[C]_{sj} = \sum_{s = 1}^{k} (\sum_{t = 1}^{n} a_{it}b_{ts}) * c_{sj} = \sum_{s = 1}^{k} \sum_{t = 1}^{n}  a_{it} b_{ts} * c_{sj} = 
+[(AB) * C]_{ij} = \sum_{s = 1}^{k} [AB]_{is}[C]_{sj} = \sum_{s = 1}^{k} (\sum_{t = 1}^{n} a_{it}b_{ts}) * c_{sj} = \sum_{s = 1}^{k} \sum_{t = 1}^{n}  a_{it} b_{ts}c_{sj} = 
 .\] 
 \[
-= \sum_{s = 1}^{k} a_{it} \sum_{t = 1}^{n} b_{ts} * c_{sj} = \sum_{s = 1}^{k} [A]_{it}[BC]_{tj} = [A(BC)]_{ij}
+= \sum_{s = 1}^{k} a_{it} \sum_{t = 1}^{n} b_{ts}c_{sj} = \sum_{s = 1}^{k} [A]_{it}[BC]_{tj} = [A(BC)]_{ij}
 .\] 
 \end{proof}
 
