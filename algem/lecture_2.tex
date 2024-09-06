@@ -1,0 +1,324 @@
+\documentclass[12pt]{article}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{esvect}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+
+% for large comments
+\usepackage{blindtext, xcolor}
+\usepackage{comment}
+
+% for inkscape pictures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+% style of code listings
+%\definecolor{codegreen}{rgb}{0,0.6,0}
+%\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+%\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%
+%\lstdefinestyle{mystyle}{
+%    backgroundcolor=\color{backcolour},
+%    commentstyle=\color{codegreen},
+%    keywordstyle=\color{magenta},
+%    numberstyle=\tiny\color{codegray},
+%    stringstyle=\color{codepurple},
+%    basicstyle=\ttfamily,
+%    breakatwhitespace=false,
+%    breaklines=true,
+%    captionpos=b,
+%    keepspaces=true,
+%    numbers=left,
+%    numbersep=5pt,
+%    showspaces=false,
+%    showstringspaces=false,
+%    showtabs=false,
+%    tabsize=4
+%}
+
+\newtheorem{theorem}{\underline{Теорема}}[section]
+\newtheorem{lemma}[theorem]{\underlind{Лемма}}
+\newtheorem{statement}{\underline{Утверждение}}[section]
+\newtheorem{axiom}{\underline{Аксиома}}[section]
+\newtheorem{character}{\underline{Свойство}}[section]
+\newtheorem*{note}{\underline{Замечание}}
+\newtheorem*{symb}{\underline{Обозначение}}
+\newtheorem*{example}{\underline{Пример}}
+\newtheorem*{consequence}{\underline{Следствие}}
+\newtheorem*{solution}{\underline{Решение}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{\underline{Определение}}[section]
+
+\theoremstyle{definition}
+\newtheorem{task}{\underline{Задача}}[section]
+
+\title{Алгем. \\ Лекция 2}
+\author{Сергей Григорян}
+
+\begin{document}
+\maketitle
+\newpage
+\section{Упражняемся}
+$A \in M_{m*n}$
+ Произвольную i-ую строку будем записывать в виде:
+ \[
+     A_{i*} = \begin{pmatrix} a_{i1} & a_{i2} & \cdots & a_{in}\end{pmatrix}
+ .\] 
+
+ \begin{definition}
+     \textbf{Линейная комбинация (ЛК)} строк $A_{1*}, \cdots , A_{m*}$ наз-ся форм. алг. выр-е:
+ \[
+ \alpha_1 A_{1*} + \alpha_2 A_{2*} + \cdots + \alpha_m A_{m*}  \in M_{1n}
+ .\] 
+ \end{definition}
+
+ \begin{statement}
+     \begin{itemize}
+         \item [a) ]  Пусть $A  \in M_{m*n}, B \in M_{n*k}$. Тогда строки матрицы $AB$ явл \textbf{ЛК} строкматрицы $B$ с коэф. из соотв. строки матрицы $A$
+         \item [b) ] Столбцы матрицы $AB$ явл. ЛК столбцев матрицы $A$ с коэф. из соотв. столбцов матрицы $B$. 
+     \end{itemize}
+
+ \end{statement}
+ \begin{proof}
+ \textbf{b) } Пусть $C = AB  \in M_{m*k}$
+
+  \[
+  C_{*j} = \begin{pmatrix}c_{1j} \\ c_{2j} \\ \vdots \\ c_{mj} \end{pmatrix} = \sum_{s=1}^{n} a_{1s}b_{s1} \\ = \begin{pmatrix} \sum_{j = 1}^{n} a_{2s}b_{s2} \\ \vdots \\ \sum_{s = 1}^{n} a_{ms} b_{sm} \end{pmatrix} = \sum_{s = 1}^{n} b_{sj} \begin{pmatrix}a_{1s} \\ a_{2s} \\ \vdots \\ a_{ms} \end{pmatrix} = 
+  .\] 
+  \[
+= \sum_{s = 1}^{n}  b_{sj} A_{*s}
+  .\] 
+ \end{proof}
+ 
+ \section{Векторная алгебра}
+ 
+$V_i$ - линейное пространство  i-ого измерения. ($i = 1, 2, 3$)
+
+\begin{definition}
+Две точки $X, Y \in V_i$ определяют направленный отрезок, если известно, какая из этих точек первая, какая вторая.
+\[
+\overline{XY} \text{ - направленный отрезок}
+.\] 
+$|\overline{XY}| = XY$ - длина напр. отр.
+\end{definition}
+\begin{symb}
+\[
+\overline{0} \text{ - нулевой напр. отр.}
+.\] 
+\end{symb}
+
+\begin{definition}
+$\overline{XY} = \overline{X'Y'} \iff $
+\begin{itemize}
+    \item [a) ] $XY = X'Y'$
+    \item [b) ] $\overline{XY}$ и $\overline{X'Y'}$ - коллинеарны ($\exists $ прямая, || им обоим)
+    \item [c) ] $\overline{XY} \text{ и } \overline{X'Y'}$ - сонаправлены.
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+Вектор - это класс направленных отрезков, кот. равны некоторому фиксированному напр. отр.
+\end{definition}
+\begin{symb}
+    $\overline{a}, \overline{b}, \overline{c}$
+\end{symb}
+
+\begin{statement}
+Два напр. отр. $\overline{XY}$ и $\overline{X'Y'}$ определяют (порождают) один и тот же вектор т. и т. т., когда они равны.
+\end{statement}
+\begin{proof}
+~\newline
+
+\textbf{a) Необходимое: } Пусть $\overline{XY}$ и $\overline{X'Y'}$ опр. один и тот же вектор $ \Rightarrow \overline{XY} = \overline{X'Y'} = \overline{a}$
+ 
+\textbf{b) Достаточное: } Пусть $\overline{XY} = \overline{X'Y'} \Rightarrow $ они содерж. в одном классе $\overline{a} \Rightarrow $  они опред. один и тот же вектор.
+\end{proof}
+\begin{definition}
+$\overline{XY} = \overline{a} \iff $ он порождает вектор $a$
+\end{definition}
+
+\section{Операции с векторами}
+\subsection{I. Сложение}
+\begin{note}
+При данном векторе $\overline{a}$ и фикс. точке $X$, то найдётся напр. отр. $\overline{XY} = \overline{a}$
+\end{note}
+
+\begin{definition}
+Пусть напр. отр. $\overline{XY}$ опр. $\overline{a}$, $\overline{YZ}$ опр. $\overline{b}$ :
+
+\textbf{Сумма векторов:} вектором $\overline{a} + \overline{b}$  назыв. вектор, порожд. $\overline{XZ}$
+\end{definition}
+\begin{note}
+Данное опр. \textbf{корректно}, и не зависит от начальной точки $X$
+\end{note}
+\begin{proof}
+***Рисунок***
+\end{proof}
+
+\subsection{Умножение вектора на $\lambda \in \R$}
+Рассм. напр. отр. $\overline{a} = \overline{XY}$ и $\overline{XZ} \colon $
+\begin{itemize}
+    \item [a) ] $XZ = |\lambda| * XY$ 
+    \item [b) ] $\overline{XZ}$ - коллинеарен $\overline{XY}$ 
+    \item [c) ] $\overline{XZ}$ сонаправлен $\overline{XY}$, при $\lambda > 0$ 
+
+        $\overline{XZ}$ прот. направлен. $\overline{XY}$ при $\lambda < 0$ :
+\end{itemize}
+
+Вектор, определяемы напр. отр. $XZ$, наз-ся вектором $\lambda \overline{a}$ 
+
+\begin{proof}
+to do by yourself
+\end{proof}
+
+\begin{theorem}
+Операции "+" и "*$\lambda$" удовл. след. св-вам:
+\begin{enumerate}
+    \item Коммутативность сложения (Вытекает из св-в параллелограмма):
+        \[
+        \overline{a} + \overline{b} = \overline{b} + \overline{a}
+        .\] 
+    \item Ассоциативность сложения:
+        \[
+            (\overline{a} + \overline{b}) + \overline{c} = \overline{a} + (\overline{b} + \overline{c})
+        .\] 
+    \item $\exists  \overline{o} \colon  \overline{o} + \overline{a} = \overline{a} + \overline{o} = \overline{a}, \forall \overline{a}  \in V_i$
+    \item $\forall \overline{a}  \in V_i \text{ }\exists (-\overline{a})  \in V_i \colon \overline{a} + (-\overline{a}) = (\overline{-a}) + \overline{a} = \overline{o}$
+    \item Унитарность:
+        \[
+        1 * \overline{a} = \overline{a}, \forall \overline{a}  \in V_i
+        .\] 
+    \item \[
+            (\lambda * \mu) * \overline{a} = \lambda * (\mu * \overline{a})
+    .\] 
+\item \[
+        (\lambda + \mu) * \overline{a} = \lambda \overline{a} + \mu * \overline{a}
+.\] 
+\item \[
+\lambda(\overline{a} + \overline{b}) = \lambda \overline{a} + \lambda \overline{b}
+.\]  
+\end{enumerate}
+\end{theorem}
+\begin{note}
+Мн-во векторов является действительным линейным пространством отн-но мн-ва $\R$.
+\end{note}
+
+\section{Системы векторов в пр-ве $V_i$}
+$ V_i, i = 1, 2, 3$ 
+
+$\overline{v_1}, \overline{v_2}, \cdots, \overline{v_n}  \in V_i$ 
+
+\begin{symb}
+    \[
+    \sum_{i = 1}^{n}  \alpha_i \overline{v_i} \text{ - наз-ся ЛК векторов}
+    .\] 
+
+    Если $\alpha_i = 0, \forall i=1\cdots n$, то такая ЛК наз-ся \textbf{тривиальной}.
+
+    Если $\exists i \colon  \alpha_i \neq 0$, то ЛК \textbf{нетривиальная}.
+\end{symb}
+
+\begin{definition}[ЛЗ система векторов]
+Система векторов $\overline{v_1}, \overline{v_2}, \cdots, \overline{v_n}$ наз-ся \textbf{линейно зависимой (ЛЗ)}, если $\exists $ \textbf{нетривиальная ЛК} этих векторов, равная $\overline{o}$
+\end{definition}
+
+\begin{definition} [ЛНЗ сис. вект.]
+Система векторов $\overline{v_1}, \overline{v_2}, \cdots , \overline{v_n}$ наз-ся \textbf{линейно независимой (ЛНЗ)}, если \textbf{$ \not\exists $ нетривиальной ЛК} этих векторов, равной $\overline{o}$
+\end{definition}
+\begin{example}
+\[
+\overline{a} = \begin{pmatrix}1 \\ 0 \\ 0 \end{pmatrix}, \overline{b} = \begin{pmatrix}0 \\ 1 \\ 0 \end{pmatrix}, \overline{c} = \begin{pmatrix}0 \\ 0 \\ 1 \end{pmatrix}, \text{ - ЛНЗ сист. вект.}
+.\] 
+Док-во ЛНЗ: предствить, что есть коэф-ты, дающие ЛК = $\overline{o}$, и показать, что она тривиальная.
+\end{example}
+\begin{statement}
+Система векторов $\overline{v_1}, \overline{v_2}, \cdots , \overline{v_n} \text{ - ЛЗ } \iff $ хотя бы один из них представим в виде ЛК остальных.
+\end{statement}
+\begin{proof}
+\begin{itemize}
+    \item [a) ] \textbf{Необх:} пусть $\begin{pmatrix} \overline{v_1} & \overline{v_2} & \cdots & \overline{v_n} \end{pmatrix} $ - ЛЗ:
+
+        \[
+        \Rightarrow \exists \text{ нетрив. ЛК } \colon \alpha_1 \overline{v_1} + \alpha_2 \overline{v_2} + \cdots + \alpha_n \overline{v_n} = \overline{o}
+        .\] 
+        Пусть $\alpha_i \neq 0 \colon $ 
+
+        \[
+        \frac{\alpha_1}{\alpha_i} \overline{v_1} + \cdots + \overline{v_i} + \cdots + \frac{\alpha_n}{\alpha_i}  \overline{v_n} = \overline{o}
+        .\] 
+    \[
+    \overline{v_i} = -\frac{\alpha_1}{\alpha_i} \overline{v_1} - \cdots - \frac{\alpha_n}{\alpha_i} \overline{v_n}
+    .\] 
+\item [b) ] \textbf{Дост.:} Пусть $\overline{v_i} = \lambda_1 \overline{v_1} + \cdots +  \lambda_n \overline{v_n}$ 
+\[
+\Rightarrow \lambda_1 \overline{v_1} + \cdots + \lambda_n \overline{v_n} - \overline{v_i} = \overline{o}
+.\] 
+\end{itemize}
+\end{proof}
+\begin{note}
+\textbf{НЕВЕРНО }было бы сформ. утв. вот так: каждый из вектор выразим в виде ЛК остальных.
+\begin{example}
+\[
+\overline{a}, \overline{b} \text{ - неколлин.}
+.\] 
+\[
+    \Rightarrow \text{Для } \begin{pmatrix} \overline{a} & \overline{a} & \overline{b} \end{pmatrix} \text{ - это неверно, т. к. $b$ не выразим через $a$}
+.\] 
+\[
+\text{Но } 1 * \overline{a} + (-1) * \overline{a} + 0 * \overline{b} = \overline{o} \text{ - нетривиальная ЛК}.
+\] 
+\end{example}
+
+\end{note}
+\begin{statement}
+    \begin{itemize}
+        \item [a) ] Если система $\overline{v_1}, \overline{v_2}, \cdots , \overline{v_n}$ - ЛЗ $\Rightarrow$ всякая её \textbf{надсистема} тоже ЛЗ
+        \item Если система $\overline{v_1}, \overline{v_2}, \cdots, \overline{v_n}$ - ЛНЗ $\Rightarrow$, то всякая её подсистема ЛНЗ. 
+    \end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+    \item [a) ] $\exists \alpha_1, \cdots , \alpha_n, \text{- не все равны $\overline{o}$}$, тогда $\sum_{i = 1}^{n} \alpha_i \overline{v_i} = \overline{o}$
+         $\Rightarrow \sum_{i = 1}^{n}  \alpha_i \overline{v_i} + \sum_{i = n + 1}^{n + k} 0 * \overline{v_j} = \overline{o}$
+         \item [b) ] Пусть подсистема $\begin{pmatrix} \overline{v_1} & \overline{v_2} & \cdots & \overline{v_k} \end{pmatrix}$ - ЛЗ (от прот.), тогда по a), $\begin{pmatrix} \overline{v_1} & \cdots  && \overline{v_n} \end{pmatrix}$ - ЛНЗ \textbf{$ \Rightarrow $ Противоречие }
+\end{itemize}
+\end{proof}
+
+\begin{statement}
+    Пусть $\begin{pmatrix}\overline{v_1} & \overline{v_2} & \cdots & \overline{v_n} \end{pmatrix}$ - ЛНЗ сист. векторов в $V_i$. Тогда каждый вектор $\overline{w} \in  V_i$ выражется через $\begin{pmatrix}\overline{v_1} & \overline{v_2} & \cdots & \overline{v_n} \end{pmatrix}$ не более чем одним способом.
+\end{statement}
+
+\begin{proof}
+    \[
+        \overline{w} = \begin{pmatrix}\overline{v_1} & \overline{v_2} & \cdots & \overline{v_n} \end{pmatrix} \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix} = \overline{V} \alpha = \overline{V} \beta
+    \]
+    \[
+    \Rightarrow \overline{o} = \overline{V} (\alpha - \beta)
+    .\] 
+\end{proof}
+
+\end{document}
