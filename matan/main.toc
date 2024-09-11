@@ -1,6 +1,1 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Некот. обозначения}{2}{}%
-\contentsline {section}{\numberline {2}Чем занимаемся дальше}{2}{}%
-\contentsline {section}{\numberline {3}Множество $\mathbb {N}$}{3}{}%
-\contentsline {section}{\numberline {4}Множества $\mathbb {Z}$ и $\mathbb {Q}$}{4}{}%
-\contentsline {section}{\numberline {5}Точные грани числовых мн-в}{5}{}%
