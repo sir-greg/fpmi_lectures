@@ -1,0 +1,5 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Инфа}{3}{}%
+\contentsline {section}{\numberline {2}Основные понятия теор. множеств}{3}{}%
+\contentsline {section}{\numberline {3}Упорядоченные пары и кортежи}{5}{}%
+\contentsline {section}{\numberline {4}Парадокс Рассела}{5}{}%

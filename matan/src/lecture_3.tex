@@ -1,0 +1,205 @@
+\begin{proof}
+Пусть $A \subset \R$ и ограничено сверху. 
+
+Рассм. $B = \{b \in \R\colon b \text{ - верх. грань $A$}\}$. Тогда $B \neq \emptyset$ и $\forall a \in A \forall b \in B (a \leq b)$. По аксиоме непр-ти $\exists c \in \R \colon \forall a \in A, \forall b \in B(a \leq c \leq b)$. 
+
+Из нер-ва $a \leq c \Rightarrow c $ верх. грань $A$
+
+Из правого нер-ва любое $c' < c \colon c' \not\in B$, т.е. $c'$ не явл. верх. гранью $A$. Сл-но, $c = \sup A$.
+\end{proof} 
+
+\begin{theorem}[аксиома Архимеда]
+Пусть $a, b \in \R, a > 0$. Тогда $\exists n \in \N$, т. ч. $na > b$
+\end{theorem}
+\begin{proof}
+Предположим, что $\forall n \colon  na \leq b$. Тогда $A = \{na; n \in \N\}$ огр. сверху. По теореме 5.1 $\exists c = \sup A$. Число $c - a$ не явл. верх. гранью $A$ (т. к. $a > 0$)
+
+Тогда $\exists n \in \N (na > c - a)$. Откуда:
+\[
+na + a = (n + 1)a > (c - a) + a = c 
+\] 
+т. е. $(n + 1)a > c$. Но $(n + 1)a \in A$ (противоречие с тем, что $c$ - верх. грань)!!!
+\end{proof}
+
+\begin{consequence}
+\begin{enumerate}
+    \item [1) ] $\forall b \in \R, \exists n \in \N (n > b)$, (a = 1)
+    \item [2) ] $\forall  \varepsilon > 0, \exists n \in \N (\frac{1}{n} < \varepsilon)$ ($\frac{1}{n} < \varepsilon \iff n > \frac{1}{\varepsilon}$)
+\end{enumerate}
+\end{consequence}
+\begin{consequence}
+\[
+\forall x \in \R, \exists! m \in \Z (m \leq x < m + 1) (m \text{- целая часть $x$})
+\] 
+\end{consequence}
+\begin{proof}
+\begin{itemize}
+    \item [($\exists$)] $x \geq 0$. Рассм. $S = \{n \in \N \colon  n > x\}$. По аксиоме архимеда, это мн-во непусто. $\Rightarrow \exists p = min(S)$. Положим $m = p - 1$. Тогда $m \leq x$ и $m + 1 > x$
+\end{itemize}
+\item [$x < 0$]. По предыдущему пункту $\exists m' \in \Z (m' \leq -x < m' + 1)$. Положим:
+        \begin{equation}
+            m = 
+       \begin{system_and}
+        -m', x = -m' \\
+        -m' - 1, x \neq -m' 
+       \end{system_and} 
+       \Rightarrow m \leq x < m + 1
+        \end{equation} 
+    \item [Единственность: ] \begin{equation*}
+    \begin{system_and}
+    m' \leq x < m' + 1 \\
+    m'' \leq x < m'' + 1
+    \end{system_and}
+    \Rightarrow -1 < m' - m'' < 1, m' - m'' \in \Z \Rightarrow m' - m'' = 0 \Rightarrow m' = m''
+    \end{equation*}
+\end{proof}
+\begin{example}
+\[
+    \floor{\frac{3}{2}} = 1, \floor{-\frac{3}{2}} = -2
+\] 
+\end{example}
+\begin{consequence}
+\[
+\forall  a, b \in \R, a < b, \exists r \in \Q (a < r < b)
+\] 
+\end{consequence}
+\begin{proof}
+\[
+\exists n \in \N (\frac{1}{n} < b - a)
+\] 
+\[
+r = \frac{\floor{na} + 1}{n}. \text{Тогда } r \in \Q \Rightarrow
+\] 
+\[
+r > \frac{na - 1 + 1}{n} = a, r \leq \frac{na + 1}{n} = a + \frac{1}{n} < a + (b - a) = b
+\] 
+\end{proof}
+
+\begin{symb}
+\[
+n \in \N \cup \{0\} =\colon \N_0
+\] 
+\end{symb}
+\begin{definition}
+Пусть $a \in \R$, тогда:
+\[
+a^{0} = 1, a^{n + 1} = a^{n} a
+\] 
+\end{definition}
+\begin{symb}
+Пусть $m, n \in \Z$ и $m \leq n$, положим:
+\[
+\sum_{k = m}^{n} a_k = a_m + a_{m + 1} + \ldots + a_n
+\] 
+\[
+\prod_{k = m}^{n} = a_m * a_{m + 1} * \ldots * a_n
+\] 
+Если $m > n$.
+\end{symb}
+\begin{theorem}[Бином Ньютона]
+\[
+\forall a, b \in \R, n \in \N \colon 
+\] 
+\[
+    (a + b)^{n} = \sum_{k = 0}^{n} C_{n}^{k} a^{k} b^{n - k}, \text{ где } C_{n}^{k} = \frac{n!}{k!(n - k)!}
+\] 
+\[
+0! = 1, (n + 1)! = n! * (n + 1)
+\] 
+\end{theorem}
+\begin{proof}
+Докажем по индукции:
+\begin{itemize}
+    \item n = 1:  Верно
+    \item Предположим, что утв. верно для $n$:
+        \[
+            (a + b)^{n + 1} = (a + b)(a + b)^{n} = (a + b)\sum_{k = 0}^{n} C_{n}^{k} a^{k}b^{n - k} = 
+        \] 
+        \[
+        = \sum_{k = 0}^{n} C_{n}^{k}a^{k + 1}b^{n - k} + \sum_{k = 0}^{n} C_{n}^{k} a^{k}b^{n - k + 1} = \sum_{k = 0}^{n}  C_{n}^{k}a^{k}b^{n + 1 - k} + \sum_{k = 1}^{n + 1} C_{n}^{k - 1}a^{k}b^{n - k + 1} = 
+        \] 
+        \[
+        = C_{n}^{0} b^{n + 1} + \sum_{k = 1}^{n} (C_{n}^{k} + C_{n}^{k - 1})a^{k}b^{n + 1 - k} + C_{n}^{n} a^{n + 1} = \begin{bmatrix}C_{n}^{k} + C_{n}^{k - 1} = \frac{n!}{k!(n - k)!} + \frac{n!}{(k - 1)!(n - k + 1)!} \iff \end{bmatrix}  
+        \] 
+        \[
+        \begin{bmatrix} \iff \frac{(n + 1)!}{k!(n + 1 - k)!} = C_{n + 1}^{k} \end{bmatrix} = \sum_{k = 0}^{n + 1} C_{n + 1}^{k} a^{k}b^{n + 1 - k}
+        \] 
+        Ч. Т. Д.
+\end{itemize}
+\end{proof}
+\begin{consequence}
+Пусть $a \geq 0, n, k \in \N, 1 \leq k \leq n$. Тогда:
+\[
+    (1 + a)^{n} \geq 1 + C_{n}^{k}a^{k}
+\] 
+\end{consequence}
+\begin{symb}
+\[
+\overline{\R} = \R \cup \{+\infty\} \cup \{-\infty\}
+\] 
+- расширенная числовая прямая
+
+\end{symb}
+Считают, что $\forall x \in \R (-\infty < x < +\infty)$
+
+Введём допус. операции $x \in \R$
+\begin{itemize}
+    \item $x + (+\infty) = x - (-\infty) = +\infty$
+    \item $x - (-\infty) = x + (-\infty) = -\infty$
+    \item $x * (\pm \infty) = \pm \infty, x > 0$
+    \item $x * (\pm \infty) = \mp \infty, x < 0$
+   \item $\frac{x}{\pm \infty} = 0$
+\end{itemize}
+Кроме того:
+\begin{itemize}
+    \item $(+\infty) + (+\infty) = +\infty$
+    \item $(-\infty) + (-\infty) = -\infty$
+    \item $(+\infty) * (+\infty) = (-\infty) * (-\infty) = +\infty$
+    \item $(+\infty)(-\infty) = (-\infty)(+\infty) = -\infty$
+\end{itemize}
+
+\textbf{НЕДОПУСТИМЫЕ} операции:
+\begin{itemize}
+    \item $(+\infty) - (+\infty)$
+    \item $(+\infty) + (-\infty)$
+    \item $(-\infty) - (-\infty)$
+    \item $(-\infty) + (+\infty)$
+    \item $0 * \pm \infty$
+    \item $\pm \infty * 0$
+    \item $\frac{\pm \infty}{\pm \infty}$
+\end{itemize}
+\textbf{Соглащение: } $E \subset \R, E \neq \emptyset$.
+\begin{itemize}
+    \item Если $E$ не огр. сверху, то $\sup E = +\infty$
+    \item Если $E$ не огр. снизу, то $\inf E = -\infty$
+\end{itemize}
+\begin{definition}
+$I \subset R$ называется \underline{промежутком}, если $\forall a, b \in I, \forall x \in \R (a \leq x \leq b \Rightarrow x \in I)$
+\end{definition}
+\begin{lemma}
+    Любой промежуток - одно из следующих мн-в:
+    \begin{itemize}
+        \item $\emptyset$
+        \item $\R$
+        \item $(a, +\infty)$
+        \item $[a, +\infty)$
+        \item $(-\infty, b)$
+        \item $(-\infty, b]$
+        \item $[a, b]$
+        \item $(a, b)$
+        \item $[a, b)$
+        \item $(a, b]$
+    \end{itemize}
+\end{lemma}
+\begin{proof}
+$I$ - промежуток, $I \neq \emptyset$
+\[
+a := \inf I, b := \sup I \Rightarrow a \leq b
+\] 
+\begin{itemize}
+    \item Если $a = b$, то $I = \{a\}$
+    \item Если $a < b$ и $a < x < b$. По опр. точных граней $\exists x', x'' \in I \colon  (x' < x < x'') \Rightarrow x \in I$
+\end{itemize}
+Итак, $(a, b) \subset I \subset [a, b]$
+
+\end{proof}

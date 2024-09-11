@@ -1,0 +1,5 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Инфа}{3}{}%
+\contentsline {section}{\numberline {2}Основные понятия}{3}{}%
+\contentsline {section}{\numberline {3}Асимптотика, время работы}{4}{}%
+\contentsline {section}{\numberline {4}Бинарный поиск}{6}{}%

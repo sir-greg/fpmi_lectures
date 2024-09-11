@@ -1,0 +1,333 @@
+%\documentclass[12pt]{article}
+%\usepackage[T1, T2A]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[russian]{babel}
+%\usepackage{amsmath}
+%\usepackage{amsthm}
+%\usepackage{amssymb}
+%\usepackage{esvect}
+%\usepackage{listings}
+%\usepackage{xcolor}
+%
+%
+%% for large comments
+%\usepackage{blindtext, xcolor}
+%\usepackage{comment}
+%
+%% for inkscape pictures
+%\usepackage{import}
+%\usepackage{xifthen}
+%\usepackage{pdfpages}
+%\usepackage{transparent}
+%
+%\newcommand{\incfig}[1]{%
+%    \def\svgwidth{\columnwidth}
+%    \import{./figures/}{#1.pdf_tex}
+%}
+%
+%\renewcommand{\C}{\mathbb{C}}
+%\newcommand{\R}{\mathbb{R}}
+%\newcommand{\Q}{\mathbb{Q}}
+%\newcommand{\Z}{\mathbb{Z}}
+%\newcommand{\N}{\mathbb{N}}
+%
+%\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+%\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+%
+%% style of code listings
+%%\definecolor{codegreen}{rgb}{0,0.6,0}
+%%\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+%%\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%%\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%%
+%%\lstdefinestyle{mystyle}{
+%%    backgroundcolor=\color{backcolour},
+%%    commentstyle=\color{codegreen},
+%%    keywordstyle=\color{magenta},
+%%    numberstyle=\tiny\color{codegray},
+%%    stringstyle=\color{codepurple},
+%%    basicstyle=\ttfamily\footnotesize,
+%%    breakatwhitespace=false,
+%%    breaklines=true,
+%%    captionpos=b,
+%%    keepspaces=true,
+%%    numbers=left,
+%%    numbersep=5pt,
+%%    showspaces=false,
+%%    showstringspaces=false,
+%%    showtabs=false,
+%%    tabsize=4
+%%}
+%
+%\newtheorem{theorem}{\underline{Теорема}}[section]
+%\newtheorem{lemma}[theorem]{\underlind{Лемма}}
+%\newtheorem{statement}{\underline{Утверждение}}[section]
+%\newtheorem*{note}{\underline{Замечание}}
+%\newtheorem*{symb}{\underline{Обозначение}}
+%\newtheorem*{example}{\underline{Пример}}
+%\newtheorem*{consequence}{\underline{Следствие}}
+%\newtheorem*{solution}{\underline{Решение}}
+%\newtheorem*{axiom}{\underline{Аксиома}}
+%
+%\theoremstyle{definition}
+%\newtheorem{definition}{\underline{Определение}}[section]
+%
+%\theoremstyle{definition}
+%\newtheorem{task}{\underline{Задача}}[section]
+%
+%\title{Алгем. \\ Лекция 1 \\ Алгебра матриц}
+%\author{Сергей Григорян}
+
+\section{Инфа}
+\textbf{Лектор:} Вадим Владимирович Штепин
+
+\section{Матрицы}
+
+\begin{definition}
+\textbf{Матрица} - прямоугольная таблица чисел.
+\end{definition}
+
+\begin{symb}
+    $A_{m*n} = \begin{pmatrix} a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\ 
+    a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\ 
+    \cdots \\ 
+a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn}\end{pmatrix}$
+
+    $a_{ij} \in \R$
+\end{symb}
+
+\begin{definition}
+\textbf{Поле} - мн-во, на котором определены "+, -, *, /".
+\end{definition}
+
+\subsection{I. Сложение}
+
+\begin{symb}
+$M_{m * n} - $ мн-во всех матриц размера $m * n$
+
+$A, B \in M_{m * n}, A + B \in M_{m * n}$
+\end{symb}
+
+\begin{definition}
+    $[A + B]_{ij} = a_{ij} + b_{ij} = [A]_{ij} + [B]_{ij}$ - сложение матриц определено поэлементно.
+\end{definition}
+
+\subsection{II. Умножение матрицы на вещественное число $\lambda \in \R$}
+
+\begin{definition}
+    Умножение матрицы на число осущ. поэлементно:
+
+$A \in M_{m * n}$ 
+
+$\lambda \in \R$ 
+
+$\lambda A \in M_{m * n}$
+
+$[\lambda A]_{ij} = \lambda a_{ij} = \lambda [A]_{ij}$
+\end{definition}
+
+\begin{theorem}
+Операции сложения матриц и  "$* \lambda$" удовл. след. св-вам $[A, B, C \in M_{m * n}]$:
+
+\begin{enumerate}
+    \item Коммутативность сложения: $ A + B = B + A$
+    \item Ассоциативность сложения: $ (A + B) + C = A + (B + C)$
+    \item Существование нулевой матрицы: $ \exists O \in M_{m * n}$, т. ч. $A + O = A, \forall A \in M_{m * n}$
+    \item Св-во сущ. прот. матрицы: $\forall A \in M_{m * n} \exists (-A) \in M_{m * n}$, т. ч. A + (-A) = (-A) + A = O
+    \item Унитарность: $1 * A = A$;
+    \item Ассоциативность отн-но скалярного мн-ва : $(\lambda * \mu) * A = \lambda * (\mu * A)$ ;
+    \item Дистрибутивность $(\lambda + \mu) A = \lambda A + \mu A$ 
+    \item Дистрибутивность $\lambda (A + B) = \lambda A + \lambda B$;
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{8) } $A, B \in M_{m * n}$ 
+\[
+[\lambda(A + B)]_{ij} = \lambda[A + B]_{ij} = \lambda (a_{ij} + b_{ij}) = \lambda * a_{ij} + \lambda * (b_{ij}) = [\lambda A]_{ij} + [\lambda B]_{ij} = [\lambda A + \lambda B]_{ij} 
+.\] 
+\end{proof}
+
+\begin{definition}
+\textbf{Линейное пр-во над $M_{m*n}$}:
+
+Пусть $V$ - произв. мн-во, на кот. определены операции сложения эл-ов из $V$ и умн-я эл-ов из $V$ на эл-ты $\R$, и эти оп-ции удовл аксиомам (1-8). Тогда $V$ - действительное линейное (векторное) пр-во.
+\end{definition}
+
+\textbf{Вывод:} $M_{m*n}(\R)$ - действ. лин. пр-во.
+
+\section{III. Транспонирование}
+$A \in M_{m * n} \Rightarrow A^{T} \text{ или } A^{t} \in M_{n * m}$
+
+\begin{definition}
+ \[
+     [A^{T}]_{ij} = [A]_{ji}
+ .\] 
+\end{definition}
+
+\begin{example}
+\[
+    \begin{pmatrix} 1 & 9 & 9 & -1 \\ 3 & -7 & -2 & 4 \end{pmatrix}^{T} = \begin{pmatrix} 1 & 3 \\ 9 & -7 \\ 9 & -2 \\ -1 & 4 \end{pmatrix} 
+.\] 
+\end{example}
+
+\section{IV. Умножение матриц}
+
+\subsection{Частный случай}
+$A \in M_{1*n}, B \in M_{n * 1}$ 
+\[
+    \begin{pmatrix} a_1 & a_2 & \cdots & a_n \end{pmatrix} * \begin{pmatrix} b_1 \\ b_2 \\ b_3 \\ \vdots \\ b_n \end{pmatrix} = a_1 b_1 + a_2 b_2 + \cdots + a_n b_n
+.\] 
+
+\subsection{Общий случай}
+
+$A * B$ имеет смысл (опр.), если:
+
+\[
+    A \in M_{m * \underline{n}}, B \in M_{\underline{n} * k}
+\]
+
+Тогда:
+
+\[
+    C = A * B \in M_{m * k}
+.\] 
+
+\[
+    [C]_{ij} = \sum_{s = 1}^{n} a_{is} b_{sj}
+.\] 
+
+\[
+    \begin{pmatrix} \cdots & \cdots  & \cdots \\
+a_{i1} & \cdots & a_{in} \\
+\cdots & \cdots & \cdots \end{pmatrix} * 
+    \begin{pmatrix} \cdots & b_{1j} & \cdots \\
+        \vdots & \vdots & \vdots \\
+        \cdots & b_{nj} & \cdots 
+\end{pmatrix} = 
+        \begin{pmatrix} \cdots & \cdots & \cdots \\
+          \vdots & c_{ij} & \vdots \\
+          \cdots & \cdots & \cdots \end{pmatrix}
+.\] 
+
+Чтобы получить эл-т $c_{ij}$ матрицы $C$, нужно умножить i-ую строку $A$ на j-ую строку $B$
+
+\begin{example}
+\[
+    \begin{pmatrix} 1 & -1 & 2 \\ 4 & 5 & 3 \end{pmatrix} \begin{pmatrix} 1 & 4 & 2 \\ 2 & 5 & 7 \\ 3 & -1 & -3 \end{pmatrix} = \begin{pmatrix}  5 & -3 & -11 \\ 23 & 38 & 34  \end{pmatrix}
+.\] 
+\end{example}
+
+\begin{statement}[О св-вах опер. транспонирования]
+Операция транспонирования матрицы обладает св-вами.
+\begin{enumerate}
+    \item $(A^{T})^{T} = A$
+    \item $(\lambda A) ^{T} = \lambda A^{T}$
+    \item $(A + B)^{T} = A^{T} + B^{T}$
+    \item Св-во транспон. произв-я:
+        \[
+            (A * B)^{T} = B^{T}A^{T}
+        .\] 
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\textbf{4)} Пусть матрица $A \in M_{m * n}, B \in M_{n * k}$. $AB \in M_{n * k} \Rightarrow (AB)^{T}\in M_{k * m}$ 
+
+$B^{T} \in M_{k * n}, A^{T} \in M_{n * m} \Rightarrow B^{T}A^{T} \in M_{k * m}$ 
+
+\[
+    [(A * B)^{T}]_{ij} = [AB]_{ji} = \sum_{s = 1}^{n}a_{js}b_{si} = \sum_{s = 1}^{n}b_{si}a_{js} =
+\] 
+\[
+    = \sum_{s = 1}^{n}[B^{T}]_{is}[A^{T}]_{sj} = [B^{T}A^{T}]
+.\] 
+\end{proof}
+
+\[
+    (A * B * C)^{T} = C^{T} * B^{T} * A^{T}
+.\] 
+
+\begin{theorem} (О св-вах опер. "*" и "+")
+\begin{enumerate}
+    \item Ассоциативность умножения:
+        \[
+            (A * B) * C = A * (B * C)
+        .\] 
+    \item Левая дистрибутивность умножения отн-но сложение
+        \[
+        A * (B + C) = A * B + A * C
+        .\] 
+    \item Правая дистрибутивность умн. отн. слож:
+        \[
+            (A + B) * C = A * C + B * C
+        .\] 
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}
+    \textbf{1)}
+    
+    \[
+        A \in M_{m * n}, B \in M_{n * k}, C \in M_{k * r}
+    \]
+
+Правая и левая часть, очев., имеют смысл.
+
+\[
+[(AB) * C]_{ij} = \sum_{s = 1}^{k} [AB]_{is}[C]_{sj} = \sum_{s = 1}^{k} (\sum_{t = 1}^{n} a_{it}b_{ts}) * c_{sj} = \sum_{s = 1}^{k} \sum_{t = 1}^{n}  a_{it} b_{ts}c_{sj} = 
+.\] 
+\[
+= \sum_{s = 1}^{k} a_{it} \sum_{t = 1}^{n} b_{ts}c_{sj} = \sum_{s = 1}^{k} [A]_{it}[BC]_{tj} = [A(BC)]_{ij}
+.\] 
+\end{proof}
+
+\begin{note}
+Умножение матриц \textbf{некоммутативно}:
+\[
+AB \neq BA
+.\] 
+\begin{example}
+\[
+    \begin{pmatrix} 1 & -1 \\ 1 & -1 \end{pmatrix}
+    \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} =
+    \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+.\] 
+- это пример \textbf{делителя нуля}
+
+\[
+    \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & -1 \\ 1 & -1 \end{pmatrix} = 
+    \begin{pmatrix} 2 & -2 \\ 2 & -2 \end{pmatrix}
+.\] 
+\end{example}
+
+\end{note}
+
+\begin{definition}
+Матрица $\triangle \in M_{n * n}$ наз-ся \textbf{диагональной}, если:
+
+\[
+    \triangle = \begin{pmatrix} \alpha_1 & \cdots & 0 \\
+    0 & \alpha_i & 0 \\
+0 & \cdots & \alpha_n\end{pmatrix}, ([\triangle]_{ij} = 0, i \neq j) 
+\]
+\end{definition}
+
+\begin{statement}
+    ~\newline
+    
+\begin{itemize}
+    \item[a) ] Умножение матрицы $A$ слева на матрицу $\triangle$, если это возм.,
+        \[
+        [\triangle A]
+        .\]
+        равносильно умнож строк матрицы $A$ на числа $\alpha_1, \alpha_2, \cdots, \alpha_n$ соотв.
+    \item[b) ] Умнож. $A$ справа на $\triangle$, если это возм.
+        \[
+        [A * \triangle ]
+        .\] 
+        Равносильно умножению столбцов $A$ на числа $\alpha_1, \alpha_2, \cdots, \alpha_n$, соотв. 
+\end{itemize}
+\end{statement}

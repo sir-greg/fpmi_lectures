@@ -1,0 +1,230 @@
+\section{Понятие базиса лин. пр-ва. Базисы в пр-вах $V_i$}
+
+\begin{statement}
+\begin{itemize}
+    \item [a) ] Пусть $\overline{a} \neq \overline{o}$ и $\overline{b}$ коллинеарен $\overline{a}$. Тогда $\overline{b} = \lambda \overline{a}$. 
+    \item [b) ] Пусть $\overline{a_1}, \overline{a_2}$ не коллин. и $\overline{b}$ компл. $\overline{a_1}, \overline{a_2}$. Тогда $\overline{b} = \lambda_1 \overline{a_1} + \lambda_2 \overline{a_2}$
+    \item [c) ] Пусть $\overline{a_1}, \overline{a_2}, \overline{a_3}$ - не комплан. Тогда всякий вектор представим в виде $\overline{b} = \lambda_1 \overline{a_1} + \lambda_2 \overline{a_2} + \lambda_3 \overline{a_3}$
+\end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+    \item [a) ] (***Картинка***) 
+        \begin{equation*}
+            \lambda = 
+       \begin{system_and}
+       \frac{XZ}{XY}, \text{если $Y$ и $Z$ лежат на одной стороне с $X$}  \\
+       -\frac{XZ}{XY}, \text{если $Y$ и $Z$ лежат на разных сторонах отн. $X$}
+       \end{system_and} 
+       \Rightarrow \overline{b} = \lambda \overline{a}
+        \end{equation*} 
+    \item [b) ] Оба вектора $\overline{a_1}, \overline{a_2}$ - ненулевые. (***Картинка***)
+        \[
+        \overline{b} = \overline{b_1} + \overline{b_2} = \overline{XZ_1} + \overline{XZ_2} = \lambda_1 \overline{a_1} + \lambda_2 \overline{a_2}
+        \] 
+    \item [c) ] $\overline{a_1}, \overline{a_2}, \overline{a_3}$ порожд. $\overline{XY_1}, \overline{XY_2}, \overline{XY_3}$, а вектор $b$ - $\overline{XZ}$. $\overline{a_1}, \overline{a_2}$ - не коллин., (***Картинка***) $Z' = l \cap (X_1Y_1Y_2)$
+        \[
+        \overline{b} = \overline{b_1} + \overline{b_2} = \overline{XZ'} + \overline{Z'Z} = \lambda_1 \overline{a_1} + \lambda_2 \overline{a_2} + \lambda_3 \overline{a_3}
+        \] 
+\end{itemize}
+\end{proof}
+\begin{consequence}
+\begin{itemize}
+    \item [1) ] Система, сост. только из $\overline{o}$ - ЛЗ.
+    \item [2) ] Система, сост. из двух колин. векторов - ЛЗ.
+    \item [3) ] Система, сост. из трёх комплан. векторов - ЛЗ.
+    \item [4) ] Любая сист., сост. из четырех векторов в пр-ве - ЛЗ.
+\end{itemize}
+\end{consequence}
+\begin{proof}
+\begin{itemize}
+    \item [1) ] $1 * \overline{o} = \overline{o}$
+    \item [2) ] $\overline{a}, \overline{b}$ - коллин. 
+       
+        Если $\overline{a} = \overline{o}$ - ЛЗ система $\Rightarrow (a, b) \text{- надсистема ЛЗ $\Rightarrow$ она ЛЗ}$
+
+        Если $\overline{a} \neq \overline{o} \Rightarrow \overline{b} = \lambda \overline{a} \Rightarrow (\overline{a}, \overline{b}) \text{ - ЛЗ}$ 
+    \item [3) ] Пусть $\overline{a_1}, \overline{a_2}, \overline{b}$ - компл. 
+
+        Если $\overline{a_1}, \overline{a_2}$ - коллин., то $(\overline{a_1}, \overline{a_2})$ - ЛЗ $\Rightarrow (\overline{a_1}, \overline{a_2}, \overline{b})$ - ЛЗ, как надсистема.
+
+        Иначе, $\overline{a_1}, \overline{a_2}$ - не коллин. $\Rightarrow b = \lambda_1 \overline{a_1} + \lambda_2 + \overline{a_2}$ - ЛЗ
+
+    \item [4) ] $\overline{a_1}, \overline{a_2}, \overline{a_3}, \overline{b}$:
+
+        Если $\overline{a_1}, \overline{a_2}, \overline{a_3}$ - компл. $\Rightarrow (\overline{a_1}, \overline{a_2}, \overline{a_3}, \overline{b})$ - ЛЗ, как надсистема ЛЗ сист.
+
+        Иначе $\Rightarrow \overline{b} = \alpha_1 \overline{a_1} + \alpha_2 \overline{a_2} + \alpha_3\overline{a_3}$.
+\end{itemize}
+\end{proof}
+\begin{statement}
+    Пусть $(\overline{a_1}, \overline{a_2}, \ldots, \overline{a_n})$ - ЛНЗ сист. вект. и $(\overline{a_1}, \overline{a_2}, \ldots, \overline{a_n}, \overline{b})$ - ЛЗ. Тогда:
+    \[
+    \overline{b} = \sum_{i = 1}^{n} \alpha_i \overline{a_i}
+    \] 
+\end{statement}
+\begin{proof}
+$\exists $ нетрив. ЛК:
+\[
+\alpha_1 \overline{a_1} + \alpha_2 \overline{a_2} + \ldots + \alpha_n \overline{a_n} + \beta \overline{b} = \overline{o}
+\] 
+Предположим, что $\beta = 0 \Rightarrow $ противоречие с условием $\Rightarrow \beta \neq 0 \Rightarrow$:
+\[
+\overline{b} = -\frac{\alpha_1}{\beta} \overline{a_1} - \ldots - \frac{\alpha_n}{\beta} \overline{a_n}
+\] 
+\end{proof}
+\begin{definition}
+$V$ - лин. пр-во (над $\R$). 
+
+Система векторов $(\overline{e_1}, \overline{e_2}, \ldots, \overline{e_n})$ - наз-ся базисом в $V_i$, если:
+\begin{itemize}
+    \item [a) ]$(\overline{e_1}, \overline{e_2}, \ldots, \overline{e_n})$ - ЛНЗ 
+    \item [b) ] Каждый вектор $\overline{v} \in V_i$ представим в виде ЛК:
+        \[
+        \overline{v} = \alpha_1 \overline{e_1} + \alpha_2 \overline{e_2} + \ldots + \alpha_n \overline{e_n}, \alpha_i \in \R
+        \] 
+\end{itemize}
+\end{definition}
+\begin{example}
+\[
+M_{3 * 1}(\R)\colon  \overline{e_1} = \begin{pmatrix}1 \\ 0 \\ 0 \end{pmatrix}, \overline{e_2} = \begin{pmatrix}0 \\ 1 \\ 0 \end{pmatrix}, \overline{e_3} = \begin{pmatrix}0 \\ 0 \\ 1 \end{pmatrix}
+\] 
+\[
+\overline{v} = \begin{pmatrix}\alpha_1 \\ \alpha_2 \\ \alpha_3 \end{pmatrix} = \sum_{i = 1}^{3}  \alpha_i \overline{e_i}
+\] 
+\end{example}
+\begin{note}
+    \[
+        \overline{v} = \begin{pmatrix}\overline{e_1} & \overline{e_2} & \ldots & \overline{e_n} \end{pmatrix} \begin{pmatrix}\alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix}
+    \] 
+    \[
+    \begin{pmatrix}\alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix} \text{- коор-т столбец $\overline{v}$ в базисе $\overline{e}$}
+    \] 
+\end{note}
+\begin{statement}
+    Если в $V$ фикс. базис $G = \begin{pmatrix}\overline{e_1} & \overline{e_2} & \ldots & \overline{e_n} \end{pmatrix}$, то всякий вектор $\overline{v} \in V$ однозначно раскладывается по одному базису. (т. е. имеет однозначно опред. коор-тный столбец)
+\end{statement}
+\begin{proof}
+См. прошлую лекцию
+\end{proof}
+\begin{statement}
+Пусть в пр-ве $V$ фикс. базис $G$, $\overline{v} \underset{G}{\Longleftrightarrow} \alpha, \overline{w} \underset{G}{\Longleftrightarrow} \beta$. Тогда:
+\[
+\overline{v} + \overline{w} \underset{G}{\Longleftrightarrow} \alpha + \beta,
+\] 
+\[
+\lambda \overline{v} \underset{G}{\Longleftrightarrow} \lambda \alpha
+\] 
+\end{statement}
+\begin{proof}
+\[
+\overline{v} = G \alpha
+\] 
+\[
+\overline{v} = G \beta
+\] 
+\[
+\Rightarrow \overline{v} + \overline{w} = G(\alpha + \beta)
+\] 
+\[
+\lambda \overline{v} = \lambda G \alpha = G (\lambda \alpha)
+\] 
+\end{proof}
+\section{Описание базисов в пр-вах $V_1, V_2, V_3$}
+
+\begin{theorem}[О ЛНЗ системах векторов]
+    ~\newline
+\begin{enumerate}
+    \item [1) ] Система, состоящая из одного \textbf{ненулевого} вектора $\overline{a}$ - ЛНЗ
+    \item [2) ] Система, сост. из двух неколлин. векторов $\overline{a_1}, \overline{a_2}$ - ЛНЗ
+    \item [3) ] Система, сост. из трёх некомплан. векторов $\overline{a_1}, \overline{a_2}, \overline{a_3}$- ЛНЗ
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+    \begin{enumerate}
+        \item [1) ] От. противного, пусть $\lambda \neq 0$ и $\lambda \overline{a} = \overline{o}$:
+            \[
+            |\lambda||\overline{a}| = 0 \text{!!! Два ненулевых числа в умнож. дают 0.}
+            \] 
+        \item [2) ] От. противного, пусть $\overline{a_1}, \overline{a_2}$ - ЛЗ. Б. О. О. (без ограничения общности) $\overline{a_2} = \lambda \overline{a_1}$ - противоречие.
+        \item [3) ] От. пр., пусть $\begin{pmatrix}\overline{a_1} & \overline{a_2} & \overline{a_3} \end{pmatrix}$ - ЛЗ. Б. О. О. $\overline{a_3} = \lambda_1 \overline{a_1} + \lambda_2 \overline{a_2}$ - противоречие.
+    \end{enumerate}
+\end{proof}
+\begin{theorem}[Об описании базиса в $V_i$]
+Система векторов является:
+\begin{itemize}
+    \item [a) ] базисом в $V_1 \iff $ она состоит из одного вектора $\overline{e} \neq \overline{o}$
+    \item [b) ] базисом в $V_2 \iff$ она сост. из двух неколин. векторов $\overline{e_1}, \overline{e_2}$
+    \item [c) ] базисом в $V_3 \iff$ она сост. из трёх некомпл. векторов $\overline{e_1}, \overline{e_2}, \overline{e_3}$
+\end{itemize}
+\end{theorem}
+\begin{proof}
+    ~\newline 
+\begin{itemize}
+    \item [a) ] $V_1\colon \overline{e} \neq 0$ (ЛНЗ сист.)
+\[
+\forall \overline{b} \in V_1 (\overline{b} = \lambda \overline{e}) \Rightarrow (\overline{e}) \text{ - базис в $V_1$}.
+\] 
+Если $\overline{e_1}, \overline{e_2} \in V_1 \Rightarrow $ они коллин. $\Rightarrow$ ЛЗ и аналогично ($\overline{o}$) - ЛЗ.
+\item [b) ] $V_2$ - фикс. $(\overline{e_1}, \overline{e_2})$ - неколл. $\Rightarrow$ ЛНЗ.
+    \[
+    \forall b \in V_2 \underset{\text{Утв. 1}}{\Rightarrow} \overline{b} = \lambda_1 \overline{e_1} + \lambda_2 \overline{e_2} \Rightarrow (\overline{e_1}, \overline{e_2}) \text{- базис.}
+    \] 
+    Почему нет других? $\begin{pmatrix}\overline{e_1} & \overline{e_2} & \overline{e_3} \end{pmatrix}$ - компл. $\Rightarrow$ ЛЗ.
+    Если $\begin{pmatrix}\overline{e_1} & \overline{e_2} \end{pmatrix}$ - коллин. $\Rightarrow$ через них выр-ся только коллин. им вектора.
+\item [c) ] $\begin{pmatrix}\overline{e_1} & \overline{e_2} & \overline{e_3} \end{pmatrix} $ - некомпл. $\Rightarrow$ ЛНЗ:
+    \[
+    \forall b \in V_3 \colon b = \sum_{i = 1}^{3} \alpha_i \overline{e_i} \Rightarrow \text{ базис.}
+    \] 
+    Почему нет других?
+    \[
+        \begin{pmatrix}\overline{e_1} & \overline{e_2} & \overline{e_3} & \overline{e_4} \end{pmatrix} \text{- ЛЗ}
+    \]
+$\begin{pmatrix}\overline{e_1} & \overline{e_2} & \overline{e_3} \end{pmatrix}$ - компланарный, то тогда ЛЗ
+\begin{itemize}
+    \item $\overline{e_1} || \overline{e_2}$ - очев. 
+    \item $\overline{e_1 \not|| \overline{e_2}}$ - образ. плоскость.
+\end{itemize}
+
+\end{proof} 
+\section{Матрица перехода от одного базиса к другому}
+$V\colon $ два базиса: $G = \begin{pmatrix}\overline{e_1} & \overline{e_2} & \ldots & \overline{e_n} \end{pmatrix}, G' = \begin{pmatrix}\overline{e_1}' & \overline{e_2}' & \ldots & \overline{e_n}' \end{pmatrix}$
+\[
+    \overline{e_1}' = S_{11} \overline{e_1} + S_{21} \overline{e_2} + \ldots + S_{n1} \overline{e_n}
+\] 
+\[
+\vdots 
+\] 
+\[
+\overline{e_n} = S_{1n} \overline{e_1} + S_{2n} \overline{e_2} + \ldots + S_{nn} \overline{e_n}
+\] 
+$\Rightarrow$
+\[
+    S' = \begin{pmatrix}S_{11} & S_{12} & \ldots & S_{1n} \\
+    S_{21} & S_{22} & \ldots & S_{2n} \\
+\vdots  & \cdots & \cdots  & \vdots \\
+S_{n1} & S_{n2} & \ldots & S_{nn}\end{pmatrix} = S_{G \to G'}
+\] - матрица перехода от $G$ к $G'$ 
+\[
+    \begin{pmatrix}\overline{e_1}' \\ \overline{e_2}' \\ \vdots \\ \overline{e_n}' \end{pmatrix} = S^{T} \begin{pmatrix}\overline{e_1} \\ \overline{e_2} \\ \vdots \\ \overline{e_n} \end{pmatrix}
+\] 
+\begin{statement}
+Пусть в $V$ фикс. $G$ и $G'$ - базисы и $G' = GS$. Пусть $\overline{a} \underset{G}{\Longleftrightarrow} \alpha$ и $\overline{a} \underset{G'}{\Longleftrightarrow} \alpha'$. Тогда $\alpha = S \alpha'$.
+\end{statement}
+\begin{proof}
+\[
+\overline{a} = G \alpha
+\] 
+\[
+\overline{a} = G' \alpha' = GS \alpha' \Rightarrow \alpha = S\alpha'
+\] 
+\end{proof}
+\begin{definition}
+$\overline{a}, \overline{b}$ наз-ся ортогональными, если он перпендикулярны друг другу.
+\end{definition}
+\begin{definition}
+ Базис $G$ наз-ся ортогональным, если все базис. векторы попарно ортогональны.
+\end{definition}
+\begin{definition}
+Базис $G$ наз-ся ортонормированным (ОНБ), если он ортогональный и нормированный ($\forall i \colon |\overline{e_i}| = 1$).
+\end{definition}

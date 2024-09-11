@@ -1,0 +1,7 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Инфа}{3}{}%
+\contentsline {section}{\numberline {2}Синтаксис $\leftrightarrow $ Семантика}{3}{}%
+\contentsline {section}{\numberline {3}Правильные скобочные п-ти (ПСП)}{4}{}%
+\contentsline {subsection}{\numberline {3.1}ОПР 1 $\Rightarrow $ ОПР 3}{5}{}%
+\contentsline {subsection}{\numberline {3.2}ОПР 2 $\Rightarrow $ ОПР 1}{5}{}%
+\contentsline {subsection}{\numberline {3.3}ОПР 3 $\Rightarrow $ ОПР 2}{5}{}%
