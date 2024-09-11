@@ -1,0 +1,10 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Упражняемся}{3}{}%
+\contentsline {section}{\numberline {2}Векторная алгебра}{3}{}%
+\contentsline {section}{\numberline {3}Операции с векторами}{4}{}%
+\contentsline {subsection}{\numberline {3.1}I. Сложение}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Умножение вектора на $\lambda \in \mathbb {R}$}{5}{}%
+\contentsline {section}{\numberline {4}Системы векторов в пр-ве $V_i$}{6}{}%
+\contentsline {section}{\numberline {5}Понятие базиса лин. пр-ва. Базисы в пр-вах $V_i$}{8}{}%
+\contentsline {section}{\numberline {6}Описание базисов в пр-вах $V_1, V_2, V_3$}{10}{}%
+\contentsline {section}{\numberline {7}Матрица перехода от одного базиса к другому}{12}{}%

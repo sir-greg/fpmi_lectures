@@ -1,0 +1,84 @@
+\section{Синтаксис $\leftrightarrow$ Семантика}
+\begin{center}
+\begin{tabular}{ |c|c| }
+ \hline
+ Синтакис & Семантика \\
+ \hline
+ Пропозициональные формулы & Булевы ф-ции \\
+ Пропозициональные переменные & \\
+ Знаки логических действий ($\land, \lor, \rightarrow, \neg$)& \\
+ Скобки & \\
+ \hline
+\end{tabular}
+\end{center}
+
+\section{Формулы с 1-ой бинарной связкой * \\ (Правильные алгебраические выр-я)}
+
+Рекурсивное правила:
+\begin{enumerate}
+    \item [1) ] $p$ - переменная $\Rightarrow$ $p$ - ПАВ ( правильное алг. выр-е).
+    \item [2) ] $\phi, \psi$ - ПАВ $\Rightarrow (\phi * \psi)$ - ПАВ.
+        \begin{example}
+            ((a * b) * (c * (d * e)))
+        \end{example}
+\end{enumerate}
+
+\begin{theorem}
+Между ПАВ и деревьями синт. разбора $\exists $ взаимно однозначное соотв. (биекция)
+\end{theorem}
+
+Мы докажем: для любого ПАВ $\eta$, не являющегося перменной, $\exists! $ пара ($\phi, \psi$), т. ч. $\eta \eqcirc (\phi * \psi)$
+
+\begin{lemma}[О балансе скобок]
+Баланс любого префикса ПАВ $\geq 0$, при этом $= 0$ только для $\varepsilon$ и всего ПАВ.
+\end{lemma}
+\begin{proof}
+    Индукция по построению.
+    \begin{itemize}
+        \item [База: ] $p$ - переменная $\Rightarrow$ 2 префикса: $\varepsilon$ и $p$, баланс $= 0$
+        \item [Переход: ] Пусть для $\phi$ и $\psi$ лемма верна. Докажем для ($\phi * \psi$)
+
+            \begin{center}
+            \begin{tabular}{ |c|c| } 
+             \hline
+             Префиксы & Баланс \\
+             \hline
+             $\varepsilon$ & 0 \\
+             \hline
+             $(\phi', \phi' \sqsubset \phi$ & $1 + \text{bal}(\phi') > 0$ \\
+             \hline
+             $(\phi * \psi', \psi' \sqsubset \psi$ & $1 + 0 + \text{bal}(\psi')> 0$ \\
+             \hline
+             $(\phi * \psi)$ & 0 \\
+             \hline
+            \end{tabular}
+            \end{center}
+    \end{itemize}
+\end{proof}
+\begin{lemma}
+$\phi$ и $\psi$ восстанавливаются однозначно.
+\end{lemma}
+\begin{proof}
+От противного: пусть $(\phi * \psi) \eqcirc (\zeta * \xi)$
+\begin{itemize}
+    \item [Случай 1) ] $\phi $ - собств. префикс $\zeta$, $\phi \neq \varepsilon$. Тогда в конце $\phi$ баланс $= 0$ (т. к. $\phi$ - ПАВ), и $> 0$ (т. к. $\zeta$ - ПАВ, которое на момент конца $\phi$ не кончилось) $\Rightarrow !!!$ (противоречие)
+    \item [Случай 2) ]  $\phi \eqcirc \zeta$. Однако тогда и $\psi \eqcirc \xi$ (сократили одинаковые символы)
+\end{itemize}
+\end{proof}
+
+Для пропозициональных формул (ПФ):
+
+\textbf{Рекурс. опр.:}
+\begin{itemize}
+    \item [1) ] $p$ - переменная $\Rightarrow$ $p$ - ПФ 
+    \item [2) ] $\phi, \psi$ - ПФ $\Rightarrow$ $(\phi \land \psi), (\phi \lor \psi), (\phi \rightarrow \psi)$ - ПФ.
+    \item [3) ] $\phi$ - ПФ $\Rightarrow$ $\neg\psi$ - ПФ
+\end{itemize}
+
+\begin{lemma}[О балансе]
+Баланс префикса ПФ $\geq 0$, при этом $ = 0$ только для $\varepsilon$, всей ПФ или $\neg\neg\ldots\neg$.
+\end{lemma}
+\begin{note}
+\textbf{Однозначность разбора:} для любой ПФ сущ. единств. правило из (1-3) и единств. сост., из кот. она получ.
+\end{note}
+

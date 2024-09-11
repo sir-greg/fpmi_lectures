@@ -1,0 +1,190 @@
+\section{Булевы функции}
+
+Булевы значения: $\{0, 1\}$
+
+Булева ф-ция от $k$ переменных $f: \{0, 1\}^{k} \rightarrow \{0, 1\}$
+
+$\Rightarrow f$ принимает на вход $2^{k}$ различных кортежей. Каждому кортежу может быть сопоставлено 2 значения $\Rightarrow$. 
+
+Общее число ф-ций - $2^{2^{k}}$
+
+\begin{example}
+$k = 1 \Rightarrow 2^{2^{k}} = 4$
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+ $p$ & $\perp$ & $p$ & $\neg p$ & $T$\\
+ \hline
+ 0 & 0 & 0 & 1 & 1 \\
+ 1 & 0 & 1 & 0 & 1 \\
+ \hline
+\end{tabular}
+\end{center}
+\end{example}
+\begin{example}
+$k = 0 \Rightarrow 2^{2^{0}} = 2$ 
+2 ф-ции:
+\begin{equation*}
+    \begin{system_or}
+        f(\varepsilon) = 0 (\perp)\\
+        f(\varepsilon) = 1 (T) 
+    \end{system_or}
+\end{equation*}
+\end{example}
+\begin{example}
+$k = 2 \Rightarrow 2^{2^{2}} = 16$
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c| } 
+ \hline
+ $p$ & $q$ & $\perp$ & $T$ & $p = pr_1$ & $q = pr_2$ & $\neg p$ & $\neg q$ & $\land$ & $\lor$ & $\oplus $ & $p \rightarrow q$ & $q \rightarrow p$ & $\leftrightarrow$ & $\not\rightarrow$ & $\not\leftarrow$ \\
+ \hline
+ 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0\\
+ \hline
+ 0 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 & 1\\
+ \hline
+ 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0\\
+ \hline
+ 1 & 1 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0\\
+ \hline
+   &   &   &   &   &   &  &  & min & max & xor ($\neq$) & $\leq$& $\geq$ & $=$ & \\
+ \hline
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ $\downarrow$ & $\uparrow$ \\ 
+ \hline
+ 1 & 1 \\
+ \hline
+ 0 & 1 \\
+ \hline
+ 0 & 1 \\
+ \hline
+ 0 & 0 \\
+ \hline
+ Стрелка Пирса (NOR) & Штрих Шеффера (NAND) \\
+ \hline
+\end{tabular}
+\end{center}
+\end{example}
+
+\begin{symb}
+$k > 2$, $\land_k, \lor_k, \oplus_k$, ($\oplus_k$ - ф-ция чётности (PARITY))
+\end{symb}
+\begin{symb}
+\begin{equation*}
+maj(p, q, r) =
+\begin{system_and}
+1, p + q + r \geq 2 \\
+0, p + q + r \leq 1 
+\end{system_and}
+\end{equation*}
+Функция большинства
+
+$maj_{2k + 1}$ - задаётся аналогичным образом
+\end{symb}
+Пороговые функции:
+\begin{equation*}
+thr_{k, n}(p_1, \ldots , p_n) = 
+\begin{system_and}
+1, \sum_{i = 1}^{n} p_i \geq k \\
+0, \text{иначе}
+\end{system_and}
+\end{equation*} 
+
+\textbf{Тернарный оператор:}
+\begin{equation*}
+    p ? q \colon r = 
+    \begin{system_and}
+   q, p = 1 \\
+   r, p = 0
+    \end{system_and}
+\end{equation*}
+
+\section{Пропозициональные ф-лы $\leftrightarrow$ Булевы ф-ции}
+
+\begin{itemize}
+    \item 
+Переход $\Longrightarrow$: \underline{Вычисление} (По табл. истинности)
+    \item 
+Переход $\Longleftarrow$ : \underline{Представление}
+\end{itemize}
+
+\begin{example}
+    $((p \land q) \lor (r \rightarrow \neg s)) \iff $ Дерево разбора
+
+    Листья дерева $ = $ значения перменных
+\end{example}
+
+\textbf{Правила вычисления знач. ф-лы:}
+\begin{symb}
+~\newline
+
+    $p_1, p_2, \ldots , p_n$ - переменные.
+
+    $a_1, a_2, \ldots, a_n$ - значения переменных (0/1)
+
+    $[\phi](a_1, a_2, \ldots, a_n)$ - знач. ф-лы $\phi$ на арг-тах ($a_1, a_2, \ldots, a_n$)
+\end{symb}
+\begin{definition}
+\begin{enumerate}
+    \item [1) ] $[p_i](a_1, a_2, \ldots, a_n) = a_i$
+    \item [2) ] $[\neg \psi](a_1, a_2, \ldots, a_n) = neg([\psi](a_1, \ldots , a_n))$
+        \begin{itemize}
+            \item $\neg$ - символ из ф-лы
+            \item neg - булева ф-ция
+        \end{itemize}
+    \item [3) ] $[(\eta \land \xi)](a_1, a_2, \ldots, a_n) = and([\eta](a_1, a_2, \ldots, a_n), [\xi](a_1, a_2, \ldots, a_n))$ 
+
+        ($\lor$ - or, $\rightarrow$ - implies)
+
+\end{enumerate}
+\textbf{Булева ф-ция получается из пропоз. ф-лы, если провести вычисл. для всех ($a_1, a_2, \ldots, a_n$)}
+\end{definition}
+\begin{definition}
+\textbf{Литерал} - перменная или отрицание переменной. ($p$, $\neg q$)
+\end{definition}
+\begin{definition}
+  \textbf{Конъюнкт} - конъюнкция литералов ($p \land \neg q \land r$)
+\end{definition}
+\begin{definition}
+    \textbf{Дизъюнкт} - дизъюнкция литералов ( $p \lor \neg q \lor r$)
+\end{definition}
+\begin{definition}
+    \textbf{Конъюнктивная нормальная форма (КНФ)} - конъюнкция дизъюнктов ($(\neg p \lor \neg q \lor r) \land (q \lor \neg s)$)
+\end{definition}
+\begin{definition}
+    \textbf{Дизъюнктивная нормальная форма (ДНФ)} - дизъюнкция конъюнктов ($(p \land \neg q \land r) \lor (\neg p \land s)$)
+\end{definition}
+\begin{theorem}
+Любая булева ф-ция выразима как КНФ и как ДНФ
+\end{theorem}
+\begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c| } 
+ \hline
+ p & q & r & Значения ф-ции & ДНФ & КНФ \\
+ \hline
+ 0 & 0 & 0 & 0 & & $(p \lor q \lor r) \land$ \\
+ \hline
+ 0 & 0 & 1 & 1 & $(\neg p \land \neg q \land \neg r) \lor$ & \\
+ \hline
+ 0 & 1 & 0 & 1 & $(\neg p \land q \land \neg r) \lor$ &\\
+ \hline
+ 0 & 1 & 1 & 0 & & $(p \lor \neg q \lor \neg r) \land$\\
+ \hline
+ 1 & 0 & 0 & 0 & & $(\neg p \lor q \lor r) \land$\\
+ \hline
+ 1 & 0 & 1 & 0 & & $(\neg p \lor q \lor \neg r) \land$\\
+ \hline
+ 1 & 1 & 0 & 1 & $(p \land q \land \neg r) \lor$ &\\
+ \hline
+ 1 & 1 & 1 & 0 & & $(\neg p \lor \lor \neg q \lor \neg r) \land$\\
+ \hline
+\end{tabular}
+\end{center}
+\begin{example}
+\[
+f \equiv 0 \Rightarrow f = p \land \neg p
+\] 
+\end{example}

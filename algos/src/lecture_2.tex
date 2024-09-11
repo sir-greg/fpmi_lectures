@@ -1,0 +1,174 @@
+\section{Сортировки}
+
+\begin{task}
+$a_1, a_2, \ldots, a_n$ - дано
+Найти $b = $sort($a$)
+\end{task}
+\begin{task}
+    $a_1, a_2, \ldots, a_n$ - дано. Найти перестановку $G: \{1, 2, \ldots , n\} \rightarrow \{1, 2, \ldots, n\} \colon a_{G(1)} \leq a_{G(2)} \leq \ldots \leq a_{G(n)}$ 
+\end{task}
+
+\begin{statement}
+Пусть $T(n) \geq n$. Тогда, если одна задача решается за $O(T(n))$, то и вторая тоже.
+\end{statement}
+\begin{proof}
+    $2 \Rightarrow 1 \colon b_1 = a_{G(1)}, \ldots , b_n = a_{G(n)}$ 
+
+    $1 \Rightarrow 2\colon$ Отсортируем массив пар: $  (a_1, 1), (a_2, 2), \ldots, (a_n, n)$
+    \begin{equation*}
+        (x_1, y_1) \leq (x_2, y_2) \iff
+        \begin{system_or}
+        x_1 < x_2 \\
+        x_1 = x_2, y_1 < y_2
+        \end{system_or}
+    \end{equation*}
+\end{proof}
+\begin{theorem}[Оценка кол-во сравнений в сортировке сравнениями]
+Если алгоритм может только сравнивать эл-ты, то время сортировки массива $\in \Omega(n\log n)$
+\end{theorem}
+\begin{proof}
+$a_1, a_2, \ldots, a_n$ - все эл-ты попарно различны.
+
+Вопрос алгоса: $a_i ? a_j$ (Дерево сравнений)
+
+Рез-т работы алгоритма зависит от $n$ и п-ти получаемых ответов ($<, >$)
+
+Пусть алгоритм всегда совершает $\leq q$ запросов ($a_i ? a_j$). Тогда есть не более $2^{0} + 2^{1} + \ldots + 2^{q} = 2^{q + 1} - 1 \leq 2^{q + 1}$ возм. протоколов работы алгоритма. Должно быть хотя бы $n!$ разл. протоколов. $\Rightarrow$
+\[
+n! \leq 2^{q + 1} \Rightarrow q = \Omega(n \log n)?
+\] 
+\end{proof}
+\begin{lemma}
+\[
+\log (n!) = \theta (n \log n)
+\] 
+\end{lemma}
+\begin{proof}
+\begin{enumerate}
+    \item [1) ]
+        \[
+            n! = 1 * 2 * \ldots * n \leq n^{n}
+        \]
+         \[
+         \log_2(n!) \leq n\log_2(n) \Rightarrow \log(n!) = O(n\log n)
+         \]    
+     \item [2) ] \[
+     n = 2k \Rightarrow n! \geq (k + 1) * \ldots * (2k) \geq k^{k + 1}
+     \] 
+     \[
+     \log_2(n!) \geq \log_2(k^{k + 1}) = (k + 1)\log_2 k \geq \frac{n}{2} \log_2 (\frac{n}{2}) = \frac{1}{2}n (\log n - 1) = \frac{1}{2}n \log n - \frac{1}{2} \geq \frac{1}{2} n \log n
+     \] 
+     \[
+     \Rightarrow \log_2(n!) = \Omega(n \log_2 n)
+     \] 
+     Аналогично, при $n = 2k + 1$
+\end{enumerate}
+\end{proof}
+
+\subsection{Merge Sort (Сортировка слиянием)}
+Алгоритм:
+\begin{enumerate}
+    \item [1) ] Если массив длины 1, то выходим, иначе делим его на 2 половины;
+    \item [2) ] Рекурсивно сортируем половины
+    \item [3) ] "Мёрджим" две половины.
+\end{enumerate}
+Операция merge:
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Merge]
+merge(a[0..n - 1], b[0..m - 1], to[0..n + m - 1]):
+    i = 0, j = 0
+    while (i < n || j < m):
+        if (j == m || (i < n && a[i] <= b[j])):
+            to[i + j] = a[i]
+            ++i
+        else
+            to[i + j] = b[j]
+            ++j
+\end{lstlisting}
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=MergeSort]
+MergeSort(a[0..n - 1]):
+    if (n <= 1) return
+    k = n / 2
+    l = a[0..k]
+    r = a[k + 1..n - 1]
+    MergeSort(l)
+    MergeSort(r)
+    Merge(l, r, a)
+\end{lstlisting}
+\textbf{Асимптотика:} $T(n) = 2T(\frac{n}{2}) + O(n) \Rightarrow T(n) = O(n\log n)$
+
+\begin{task}
+    \begin{enumerate}
+        \item [1) ] Сделать потребление памяти $O(n)$
+        \item [2) ] Сделать нерекурсивный MergeSort
+    \end{enumerate}
+\end{task}
+
+\begin{task}[О числе инверсий в массиве]
+~\newline
+
+$a_1, a_2, \ldots , a_n$ - дано
+
+Инверсия ($i, j$) := $ i < j \land a_i > a_j$
+\end{task}
+\begin{solution}
+Для решения просто модифицируем merge:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Merge for inversions]
+// ans - global variable
+merge(a[0..n - 1], b[0..m - 1], to[0..n + m - 1]):
+    i = 0, j = 0
+    while (i < n || j < m):
+        if (j == m || (i < n && a[i] <= b[j])):
+            to[i + j] = a[i]
+            ++i
+            ans += j
+        else
+            to[i + j] = b[j]
+            ++j
+            ans += i
+\end{lstlisting}
+\end{solution}
+
+\subsection{Quick Sort \\ (Быстрая сортировка; Сортировка Хоара)}
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Quick Sort]
+Partition(a[0..n - 1], x):
+    B =>  < x
+    C =>  = x
+    D =>  > x
+    return (|B|, |C|, |D|)
+
+QuickSort(a[0..n - 1]):
+    if (n <= 1) return;
+    x = a[random(0, n - 1)]
+    l, m, r = Partition(a, x)
+    QuickSort(a[1..l - 1])
+    QuickSort(a[l + m..n - 1])
+\end{lstlisting}
+\begin{theorem}
+В среднем асимпт. = $O(n \log n)$
+\end{theorem}
+\subsection{Quick Select}
+\begin{definition}
+$a_1, a_2, \ldots, a_n$ - массив
+\textbf{k-ая порядковая статистика:} - эл-т на $k$-ом эл-те после сортировки.
+\end{definition}
+\begin{task}
+Найти k-ую порядковую статистику в массиве $a$.
+\end{task}
+\begin{solution}
+    ~\newline
+    
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=QuickSelect]
+QuickSelect(a[1..n], k):
+    if (n == 1) return a[1];
+    l, m, r = Partition(a, a[random(1, n)])
+    if (k <= l) return QuickSelect(a[1..l], k)
+    if (k <= l + m) return x
+    return QuickSelect(a[l + m..n], k - l - m)
+\end{lstlisting}
+\end{solution}
