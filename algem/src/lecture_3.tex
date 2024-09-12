@@ -207,7 +207,10 @@ $\Rightarrow$
 S_{n1} & S_{n2} & \ldots & S_{nn}\end{pmatrix} = S_{G \to G'}
 \] - матрица перехода от $G$ к $G'$ 
 \[
-    \begin{pmatrix}\overline{e_1}' \\ \overline{e_2}' \\ \vdots \\ \overline{e_n}' \end{pmatrix} = S^{T} \begin{pmatrix}\overline{e_1} \\ \overline{e_2} \\ \vdots \\ \overline{e_n} \end{pmatrix}
+    \begin{pmatrix}\overline{e_1}' & \overline{e_2}' & \ldots & \overline{e_n}' \end{pmatrix} = \begin{pmatrix}\overline{e_1} & \overline{e_2} & \ldots & \overline{e_n} \end{pmatrix} S_{G\to G'} \iff
+\] 
+\[
+G' = GS_{G\to G'}
 \] 
 \begin{statement}
 Пусть в $V$ фикс. $G$ и $G'$ - базисы и $G' = GS$. Пусть $\overline{a} \underset{G}{\Longleftrightarrow} \alpha$ и $\overline{a} \underset{G'}{\Longleftrightarrow} \alpha'$. Тогда $\alpha = S \alpha'$.

@@ -1,0 +1,223 @@
+\section{Отображения и соответствия}
+\begin{definition}
+\textbf{Соответствие} (или \textbf{многозначная ф-ция}, или \textbf{точечно-множ. отображение}) - подмн-во декартова произведения мн-в $A$ и $B$.
+
+$F \subset A \times B$ - соответствие между $A$ и $B$
+\end{definition}
+\begin{note}
+\textbf{Непустозначное соответствие}: $\forall x, \exists y \colon  (x, y) \in F$
+\end{note}
+
+***Картинки графика и двудольного графа***
+
+\begin{definition}
+\textbf{Отображение} - однозначное соотв.
+\[
+\forall x, \exists! y\colon (x, y) \in F
+\] 
+\[
+\forall \text{- для любого}, \exists - \text{существует единственный}
+\] 
+\end{definition}
+\begin{definition}
+\textbf{Частично определённая ф-ция}: $\forall x \colon (\neg \exists y \colon (x, y) \in F) \lor \exists ! y \colon  (x, y) \in F$
+\end{definition}
+\begin{definition}
+\textbf{Инъекция} - отображение, т. ч. $\forall x, y (x \neq y \rightarrow f(x) \neq f(y))$
+\end{definition}
+\begin{definition}
+    \textbf{$f(x)$} - тот элемент $z \colon (x, z) \in F$
+\end{definition}
+\begin{definition}
+    $F(x)$ - образ $x \iff F(x) = \{z \colon (x, z) \in F\}$
+\end{definition}
+\begin{definition}
+    \textbf{Инъективные соответствия:}
+    \[
+    \forall x, y (x \neq y \rightarrow F(x) \cap F(y) = \emptyset)
+    \] 
+\end{definition}
+\begin{definition}
+    \textbf{Сюрьекция} - отображение, т. ч. $\forall y, \exists x (y = f(x))$
+\end{definition}
+\begin{definition}
+    \textbf{Сюрьективное соответствие}:
+    \[
+    \forall y, \exists x \colon  (x, y) \in F
+    \] 
+    Или по другому: $\forall y, \exists x \colon y \in F(x) $
+\end{definition}
+\begin{definition}
+    \textbf{Биекция} - отображение, которое одновременно сюрьекция и биекция.
+
+    \textbf{Биекция = отображение + сюрьекция + инъекция}
+\end{definition}
+\begin{note}
+    Отдельного понятия биективного соответствия \underline{нет}.
+\end{note}
+\begin{definition}
+    \textbf{Обратное соответствие} $F \subset A \times B$ - $F^{-1} \subset B \times A$:
+    \[
+        (x, y) \in F \iff (y, x) \in F^{-1}
+    \] 
+\end{definition}
+\begin{theorem}
+    \textbf{F - Биекция} $\iff$ \textbf{F - взаимнооднозначное соответствие} (т. е. $F$ и $F^{-1}$ - отображения)
+\end{theorem}
+\begin{note}
+        \textbf{Частично опред. ф-ция + непустознач. соотв = отображение}
+\end{note}
+\begin{proof}
+    ~\newline
+        \begin{itemize}
+            \item $F$ явл. инъективным соответствием $\iff$ $F^{-1} - $ частично опред. ф-ция.
+            \item $F$ явл. сюрьективным соответствием $\iff F^{-1} - $ непустозначное соотв.
+        \end{itemize}
+\end{proof}
+
+\subsection{Образ и прообраз}
+\begin{definition}
+Пусть $S \subset A$. Тогда образ $S$: 
+\begin{itemize}
+    \item Для отображения: $f(S) = \{f(x) | x \in S\}$ 
+    \item Для соотв.: $F(S) = \bigcup_{x \in S}^{} F(x)$
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+Пусть $T \subset B$. Тогда прообраз $T$:
+\begin{itemize}
+    \item Для отображения: $f^{-1}(T) = \{x | f(x) \in T\}$
+    \item Для соотв.: $F^{-1} = \{x | F(x) \cap T \neq \emptyset\}$
+\end{itemize}
+\end{definition}
+
+\begin{statement}
+$F(S \cap Q) \subset F(S) \cap F(Q)$
+\end{statement}
+\begin{proof}
+Пусть $y \in F(S\cap Q) \Rightarrow \exists x \in S \cap  Q \colon  y \in F(x)$:
+\begin{equation*}
+\begin{system_and}
+\exists x \in S \colon  y \in F(x) \\
+\exists x \in Q \colon  y \in F(x)
+\end{system_and}
+\Rightarrow
+\begin{system_and}
+y \in F(S) \\
+y \in F(Q) 
+\end{system_and}
+\Rightarrow y \in F(S) \cap F(Q)
+\end{equation*}
+\end{proof}
+\begin{statement}[\underline{Обратное.}]
+Если $F$ - инъективно, то
+\[
+    F(S) \cap F(Q) \subset F(S \cap  Q)
+\]
+\end{statement}
+\begin{proof}
+    \[
+    y \in F(S) \cap  F(Q) \Rightarrow
+    \] 
+    \begin{equation*}
+    \begin{system_and}
+    y \in F(S) \\
+    y \in F(Q)
+    \end{system_and}
+    \Rightarrow
+    \begin{system_and}
+    \exists x_1 \in S \colon y \in F(x_1) \\
+    \exists x_2 \in Q \colon y \in F(x_2)
+    \end{system_and}
+    \Rightarrow x_1 \neq x_2 \Rightarrow \text{Нарушает инъективность} 
+    \end{equation*}
+    \[
+     \Rightarrow x_1 = x_2 = x \Rightarrow \exists x \in S \cap Q \colon y \in F(x)
+    \] 
+\end{proof}
+\subsection{Композиция}
+\begin{definition}
+ \textbf{Композиция отображений} $f \circ g$, опр. так:
+ \[
+ f \circ g(x) = f(g(x))
+ \] 
+\end{definition}
+\begin{definition}
+    \textbf{Композиция соотв.} $F \circ G$
+    \begin{equation*}
+    \begin{system_and}
+    F: B \rightarrow C \\
+    G: A \rightarrow B
+    \end{system_and}
+    \Rightarrow
+    F \circ G(x) = F(G(x))
+    \end{equation*}
+    Причём $G(x)$ - это мн-во значений $\Rightarrow$ $F(G(x))$ - образ $G(x)$
+    
+    Или, эквив.: $(x, z) \in F \circ G \iff \exists y ((x, y) \in G \land (y, z) \in F)$
+\end{definition}
+\textbf{Свойства композиции:}
+\begin{enumerate}
+    \item [1) ] \textbf{Ассоциативность: } $F \circ (G \circ H) = (F \circ G) \circ H$
+    \item [2) ] \textbf{Отсутствие} коммутативности (в общем случае): $F \circ G \neq G \circ F$
+\end{enumerate}
+
+\begin{symb}
+\textbf{Тождественное отображение: } \[
+    id_A: A \rightarrow A
+\] 
+\[
+    id_A(x) = x
+\] 
+\[
+G: A \rightarrow B \Rightarrow G \circ id_A(x) = id_B \circ G(x) = G(x)
+\] 
+\end{symb}
+\begin{statement}
+    Если $F: A \rightarrow A$ - биекция, то:
+    \[
+    F \circ F^{-1} = id_A = F^{-1} \circ F
+    \] 
+\end{statement}
+\begin{symb}
+\textbf{Мн-во всех отображений из $A$ в $B$} будем называть $B^{A}$
+\end{symb}
+\begin{statement}
+Если $|A| = n$ и $|B| = k$, то $|B^{A}| = k^{n}$
+\end{statement}
+\begin{theorem}
+Пусть $A, B, C$ - мн-ва. Тогда:
+\begin{enumerate}
+    \item [1) ] $A^{C} \times B^{C} \sim (A \times B)^{C}$
+    \item [2) ] $A^{B \cup C} \sim A^{B} \times A^{C}, B \cap C \neq \emptyset$
+    \item [3) ] $A^{B\times C} \sim (A^{B})^{C}$ 
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\begin{enumerate}
+    \item [1) ] \begin{equation*}
+            \begin{system_and}
+                f: C \rightarrow A \\
+                g: C \rightarrow B
+            \end{system_and} \longleftrightarrow h: C \rightarrow A \times B, h(x) = (f(x), g(x))
+    \end{equation*} 
+\item [2) ] \begin{equation*}
+    \begin{system_and}
+        f: B \rightarrow A \\
+        g: C \rightarrow A
+    \end{system_and} \longleftrightarrow h: B \cup C \rightarrow A \Rightarrow
+    h(x) = 
+    \begin{system_and}
+    f(x), x \in B \\
+    g(x), x \in C
+    \end{system_and}
+\end{equation*}
+\item [3) ] \begin{equation*}
+        \begin{system_and}
+f: B \times C \rightarrow A \\
+g: C \rightarrow A^{B}
+        \end{system_and} \Rightarrow g(x): B \rightarrow A \Rightarrow g(x)(z) = f(z, x) 
+\end{equation*} 
+\end{enumerate}
+\end{proof}
