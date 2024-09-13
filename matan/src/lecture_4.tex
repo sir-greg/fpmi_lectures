@@ -1,0 +1,203 @@
+\section{\textsection 2. Предел последовательности}
+\subsection{Определение предела}
+\begin{definition}
+    $a: \N \rightarrow A$ - п-ть эл-ов мн-а $A$. Значение $a(n)$ - наз-ся $n$-ым членом п-ти. (Обозначается $a_n$). Сама п-ть обозначается $\{a_n\}$ или $a_n, n \in \N$
+    
+    Если $A = \R$ - то $\{a_n\}$ - числовая п-ть.
+\end{definition}
+\begin{example}
+    \begin{enumerate}
+        \item [1) ]
+    \[
+    a: \N \rightarrow \{c\}, c \in \R
+    \] 
+    Здесь постоянная п-ть ($a_n = c, \forall n \in \N$)
+\item [2) ] $a_n = n^{2}, n \in \N$
+\item [3) ] $a_{n + 2} = a_{n + 1} + a_{n}, a_1 = a_2 = 1$ - п-ть Фиббоначи.
+    \end{enumerate}
+\end{example}
+\begin{definition}
+    Число $a$ наз-ся пределом п-ти $\{a_n\}$, если для любого $\varepsilon > 0$ найдётся такой номер $N$, что $|a_n - a| < \varepsilon$ для всех $n \geq N$. Обозначается, как $\lim_{n \to \infty}a_n = a$
+\end{definition}
+\begin{definition} [В кванторах]
+    \[
+    \lim_{n \to \infty} a_n = a \iff \forall \varepsilon > 0 \exists N \in \N \colon \forall n \in \N (n \geq N \Rightarrow |a_n - a| < \varepsilon)
+    \] 
+    Или, $a_n \rightarrow a$ (при $n \rightarrow \infty$)
+\end{definition}
+\begin{note}
+\[
+    \lim_{n\to\infty}a_n = a \iff \forall \varepsilon > 0, M = \{ n \in \N  \colon a_n \not\in(a -\varepsilon, a + \varepsilon)\}, M \text{ - конечно}
+\] 
+\end{note}
+\begin{definition}
+    Если $\exists \lim_{n\to\infty}a_n$, то $\{a_n\}$ наз-ся \textbf{сходящейся п-тью}, иначе - \textbf{расходящейся п-тью}
+\end{definition}
+\begin{example}
+    \[
+    \lim_{n\to\infty}\frac{1}{n} = 0
+    \]  
+    Зафикс. $\varepsilon > 0$. Рассмотрим $|\frac{1}{n} - 0| < \varepsilon \iff \frac{1}{n} < \varepsilon \iff n > \frac{1}{\varepsilon} \Rightarrow $ нам подойдёт $N = \floor{\frac{1}{\varepsilon}} + 1$. Если $n \geq N \Rightarrow n > \frac{1}{\varepsilon} \Rightarrow |\frac{1}{n} - 0| < \varepsilon$
+\end{example}
+\begin{theorem}(О единственности предела)
+    Если $\lim_{n\to\infty} a_n = a$ и $\lim_{n\to\infty}a_n = b$, то $a = b$.
+\end{theorem}
+\begin{proof}
+Зафикс. $\varepsilon > 0$. По опред. предела $\exists N_1, \forall n \geq N_1 (|a_n - a| < \frac{\varepsilon}{2})$ и $\exists N_2, \forall n \geq N_2(|a_n - b| < \frac{\varepsilon}{2})$.
+
+Положим $N = max(N_1, N_2)$:
+\[
+|a - b| = |a - a_N + a_N - b| \leq |a - a_N| + |b - a_N| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+\] 
+Т. к. $\varepsilon > 0$ - любое $\Rightarrow$, то $|a - b| = 0$, т. е. $a = b$
+\end{proof}
+\begin{task}
+\[
+\lim_{n\to\infty}a_n = a \iff \lim_{n\to\infty}|a_n| = |a|
+\] 
+\end{task}
+\begin{definition}
+П-ть $\{a_n\}$ наз-ся \textbf{ограниченной}, если $\{a_n \colon  n \in \N\}$ - ограничено.
+\end{definition}
+\begin{theorem}(Об ограниченности сходящейся п-ти)
+Если $\{a_n\}$ сходится, то она ограничена.
+\end{theorem}
+\begin{proof}
+Пусть $\lim_{n\to\infty}a_n = a$. По опред. предела (для $\varepsilon = 1$) $\exists N, \forall n \geq N (a - 1 < a_n < a + 1)$. Положим $m = min\{a_1, \ldots, a_{N - 1}, a - 1\}, M = max \{a_1, \ldots , a_{N - 1}, a + 1\}$. Тогда $m \leq a_n \leq M$ для всех $n \in \N$.
+\end{proof}
+\begin{note}
+Обратное утв. \textbf{неверно}:
+\begin{example}
+\[
+a_n = (-1)^{n}, n \in \N
+\] 
+Предположим, что $a_n$ сходится:
+
+По опред. предела($\varepsilon = 1$) $\exists N, \forall n \geq N (a - 1 < (-1)^{n} < a + 1) $
+
+\begin{itemize}
+    \item При чётном $n \Rightarrow 1 < a + 1$
+    \item При нечётном $n \Rightarrow a - 1 < -1$
+\end{itemize}
+$\Rightarrow a < 0 \land a > 0!!!$ - противоречие
+\end{example}
+\end{note}
+
+\begin{lemma}
+    Для всякого $m \in \N$ п-ти $\{a_n\}$ и $\{b_n\}$, где $b_n = a_{n + m}, \forall n \in \N$ имеют предел одновременно, и если имеют, то пределы равны.
+\end{lemma}
+\begin{proof}
+    Зафикс. $\varepsilon > 0 \Rightarrow$
+    \[
+    \forall n \geq N_1 \colon  (|a_n - a| < \varepsilon) \Rightarrow (\forall n \geq N_1(|a_{n + m} - a| < \varepsilon))
+    \] 
+    \[
+        (\forall n \geq N_2 (|a_{n + m} - a| < \varepsilon)) \Rightarrow (\forall n \geq N_2 + m (|a_n - a| < \varepsilon))
+    \] 
+    \[
+    \Rightarrow \lim_{n\to\infty} a_n = a \iff \lim_{n\to\infty}b_n = a
+    \] 
+\end{proof}
+\begin{definition}
+П-ть $\{b_n\}$ об-ся $\{a_{n + m}\}$ и наз-ся $m$-ным хвостом $\{a_n\}$
+\end{definition}
+\begin{theorem}[О пределе в нер-вах]
+Если $a_n \leq b_n$ для всех $n \in \N$ и $\lim_{n\to\infty}a_n = a, \lim_{n\to\infty}b_n = b$, то $a \leq b$
+\end{theorem}
+\begin{proof}
+От прот. Пусть $b < a$. По опред. предела
+\[
+    \exists N_1 \colon \forall n \geq N_1 (a - \frac{a - b}{2} < a_n)
+\]
+\[
+\exists N_2 \colon  \forall n \geq N_2 (b_n < b + \frac{a - b}{2})
+\] 
+Положим $N = max(N_1, N_2)$, тогда:
+\[
+\frac{a + b}{2} < a_N \text{ и } b_N < \frac{a + b}{2} \Rightarrow b_N < a_N !!!
+\] 
+\end{proof}
+\begin{note}
+\begin{example}
+\[
+0 < \frac{1}{2}, \text{но } \lim_{n\to\infty} \frac{1}{n} = 0
+\] 
+\end{example}
+\end{note}
+\begin{consequence}
+Если $\lim_{n\to\infty}a_n = a, \lim_{n\to\infty}b_n = b, a < b \Rightarrow \exists N, \forall n \geq N (a_n < b_n)$
+\end{consequence}
+\begin{theorem}[О зажатой п-ти]
+Если $a_n \leq c_n \leq b_n, \forall n \in \N$ и $\lim_{n\to\infty}a_n = \lim_{n\to\infty}b_n = a$, то $\exists \lim_{n\to\infty}c_n = a$
+\end{theorem}
+\begin{proof}
+Зафикс. $\varepsilon > 0$. По опр. предела:
+\[
+    \exists N_1, \forall n \geq N_1 (a - \varepsilon < a_n)
+\]
+\[
+    \exists N_2, \forall n \geq N_2(b_n < a + \varepsilon)
+\] 
+Положим $N = max(N_1, N_2)$. Тогда при всех $n \geq N$ имеем:
+\[
+a - \varepsilon < a_n \leq c_n \leq b_n < a + \varepsilon \Rightarrow |c_n - a| < \varepsilon
+\] 
+$\Rightarrow \lim_{n\to\infty} c_n = a$. 
+Ч. Т. Д.
+\end{proof}
+\begin{example}
+\[
+\lim_{n\to\infty} q^{n} = 0, |q| < 1
+\] 
+\begin{itemize}
+    \item $q = 0$: верно
+    \item $q \neq 0 \Rightarrow \frac{1}{|q|} > 1 \Rightarrow \frac{1}{|q|} = 1 + \alpha, \alpha > 0$
+        \[
+        \frac{1}{|q|^{n}} = (1 + \alpha)^{n} \geq 1 + n\alpha > n\alpha
+        \] 
+        \[
+        \Rightarrow 0 < |q|^{n} < \frac{1}{n\alpha} (\frac{1}{n\alpha} \rightarrow 0) \Rightarrow |q|^{n} \rightarrow 0
+        \] 
+\end{itemize}
+\end{example}
+\begin{theorem}(Арифметические операции с пределами)
+Пусть $\lim_{n\to\infty}a_n = a, \lim_{n\to\infty}b_n = b$. Тогда:
+\begin{enumerate}
+    \item [1) ] $\lim_{n\to\infty}(a_n + b_n) = a + b$ 
+    \item [2) ] $\lim_{n\to\infty}(a_n b_n) = ab$
+    \item [3) ] Если $b \neq 0$ и $b_n \neq 0, \forall n \in \N$, то
+        \[
+            \frac{\lim_{n\to\infty}a_n}{\lim_{n\to\infty}b_n} = \frac{a}{b}
+        \]
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+    \begin{enumerate}
+        \item [1) ] Заф. $\varepsilon > 0$. По опр. предела:
+            \[
+            \exists N_1, n \geq N_1 (|a_n - a| < \frac{\varepsilon}{2})
+            \] 
+            \[
+            \exists N_2, n \geq N_2 (|b_n - b| < \frac{\varepsilon}{2})
+            \] 
+            Положим $N = max(N_1, N_2)$. Тогда $\forall n \geq N\colon $
+            \[
+            |(a_n + b_n) -(a + b)| \leq |(a_n - a) + (b_n - b)| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+            \] 
+        \item [2) ] По теор. 2 п-ть $\{a_n\}$ огр., т. е.
+            \[
+            \exists C > 0, \forall n \in \N (|a_n| \leq C) |b| \leq C
+            \] 
+            Заф. $\varepsilon > 0$. По опр. предела:
+            \[
+            \exists N_1, \forall n \geq N_1 (|a_n - a| < \frac{\varepsilon}{2C})
+            \] 
+            \[
+            \exists N_2, \forall n \geq N_2 (|b_n - b| < \frac{\varepsilon}{2C})
+            \] 
+            Тогда $\forall n > N = max(N_1, N_2)$:
+\[
+|a_n b_n - ab| = |a_n b_n -a_n b + a_n b - ab| \leq |a_n||b_n - b| + |b||a_n - a| < C \frac{\varepsilon}{2C} + C \frac{\varepsilon}{2C} = \varepsilon
+\] 
+    \end{enumerate}
+\end{proof}

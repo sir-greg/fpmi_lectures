@@ -1,1 +1,3 @@
 \babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}\textsection 2. Предел последовательности}{7}{}%
+\contentsline {subsection}{\numberline {1.1}Определение предела}{7}{}%
