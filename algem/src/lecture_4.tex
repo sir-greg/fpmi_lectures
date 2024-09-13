@@ -1,0 +1,280 @@
+\section{Декартова система коор-т}
+
+\[
+    G = \begin{pmatrix}\overline{e_1} & \overline{e_2} \end{pmatrix}
+\] - ОНБ 
+
+\[
+    G' \text{- $G$ повёрнутый на $\alpha$}
+\] 
+\[
+    \overline{e_1}' = \cos \alpha \overline{e_1} + \sin \alpha \overline{e_2}
+\] 
+\[
+    \overline{e_2}' = -\sin\alpha \overline{e_1} + \cos \alpha \overline{e_2}
+\] 
+\[
+    \Rightarrow S = \begin{pmatrix}\cos \alpha & -\sin \alpha \\ \sin \alpha & \cos \alpha \end{pmatrix} = R(\alpha) \text{ - Rotation - поворот. }
+\] 
+
+\begin{statement}
+    Пусть $S = S_{G\to G'}$. Пусть $T = S_{G'\to G''}$. Тогда:
+    \[
+    S T = S_{G \to G''}
+    \] 
+\end{statement}
+\begin{proof}
+\[
+G' = GS, G'' = G'T \Rightarrow G'' = G'T = G ST
+\] 
+\end{proof}
+\begin{statement}
+    Пусть $S$ - матрица перехода от $G$ к $G'$. $T$ - матр. перехода от $G'$ к $G$. Тогда:
+    \[
+    ST = TS = E \text{ - единичная матрица}
+    \] 
+\end{statement}
+\begin{proof}
+    \[
+    G'' = G \Rightarrow ST \text{ - матрица перехода от $G$ к $G$} \Rightarrow ST = E
+    \] 
+    \[
+    TS \text{ - матрица перехода от $G'$ к $G'$} \Rightarrow TS = E
+    \] 
+\end{proof}
+\begin{symb}
+    \textbf{Единичная матрица $E$} - диагональная матрица с единицами на главной диагонали.
+    \[
+        E = \begin{pmatrix}1 & \ldots & 0 \\ 0 & \ddots & 0 \\ 0 & \ldots & 1 \end{pmatrix}
+    \] 
+\end{symb}
+\begin{definition}
+Если выполняется рав-во $ST = TS = E$, то матрица $T$ называется \textbf{обратной} к $S$.
+\end{definition}
+\begin{definition}
+Матрица наз-ся \textbf{обратимой}, если у неё есть обратная матрица.
+\end{definition}
+\begin{statement}
+Если обратная матрица сущ-ет, то она единственная.
+\end{statement}
+\begin{proof}
+От. прот. Пусть $A^{-1}, \overline{A}^{-1}$ - обратные матрицы к матр. $A$.
+\[
+A^{-1} = E A^{-1} = (\overline{A}^{-1} A) A^{-1} = \overline{A}^{-1}(A A^{-1}) = \overline{A}^{-1}E = \overline{A}^{-1}
+\] 
+\end{proof}
+\begin{consequence}
+Матрица перехода от одного базиса к другому \textbf{всегда обратима.}
+\end{consequence}
+\begin{task}
+Док-ть, что $R(\alpha)$ обладает св-вами:
+\begin{itemize}
+    \item [1) ]$R(\alpha) R(\beta) = R(\alpha + \beta)$
+    \item [2) ] $R(\alpha)^{-1} = R(-\alpha) = R(\alpha)^{T}$
+\end{itemize}
+\end{task}
+\begin{task}
+Пусть $\overline{a} = \begin{pmatrix}\alpha_1 \\ \alpha_2 \end{pmatrix}$ (отн. ОНБ $G$) - вектор, выход. из нач. коор-т. $\overline{b}$ - вектор $\overline{a}$ повернутый на $\alpha$, тогда:
+\[
+\overline{b} = R(\alpha) \overline{a} = R(\alpha) \begin{pmatrix}\alpha_1 \\ \alpha_2 \end{pmatrix}
+\] 
+\end{task}
+
+\begin{definition}
+Пусть т. $O$ - фикс. точка, начало коор-т. $G$ базис в $V_i$. Тогда:
+    $(O, G)$ - ДСК
+\end{definition}
+\begin{definition}
+    ДСК наз-ся \textbf{прямоугольной}, если $G$ - ОНБ.
+\end{definition}
+\begin{definition}
+    $A$ - точка. Тогда коор-ты вектора $\overline{OA}$ наз-ся коор-тами точки $A$ в ДСК $(O, G)$:
+    \[
+        A \underset{(O, E)}{\Longleftrightarrow} \alpha \iff \overline{OA} = G\alpha = \begin{pmatrix}\overline{e_1} & \overline{e_2} & \overline{e_3} \end{pmatrix} \begin{pmatrix}\alpha_1 \\\alpha_2 \\ \alpha_3 \end{pmatrix}
+    \] 
+\end{definition}
+\begin{statement}
+$A \underset{(O, E)}{\Longleftrightarrow} \alpha, B \underset{(O, E)}{\Longleftrightarrow} \beta \Rightarrow$
+\[
+\overline{AB} = \overline{OB} - \overline{OA} = G\beta - G\alpha = G(\beta - \alpha)
+\] 
+Итого: чтобы найти вектор по его концам, нужно из коор-ты конца вычесть коор-ту начала.
+\end{statement}
+
+\begin{statement}[О делении отрезка в данном соотношении]
+    \[
+    A \underset{(O, E)}{\Longleftrightarrow}\alpha, B \underset{(O, E)}{\Longleftrightarrow} \beta
+    \] 
+    Пусть т. $C$ делит отрезок $[A, B]$ в отношении $\frac{\lambda}{\mu}$. Тогда:
+    \[
+        C \underset{(O, E)}{\Longleftrightarrow} \frac{\mu\alpha + \lambda \beta}{\lambda + \mu} \iff
+    \] 
+    \[
+        \iff \overline{c} = \frac{\mu}{\lambda + \mu} \overline{a} + \frac{\lambda}{\lambda + \mu} \overline{b} \text{ - выпуклая ЛК}
+    \] 
+
+\end{statement}
+\begin{proof}
+    \[
+    \overline{OC} = \overline{OA} + \overline{AC}
+    \] 
+    \[
+    \overline{AC} = \frac{\lambda}{\lambda + \mu} \overline{AB} = \frac{\lambda}{\lambda + \mu}(\overline{b} - \overline{a})
+    \] 
+    \[
+    \overline{c} = \alpha + \frac{\lambda}{\lambda + \mu} (\overline{b} - \overline{a}) = (1 - \frac{\lambda}{\lambda + \mu}) \overline{a} + \frac{\lambda}{\lambda + \mu} \overline{b} = \frac{\mu}{\lambda + \mu} \overline{a} + \frac{\lambda}{\lambda + \mu} \overline{b}
+    \] 
+\end{proof}
+\begin{theorem} [Об изменении коор-т точки при замене ДСК]
+Пусть в $V_i$ фикс.: $(O, G)$ (I ДСК) и $(O', G')$ (II ДСК).
+
+Пусть $A \underset{(O, G)}{\Longleftrightarrow} \alpha$ и $A \underset{(O', G')}{\Longleftrightarrow} \alpha'$ и пусть $S = S_{G \to G'}$
+
+(***Картинка***)
+
+Тогда $\alpha = S\alpha' + \gamma$
+\end{theorem}
+\begin{proof}
+\[
+\overline{OA} = \overline{OO'} + \overline{O'A}
+\] 
+\[
+\overline{OA} = G \alpha
+\] 
+\[
+\overline{OO'} + \overline{O'A} = G \lambda + G' \alpha' = G \lambda + GS \alpha' = G(S\alpha' + \gamma)
+\] 
+\end{proof}
+\section{Скалярное произведение}
+
+\begin{definition}
+$V_i$. \textbf{Скалярное произведение векторов $\overline{a}$ и $\overline{b}$} обозначаем $(\overline{a}, \overline{b})$ (в физике $\overline{a} \cdot \overline{b}$). Это число, равное:
+\[
+    (\overline{a}, \overline{b}) = |\overline{a}||\overline{b}|\cos \alpha
+\] 
+\[
+\alpha = \angle (\overline{a}, \overline{b})
+\] 
+Если хотя бы один из векторов нулевой, то скал. произ. $ = 0$.
+\end{definition}
+
+\begin{symb}
+\[
+    (\overline{a}, \overline{a}) = |\overline{a}|^{2} \text{ - скалярный квадрат $\overline{a}$}
+\] 
+\end{symb}
+\begin{note}
+    \[
+        (\overline{a}, \overline{b}) = 0 \iff \overline{a} \perp \overline{b}
+    \] 
+\end{note}
+\begin{definition}
+    (***Картинка***)
+
+    Вектор, порождаемые напр. отр-ом $\overline{OA'}$ наз-ся проекцией вектора $\overline{a}$ на вектор $\overline{b}$:
+    \[
+    pr_{\overline{b}}\overline{a} = \overline{OA'}
+    \] 
+    \[
+        (pr_{\overline{b}}\overline{a} = 0 \Rightarrow (\overline{a}, \overline{b}) = 0)
+    \] 
+\end{definition}
+
+\begin{statement} (Линейность векторной проекции)
+\begin{itemize}
+    \item [a) ] $pr_{\overline{b}}(\overline{a_1} + \overline{a_2}) = pr_{\overline{b}}(\overline{a_1}) + pr_{\overline{b}}(\overline{a_2}) ( \overline{b} \neq \overline{o})$ - ассоциативность
+    \item [b) ] $\forall \lambda \in \R \colon pr_{\overline{b}} (\lambda \overline{a}) = \lambda pr_{\overline{b}}(\overline{a})$ - однородность
+\end{itemize}
+\end{statement}
+\begin{proof}
+    \begin{itemize}
+        \item [a) ]
+    (***Картинка***)
+
+    \[
+        pr_{\overline{b}}(\overline{a_1} + \overline{a_2}) = \overline{OA_2'} = \overline{OA_1'} + \overline{A_1'A_2'} = pr_{\overline{b}}(\overline{a_1}) + pr_{\overline{b}}(\overline{a_2})  
+    \] 
+\item [b) ] Для $\lambda > 0$:
+    (****Картинка***)
+    \[
+    pr_{\overline{b}}(\lambda\overline{a}) = \overline{OA'} = \lambda \overline{OA'} = \lambda pr_{\overline{b}}(\overline{a})
+    \] 
+    \end{itemize}
+\end{proof}
+\begin{statement}
+Пусть $\overline{b} \neq \overline{o}$. Тогда:
+    \[
+        (pr_{\overline{b}}(\overline{a}), \overline{b}) = (\overline{a}, \overline{b})
+    \] 
+\end{statement}
+\begin{proof}
+    \[
+    \angle(\overline{a}, \overline{b}) = \phi.
+    \] 
+    \begin{itemize}
+        \item 
+    Если $\phi = \frac{\pi}{2}$ - рав-во верно.
+        \item 
+            Если $\overline{a} = \overline{o}$ - рав-во верно
+        \item Пусть $\phi \neq \frac{\pi}{2} \Rightarrow \cos\alpha \neq 0$.
+            \begin{equation*}
+            |pr_{\overline{b}}(\overline{a})| = |\overline{a}| |\cos \phi| = 
+            \begin{system_and}
+            |\overline{a}|\cos \phi, \text{если } pr_{\overline{b}}(\overline{a}) \uparrow\uparrow \overline{b} \\
+            -|\overline{a}|\cos \phi, \text{если } pr_{\overline{b}}(\overline{a}) \uparrow\downarrow \overline{b}
+            \end{system_and}
+            \end{equation*}
+    \end{itemize}
+    \begin{equation*}
+    \Rightarrow (pr_{\overline{b}}(\overline{a}), \overline{b}) = 
+    \begin{system_and}
+    |\overline{a}|\cos \phi |\overline{b}| * 1, \text{если } pr_{\overline{b}}(\overline{a}) \uparrow\uparrow \overline{b} \\
+    -|\overline{a}|\cos \phi |\overline{b}| * (-1), \text{если } pr_{\overline{b}}(\overline{a}) \uparrow\downarrow \overline{b}
+    \end{system_and} = (\overline{a}, \overline{b})
+    \end{equation*} 
+\end{proof}
+\begin{theorem}[О св-вах скалярного произведения]
+\begin{enumerate}
+    \item Симметричность $(\overline{a}, \overline{b}) = (\overline{b}, \overline{a})$
+    \item Аддитивность по I арг-ту: $(\overline{a_1} + \overline{a_2}, \overline{b}) = (\overline{a_1}, \overline{b}) + (\overline{a_2}, \overline{b})$
+    \item Однородность по I арг-ту: $(\lambda\overline{a}, \overline{b}) = \lambda(\overline{a}, \overline{b})$
+    \item Полож. определённость: $(\overline{a}, \overline{a}) \geq 0, \forall \overline{a} \text{ и } (\overline{a}, \overline{a}) \iff \overline{a} = \overline{o}$
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+    \begin{enumerate}
+        \item [3) ] При $\lambda = 0$ и $\lambda = -1$ очев. При $\lambda > 0\colon $
+            \[
+            \angle (\lambda\overline{a}, \overline{b}) = \angle (\overline{a}, \overline{b})
+            \] 
+            \[
+                (\lambda\overline{a}, \overline{b}) := |\lambda\overline{a}||\overline{b}|\cos (\lambda\overline{a}, \overline{b}) = \lambda |\overline{a}||\overline{b}| \cos \angle (\overline{a}, \overline{b}) = \lambda (\overline{a}, \overline{b})
+            \] 
+        \item [2) ] \[
+                (\overline{a_1} + \overline{a_2}, \overline{b}) = (pr_{\overline{b}}(\overline{a_1} + \overline{a_2}), \overline{b}) = (pr_{\overline{b}}(\overline{a_1}) + pr_{\overline{b}}(\overline{a}), \overline{b}) = \begin{bmatrix}pr_{\overline{b}}(\overline{a_1}) = \lambda_1 \overline{b} \\ pr_{\overline{b}}(\overline{a_2}) = \lambda_2 \overline{b} \end{bmatrix} = 
+        \] 
+        \[
+        = ((\lambda_1 + \lambda_2) \overline{b}, \overline{b}) = (\lambda_1 + \lambda_2)(\overline{b}, \overline{b}) =  \lambda_1 (\overline{b}, \overline{b}) + \lambda_2 (\overline{b}, \overline{b}) = (\lambda_1 \overline{b}, \overline{b}) + (\lambda_2 \overline{b}, \overline{b}) =
+        \] 
+        \[
+        =  (pr_{\overline{b}}(\overline{a_1}), \overline{b}) + (pr_{\overline{b}}(\overline{a_2}), \overline{b}) = (\overline{a_1}, \overline{b}) + (\overline{a_2}, \overline{b})
+        \] 
+    \end{enumerate}
+\end{proof}
+\begin{statement}
+    Пусть $\overline{b} \neq \overline{o}$. Тогда:
+    \[
+    pr_{\overline{b}}(\overline{a}) = \frac{(\overline{a}, \overline{b})}{|\overline{b}|^{2}} * \overline{b}
+    \] 
+\end{statement}
+\begin{proof}
+\[
+pr_{\overline{b}}(\overline{a}) = \lambda \overline{b} \text{    | } \cdot \overline{b}
+\] 
+\[
+    (pr_{\overline{b}}(\overline{a}), \overline{b}) = \lambda (\overline{b}, \overline{b}) = \lambda |\overline{b}|^{2}
+\] 
+\[
+    \lambda = \frac{(pr_{\overline{b}}(\overline{a}))}{|\overline{b}|^{2}} = \frac{(\overline{a}, \overline{b})}{|\overline{b}|^{2}}   
+\] 
+\end{proof}
