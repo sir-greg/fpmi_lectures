@@ -76,7 +76,7 @@ A^{-1} = E A^{-1} = (\overline{A}^{-1} A) A^{-1} = \overline{A}^{-1}(A A^{-1}) =
 \begin{task}
 Пусть $\overline{a} = \begin{pmatrix}\alpha_1 \\ \alpha_2 \end{pmatrix}$ (отн. ОНБ $G$) - вектор, выход. из нач. коор-т. $\overline{b}$ - вектор $\overline{a}$ повернутый на $\alpha$, тогда:
 \[
-\overline{b} = R(\alpha) \overline{a} = R(\alpha) \begin{pmatrix}\alpha_1 \\ \alpha_2 \end{pmatrix}
+\overline{b} = R(\alpha), \overline{a} = R(\alpha) \begin{pmatrix}\alpha_1 \\ \alpha_2 \end{pmatrix}
 \] 
 \end{task}
 
@@ -90,11 +90,11 @@ A^{-1} = E A^{-1} = (\overline{A}^{-1} A) A^{-1} = \overline{A}^{-1}(A A^{-1}) =
 \begin{definition}
     $A$ - точка. Тогда коор-ты вектора $\overline{OA}$ наз-ся коор-тами точки $A$ в ДСК $(O, G)$:
     \[
-        A \underset{(O, E)}{\Longleftrightarrow} \alpha \iff \overline{OA} = G\alpha = \begin{pmatrix}\overline{e_1} & \overline{e_2} & \overline{e_3} \end{pmatrix} \begin{pmatrix}\alpha_1 \\\alpha_2 \\ \alpha_3 \end{pmatrix}
+        A \underset{(O, E)}{\longleftrightarrow} \alpha \iff \overline{OA} = G\alpha = \begin{pmatrix}\overline{e_1} & \overline{e_2} & \overline{e_3} \end{pmatrix} \begin{pmatrix}\alpha_1 \\\alpha_2 \\ \alpha_3 \end{pmatrix}
     \] 
 \end{definition}
 \begin{statement}
-$A \underset{(O, E)}{\Longleftrightarrow} \alpha, B \underset{(O, E)}{\Longleftrightarrow} \beta \Rightarrow$
+$A \underset{(O, E)}{\longleftrightarrow} \alpha, B \underset{(O, E)}{\longleftrightarrow} \beta \Rightarrow$
 \[
 \overline{AB} = \overline{OB} - \overline{OA} = G\beta - G\alpha = G(\beta - \alpha)
 \] 
@@ -103,11 +103,11 @@ $A \underset{(O, E)}{\Longleftrightarrow} \alpha, B \underset{(O, E)}{\Longleftr
 
 \begin{statement}[О делении отрезка в данном соотношении]
     \[
-    A \underset{(O, E)}{\Longleftrightarrow}\alpha, B \underset{(O, E)}{\Longleftrightarrow} \beta
+    A \underset{(O, E)}{\longleftrightarrow}\alpha, B \underset{(O, E)}{\longleftrightarrow} \beta
     \] 
     Пусть т. $C$ делит отрезок $[A, B]$ в отношении $\frac{\lambda}{\mu}$. Тогда:
     \[
-        C \underset{(O, E)}{\Longleftrightarrow} \frac{\mu\alpha + \lambda \beta}{\lambda + \mu} \iff
+        C \underset{(O, E)}{\longleftrightarrow} \frac{\mu\alpha + \lambda \beta}{\lambda + \mu} \iff
     \] 
     \[
         \iff \overline{c} = \frac{\mu}{\lambda + \mu} \overline{a} + \frac{\lambda}{\lambda + \mu} \overline{b} \text{ - выпуклая ЛК}
@@ -128,7 +128,7 @@ $A \underset{(O, E)}{\Longleftrightarrow} \alpha, B \underset{(O, E)}{\Longleftr
 \begin{theorem} [Об изменении коор-т точки при замене ДСК]
 Пусть в $V_i$ фикс.: $(O, G)$ (I ДСК) и $(O', G')$ (II ДСК).
 
-Пусть $A \underset{(O, G)}{\Longleftrightarrow} \alpha$ и $A \underset{(O', G')}{\Longleftrightarrow} \alpha'$ и пусть $S = S_{G \to G'}$
+Пусть $A \underset{(O, G)}{\longleftrightarrow} \alpha$ и $A \underset{(O', G')}{\longleftrightarrow} \alpha'$ и пусть $S = S_{G \to G'}$
 
 (***Картинка***)
 
@@ -142,7 +142,7 @@ $A \underset{(O, E)}{\Longleftrightarrow} \alpha, B \underset{(O, E)}{\Longleftr
 \overline{OA} = G \alpha
 \] 
 \[
-\overline{OO'} + \overline{O'A} = G \lambda + G' \alpha' = G \lambda + GS \alpha' = G(S\alpha' + \gamma)
+\overline{OO'} + \overline{O'A} = G \gamma + G' \alpha' = G \gamma + GS \alpha' = G(S\alpha' + \gamma)
 \] 
 \end{proof}
 \section{Скалярное произведение}
