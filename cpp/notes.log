@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  16 SEP 2024 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  16 SEP 2024 18:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**notes.tex
+(./notes.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
-(./preamble/preamble.tex (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2024/02/08 v1.4n Standard LaTeX document class
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
@@ -478,30 +478,30 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 \c@axiom=\count316
 \c@definition=\count317
 \c@task=\count318
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count319
 \l__pdf_internal_box=\box58
-) (./main.aux)
-\openout1 = `main.aux'.
+) (./notes.aux)
+\openout1 = `notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Info: Redefining \th on input line 3.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Info: Redefining \th on input line 92.
 \c@lstlisting=\count320
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -530,159 +530,54 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 93.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 93.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+esvect on input line 4.
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 93.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 4.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 93.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}] (./main.toc)
-\tf@toc=\write4
-\openout4 = `main.toc'.
-
-
-
-[2] (./src/lecture_1.tex
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-
-
-[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (8.70653pt too wide) in paragraph at lines 173--174
-[]\T2A/cmr/m/n/12 Композиция инъ-ек-ций (сю-рьек-ций, би-ек-ция) яв-ся инъ-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
-
- []
-
-
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
-
- []
-
-
-Overfull \hbox (3.4228pt too wide) detected at line 229
-\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 n [] \OML/cmm/m/it/12 A[]  \OMS/cmsy/m/n/12 ([])  \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 ^ \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 62 [] \OML/cmm/m/it/12 A[]  \OMS/cmsy/m/n/12 ([])  \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 ^ \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 ^^U \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12 ^^C(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 62 \OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 ))
- []
-
-
-Overfull \hbox (31.85486pt too wide) detected at line 233
- \OMS/cmsy/m/n/12 ([])  8\OML/cmm/m/it/12 ^^U \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12 ^^C(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 ^ \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 62 \OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )  \OMS/cmsy/m/n/12 ([])  8\OML/cmm/m/it/12 ^^U \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12 ^^C(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 n\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )  \OMS/cmsy/m/n/12 ([])  \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 n\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )
- []
-
-
-Overfull \hbox (16.96141pt too wide) detected at line 240
- \OMS/cmsy/m/n/12 ([])  9\OML/cmm/m/it/12 ^^U \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12 ^^C(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 ^ \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 62 \OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )  \OMS/cmsy/m/n/12 ([])  9\OML/cmm/m/it/12 ^^U \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12 ^^C(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 n\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )  \OMS/cmsy/m/n/12 ([])  []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 n\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
- []
-
-
-
-[5]) (./src/lecture_2.tex
-
-[6]
-
-[7]
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
-
- []
-
-
-
-[9]
-Overfull \hbox (1.71974pt too wide) in paragraph at lines 280--281
-[]$[]$\T2A/cmr/bx/n/12 . []\T2A/cmr/m/it/12 Опре-де-ле-ние точ-ных гра-ней мож-но за-пи-сать на язы-ке нер-
- []
-
-) (./src/lecture_3.tex
-
-[10]
-Overfull \hbox (25.80476pt too wide) detected at line 54
-[] \OMS/cmsy/m/n/12 ) ^^@\OT1/cmr/m/n/12 1 \OML/cmm/m/it/12 < m[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 m[] < \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; m[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 m[] \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 Z \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 m[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 m[] \OT1/cmr/m/n/12 = 0 \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 m[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 m[]
- []
-
-
-
-[11]
-
-[12]
-Overfull \hbox (20.51147pt too wide) detected at line 120
-\OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 C[]a[]b[] \OT1/cmr/m/n/12 + [] \OML/cmm/m/it/12 C[]a[]b[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 C[]a[]b[] \OT1/cmr/m/n/12 + [] \OML/cmm/m/it/12 C[]a[]b[] \OT1/cmr/m/n/12 =
- []
-
-
-Overfull \hbox (104.13098pt too wide) detected at line 123
-\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 C[]b[] \OT1/cmr/m/n/12 + [](\OML/cmm/m/it/12 C[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 a[]b[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 C[]a[] \OT1/cmr/m/n/12 = []
- []
-
-
-
-[13]
-
-[14]) (./src/lecture_4.tex
-
-[15]
-Overfull \hbox (27.52917pt too wide) in paragraph at lines 42--44
-[]$[]$ \T2A/cmr/bx/n/12 9.1. []\T2A/cmr/m/it/12 (О един-ствен-но-сти пре-де-ла) Ес-ли $[][] \OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 a$ \T2A/cmr/m/it/12 и $[][] \OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 =
- []
-
-
-
-[16]
-
-[17]
-Overfull \hbox (16.6423pt too wide) in paragraph at lines 163--165
-[]$[]$ \T2A/cmr/bx/n/12 9.6. []\T2A/cmr/m/it/12 (Ариф-ме-ти-че-ские опе-ра-ции с пре-де-ла-ми) Пусть $[][] \OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 =
- []
-
-
-
-[18]
-Overfull \hbox (27.38628pt too wide) detected at line 201
-\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 a[]b[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 ab\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 a[]b[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 a[]b \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[]b \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 ab\OMS/cmsy/m/n/12 j ^^T j\OML/cmm/m/it/12 a[]\OMS/cmsy/m/n/12 jj\OML/cmm/m/it/12 b[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 b\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 + \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 b\OMS/cmsy/m/n/12 jj\OML/cmm/m/it/12 a[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 a\OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 < C[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 C[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 "
- []
-
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 101.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
 
-[19] (./main.aux)
+[2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./notes.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8074 strings out of 473579
- 126095 string characters out of 5728235
- 1939957 words of memory out of 5000000
- 30800 multiletter control sequences out of 15000+600000
- 581396 words of font info for 105 fonts, out of 8000000 for 9000
+ 7992 strings out of 473579
+ 124774 string characters out of 5728235
+ 1931957 words of memory out of 5000000
+ 30744 multiletter control sequences out of 15000+600000
+ 573902 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,7n,82p,380b,292s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (19 pages, 299820 bytes).
+ 72i,6n,79p,246b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on notes.pdf (2 pages, 129550 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
