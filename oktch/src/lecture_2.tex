@@ -13,20 +13,23 @@ $F \subset A \times B$ - соответствие между $A$ и $B$
 \begin{definition}
 \textbf{Отображение} - однозначное соотв.
 \[
-\forall x, \exists! y\colon (x, y) \in F
+\forall x, \exists! y\colon (x, y) \in f
 \] 
 \[
-\forall \text{- для любого}, \exists - \text{существует единственный}
+\forall \text{- для любого}, \exists! - \text{существует единственный}
 \] 
 \end{definition}
 \begin{definition}
-\textbf{Частично определённая ф-ция}: $\forall x \colon (\neg \exists y \colon (x, y) \in F) \lor \exists ! y \colon  (x, y) \in F$
+\textbf{Частично определённая ф-ция}:
+\[
+  \forall x \colon (\neg \exists y \colon (x, y) \in F) \lor (\exists ! y \colon  (x, y) \in F)
+\]
 \end{definition}
 \begin{definition}
 \textbf{Инъекция} - отображение, т. ч. $\forall x, y (x \neq y \rightarrow f(x) \neq f(y))$
 \end{definition}
 \begin{definition}
-    \textbf{$f(x)$} - тот элемент $z \colon (x, z) \in F$
+    \textbf{$f(x)$} - тот элемент $z \colon (x, z) \in f$
 \end{definition}
 \begin{definition}
     $F(x)$ - образ $x \iff F(x) = \{z \colon (x, z) \in F\}$
