@@ -1,13 +1,5 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Инфа}{3}{}%
-\contentsline {section}{\numberline {2}Учебники}{3}{}%
-\contentsline {section}{\numberline {3}\textsection 1. Действительные числа}{3}{}%
-\contentsline {subsection}{\numberline {3.1}Вспомогательные конструкции}{3}{}%
-\contentsline {subsection}{\numberline {3.2}Аксиомат. опр-е мн-ва действ. чисел}{6}{}%
-\contentsline {section}{\numberline {4}Некот. обозначения}{7}{}%
-\contentsline {section}{\numberline {5}Чем занимаемся дальше}{7}{}%
-\contentsline {section}{\numberline {6}Множество $\mathbb {N}$}{8}{}%
-\contentsline {section}{\numberline {7}Множества $\mathbb {Z}$ и $\mathbb {Q}$}{9}{}%
-\contentsline {section}{\numberline {8}Точные грани числовых мн-в}{10}{}%
-\contentsline {section}{\numberline {9}\textsection 2. Предел последовательности}{15}{}%
-\contentsline {subsection}{\numberline {9.1}Определение предела}{15}{}%
+\contentsline {section}{\numberline {1}\textsection 2. Предел последовательности}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Определение предела}{3}{}%
+\contentsline {section}{\numberline {2}Монотонные п-ти}{8}{}%
+\contentsline {section}{\numberline {3}Последовательность вложенных отрезков}{10}{}%

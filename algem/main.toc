@@ -3,4 +3,4 @@
 \contentsline {section}{\numberline {2}Описание базисов в пр-вах $V_1, V_2, V_3$}{5}{}%
 \contentsline {section}{\numberline {3}Матрица перехода от одного базиса к другому}{7}{}%
 \contentsline {section}{\numberline {4}Декартова система коор-т}{8}{}%
-\contentsline {section}{\numberline {5}Скалярное произведение}{11}{}%
+\contentsline {section}{\numberline {5}Скалярное произведение}{13}{}%

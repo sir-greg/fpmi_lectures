@@ -1,0 +1,190 @@
+\begin{example}
+\[
+  a_n = \frac{1}{n^{2} + 1} + \frac{2}{n^{2} + 2} +\cdots + \frac{n}{n^{2} + n}, n \in \N
+\] 
+\[
+  \frac{1 + 2 + \cdots + n}{n^{2} + n} \leq a_n \leq \frac{1 + 2 + \cdots + n}{n^{2} + 1}
+\] 
+\[
+  \frac{n(n + 1)}{2(n^{2} + n)} \leq a_n \leq \frac{n(n + 1)}{2(n^{2} + 1)}
+\] 
+\[
+  \frac{1}{2} \leq a_n \leq \frac{1 + \frac{1}{n}}{2 + \frac{2}{n^{2}}} (\frac{2}{n^{2}} \rightarrow 0, \frac{1}{n} \rightarrow 0)
+\] 
+\[
+\Rightarrow \lim_{n\to\infty}a_n = \frac{1}{2}
+\] 
+\end{example}
+
+\begin{definition}
+Посл-ть $\{\alpha_n\}_{1}^{\infty}$ наз-ся \textbf{беск. малой}, если
+\[
+  \lim_{n\to\infty}\alpha_n = 0
+\]
+\end{definition}
+\begin{note}
+\[
+\lim_{n\to\infty}a_n = a \iff a_n = a + \alpha_n, \text{где $\alpha_n$ - б. м.}
+\]
+\end{note}
+\begin{example}
+Пусть $\{\alpha_n\}_{1}^{\infty}$ - б. м., а $\{\beta_n\}_{1}^{\infty}$ - огранич. Тогда: $\{\alpha_n \beta_n\}_{1}^{\infty}$ - б. м.
+\end{example}
+\begin{proof}
+Т. к. $\{\beta_n\}_{1}^{\infty}$ - огр., то $\exists C > 0 \colon \forall n (|\beta_n| \leq C)$
+\[
+-C |\alpha_n| \leq \alpha_n \beta_n \leq C |\alpha_n|
+\] 
+Крайние части $\rightarrow 0$ $\Rightarrow$ По. т. о двух полицейских $\lim_{n\to\infty} \alpha_n \beta_n = 0$
+\end{proof}
+
+\section{Монотонные п-ти}
+
+\begin{definition}
+П-ть $\{a_n\}_{1}^{\infty}$ наз-ся \textbf{нестрого возрастающей} (\textbf{строго возрастающей}), если \[
+a_n \leq a_{n + 1} (a_n < a_{n + 1}), \forall n \in \N
+\] 
+
+П-ть $\{a_n\}_{1}^{\infty}$ наз-ся \textbf{нестрого убывающей} (\textbf{строго убыв.}), если:
+\[
+a_n \geq a_{n + 1} (a_n > a_{n + 1}), \forall n \in \N
+\] 
+
+Такие п-ти наз-ся \textbf{монотонными}.
+\end{definition}
+
+\begin{note}
+Из опр-я следует, что $\{a_n\}_{1}^{\infty}$ нестрого возрастает $\iff$ $\{-a_n\}_{1}^{\infty}$ нестрого убывает.
+\end{note}
+\begin{note}
+Если $a_n \leq a_{n + 1}, \forall n \in N \Rightarrow \forall n, m (n < m \rightarrow a_n \leq a_m)$
+\end{note}
+\begin{theorem}[Теорема о пределе монотонной п-ти]
+ПУсть $\{a_n\}_{1}^{\infty}$ нестрого возрастает и огр. сверху, тогда $\{a_n\}_{1}^{\infty}$ сходиться и $\lim_{n\to\infty} a_n = \sup \{a_n\}_{1}^{\infty}$
+
+Пусть $\{a_n\}_{1}^{\infty}$ нестрого убывает и огр снизу, тогда $\{a_n\}_{1}^{\infty}$ сходиться и $\lim_{n\to\infty} a_n = \inf \{a_n\}_{1}^{\infty}$
+\end{theorem}
+\begin{proof}
+Док-ем первое утв. По условию $\exists c = \sup \{a_n\}_{1}^{\infty} \in \R$.
+
+Зафикс. $\varepsilon > 0$. По опр. супремума $\forall n (a_n \leq c)$, также:
+\[
+\exists N (a_N > c - \varepsilon)
+\] 
+Поскольку $\{a_n\}_{1}^{\infty}$ нестрого возр., то $a_n \geq a_N, \forall n \geq N \Rightarrow$ при всех таких $n \geq N$ имеем:
+\[
+a_N \leq a_n
+\] 
+\[
+c - \varepsilon < a_N \leq a_n \leq c < c + \varepsilon, \text{откуда}
+\]
+\[
+|a_n - c| < \varepsilon
+\] 
+\[
+  \Rightarrow \lim_{n\to\infty}a_n = c
+\]
+Второе утв. док-ся аналогично.
+\end{proof}
+
+\begin{lemma}[Нер-во Бернулли]
+Если $n \in \N$ и $x \geq -1$, то:
+\[
+  (1 + x)^{n} \geq 1 + nx
+\] 
+\end{lemma}
+\begin{proof}
+\textbf{МММ}:
+\begin{itemize}
+  \item [n = 1] Верно.
+  \item [$n \Rightarrow n + 1$] Пусть утв. верно для $n$. Тогда:
+    \[
+      (1 + x)^{n + 1} = (1 + x)(1 + x)^{n} \geq (1+x)(1 + nx) = 1 + (n + 1)x + n x^{2} \geq 1 + (n + 1)x
+    \] 
+\end{itemize}
+\end{proof}
+
+\begin{example}
+Для $\forall x \in \R$ п-ть $a_n = (1 + \frac{x}{n})^{n}$ сходится.
+\end{example}
+\begin{proof}
+Зафикс. $m \in \N$, что $m \geq |x|$. Тогда при:
+\[
+  n \geq m \colon a_n(x) > 0,
+\]
+а также:
+\[
+  \frac{a_{n + 1}(x)}{a_n(x)} = \frac{(1 + \frac{x}{n + 1})^{n + 1}}{(1 + \frac{x}{n})^{n}} = (1 + \frac{x}{n})\left(\frac{1 + \frac{x}{n} - \frac{x}{n} + \frac{x}{n + 1}}{1 + \frac{x}{n}}\right)^{n + 1} = (1 + \frac{x}{n})\left(1 - \frac{\frac{x}{n(n + 1)}}{1 + \frac{x}{n}}\right)^{n + 1}
+\] 
+Исследуем: $(- \frac{\frac{x}{n(n + 1)}}{1 + \frac{x}{n}})$. Она:
+\begin{equation*}
+\begin{system_and}
+> 0, x < 0 \\
+\geq -1, x \geq 0
+\end{system_and}
+\end{equation*}
+
+По нер-ву Бернулли:
+\[
+(1 + \frac{x}{n})\left(1 - \frac{\frac{x}{n(n + 1)}}{1 + \frac{x}{n}}\right)^{n + 1} \geq (1 + \frac{x}{n})(1 - \frac{\frac{x}{n}}{1 + \frac{x}{n}}) = 1
+\] 
+
+Итак, $\{a_n\}_{1}^{\infty}(x)$ нестрого возр. при $n \geq m$. По доказанному $a_n(-x) \geq a_m(-x)$, при $n \geq m$.
+
+Т. к.
+\[
+  a_n(x) a_n(-x) = \left(1 - \frac{x^{2}}{n}\right)^{n} \leq 1,
+\]
+то:
+\[
+  a_n(x) \leq \frac{1}{a_n(-x)} \leq \frac{1}{a_m(-x)}, \text{т. е.}
+\]
+$\{a_n\}_{1}^{\infty}$ огр. сверху.
+
+Сл-но, по теореме о пределе монот. посл-ти. $\{a_n(x)\}_{1}^{\infty}$ сход-ся.
+\end{proof}
+\begin{definition}
+\[
+e = \lim_{n\to\infty} \left(1 + \frac{1}{n}\right)^{n}
+\] 
+\end{definition}
+\begin{task}
+Док-те, что $2 < e < 3$
+\end{task}
+
+\section{Последовательность вложенных отрезков}
+
+\begin{definition}
+П-ть отрезков $\{[a_n, b_n]\}_{1}^{\infty}$ наз-ся \textbf{вложенной}, если $\forall n \in \N ([a_{n + 1}, b_{n + 1}] \subset [a_n, b_n])$
+
+Если к тому же, $b_n - a_n \rightarrow 0$, то п-ть $\{[a_n, b_n]\}_{1}^{\infty}$ наз-ся \textbf{стягивающейся}.
+
+\end{definition}
+\begin{theorem}[Кантор]
+Всякая п-ть вложенных отрезков имеет общую точку. Если п-ть стягивающаяся, то такая точка единственная.
+\end{theorem}
+
+\begin{proof}
+Пусть задана п-ть $\{[a_n, b_n]\}_{1}^{\infty}$ вложенных отр-ов. Тогда:
+\[
+\forall n \in \N \colon  a_1 \leq a_n \leq a_{n + 1} \leq b_{n + 1} \leq b_n \leq b_1
+\] 
+
+П-ть $\{a_n\}_{1}^{\infty}$ нестрого возр. и огр. сверху (числом $b_1$).
+
+П-ть $\{b_n\}_{1}^{\infty}$ нестрого убыв. и огр. снизу (числом $a_1$)
+
+$\Rightarrow$ $\{a_n\}_{1}^{\infty}, \{b_n\}_{1}^{\infty}$ сход., $a_n \rightarrow \alpha, b_n \rightarrow \beta$ и $\alpha \leq \beta$.
+
+Итак $\forall n (a_n \leq \alpha \leq \beta \leq b_n)$, т. е.:
+\[
+[\alpha, \beta] \subset \bigcap_{n = 1}^{\infty} [a_n, b_n]
+\] 
+
+Если п-ть $\{[a_n, b_n]\}_{1}^{\infty}$ - стягив., то $b_n - a_n \rightarrow 0$
+
+Пусть $x, y \in \bigcap_{n = 1}^{\infty} [a_n, b_n]$, тогда $|x - y| \leq b_n - a_n \Rightarrow x = y$
+
+Т. е. $\bigcap_{n = 1}^{\infty} [a_n, b_n] = x$, где $x = \alpha = \beta$. 
+\end{proof}
+

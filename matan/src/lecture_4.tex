@@ -200,4 +200,21 @@ $\Rightarrow \lim_{n\to\infty} c_n = a$.
 |a_n b_n - ab| = |a_n b_n -a_n b + a_n b - ab| \leq |a_n||b_n - b| + |b||a_n - a| < C \frac{\varepsilon}{2C} + C \frac{\varepsilon}{2C} = \varepsilon
 \] 
     \end{enumerate}
+  \item [3) ] Т. к. $\frac{a_n}{b_n} = a_n * \frac{1}{b_n}$, то дост-но д-ть, что $\lim_{n\to\infty}\frac{1}{b_n} = \frac{1}{b}$, и восп. утв. 2:
+    Т. к. $b \neq 0$, то $\exists  N_1, \forall n \geq N_1 (|b_n - b| < \frac{|b|}{2})$. Поэтому:
+\[
+|b| = |b - b_n + b_n| \leq |b_n - b| + |b_n| \leq \frac{|b|}{2} + |b_n|,
+\] 
+откуда:
+\[
+|b_n| > \frac{|b|}{2},
+\] 
+а значит: $\frac{1}{|b_n|} < \frac{2}{|b|}, \forall n \geq N_1$
+
+Заф. $\varepsilon > 0$. По опр. предела: $\exists N_2, \forall n \geq N_2 (|b_n - b| < \frac{|b|^{2}}{2}\varepsilon)$
+
+Положим $N = max(N_1, N_2)$. Тогда при $\forall n \geq N$:
+\[
+\left|\frac{1}{b_n} - \frac{1}{b}\right| = \frac{|b_n - b|}{|b_n b|} < \frac{2}{|b|^{2}} \frac{|b|^{2}}{2}\varepsilon = \varepsilon
+\] 
 \end{proof}

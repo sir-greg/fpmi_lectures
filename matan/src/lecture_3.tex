@@ -1,18 +1,9 @@
-\begin{proof}
-Пусть $A \subset \R$ и ограничено сверху. 
-
-Рассм. $B = \{b \in \R\colon b \text{ - верх. грань $A$}\}$. Тогда $B \neq \emptyset$ и $\forall a \in A \forall b \in B (a \leq b)$. По аксиоме непр-ти $\exists c \in \R \colon \forall a \in A, \forall b \in B(a \leq c \leq b)$. 
-
-Из нер-ва $a \leq c \Rightarrow c $ верх. грань $A$
-
-Из правого нер-ва любое $c' < c \colon c' \not\in B$, т.е. $c'$ не явл. верх. гранью $A$. Сл-но, $c = \sup A$.
-\end{proof} 
 
 \begin{theorem}[аксиома Архимеда]
 Пусть $a, b \in \R, a > 0$. Тогда $\exists n \in \N$, т. ч. $na > b$
 \end{theorem}
 \begin{proof}
-Предположим, что $\forall n \colon  na \leq b$. Тогда $A = \{na; n \in \N\}$ огр. сверху. По теореме 5.1 $\exists c = \sup A$. Число $c - a$ не явл. верх. гранью $A$ (т. к. $a > 0$)
+Предположим, что $\forall n \colon  na \leq b$. Тогда $A = \{na; n \in \N\}$ огр. сверху. По принципу полноты Вейерштрасса $\exists c = \sup A$. Число $c - a$ не явл. верх. гранью $A$ (т. к. $a > 0$)
 
 Тогда $\exists n \in \N (na > c - a)$. Откуда:
 \[
@@ -168,7 +159,7 @@ a^{0} = 1, a^{n + 1} = a^{n} a
     \item $\pm \infty * 0$
     \item $\frac{\pm \infty}{\pm \infty}$
 \end{itemize}
-\textbf{Соглащение: } $E \subset \R, E \neq \emptyset$.
+\textbf{Соглашение: } $E \subset \R, E \neq \emptyset$.
 \begin{itemize}
     \item Если $E$ не огр. сверху, то $\sup E = +\infty$
     \item Если $E$ не огр. снизу, то $\inf E = -\infty$
