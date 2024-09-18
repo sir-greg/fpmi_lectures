@@ -1,0 +1,154 @@
+\section{Лекция 3}
+
+\begin{note}
+$QuickSelect$ можно реализовать с привлечением $O(1)$ доп. памяти. (время $O(n)$ в среднем)
+\end{note}
+\begin{solution}
+Поддерживаем указатели \ldots
+\end{solution}
+
+\subsection{Дерандомизация}
+
+\begin{definition}
+$a_1, a_2, \ldots , a_n$ массив. Его \textbf{медианой} наз-вом $a_{\ceil{\frac{n}{2}} }$ ($a$ - отсортирован)
+\end{definition}
+
+\begin{algo}[Медиана медиан]
+$DQS(a_1, \ldots , a_n, k)$ (Derandomised Quick Select)
+
+Разделим $a$ на блоки по 5 эл-ов. Пусть $b_i$ - медиана $i$-ого блока. Пусть $x = DQS(b_1, b_2, \ldots , b_{\floor{\frac{n}{5}}}, \frac{n}{10})$ - медиана массива $b$. Тогда $x$ - наш pivot.
+\end{algo}
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Updated DQS]
+DQS(A, k):
+  x = DQS(b_1, b_2, ..., b_(n/5), n/10)
+  Parition(A, X)
+  if (k <= l) => return DQS(B, k)
+  if (k <= l + m) => return x
+  return DQS(D, k - l - m)
+\end{lstlisting}
+
+\begin{statement}
+Пусть $T(n)$ - время работы алгоритма $DQS$ на массива длины $n$ $\Rightarrow$
+\[
+T(n) = O(n)
+\] 
+\end{statement}
+\begin{proof}
+  $x$ - явл. порядковой статистикой массива $A$ с номером $\in [\frac{3}{10}n, \frac{7}{10}n]$
+  
+  Почему? Представим $b$ как табл. так, что $Mediana(b_i) < Mediana(b_j) (i < j)$
+\[
+  \begin{pmatrix}b_{11} & b_{12} & b_{13} & b_{14} & b_{15} \\
+  b_{21} & b_{22} & b_{23} & b_{24} & b_{25} \\
+\vdots & \vdots & \vdots & \vdots & \vdots \\
+b_{\frac{n}{10}1} &b_{\frac{n}{10}2} & b_{\frac{n}{10}3} & b_{\frac{n}{10}4} & b_{\frac{n}{10}5}\end{pmatrix}
+\] 
+Тогда $x$ в центре табл., Ч. Т. Д.
+\[
+T(n) = O(n) (\text{поиск $b_1, \ldots , b_n$}) + T(\frac{n}{5})(\text{Нахождение $x$}) + O(n)(\text{Partition}) + T(\frac{7n}{10})
+\] 
+\[
+T(n) \leq T(\frac{n}{5}) + T(\frac{7n}{10}) + Cn
+\] 
+Докажем, что $T(n) \leq 10Cn, \forall n$
+
+МММ:
+\begin{itemize}
+  \item [База: ] $n \leq 5$ очев.
+  \item [Переход: ] $T(n) \leq T(\frac{n}{5}) + T(\frac{7n}{10}) + Cn \leq \frac{10Cn}{5} + 7Cn + Cn == 10Cn $
+\end{itemize}
+\end{proof} 
+
+\subsubsection{Derandomized Quick Sort}
+
+Используя $DQS(A, \frac{n}{2})$ в качестве pivot, получаем новую асимптотику:
+\[
+T(n) \leq 2T(\frac{n}{2}) + O(n)
+\] 
+\[
+\Rightarrow T(n) = O(n\log n)
+\] 
+\subsection{Сортировка чисел}
+
+\begin{task}
+Пусть есть $a_1, \ldots, a_n$ - массив чисел $a_i \in \set{0, 1,\ldots, k} $. Отсортировать $a$.
+\end{task}
+
+\begin{solution}
+~\newline
+  \lstset{style=mystyle}
+  \begin{lstlisting}[language=Python, caption=Counting sort]
+    cnt[k + 1] = {0, ..., 0}
+    for i=1..n
+      ++cnt[a[i]]
+    for x=0..k:
+      for i=1..cnt[x]
+        print(x)
+  \end{lstlisting}
+  Асимптотика: $O(n + k)$
+\end{solution}
+\begin{definition}
+  \textbf{Стабильная сортировка:}
+
+$a_1, a_2, \ldots , a_n \Rightarrow a_{\sigma(1)}, a_{\sigma(2)}, \ldots, a_{\sigma(n)}$, при усл. что равные эл-ты сохраняют свой отн. порядок, т. е., если $a_{\sigma(i)} = a_{\sigma(j)}$ и $i < j$, то $\sigma(i) < \sigma(j)$
+\end{definition}
+
+\textbf{Стабильная сортировка подсчётом}:
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=stable counting sort]
+cnt[k + 1] = {0, .., 0};
+for i=1..n
+  ++cnt[a[i]]
+for x = 1..k:
+  cnt[x] += cnt[x - 1]
+b = {-1, .., -1}
+for i=1..k:
+ b[cnt[a[i]]] = a[i] // sigma[cnt[a[i]]] = i
+ --cnt[a[i]]
+\end{lstlisting}
+$cnt[x]$ - кол-во эл-ов $\leq$ x
+
+Асимптотика: $O(n + k)$
+
+\begin{task}
+Дан массив пар чисел:
+\[
+  (a_1, b_1), (a_2, b_2), \ldots , (a_k, b_k)
+\] 
+\[
+a_i, b_i \in \set{0, 1, \ldots, k}
+\] 
+Отсортировать!
+\end{task}
+\begin{solution}
+\begin{itemize}
+  \item [1) ] Отсортируем массив пар по $b$ 
+  \item [2) ] Результат \underline{стабильно}  отсортируем по $a$
+\end{itemize}
+Почему это корректно?
+
+Пусть $(a_i, b_i) < (a_j, b_j)$ $\iff$
+\begin{equation*}
+  \begin{system_or}
+    a_i < a_j \\
+    a_i = a_j, b_i < b_j (\text{стабильность!})
+  \end{system_or}
+\end{equation*}
+\end{solution}
+
+\subsubsection{Least significant digit sort}
+
+\begin{task}
+Отсортировать массив чисел, $a_i \in \set{0, 1, \ldots, k}$, $k$ очень большое
+\end{task}
+\begin{solution}
+Сортируем от младшего разряда к старшему \underline{стабильно}
+
+Асимптотика: $O(\log k (n + 10))$ (десятич. система)
+
+Вместо 10 - СС можно использовать СС с основанием $2^{b}$:
+\[
+  x \mod 2^{b} = x \land ((1 << b) - 1)
+\] 
+\end{solution}

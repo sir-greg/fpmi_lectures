@@ -1,0 +1,167 @@
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Пропозициональные ф-лы & $\leftrightarrow$ & Булевы ф-ции \\
+                        & $\rightarrow$ & Семантика табл. истины \\
+ КНФ/ДНФ                & $\leftarrow$ &  \\
+ \hline
+\end{tabular}
+\end{center}
+
+\section{Мн-ны Жегалкина}
+Вместо $\neg, \land, \lor$ используем $*(\land), \oplus$
+
+Особенности мн-нов над булевыми переменными:
+\begin{itemize}
+  \item [1) ] $x^{2} = x$ 
+  \item [2) ] $x \oplus x = 0$
+\end{itemize}
+
+Эти особенности можно отразить в определении.
+
+\begin{definition}
+Пусть $x_1, \ldots , x_n$ - переменные.
+
+Тогда \textbf{одночленом Жегалкина} наз-ся произведение каких-то переменных (В том числе $1 = $ произведению пустого мн-ва переменных).
+
+\textbf{Многочленом Жегалкина} наз-ся сумма каких-то одночленов. (В том числе $0 = $ сумма пустого мн-ва одночленов)
+
+\textbf{(Порядок произведения и суммы не важен)}
+\end{definition}
+
+\begin{example}
+  \begin{itemize}
+    \item [1) ]
+\[
+\neg p = p \oplus 1
+\] 
+  \item [2) ] \[
+  p \land q = pq
+  \] 
+\item [3) ]\[
+p \lor q = \neg(\neg p \land \neg q) = (p \oplus 1)(q \oplus 1) \oplus 1 = p \oplus q \oplus pq
+\] 
+\item [4) ] \[
+p \rightarrow q = \neg p \lor q = (p \oplus 1) \oplus q \oplus (p \oplus 1)q = pq \oplus p \oplus 1
+\] 
+\item [5) ]
+  \begin{equation*}
+    maj_3(p, q, r) =
+  \begin{system_and}
+  1, p + q + r \geq 2 \\
+  0, p + q + r \leq 1
+  \end{system_and} = pq \oplus qr \oplus  pr
+  \end{equation*}
+  \end{itemize}
+\end{example}
+\begin{theorem}
+Любую булеву ф-цию можно однозначно представить как мн-н Жегалкина. (С точностью до порядка множителей и слагаемых)
+\end{theorem}
+Кол-во булевых ф-ций = $2^{2^{n}}$
+
+Кол-во одночленов = $2^{n}$
+
+Кол-во многочленов = $2^{2^{n}}$
+
+Мн-н $\mapsto$ Ф-ция (вычисл.)
+
+Почему 2 мн-на не могут дать одну ф-цию?
+\begin{figure}[ht]
+    \centering
+    \incfig{polys-and-functions}
+    \caption{}
+    \label{fig:polys-and-functions}
+\end{figure}
+\begin{proof}
+Пусть не так, и есть 2 мн-на $P \neq Q \colon \forall x \colon P(x) = Q(x)$
+
+Рассм. $S(x) = P(x) \oplus Q(x) \not\equiv 0$ (как мн-н)
+
+Тогда $\forall x \colon S(x) = 0$
+
+Рассм. одночлен, в кот. меньше всего множителей. Если таких несколько, то любой из них.
+
+Б. О. О. это $x_1 x_2 \ldots x_k$. Рассм. $a = (1, 1, 1, \ldots, 1, 0, 0, 0, \ldots, 0)$ ($k$ ед-ц, $(n - k)$ нулей).
+
+\[
+S(a) = x_1 x_2 \ldots x_k \oplus (\ldots )
+\] 
+\[
+S(a) = 1 * \ldots * 1 \oplus (\ldots ) = 1 (\text{т. к., в ост. слагаемых есть перменные, кроме $x_1\ldots x_k$})
+\] 
+Но, $\forall x \colon  S(x) = 0 \Rightarrow $ противоречие.
+\end{proof}
+
+Все ф-ции можно выразить через: $\neg, \land, \lor$ (КНФ/ДНФ). Даже можно через $\neg, \land$ или $\neg, \lor$(используем законы Де Моргана).
+
+Мн-н Жегалкина позволяет выразить все ф-ции через $\land, \oplus $ и $1$
+
+А можно ли выразить всё через $\land, \lor, \rightarrow$? \textbf{ОТВЕТ: НЕТ.}
+
+\textbf{Причина:} т. к.:
+\begin{itemize}
+  \item $1 \land 1 = 1$
+  \item $1 \lor 1 = 1$
+  \item $1 \rightarrow 1 = 1$
+\end{itemize}
+$\Rightarrow$ Значение такой ф-лы, на $(1, 1, \ldots, 1)$ = 1. Те ф-ции, где $f(1, 1, \ldots, 1) = 0$ выр-ть нельзя.
+
+\begin{symb}
+\textbf{Класс ф-ций, сохр. единицу}, обозначается как $P_1$
+\end{symb}
+
+\begin{definition}
+\textbf{Суперпозиция} ф-ций $f, g_1, \ldots, g_k$ (где $k$ - число арг-ов $f$) - это
+\begin{equation}
+  h(x_1, x_2, \ldots , x_n) = f(g_1(x_1, \ldots, x_n), \ldots, g_k(x_1, \ldots, x_n))
+\end{equation}
+Более формально:
+
+Суперпозиция \textbf{нулевого порядка} - это проекторы:
+\[
+pr_{i}(x_1, \ldots, x_n) = x_i
+\] 
+Суперпозиция порядка $(m + 1)$ - это $f$ (см. (1)), где $f$ - одна из базовых ф-ций, $g_1, g_2, \ldots , g_k$ - суперпозиции порядка $\leq m$.
+\end{definition}
+\begin{theorem}
+Все базовые ф-ции сохр. $1$ $\Rightarrow$ все суперпозиции тоже.
+\end{theorem}
+
+\begin{definition}
+Пусть $C$ - мн-во ф-ций. Тогда мн-во всех суперпозиций ф-ций из $C$ наз-ся \textbf{замыканием }$C$ и обозначается $[C]$
+\end{definition}
+
+Когда $[C]$ - это все функции? (Если это так, то $C$ наз-ся полной системой)
+
+\subsection{Препятствие 1: $C \subset P_1$}
+
+\begin{definition}
+$P_0$ - класс ф-ций, сохр. 0, т. е. таких, что $f(0, \ldots, 0) = 0$
+
+Аналогичная теорема верна для $P_0$ (Все баз. ф-ции, сохр. 0 $\Rightarrow$ все суперпоз-ции тоже)
+\end{definition}
+\subsection{Препятствие 2: $C \subset P_0$}
+\begin{example}
+ $\land, \lor, \oplus $
+\end{example}
+
+\begin{definition}
+$M$ - монотонная ф-ции:
+
+$f$ - монотонна, если $\forall (a_1, \ldots, a_n), \forall (b_1, \ldots, b_n) \colon (a_i \leq b_i), \forall i=1,\ldots,n \Rightarrow (f(a_1, \ldots, a_n) \leq f(b_1, \ldots, b_n))$
+\end{definition}
+
+\begin{example}
+$\lor, \land$ - монот.
+
+$\neg, \rightarrow, \oplus $ - немонот.
+\end{example}
+\begin{statement}
+Суперпозиция монот. ф-ций монотонна.
+\end{statement}
+\begin{proof}
+$f(g_1(x_1, x_2, \ldots, x_n), \ldots, g_k(x_1, \ldots, x_n))$
+
+$g_i - \uparrow, \forall i = 1, \ldots , k \Rightarrow f \uparrow$
+\end{proof}
+\subsection{Препятствие 3: $C \subset M$}

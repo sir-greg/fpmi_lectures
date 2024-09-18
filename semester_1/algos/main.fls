@@ -1,4 +1,4 @@
-PWD /home/sergey/workspace/fpmi_lectures/algos
+PWD /home/sergey/workspace/fpmi_lectures/semester_1/algos
 INPUT /usr/local/texlive/2024/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -82,6 +82,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/braket/braket.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/braket/braket.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/blindtext/blindtext.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/blindtext/blindtext.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/xspace.sty
@@ -206,6 +208,7 @@ OUTPUT main.toc
 INPUT ./src/lecture_1.tex
 INPUT ./src/lecture_1.tex
 INPUT src/lecture_1.tex
+INPUT /home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
@@ -233,13 +236,21 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT ./src/lecture_2.tex
 INPUT ./src/lecture_2.tex
 INPUT src/lecture_2.tex
-INPUT /home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm
+INPUT ./src/lecture_3.tex
+INPUT ./src/lecture_3.tex
+INPUT src/lecture_3.tex
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/esvect/vect5.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT main.aux
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
