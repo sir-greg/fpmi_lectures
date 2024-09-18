@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  17 SEP 2024 22:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  18 SEP 2024 12:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -555,260 +555,52 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 
 
-[2] (./src/lecture_3.tex
-Overfull \hbox (4.13281pt too wide) detected at line 20
-\OML/cmm/m/it/12 ^^U \OT1/cmr/m/n/12 = [] \OMS/cmsy/m/n/12 ) [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^U[]
+[2] (./src/lecture_4.tex
+Overfull \hbox (1.13518pt too wide) in paragraph at lines 58--59
+[]$[]$ \T2A/cmr/bx/n/12 1.3. []\T2A/cmr/m/it/12 Ес-ли об-рат-ная мат-ри-ца сущ-ет, то она един-ствен-
  []
 
 
 
 [3]
-Overfull \hbox (32.8799pt too wide) in paragraph at lines 61--62
-[]$[]$ \T2A/cmr/bx/n/12 1.2. []\T2A/cmr/m/it/12 Пусть $\OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; []; [] ; []\OT1/cmr/m/n/12 )$ \T2A/cmr/m/it/12 - ЛНЗ сист. вект. и $\OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; []; [] ; []; []\OT1/cmr/m/n/12 )$
- []
-
-
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
-
- []
-
-
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
-
- []
-
-
 
 [6]
-
-[7]) (./src/lecture_4.tex (./figures/R(a).pdf_tex
-<./figures/R(a).pdf, id=42, page=1, 597.50786pt x 845.04686pt>
-File: ./figures/R(a).pdf Graphic file (type pdf)
-<use ./figures/R(a).pdf, page 1>
-Package pdftex.def Info: ./figures/R(a).pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 390.0pt x 551.56915pt.
-<./figures/R(a).pdf, id=43, page=2, 597.50786pt x 845.04686pt>
-File: ./figures/R(a).pdf Graphic file (type pdf)
-<use ./figures/R(a).pdf, page 2>
-Package pdftex.def Info: ./figures/R(a).pdf , page2 used on input line 59.
-(pdftex.def)             Requested size: 390.0pt x 551.56915pt.
-<./figures/R(a).pdf, id=44, page=3, 597.50786pt x 845.04686pt>
-File: ./figures/R(a).pdf Graphic file (type pdf)
-<use ./figures/R(a).pdf, page 3>
-Package pdftex.def Info: ./figures/R(a).pdf , page3 used on input line 62.
-(pdftex.def)             Requested size: 390.0pt x 551.56915pt.
-<./figures/R(a).pdf, id=45, page=4, 597.50786pt x 845.04686pt>
-File: ./figures/R(a).pdf Graphic file (type pdf)
-<use ./figures/R(a).pdf, page 4>
-Package pdftex.def Info: ./figures/R(a).pdf , page4 used on input line 64.
-(pdftex.def)             Requested size: 390.0pt x 551.56915pt.
-<./figures/R(a).pdf, id=46, page=5, 597.50786pt x 845.04686pt>
-File: ./figures/R(a).pdf Graphic file (type pdf)
-<use ./figures/R(a).pdf, page 5>
-Package pdftex.def Info: ./figures/R(a).pdf , page5 used on input line 66.
-(pdftex.def)             Requested size: 390.0pt x 551.56915pt.
-)
-
-LaTeX Warning: Float too large for page by 44.4064pt on input line 24.
-
-
-./src/lecture_4.tex:26: LaTeX Error: Unknown float option `H'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 \begin{figure}[H]
-                      
-Option `H' ignored and `p' used.
-
-(./figures/nice.pdf_tex
-./figures/nice.pdf_tex:11: Missing $ inserted.
-<inserted text> 
-                $
-l.11    sodipodi:docname="nice.pdf_
-                                   tex"
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./figures/nice.pdf_tex:16: You can't use `macro parameter character #' in math mode.
-l.16 ...ttp://www.w3.org/1999/02/22-rdf-syntax-ns#
-                                                  "
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./figures/nice.pdf_tex:17: You can't use `macro parameter character #' in math mode.
-l.17    xmlns:cc="http://creativecommons.org/ns#
-                                                "
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-LaTeX Warning: Command \guillemotright invalid in math mode on input line 18.
-
-./figures/nice.pdf_tex:23: You can't use `macro parameter character #' in math mode.
-<argument> \csname system@active"\endcsname ##
-                                              
-l.23      pagecolor="#
-                      ffffff"
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./figures/nice.pdf_tex:24: You can't use `macro parameter character #' in math mode.
-<argument> \csname system@active"\endcsname ##
-                                              
-l.24      bordercolor="#
-                        666666"
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./figures/nice.pdf_tex:45: You can't use `macro parameter character #' in math mode.
-<argument> \csname system@active"\endcsname ##
-                                              
-l.45      inkscape:deskcolor="#
-                               d1d1d1">
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-LaTeX Warning: Command \guillemotright invalid in math mode on input line 45.
-
-
-LaTeX Warning: Command \guillemotright invalid in math mode on input line 59.
-
-
-LaTeX Warning: Command \guillemotright invalid in math mode on input line 73.
-
-./figures/nice.pdf_tex:75: You can't use `macro parameter character #' in math mode.
-l.75        style="fill:#
-                         000000;fill-opacity:0.027451;fill-rule:evenodd;stro...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./figures/nice.pdf_tex:75: You can't use `macro parameter character #' in math mode.
-l.75 ...pacity:0.027451;fill-rule:evenodd;stroke:#
-                                                  000000;stroke-width:1"
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-)
-./src/lecture_4.tex:29: Missing $ inserted.
-<inserted text> 
-                $
-l.29     \caption{}
-                   
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-Missing character: There is no ї in font cmr12!
-Missing character: There is no ї in font cmr12!
-Missing character: There is no ї in font cmr12!
-Missing character: There is no ї in font cmr12!
-
-Overfull \hbox (1016.2382pt too wide) in paragraph at lines 4--29
- \OT1/cmr/m/n/12 "\OML/cmm/m/it/12 m\OT1/cmr/m/n/12 59\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 755822\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 242\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 3934\OML/cmm/m/it/12 c\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 327664\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 016382\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 531404\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 10\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 042714\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 003678\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 15\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 016912\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 081361\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 7\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 032060\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 914805\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 4\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 296053\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 530761\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 10\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 020630\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 734775\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 607931\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 387803\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 259042\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 24713\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 4\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 803992\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 241902\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 4\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0306410\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 833664\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 8\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2635113\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 299861\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 17232\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 306529\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 5\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 69685 \OMS/cmsy/m/n/12 ^^@ 
- []
-
-
-Overfull \hbox (370.28418pt too wide) in paragraph at lines 4--29
- \OT1/cmr/m/n/12 3\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 299129\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 17\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 816752\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 774095\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 20\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 558861\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 387457\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 626453\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 25228\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 408474\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 845571\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 885557\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 922506\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 600178\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 151006\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 12\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 067087\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 833778\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 18\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 85636 \OMS/cmsy/m/n/12 ^^@ 
- []
-
-
-Overfull \hbox (313.95131pt too wide) in paragraph at lines 4--29
- \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 307655\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 1471\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 645264\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 096849\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 468199\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2613310\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 857329\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 459412\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 26767\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 323354\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 75631\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 512016\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 52104\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 209712\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 77373\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 66837 \OMS/cmsy/m/n/12 ^^@ 
- []
-
-
-Overfull \hbox (111.6619pt too wide) in paragraph at lines 4--29
- \OT1/cmr/m/n/12 25\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 264118\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 33\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 8587217\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 498678\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 9657646\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 472718\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 8\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5755151\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 068718\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 26\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 452120\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 57124\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2219 \OMS/cmsy/m/n/12 ^^@ 
- []
-
-
-Overfull \hbox (98.91177pt too wide) in paragraph at lines 4--29
- \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0371\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 052062\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 11989\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 09933\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 1358\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 375222\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 03847\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 553715\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 99081\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 494935\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2239\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 5\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 16674 \OMS/cmsy/m/n/12 ^^@ 
- []
-
-
-Overfull \hbox (239.0382pt too wide) in paragraph at lines 4--29
- \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 14143\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 26\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 12161\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 77838\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 940433\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 15014\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 4\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 63517\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 07191\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 5\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 649016\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 99174\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 8076111\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 35659\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 8700116\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 90338\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 6\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 63018"\OML/cmm/m/it/12 id \OT1/cmr/m/n/12 = 
- []
-
-
-LaTeX Warning: Float too large for page by 122.26465pt on input line 31.
-
-
-
-[8]
-
-[9 <./figures/R(a).pdf> <./figures/R(a).pdf> <./figures/R(a).pdf> <./figures/R(a).pdf> <./figures/R(a).pdf>]
-
-[10]
-Overfull \hbox (1.13518pt too wide) in paragraph at lines 71--72
-[]$[]$ \T2A/cmr/bx/n/12 4.3. []\T2A/cmr/m/it/12 Ес-ли об-рат-ная мат-ри-ца сущ-ет, то она един-ствен-
- []
-
-
-
-[11]
-
-[12]
-
-[13]
-Overfull \hbox (19.83847pt too wide) in paragraph at lines 251--252
+Overfull \hbox (19.83847pt too wide) in paragraph at lines 238--239
 []\T2A/cmr/m/it/12 Симметричность
  []
 
 
-
-[14{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (5.76575pt too wide) detected at line 271
+Overfull \hbox (5.76575pt too wide) detected at line 258
 \OT1/cmr/m/n/12 = ((\OML/cmm/m/it/12 ^^U[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^U[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 ^^U[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^U[]\OT1/cmr/m/n/12 )([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 ^^U[]\OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 ^^U[]\OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 ^^U[][]; []\OT1/cmr/m/n/12 ) + (\OML/cmm/m/it/12 ^^U[][]; []\OT1/cmr/m/n/12 ) =
  []
 
-)
 
-[15] (./main.aux)
+
+[7{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) (./src/lecture_5.tex)
+
+[8] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 8163 strings out of 473579
- 127904 string characters out of 5728235
+ 8073 strings out of 473579
+ 126082 string characters out of 5728235
  1944957 words of memory out of 5000000
- 30883 multiletter control sequences out of 15000+600000
- 580578 words of font info for 104 fonts, out of 8000000 for 9000
+ 30803 multiletter control sequences out of 15000+600000
+ 578782 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,14n,82p,1160b,404s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (15 pages, 304704 bytes).
+ 77i,9n,82p,447b,286s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on main.pdf (8 pages, 234798 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 121 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

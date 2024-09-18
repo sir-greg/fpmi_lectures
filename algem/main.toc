@@ -1,6 +1,3 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Понятие базиса лин. пр-ва. Базисы в пр-вах $V_i$}{3}{}%
-\contentsline {section}{\numberline {2}Описание базисов в пр-вах $V_1, V_2, V_3$}{5}{}%
-\contentsline {section}{\numberline {3}Матрица перехода от одного базиса к другому}{7}{}%
-\contentsline {section}{\numberline {4}Декартова система коор-т}{8}{}%
-\contentsline {section}{\numberline {5}Скалярное произведение}{13}{}%
+\contentsline {section}{\numberline {1}Декартова система коор-т}{3}{}%
+\contentsline {section}{\numberline {2}Скалярное произведение}{6}{}%
