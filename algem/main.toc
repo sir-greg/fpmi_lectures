@@ -1,3 +1,5 @@
 \babel@toc {russian}{}\relax 
 \contentsline {section}{\numberline {1}Декартова система коор-т}{3}{}%
 \contentsline {section}{\numberline {2}Скалярное произведение}{6}{}%
+\contentsline {section}{\numberline {3}Выр-е скалярного произведения в ОНБ и произвольном базисе}{8}{}%
+\contentsline {section}{\numberline {4}Ориентация на пл-ти}{10}{}%

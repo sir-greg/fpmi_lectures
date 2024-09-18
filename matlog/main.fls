@@ -82,6 +82,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/braket/braket.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/braket/braket.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/blindtext/blindtext.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/blindtext/blindtext.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/xspace.sty

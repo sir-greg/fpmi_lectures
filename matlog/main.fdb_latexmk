@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1726068611.5056 "main.tex" "main.pdf" "main" 1726068611.94227 0
+["pdflatex"] 1726662924.05013 "main.tex" "main.pdf" "main" 1726662924.48352 0
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labi1200.tfm" 1725282838.58337 3592 9415307df98650ffeddaa22e262436dc ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1725258418.94669 3308 eee81981029f67083258db36df06e523 ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1722950259.82679 3304 6a543c07045572737981351171e0505e ""
@@ -83,6 +83,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/size12.clo" 1717359999 8449 30d84ec2eac77409e31fe51403c1ed64 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/t2aenc.dfu" 1705352648 9965 adbc8d4ae165ae59c1f9fb2531c8b499 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/blindtext/blindtext.sty" 1325892463 47295 de48b7f8ebf4b54709a2f6b2c7106dd5 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/braket/braket.sty" 1266794558 3601 193635d942bc4777a5acaaeeffdce692 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/comment/comment.sty" 1472166125 10197 204f75d5d8d88aa345a8c402e879e63b ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmr.fd" 1655411061 2556 2f35e21d371ff2a89907e962d45fc1f1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/t2aenc.def" 1717359999 12179 ab14d8093d3e66c13310bf24be0c2cb5 ""
@@ -121,13 +122,13 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1722811609 5483422 a1ef07ac981a8b7f5985102f2de312a6 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1722811645 8239395 770efc74df93586a44891e8f654c98d2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1722811606.09035 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "main.aux" 1726068611.87337 1573 b3f8d100d94744aeecb4b6f51f074c11 "pdflatex"
-  "main.tex" 1726063375.71 374 2c01687e3a2e8b105e542fae4f7c58d0 ""
-  "main.toc" 1726068611.8767 1021 5cbba2eea5aba029f6dbc7c368a2a7c4 "pdflatex"
-  "preamble/preamble.tex" 1726032126.63001 2402 e98087597ff7107e93dd9a4ff55ef448 ""
+  "main.aux" 1726662924.41667 1573 b3f8d100d94744aeecb4b6f51f074c11 "pdflatex"
+  "main.tex" 1726662880.63667 374 2c01687e3a2e8b105e542fae4f7c58d0 ""
+  "main.toc" 1726662924.41667 1021 5cbba2eea5aba029f6dbc7c368a2a7c4 "pdflatex"
+  "preamble/preamble.tex" 1726512282.68002 2422 e7e0f3a5a6265b7599b947acd7386433 ""
   "src/lecture_1.tex" 1726059683.19669 5065 83f8c5a59e34a32e1a6a4d2d55c92e8d ""
   "src/lecture_1_extra.tex" 1726063339.12 3876 9c52e82dc305a8e7a53ab1444aba2377 ""
-  "src/lecture_2.tex" 1726068611.46003 5928 92d78d755edad33672e6454ef94a5d9a ""
+  "src/lecture_2.tex" 1726662922.27 5920 bcdb5cef88b3502d9aea3519cab915b8 ""
   (generated)
   "main.aux"
   "main.log"

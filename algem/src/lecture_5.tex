@@ -1,0 +1,224 @@
+\section{Выр-е скалярного произведения в ОНБ и произвольном базисе}
+
+\begin{statement}
+  $G$ - ОНБ. $\overline{a} \underset{G}{\longleftrightarrow} \alpha$. Тогда $\alpha_i = (\overline{a}, \overline{e_i})$
+\end{statement}
+\begin{proof}
+\[
+\overline{a} = \sum_{s = 1}^{n}  \alpha_s \overline{e_s}
+\]
+\[
+  (\overline{a}, \overline{e_i}) = (\sum_{s = 1}^{n} \alpha_s \overline{e_s}, \overline{e_i}) = \sum_{s = 1}^{n}  \alpha_s (\overline{e_s}, \overline{e_i}) = \alpha_i = 1
+\] 
+\[
+  (\overline{e_i}, \overline{e_i}) = |\overline{e_i}^{2}| = 1
+\] 
+\end{proof}
+\begin{theorem} (Выраж. ск. произ. в ОНБ)
+$G$ - ОНБ, $\overline{a} \underset{G}{\longleftrightarrow}\alpha, \overline{b} \underset{G}{\longleftrightarrow} \beta$. Тогда $(\overline{a}, \overline{b}) = \sum_{i = 1}^{n}  \alpha_i \beta_i = \alpha^{T} \beta$
+\end{theorem}
+
+\begin{proof}
+  \[
+  \overline{a} = \sum_{i = 1}^{n} \alpha_i \overline{e_i}, \overline{b} = \sum_{j = 1}^{n} \beta_j \overline{e_j}
+  \] 
+  \[
+    (\overline{a}, \overline{b}) = (\sum_{i}^{} \alpha_i \overline{e_i}, \sum_{j}^{} \beta_j \overline{e_j}) = \sum_{i}^{} \sum_{j}^{} \alpha_i \beta_j (\overline{e_i}, \overline{e_j}) = \sum_{i = 1}^{n} \alpha_i \beta_i = \alpha^{T} \beta
+  \] 
+\end{proof}
+\begin{note}
+$V_3$ : $(\overline{a}, \overline{b}) = \alpha_1 \beta_1 + \alpha_2 \beta_2 + \alpha_3 \beta_3$
+\end{note}
+
+$V$ - лин. пр-во, $G = (\overline{e_1}, \overline{e_2}, \ldots , \overline{e_n})$ - базис в $V$.
+\begin{definition}
+\textbf{Матрицей Грама} базиса $G$ наз-ся матрица:
+\[
+  \Gamma = \begin{pmatrix}(\overline{e_1}, \overline{e_1}) & (\overline{e_1}, \overline{e_2}) & \ldots & \overline{e_1, e_n} \\ & \ldots & \\ (\overline{e_n}, \overline{e_1}) & (\overline{e_n}, \overline{e_2}) & \ldots & (\overline{e_n}, \overline{e_n}) \end{pmatrix}
+\] 
+\end{definition}
+\begin{theorem}
+Пусть $V$ - лин. пр-во, $G$ - произ. базис с матр. Грама $\Gamma$.
+\[
+\overline{a} \underset{G}{\longleftrightarrow}\alpha, \overline{b}\underset{G}{\longleftrightarrow}\beta \Rightarrow (\overline{a}, \overline{b}) = \alpha^{T} \Gamma \beta 
+\] 
+\end{theorem}
+\begin{proof}
+\[
+\overline{a} = \sum_{i}^{} \alpha_i \overline{e_i}
+\] 
+\[
+\overline{b} = \sum_{j}^{} \beta_j \overline{e_j}
+\] 
+\[
+  (\overline{a}, \overline{b}) = \sum_{i}^{} \sum_{j}^{} \alpha_i \beta_j(\overline{e_i}, \overline{e_j}) = \sum_{i}^{} \sum_{j}^{} \alpha_i [\Gamma]_{ij} \beta_j = \sum_{i}^{} \alpha_i \sum_{j}^{} [\Gamma]_{ij} \beta_j = \sum_{i}^{} \alpha_i [\Gamma \beta]_i = 
+\] 
+\[
+ = \alpha^{T} [\Gamma] \beta
+\] 
+\end{proof}
+
+\begin{definition}
+Матрица $S_{n \times n}$ наз-ся ортогональной, если:
+\[
+S^{T}S = E
+\] 
+\end{definition}
+\begin{statement}
+ПУсть в $V_i$, $G$ - ОНБ и $F$ - произвольный базис и пусть $S = S_{G\to F}$. Тогда базис $F$ явл. ОНБ $\iff$ $S$ - ортогональная.
+\end{statement}
+\begin{proof}
+\[
+  S = \begin{pmatrix} F_1^{\uparrow} & F_2^{\uparrow} & \ldots & F_n^{\uparrow}\end{pmatrix}, S^{T}S = \begin{pmatrix}F_1^{\rightarrow} \\ F_2^{\rightarrow} \\ \vdots \\ F_n^{\rightarrow} \end{pmatrix} \begin{pmatrix} F_1^{\uparrow} & F_2^{\uparrow} & \ldots & F_n^{\uparrow}\end{pmatrix} = 
+\] 
+\[
+ = \begin{pmatrix}(F_1, F_1) & (F_1, F_2) & \ldots & (F_1, F_n) \\ & \ldots &\\ (F_n, F_1) & (F_n, F_2) & \ldots & (F_n, F_n) \end{pmatrix} = \Gamma_F
+\] 
+$F$ - ОНБ $\iff$ $\Gamma_f = E \iff S^{T} S = E \iff S - \text{орт.}$
+\end{proof}
+\begin{task}
+Д-ть, что $\Gamma_G$ и $\Gamma_F$ - матр. грамма двух произв. базисов в $V_i$, то если $S = S_{G\to F}$, то:
+\[
+\Gamma_F = S^{T}\Gamma_G S
+\] 
+\end{task}
+\begin{statement}
+Пусть в $V_i$ $G$ - ОНБ. Тогда:
+\begin{itemize}
+  \item [a) ] $|\overline{a}| = \sqrt{(\overline{a}, \overline{a})} = \sqrt{\alpha^{T}\alpha} = \sqrt{\sum_{s = 1}^{n} \alpha_s^{2}}$ ($\overline{a} \underset{G}{\longleftrightarrow} \alpha$)
+  \item [b) ] Если $\overline{a} \neq \overline{o}$ и $\overline{b} \neq 0$. Тогда:
+    \[
+    \cos \phi = \frac{(\overline{a}, \overline{b})}{|\overline{a}| |\overline{b}|} = \frac{\alpha^{T}\beta}{\sqrt{\alpha^{T}\alpha}\sqrt{\beta^{T}\beta}} = \frac{\sum_{i = 1}^{n} \alpha_i \beta_i}{\sqrt{\sum_{}^{} \alpha_i^{2}}\sqrt{\sum_{}^{} \beta_i^{2}}}
+    \] 
+\end{itemize}
+\end{statement}
+
+\begin{consequence}
+$V_3$. $A\underset{(O, G)}{\longleftrightarrow} \begin{pmatrix}\alpha_1 \\ \alpha_2 \\ \alpha_3 \end{pmatrix}, B \underset{(O, G)}{\longleftrightarrow} \begin{pmatrix}\beta_1 \\ \beta_2 \\ \beta_3 \end{pmatrix}$, $\overline{AB} = \begin{pmatrix}\beta_1 - \alpha_1 \\ \beta_2 - \alpha_2 \\ \beta_3 - \alpha_3 \end{pmatrix}$:
+\[
+|\overline{AB}| = \sqrt{(\overline{AB}, \overline{AB})} = \sqrt{\sum_{i = 1}^{3} (\beta_i - \alpha_i)^{2}}
+\] 
+\end{consequence}
+
+\section{Ориентация на пл-ти}
+
+\begin{definition}
+Упорядоченная пара векторов $\overline{a}, \overline{b} (\overline{a} \not{||} \overline{b})$ наз-ся \textbf{положительно ориентированной}, если при взгляде из фиксир. полупр-ва \textbf{кратчайший поворот} первого вектора ($\overline{a}$) в вектор, сонаправленный второму вектору ($\overline{b}$) кажется совершающим \textbf{против. часовой стрелки}.
+\end{definition}
+
+\begin{definition}
+Упорядоченная тройка некомпл. векторов ($\overline{a}, \overline{b}, \overline{c}$) наз-ся \textbf{правой тройкой (положит. ориент)}, если ($\overline{a}, \overline{b}$) из конца вектора $\overline{c}$ каж-ся положит. ориентированной.
+Иначе - наз-ся \textbf{левой тройкой (отриц. ориент.)}
+\end{definition}
+
+\begin{statement}
+\begin{itemize}
+  \item [a) ] Если на пл-ти $V_2$, $(\overline{a}, \overline{b})$ - положит. ориент., то пара $(\overline{b}, \overline{a})$ - отриц. ориент. и наоборот. 
+  \item [b) ] в $V_3$ : $(\overline{a}, \overline{b}, \overline{c})$ и $(\overline{b}, \overline{a}, \overline{c})$ всегда прот. ориент.
+    $(\overline{a}, \overline{b}, \overline{c})$ всегда одинаково ориент.
+\end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] Очев.
+  \item [b) ] 
+\end{itemize}
+\end{proof}
+\begin{definition}
+\textbf{Транспозиция} - перемещ. мест двух векторов.
+\end{definition}
+\begin{definition}
+  \textbf{3-цикл}: $(\overline{a}, \overline{b}, \overline{c}) \mapsto (\overline{b}, \overline{c}, \overline{a}) \mapsto (\overline{c}, \overline{a}, \overline{b})$
+\end{definition}
+\begin{note}
+$\Rightarrow$ Всякая \textbf{транспозиция меняет} ориентацию, а всякий \textbf{3-цикл - сохраняет}.
+\end{note}
+\begin{definition}
+$V_2$ - с фикс. ориентацией. Тогда ор. площадью упор. пары ($\overline{a}, \overline{b}$) наз-ся число $S$:
+\[
+S(\overline{a}, \overline{b}) = \pm S_{\text{пар-м, порожд}. a \text{ и } b }
+\] 
+(Знак +/- зависит от положит./отриц. ориентации $(\overline{a}, \overline{b})$)
+\end{definition}
+
+\begin{definition}
+$V_3$ - с фикс. ор. Тогда \textbf{ориентированным объёмом} упор. тройки $(\overline{a}, \overline{b}, \overline{c})$ наз-ся число:
+\[
+V(\overline{a}, \overline{b}, \overline{c}) = \pm V \text{ - объём параллелипипеда, порожд. $(\overline{a}, \overline{b}, \overline{c})$}
+\]
+(+/- зависит от полож./отриц. ориентации тройки)
+\end{definition}
+\begin{note}
+Если $\overline{a} || \overline{b}$, то $S(\overline{a}, \overline{b}) = 0$
+
+Если $\overline{a}, \overline{b}, \overline{c}$ - комплан., то $V(\overline{a}, \overline{b}, \overline{c}) = 0$
+\end{note}
+
+\begin{note}
+$V(\overline{a}, \overline{b}, \overline{c})$ наз-ся также смешанным произведением векторов.
+\end{note}
+
+\begin{statement}
+\begin{itemize}
+  \item [a) ] Если $(\overline{a}, \overline{b})$ - ОНБ в $V_2$, то
+    \[
+    S(\overline{a}, \overline{b}) = \pm 1,
+    \] 
+    в зависимости от ориентации $(\overline{a}, \overline{b})$
+  \item [b) ] Если $(\overline{e_1}, \overline{e_2}, \overline{e_3})$ в $V_3$, то:
+    \[
+    V(\overline{e_1}, \overline{e_2}, \overline{e_3}) = \pm 1,
+    \] 
+    в зависимости от ориентации $(\overline{e_1}, \overline{e_2}, \overline{e_3})$
+\end{itemize}
+\end{statement}
+\begin{theorem}[О св-вах ориент. объёма]
+  \begin{itemize}
+    \item [a) ] Ориент. объём $V(\overline{a}, \overline{b}, \overline{c})$ меняет знак на противоположный при любой транспозиции арг-ов.
+      $V(\overline{a}, \overline{b}, \overline{c})$ не меняет знак при 3-цикле.
+    \item [b) ] Аддитивность на $III$ аргументах: $V(\overline{a}, \overline{b}, \overline{c_1} + \overline{c_2}) = V(\overline{a}, \overline{b}, \overline{c_1}) + V(\overline{a}, \overline{b}, \overline{c_2})$
+    \item [c) ] Однородность на $III$ аргументах: $V(\overline{a}, \overline{b}, \lambda\overline{c}) = \lambda V(\overline{a}, \overline{b}, \overline{c})$
+  \end{itemize}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [b) ] Если $\overline{a} || \overline{b}$, то очев.
+    Пусть $\overline{a} \not{||} \overline{b}$. $\alpha$ - образована $\overline{a}$ и $\overline{b}$
+
+    $\overline{n}\colon \overline{n} \perp \overline{a}, \overline{b}, |\overline{n}| = 1, (\overline{a}, \overline{b}, \overline{n}) \text{- правая}$
+
+    \begin{lemma}
+    $V(\overline{a}, \overline{b}, \overline{c}) = S(\overline{a}, \overline{b}) * (\overline{n}, \overline{c})$
+    л. ч. $|V(\overline{a}, \overline{b}, \overline{c})| = V_{\text{пар.}}$
+
+    $|S(\overline{a}, \overline{b}) (\overline{n}, \overline{c})| = S(\overline{a}, \overline{b}) |\overline{c}| |\cos \angle (\overline{n}, \overline{c})|$
+
+    \[
+    V(\overline{a}, \overline{b}, \overline{c}) > 0 \iff (\overline{a}, \overline{b}, \overline{c}) \text{ - правая} \iff 
+    \] 
+    концы $\overline{n}$ и $\overline{c}$ лежат в одном полупр-ве от $\alpha$ $\iff \cos \angle (\overline{n}, \overline{c}) > 0$
+    \end{lemma}
+
+    \[
+    V(\overline{a}, \overline{b}, \overline{c_1} + \overline{c_2}) = S(\overline{a}, \overline{b}) (\overline{n}, \overline{c_1} + \overline{c_2}) = S(\overline{a}, \overline{b})(\overline{n}, \overline{c_1}) + S(\overline{a}, \overline{b})(\overline{n}, \overline{c_2}) = V(\overline{a}, \overline{b}, \overline{c_1}) + V(\overline{a}, \overline{b}, \overline{c_2})
+    \]  
+\end{itemize}
+\end{proof}
+\begin{theorem}[О св-вах ориент площади]
+\begin{itemize}
+  \item [a) ] $S(\overline{a}, \overline{b}) = -S(\overline{b}, \overline{a})$ - кососимметрична
+  \item [b) ] $S(\overline{a}, \overline{b_1} + \overline{b_2}) = S(\overline{a}, \overline{b_1}) + S(\overline{a}, \overline{b_2})$ - аддитивность по II арг-ту.
+  \item [c) ] $S(\overline{a}, \lambda \overline{b}) = \lambda S(\overline{a}, \overline{b})$
+\end{itemize}
+\end{theorem}
+\begin{statement}
+Пусть $\overline{a} \underset{G}{\longleftrightarrow} \begin{pmatrix}\alpha_1 \\ \alpha_2 \end{pmatrix}, \overline{b} \underset{G}{\longleftrightarrow} \begin{pmatrix}\beta_1 \\ \beta_2 \end{pmatrix}$
+Тогда $S(\overline{a}, \overline{b}) = \begin{vmatrix}\alpha_1 & \beta_1 \\ \alpha_2 & \beta_2 \end{vmatrix} S(\overline{e_1}, \overline{e_2})$
+\end{statement}
+
+\[
+  S(\overline{a}, \overline{b}) = S(\alpha_1 \overline{e_1} + \alpha_2 \overline{e_2}, \beta_1 \overline{e_1} + \beta_2 \overline{e_2}) = \alpha_1\beta_2 S(\overline{e_1}, \overline{e_2}) + \alpha_2\beta_1 S(\overline{e_2}, \overline{e_1}) = S(\overline{e_1}, \overline{e_2}) (\alpha_1 \beta_2 - \alpha_2 \beta_1) = 
+\]  
+\[
+= \begin{vmatrix}\alpha_1 & \beta_1 \\ \alpha_2 & \beta_2 \end{vmatrix} S(\overline{e_1}, \overline{e_2})
+\] 
