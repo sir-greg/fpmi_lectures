@@ -1,0 +1,271 @@
+\section{Лекция 3}
+
+\subsection{Мощности мн-в}
+
+\subsubsection{Парадоксы}
+
+\textbf{Парадокс Галилея}:
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Все нат. числа & $\not\supseteq$ & полные квадаты \\
+ \hline
+ $n$ & $\longleftrightarrow$ & $n^{2}$ \\
+ \hline
+\end{tabular}
+\end{center}
+\textbf{Гранд-отель Гильберта}:
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|c| } 
+ \hline
+ 1 & 2 & 3 & 4 & 5 & 6 & 7 & \ldots\\ 
+ \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+  \item [1) ] Все места заняты, нужно подселить постояльца:
+    \begin{solution}
+      \begin{center}
+      \begin{tabular}{ |c|c|c| } 
+       \hline
+       Новый & $\rightarrow$ & 0 \\
+       \hline
+       $i$ & $\rightarrow$ & $\left(i + 1\right)$ \\
+       \hline
+      \end{tabular}
+      \end{center}
+    \end{solution}
+  \item [2) ] Есть своб. места, \textbf{хотим занять все комнаты имеющимися постояльцами}:
+    \begin{solution}
+    Если мн-во занятых комнат бесконечно, то:
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|c } 
+     \hline
+     0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & \ldots \\ 
+     \hline
+    \end{tabular}
+    (1 - занято, 0 - свободно) $\Rightarrow$ Переносим 1 в самый ранний 0 для всех 1
+\begin{comment}
+    (Как делать стрелки между ячейками таблиц)???
+\end{comment}
+    \end{center}
+    \end{solution}
+  \item [3) ] 2 гранд-отеля, полностью заняты. Один закрылся, как всех заселить?
+    \begin{solution}
+  ~\newline
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c|c| } 
+     \hline
+     0 & 1 & 2 & 3 & 4 & 5 & \ldots \\ 
+     \hline
+    \end{tabular}
+    \end{center}
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c|c| } 
+     \hline
+     a & b & c & d & e & f & \ldots \\ 
+     \hline
+    \end{tabular}
+    \end{center}
+    $\Rightarrow$
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c|c| } 
+     \hline
+     0 & a & 1 & b & 2 & c & \ldots \\ 
+     \hline
+    \end{tabular}
+    \end{center}
+    \end{solution}
+  \item [4) ]  Гранд-авенью, гранд-отелей. Цель: переселить всех в один отель:
+    \begin{solution}
+  ~\newline
+    \begin{itemize}
+      \item [Отель 0:] $\mapsto$ неч. номера
+      \item [Отель 1: ] $\mapsto$ номера, кот. $\vdots 2, \not\vdots 4$
+      \item [Отель 2:]  $\mapsto$ номера, кот. $\vdots 4, \not\vdots 8$
+      \item [Отель $k$:] $\mapsto$ номера, кот $\vdots 2^{k}, \not\vdots 2^{k + 1}$
+    \end{itemize}
+    \end{solution}
+\end{itemize}
+
+\subsubsection{Счётных мн-в}
+
+\begin{definition}
+$A$ и $B$ \textbf{равномощны} ($A \cong B$), если $\exists$ биекция $f: A \rightarrow B$
+\end{definition}
+\begin{definition}
+$A$ наз-ся \textbf{счётным}, если $A \cong \N$
+\end{definition}
+\begin{statement}
+\begin{itemize}
+  \item [1) ] $A$ счётно $\Rightarrow A \cup {x}$ счётно
+  \item [2) ] Любое подмн-во счётного мн-ва конечно или счётно
+  \item [3) ] $A, B$ счётны $\Rightarrow$ $A \cup B$ счётно
+  \item [4) ] $A_0, A_1, \ldots$ - сч. $\Rightarrow \bigcup_{i = 0}^{\infty} A_i$ - сч.
+    
+    или: $A, B$ - сч. $\Rightarrow A \times B$ - сч.
+
+\end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [1) ] $f: A \rightarrow \N$ - биекция 
+    \[
+    g: A\cup\set{x} \rightarrow \N \colon 
+    \]
+    \begin{equation*}
+    \begin{system_and}
+   g\left(x\right) = 0 \\
+   g\left(y\right) = f\left(y\right) + 1, y \in A
+    \end{system_and}
+    \end{equation*}
+  \item [2) ] \[
+  f: A \rightarrow \N, \text{- биекция}; B \subset A
+  \]
+  \[
+  g: B \rightarrow \N; g\left(x\right) = \#\set{y \in B | f\left(y\right) < f\left(x\right)}
+  \]
+\item[3) ] \[
+f: A \rightarrow \N; g: B \rightarrow \N
+\]
+\begin{equation*}
+h: A\cup B \rightarrow \N; h\left(x\right) = 
+\begin{system_and}
+2f\left(x\right), x \in A \\
+2g\left(x\right) + 1, x \in B
+\end{system_and}
+\end{equation*}
+  \item [4) ] \[
+  f: A \rightarrow \N; 
+  \]
+  \[
+  g: B \rightarrow \N; 
+  \]
+  \[
+  h: A \times B \rightarrow \N; h\left(x, y\right) = 2^{f\left(x\right)} * \left(2g\left(y\right) + 1\right) - 1
+  \]
+\end{itemize}
+\end{proof}
+
+\subsubsection{Отношение равномощности}
+
+\begin{statement}
+Общие св-ва равномощности:
+
+\begin{enumerate}
+  \item [1) ] \textbf{Рефлексивность}: $A \cong A$ 
+
+    (т. к. $id_A$ - биекция)
+  \item [2)] \textbf{Симметричность}: $A \cong B \iff B \cong A$ 
+   
+    ($f$ - биекция $\iff$ $f^{-1}$ - биекция)
+  \item [3) ] \textbf{Транзитивность}: $A \cong B, B \cong C \Rightarrow A \cong C$ 
+
+    (т. к. композиция биекций - биекция)
+\end{enumerate}
+\end{statement}
+
+\subsubsection{Сравнимость по мощности}
+\begin{symb}
+  \begin{itemize}
+    \item
+Нестрогая: $A \simlE B$, если $\exists B' \subset B, A \cong B'$ 
+
+($A$ не более мозно чем $B$) 
+\item  Строгая: $A \simless B$, если $A \simlE B, A \not\cong B$
+
+  ($A$ менее мощно чем $B$)
+  \end{itemize}
+\end{symb}
+\begin{statement}
+Св-ва сравнимости по мощ-ти:
+\begin{itemize}
+  \item [1) ] Рефлексивность: $A \simlE A$; Антирефлексивность: $A \not\simless A$
+  \item [2) ] Транзитивность: $A \simlE B, B \simlE C \Rightarrow A \simlE C$
+
+    Для строгой сравнимости:
+    \begin{proof}
+    \[
+    A \simless B, B \simless C \Rightarrow A \simless C
+    \] 
+    \[
+    A \simlE C \text{ - из предыдущего}
+    \]
+    Нужно: $A \cong C$
+    \end{proof}
+\end{itemize}
+\end{statement}
+
+\begin{theorem} [Теорема Кантора-Бернштейна]
+\[
+A \leq B, B \leq A \Rightarrow A \cong B 
+\]
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [1) ] Пусть $f: A_0 \rightarrow B_1 \subset B_0$ - биекция \\ $g: B_0 \rightarrow A_1 \subset A_0$ - биекция
+  \item [2) ] $B_{i + 1} = f\left(A_i\right); A_{i + 1} = g\left(B_i\right)$
+  \item [3) ] $C_i = A_i \backslash A_{i + 1}; D_i = B_i \backslash B_{i + 1}$
+  \item [4) ] $C = \bigcap_{i = 0}^{\infty} A_i; D = \bigcap_{i = 0}^{\infty} B_i$
+\end{itemize}
+\begin{statement}
+  $C_i \cong D_{i + 1}$, т. е. $f: C_i \rightarrow D_{i + 1}$ - биекция
+
+  Почему? Потому что:
+  \[
+  C_i = A_i \backslash A_{i + 1}; f\left(A_i\right) = B_{i + 1}, f\left(A_{i + 1}\right) = B_{i + 2}
+  \]
+  \[
+  f\left(A_i \backslash A_{i + 1}\right) =\left(\text{т. к. $f$ - биекция}\right) f\left(A_i\right) \backslash f\left(A_{i + 1}\right) = B_{i + 1} \backslash B_{i + 2} = D_{i + 1} = f\left(C_i\right)
+  \]
+\end{statement}
+\begin{statement}
+\[
+D_i \cong C_{i + 1} \left(\text{симметричо}\right)
+\]
+\end{statement}
+\begin{consequence}
+\[
+C_0 \cong C_2 \cong C_4 \cong C_6 \cong \ldots 
+\]
+\[
+C_0 \cong D_1 \cong D_3 \cong D_5 \ldots 
+\]
+\end{consequence}
+\begin{statement}
+\[
+C \cong D
+\]
+\begin{proof}
+$f$ - биекция \\ Пусть $x \in \bigcap_{i = 0}^{\infty} A_i \Rightarrow \forall i, x \in A_i \Rightarrow \forall i, f\left(x\right) \in B_{i + 1} \Rightarrow f\left(x\right) \in \bigcap_{i = 0}^{\infty} B_i$ \\
+\textbf{Т. е. $f\left(C\right) \subset D$:}
+
+Инъекция - наследуется
+
+Сюрьекция: $y \in \bigcap_{i = 0}^{\infty}B_i \Rightarrow \forall i, y \in B_{i + 1} \Rightarrow \forall i, f^{-1}\left(y\right) \in A_i \Rightarrow f^{-1}\left(y\right) \in C$
+\end{proof}
+
+\[
+  A = C \cap C_0 \cap C_1 \cap C_2 \cap C_3 \cap \ldots
+\]
+\[
+  B = D \cap D_1 \cap D_2 \cap D_3 \cap D_4 \ldots
+\]
+При этом:
+\begin{equation*}
+\begin{system_and}
+  C \cong D \\
+\begin{system_and}
+C_0 \cong D_1 \\
+C_1 \cong D_0 
+\end{system_and} \\
+\begin{system_and}
+C_2 \cong D_3 \\
+C_3 \cong D_2
+\end{system_and} \\
+\vdots
+\end{system_and} \Rightarrow A \cong B
+\end{equation*} 
+\end{statement}
+\end{proof}
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  18 SEP 2024 18:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  18 SEP 2024 21:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -564,25 +564,20 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 [5]
 
 [6]) (./src/lecture_2.tex
-Overfull \hbox (110.89908pt too wide) in paragraph at lines 37--52
+
+[7]
+Overfull \hbox (110.89908pt too wide) in paragraph at lines 39--54
  [] 
  []
 
 
 
-[7]
-Overfull \hbox (6.04991pt too wide) in paragraph at lines 105--105
-[]\T2A/cmr/bx/n/17.28 Пропозициональные ф-лы $\OMS/cmsy/m/n/17.28 $$ \T2A/cmr/bx/n/17.28 Бу-ле-вы ф-ции 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
-
- []
-
-
-
 [8]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+
 
 [9]) (./src/lecture_3.tex
 
@@ -593,21 +588,21 @@ File: ./figures/polys-and-functions.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./figures/polys-and-functions.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 390.0pt x 195.00438pt.
 )
-Overfull \hbox (3.55363pt too wide) in paragraph at lines 82--83
+Overfull \hbox (3.55363pt too wide) in paragraph at lines 84--85
 []\T2A/cmr/m/n/12 Рассм. од-но-член, в кот. мень-ше все-го мно-жи-те-лей. Ес-ли та-ких несколь-
  []
 
 
-
-[11 <./figures/polys-and-functions.pdf>]
-Overfull \hbox (39.99591pt too wide) detected at line 91
+Overfull \hbox (39.99591pt too wide) detected at line 93
 \OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 ) = 1 \OMS/cmsy/m/n/12 ^^C [] ^^C \OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12 ^^H \OT1/cmr/m/n/12 ([]) = 1([])
  []
 
 
 
-[12]
-Overfull \hbox (3.2203pt too wide) in paragraph at lines 151--152
+[11]
+
+[12 <./figures/polys-and-functions.pdf>]
+Overfull \hbox (3.2203pt too wide) in paragraph at lines 153--154
 []$\OML/cmm/m/it/12 f$ \T2A/cmr/m/n/12 - мо-но-тон-на, ес-ли $\OMS/cmsy/m/n/12 8\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; [] ; a[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 8\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 b[]; [] ; b[]\OT1/cmr/m/n/12 ) [] [] (\OML/cmm/m/it/12 a[] \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 b[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 i \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; [] ; n \OMS/cmsy/m/n/12 )
  []
 
@@ -620,15 +615,15 @@ L3 programming layer <2024-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8130 strings out of 473579
- 127454 string characters out of 5728235
- 1947957 words of memory out of 5000000
- 30848 multiletter control sequences out of 15000+600000
- 579648 words of font info for 103 fonts, out of 8000000 for 9000
+ 8121 strings out of 473579
+ 127314 string characters out of 5728235
+ 1950957 words of memory out of 5000000
+ 30840 multiletter control sequences out of 15000+600000
+ 577852 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,10n,82p,402b,374s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,10n,82p,434b,374s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (13 pages, 313302 bytes).
+Output written on main.pdf (13 pages, 313777 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  94 compressed objects within 1 object stream

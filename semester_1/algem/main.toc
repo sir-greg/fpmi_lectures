@@ -1,5 +1,27 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Декартова система коор-т}{3}{}%
-\contentsline {section}{\numberline {2}Скалярное произведение}{6}{}%
-\contentsline {section}{\numberline {3}Выр-е скалярного произведения в ОНБ и произвольном базисе}{8}{}%
-\contentsline {section}{\numberline {4}Ориентация на пл-ти}{10}{}%
+\contentsline {section}{\numberline {1}Лекция 1}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Инфа}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Матрицы}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}I. Сложение}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}II. Умножение матрицы на вещественное число $\lambda \in \mathbb {R}$}{3}{}%
+\contentsline {subsection}{\numberline {1.3}III. Транспонирование}{4}{}%
+\contentsline {subsection}{\numberline {1.4}IV. Умножение матриц}{5}{}%
+\contentsline {subsubsection}{\numberline {1.4.1}Частный случай}{5}{}%
+\contentsline {subsubsection}{\numberline {1.4.2}Общий случай}{5}{}%
+\contentsline {section}{\numberline {2}Лекция 2}{8}{}%
+\contentsline {subsection}{\numberline {2.1}Упражняемся}{8}{}%
+\contentsline {subsection}{\numberline {2.2}Векторная алгебра}{9}{}%
+\contentsline {subsection}{\numberline {2.3}Операции с векторами}{10}{}%
+\contentsline {subsubsection}{\numberline {2.3.1}I. Сложение}{10}{}%
+\contentsline {subsubsection}{\numberline {2.3.2}Умножение вектора на $\lambda \in \mathbb {R}$}{10}{}%
+\contentsline {subsection}{\numberline {2.4}Системы векторов в пр-ве $V_i$}{11}{}%
+\contentsline {section}{\numberline {3}Лекция 3}{13}{}%
+\contentsline {subsection}{\numberline {3.1}Понятие базиса лин. пр-ва. Базисы в пр-вах $V_i$}{13}{}%
+\contentsline {subsection}{\numberline {3.2}Описание базисов в пр-вах $V_1, V_2, V_3$}{16}{}%
+\contentsline {subsection}{\numberline {3.3}Матрица перехода от одного базиса к другому}{17}{}%
+\contentsline {section}{\numberline {4}Лекция 4}{18}{}%
+\contentsline {subsection}{\numberline {4.1}Декартова система коор-т}{18}{}%
+\contentsline {subsection}{\numberline {4.2}Скалярное произведение}{22}{}%
+\contentsline {section}{\numberline {5}Лекция 5}{24}{}%
+\contentsline {subsection}{\numberline {5.1}Выр-е скалярного произведения в ОНБ и произвольном базисе}{24}{}%
+\contentsline {subsection}{\numberline {5.2}Ориентация на пл-ти}{26}{}%

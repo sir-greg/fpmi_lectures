@@ -1,8 +1,11 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Инфа}{3}{}%
-\contentsline {section}{\numberline {2}Основные понятия теор. множеств}{3}{}%
-\contentsline {section}{\numberline {3}Упорядоченные пары и кортежи}{5}{}%
-\contentsline {section}{\numberline {4}Парадокс Рассела}{5}{}%
-\contentsline {section}{\numberline {5}Отображения и соответствия}{6}{}%
-\contentsline {subsection}{\numberline {5.1}Образ и прообраз}{8}{}%
-\contentsline {subsection}{\numberline {5.2}Композиция}{8}{}%
+\contentsline {section}{\numberline {1}Лекция 2}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Отображения и соответствия}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Образ и прообраз}{4}{}%
+\contentsline {subsection}{\numberline {1.3}Композиция}{5}{}%
+\contentsline {section}{\numberline {2}Лекция 3}{6}{}%
+\contentsline {subsection}{\numberline {2.1}Мощности мн-в}{6}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Парадоксы}{6}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Счётных мн-в}{8}{}%
+\contentsline {subsubsection}{\numberline {2.1.3}Отношение равномощности}{9}{}%
+\contentsline {subsubsection}{\numberline {2.1.4}Сравнимость по мощности}{9}{}%
