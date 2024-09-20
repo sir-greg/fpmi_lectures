@@ -1,0 +1,198 @@
+\section{Лекция 6}
+
+Рассм. $\bigcap_{i = 1}^{\infty} (0, \frac{1}{n})$
+
+По аксиоме Архимеде, заключаем, что $\bigcap_{i = 1}^{\infty} (0, \frac{1}{n}) = \emptyset$
+
+\subsection{Бесконечные пределы}
+
+Выделим классы п-ть, \textbf{расход. особым образом}:
+\begin{definition}
+Говорят, что $\{a_n\}_{1}^{\infty}$ стремится к $+\infty$, если $\forall \varepsilon > 0, \exists N \in \N, \forall n \in \N (n \geq N \Rightarrow a_n > \frac{1}{\varepsilon})$
+\end{definition}
+\begin{symb}
+Пишут вот так: $\lim_{n\to\infty}a_n = +\infty$ или $a_n \to +\infty$
+\end{symb}
+\begin{definition}
+Говорят, что $\{a_n\}_{1}^{\infty}$ стремится к $-\infty$, если $\forall \varepsilon > 0, \exists N \in \N, \forall n \in \N (n \geq N \Rightarrow a_n < -\frac{1}{e})$
+\end{definition}
+\begin{symb}
+Пишут, что $\lim_{n\to\infty}a_n = -\infty$ или $a_n \to -\infty$
+\end{symb}
+\begin{definition}
+П-ть $\{a_n\}_{1}^{\infty}$ наз-ся \textbf{беск. большой}, если  $\lim_{n\to\infty} \left|a_n\right| = +\infty$
+\end{definition}
+\begin{note}
+Из опр-ий следует, что $a_n \to -\infty \iff (-a_n) \to +\infty$
+\end{note}
+\begin{example}
+  \begin{itemize}
+    \item [1) ] \[
+a_n = n^{2}, n \in \N \Rightarrow a_n \to +\infty
+\]
+Возьмём $N = \floor{\frac{1}{\sqrt{\varepsilon}}} + 1 \Rightarrow n \geq N \Rightarrow n^{2} \geq \frac{1}{\varepsilon}$ 
+
+  \item [2) ]
+\[
+  (-n^{2}) \to -\infty
+\]
+\item [3) ] \[
+    (-1)^{n} n^{2} - \text{б. б., но}, (-1)^{n}n^{2} \not\to +\infty, (-1)^{n}n^{2} \not\to -\infty
+\]
+  \end{itemize}
+\end{example}
+\begin{task}
+Док-ть, что всякая ББ п-ть является неограниченной.
+\end{task}
+\begin{note}
+П-ть не может одновременно стремиться к числу и к символу $+\infty$ (Т. к. она либо ограничена, либо неогр.), а также к бесконечностям разных знаков. Таким образом, если п-ть имеет предел в $\R$, то он единственный.
+\end{note}
+\begin{lemma}
+Пусть $a_n \neq 0, \forall n \in \N$, тогда $\{a_n\}_{1}^{\infty}$ - ББ $\iff \{\frac{1}{a_n}\}_{1}^{\infty}$ - БМ
+\end{lemma}
+\begin{proof}
+Это следует из $\left|a_n\right| > \frac{1}{\varepsilon} \iff \left|\frac{1}{a_n}\right| < \varepsilon$
+\end{proof}
+\subsection{Дополнения к ранним теоремам}
+\begin{theorem}[4']
+Пусть $a_n \leq b_n, \forall n \in \N$. Тогда:
+\begin{itemize}
+  \item [1) ] Если $a_n \to +\infty$, то $b_n \to +\infty$
+  \item [2) ] Если $b_n \to -\infty$, то $a_n \to -\infty$
+\end{itemize}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item[1) ] Заф. $\varepsilon > 0$. По опр. предела $\exists N \in \N, \forall n \geq N \colon (a_n > \frac{1}{\varepsilon})$. Тогда $b_n \geq a_n > \frac{1}{\varepsilon}, \forall n \geq N$. Тогда $b_n \to +\infty$
+  \item [2)] Вытекает из (1): $(-b_n) \to +\infty, -b_n \leq -a_n, \forall n \rightarrow (-a_n) \to +\infty \Rightarrow a_n \to -\infty$
+\end{itemize}
+\end{proof}
+\begin{theorem}[6']
+\begin{itemize}
+  \item[1) ] Если п-ть $\{a_n\}_{1}^{\infty}$ нестрого возр. и неогр. сверху, то $\exists\lim_{n\to\infty}a_n = +\infty$
+  \item [2) ] Если п-ть $\{a_n\}_{1}^{\infty}$ нестрого убыв. и неогр. снизу, то $\exists\lim_{n\to\infty} a_n = -\infty$
+\end{itemize}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item[1)] Зафикс. $\varepsilon > 0$. Из неогр. сверху следует, что $\exists N \colon a_N > \frac{1}{\varepsilon} \Rightarrow $ Тогда $a_n \geq a_N > \frac{1}{\varepsilon}, \forall n \geq N \Rightarrow \lim_{n\to\infty} a_n = +\infty$
+  \item [2) ] Аналогично (1), или с помощью сведения $a_n$ к $(-a_n)$
+\end{itemize}
+\end{proof}
+\begin{consequence}
+Всякая монотонная п-ть имеет предеел в $\overline{\R}\colon$ если $\{a_n\}_{1}^{\infty}$ нестрого возр., то $\exists \lim_{n\to\infty}a_n = \sup\{a_n\}$
+
+Если п-ть $\{a_n\}_{1}^{\infty}$ нестрого убыв., то $\exists \lim_{n\to\infty} a_n = \inf \set{a_n}$
+\end{consequence}
+\begin{task}
+Д-те, что теорема 5 (арифм. операции с пределами), остаётся верно и для $a, b \in \overline{\R}$ (с допуст. операциями)
+\end{task}
+\begin{example}
+Пусть $\lim_{n\to\infty} a_n = x \in \R, x < 0$, а $\lim_{n\to\infty} b_n = +\infty$. Тогда $\lim_{n\to\infty} a_n b_n = -\infty$
+\end{example}
+\begin{proof}
+  \[
+    \exists N_1, \forall n \geq N_1 (a_n < \frac{x}{2})
+  \]
+  \[
+  \exists N_2, \forall n \geq N_2 (b_n > \frac{2}{\left|x\right|\varepsilon})
+  \]
+  Возьмём $N = max(N_1, N_2) \Rightarrow \forall n \geq N \colon$
+  \[
+  a_nb_n < \frac{x}{2} \frac{2}{\left|x\right|\varepsilon} = \frac{1}{\varepsilon}
+  \]
+\end{proof}
+\subsection{Подпоследовательности}
+\begin{definition}
+  Пусть $\{a_n\}_{1}^{\infty}$ - п-ть и $\{n_k\}_{1}^{\infty}$ строго возрастающая п-ть нат. чисел. П-ть $\{b_k\}_{1}^{\infty}$, где $b_k = a_{n_k}, k \in \N$, наз-ся \textbf{подпоследовательностью} и об-ся $\{a_{n_k}\}_{1}^{\infty}$
+\end{definition}
+\begin{example}
+  \[
+    a_n = n, n \in \N
+  \]
+  \[
+  a_{n_k} = k^{2}, k \in \N \text{ - подп-ть}
+  \]
+\end{example}
+\begin{note}
+  \begin{itemize}
+    \item[1) ]
+Подп-ть $\set{a_{n_k}}$ - это композиция строго возрастающей ф-ции $\sigma: \N \rightarrow \N, \sigma(k) = n_k$, и самой п-ти $a: \N \rightarrow \N$
+\item [2) ] Верно, что $n_k \geq k, \forall k$
+
+  ($n_1 \geq 1, n_k \geq k, n_{k + 1} > n_k \geq k\Rightarrow n_{k + 1} \geq k + 1$)
+  \end{itemize}
+\end{note}
+\begin{lemma}
+Если п-ть $\set{a_n}$ имеет предел в $\overline{\R}$, то любая её подп-ть имеет тот же предел
+\end{lemma}
+\begin{proof}
+Пусть $\lim_{n\to\infty} a_n = a$, а $\set{a_{n_k}}$ - подп-ть $\set{a_n}$
+\begin{itemize}
+  \item [a) ] Пусть $a \in \R$. Зафикс. $\varepsilon > 0$. По опр. предела $\exists N, \forall n \geq N (\left|a_n - a\right| < \varepsilon)$
+    
+    Тогда $\left|a_{n_k} - a\right| < \varepsilon$ при всех $k \geq N$ (т. к. $n_k \geq k \geq N$)
+
+    Сл-но, $\lim_{k\to\infty} a_{n_k} = a$. 
+  \item [b) ] Если $a = +\infty$, получаем результат, если заменить $\left|a_n - a\right| < \varepsilon$ на $a_n > \frac{1}{\varepsilon} (a_n < -\frac{1}{\varepsilon})$
+     
+
+\end{itemize}
+\end{proof}
+\begin{theorem}[Больцано-Вейерштрасса]
+Всякая огр. посл-ть имеет сход. подпосл-ть.
+\end{theorem}
+\begin{proof}
+Пусть задана $\{a_n\}_{1}^{\infty}$ - ограниченная,
+\[
+  \Rightarrow \exists[c, d] \ni a_n, \forall n \in \N
+\]
+
+Определим п-ть отрезков $[c_k, d_k]$
+%\set{m \in \N \colon a_m \in [c_k, y]}
+Положим $[c_1, d_1] = [c, d]$. Если определён отрезок $[c_k, d_k]$, то разделим его пополам $(y = \frac{c_k + d_k}{2})$
+
+\begin{equation*}
+[c_{k + 1}, d_{k + 1}] = 
+\begin{cases}
+[c_k, y], \text{если } \set{k | a_k \in [c_k, y]} \text{ - бесконечно} \\
+[y, d_k], \text{иначе}
+\end{cases}
+\end{equation*}
+П-ть $\set{[c_k, d_k]}$ стягивающаяся:
+\begin{equation*}
+  \forall k\colon
+\left\lbrace \begin{aligned}
+[c_{k + 1}, d_{k + 1}] \subset [c_k, d_k] \\
+d_k - c_k = \frac{d - c}{2^{k}}
+\end{aligned} \right.
+\end{equation*}
+По т. Кантора $\exists a \in \bigcap_{k = 1}^{\infty} [c_k, d_k]$, причём $c_k \to a, d_k \to a$
+
+Определим $a_{n_k}$:
+\[
+a_{n_1} = a_1, \text{если определён $a_{n_k}$, то положим}
+\]
+\[
+a_{n_{k + 1}} \in [c_{k + 1}, d_{k + 1}], n_{k + 1} \geq n_k
+\]
+Т. к. $c_k \leq a_{n_k} \leq d_k$, то по т. о зажатой п-ти (о двух полицейских), то $a_{n_k} \to a$
+\end{proof}
+
+\begin{theorem}
+Если п-ть неограничена сверху (снизу), то она имеет подпосл-ть, стремящуюся к $+\infty$ ($-\infty$)
+\end{theorem}
+\begin{proof}
+Пусть дана п-ть $\set{a_n}$ - неогр. сверху.
+\[
+a_{n_1} > 1
+\]
+Пусть определён эл-т $a_{n_k}$, определим:
+\[
+a_{n_{k + 1}} > max\set{k + 1, a_{n_1}, \ldots, a_{n_k}} \Rightarrow n_{k + 1} > k
+\]
+Опр-на $\set{a_{n_k}}$. Т. к. $a_{n_k} > k, \forall k \Rightarrow a_{n_k} \to +\infty$ (По теореме 4')
+\end{proof}
+\begin{consequence}
+Всякая п-ть имеет подпосл-ть, стремящуюся к некот. эл-ту $\in \overline{\R}$
+\end{consequence}

@@ -21,13 +21,6 @@
 \usepackage{transparent}
 \usepackage{xcolor}
 
-\newcommand{\incfig}[2][1]{%
-    \def\svgwidth{#1\columnwidth}
-    \import{./figures/}{#2.pdf_tex}
-}
-
-\pdfsuppresswarningpagegroup=1
-
 % for systems of equations
 \newenvironment{system_and}%
 {\left\lbrace\begin{array}{@{}l@{}}}%
@@ -36,6 +29,13 @@
 \newenvironment{system_or}%
 {\left\lbrack\begin{array}{@{}l@{}}}%
 {\end{array}\right.}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
 
 \renewcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}

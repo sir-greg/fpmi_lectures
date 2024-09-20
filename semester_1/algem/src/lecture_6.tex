@@ -1,0 +1,290 @@
+\section{Лекция 6}
+
+\begin{definition}
+$A$ - матрица размера $3 \times 3$ 
+\[
+  A = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix}
+\]
+$a_{ii}$ - главная диагональ
+Определителем такой матрицы наз-ся число, равное:
+\[
+\left|A\right| = \det A = a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13}a_{21}a_{32} \left(\text{слагаемые, параллельные главной диагонали}\right) -
+\]
+\[
+  - a_{13}a_{22}a_{31} - a_{12}a_{21}a_{33} - a_{11}a_{23}a_{32} \left(\text{слагаемые, || побочной диагонали}\right)
+\]
+
+Таким образом, \textbf{определитель матрицы} -  это сумма произведений эл-ов матрицы, взятых по одному и ровно по одному слагаемому из каждой строки и из каждого столбца. Произведение имеет знак +, если оно || главной диагонали, иначе - побочной. 
+\end{definition}
+
+\begin{statement}
+Пусть $G$ - базис в $V_3$, $\overline{a} \underset{G}{\longleftrightarrow}\alpha, \overline{b} \underset{G}{\longleftrightarrow} \beta, \overline{c} \underset{G}{\longleftrightarrow} \gamma$, тогда:
+\[
+  V\left(\overline{a}, \overline{b}, \overline{c}\right) = \begin{vmatrix}\alpha_1 & \beta_1 & \gamma_1 \\ \alpha_2 & \beta_2 & \gamma_2 \\ \alpha_3 & \beta_3 & \gamma_3 \end{vmatrix} V\left(\overline{e_1}, \overline{e_2}, \overline{e_3}\right)
+\]
+\end{statement}
+\begin{proof}
+\[
+V\left(\sum_{i}^{}\alpha_i \overline{e_i}, \sum_{j}^{}\beta_j \overline{e_j}, \sum_{k}^{}\gamma_k \overline{e_k}\right) = \sum_{i}^{}\sum_{j}^{}\sum_{k}^{}\alpha_i \beta_j \gamma_k V\left(\overline{e_i}, \overline{e_j}, \overline{e_k}\right) = 
+\]
+Рассм.:
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+  & $i$ & $j$ & $k$ \\
+ \hline
+1)&  1 & 2 & 3 \\
+ \hline
+2) & 2 & 3 & 1 \\
+ \hline
+3)& 3 & 1 & 2 \\
+ \hline
+4) & 2 & 1 & 3 \\
+ \hline
+5)& 3 & 2 & 1 \\
+ \hline
+6)& 1 & 3 & 2 \\
+ \hline
+\end{tabular}
+\end{center}
+$\Rightarrow$
+\[
+= \alpha_1\beta_2\gamma_3 V\left(\overline{e_1}, \overline{e_2}, \overline{e_3}\right) + \alpha_2 + \beta_3 \gamma_1 V\left(\overline{e_2}, \overline{e_3}, \overline{e_1}\right) + \alpha_3\beta_1\gamma_2 V\left(\overline{e_3}, \overline{e_1}, \overline{e_2}\right) \left(\text{ЦИКЛ}\right) + 
+\]
+\[
++ \alpha_2 \beta_1 \gamma_3 V\left(\overline{e_2}, \overline{e_1}, \overline{e_3}\right) + \alpha_3\beta_2\gamma_1V\left(\overline{e_3}, \overline{e_2}, \overline{e_1}\right) + \alpha_1\beta_3\gamma_2 V\left(\overline{e_1}, \overline{e_3}, \overline{e_2}\right) \left(\text{ТРАНСПОЗИЦИЯ}\right) \Rightarrow
+\]
+\[
+= V\left(\overline{e_1}, \overline{e_2}, \overline{e_3}\right) \left(\alpha_1\beta_2\gamma_3 + \alpha_2\beta_3\gamma_1 + \alpha_3\beta_1\gamma_2 - \alpha_2\beta_1\gamma_3 - \alpha_3\beta_2\gamma_1 - \alpha_1\beta_3\gamma_2 \right) = 
+\]
+\[
+  = V\left(\overline{e_1}, \overline{e_2}, \overline{e_3}\right) * \det \left(\alpha^{\uparrow}, \beta^{\uparrow}, \gamma^{\uparrow}\right)
+\]
+\end{proof}
+\begin{consequence}
+Если $G$ - ОНБ, то:
+\[
+  V\left(\overline{a}, \overline{b}, \overline{c}\right) = \begin{vmatrix}\alpha^{\uparrow} & \beta^{\uparrow} & \gamma^{\uparrow} \end{vmatrix}
+\]
+\[
+S\left(\overline{a}, \overline{b}\right) = \begin{vmatrix}\alpha^{\uparrow}, \beta^{\uparrow} \end{vmatrix}
+\]
+\end{consequence}
+\begin{consequence}
+  В произвольном базисе $V_2$ : $\overline{a} || \overline{b} \iff S\left(\overline{a}, \overline{b}\right) = 0 \iff \begin{vmatrix} \alpha_1 & \beta_1 \\ \alpha_2 & \beta_2 \end{vmatrix} = 0$
+
+  $V_3$ : $\overline{a}, \overline{b}, \overline{c} - \text{компл.} \iff \begin{vmatrix}\alpha^{\uparrow} & \beta^{\uparrow} & \gamma^{\uparrow} \end{vmatrix} = 0$
+\end{consequence}
+
+\begin{theorem}[Крамера, 1750 г.]
+Пусть дана СЛУ (система линейных ур-ий): 3-х ур-ий с 3-мя неизвестными:
+\begin{equation*}
+\begin{system_and}
+a_{11} x + a_{12} y + a_{13} z = b_1 \\
+a_{21} x + a_{22} y + a_{23} z = b_2 \\
+a_{31}x + a_{32} y + a_{33} z = b_3
+\end{system_and}
+\end{equation*}
+\begin{note}
+\[
+\iff AX = B,
+\]
+\[
+X = \begin{pmatrix}x \\ y \\ z \end{pmatrix}, B = \begin{pmatrix}b_1 \\ b_2 \\ b_3 \end{pmatrix}
+\]
+\end{note}
+Введём ОНБ $G$:
+\[
+  \overline{a_1} \underset{G}{\longleftrightarrow}\begin{pmatrix}\overline{a_{11}} \\ \overline{a_{21}}  \\ \overline{a_{31}}\end{pmatrix}, \overline{a_2} \underset{G}{\longleftrightarrow} A_{*2}, \overline{a_3} \underset{G}{\longleftrightarrow} A_{*3}
+\]
+
+Эта система явл. \textbf{определённой } $\iff$ $\left|A\right| = \triangle \neq 0$
+
+В этом случае, система имеет решение:
+\[
+x = \frac{\triangle_x}{\triangle}, y = \frac{\triangle_y}{\triangle}, z = \frac{\triangle_z}{\triangle} \text{  (Формула Крамера)}
+\]
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item[a) ] \textbf{Необходимое: }Пусть система опр. $\Rightarrow x_0 \overline{a_1} + y_0 \overline{a_2} + z_0 \overline{a_3} = \overline{b}$ - имеет. ед. реш.
+    Пусть $\det A = 0 \Rightarrow \overline{a_1}, \overline{a_2}, \overline{a_3}$ - компл. $\Rightarrow$ ЛЗ $\Rightarrow$
+
+    $\exists$ нетрив. ЛК $\lambda_1 \overline{a_1} + \lambda_2 \overline{a_2} + \lambda_3 \overline{a_3} =  \overline{o}$, тогда:
+    \[
+      (\lambda_1 + x_0) \overline{a_1} + (\lambda_2 + y_0) \overline{a_2} + (\lambda_3 + z_0) \overline{a_3} = \overline{b} - \text{ другое реш. системы $\Rightarrow$ противореичие!!!}
+    \]
+  \item [b) ] \textbf{Достаточное}:  Пусть $\det A \neq 0 \Rightarrow \overline{a_1}, \overline{a_2}, \overline{a_3}$ - не компл. $\Rightarrow \overline{a_{1}}, \overline{a_{2}}, \overline{a_3}$ $\Rightarrow$ $\overline{b}$ однозначно выр-ется черз $x\overline{a_1} + y\overline{a_2} + z\overline{a_3} = \overline{b}$
+
+  \item [c) ] \textbf{Формулы: } \[
+  V(\overline{a_{11}}, \overline{a_{21}}, \overline{b}) = V(\overline{a_{11}}, \overline{a_{21}}, x\overline{a_1} + y\overline{a_2} + z\overline{a_3}) = 
+  \]
+  \[
+   = xV(\overline{a_{11}}, \overline{a_{21}}, \overline{a_1}) + yV(\overline{a_{11}}, \overline{a_{21}}, \overline{a_2}) + zV(\overline{a_{11}}, \overline{a_{21}}, \overline{a_3}) = ...
+  \]
+\end{itemize}
+\end{proof}
+
+\begin{definition}
+СЛУ наз-ся \textbf{несовместной}, если она не имеет ни одного решения.
+\end{definition}
+\begin{definition}
+СЛУ наз-ся \textbf{совместной}, если она имеет хотя бы одно решение.
+
+Также она наз-ся:
+\begin{itemize}
+  \item \textbf{Определённой}, если имеет \textbf{единственное} решение \\
+  \item \textbf{Неопределённой}, если имеет \textbf{более одного} решения
+\end{itemize}
+\end{definition}
+
+\subsection{Векторное произведение векторов}
+
+$V_3$: $\overline{a}, \overline{b} \in V_3$ : $[\overline{a}, \overline{b}]$ - мат., $\overline{a} \times \overline{b}$ - физ.
+
+\begin{definition}
+Векторное произведение вект. $\overline{a}, \overline{b}$ наз-ся вектор $\overline{c}$, т. ч.:
+\begin{itemize}
+  \item [1) ] $\overline{c} \perp \overline{a}, \overline{c} \perp \overline{b}$
+  \item [2) ] $\left|\overline{c}\right| = S_{\text{||-ма, образ.} \overline{a}, \overline{b}}$ = $\left|S(\overline{a}, \overline{b})\right|$
+  \item [3) ] Тройка $(\overline{a}, \overline{b}, \overline{c})$ - правая тройка
+\end{itemize}
+\end{definition}
+\begin{note}
+Если $\overline{a} || \overline{b}$, то $\overline{c} = \overline{o}$
+\end{note}
+\begin{theorem}[О связи векторного произв. с ориент. объёмом]
+\[
+V(\overline{a}, \overline{b}, \overline{c}) = ([\overline{a}, \overline{b}], \overline{c}) = (\overline{a}, [\overline{b}, \overline{c}])
+\]
+\end{theorem}
+\begin{proof}
+$\overline{a} || \overline{b} \Rightarrow 0 = 0 $ - верно
+\begin{itemize}
+  \item [1) ] 
+Пусть $\overline{a} \not{||} \overline{b}$, тогда они образ. пл-ть $\alpha$. Пусть $\overline{n}$ - вектор нормали к $\alpha$:
+\begin{equation*}
+\begin{system_and}
+\overline{n} \perp \overline{a} \\
+\overline{n} \perp \overline{b} \\
+\left|\overline{n}\right| = 1
+\end{system_and} \Rightarrow (\overline{a}, \overline{b}, \overline{n}) - \text{правая}
+\end{equation*}
+Было: $V(\overline{a}, \overline{b}, \overline{c}) = S(\overline{a}, \overline{b}) (\overline{n}, \overline{c}) = (S(\overline{a}, \overline{b})\overline{n}, \overline{c}) = ([\overline{a}, \overline{b}] \overline{c})$
+\item [2) ] \[
+    (\overline{a}, [\overline{b}, \overline{c}]) = ([\overline{b}, \overline{c}], \overline{a}) = V(\overline{b}, \overline{c}, \overline{a}) = V(\overline{a}, \overline{b}, \overline{c})
+\]
+\end{itemize}
+\end{proof}
+\begin{note}
+  Сочетание скалярного и векторного произведений также назыв. \textbf{смешанным:}
+  \[
+    (\overline{a}, \overline{b}, \overline{c}) \colon\colon= ([\overline{a}, \overline{b}], \overline{c}) = (\overline{a}, [\overline{b}, \overline{c}]) = V(\overline{a}, \overline{b}, \overline{c})
+  \]
+\end{note}
+\begin{lemma}
+Если $\forall \overline{c} = V_3 \Rightarrow (\overline{a}, \overline{c}) = (\overline{b}, \overline{c}),$ то $\overline{a} = \overline{b}$
+\end{lemma}
+\begin{proof}
+  \[
+    (\overline{a} - \overline{b}, \overline{c}) = 0, \forall \overline{c}
+  \]
+  \[
+  \overline{c} = \overline{a} - \overline{b} \Rightarrow
+  \]
+  \[
+  (\overline{a} - \overline{b}, \overline{a} - \overline{b}) = \overline{o} \Rightarrow \overline{a} = \overline{b}
+  \]
+\end{proof}
+\begin{theorem} [О св-вах вект. произведения]
+  \begin{itemize}
+    \item [a) ] $[\overline{a}, \overline{b}] = -[\overline{b}, \overline{a}]$ - кососимметричность
+    \item [b) ] $[\overline{a}, \overline{b_1} + \overline{b_2}] = [\overline{a}, \overline{b_1}] + [\overline{a}, \overline{b_2}]$ 
+    \item [c) ] $[\overline{a}, \lambda \overline{b}] = \lambda [\overline{a}, \overline{b}]$
+  \end{itemize} 
+  b), c) - линейность по $II$ аргументу.
+
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item[a) ]
+Пусть $\overline{a} \not{||} \overline{b}$ (иначе очев.)
+
+$(\overline{a}, \overline{b}, [\overline{a}, \overline{b}])$ - правая тройка
+
+$(\overline{b}, \overline{a}, [\overline{a}, \overline{b}])$ - левая тройка $\Rightarrow$
+
+$(\overline{b}, \overline{a}, -[\overline{a}, \overline{b}])$ - правая тройка, при этом: 
+
+$(\overline{b}, \overline{a}, [\overline{b}, \overline{a}])$  - правая тройка
+
+Ч. Т. Д.
+
+  \item [b) ] Докажем эквив. утв: $([\overline{a}, \overline{b_1} + \overline{b_2}], \overline{c}) = ([\overline{a}, \overline{b_1}] + [\overline{a}, \overline{b_2}], \overline{c}), \forall \overline{c}$
+
+    \[
+      ([\overline{a}, \overline{b_1} + \overline{b_2}], \overline{c}) = (\overline{a}, \overline{b_1} + \overline{b_2}, \overline{c}) = (\overline{a}, \overline{b_1}, \overline{c}) + (\overline{a}, \overline{b_2}, \overline{c}) = 
+    \]
+    \[
+     = ([\overline{a}, \overline{b_1}], \overline{c}) + ([\overline{a}, \overline{b_2}], \overline{c})= ([\overline{a}, \overline{b_1}] + [\overline{a}, \overline{b_2}], \overline{c}) 
+    \]
+\end{itemize}
+\end{proof}
+
+\subsection{Запись векторного произведения в произвольном базисе}
+\begin{theorem}
+Пусть $G$ - базис в $V_3$, $\overline{a} \underset{G}{\longleftrightarrow} \begin{pmatrix}\alpha_1 \\ \alpha_2 \\ \alpha_3 \end{pmatrix}, \overline{b} \underset{G}{\longleftrightarrow} \begin{pmatrix}\beta_1 \\ \beta_2 \\ \beta_3\end{pmatrix}$. Тогда:
+\[
+  [\overline{a}, \overline{b}] = \begin{vmatrix}[\overline{e_2}, \overline{e_3}] & \overline{[\overline{e_3}, \overline{e_1}]} & [\overline{e_1}, \overline{e_2}] \\ \alpha_1 & \alpha_2 & \alpha_3 \\ \beta_1 & \beta_2 & \beta_3 \end{vmatrix}
+\]
+\end{theorem}
+\begin{proof}
+\[
+[\overline{a}, \overline{b}] = \left[\sum_{i = 1}^{3}\alpha_i \overline{e_i}, \sum_{i = 1}^{3} \beta_i \overline{e_i}\right] = \sum_{i}^{}\sum_{j}^{} \alpha_i \beta_j [\overline{e_i}, \overline{e_j}] = 
+\]
+Рассм.:
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ i & j \\
+ \hline
+ 2 & 3 \\
+ \hline
+ 3 & 1 \\ 
+ \hline
+ 1 & 2 \\
+ \hline
+\end{tabular}
+\end{center}
+\[
+ = (\alpha_2 \beta_3 - \alpha_3 \beta_2) [\overline{e_2}, \overline{e_3}] + (\alpha_3 \beta_1 - \alpha_1 \beta_3) [\overline{e_3}, \overline{e_1}] + (\alpha_1 \beta_2 - \alpha_2 \beta_1) [\overline{e_1}, \overline{e_2}]
+\]
+\end{proof}
+\begin{note}
+В упрощ. виде:
+\[
+  [\overline{a}, \overline{b}] = \begin{vmatrix}\overline{e_1} & \overline{e_2} & \overline{e_3} \\ \alpha_1 & \alpha_2 & \alpha_3 \\ \beta_1 & \beta_2 & \beta_3 \end{vmatrix}
+\]
+\end{note}
+\subsection{Биортогональный базис}
+$V_3\colon G = (\overline{e_1}, \overline{e_2}, \overline{e_3})$
+
+\begin{definition}
+  Векторы
+  \[
+    f_1 = \frac{[\overline{e_2}, \overline{e_3}]}{(\overline{e_1}, \overline{e_2}, \overline{e_3})}, f_2 = \frac{[\overline{e_3}, \overline{e_1}]}{(\overline{e_1}, \overline{e_2}, \overline{e_3})}, \overline{f_3} = \frac{[\overline{e_1}, \overline{e_2}]}{(\overline{e_1}, \overline{e_2}, \overline{e_3})}
+  \]
+  наз-ся векторами \textbf{биортогонального} (к $G$) базиса
+\end{definition}
+\begin{theorem}[О св-вах биортогонального базиса]
+\begin{itemize}
+  \item [a) ] $(\overline{f_1}, \overline{f_2}, \overline{f_3})$ - базис в $V_3$
+  \item [b) ] \begin{equation*} (\overline{f_i}, \overline{e_j}) = 
+  \begin{system_and}
+  1, i = j \\
+  0, i \neq j 
+  \end{system_and}
+  \end{equation*}
+\item [c) ] Если $\overline{v} \underset{G}{\longleftrightarrow} \begin{pmatrix}\alpha \\ \beta \\ \gamma \end{pmatrix}$, то $\alpha = (\overline{v}, \overline{f_1}), \beta = (\overline{v}, \overline{f_2}), \gamma = (\overline{v}, \overline{f_3})$
+\end{itemize}
+\end{theorem}
