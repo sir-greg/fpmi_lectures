@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1726685011.48294 "main.tex" "main.pdf" "main" 1726685011.97476 0
+["pdflatex"] 1727090797.65136 "main.tex" "main.pdf" "main" 1727090798.10552 0
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labi1200.tfm" 1725282838.58337 3592 9415307df98650ffeddaa22e262436dc ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1725258418.94669 3308 eee81981029f67083258db36df06e523 ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1722950259.82679 3304 6a543c07045572737981351171e0505e ""
@@ -127,14 +127,14 @@
   "/usr/local/texlive/2024/texmf.cnf" 1722811606.09035 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "figures/polys-and-functions.pdf" 1726670375.5267 2253 08947d26de1778565226fd5604cfcfa1 ""
   "figures/polys-and-functions.pdf_tex" 1726670375.5267 2095 31ea541ca2e28922e52855897881172c ""
-  "main.aux" 1726685011.89335 2698 b4065f4b99d5b7c59186823984f34c8b "pdflatex"
+  "main.aux" 1727090798.03334 2698 b4065f4b99d5b7c59186823984f34c8b "pdflatex"
   "main.tex" 1726668248.72667 404 4a3f5be6967d1297f5c2d978fba9a493 ""
-  "main.toc" 1726685011.89335 1664 947023b0b9a0844b08af2b16c6c2ddee "pdflatex"
+  "main.toc" 1727090798.03334 1664 947023b0b9a0844b08af2b16c6c2ddee "pdflatex"
   "preamble/preamble.tex" 1726512282.68002 2422 e7e0f3a5a6265b7599b947acd7386433 ""
   "src/lecture_1.tex" 1726684909.04002 5099 8f8dae17201d59e514d9cb525ecc6ce5 ""
-  "src/lecture_1_extra.tex" 1726684953.49002 3910 e710a54821ddf429aaf1cde061c3402f ""
+  "src/lecture_1_extra.tex" 1727090623.08333 3910 df6dc89b75c7154a149b8150012355e3 ""
   "src/lecture_2.tex" 1726684987.88002 5952 ca41ebf08799292b4baeac694000a982 ""
-  "src/lecture_3.tex" 1726685009.24002 6461 2be5704a94bebe71acbeaba71ed12484 ""
+  "src/lecture_3.tex" 1727090797.38 6466 e89c73ad813dee1f6097949a03212a53 ""
   (generated)
   "main.aux"
   "main.log"

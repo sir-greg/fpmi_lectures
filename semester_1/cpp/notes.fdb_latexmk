@@ -1,8 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1726499817.1731 "notes.tex" "notes.pdf" "notes" 1726499817.58061 0
+["pdflatex"] 1727103502.26819 "notes.tex" "notes.pdf" "notes" 1727103502.69038 0
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1725258418.94669 3308 eee81981029f67083258db36df06e523 ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1722950259.82679 3304 6a543c07045572737981351171e0505e ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1728.tfm" 1725264308.81669 3312 d199be9bd555944e2403193d58a0256a ""
+  "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/larm0600.tfm" 1725271963.16002 3248 7c0b9d76a2cd84ed06764a4c6eea5de4 ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/larm1200.tfm" 1722950254.38679 3240 c2435f2b5cd66d4930bc29b8df87967e ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/larm1440.tfm" 1722950257.18679 3256 3daaa33cf35cf3f354983aa3214ecd7f ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/larm1728.tfm" 1722950249.01345 3252 92d08740ce00199d6cf9ff4aaada81d1 ""
@@ -41,6 +42,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb" 1215737283 140176 d4962f948b4cc0adf4d3dde77a128c95 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb" 1215737283 135942 859a90cad7494a1e79c94baf546d7de5 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb" 1215737283 139826 9213617a7cb78635fc326b859c0b2273 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb" 1215737283 162624 9dcc92cd3b1dfe2ecc80e6da7f2eb6bd ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1215737283 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb" 1215737283 131078 d96015a2fa5c350129e933ca070b2484 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb" 1215737283 131290 ea265c7de37664eae04a6f91a1f7a51f ""
@@ -94,6 +96,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1279039959 678 4792914a8f45be57bb98413425e4c7af ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg" 1716665723 1865 590dd246a0b45afbf728b7c8cdf53b63 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.sty" 1716665723 81407 9bb5c566f0fc5345e3f78fba3da17b12 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty" 1716665723 206518 454797549fee16d9163752cdce1d96e1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty" 1716665723 77023 71dc8ec77fb5648c3af15ec4b791f591 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty" 1710360531 353 9024412f43e92cd5b21fe9ded82d0610 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty" 1667072951 6572 ea530fbbe537629fd97736d33babc07d ""
@@ -109,8 +112,8 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1722811609 5483422 a1ef07ac981a8b7f5985102f2de312a6 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1722811645 8239395 770efc74df93586a44891e8f654c98d2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1722811606.09035 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "notes.aux" 1726499817.51673 1004 5417975b2d78549a4f327f280de0b1cf "pdflatex"
-  "notes.tex" 1726499816.7734 3470 2e5d5ef42a78acbb81a9301d294407c0 ""
+  "notes.aux" 1727103502.63005 1367 947dae6fb04888f72cd455fe7e089cc4 "pdflatex"
+  "notes.tex" 1727103501.84338 3768 9f387d8581d148a049d6f773b536b52b ""
   (generated)
   "notes.aux"
   "notes.log"
