@@ -1,0 +1,133 @@
+\section{Лекция 4}
+\subsection{Кучи}
+\begin{definition}
+Куча - СД, умеющая:
+\begin{itemize}
+  \item Хранить мультимн-во эл-ов $S$
+  \item $insert(x)$ - добавить $x$ в $S$
+  \item $getMin()$ - вернуть $min(S)$
+  \item $extractMin()$ - найти $min(S)$ и удалить его
+  \item $decreaseKey(ptr, \triangle), \triangle > 0$ - уменьшить число по адресу $ptr$ на $\triangle$
+\end{itemize}
+\textbf{Применения}: алгоритмы Дейкстры, Прима
+\end{definition}
+\subsubsection{Бинарная (двоичная) куча}
+Храним $S$ в массиве $a_1, a_2, \ldots, a_n$
+
+Picture(1)
+
+\textbf{Требование кучи}: эл-т, записанный в каждой вершине, $\leq$ всех эл-ов своего поддерева
+
+Тогда $getMin()\colon$ return $a_1$;
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=siftUp and siftDown]
+siftUp(u):
+  if (v == 1) return
+  p = (v / 2)
+  if (a[p] > a[v]) {
+    swap(a[p], a[v])
+    siftUp(p)
+  }
+
+siftDwon(v)
+  if (2 * v > n) return
+  u = 2v
+  if (2 * v + 1 <= n && a[2 * v + 1] < a[u]): u = 2 * v + 1
+  if (a[u] < a[v]) {
+    swap(a[u], a[v])
+    siftDown(u)
+  }
+
+\end{lstlisting}
+Остальные методы в heap.cpp
+
+Асимптотика всего: $O(\log n)$
+
+\textbf{Корректность}
+\begin{lemma}
+Пусть $a_1, \ldots, a_n$ - корректная куча \\
+Пусть $a_v \leftarrow x$
+\begin{itemize}
+  \item [1) ] Если $a_v$ уменьшилось, то после $siftUp(v)$ куча вновь станет корректной
+  \item [2) ] Если $a_v$ увеличилось, то после $siftDown(v)$ куча вновь станет корректной
+\end{itemize}
+\end{lemma}
+\begin{proof}
+\begin{itemize}
+  \item [1) ] Индукция по $v$:
+    \begin{itemize}
+      \item [База:] $v = 1$: куча остаётся корректной, $siftUp$ при уменьшении корня ничего не делает
+      \item [Переход: ] $a_v \leftarrow x$
+        \begin{itemize}
+          \item [a) ] $x \geq a_p$ - родитель; нер-во сохраняется, $siftUp$ ничего не делает, куча остаётся корректной
+          \item [b) ] $x < a_p$. Тогда сделаем $swap(a_p, a_v)$, тогда нер-во снова сохр., и, по предположению индукции, после $siftUp(p)$ - куча становится корректной. \\
+            Picture(2)
+        \end{itemize}
+    \end{itemize}
+  \item [2) ] Индукция от листьев к корню
+    \begin{itemize}
+      \item [База:] $v$ - лист, куча корректна, $siftDown$ ничего не делает 
+      \item [Переход:] Пусть $a_u$ - наименьший из детей $v$ \\
+        Picture(3)
+    \end{itemize}
+\end{itemize}
+\end{proof}
+\subsubsection{HeapSort}
+Алгоритм:
+\[
+a_1, a_2, \ldots, a_n
+\]
+\begin{itemize}
+  \item [1) ] $insert a_1, \ldots, a_n$ 
+  \item [2) ] $extractMin \text{ n раз}$ \end{itemize}
+Асимптотика: $O(n\log n)$
+\begin{note}
+Heapsort основан на сравнениях
+\end{note}
+\begin{consequence}
+$\neg\exists$ реализации кучи осн. на сравнениях, в кот. $insert$ и $extractMin$ работают за $O(n)$
+\end{consequence}
+Процедура $heapify$: строит корректную кучу по $n$ эл-ам без доп. памяти за $O(n)$
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Heapify]
+for i = n...1:
+  siftDown(i)
+\end{lstlisting}
+Корректность? Индукцией по $i$: после вызова $siftDown(i)$, поддерево с корнем $i$ станет корректной кучей.
+\begin{proof}
+\begin{itemize}
+  \item [База:] $i$ - лист
+  \item [Переход:] Picture(4)
+\end{itemize}
+\end{proof}
+Асимптотика: $O(n)$ \\
+Время работы:
+\begin{itemize}
+  \item $\frac{n}{2}$ вершин обраб. за 1 оп.
+  \item $\frac{n}{4}$ вершин обраб. за 2 оп.\\
+    \vdots
+\end{itemize}
+\[
+Sum = \frac{n}{2} \cdot 1 + \frac{n}{4} \cdot 2 + \ldots = \frac{n}{2} + \frac{n}{4} + \ldots + (\frac{n}{4} \cdot 1 + \frac{n}{8} \cdot 2 + \frac{n}{16} \cdot 3 + \ldots) =
+\]
+\[
+= n + \frac{n}{2} + (\frac{n}{8} + \frac{n}{16} \cdot 2 + \frac{n}{32} \cdot 3 + \ldots) \leq 2 \cdot n
+\]
+\subsubsection{Удаление из кучи}
+$erase x$:
+\begin{itemize}
+  \item [a)] По указателю на $x$
+    \begin{itemize}
+      \item [1) ] $a_v \leftarrow -\infty$
+      \item [2) ] $siftUp(v)$
+      \item [3) ] $extractMin()$
+    \end{itemize}
+  \item [b)] По значению $x$ \\
+    У нас нет способа найти $x$ в куче, поэтому:
+    \begin{itemize}
+      \item [1) ] Заведём кучи $A$ - то, что добавили, $D$ - то, что хотим удалить. При запросе удаления $x$, добавляем его в $D$
+      \item [2)] Если при запросе $getMin(), A.getMin() == D.getMin()$, то удаляем $min$ в обоих кучах и смотрим далее.
+    \end{itemize}
+\end{itemize}
+Итого: $n$ запросов $= O(n\log n)$

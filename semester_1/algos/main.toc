@@ -1,16 +1,11 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 1}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Инфа}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Основные понятия}{3}{}%
-\contentsline {subsection}{\numberline {1.3}Асимптотика, время работы}{4}{}%
-\contentsline {subsection}{\numberline {1.4}Бинарный поиск}{6}{}%
-\contentsline {section}{\numberline {2}Лекция 2}{7}{}%
-\contentsline {subsection}{\numberline {2.1}Сортировки}{7}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Merge Sort (Сортировка слиянием)}{8}{}%
-\contentsline {subsubsection}{\numberline {2.1.2}Quick Sort \\ (Быстрая сортировка; Сортировка Хоара)}{9}{}%
-\contentsline {subsubsection}{\numberline {2.1.3}Quick Select}{10}{}%
-\contentsline {section}{\numberline {3}Лекция 3}{10}{}%
-\contentsline {subsection}{\numberline {3.1}Дерандомизация}{10}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Derandomized Quick Sort}{12}{}%
-\contentsline {subsection}{\numberline {3.2}Сортировка чисел}{12}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Least significant digit sort}{13}{}%
+\contentsline {section}{\numberline {1}Лекция 3}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Дерандомизация}{3}{}%
+\contentsline {subsubsection}{\numberline {1.1.1}Derandomized Quick Sort}{4}{}%
+\contentsline {subsection}{\numberline {1.2}Сортировка чисел}{4}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}Least significant digit sort}{6}{}%
+\contentsline {section}{\numberline {2}Лекция 4}{6}{}%
+\contentsline {subsection}{\numberline {2.1}Кучи}{6}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Бинарная (двоичная) куча}{6}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}HeapSort}{8}{}%
+\contentsline {subsubsection}{\numberline {2.1.3}Удаление из кучи}{9}{}%
