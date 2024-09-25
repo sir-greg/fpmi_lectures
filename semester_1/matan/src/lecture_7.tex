@@ -1,0 +1,193 @@
+\section{Лекция 7}
+\subsection{Критерий Коши}
+\begin{definition}
+Посл-ть $\{a_n\}_{1}^{\infty}$ наз-ся \textbf{фундаментальной}, если:
+\[
+\forall \varepsilon > 0, \exists N \colon \forall n, m \geq N (\left|a_n - a_m\right| < \varepsilon)
+\]
+\end{definition}
+\begin{lemma}
+Всякая фундаментальная п-ть огр-на
+\end{lemma}
+\begin{proof}
+Пусть $\{a_n\}_{1}^{\infty}$ - фундаментальна. По опр-ю:
+\[
+  \exists N \colon \forall n, m \geq N (\left|a_n - a_m\right| < 1)
+\]
+В част-ти:
+\[
+a_N - 1 < a_n < a_N + 1
+\]
+для всех $n \geq N$ ($m = N$)
+
+Положим
+\[
+  \alpha = min(a_1, \ldots, a_{N - 1}, a_N - 1)
+\]
+\[
+  \beta = max(a_1, \ldots, a_{N - 1}, a_{N} + 1)
+\]
+. Тогда:
+\[
+\alpha \leq a_n \leq \beta
+\]
+при всех $n \in \N$
+\end{proof}
+\begin{theorem}[Коши]
+П-ть $\{a_n\}_{1}^{\infty}$ - сходится $\iff$ $\{a_n\}_{1}^{\infty}$ - фундаментальна.
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item[$\Rightarrow$)] Пусть $\lim_{n\to\infty} a_n = a$. Зафикс. $\varepsilon > 0$. По опр-ю предела:
+    \[
+    \exists N, \forall n \in \N (\left|a_n - a\right| < \frac{\varepsilon}{2})
+    \]
+    Тогда при всех $n, m \geq N$:
+    \[
+    \left|a_n - a_m\right| \leq \left|a_n - a\right| + \left|a_m - a\right| < \frac{\varepsilon}{2} * 2 = \varepsilon
+    \]
+  \item [$\Leftarrow$)] По предыдущей лемме, п-ть $\{a_n\}_{1}^{\infty}$ - ограничена $\Rightarrow$ по т. Больцано-Вейерштрасса (Б-В) $\{a_n\}_{1}^{\infty}$ имеет сход. подпосл-ть $\{a_{n_k}\}_{1}^{\infty} \rightarrow a$
+
+    Покажем, что $a = \lim_{n\to\infty}$. Зафикс. $\varepsilon > 0$. По опр-ю фундаментальности:
+    \[
+    \exists N, \forall n, m \geq N (\left|a_n - a_m\right| < \frac{\varepsilon}{2})
+    \]
+    Т. к. $\{a_{n_k}\} \rightarrow a \Rightarrow$
+    \[
+    \exists K \colon \forall k \geq K (\left|a_{n_k} - a\right| < \frac{\varepsilon}{2})
+    \]
+    Положим $M = max(N, K)$. Тогда $n_M \geq M \geq N; n_M \geq M \geq K$
+
+    Поэтому при всех $n \geq N$:
+    \[
+    \left|a_n - a\right| \leq \left|a_n - a_{n_M}\right| + \left|a_{n_M} - a\right| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+    \]
+
+\end{itemize}
+\end{proof}
+\begin{note}
+Критерий Коши позволяет доказывать существование предела, \textbf{без явного нахождения его значения}
+
+Кроме того, критерий позволяет \textbf{оценить скорость сходимости к пределу} (перейдём к пределу по $m$ в определении фунд-ти):
+\[
+\left|a_n - a\right| \leq \varepsilon, \text{при всех $n \geq N$}
+\]
+\end{note}
+\begin{task}
+Покажите, что если всякая фундаментальная посл-ть сх-ся (сходится), то выполняется аксиома непрерывности. А именно:
+
+Пусть $\mathbb{F}$ - упоряд. поле, на котором выполняется аксиома Архимеда
+\end{task}
+
+\subsection{Частичные пределы}
+\begin{definition}
+  Точка $a \in \overline{\R}$ наз-ся частичным пределом числовой посл-ти $\{a_n\}_{1}^{\infty}$, если $\exists \set{a_{n_k}}$ - подпосл-ть $\set{a_n} \colon \lim_{k\to\infty} a_{n_k} = a$
+  \[
+ L\set{a_n} - \text{мн-во частичных пределов $\set{a_n}$} 
+  \]
+\end{definition}
+\begin{example}
+$\pm 1$ - частичные пределы $a_n = (-1)^{n}$
+\[
+a_{2k} \rightarrow 1, a_{2k - 1} \rightarrow -1
+\]
+\end{example}
+Пусть задана числовая посл-ть $\set{a_n}$
+
+Положим
+\[
+  M_n = \underset{k \geq n}{\sup} \set{a_k}
+\]
+\[
+  m_n = \underset{k \geq n}{\inf} \set{a_k}
+\]
+Пусть $\set{a_n}$ огр. сверху. Тогда все $M_n \in \R$ \\
+Поскольку при переходе к подмн-ву $\sup$ не увеличивается, то $\set{M_n}$ нестрого убывает \\
+$\Rightarrow$ $\exists \lim_{n\to\infty} M_n$ \\
+
+Пусть $\set{a_n}$ не огр. сверху. Тогда все $M_n = +\inf$ \\
+Положим $\lim_{n\to\infty} M_n = +\infty$ \\
+
+Аналогично для $\set{m_n}$ (Огр./Неогр. снизу). \\
+
+Итак, посл-ти $\set{m_n}$ и $\set{M_n}$ имеют предел в $\overline{\R}$
+
+\begin{definition}
+Величина $\lim_{n\to\infty} \underset{k \geq n}{\sup} \set{a_k}$ - \textbf{верхний предел} $\set{a_n}$ и об-ся $\overline{\lim_{n\to\infty}}a_n$ \\
+
+Величина $\lim_{n\to\infty} \underset{k \geq n}{\inf} \set{a_k}$ - \textbf{нижний предел} $\set{a_n}$ и об-ся $\underline{\lim_{n\to\infty}}a_n$
+\end{definition}
+\begin{note}
+Т. к. $m_n \leq M_n, \forall n \in \N$, тогда:
+\[
+\underline{\lim_{n\to\infty}}a_n \leq \overline{\lim_{n\to\infty}}a_n
+\]
+\end{note}
+\begin{task}
+  \label{prot_pred}
+\[
+\overline{\lim_{n\to\infty}}(-a_n) = -\underline{\lim_{n\to\infty}}a_n
+\]
+\end{task}
+\begin{theorem}
+Верхний (нижний) предел - наибольший (наименьший) из част. пределов посл-ти.
+\end{theorem}
+\begin{proof}
+\[
+M = \overline{\lim_{n\to\infty}}a_n, m = \underline{\lim_{n\to\infty}}a_n
+\]
+Нужно показать, что $M, m$ - это ч. п. $\set{a_n}$  и любой ч. п. лежит между ними.
+\begin{itemize}
+  \item [1) ]  Покажем, что есть подп-ть $\set{a_n}$, сх-ся к $M$:
+    \begin{itemize}
+      \item [I. ] $M \in \R$. Имеем
+        \[
+          M = \inf \set{M_n}
+        \]
+        По опр-ю $\sup, \exists n_1 \colon (M - 1 < a_{n_1})$
+        \[
+        M_{n_1 + 1} = \underset{k \geq n_1 + 1}{\sup} \set{a_k} \Rightarrow \exists n_2 > n_1 \colon (M - \frac{1}{2} < a_{n_2}) 
+        \] и т. д. \\
+        Таким образом, по индукции, будет построена подп-ть $\set{a_{n_k}}$, т. ч.
+        \[
+          M - \frac{1}{k} < a_{n_k}
+        \]
+        Имеем:
+        \[
+        M - \frac{1}{k} < a_{n_k} \leq M_{n_k}
+        \]
+        Края нер-ва сх-ся к $M \Rightarrow $ по т. о зажатой посл-ти, $a_{n_k} \rightarrow M$
+      \item [II. ] $M = +\infty$, тогда $\set{a_n}$ неогр. сверху $\Rightarrow$ (по Теореме 8') она имеет под-пть, сх-ся к $+\infty$
+      \item [III. ] $M = -\infty$. Т. к. $a_n \leq M_n, \forall n \Rightarrow \lim_{n\to\infty} a_n = -\infty$
+    \end{itemize}
+  \item [2) ] Для $m$ - док-во аналогично, или сводиться к $M$ по задаче ref:{prot_pred}
+  \item [3) ] Пусть $\set{a_{n_k}}, a_{n_k} \rightarrow a$. Тогда:
+    \[
+    m_{n_k} \leq a_{n_k} \leq M_{n_k}, \forall k \Rightarrow m \leq a \leq M \text{(част. пределы)}
+    \]
+\end{itemize}
+\end{proof}
+\begin{consequence}
+$\exists \lim_{n\to\infty}a_n$ (в $\overline{\R}$) $\iff \overline{\lim_{n\to\infty}}a_n = \underline{\lim_{n\to\infty}} a_n$ \\
+В этом случае все три предела равны.
+\end{consequence}
+\begin{proof}
+  \begin{itemize}
+    \item [$\Rightarrow$)]
+По лемме 4, любая подпосл-ть имеет предел $a \Rightarrow \overline{\lim_{n\to\infty}}a_n = \lim_{n\to\infty}a_n = \underline{\lim_{n\to\infty}}a_n$ 
+    \item [$\Leftarrow$)] \[
+    m_n \leq a_n \leq M_n
+    \]
+    для всех $n \Rightarrow a_n \rightarrow a$ (Края $\rightarrow a$)
+  \end{itemize}
+\end{proof}
+\begin{lemma}
+Для $c \in \R$ верно:
+\begin{equation*}
+c = \overline{\lim_{n\to\infty}}a_n \iff 
+\begin{cases}
+\forall \varepsilon > 0, \exists N, \forall n \geq N (a_n < c + \varepsilon) \\
+\forall \varepsilon > 0, \forall N, \exists n \geq N (a_n > c-\varepsilon)
+\end{cases}
+\end{equation*}
+\end{lemma}

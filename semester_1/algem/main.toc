@@ -1,11 +1,9 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 4}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Декартова система коор-т}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Скалярное произведение}{6}{}%
-\contentsline {section}{\numberline {2}Лекция 5}{8}{}%
-\contentsline {subsection}{\numberline {2.1}Выр-е скалярного произведения в ОНБ и произвольном базисе}{8}{}%
-\contentsline {subsection}{\numberline {2.2}Ориентация на пл-ти}{10}{}%
-\contentsline {section}{\numberline {3}Лекция 6}{13}{}%
-\contentsline {subsection}{\numberline {3.1}Векторное произведение векторов}{16}{}%
-\contentsline {subsection}{\numberline {3.2}Запись векторного произведения в произвольном базисе}{17}{}%
-\contentsline {subsection}{\numberline {3.3}Биортогональный базис}{18}{}%
+\contentsline {section}{\numberline {1}Лекция 6}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Векторное произведение векторов}{5}{}%
+\contentsline {subsection}{\numberline {1.2}Запись векторного произведения в произвольном базисе}{7}{}%
+\contentsline {subsection}{\numberline {1.3}Биортогональный базис}{8}{}%
+\contentsline {section}{\numberline {2}Лекция 7}{8}{}%
+\contentsline {subsection}{\numberline {2.1}Понятие ур-я мн-ва. Задание прямой на пл-ти}{10}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Случай ПДСК}{12}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Признаки параллельности/перпендикулярности прямых на плоскости}{13}{}%
