@@ -1,0 +1,206 @@
+\section{Лекция 4}
+\begin{symb}
+  $\set{0, 1}^{\N}$ - это
+  \begin{itemize}
+    \item [1) ] Мн-во подмножеств $A \subset \N$
+    \item [2) ] Мн-во ф-ций $f: \N \rightarrow \set{0, 1}$
+    \item [3) ] Мн-во $A \leftrightarrow f_A \colon N \rightarrow \set{0, 1}$
+      \begin{equation*}
+      f_A (x) = \begin{cases}
+      1, x \in A \\
+      0, x \not\in A 
+      \end{cases}
+      \end{equation*}
+  \end{itemize}
+\end{symb}
+\begin{note}
+Бесконечная двоичная дробь:
+\[
+\underline{a_1a_2\ldots a_n}01111\ldots = \underline{a_1a_2\ldots a_n}10000\ldots
+\]
+\end{note}
+\begin{task}
+  Показать:
+\[
+[0, 1] \cong \set{0, 1}^{\N} \backslash \set{\text{посл-ти с 1 в периоде}}
+\]
+\end{task}
+\begin{proof}
+Конструктивно:
+Picture
+
+\end{proof}
+\begin{theorem}
+$A$ - беск., $B$ - сч. $\Rightarrow A \cup B \cong A$
+\end{theorem}
+\begin{consequence}
+\[
+[0, 1] \cong \set{0, 1}^{\N}
+\]
+\end{consequence}
+\begin{lemma}
+В любом бесконечном мн-ве есть счётное подмн-во
+\end{lemma}
+\begin{proof}
+$A$ - беск. мн-во \\
+$a_0 \in A, a_1 \in A\backslash\set{a_0}, \ldots$ \\
+$a_{n + 1} \in A \backslash \set{a_0, a_1, \ldots, a_n}$
+$A$ - беск., сл-но на каждом шаге возможен выбор нового эл-та
+\end{proof}
+Теперь \textbf{докажем теорему:}
+\begin{proof}
+$A$ - беск. $ \Rightarrow C \subset A$, $C$ - счётно
+\begin{equation*}
+  \begin{cases}
+C \cong \N \\
+B \cong \N
+  \end{cases} \Rightarrow C \cup B \cong \N \cong C
+\end{equation*}
+\[
+A \cup B = (A \backslash C) \cup C \cup B \cong (A \backslash C) \cup C \cong A
+\]
+\end{proof}
+\begin{theorem} [Кантора]
+$[0, 1]$ - несчётен (или: $\set{0, 1}^{\N}$ несчётно)
+\end{theorem}
+\begin{proof}
+Пусть $\set{0, 1}^{\N}$ - счётно, тогда $\alpha_i$ - $i$-ая бинарная последовательность:
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ $\alpha_0$ & $\underline{0}0000\ldots$ \\
+ $\alpha_1$ & $1\underline{1}111\ldots$ \\
+ $\alpha_2$ & $01\underline{0}11\ldots$ \\
+ \vdots & \vdots \\
+ \hline
+\end{tabular}
+\end{center}
+Воспользуемся \underline{диагональным методом Кантора:}. Возьмём диагональную п-ть:
+\[
+d_i = \alpha_i^{i}, d = 010\ldots
+\]
+\[
+d_{i}' = 1 - \alpha_i^{i}, d' = 101\ldots
+\]
+Если $d' = \alpha_{k}^{k}$, то $d_{k}^{k} = d_{k}^{k}' = 1 - \alpha_{k}^{k}$, что невозможно $\Rightarrow$ противоречие.
+\end{proof}
+\begin{theorem}[Общая теорема Кантора]
+$\forall A \colon A \simless 2^{A}$
+\end{theorem}
+\begin{proof}
+Пусть $\phi: A \rightarrow 2^{A}$ - биекция \\
+$\phi(x)$ - подмн-во $A$ \\
+Корректен ли вопрос о том, что $x \in \phi(x)$? \\
+Расм. $M = \set{x | x \not\in \phi(x)}$ \\
+Т. к. $\phi$ - биекция $\Rightarrow$ сущ. $m = \phi^{-1}(M)$. Т. е. $\phi(m) = M$ \\
+Рассм. 2 случая:
+\begin{itemize}
+  \item [1) ] \[
+  m \in M \Rightarrow m \in \phi(m) \Rightarrow x \not\in \phi(x) - \text{ ложно при $x = m \Rightarrow$} m \not\in M
+  \]
+\item [2) ]\[
+  m \not\in M \Rightarrow m \not\in \phi(m) \Rightarrow x \not\in \phi(x) \text{ - истино, при $x = m$ $\Rightarrow$} m \in M
+\]
+\end{itemize}
+Получаем противоречие.
+\end{proof}
+\begin{definition}
+$A$ \textbf{континуально}, если $A \cong \set{0, 1}^{\N}$
+\end{definition}
+\begin{theorem}
+$A$ - континуально $\Rightarrow$ $A^{2}$ - континуально
+\end{theorem}
+\begin{example}
+\[
+[0, 1] \cong [0, 1]^{2}
+\]
+\end{example}
+\begin{consequence}
+\[
+  (\set{0, 1}^{\N})^{2} = \set{0, 1}^{\N}
+\]
+\[
+  (\alpha, \beta) \leftrightarrow \gamma = \alpha_0\beta_0\alpha_1\beta_1\alpha_2\beta_2\ldots
+\]
+\[
+[0, 1] \cong \R \Rightarrow \R \text{ - континуально}
+\]
+По индукции:
+\[
+\R^{k} \cong \R
+\]
+Верно и $\R^{\N} \cong \R$
+\end{consequence}
+\begin{proof}
+Док-во конструктивно ИЛИ:
+\[
+\R^{\N} \cong (\R^{\N})^{\N} \cong 2^{\N \times \N} \cong \R
+\]
+\end{proof}
+\subsection{Бинарные отношения}
+\begin{definition}
+Отношение - любое $R \in A \times A$
+\end{definition}
+\begin{symb}
+Отношение $R$ между $a$ и $b$:
+\begin{itemize}
+  \item [1) ] $(a, b) = R$
+  \item [2) ] $R(a, b)$
+  \item [3) ] $aRb$
+\end{itemize}
+\end{symb}
+Различные виды отношений:
+\begin{itemize}
+  \item [1) ] Рефлексивные: $\forall a \colon a R a$
+    \begin{example}
+    $=, \leq, \subset, \cong, \sqsubset$
+    \end{example}
+  \item [2) ] Антирефлексивные: $\forall a \colon \neg(a R a)$
+    \begin{example}
+      $<, \in, ||$
+    \end{example}
+  \item [3) ] Симметричные: $\forall a, \forall b (a R b \rightarrow b R a)$
+    \begin{example}
+    $\cong, ||, =, \equiv_k$
+    \end{example}
+  \item [4) ] Антисимметричные: $\forall a, \forall b ((a R b \land b R a) \rightarrow a = b)$
+    \begin{example}
+    $\leq, <, >, \sqsubset, \sqsubset, \subset$
+    \end{example}
+  \item [5) ] Транзитивность: 
+    \[
+    \forall a, b, c ((a R b \land b R c) \rightarrow a R c)
+    \]
+    \begin{example}
+    $=, \cong, \equiv_k, \leq, \subset, \sqsubset$
+    \end{example}
+  \item [6) ] Антитранзитивность:
+    \[
+    \forall a, b, c ((a R b \land b R c) \rightarrow \neg(a R c))
+    \]
+    \[
+    \left|a - b\right| = 1 \text{ (На $\R$)}
+    \]
+  \item [7) ] Полнота: $\forall a, b (a R b \lor b R a)$
+    \begin{example}
+    $\leq, \simlE \text{ (теор. Цермело)}$
+    \end{example}
+\end{itemize}
+Наборы св-в:
+\begin{itemize}
+  \item [1) ] Отнош. эквивалентности: рефлексивность, симметричность, транзитивность.
+    \begin{example}
+    $\equiv_k, (|| \text{ или } =), \sim \text{ (подобие $\triangle$-ов)}$
+    \end{example}
+
+    Общий вид: $f\colon A \rightarrow B, x \sim y$, если $f(x) = f(y)$
+  \item [2) ] Отношение нестрогого частичного порядка, рефлексивность, антисимметричность, транзитивность:
+    \begin{example}
+    $\subset, \leq, \vdots, \sqsubset, \ldots$
+    \end{example}
+  \item [3) ] Отнош. строгого част. п-ка: антирефл., антисимметричность, транзитивность
+  \item [4) ] Отнош. лин. порядка: нестрогий частичный порядок + полнота
+  \item [5) ] Препорядки: рефлексивность, транзитивность
+  \item [6) ] Полные предпорядки: полнота + транзитивность
+\end{itemize}
+
