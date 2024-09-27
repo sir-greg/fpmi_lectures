@@ -1,0 +1,193 @@
+\section{Лекция 8}
+
+\subsection{\textsection 3: Топология $\R$}
+Пусть $a \in \R$ и $\varepsilon > 0$.
+\begin{symb}
+  \begin{itemize}
+    \item
+$B_{\varepsilon}(a) = (a - \varepsilon, a + \varepsilon)$ - $\varepsilon$-окрестность $a$
+  \item
+    $\overset{\circ}{B_{\varepsilon}}(a) = B_{\varepsilon}(a) \backslash \set{a} = (a - \varepsilon, a) \cup (a, a + \varepsilon)$ - проколотая $\varepsilon$-окр-ть т. a
+  \end{itemize}
+\end{symb}
+\begin{definition}
+ПУсть $E \subset \R$ и $x \in \R$
+\begin{itemize}
+  \item [1) ] Точка $x$ наз-ся \underline{внутренней точкой} мн-ва $E$, если $\exists \varepsilon > 0 (B_{\varepsilon}(x) \subset E)$ \\
+
+    $(int) E$ - мн-во всех внут. точек $E$
+  \item [2) ] Точка $x$ наз-ся \underline{внешней точкой} мн. $E$, если $\exists \varepsilon > 0 (B_{\varepsilon}(x) \subset \R \backslash E)$
+    $(ext) E$ - мн-во внешних точек $E$
+  \item [3) ] Точка $x$ наз-ся \underline{граничной точкой} мн-ва $E$, если
+    \[
+      \forall \varepsilon > 0 (B_{\varepsilon}(x) \cap E \neq \emptyset \land B_{\varepsilon}(x) \cap (\R \backslash E) \neq \emptyset)
+    \]
+    $\sigma E$ - мн-во всех граничных точек $E$
+\end{itemize}
+\end{definition}
+\begin{note}
+Из опр-я следует:
+\[
+\R = (int) E \sqcup (ext) E \sqcup \sigma E
+\]
+\end{note}
+\begin{example}
+  \[
+    E = (0, 1], (int) E = (0; 1), (ext) E = (-\infty; 0) \cup (1; +\infty), \sigma E = \set{0, 1}
+  \]
+\end{example}
+\begin{definition}
+Мн-во $G \subset \R$ наз-ся \textbf{открытым}, если все его точки яв-ся внутренними (т. е. $G = (int) G$)
+\end{definition}
+\begin{definition}
+Мн-во $F \subset \R$ наз-ся \textbf{замкнутым}, если $\R \backslash F$ - открыто.
+\end{definition}
+\begin{example}
+\begin{itemize}
+  \item [1) ] $(a, b)$ - открытое.
+  \item [2) ] $[a, b]$ - замкнутое.
+\end{itemize}
+\end{example}
+\begin{lemma}
+  \begin{itemize}
+    \item [a) ]
+Объединение любого семейства открытых мн-в открыто.
+    \item [b) ] Пересечение конечного сем-ва открытых мн-в открыто.
+    \item [c) ] $\R, \emptyset$ - открыты
+  \end{itemize}
+\end{lemma}
+\begin{proof}
+  \begin{itemize}
+    \item [a) ] Пусть $\set{G_\lambda}_{\lambda \in \Lambda}$ - семейство открытых мн-в.
+      \[
+        G = \bigcup_{\lambda \in \Lambda}^{}G_\lambda \text{ и } x \in G
+      \]
+      По опр-ю:
+      \[
+        \exists \lambda_0 \in \Lambda (x \in G_\lambda\text{ - открыто}) \iff \exists \varepsilon > 0 \colon B_{\varepsilon}(x) \subset G_\lambda \subset G
+      \]
+      \\
+      Сл-но, $B_{\varepsilon}(x) \subset G$, т. е. $x$ - внут. точка $G$
+    \item [b) ] ПУсть $\set{G_k}_{k = 1}^{m}$ - семейство открытых мн-в, $G = \bigcap_{k = 1}^{m} G_k, x \in G$. По опр. пересечения:
+      \[
+     \forall k, x \in G_k \Rightarrow \forall k, \exists \varepsilon_k > 0 \colon B_{\varepsilon_k}(x) \subset G_k
+      \]
+      \[
+      \varepsilon = \underset{1 \leq k \leq m}{min} \set{\varepsilon_k}
+      \]
+      Тогда $\varepsilon > 0$ и $B_{\varepsilon}(x) \subset B_{\varepsilon_k}(x) \subset G_k, \forall k \Rightarrow B_{\varepsilon}(x) \subset G = \bigcap_{k = 1}^{m}$, т. е. $x$ - внут. точка $G$
+    \item [c) ] Открытость $\R, \emptyset$ следует из опр-я.
+  \end{itemize}
+\end{proof}
+\begin{lemma}
+\begin{itemize}
+  \item [a) ] Объединение конечного семейства замкнутых мн-в замкнуто
+  \item [b) ] Пересечение любого семейства замкнутых мн-в замкнуто
+  \item [c) ] $\R, \emptyset$ - замкнуты
+\end{itemize}
+\end{lemma}
+\begin{proof}
+\begin{itemize}
+  \item [a, b) ] \[
+  \R \backslash (\bigcap_{\lambda \in \Lambda}^{}F_\lambda) = \bigcup_{\lambda \in \Lambda}^{} (\R \backslash F_\lambda).
+  \]
+  \[
+  \R \backslash (\bigcup_{k = 1}^{m} F_k) = \bigcap_{k = 1}^{m} (\R \backslash F_k)
+  \]
+\item [c)] Очев.
+\end{itemize}
+\end{proof}
+\begin{definition}
+Пусть $E \subset \R$ и $x \in \R$. Точка $x$ наз-ся предельной точкой мн-ва $E$, если:
+\[
+\forall \varepsilon > 0 (B_{\varepsilon}(x) \cap E \neq \emptyset)
+\]
+\end{definition}
+\begin{lemma}
+Точка $x$ - предельная точка $\iff$
+\[
+  \exists \set{x_n}_{x_n \neq x} \subset E \colon (x_n \rightarrow x)
+\]
+\end{lemma}
+\begin{proof}
+\begin{itemize}
+  \item [=>)]
+    \[
+      x_n \in \overset{\circ}{B_{\frac{1}{n}}}(x) \cap E, \forall n \Rightarrow x_n \neq x \text{ и } x_n \in E \Rightarrow x - \frac{1}{n} < x_n < x + \frac{1}{n} \Rightarrow x_n \rightarrow x
+    \]
+  \item [<=)] Зафикс. $\varepsilon > 0$. Тогда $\exists N \colon \forall n \geq N (x_n \in (x -\varepsilon, x + \varepsilon))$ \\
+    Сл-но, $x_N \in \overset{\circ}{B_{\varepsilon}}(x) \cap E$
+\end{itemize}
+\end{proof}
+
+\begin{theorem}[Критерий замкнутости]
+Следующие утв. эквивалентны:
+\begin{itemize}
+  \item [1) ] $E$ - замкнуто;
+  \item[2) ] $E$ содержит все свои граничные точки;
+  \item [3) ] $E$ содержит все свои предельные точки;
+  \item [4) ] Если п-ть $\set{x_n}$ точек из $E$ сходится к $x$, то $x \in E$
+\end{itemize}
+\label{th:zamk_krit}
+\end{theorem}
+\begin{proof}
+  ~\newline
+\begin{itemize}
+  \item [1 => 2)] Пусть $x \in \R \backslash E \text{ (открытое) } \Rightarrow \exists B_{\varepsilon}(x) \subset \R \backslash E$, т. е. $x$ - внешняя точка $E$. Тогда $\sigma E \subset E$
+  \item [2 => 3)] $E$ содержит все свои граничные точки. Рассм. 2 случая:
+    \begin{itemize}
+      \item [a) ] $x$ - внутренняя точка $\Rightarrow x \in E$
+      \item [b) ] $x$ - граничная точка $E \Rightarrow x \in E$ - по усл. 2)
+    \end{itemize}
+  \item [3 => 4)] Пусть $\set{x_n} \subset E, x_n \rightarrow x$ \\
+
+    Предположим, что $x \not\in E \overset{\text{Л2}}{\Rightarrow}$ $x$ - предельная точка $E$
+  \item [4 => 1)] $x \in R \backslash E$. Предположим, что $x$ - не внутренняя точка $E$. Тогда:
+    \[
+    \forall n \colon B_{\frac{1}{n}}(x) \cap E \neq \emptyset
+    \]
+    Пусть $x_n \in B_{\frac{1}{n}}(x)$. Имеем $\set{x_n} \subset E \Rightarrow x_n \rightarrow x \in E !!!!!!$
+\end{itemize}
+\end{proof}
+\begin{example}
+Пусть $L$ - мн-во част. пределов числовой п-ть $\set{a_n}$. Покажем, что $L$ - замкнуто.
+\end{example}
+\begin{proof}
+Пусть $\set{x_n} \subset L$, $x_n \rightarrow x$ \\
+
+По опр-ю част. предела, найдётся строго возрастающая п-ть номеров $\set{n_k}$, что $\left|a_{n_k} - x_k\right| < \frac{1}{k}$ \\
+
+Сл-но:
+\[
+\left|a_{n_k} - x\right| \leq \left|a_{n_k} - x_k\right| + \left|x_k - x\right| < \frac{1}{k} + \left|x_k - x\right|
+\]
+Т. е. $x \in L$, по эквив. п.1 и п. 4 (Теоремы \ref{th:zamk_krit}) заключаем, что $L$ - замкнуто.
+\end{proof}
+\begin{definition}
+$\overline{E} = E \cup \sigma E $ - замыкание мн-ва $E$
+\end{definition}
+\begin{lemma}
+Мн-во $\overline{E}$ является замкнутым. \\
+Кроме того, $\overline{E} = E \cup \set{x \colon x \text{ - предельная точка $E$}}$
+\end{lemma}
+\begin{proof}
+Пусть $x \in \R \backslash \overline{E} \Rightarrow x$ - внешн. точка $E$, т. е.
+\[
+  \exists B_{\varepsilon}(x) \subset \R \backslash E
+\]
+Если $B_{\varepsilon}(x) \cap \sigma E \neq \emptyset$, то $B_{\varepsilon}(x) \cap E \neq \emptyset !!!$ \\
+
+Сл-но, $B_{\varepsilon}(x) \subset \R \backslash \overline{E}$, т. е. $x$ - внут. точка $\R \backslash \overline{E}$ \\
+
+Вторая часть следует из наблюдений: \\
+
+(1) любая предельная точка $E$ либо внутренняя, любо граничная. \\
+
+(2) граничная точка $E$, не принадлежащая $E$, является предельной.
+\end{proof}
+\begin{task}
+  \begin{itemize}
+    \item [1) ] $x \in \overline{E} \iff \exists \set{x_n} \subset E (x_n \rightarrow x)$
+    \item [2) ] $\overline{E} = \bigcap_{}^{} \set{F\colon F \text{ - замкнуто или $F \supset E$}}$
+  \end{itemize}
+\end{task}

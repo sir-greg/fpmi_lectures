@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  25 SEP 2024 12:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  27 SEP 2024 12:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -555,34 +555,9 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 
 
-[2] (./src/lecture_6.tex
-Overfull \hbox (6.12277pt too wide) in paragraph at lines 23--24
-[]$[]$ \T2A/cmr/bx/n/12 1.3. []\T2A/cmr/m/n/12 П-ть $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 a[]\OMS/cmsy/m/n/12 g[]$ \T2A/cmr/m/n/12 наз-ся \T2A/cmr/bx/n/12 беск. боль-шой\T2A/cmr/m/n/12 , ес-ли $[][] [] \OT1/cmr/m/n/12 =
- []
-
-
+[2] (./src/lecture_7.tex
 
 [3]
-
-[4]
-Overfull \hbox (6.2613pt too wide) in paragraph at lines 143--144
-[]$[]$ \T2A/cmr/bx/n/12 1.5 \T2A/cmr/m/n/12 (Боль-цано--Вей-ер-штрас-са)\T2A/cmr/bx/n/12 . []\T2A/cmr/m/it/12 Вся-кая огр. посл-ть име-ет сход.
- []
-
-
-
-[5]
-
-Package amsmath Warning: Bracket group [c_{k + 1}, d_{k + 1}] at formula start!
-(amsmath)                It could be a misspelled positional argument.
-(amsmath)                If it belongs to the formula add a \relax in
-(amsmath)                front to hide it on input line 166.
-
-) (./src/lecture_7.tex
-
-[6]
-
-[7]
 Overfull \hbox (7.61269pt too wide) in paragraph at lines 69--70
 []$[]$\T2A/cmr/bx/n/12 . []\T2A/cmr/m/it/12 Кри-те-рий Ко-ши поз-во-ля-ет до-ка-зы-вать су-ще-ство-ва-ние пре-
  []
@@ -594,7 +569,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--107
 
 
 
-[8]
+[4]
 Underfull \hbox (badness 10000) in paragraph at lines 108--110
 
  []
@@ -611,125 +586,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
 
 
-[9]
-./src/lecture_7.tex:163: Missing $ inserted.
-<inserted text> 
-                $
-l.163 ...ЊСЃСЏ Рє $M$ РїРѕ Р·Р°РґР°С‡Рµ ref:{prot_
-                                                  pred}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+[5]
 
-./src/lecture_7.tex:163: Extra }, or forgotten $.
-l.163 ... Рє $M$ РїРѕ Р·Р°РґР°С‡Рµ ref:{prot_pred}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
-
-./src/lecture_7.tex:164: LaTeX Error: Command \item invalid in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.164   \item
-              [3) ] РџСѓСЃС‚СЊ $\set{a_{n_k}}, a_{n_k} \rightarrow a$. РўРѕР...
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./src/lecture_7.tex:164: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.164   \item [3) ]
-                    РџСѓСЃС‚СЊ $\set{a_{n_k}}, a_{n_k} \rightarrow a$. РўРѕР...
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./src/lecture_7.tex:164: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.164   \item [3) ]
-                    РџСѓСЃС‚СЊ $\set{a_{n_k}}, a_{n_k} \rightarrow a$. РўРѕР...
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Command \CYRP invalid in math mode on input line 164.
-
-
-LaTeX Warning: Command \cyru invalid in math mode on input line 164.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 164.
-
-
-LaTeX Warning: Command \cyrt invalid in math mode on input line 164.
-
-
-LaTeX Warning: Command \cyrsftsn invalid in math mode on input line 164.
-
-Missing character: There is no П in font cmr12!
-Missing character: There is no у in font cmr12!
-Missing character: There is no с in font cmr12!
-Missing character: There is no т in font cmr12!
-Missing character: There is no ь in font cmr12!
-./src/lecture_7.tex:164: Missing $ inserted.
-<inserted text> 
-                $
-l.164   \item [3) ] РџСѓСЃС‚СЊ $\set{a_{n_k}}
-                                             , a_{n_k} \rightarrow a$. РўРѕР...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (73.80183pt too wide) in paragraph at lines 163--165
-[]\T2A/cmr/m/n/12 Для $\OML/cmm/m/it/12 m$ \T2A/cmr/m/n/12 - док-во ана-ло-гич-но, или сво-дить-ся к $\OML/cmm/m/it/12 M$ \T2A/cmr/m/n/12 по за-да-че ref:prot$[]\OML/cmm/m/it/12 red$$[] ; a[] \OMS/cmsy/m/n/12 !
  []
 
-./src/lecture_7.tex:168: Missing } inserted.
-<inserted text> 
-                }
-l.168 \end{itemize}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+) (./src/lecture_8.tex
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+
+
+[7{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+[8]
+Overfull \hbox (8.83542pt too wide) detected at line 117
+\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 2 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 E; \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[]x[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 < x[] < x \OT1/cmr/m/n/12 + [] \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 x
+ []
+
+
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+
+ []
+
+
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 177--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
 
 )
 
-[10] (./main.aux)
+[11] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8069 strings out of 473579
- 125960 string characters out of 5728235
- 1939957 words of memory out of 5000000
+ 8071 strings out of 473579
+ 125940 string characters out of 5728235
+ 1937957 words of memory out of 5000000
  30800 multiletter control sequences out of 15000+600000
- 579263 words of font info for 96 fonts, out of 8000000 for 9000
+ 579600 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,9n,82p,439b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (10 pages, 269715 bytes).
+ 77i,9n,82p,353b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on main.pdf (11 pages, 278564 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 140 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

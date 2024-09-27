@@ -160,7 +160,7 @@ M = \overline{\lim_{n\to\infty}}a_n, m = \underline{\lim_{n\to\infty}}a_n
       \item [II. ] $M = +\infty$, тогда $\set{a_n}$ неогр. сверху $\Rightarrow$ (по Теореме 8') она имеет под-пть, сх-ся к $+\infty$
       \item [III. ] $M = -\infty$. Т. к. $a_n \leq M_n, \forall n \Rightarrow \lim_{n\to\infty} a_n = -\infty$
     \end{itemize}
-  \item [2) ] Для $m$ - док-во аналогично, или сводиться к $M$ по задаче ref:{prot_pred}
+  \item [2) ] Для $m$ - док-во аналогично, или сводиться к $M$ по задаче prot-pred
   \item [3) ] Пусть $\set{a_{n_k}}, a_{n_k} \rightarrow a$. Тогда:
     \[
     m_{n_k} \leq a_{n_k} \leq M_{n_k}, \forall k \Rightarrow m \leq a \leq M \text{(част. пределы)}
@@ -186,8 +186,30 @@ $\exists \lim_{n\to\infty}a_n$ (в $\overline{\R}$) $\iff \overline{\lim_{n\to\i
 \begin{equation*}
 c = \overline{\lim_{n\to\infty}}a_n \iff 
 \begin{cases}
-\forall \varepsilon > 0, \exists N, \forall n \geq N (a_n < c + \varepsilon) \\
-\forall \varepsilon > 0, \forall N, \exists n \geq N (a_n > c-\varepsilon)
+\forall \varepsilon > 0, \exists N, \forall n \geq N (a_n < c + \varepsilon) \text{ (1)}\\
+\forall \varepsilon > 0, \forall N, \exists n \geq N (a_n > c-\varepsilon) \text{ (2)}
+\end{cases}
+\end{equation*}
+\begin{equation*}
+c = \underline{\lim_{n\to\infty}}a_n \iff
+\begin{cases}
+\forall \varepsilon > 0, \forall N, \exists n \geq N (a_n < c + \varepsilon) \\
+\forall \varepsilon > 0, \exists N, \forall n \geq N (a_n > c - \varepsilon)
 \end{cases}
 \end{equation*}
 \end{lemma}
+\begin{proof}
+Докажем, для верх предела:
+\[
+  \overline{\lim_{n\to\infty}}a_n = \lim_{n\to\infty} M_n, M_n = \underset{k \geq n}{\sup} \set{a_k}
+\]
+\[
+\text{(1) } \iff \forall \varepsilon > 0, \exists N (M_N < c + \varepsilon)
+\]
+\[
+\text{(2) } \iff \forall \varepsilon > 0, \forall N (M_n > c - \varepsilon)
+\]
+Напомним, что $\set{M_n}$ - нестрого убыв. \\
+
+Тогда $(1) \land (2) \iff c = \lim_{n\to\infty} M_n \text{ ($ = \inf \set{M_n}$)}$
+\end{proof}

@@ -1,0 +1,304 @@
+\section{Лекция 8}
+
+\subsection{Пучок прямых на пл-ти}
+$V_2$, с фикс. ДСК
+\begin{definition}
+\textbf{Пучком пересекающихся прямых} на пл-ти наз-ся мн-во всех прямых на пл-ти, проходящих через. фикс. точку.
+\end{definition}
+\begin{definition}
+\textbf{Пучком параллельных прямых} на пл-ти наз-ся мн-во всех прямых пл-ти, параллельных некоторой фикс. прямой.
+\end{definition}
+\begin{theorem}
+Пусть даны две \underline{различные} прямые $l_1$, $l_2$ на пл-ти:
+\[
+l_1 \colon A_1x + B_1y + C_1 = f_1(x, y) = 0
+\]
+\[
+l_2 \colon A_2x + B_2 y + C_2 = f_2(x, y) = 0
+\]
+Тогда пучок прямых, задаваемый (порождаемый) прямыми $l_1$ и $l_2$ состоит из тех и только тех прямых, коор-ты точек которых удовл. ур-ю:
+\begin{equation}
+  \label{eq:puchok}
+\alpha f_1(x, y) + \beta f_2(x, y) = 0
+\end{equation}
+\[
+\alpha, \beta \in \R, \alpha^{2} + \beta^{2} \neq 0
+\]
+Выр-е $\alpha f_1(x, y) + \beta f_2(x, y) \not\equiv 0$
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item [a) ] Пусть $l_1 \cap l_2 = \set{x_0}$ \\
+
+      Покажем, что всякая прямая $l$, коор-ты точек кот. удовл. ур-ю (\ref{eq:puchok}), принадлежит пучку, порождаемому $l_1, l_2$ \\
+
+      По усл.:
+      \[
+      f_1(x_0) = f_2(x_0) = 0
+      \]
+      \[
+      \Rightarrow \alpha f_1(x, y) + \beta f_2(x, y) = 0 
+      \] 
+      $\Rightarrow$ $l$ проходит через $x_0$ \\
+
+      Пусть $l$ такова, что она принадлежит пучку, порожд. $l_1, l_2$. Покажем, что $\exists \alpha, \beta \in \R, \alpha^{2} + \beta^{2} \neq 0$, такие, что $l$ задаётся ур-ем (\ref{eq:puchok})
+
+      Пусть $X \in l, X \neq x_0$:
+      \[
+      \alpha = f_2(X), \beta = -f_1(X)
+      \]
+      \begin{equation}
+      f_2(X)f_1(x, y) - f_1(X)f_2(x, y) = 0
+      \label{eq:proof_puchok}
+      \end{equation}
+      Если подставим $X$:
+      \[
+      f_2(X) f_1(X) - f_1(X) f_2(X) = 0
+      \]
+      прямая (\ref{eq:proof_puchok}) проходит через $X_0$ и $X$ $\Rightarrow$ это прямая $l$.
+    \item [b) ] Пусть $l_1 || l_2 \iff \overline{n_1} || \overline{n_2}$ \\
+
+      Пусть прямая $l$ такова, что её коорд. удовл. усл. ($\ref{eq:puchok}$) $\Rightarrow$
+      \[
+      \overline{n_l} = \alpha\overline{n_1} + \beta\overline{n_2}, \overline{n_l} || n_1, n_2
+      \]
+      Обратно: пусть $l$ принадлежит пучку параллельных прямых, порожд. $l_1$ и $l_2$ \\
+      
+      \[
+      \alpha = f_2(X), \beta = -f_1(X)
+      \]
+      \[
+      \alpha f_1(x, y) + \beta f_2(x, y) = 0
+      \]
+      \[
+      f_2(X) f_1(x, y) - f_1(X) f_2(x, y) = 0, \text{ (при $X$ равно 0)}
+      \]
+      \[
+      \Rightarrow \overline{n} || \overline{n_1}, \overline{n_2}
+      \]
+  \end{itemize}
+  \begin{definition}
+  Ур-е (\ref{eq:puchok}) наз-ся ур-ем пучка прямых, порожд. $l_1$ и $l_2$
+  \end{definition}
+\end{proof}
+
+\subsection{Приложения в планиметрии}
+
+\subsubsection{Расстояние от точки до прямой}
+
+\begin{symb}
+Расстояние от точки до прямой ($p(X, l)$)
+\end{symb}
+\begin{statement}
+Пусть прямая $l$ в ПДСК задана общим ур-ем $Ax + By + C = 0$. Пусть $X \underset{(O, G)}{\longleftrightarrow} \begin{pmatrix}x \\ y \end{pmatrix}$. Тогда:
+\[
+p(X, l) = \frac{\left|Ax + By + C\right|}{\sqrt{A^{2} + B^{2}}}
+\]
+\end{statement}
+\begin{proof}
+Пусть $\overline{a} \underset{}{\longleftrightarrow} \begin{pmatrix}-B \\ A \end{pmatrix}$ \\
+
+(Picture 2.1)
+\[
+p(X, l) = h = \frac{S_{\overline{a} \times \overline{X_0X}}}{\left|\overline{a}\right|}
+\]
+\[
+  S_{\overline{a} \times \overline{X_0X}} = S = \left|\begin{vmatrix}x - x_0 & -B \\ y - y_0 & A \end{vmatrix}\right| = \left|A(x - x_0) + B(y - y_0)\right| = \left|Ax + By - (Ax_0 + By_0)\right| = \left|Ax + By + C\right|
+\]
+\[
+\Rightarrow p(X, l) = \frac{S}{\left|\overline{a}\right|} = \frac{\left|Ax + By + C\right|}{A^{2} + B^{2}}
+\]
+\end{proof}
+
+\subsubsection{Вычисление угла между пересекающимися прямыми}
+
+\begin{definition}
+\textbf{Углом между двумя пересекающимися прямыми} наз-ся наименьший из двух смежных углов, порождённый пересечением прямых.
+\end{definition}
+Picture(2.2)
+\textbf{Вычисление}:
+\[
+l_i \colon A_ix + B_i y + C_i = 0, i = 1, 2
+\]
+\[
+\overline{n_1} \begin{pmatrix}A_1 \\ B_1 \end{pmatrix}, \overline{n_2} \begin{pmatrix}A_2 \\ B_2 \end{pmatrix}
+\]
+\[
+\phi = \angle(\overline{n_1}, \overline{n_2})
+\]
+\begin{equation*}
+\phi = \begin{cases}
+\psi, \text{ если } \psi \leq \frac{\pi}{2} \\
+\pi - \psi, \text{ если } \psi > \frac{\pi}{2}
+\end{cases}
+\end{equation*}
+\[
+\cos \phi = \left|\cos\phi\right| = \left|\cos\psi\right| = 
+\]
+\begin{equation*}
+0 \leq \phi \leq \frac{\pi}{2} \colon \left|\cos (\pi - \phi)\right| = \left|-\cos \psi\right| = \left|\cos \psi\right| = \frac{\left|(\overline{n_1}, \overline{n_2})\right|}{\left|\overline{n_1}\right|\left|\overline{n_2}\right|} =
+\end{equation*}
+\[
+  \frac{\left|A_1A_2 + B_1B_2\right|}{\sqrt{A_1^{2} + B_1^{2}}\sqrt{A_2^{2} + B_2^{2}}}
+\]
+
+\begin{statement}
+Косинус угла между двумя пересек. прямыми:
+\[
+l_i \colon A_i x + B_i y + C_i = 0
+\]
+Может быть вычислен по формуле:
+\[
+\cos\phi = \frac{\left|A_1A_2 + B_1B_2\right|}{\sqrt{A_1^{2} + B_1^{2}}\sqrt{A_2^{2} + B_2^{2}}}
+\]
+\end{statement}
+\subsection{Пл-ть в пр-ве}
+$V_3$, с фикс. ДСК (O, $G$)
+\begin{definition}
+Направляющий векторы пл-ти - это пара неколлинеарных векторов, задающих эту пл-ть.
+\end{definition}
+Picture (2.3) \\
+
+Пусть $\alpha$ - наша пл-ть, $X_0 \in \alpha$, $\overline{a}, \overline{b}$ - напр. векторы $\alpha$ \\
+\[
+\overline{X_0X}, \overline{a}, \overline{b} \text{ - коллинеарны} \iff X \in \alpha
+\]
+\[
+\Rightarrow \overline{X_0X} = s \overline{a} + t \overline{b}; s, t \in \R
+\]
+\[
+\overline{r} - \overline{r_0} = s\overline{a} + t \overline{b}
+\]
+\begin{equation}
+\overline{r} = \overline{r_0} + s\overline{a} + t \overline{b}
+\label{eq:vector-plane-eq}
+\end{equation}
+ - векторное ур-е прямой
+
+\[
+\overline{a} \underset{(O, G)}{\longleftrightarrow} \begin{pmatrix}a_1 \\ a_2 \\ a_3 \end{pmatrix}
+\]
+\[
+\overline{b} \underset{(O, G)}{\longleftrightarrow} \begin{pmatrix}b_1 \\ b_2 \\ b_3\end{pmatrix}
+\]
+\begin{equation}
+\begin{cases}
+x = x_0 + sa_1 + tb_1 \\
+y = y_0 + sa_2 + tb_2 \\
+z = z_0 + sa_3 + tb_3
+\end{cases}
+\label{eq:coord-plane}
+\end{equation}
+- координатное ур-е прямой
+\begin{equation}
+  (\overline{r} - \overline{r_0}, \overline{a}, \overline{b}) = 0
+  \label{eq:mixedprod-plane-eq}
+\end{equation}
+\begin{equation}
+  \iff \begin{vmatrix}x - x_0 & a_1 & b_1 \\ y - y_0 & a_2 & b_2 \\ z - z_0 & a_3 & b_3\end{vmatrix} = 0
+  \label{eq:det-plane-eq}
+\end{equation}
+Если раскроем определитель по соотв. формуле:
+\begin{equation}
+Ax + By + Cz + D = 0, A^{2} + B^{2} + C^{2} \neq 0 \text{ (т. к. иначе $\overline{a} || \overline{b}$)}
+\label{eq:general_plane_eq}
+\end{equation}
+- общее ур-е пл-ти
+\begin{statement}
+Пусть $X_0 \begin{pmatrix}x_0 \\ y_0 \\ z_0 \end{pmatrix}$ принадлежит пл-ти, заданной общ. ур-ем (\ref{eq:general_plane_eq}). Тогда т. $X_1\begin{pmatrix}x_1 \\ y_1 \\ z_1 \end{pmatrix}$ принадлежит пл-ти $\pi$
+\[
+  \iff A(x_0 - x_1) + B(y_0 - y_1) + C(z_0 - z_1) = 0
+\]
+\end{statement}
+\begin{proof}
+Аналогично прямой
+\end{proof}
+\begin{consequence}
+Вектор $\overline{c} \underset{(O, G)}{\longleftrightarrow} \begin{pmatrix} \alpha \\ \beta \\ \gamma \end{pmatrix}$ - направляющий вектор пл-ти $\pi \iff A\alpha + B\beta + C\gamma = 0$
+\end{consequence}
+\begin{proof}
+Т. пл-ти $X_0$ - начало $\overline{c}$, а $X_1$ - конец $\overline{c}$
+\[
+\overline{c} || \pi \iff X_1 \in \pi \iff A(x_1 - x_0) + B(y_1 - y_0) + C(z_1 - z_0) = 0 \iff
+\]
+\[
+A\alpha + B\beta + C\gamma = 0
+\]
+\end{proof}
+\begin{consequence}
+Пусть, для определённости, $\pi \colon Ax + By + Cz + D = 0$. $A \neq 0$ (Б. О. О.) Тогда векторы:
+\[
+\begin{pmatrix} -B \\ A \\ 0 \end{pmatrix} \text{ и } \begin{pmatrix}-C \\ 0 \\ A \end{pmatrix}
+\]
+Ненулевые, неколлинеарны и параллельны пл-ти $\pi$, т. е. они могут быть выбраны в кач-ве напр. векторов $\pi$ \\
+
+В кач-ве нач. точки $X_0$ можно взять точки с коор-т $\begin{pmatrix}-\frac{D}{A} \\ 0 \\ 0\end{pmatrix}$
+\end{consequence}
+\begin{consequence}
+Все указанные методы задания пл-ти эквивалентны 
+\end{consequence}
+Пусть теперь $(O, G)$ - прямоугольная (ПДСК)
+\[
+  A\alpha + B\beta + C\gamma = 0 \iff \begin{pmatrix} \alpha & \beta & \gamma \end{pmatrix}^{T} \begin{pmatrix} A \\ B \\ C \end{pmatrix} = (\overline{c}, \overline{n}) = 0
+\]
+Где $\overline{n} \underset{(O, G)}{\longleftrightarrow} \begin{pmatrix}A \\ B \\ C \end{pmatrix}$
+
+\begin{definition}
+  $\overline{n}$ наз-ся вектором нормали к пл-ти $\pi$
+\end{definition}
+\begin{statement}
+В ПДСК вектор нормали $\overline{n}$ к $\pi$ ортогонале любому вектору, параллельному $\pi$
+\end{statement}
+
+Пусть теперь $(O, G)$ - произвольная ДСК. \\
+\begin{definition}
+Тогда вектор, сопоставленный пл-ти $Ax + By + Cz + D = 0$, с коор-тами $\begin{pmatrix} A \\ B \\ C \end{pmatrix}$ наз-ся \textbf{сопутствующим вектором пл-ти}.
+\end{definition}
+\begin{statement}
+  Плоскости $A_ix + B_iy + C_iz + D_i = 0, i = 1,2$, с сопутствующими векторами, соотв. $\overline{n_1}, \overline{n_2}$ параллельны тогда и только тогда, когда:
+  \[
+  \overline{n_1} || \overline{n_2}
+  \]
+ Пл-ти $\pi_1, \pi_2$ совпадают тогда и только тогда, когда их уравнения пропорциональны
+\end{statement}
+\begin{proof}
+\item [a) ] Усли ур-я пропорциональны $\Rightarrow \pi_1 = \pi_2$ 
+\item [b) ] Пусть $\overline{n_1} || \overline{n_2}$ и при этом ур-я не пропорциональны, покажем, что $\pi_1 || \pi_2$ и $\pi_1 \not\equiv \pi_2$
+  \begin{proof}
+  \[
+  \frac{A_1}{A_2} = \frac{B_1}{B_2} = \frac{C_1}{C_2} = \lambda, \text{ но } \frac{D_1}{D_2} \neq \lambda \iff D_1 - \lambda D_2 \neq 0
+  \]
+  \[
+  \lambda(A_2x + B_2y + C_2z + D_2) = (A_1x + B_1y + C_1z + D_1) + (\lambda D_2 - D_1)
+  \]
+  $\Rightarrow \not\exists X_0 \colon X_0 \in \pi_1 \cap \pi_2 \Rightarrow \pi_1 || \pi_2$
+  \end{proof}
+\item [c) ] Пусть $\overline{n_1} \not{||} \overline{n_2}$ \\
+
+  Покажем, что пл-ти пересекаются:
+  \begin{equation*}
+    \begin{cases}
+  A_1x + B_1y + C_1z + D_1 = 0 \\
+  A_2x + B_2y + C_2z + D_2 = 0 \\
+  z = z_0
+    \end{cases} \iff
+    \begin{cases}
+    A_1x + B_1y = -D_1 - C_1z_0 \\
+    A_2x + B_2y = -D_2 - C_2z_0
+    \end{cases}
+  \end{equation*}
+  \[
+   \begin{vmatrix} A_1 & B_1 \\ A_2 & B_2 \end{vmatrix} \neq 0 \Rightarrow \exists! X_0 \begin{pmatrix}x_0 \\ y_0 \\ z_0 \end{pmatrix} \text{ удовл. системе}
+  \]
+  При этом пл-ти $\pi_1$ и $\pi_2$ не совпадают:
+  \begin{proof}
+    Пусть $\pi_1 \equiv \pi_2$:
+    \begin{equation*}
+    \begin{cases}
+    z = 0 \\
+    A_1x + B_1y + D_1 = 0 \\
+    A_2x + B_2y + D_2 = 0
+    \end{cases} \Rightarrow \begin{pmatrix} A_1 \\ B_1 \end{pmatrix} || \begin{pmatrix} A_2 \\ B_2 \end{pmatrix} \Rightarrow \text{ПРОТИВОРЕЧИЕ}
+    \end{equation*}
+  \end{proof}
+\end{proof}

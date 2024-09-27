@@ -1,8 +1,6 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 6}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Бесконечные пределы}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Дополнения к ранним теоремам}{4}{}%
-\contentsline {subsection}{\numberline {1.3}Подпоследовательности}{5}{}%
-\contentsline {section}{\numberline {2}Лекция 7}{7}{}%
-\contentsline {subsection}{\numberline {2.1}Критерий Коши}{7}{}%
-\contentsline {subsection}{\numberline {2.2}Частичные пределы}{8}{}%
+\contentsline {section}{\numberline {1}Лекция 7}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Критерий Коши}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Частичные пределы}{4}{}%
+\contentsline {section}{\numberline {2}Лекция 8}{7}{}%
+\contentsline {subsection}{\numberline {2.1}\textsection 3: Топология $\mathbb {R}$}{7}{}%
