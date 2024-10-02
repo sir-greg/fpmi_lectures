@@ -1,0 +1,90 @@
+\section{Лекция 5}
+\subsection{Биномиальная куча}
+\textbf{Хотим следующие операции:}
+\begin{itemize}
+  \item getMin()
+  \item extractMin()
+  \item insert(x)
+  \item decreaseKey(ptr, $\triangle$)
+  \item merge(heap1, heap2) - обЪединение куч.
+\end{itemize}
+\begin{definition}
+\textbf{Биномиальное дерево} ранга $k$:
+\begin{itemize}
+  \item [k = 0)] $T_0$ - одна вершина
+  \item [k = 1)] $T_1$ - вершина с одним ребёнком
+  \item [k = 2)] $T_2$ - Дерево $T_1$, к корню кот. ещё подвешено $T_1$    
+  \item [k = n)] $T_n$ - Дерево $T_{n - 1}$, к корню кот. ещё подвешено $T_{n - 1}$
+\end{itemize}
+Кроме того, в вершинах дерева, есть числа, удовл. усл. обыкновенной кучи (значение в родителе $\leq$ значения в сыновьях)
+\end{definition}
+\begin{definition}
+\textbf{Биномиальная куча} - это набор биномиальных деревьев, попарно различных рангов.
+\begin{example}
+  ~\newline
+  $T_0, T_1, T_5$ - OK \\
+  $T_3, T_5, T_5$ - NOT OK
+\end{example}
+\end{definition}
+\begin{note}
+\begin{itemize}
+  \item [1) ] Если в куче всего $n$ - эл-ов, то в ней не более $\log_2{n}$ - деревьев, т. к. в $T_k$ ровно $2^{k}$ вершин.
+    \begin{example}
+    $n = 11 = 1011_2 \Rightarrow T_0 + T_1 + T_3$
+    \end{example}
+  \item [2) ] Дерево ранга $k$ имеет глубину $k$
+    \[
+    k \leq \log_2{n}
+    \]
+\end{itemize}
+\end{note}
+Реализация:
+\begin{itemize}
+  \item getMin(): \\
+    Храним указатель на корень с наим. значением. $ \Rightarrow O(1)$
+  \item merge($H_1$, $H_2$): \\
+    \begin{itemize}
+      \item [1) ] Если в $H_1$ и $H_2$ не содержатся деревья одинаковых рангов, то просто объединяем.
+      \item [2) ] Иначе пусть есть дерево $L_k, R_k$ - два дерева одинакового ранга. Сделаем из них $T_{k + 1}$. Повторяем процедуру, пока у нас есть деревья равных рангов. ($O(\log_2 n)$)
+    \end{itemize}
+  \item insert(x): \\
+    Заводим биномиальную кучу из одной вершины с значением $x$, затем merge новой и старой кучи $\Rightarrow O(\log_2 n)$
+  \item extractMin(): \\
+    Пусть min вершина в $H_2$. На самом деле дерево $H_2$ - тоже корректная куча. Оставшуюся кучу обозначим за $H_1$. Удалим из $H_2$ min, из оставшихся деревьев составим новую кучу $H_2'$ и смёрджим его с $H_1$
+  \item decreaseKey(ptr, $\triangle$): \\
+    Как в бинарной. ($O(\log_2 n)$) + Проверить, не изменился ли min корень
+\end{itemize}
+
+\subsection{Амортизационный анализ}
+\begin{definition}
+Пусть $S$ - какая-то СД, способная обрабатывать $m$ типов запросов. Тогда ф-ции $a_1(n), a_2(n), \ldots, a_m(n)$ наз-ся учётными (амортизационными) асимптотиками ответов на запросы, если $\forall n \forall$ п-ть из $n$ запросов с типами $i_1, i_2, \ldots, i_n$ суммарное время их обработки = $O(\sum_{i = 1}^{n}a_{i_j}(n))$
+\end{definition}
+\begin{example}
+В бинарной куче:
+\begin{itemize}
+  \item insert: $O(\log n)$
+  \item extractMin: $O^{*}(\log n)$
+  \item getMin(): $O^{*}(\log n)$
+  \item erase: аморт. $O(\log n)$
+\end{itemize}
+Сл-но, любые $n$ запросов работают за $O(n\log n)$
+\end{example}
+\begin{note}
+Можно даже считать так:
+\begin{itemize}
+  \item insert: $O^{*}(\log n)$
+  \item extractMin: $O^{*}(1)$ $\leq k$
+  \item getMin: $O^{*}(1)$
+  \item erase: $O^{*}(1)$ $\leq k$
+\end{itemize}
+На $n$ запросов. \\
+Из них $k$ - insert. Тогда реальное время работы: $O(k\log k + n - k)$
+\end{note}
+\subsubsection{Динамический массив \\ (std::vector)}
+Хранит массив: $a_0, a_1, \ldots, a_{n - 1}$ \\
+Отвечает на запросы:
+\begin{itemize}
+  \item $[]$: по $i$ вернуть $a_i$ - $O(1)$
+  \item push-back x: добавить $x$ в конец массива.
+  \item pop-back: удалить последний эл-т.
+\end{itemize}
