@@ -1,0 +1,297 @@
+\section{Лекция 9}
+\begin{statement}(ДСК)
+  \[
+  \pi_i \colon A_i x + B_i y + C_i z + D_i = 0
+  \]
+  \[
+  \overline{n_i} = \begin{pmatrix}A_i \\ B_i \\ C_i \end{pmatrix} \text{ - сопутствующий вектор для $\pi_i$}
+  \]
+  Пусть $\pi_1 \cap \pi_2 = l$ \\
+
+  Тогда за напр. вектор прямой $l$ можно взять вектор:
+  \[
+    \overline{u} \underset{}{\longleftrightarrow} \begin{pmatrix} \begin{vmatrix}B_1 & C_1 \\ B_2 & C_2 \end{vmatrix} & \begin{vmatrix}C_1 & A_1 \\ C_2 & A_2 \end{vmatrix} & \begin{vmatrix}A_1 & B_1 \\ A_2 & B_2 \end{vmatrix} \end{pmatrix}
+  \]
+\end{statement}
+\begin{proof}
+  \begin{itemize}
+    \item [a) ]
+  Вектор $\overline{u} \neq \overline{o}$. По утв. из пред. лекции $\overline{n_1} \not|| \overline{n_2}$
+  \[
+  \left[\overline{n_1} || \overline{n_2} \iff \begin{pmatrix}A_1 \\ B_1 \\ C_1 \end{pmatrix} = \lambda \begin{pmatrix}A_2 \\ B_2 \\ C_2 \end{pmatrix}\right]
+\]
+\item [b) ] Покажем, что $\overline{u} || \pi_i, \forall i = 1, 2$:
+  \[
+    \begin{cases}
+    \overline{u} || \pi_i, \forall i = 1, 2 \\
+    A_{i} u_1 + B_{i} u_2 + C_i u_3 \overset{?}{=} 0
+    \end{cases} \Rightarrow \overline{u} || l
+  \]
+  \[
+    A_i \begin{vmatrix} B_1 & C_1 \\ B_2 & C_2 \end{vmatrix} + B_i \begin{vmatrix}C_1 & A_1 \\ C_2 & A_2 \end{vmatrix} + C_i \begin{vmatrix}A_1 & B_1 \\ A_2 & B_2 \end{vmatrix} \overset{?}{=} 0
+  \]
+  \[
+    \begin{vmatrix}A_i & B_i & C_i \\ A_1 & B_1 & C_1 \\ A_2 & B_2 & C_2 \end{vmatrix} \overset{?}{=} 0
+  \]
+  \[
+    0 = V(\overline{n_i}, \overline{n_1}, \overline{n_2}) = \begin{vmatrix}A_i & A_1 & A_2 \\ B_i & B_1 & B_2 \\ C_i & C_1 & C_2 \end{vmatrix} \cdot V(\overline{e_1}, \overline{e_2}, \overline{e_3}) = 0
+  \]
+  \[
+  \Rightarrow \begin{vmatrix}A_i & A_1 & A_2 \\ B_i & B_1 & B_2 \\ C_i & C_1 & C_2 \end{vmatrix} = 0
+  \]
+  Ч. Т. Д.
+  \end{itemize}
+\end{proof}
+\begin{note}
+В ПДСК: $\overline{u} = [\overline{n_1}, \overline{n_2}]$
+\end{note}
+\subsection{Пучок пл-тей}
+\begin{definition}
+\textbf{Пучком пересекающихся пл-тей} в пр-ве наз-ся мн-во пл-тей в пр-ве, проходящих через фикс. прямую.
+\end{definition}
+\begin{definition}
+  \textbf{Пучком параллельных пл-тей} в пр-ве наз-ся мн-во всех пл-тей в пр-ве, параллельных фикс. пл-ти.
+\end{definition}
+\begin{theorem}[Об уравнении пучка пл-тей]
+  Пусть две \underline{различные} пл-ти $\pi_i$ заданы своими общими ур-ями:
+  \[
+  \pi_1 \colon f_1(x, y, z) = A_1x +B_1y + C_1z + D_1 = 0
+  \]
+  \[
+  \pi_2 \colon f_2(x, y, z) = A_2x + B_2y + C_2 z + D_2 = 0
+  \]
+  Тогда пучок, порождённые $\pi_1, \pi_2$ состоит из тех, и только тех пл-тей $\pi$, коор-ты точек кот. удовл. ур-ю:
+  \begin{equation}
+  \alpha f_1(x, y, z) + \beta f_2(x, y, z) = 0, (\alpha^{2} + \beta^{2} \not= 0)
+  \label{plane_puchok}
+  \end{equation}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [a) ]  Пусть пл-ть $\pi$ зад-ся ур-ем $\ref{plane_puchok}$ с $\alpha^{2} + \beta^{2} \neq 0$. Пусть $\pi_1 \cap \pi_2 = l$.
+    \[
+    f_1(l) = f_2(l) = 0
+    \]
+    \[
+    \alpha f_1(x, y, z) + \beta f_2(x, y, z) |_l = \alpha \cdot 0 + \beta \cdot 0 = 0
+    \]
+    $\Rightarrow \pi$ принадлежит пучку, порожд. $\pi_1, \pi_2$. \\
+    Пусть $\pi_1 || \pi_2 \Rightarrow \overline{n_1} || \overline{n_2}$. \\ 
+
+    Тогда $\overline{n_\pi} = \alpha\overline{n_1} + \beta\overline{n_2} || \overline{n_1} || \overline{n_2} \Rightarrow \pi$ принадлежит пучку, порожд. $\pi_1, \pi_2$
+  \item [b) ] Пусть $\pi$ принадлежит пучку, порожд. $\pi_1$ и $\pi_2$. Покажем, что $\pi$ можно задать в виде $\ref{plane_puchok}$ \\
+
+    Пусть $X \in \pi, X \not\in \pi_1, X \not\in \pi_2$:
+    \[
+    \alpha = f_2(X), \beta = -f_1(X)
+    \]
+    \[
+    f_2(X)f_1(x, y, z) - f_1(X)f_2(x, y, z) = 0 \text{ - ур-е $\pi'$, проход. через точку $X$, т. к.:}
+    \]
+    \[
+    f_2(X)f_1(X) - f_1(X)f_2(X) = 0
+    \]
+    $\pi'$ - также принадлежит пучку, порожд. пл-тями $\pi_1, \pi_2$
+    \[
+    \pi \equiv \pi'\text{, т. к. $\pi'$ проходит через $l$ и содержит т. $X$}
+    \]
+\end{itemize}
+\end{proof}
+
+\subsection{Связка пл-тей}
+\begin{definition}
+Мн-во всех пл-тей в пр-ве, проходящих через фикс. точку наз-ся \textbf{связкой пл-тей}, а сама эта фикс. точка наз-ся \textbf{центром связки}.
+\end{definition}
+\underline{Как задать?}
+\begin{itemize}
+  \item [1) ] Задать центр связки
+  \item [2) ] Задать 3 пл-ти в $V_3$, не принадл. одному пучку.
+\end{itemize}
+\begin{theorem}
+Пусть связка пл-тей в пр-ве задаётся набором 3-ёх пл-тей:
+\[
+\pi_i \colon f_i(x, y, z) = A_i x + B_i y + C_i z + D_i = 0, i = 1, 2, 3
+\]
+пересекающихся в одной точке $X$. \\
+
+Тогда связка состоит из тех и только тех пл-тей, коор-ты точек кот-ых удовл. ур-ю:
+\[
+\alpha f_1(x, y, z) + \beta f_2(x, y, z) + \gamma f_3(x, y, z) = 0, (\alpha, \beta, \gamma \in \R, \alpha^{2} + \beta^{2} + \gamma^{2} \neq 0)
+\]
+\end{theorem}
+Идея док-ва: 
+\[
+\begin{cases}
+A_1 x + B_1 y + C_1 z = - D_1 \\
+A_2 x_2 + B_2 y + C_2 z = - D_2 \\
+A_3 x + B_3 y + C_3 z = - D_3
+\end{cases} \text{ СЛУ имеет ед. решение $\overset{\text{Т. Крамера}}{\iff} \begin{vmatrix}A_1 & A_2 & A_3 \\ B_1 & B_2 & B_3 \\ C_1 & C_2 & C_3 \end{vmatrix} \neq 0 \iff $ }
+\]
+\[
+\iff (\overline{n_1}, \overline{n_2}, \overline{n_3}) \neq 0 \Rightarrow (\overline{n_1}, \overline{n_2}, \overline{n_3}) \text{ - некомпл.} \Rightarrow \text{ базис в $V_3$}
+\]
+$\pi$ принадлежит связке, $\overline{n} = \alpha\overline{n_1} + \beta\overline{n_2} + \gamma\overline{n_3}$
+\[
+\alpha f_1(x, y, z) + \beta f_2(x, y, z) + \gamma f_3(x, y, z) = 0 \text{ верно для центра связки}
+\]
+$\Rightarrow$ это ур-е пл-ти $\pi$
+
+\subsection{Приложение к задачам стереометрии}
+\begin{task}[Формула расстояния от точки до пл-ти (ПДСК)]
+  \[
+    X \rightarrow \overline{r_X}, \pi \colon (\overline{r} - \overline{r_0}, \overline{n}) = 0
+  \]
+  \begin{itemize}
+    \item [1) ]
+  \[
+    p(X, \pi) = \left|pr_{\overline{n}}(\overline{X_0X})\right| = \left|\frac{(\overline{X_0X}, \overline{n})}{\left|\overline{n}\right|^{2}} \cdot \overline{n}\right| = \left|\frac{(\overline{X_0X}, \overline{n})}{|\overline{n}|}\right| = \frac{\left|(\overline{r_X} - \overline{r_0}, \overline{n})\right|}{\left|\overline{n}\right|}
+  \]
+    \item [2) ] Пусть $\pi \colon Ax + By + Cz + D = 0$: \\
+      \[
+      X \underset{(O, G)}{\longleftrightarrow} \begin{pmatrix}x \\ y \\ z \end{pmatrix}
+      \]
+      \[
+      X_0 \underset{(O, G)}{\longleftrightarrow} \begin{pmatrix} x_0 \\ y_0 \\ z_0 \end{pmatrix}
+      \]
+      \[
+      \overline{r_X} - \overline{r_0} \underset{G}{\longleftrightarrow} \begin{pmatrix}x - x_0 \\ y - y_0 \\ z - z_0 \end{pmatrix}
+      \]
+      \[
+        (\overline{r_X} - \overline{r_0}, \overline{n}) = A(x - x_0) + B(y - y_0) + C(z - z_0) = Ax + By + Cz - (Ax_0 + By_0 + Cz_0) = 
+      \]
+      \[
+      = Ax + By + Cz + D
+      \]
+      \[
+      \Rightarrow p(X, \pi) = \frac{\left|Ax + By + Cz + D\right|}{\sqrt{A^{2} + B^{2} + C^{2}}}
+      \]
+  \end{itemize}
+\end{task}
+\begin{definition}
+Углом между пл-тями $\alpha$ и $\beta$ наз-ся линейный угол между прямыми, кот. образ. при пересечении $\alpha$ и $\beta$ пл-тью $\gamma$, кот. перпендикулярна прямой пересечения $\alpha, \beta$
+\end{definition}
+\begin{task}[Ф-ла угла между двумя пл-тями (ПДСК)]
+  \[
+    \pi_i \colon A_i x + B_i y + C_i z + D_i = 0, \overline{n_i} \underset{}{\longleftrightarrow} \begin{pmatrix}A_i \\ B_i \\ C_i \end{pmatrix}
+  \]
+  \[
+  l_i \subset \pi_i
+  \]
+  \[
+  \cos \phi = \left|\cos \angle (\overline{n_1}, \overline{n_2})\right| = \frac{\left|(\overline{n_1}, \overline{n_2})\right|}{\left|\overline{n_1}\right| \left|\overline{n_2}\right|}
+  \]
+\end{task}
+\subsection{Прямая в пр-ве}
+Прямая задаётся точкой ($X_0 \in l$) и направл. вектором ($\overline{a} || l$). \\
+
+Точка $X \in l \iff \overline{X_0X} = \overline{a} t, t \in \R$:
+\[
+  \iff \overline{r} - \overline{r_0} = \overline{a}t
+\]
+\begin{equation}
+  \iff \overline{r} = \overline{r_0} + \overline{a}t
+\end{equation}
+- векторное праметрическое ур-е \\
+
+ДСК:
+\begin{equation}
+\begin{cases}
+x = x_0 + \alpha_1 t \\
+y = y_0 + \alpha_2 t \\
+z = z_0 + \alpha_3 t
+\end{cases}
+\end{equation}
+- коорд-ое параметрическое ур-е \\
+
+Исключаем $t$:
+\begin{equation}
+t = \frac{x - x_0}{\alpha_1} = \frac{y - y_0}{\alpha_2} = \frac{z - z_0}{\alpha_3}
+\end{equation}
+ - каноническое ур-е прямой \\
+
+ Если $\alpha_1 = 0$, то:
+ \[
+ \begin{cases}
+ x - x_0 = 0 \text{ (пл-ть)} \\
+ \frac{y - y_0}{\alpha_2} = \frac{z - z_0}{\alpha_3} \text{ (пл-ть)}
+ \end{cases}
+ \]
+ \begin{statement}
+ Прямая $\frac{x - x_0}{\alpha_1} = \frac{y - y_0}{\alpha_2} = \frac{z - z_0}{\alpha_3}$ лежит в пл-ти:
+ \[
+ \pi\colon Ax + By + Cz + D = 0 \iff
+ \]
+ \[
+ \begin{cases}
+ Ax_0 + By_0 + Cz_0 + D = 0, \text{(1)} \\
+ A\alpha_1 + B\alpha_2 + C\alpha_3 = 0, \text{(2)}
+ \end{cases}
+ \]
+ \end{statement}
+ \begin{proof}
+   \begin{itemize}
+     \item [a) ]
+ Пусть прямая $l \subset \pi \Rightarrow \text{(1), т. к. $X_0 \in \pi$}$ \\
+ \[
+ \overline{a} || \pi \Rightarrow \text{(2)}
+ \]
+\item [b) ] Пусть вып-ся усл. $(1), (2)$:
+  \[
+  \begin{cases}
+  \text{(1)} \Rightarrow X_0 \in \pi \\
+  \text{(2)} \Rightarrow \overline{a} || \pi
+  \end{cases} \Rightarrow l \subset \pi
+  \]
+   \end{itemize}
+ \end{proof}
+ \begin{statement}
+  Прямая $l_i \colon \overline{r} = \overline{r_i} + \overline{a_i}t, i = 1, 2$ лежат в одной пл-ти $\iff$ векторы $\overline{a_1}, \overline{a_2}, \overline{r_2} - \overline{r_1}$ -  компланарны.
+ \end{statement}
+ \begin{proof}
+ \begin{itemize}
+   \item [a) ] Необходимость очевидна
+   \item [b) ] Достаточность: пусть такие векторы компланарны.
+     Если $\overline{a_1} || \overline{a_2} \Rightarrow l_1, l_2 \subset \pi$ (т. к. $l_1 || l_2$) \\
+
+     Пусть $\overline{a_1} \not|| \overline{a_2}$. Тогда построим пл-ть $\pi$, проходящую через $X_1$ с напр. векторами $\overline{a_1}, \overline{a_2}$ $\Rightarrow \overline{X_1 X_2}$ лежит в $\pi \Rightarrow X_2 \in \pi \Rightarrow l_1, l_2 \subset \pi$
+ \end{itemize}
+ \end{proof}
+ \begin{consequence}
+ Прямые $\overline{r} = \overline{r_i} + \overline{a_i}t, i = 1,2$ лежат в одной пл-ти $\iff$:
+ \[
+   (\overline{a_1}, \overline{a_2}, \overline{r_2} - \overline{r_1}) = \overline{o}
+ \]
+ \end{consequence}
+ \begin{consequence}
+ Прямые $l_1$ и $l_2$ скрещиваются $\iff (\overline{a_1}, \overline{a_2}, \overline{r_2} - \overline{r_1}) \neq \overline{o}$
+ \end{consequence}
+ \begin{consequence}
+ Прямые $l_1$ и $l_2$ пересекаются ( по точке ) $\iff$
+ \[
+ \begin{cases}
+   (\overline{a_1}, \overline{a_2}, \overline{r_2} - \overline{r_1}) = 0 \\
+   \overline{a_1} \not|| \overline{a_2}
+ \end{cases} \iff
+ \begin{cases}
+   (\overline{a_1}, \overline{a_2}, \overline{r_2} - \overline{r_1}) = 0 \\
+   [\overline{a_1}, \overline{a_2}] \neq \overline{o}
+ \end{cases}
+ \]
+ \end{consequence}
+ \begin{consequence}
+ Прямые $l_1, l_2$ параллельны $\iff \overline{a_1} || \overline{a_2} \iff [\overline{a_1}, \overline{a_2}] = \overline{o}$ 
+ \end{consequence}
+ \begin{consequence}
+ Прямые $l_1$ и $l_2$ совпадают $\iff \overline{a_1} || \overline{a_2} || \overline{r_2} - \overline{r_1}$
+ \end{consequence}
+ \begin{definition}
+ Углом между пересекающимися прямыми $l_1, l_2$ наз-ся наименьший из двух смежных углов, образ. ими 
+ \end{definition}
+\subsection{Формула угла между прямыми}
+\[
+  l_i\colon \overline{r} = \overline{r_i} + \overline{a_i}t, i = 1, 2
+\]
+Возьмём $X_3$ и проведём через неё $l_1' || l_1, l_2' || l_2$, тогда:
+\[
+\cos \phi = \frac{|(\overline{a_1}, \overline{a_2})|}{\left|\overline{a_1}\right| \cdot \left|\overline{a_2}\right|}
+\]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  27 SEP 2024 12:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  2 OCT 2024 12:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -555,66 +555,28 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 
 
-[2] (./src/lecture_7.tex
-
-[3]
-Overfull \hbox (7.61269pt too wide) in paragraph at lines 69--70
-[]$[]$\T2A/cmr/bx/n/12 . []\T2A/cmr/m/it/12 Кри-те-рий Ко-ши поз-во-ля-ет до-ка-зы-вать су-ще-ство-ва-ние пре-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--107
-
- []
-
-
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-
- []
-
-
-
-[5]
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 211--213
-
- []
-
-) (./src/lecture_8.tex
+[2] (./src/lecture_8.tex
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
 
 
-[7{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
-[8]
+[4]
 Overfull \hbox (8.83542pt too wide) detected at line 117
 \OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 2 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 E; \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[]x[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 < x[] < x \OT1/cmr/m/n/12 + [] \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 x
  []
 
 
-
-[9]
 Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
 
+
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
@@ -630,8 +592,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--159
  []
 
 
-
-[10]
 Underfull \hbox (badness 10000) in paragraph at lines 177--179
 
  []
@@ -642,6 +602,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--181
  []
 
 
+
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
@@ -651,9 +613,99 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-)
+) (./src/lecture_9.tex
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
-[11] (./main.aux)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+
+[9]
+Overfull \hbox (36.26643pt too wide) detected at line 144
+\OT1/cmr/m/n/12 0 \OML/cmm/m/it/12 < [] < ^^N  \OMS/cmsy/m/n/12 ([])  \OT1/cmr/m/n/12 0 \OML/cmm/m/it/12 < [] < []  \OMS/cmsy/m/n/12 ([])  [] \OML/cmm/m/it/12 < [] \OT1/cmr/m/n/12 (2 [] + 1) \OML/cmm/m/it/12 < "
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+
+ []
+
+
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+
+
+[11])
+
+[12] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -661,17 +713,17 @@ L3 programming layer <2024-07-20>
  ) 
 Here is how much of TeX's memory you used:
  8071 strings out of 473579
- 125940 string characters out of 5728235
+ 125945 string characters out of 5728235
  1937957 words of memory out of 5000000
  30800 multiletter control sequences out of 15000+600000
  579600 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,9n,82p,353b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,9n,82p,380b,323s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (11 pages, 278564 bytes).
+Output written on main.pdf (12 pages, 275039 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 143 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

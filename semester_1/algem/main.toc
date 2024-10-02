@@ -1,11 +1,13 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 7}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Понятие ур-я мн-ва. Задание прямой на пл-ти}{4}{}%
-\contentsline {subsubsection}{\numberline {1.1.1}Случай ПДСК}{6}{}%
-\contentsline {subsubsection}{\numberline {1.1.2}Признаки параллельности/перпендикулярности прямых на плоскости}{7}{}%
-\contentsline {section}{\numberline {2}Лекция 8}{9}{}%
-\contentsline {subsection}{\numberline {2.1}Пучок прямых на пл-ти}{9}{}%
-\contentsline {subsection}{\numberline {2.2}Приложения в планиметрии}{10}{}%
-\contentsline {subsubsection}{\numberline {2.2.1}Расстояние от точки до прямой}{10}{}%
-\contentsline {subsubsection}{\numberline {2.2.2}Вычисление угла между пересекающимися прямыми}{11}{}%
-\contentsline {subsection}{\numberline {2.3}Пл-ть в пр-ве}{12}{}%
+\contentsline {section}{\numberline {1}Лекция 8}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Пучок прямых на пл-ти}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Приложения в планиметрии}{4}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}Расстояние от точки до прямой}{4}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}Вычисление угла между пересекающимися прямыми}{5}{}%
+\contentsline {subsection}{\numberline {1.3}Пл-ть в пр-ве}{6}{}%
+\contentsline {section}{\numberline {2}Лекция 9}{9}{}%
+\contentsline {subsection}{\numberline {2.1}Пучок пл-тей}{10}{}%
+\contentsline {subsection}{\numberline {2.2}Связка пл-тей}{12}{}%
+\contentsline {subsection}{\numberline {2.3}Приложение к задачам стереометрии}{12}{}%
+\contentsline {subsection}{\numberline {2.4}Прямая в пр-ве}{14}{}%
+\contentsline {subsection}{\numberline {2.5}Формула угла между прямыми}{15}{}%

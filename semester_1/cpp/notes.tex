@@ -143,4 +143,37 @@ T fun(P1, P2, ...) => ptr: T (*fun)(P1, P2, ...)
 \end{lstlisting}
 
 \subsection{\textsection 2.5. References}
+Ссылки = почти всегда - другое имя переменной
+
+\subsection{\textsection 2.6. Constants}
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=A constant int]
+const int x = 5;
+\end{lstlisting}
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=A constant ptr]
+int x = 5;
+const int* cp = &x;
+++cp; // OK
+++(*cp); // CE
+int* const cp2 = cp; // CE
+int* const cp2 = &x;
+++cp2; // CE
+++*cp2; // OK
+int* p = cp; // CE
+int* p2 = cp2; // OK
+\end{lstlisting}
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=Cool MLG moment]
+const int x = 'a';
+char* p = nullptr;
+const char** p = &q; // CE
+const char* const* q = &p;
+*q = &x; // CE
+*p = 'b';
+\end{lstlisting}
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=Logical CE]
+int& const a = x; // CE (makes sense)
+\end{lstlisting}
 \end{document}

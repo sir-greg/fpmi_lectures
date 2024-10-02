@@ -1,0 +1,221 @@
+\section{Лекция 9}
+
+\begin{definition}
+\textbf{Семейство } $\set{G_\lambda}$ наз-ся \underline{покрытием} мн-ва $E$, если $E \subset \bigcup_{\lambda \in \Lambda}^{} G_\lambda$. Покрытие наз-ся \underline{открытым}, если все $G_\lambda$ открыты.
+\end{definition}
+\begin{example}
+$\set{\left(\frac{1}{n}, 1\right)}_{n \in \N}$ - открытое покр-е $(0, 1)$
+\[
+\bigcup_{n = 1}^{\infty} \left(\frac{1}{n}, 1\right)
+\]
+\end{example}
+\begin{theorem}[Лемма Гейне-Бореля]
+Если $\set{G_\lambda}_{\lambda \in \Lambda}$ образует открытое покр-е отрезка $[a, b]$, то:
+\[
+\exists \lambda_1, \ldots, \lambda_n \in \Lambda \colon ([a, b] \subset G_{\lambda_1} \cup \ldots \cup G_{\lambda_n})
+\]
+\end{theorem}
+\begin{proof}
+Предположим, что из открытого покр-я $\set{G_\lambda}_{\lambda \in \Lambda}$ отрезка $[a, b]$ нельзя выбрать конечное подпокрытие. \\
+
+Разделим $[a, b]$ пополам и обозначим за $[a_1, b_1]$ ту его половину, кот. не покрыв-ся конечным набором $G_\lambda$. \\
+
+Разделим $[a_1, b_1]$ пополам и обозначим за $[a_2, b_2]$ ту его половину, кот. не покр-ся конечным набором $G_\lambda$ \\
+
+\ldots \\
+
+По индукции будет построена стягивающаяся п-ть отрезков, каждый из кот. не покрыв-ся конечным набором $G_\lambda$ \\
+
+По т. Кантора о вложенных отрезках, найдётся т. $c \in \bigcap_{i = 1}^{n} [a_i, b_i]$. Т. к.
+\[
+  c \in [a, b] \subset \bigcup_{\lambda \in \Lambda}^{} G_\lambda \Rightarrow \exists \lambda_0 \in \Lambda (c \in G_\lambda \text{ - открытое})
+\]
+\[
+  \Rightarrow \exists B_{\varepsilon}(c) \subset G_{\lambda_0}
+\]
+Выберем $k$ так, что $b_k - a_k = \frac{b - a}{2^{k}} < \varepsilon$ \\
+
+Сл-но, $c - a_k < \varepsilon$ и $b_k - c < \varepsilon$. Откуда:
+\[
+  [a_k, b_k] \subset B_{\varepsilon}(c) \subset G_{\lambda_0} !!! (\text{с построением п-ти $\set{[a_n, b_n]}$})
+\]
+\end{proof}
+\begin{consequence}
+Если $F$ - замкнутое огр. мн-во в $\R$ и $\set{G_\lambda}_{\lambda \in \Lambda}$ - откр. покр-е $F$, то:
+\[
+\exists \lambda_1, \ldots, \lambda_n \in \Lambda \colon (F \subset G_{\lambda_1} \cup \ldots \cup G_{\lambda_n})
+\]
+\end{consequence}
+\begin{proof}
+Т. к. $F$ - огр., то $\exists[a, b] \colon F \subset [a, b]$. Сем-во $\set{G_\lambda}_{\lambda \in \Lambda} \cup \set{\R \backslash F}$ отк-е покр-е $[a, b]$, т. к. $\bigcup_{\lambda \in \Lambda}^{} G_{\lambda} \cup (\R \backslash F) = \R$ \\
+
+По т. Гейне-Бореля $\exists \lambda_1, \ldots, \lambda_n \in \Lambda$:
+\[
+[a, b] \subset G_{\lambda_1} \cup G_{\lambda_2} \cup \ldots \cup G_{\lambda_n} \cup (\R \backslash F)
+\]
+\[
+  \Rightarrow F \subset G_{\lambda_1} \cup \ldots \cup G_{\lambda_n}
+\]
+\end{proof}
+Введм следующее обозначение:
+\begin{symb}
+\[
+B_{\varepsilon}(+\infty) = (\frac{1}{\varepsilon}; +\infty) \cup \set{+\infty} \text{ - $\varepsilon$-окр-ть $+\infty$}
+\]
+\[
+\overset{\circ}{B_{\varepsilon}}(+\infty) = (\frac{1}{\varepsilon}, +\infty) \text{ - проколотая $\varepsilon$-окр-ть $+\infty$}
+\]
+\[
+  B_{\varepsilon}(-\infty) = (-\infty, -\frac{1}{\varepsilon}) \cup \set{-\infty}
+\]
+\[
+\overset{\circ}{B_{\varepsilon}}(-\infty) = (-\infty, -\frac{1}{\varepsilon})
+\]
+\end{symb}
+Поскольку все определения этого параграфа давались на языке окр-тей, то всё это верно и для $\overline{\R}$ \\
+
+$E \subset \overline{\R}$. В част-ти $+\infty(-\infty)$ - предел. точка мн-ва $E \subset \overline{\R} \iff E \backslash \set{+\infty}$ неогр. сверху ($E \backslash \set{-\infty}$ - неогр. снизу).
+
+На языке окр-ти можно дать общее определение предела:
+\begin{definition}
+Точка в $b \in \overline{\R}$ наз-ся \textbf{пределом} числовой п-ти $\set{a_n}$, если:
+\[
+\forall \varepsilon > 0, \exists N \colon \forall n \geq N (a_n \in B_{\varepsilon}(b))
+\]
+\end{definition}
+
+\subsection{\textsection 4: Непрерывные ф-ции}
+\subsubsection{Предел ф-ции в точке}
+Пусть $\exists \in \R$, задана ф-ция $f: E \rightarrow \R$. \\
+Пусть $a, b \in \overline{\R}$
+\begin{definition}[по Коши]
+Точка $b$ наз-ся пределом ф-ции $f$ в т. $a$, если $a$ - предельная точка мн-ва $E$ и:
+\[
+\forall \varepsilon > 0, \exists \delta > 0, \forall x \in E (x \in \overset{\circ}{B_{\delta}}(a) \rightarrow f(x) \in B_{\varepsilon}(b))
+\]
+Пишут $b = \lim_{x\to a} f(x)$ или $f(x) \rightarrow b$ при $x \rightarrow a$
+\[
+  (f(\overset{\circ}{B_{\delta}}(a) \cap E) \subset B_{\varepsilon}(b))
+\]
+\end{definition}
+\begin{note}
+Если для ф-ции $f: \N \rightarrow \R$ - положить $a = +\infty$: дост-но положить $N = \floor{\frac{1}{\delta}} + 1$
+\end{note}
+\begin{definition}
+Число $b$ наз-ся пределом ф-ции $f$ в точке $a \in \R$, если $a$ - предельная точка мн-ва $E$ и:
+\[
+\forall \varepsilon > 0, \exists \delta > 0, \forall x \in E (0 < \left|x - a\right| < \varepsilon \Rightarrow \left|f(x) - b\right| < \varepsilon)
+\]
+\end{definition}
+\begin{definition}[по Гейне]
+  Точка $b$ наз-ся пределом ф-ции $f$ в точке $a$, если $a$ - предельная точка мн-ва $E$ и:
+  \[
+  \forall \set{x_n}, x_n \in E\backslash\set{a} (x_n \rightarrow a \Rightarrow f(x_n) \rightarrow b)
+  \]
+\end{definition}
+\begin{note}
+  Поскольку $a$ - предельная точка мн-ва $E$, то
+  \[
+    \forall \delta > 0 \colon \overset{\circ}{B_{\delta}}(a) \cap E \neq \emptyset
+  \]
+  и сущ-ет $\set{x_n} \subset E \backslash \set{a}, x_n \rightarrow a$
+\end{note}
+\begin{example}
+\[
+f: \R \rightarrow \R, f(x) = x^{2}
+\]
+\[
+a \in \R \text{ - предельная точка $\R$}
+\]
+Покажем, что:
+\[
+\lim_{x\to a} x^{2} = a^{2}
+\]
+Зафикс. $\varepsilon > 0$ и пусть $\delta \leq 1$:
+\[
+0 < \left|x - a\right| < \delta \leq 1
+\]
+\[
+\left| x + a\right| = \left|x - a + 2a\right| < \left|x - a\right| + 2\left|a\right| \leq 1 + 2\left|a\right|
+\]
+Возьмем $\delta = min\set{1, \frac{\varepsilon}{2\left|a\right| + 1}}$:
+\[
+0 < \left|x - a\right| < \delta \iff 0 < \left|x - a\right| < \frac{\varepsilon}{2\left|a\right| + 1} \iff \left|x^{2} - a^{2}\right| < \left|x - a\right|(2\left|a\right| + 1) < \varepsilon
+\]
+Рассм. по Гейне:
+\[
+x_n \neq a, x_n \rightarrow a \Rightarrow x_n^{2} \rightarrow a^{2} \iff f(x_n) \rightarrow f(a)
+\]
+\end{example}
+\begin{theorem}
+Определения по Коши и по Гейне \textbf{равносильны}.
+\end{theorem}
+\begin{proof}
+Пусть $f: E \rightarrow \R$ и $a$ - предельная точка мн-ва $E$.
+\begin{itemize}
+  \item [\textbf{Опр. 1 $\Rightarrow$ Опр. 2})] Пусть $b = \lim_{x\to a} f(x)$ по Коши \\ 
+
+    Рассм. произвольную п-ть $\set{x_n}, x_n \in E \backslash \set{a}$ и $x_n \rightarrow a$. Заф. $\varepsilon > 0$. По опр-ю предела ф-ции $\exists \delta > 0, \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E \colon (f(x) \in B_{\varepsilon}(b))$ \\
+
+    Т. к. $x_n \rightarrow a$, то $\exists N, \forall n \geq N (x_n \in B_{\delta}(a))$. Имеем $x_n \in \overset{\circ}{B_{\delta}}(a) \cap E$ при всех $n \geq N$, а значит, $f(x_n) \in B_{\varepsilon}(b)$ при всех $n \geq N$. Сл-но, $f(x_n) \rightarrow b$. Опр. 2 выполн-ся.
+
+  \item [\textbf{Опр. 2 $\Rightarrow$ Опр. 1})] Пусть $b = \lim_{x\to a} f(x)$ по Гейне. Предположим, что Опр. 1 не выполняется:
+    \[
+    \exists\varepsilon > 0, \forall \delta > 0, \exists x \in E (x \in \overset{\circ}{B_{\delta}}(a) \land f(x) \not\in B_{\varepsilon}(b))
+    \]
+    Положим $\delta = \frac{1}{n}, n \in \N$ и соотв. знач-е $x$ обозначим через $x_n$. По индукции будет построена посл-ть $\set{x_n}$, т. ч. $x_n \in \overset{\circ}{B_{\frac{1}{n}}}(a) \cap E$. \\
+
+    Имеем $\set{x_n} \subset E \backslash \set{a}$ и по т. о зажатой п-ти $x_n \rightarrow a$, а значит $f(x_n) \rightarrow b$ \\
+
+    По опр-ю предела посл-ти $\exists N, \forall n \geq N(f(x_n) \in B_{\varepsilon}(b))!!!$ \\
+
+    Сл-но опр. 2 не выполняется !!!
+\end{itemize}
+\end{proof}
+\begin{note}
+  Опр-е предела по Гейне можно ослабить, считая, что $\set{x_n}$ монотонна. (Задача !)
+\end{note}
+\textbf{Св-ва предела ф-ции:} \\
+
+Пусть $f, g, h: E \rightarrow \R$ и $a$ - предел. точка $E$:
+\begin{itemize}
+  \item [C1: ] \textbf{(Единственность предела)} Если $\lim_{x\to a} f(x) = b$ и $\lim_{x\to a} f(x) = c$, то $b = c$
+    \begin{proof}
+    Рассм. произвольую п-ть $\set{x_n}, x_n \in E \backslash \set{a}$ и $x_n \rightarrow a$ \\ 
+
+    По опр-ю Гейне $f(x_n) \rightarrow b$ и $f(x_n) \rightarrow c$. Т. к. предел посл-ти единственнен, то $b = c$
+    \end{proof} 
+  \item [C2: ] \textbf{(Предел по подмн-ву)} Если $a$ - предел. точка мн-ва $D \subset E$ и
+    \[
+      \lim_{x\to a} f(x) = b
+    \]
+    Тогда $\lim_{x\to a} (f|_{D}) = b$
+    \begin{proof}
+    Рассм. произв. $\set{x_n}, x_n \in D \backslash \set{a}, x_n \rightarrow a$. Тогда:
+    \[
+      (f|_{D})(x_n) = f(x_n) \rightarrow b
+    \]
+    По опр-ю Гейне $ b = \lim_{x\to a}(f|_D)(x)$
+    \end{proof}
+  \item [C3: ] \textbf{(Предел зажатой ф-ции)} Если:
+    \[
+      \exists \delta > 0, \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E \colon (f(x) \leq h(x) \leq g(x))
+    \]
+    и $\lim_{x\to a}f(x) = \lim_{x\to a} g(x) = b$, то сущ-ет $\lim_{x\to a} h(x) = b$
+
+    \begin{proof}
+    Рассм. произв. $\set{x_n}, x_n \in E \backslash \set{a}, x_n \rightarrow a$. Тогда $\exists N, \forall n \geq N (x_n \in \overset{\circ}{B_{\delta}}(a) \cap E)$, а значит:
+    \[
+    f(x_n) \leq h(x_n) \leq g(x_n), \forall n \geq N
+    \]
+    По т. о зажатой п-ти: 
+    \[
+    \begin{cases}
+    f(x_n) \rightarrow b \\
+    g(x_n) \rightarrow b
+    \end{cases} \Rightarrow h(x_n) \rightarrow b
+    \]
+    По опр-ю Гейне $b = \lim_{x\to a}h(x)$
+    \end{proof}
+  \item [C4: ] \textbf{(Свойство локализации)} Если $f$ и $g$ совпадают на $\overset{\circ}{B_{\delta}}(a) \cap E$ и $\lim_{x\to a} f(x) = b$, то сущ-ет $\lim_{x \to a}g(x) = b$
+\end{itemize}
