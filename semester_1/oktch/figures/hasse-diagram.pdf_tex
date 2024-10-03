@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   sodipodi:docname="hasse-diagram.pdf_tex"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.79642256"
+     inkscape:cx="397.4021"
+     inkscape:cy="561.25984"
+     inkscape:window-width="1918"
+     inkscape:window-height="1044"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="path1"
+       cx="98.647667"
+       cy="40.179169"
+       rx="11.393279"
+       ry="11.141522" />
+    <ellipse
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="path2"
+       cx="71.440445"
+       cy="75.893547"
+       rx="10.318123"
+       ry="11.3245" />
+    <ellipse
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="path3"
+       cx="42.820667"
+       cy="132.43559"
+       rx="10.050795"
+       ry="10.174077" />
+    <ellipse
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="path3-5"
+       cx="80.665375"
+       cy="118.35949"
+       rx="10.050795"
+       ry="10.174077" />
+    <ellipse
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="path3-2"
+       cx="63.732044"
+       cy="167.04282"
+       rx="10.050795"
+       ry="10.174077" />
+    <ellipse
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="path3-7"
+       cx="107.65288"
+       cy="200.11574"
+       rx="10.050795"
+       ry="10.174077" />
+    <ellipse
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="path3-6"
+       cx="103.94872"
+       cy="157.25323"
+       rx="10.050795"
+       ry="10.174077" />
+    <ellipse
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="path3-61"
+       cx="138.07996"
+       cy="159.3699"
+       rx="10.050795"
+       ry="10.174077" />
+    <ellipse
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="path3-20"
+       cx="173.00496"
+       cy="176.03865"
+       rx="10.050795"
+       ry="10.174077" />
+    <ellipse
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="path3-59"
+       cx="116.64871"
+       cy="121.00533"
+       rx="10.050795"
+       ry="10.174077" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="108.05285"
+       y="201.36497"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="stroke-width:1"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="102.47398"
+       y="203.25833"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="stroke-width:1"
+         x="102.47398"
+         y="203.25833">$1$</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:1"
+         x="102.47398"
+         y="211.19583"
+         id="tspan5" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="168.68076"
+       y="178.22803"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         style="stroke-width:1"
+         x="168.68076"
+         y="178.22803">$7$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="134.46912"
+       y="159.93675"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="stroke-width:1"
+         x="134.46912"
+         y="159.93675">$5$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="99.650154"
+       y="159.9679"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="stroke-width:1"
+         x="99.650154"
+         y="159.9679">$3$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="61.202785"
+       y="170.37816"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="stroke-width:1"
+         x="61.202785"
+         y="170.37816">$2$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="38.353931"
+       y="134.60667"
+       id="text10"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         style="stroke-width:1"
+         x="38.353931"
+         y="134.60667">$4$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="76.508026"
+       y="119.47663"
+       id="text11"><tspan
+         sodipodi:role="line"
+         id="tspan11"
+         style="stroke-width:1"
+         x="76.508026"
+         y="119.47663">$6$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="113.69142"
+       y="121.37259"
+       id="text12"><tspan
+         sodipodi:role="line"
+         id="tspan12"
+         style="stroke-width:1"
+         x="113.69142"
+         y="121.37259">$9$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="68.902115"
+       y="78.167801"
+       id="text13"><tspan
+         sodipodi:role="line"
+         id="tspan13"
+         style="stroke-width:1"
+         x="68.902115"
+         y="78.167801">$8$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;font-family:Monospace;-inkscape-font-specification:Monospace;opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       x="96.888618"
+       y="43.342346"
+       id="text14"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         style="stroke-width:1"
+         x="96.888618"
+         y="43.342346">$0$</tspan></text>
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="M 101.05428,193.25685 C 71.428768,175.02916 71.428768,175.02916 71.428768,175.02916"
+       id="path14" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="m 110.23431,191.19089 c -4.34734,-23.43931 -3.55055,-22.99679 -3.55055,-22.99679"
+       id="path15" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="m 117.78052,195.9003 c 15.04699,-26.47467 15.04699,-26.47467 15.04699,-26.47467"
+       id="path16" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="M 118.91082,202.78467 C 163.81691,183.09575 165.526,181.8214 165.526,181.8214"
+       id="path17" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="M 173.53809,165.73753 C 105.93109,48.446255 105.93109,48.446255 105.93109,48.446255"
+       id="path18" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="M 139.55356,148.54152 C 103.51475,50.674431 103.51475,50.674431 103.51475,50.674431"
+       id="path19" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="M 114.29486,110.09805 C 98.770304,51.806038 98.770304,51.806038 98.770304,51.806038"
+       id="path20" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="M 85.316903,108.15407 C 95.938691,51.822908 95.938691,51.822908 95.938691,51.822908"
+       id="path21" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="M 75.337484,64.806535 C 92.681429,48.862821 92.681429,48.862821 92.681429,48.862821"
+       id="path22" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="M 46.694341,123.07519 C 63.061111,84.591482 63.061111,84.591482 63.061111,84.591482"
+       id="path23" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="M 56.627045,160.23652 C 50.429162,140.43341 50.429162,140.43341 50.429162,140.43341"
+       id="path24" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="M 66.418295,157.31018 C 76.511914,126.20787 76.511914,126.20787 76.511914,126.20787"
+       id="path25" />
+    <path
+       style="opacity:0.995958;fill:#000000;fill-opacity:0.027451;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       d="m 87.975918,125.07756 c 0,0 0,0 17.162262,22.18701 7.39957,-16.93776 7.39957,-16.93776 7.39957,-16.93776"
+       id="path26" />
+  </g>
+</svg>

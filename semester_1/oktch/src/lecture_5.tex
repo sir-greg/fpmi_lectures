@@ -1,0 +1,240 @@
+\section{Лекция 5}
+\subsection{Отношения эквивалентности ($\sim$)}
+\begin{definition}
+\textbf{Отношение эквив.} - отношение с св-вами:
+\begin{itemize}
+  \item [1) ] Рефлексивность: $ x \sim x$
+  \item [2) ] Симметричность: $x \sim y \Rightarrow y \sim x$
+  \item [3) ] Транзит.: $x \sim y, y \sim z \Rightarrow x \sim z$
+\end{itemize}
+\end{definition}
+\begin{definition}
+\textbf{Класс эквив.}: $K_x = \set{y | y \sim x}$
+\end{definition}
+\begin{theorem}[О разбиении на классы эквив.]
+Если задано отн. экв. $\sim$ на $A$, то $A$ можно представить как:
+\[
+A = \bigsqcup_{i \in I}^{} A_i,
+\]
+т. ч.:
+\begin{itemize}
+  \item [1) ] Каждая $A_i$ - $K_x$ для некот. $x$
+  \item [2) ] $i \neq j \Rightarrow A_i \cap A_j = \emptyset$
+  \item [3) ] $y, z \in A_i \Rightarrow y \sim z$
+  \item [4) ] $y \in A_i, z \in A_j, i \neq j \Rightarrow y \not\sim z$
+\end{itemize}
+\end{theorem}
+\begin{proof}
+Рассм. всевозм. мн-ва, явл-ся классами эквив-ти. Докажем выполн. св-в для них. Для этого докажем леммы I-IV
+\begin{lemma}[I]
+$x \in K_x$
+\end{lemma}
+\begin{proof}
+\[
+x \sim x \Rightarrow x \in \set{y | y \sim x} \Rightarrow x \in K_x
+\]
+\end{proof}
+\begin{consequence}
+\[
+\bigsqcup_{x \in A}^{}K_x = A
+\]
+\end{consequence}
+\begin{lemma}[II]
+\[
+  y \in K_x, z \in K_x \Rightarrow y \sim z
+\]
+\end{lemma}
+\begin{proof}
+\[
+\begin{cases}
+y \in K_x \Rightarrow y \sim x \\
+z \in K_x \Rightarrow x \sim z \text{ - симметричность}
+\end{cases} \Rightarrow y \sim z \text{ - транзитивность}
+\]
+\end{proof}
+\begin{lemma}[III]
+\[
+K_x \neq K_t \Rightarrow K_x \cap K_t = \emptyset
+\]
+\end{lemma}
+\begin{proof}
+  Докажем контрапозицию:
+\[
+K_x \cap K_t \ni w \Rightarrow K_x = K_t
+\]
+\[
+\Rightarrow 
+\begin{cases}
+w \sim x \\
+w \sim t
+\end{cases} \Rightarrow
+\begin{cases}
+w \sim x \\
+t \sim w
+\end{cases} \Rightarrow t \sim x
+\]
+Если $y \in K_t \Rightarrow y \sim t \Rightarrow y \sim x \Rightarrow y \in K_x$, т. е. $K_t \subset K_x$. Аналогично, получаем $K_x \subset K_t \Rightarrow K_x = K_t$
+\end{proof}
+\begin{lemma}[IV]
+\[
+K_x \neq K_t, y \in K_x, z \in K_t \Rightarrow y \not\sim z
+\]
+\end{lemma}
+\begin{proof}
+\[
+\begin{cases}
+y \in K_x \Rightarrow x \sim y \\
+y \in K_t \Rightarrow z \sim t
+\end{cases}
+\]
+Из $y \sim z$, то, по транзитивности, $x \sim t \Rightarrow K_x = K_t!!!$. Т. к. это противоречие, то $y \not\sim z$
+\end{proof}
+\end{proof}
+
+\begin{definition}
+\textbf{Фактормножество} $A/_{\sim}$ - мн-во классов эквив.
+\end{definition}
+\begin{theorem}
+Если $\sim$ - отн. эквив. на $A$, то сущ. $B$ и $f: A \rightarrow B$, т. ч.:
+\[
+x \sim y \iff f(x) = f(y)
+\]
+\end{theorem}
+\begin{proof}
+\[
+B = A/_{\sim}
+\]
+\[
+f(x) = K_x
+\]
+\end{proof}
+\subsection{Отношение порядка ($\leq$)}
+\begin{definition}
+\textbf{Отношение порядка} - отношение со св-вами:
+\begin{itemize}
+  \item Нестрогий порядок $\leq$:
+\begin{itemize}
+  \item [1) ] Рефлекивность: $x \leq x$
+  \item [2) ] Антисимм.: $x \leq y \land y \leq x \Rightarrow x = y$
+  \item [3) ] Транзтивность: $x \leq y \land y \leq z \rightarrow x \leq z$
+  \item [4) ] (Для \underline{линейных порядков}) Полнота: $(x \leq y \lor y \leq x)$
+\end{itemize}
+  \item Строгий порядок $<$:
+    \begin{itemize}
+      \item [1) ] Антирефлексивность: $\neg(x < x)$
+      \item [2) ] Антисимметричность: $\neg(x < y \land y < x)$
+      \item [3) ] Транзитивность: $(x < y \land y < z) \rightarrow x < z$
+      \item [4) ] (Для \underline{линейных порядков}) Трихотомичность:
+        \[
+          x < y \lor y < x \lor x = y
+        \]
+    \end{itemize}
+\end{itemize}
+\end{definition}
+
+\begin{example}
+\begin{itemize}
+  \item [1) ] Стандартный числовой порядок в $\N, \Z, \Q, \R$.
+  \item [2) ] $\vdots$ на $\N$ (\underline{в том числе включая $0$})
+    \[
+    x \vdots y \iff \exists z \colon x = y \cdot z
+    \]
+  \item [3) ] $\subset$ на $2^{A}$
+  \item [4) ] $\sqsubset, \sqsupset, (substring)$ на $\set{0, 1}^{n}$
+  \item [5) ] Асимптот. порядок на ф-циях $f < g$, если $\exists N \forall n > N \colon f(n) < g(n)$
+  \item [6) ] Пор-ки на $\R^{2}$:
+    \begin{itemize}
+      \item [a) ] Лексикографический:
+        \[
+          (x_1, y_1) \leq (x_2, y_2) \iff 
+          \begin{system_or}
+          x_1 < x_2 \\
+          x_1 = x_2 \land y_1 \leq y_2
+          \end{system_or}
+        \]
+      \item [b) ] Покоординатный:
+        \[
+          (x_1, y_1) \leq (x_2, y_2) \iff
+          \begin{cases}
+          x_1 \leq x_2 \\
+          y_1 \leq y_2
+          \end{cases}
+        \]
+    \end{itemize}
+\end{itemize}
+\end{example}
+
+\textbf{Диаграмма Хассе}: граф на пл-ти, т. ч. вершины, соед. рёрбрами, не находятся на одном уровне (Picture) \\
+Рассм.$\colon (\set{0, 1, \ldots, 9}, \vdots)$ \\
+$x \leq y \iff$ Есть восходящий путь из $x$ в $y$
+
+\begin{definition}
+  \textbf{Наибольший эл-т} - Больше всех
+  \[
+  x \text{ - наиб. } \iff \forall y \colon y \leq x
+  \]
+\end{definition}
+\begin{definition}
+  \textbf{Макс. эл-т} - больше него нет 
+  \[
+  x \text{ - макс. } \iff \neg\exists y \colon y > x
+  \]
+\end{definition}
+Для  лин. порядка - это одно и то же \\
+
+Для част. порядка - может быть разное, т. е.:
+\[
+\forall y (y \leq x \lor y \text{ не сравним с } x)
+\]
+ - макс. эл-т для част. порядка. \\
+
+ \textbf{Наименьший} и \textbf{минимальный} - аналогично. \\
+
+ В конечном непустом мн-ве всегда есть макс. и мин. \\
+
+ В конечном мн-ве \textbf{единственный} макс. является наибольшим. \\
+
+ Для беск. мн-в всё, что выше, конечно неверно. (picture) 
+
+\begin{definition}
+\textbf{Упорядоченное мн-во} - пара из мн-ва и порядка на нём.
+\end{definition}
+\begin{symb}
+  Пишут так: $(A, \leq_A)$, сокращённо УМ
+\end{symb}
+\textbf{Операции над УМ:}
+\begin{itemize}
+  \item [1) ] Сложение:
+    \[
+      (A, \leq_A) + (B, \leq_B) = (C, \leq_C)
+    \]
+    \[
+    C = A \sqcup B
+    \]
+    \[
+    x \leq y \iff 
+    \begin{system_or}
+    x, y \in A \colon x \leq_A y \\
+    x, y \in B \colon x \leq_B y \\
+    x \in A, y \in B
+    \end{system_or}
+    \]
+    При этом оно:
+    \begin{itemize}
+      \item Ассоциативно: $A + (B + C) = (A + B) + C$
+      \item \textbf{Некоммутативно:} $A + B \neq B + A$
+    \end{itemize}
+  \item [2) ] Умножение:
+    \[
+      (A, \leq_A) \cdot (B, \leq_B) = (C, \leq_C)
+    \]
+    \[
+    C = A \times B
+    \]
+    \[
+      (a_1, b_1) \leq_C (a_2, b_2) \iff \begin{system_or}
+      b_1 <_B b_2 \\
+      b_1 = b_2, a_1 \leq_A a_2
+      \end{system_or}
+    \]
+\end{itemize}
