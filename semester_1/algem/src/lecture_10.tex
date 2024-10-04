@@ -1,0 +1,266 @@
+\section{Лекция 10}
+\subsection{Многочлены от нескольких переменных}
+\subsubsection{Основные понятия}
+\begin{definition}
+\textbf{Многочленом (Полиномом) над $\R$ с переменными $x, y, z$} наз-ся формальное алгебраическое выр-е: 
+\[
+P(x, y, z) = \sum_{i_1, i_2, i_3}^{}a_{i_1i_2i_3}x^{i_1}y^{i_2}z^{i_3}
+\]
+Эта сумма \textbf{конечна}. $a_{i_1i_2i_3} \in \R$ \\
+
+При этом $a_{i_1i_2i_3}x^{i_1}y^{i_2}z^{i_3}$ - \textbf{моном (или одночлен)}.
+\end{definition}
+Все подобные слагаемые полинома приведены, то получается \textbf{несократимая запись мн-на.}:
+\[
+P(x_1, x_2, \ldots, x_n) = \sum_{i_1, i_2, \ldots, i_n}^{} a_{i_1i_2\ldots i_n} x_1^{i_1} x_2^{i_2}\ldots x_n^{i_n}
+\]
+\begin{note}
+\textbf{Пустой многочлен} (мн-н без одночленов) $\equiv 0$
+\end{note}
+
+Может ли мн-н от $n$ переменных с ненулевой несокр. записью быть тождественно равным нулю?
+
+\begin{statement}
+  \label{state:nesokr_poly}
+Мн-н $P(x_1, \ldots, x_n)$ \underline{над $\R$} с ненулевой несокр. записью $\not\equiv 0$
+\end{statement}
+\begin{proof}
+МММ: \\
+\begin{itemize}
+  \item База: $n = 1$
+    \[
+    P(x) = a_0 x^{m} + a_1 x^{m - 1} + \ldots + a_{m - 1}x + a_m, a_0 \neq m
+    \]
+    \[
+    \deg P = m
+    \]
+\end{itemize}
+\begin{lemma}
+Мн-н $P(x), \deg P = m$, не может иметь более чем $m$ различных корней.
+\end{lemma}
+\begin{proof}
+МММ:
+\begin{itemize}
+  \item База: $m = 1$:
+    \[
+    P(x) = a_0x + a_1 
+    \]
+    Корень: $\alpha = -\frac{a_1}{a_0}$
+  \item Переход: пусть для $Q(x), \deg Q = m - 1$ лемма доказана. Докажем для $P(x), \deg P = m$. \\
+    От противного: пусть $P$ имеет более чем $m$ различных корней (в поле $\R$):
+    \[
+    \alpha_1, \alpha_2, \ldots, \alpha_s; s > m
+    \]
+    \[
+    \overset{\text{По т. Безу}}{\Rightarrow} P(x) = (x - \alpha_1)Q(x), \text{где } \deg Q = m - 1
+    \]
+    Тогда $\alpha_2, \ldots, \alpha_s$ - корни $Q(x)$. Покажем это:
+    \[
+    P(\alpha_i) = (\alpha_i - \alpha_1)Q(\alpha_i)
+    \]
+    \[
+    0 = (\alpha_i - \alpha_1)Q(\alpha_i)
+    \]
+    \[
+    \alpha_i \neq \alpha_1 \Rightarrow Q(\alpha_i) = 0
+    \]
+    Такми. образом, у $Q$ имеется более чем $m - 1$ различных корней!!! $\Rightarrow$ \textbf{Лемма доказана.}
+\end{itemize}
+\end{proof}
+\item Переход: пусть для мн-на $Q(x_1, \ldots, x_{n - 1})$ - утв. верно. Д-ем для $P(x_1, \ldots, x_n)$:
+  \[
+  P(x_1, \ldots, x_n) = Q_0(x_1, \ldots, x_{n - 1}) \cdot x_n ^{0}  + Q_1(x_1, \ldots, x_{n - 1}) \cdot x_n^{1} + Q_2(x_1, \ldots, x_{n - 1}) \cdot x_n^{2} + \ldots
+  \]
+  Тогда среди множителей $Q_0, \ldots, Q_i, \ldots$ тоже найдётся мн-н с ненулевой несокр. записью. Пусть этот мн-н $Q_i$ $\Rightarrow$
+  \[
+    \exists a_1, \ldots, a_n \in \R \colon Q_i(a_1, \ldots, a_{n - 1}) \neq 0
+  \]
+Сл-но: 
+\[
+  P(a_1, \ldots, a_{n - 1}, x_n) = Q_0(q_1, \ldots, a_{n - 1}) x_n^{0} + Q_1(a_1, \ldots, a_{n - 1})x_n^{1} + \ldots + Q_i(a_1, \ldots, a_n - 1)x_n^{i} + \ldots
+\]
+По доказанной лемме: $\exists b \in \R \colon P(a_1, \ldots, a_{n - 1}, b) \neq 0$
+\end{proof}
+
+\begin{statement}
+Для всякого мн-на $P$, отличного от нуля, его несокр. запись единственна.
+\end{statement}
+\begin{proof}
+Пусть у мн-на есть две несокр. записи:
+\[
+P(x_1, \ldots, x_n) =\sum_{i_1, i_2, \ldots, i_n}^{} a_{i_1i_2\ldots i_n} x_1^{i_1} x_2^{i_2}\ldots x_n^{i_n}
+\]
+\[
+  P(x_1, \ldots, x_n) =\sum_{i_1, i_2, \ldots, i_n}^{} b_{i_1i_2\ldots i_n} x_1^{i_1} x_2^{i_2}\ldots x_n^{i_n}
+\]
+Тогда:
+\[
+\sum_{}^{}(a_{i_1i_2\ldots i_n} - b_{i_1i_2\ldots i_n})x_1^{i_1}\ldots x_n^{i} \equiv 0\text{ - несокр. запись.}
+\]
+Сл-но, по утв. $\ref{state:nesokr_poly}$, $a_{i_1\ldots i_n} = b_{i_1\ldots i_n}$
+\end{proof}
+\subsubsection{Мономиальное упорядочение}
+\[
+x_1^{\alpha_1}\ldots x_n^{\alpha_n} \leftrightarrow (\alpha_1, \ldots, \alpha_n) \text{ - упоряд. набор}
+\]
+\[
+  \alpha_i \geq 0, \alpha_i \in \Z_{\geq 0}
+\]
+Множество таких наборов: 
+\[
+\set{(\alpha_1, \ldots, \alpha_n), \alpha_i \in \Z_{\geq 0}} = \Z_{\geq 0}^{n}
+\]
+\begin{definition}
+Упорядочение на мн-ве мономов (им соотв. наборов) наз-ся \underline{линейным}, если 
+\[
+\forall x^{\alpha}, x^{\beta}, \text{ вып-ся одно из условий: } x^{\alpha} < x^{b} \lor x^{\alpha} = x^{\beta} \lor x^{\alpha} > x^{\beta}
+\]
+\begin{symb}
+\[
+  x^{\alpha} =\colon x_1^{\alpha}x_2^{\alpha_2} \ldots x_n^{\alpha_n}
+\]
+\end{symb}
+Если $x^{\alpha} > x^{\beta}$, то $\forall x^{\gamma} \hookrightarrow x^{\alpha}x^{\gamma} > x^{\beta}x^{\gamma}$
+\end{definition}
+\begin{definition}
+Мономиальным упорядочением на мн-ве мономов (или на мн-ве $\Z_{\geq 0}$) наз-ся такое биномиальное отношение $">"$ т. ч.:
+\begin{itemize}
+  \item [1) ] $">"$ - линейно
+  \item [2) ] Всякий раз, когда $x^{\alpha} > x^{\beta} \hookrightarrow x^{\alpha}x^{\gamma} > x^{\beta}x^{\gamma}, \forall x^{\gamma}$ (усл. сохранение порядка)
+\end{itemize}
+\end{definition}
+\begin{example}
+Лексикографическое упорядочение (LEX - упоряд.)
+\begin{definition}
+$\alpha > \beta$ если первая коор-ты, не равная 0, положительна, т. е.:
+\[
+\alpha = (\alpha_1, \ldots, \alpha_n)
+\]
+\[
+\beta = (\beta_1, \ldots, \beta_n)
+\]
+\[
+\alpha - \beta = (\alpha_1 - \beta_1, \ldots, \alpha_n - \beta_n)
+\]
+\[
+  (\alpha_i - \beta_i = 0, i < k) \land \alpha_k - \beta_k \neq 0 \Rightarrow (\alpha > \beta \iff \alpha_k - \beta_k > 0)
+\]
+\end{definition}
+\end{example}
+\begin{example}
+Градуированное лекс-ое упоряд. $(\alpha_1, \ldots, \alpha_n)$ и $(\beta_1, \ldots, \beta_n)$.
+\[
+\left|\alpha\right| = \sum_{i = 1}^{n} \alpha_i (\text{степень набора})
+\]
+\[
+\alpha \underset{grlex}{>} \beta, \text{ если:}
+\]
+\begin{itemize}
+  \item [a) ] $\left|\alpha\right| > \left|\beta\right|$
+  \item [b) ] Если $\left|\alpha\right| = \left|\beta\right|$, то $\alpha \underset{lex}{>} \beta$
+\end{itemize}
+\begin{example}
+$(1, 3, 5) \underset{grlex}{>} (3, 4, 0)$
+\end{example}
+\end{example}
+Для упорядочения мн-нов будем пользоваться \textbf{градуированным лекс. упоряд.}.
+\begin{definition}
+Член $a x^{\alpha}$ наз-ся старшим членом мн-на $P = P(x_1, \ldots, x_n)$, если:
+\[
+\forall x^{\beta} \colon x^{\alpha} > x^{\beta}, \text{ причём $ax^{\alpha}, bx^{\beta}$ присутствуют в $P$}
+\]
+\end{definition} 
+\begin{statement}
+Пусть $P$ имеет старший слен $ax^{\alpha}$. $Q$ имеет старший член $bx^{\beta}$. Тогда старший член $PQ$ это $ab x^{\alpha}x^{\beta}$
+\end{statement}
+\begin{proof}
+\[
+x^{\alpha} > x^{\alpha'}, x^{\alpha'} \text{ входит в член $P$}
+\]
+\[
+x^{\beta} > x^{\beta'}, x^{\beta'} \text{ входит в член $Q$}
+\]
+\[
+\Rightarrow x^{\alpha}x^{\beta} > x^{\alpha'}x^{\beta'}
+\]
+\end{proof}
+\begin{definition}
+Пусть $P(x_1, \ldots, x_n)$ имеет старший член $ax^{\alpha}$, тогда $\deg P = \left|\alpha\right| = \sum_{i = 1}^{n} \alpha_i$
+\end{definition}
+\begin{consequence}
+\[
+\deg (PQ) = \deg P + \deg Q
+\]
+\end{consequence}
+\begin{proof}
+Пусть $P \neq 0$ и $Q \neq 0$. Пусть $ax^{\alpha}$ - ст. член $P$, $bx^{\beta}$ - ст. член $Q$:
+\[
+ab x^{\alpha}x^{\beta} \text{ - ст. член $PQ$}
+\]
+\[
+\deg (PQ) = \left|\alpha + \beta\right| = \sum_{i = 1}^{n} (\alpha_i + \beta_i) = \sum_{i = 1}^{n} \alpha_i + \sum_{i = 1}^{n} \beta_i = \left|\alpha\right| + \left|\beta\right| = \deg P + \deg Q
+\]
+\end{proof}
+\begin{consequence}
+\[
+\deg (P + Q) \leq max(\deg P, \deg Q)
+\]
+\end{consequence}
+\begin{proof}
+Среди мономов $P + Q$ нет мономов, кот. нет в $P$ и $Q$
+\end{proof}
+\begin{note}
+\[
+\deg 0 = -\infty
+\]
+\end{note}
+\subsection{Алгебраические кривые}
+$V_2$, с фикс. ДСК \\
+
+\begin{definition}
+\textbf{Алгебраическая кривая} в $V_2$ наз-ся мн-во $M$, коор-ты всех точек кот-ых удовл ур-ю:
+\[
+P(x, y) = 0, \text{ где } P \text{ - мн-н } \not\equiv 0
+\]
+\end{definition}
+\begin{definition}
+\textbf{Алгебраическая п-ть} в $V_3$ наз-ся мн-во $M$:
+\[
+  P(x, y, z) = 0, P \text{ - ненулевой мн-н.}
+\]
+\end{definition}
+\begin{example}
+\begin{itemize}
+  \item Порядок 1:
+    \[
+    Ax + By + C = 0 \text{ - прямая}
+    \]
+    \[
+    Ax + By + Cz + D = 0 \text{ - пл-ть}
+    \]
+\end{itemize}
+\end{example}
+\begin{statement}
+Объединение и пересечение алг-их п-тей (кривых) является алг-ой п-тью (кривой).
+\end{statement}
+\begin{proof}
+$M, N$ - алг-ие п-ти \\
+\[
+M \colon P(x, y, z) = 0
+\]
+\[
+N \colon Q(x, y, z) = 0
+\]
+\[
+M \cup N \colon P(x, y, z) \cdot Q(x, y, z) = 0
+\]
+\[
+M \cap N \colon P^{2}(x, y, z) + Q^{2}(x, y, z) = 0
+\]
+\end{proof}
+\begin{task}
+Д-ть, что если $M$ - алг-я п-ть в $V_3$, а $\pi$ - пл-ть $\colon M \cap \pi \neq \emptyset$, то $M \cap \pi$ - алг-я кривая в пл-ти $\pi$.
+\end{task}
+\begin{solution}
+Выбрать $(O, \overline{e_1}, \overline{e_2}, \overline{e_3}) \colon (\overline{e_1}, \overline{e_2}) \text{ - напр. векторы пл-ти $\pi$}$ и далее очев.
+\end{solution}

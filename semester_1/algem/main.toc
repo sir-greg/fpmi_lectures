@@ -1,13 +1,14 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 8}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Пучок прямых на пл-ти}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Приложения в планиметрии}{4}{}%
-\contentsline {subsubsection}{\numberline {1.2.1}Расстояние от точки до прямой}{4}{}%
-\contentsline {subsubsection}{\numberline {1.2.2}Вычисление угла между пересекающимися прямыми}{5}{}%
-\contentsline {subsection}{\numberline {1.3}Пл-ть в пр-ве}{6}{}%
-\contentsline {section}{\numberline {2}Лекция 9}{9}{}%
-\contentsline {subsection}{\numberline {2.1}Пучок пл-тей}{10}{}%
-\contentsline {subsection}{\numberline {2.2}Связка пл-тей}{12}{}%
-\contentsline {subsection}{\numberline {2.3}Приложение к задачам стереометрии}{12}{}%
-\contentsline {subsection}{\numberline {2.4}Прямая в пр-ве}{14}{}%
-\contentsline {subsection}{\numberline {2.5}Формула угла между прямыми}{15}{}%
+\contentsline {section}{\numberline {1}Лекция 9}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Пучок пл-тей}{4}{}%
+\contentsline {subsection}{\numberline {1.2}Связка пл-тей}{5}{}%
+\contentsline {subsection}{\numberline {1.3}Приложение к задачам стереометрии}{5}{}%
+\contentsline {subsubsection}{\numberline {1.3.1}Прямая в пр-ве}{7}{}%
+\contentsline {subsubsection}{\numberline {1.3.2}Формула угла между прямыми}{8}{}%
+\contentsline {subsubsection}{\numberline {1.3.3}Расстояние от точки до прямой в пр-ве}{9}{}%
+\contentsline {subsubsection}{\numberline {1.3.4}Формула расстояния между двумя скрещ. прямыми}{9}{}%
+\contentsline {section}{\numberline {2}Лекция 10}{10}{}%
+\contentsline {subsection}{\numberline {2.1}Многочлены от нескольких переменных}{10}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Основные понятия}{10}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Мономиальное упорядочение}{12}{}%
+\contentsline {subsection}{\numberline {2.2}Алгебраические кривые}{14}{}%

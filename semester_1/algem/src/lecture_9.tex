@@ -181,7 +181,7 @@ $\Rightarrow$ это ур-е пл-ти $\pi$
   \cos \phi = \left|\cos \angle (\overline{n_1}, \overline{n_2})\right| = \frac{\left|(\overline{n_1}, \overline{n_2})\right|}{\left|\overline{n_1}\right| \left|\overline{n_2}\right|}
   \]
 \end{task}
-\subsection{Прямая в пр-ве}
+\subsubsection{Прямая в пр-ве}
 Прямая задаётся точкой ($X_0 \in l$) и направл. вектором ($\overline{a} || l$). \\
 
 Точка $X \in l \iff \overline{X_0X} = \overline{a} t, t \in \R$:
@@ -287,7 +287,7 @@ t = \frac{x - x_0}{\alpha_1} = \frac{y - y_0}{\alpha_2} = \frac{z - z_0}{\alpha_
  \begin{definition}
  Углом между пересекающимися прямыми $l_1, l_2$ наз-ся наименьший из двух смежных углов, образ. ими 
  \end{definition}
-\subsection{Формула угла между прямыми}
+\subsubsection{Формула угла между прямыми}
 \[
   l_i\colon \overline{r} = \overline{r_i} + \overline{a_i}t, i = 1, 2
 \]
@@ -295,3 +295,43 @@ t = \frac{x - x_0}{\alpha_1} = \frac{y - y_0}{\alpha_2} = \frac{z - z_0}{\alpha_
 \[
 \cos \phi = \frac{|(\overline{a_1}, \overline{a_2})|}{\left|\overline{a_1}\right| \cdot \left|\overline{a_2}\right|}
 \]
+\subsubsection{Расстояние от точки до прямой в пр-ве}
+\begin{task}
+Есть т. $X$ с рад.-вектором $r_X$ и прямая $l$ в пр-ве $l \colon \overline{r} = \overline{r_0} + \overline{a}t$.
+\end{task}
+\begin{solution}
+\[
+  p(X, 1) = \frac{\left|S(\overline{X_0X}, \overline{a})\right|}{\left|\overline{a}\right|} = \frac{\left|[\overline{r_x} - \overline{r_0}, \overline{a}]\right|}{\left|\overline{a}\right|}
+\]
+\end{solution}
+\begin{example}
+\[
+[\overline{r}, \overline{a}] = \overline{b}, \overline{a} \neq \overline{o}, \overline{b} \perp \overline{a}
+\]
+В кач-ве упр-я, можно найти представление этой прямой в векторном парам. виде.:
+\[
+[\overline{r_x} - \overline{r_0}, \overline{a}] = [\overline{r_x}, \overline{a}] - \overline{b}
+\]
+\end{example}
+\subsubsection{Формула расстояния между двумя скрещ. прямыми}
+\begin{task}
+Дано:
+\[
+l_i \colon \overline{r} = \overline{r_i} + \overline{a_i}t, t \in \R, \overline{a_1} \not|| \overline{a_2}
+\]
+Всегда сущ-ют $\pi_1, \pi_2 \colon$
+\begin{itemize}
+  \item [a) ] $\pi_1 || \pi_2$
+  \item [b) ] $l_1 \subset \pi_1, l_2 \subset \pi_2$
+\end{itemize}
+Тогда:
+\[
+p(l_1, l_2) = p(\pi_1, \pi_2) = h \text{ - высота параллелипипеда, построенного на векторах $\overline{X_1X_2}, \overline{a_1}, \overline{a_2}$}
+\]
+\[
+h = \frac{\left|V(\overline{r_2} - \overline{r_1}, \overline{a_1}, \overline{a_2})\right|}{\left|S(\overline{a_1, \overline{a_2}})\right|} = \left|\frac{(\overline{r_2} - \overline{r_1}, \overline{a_1}, \overline{a_2})}{[\overline{a_1}, \overline{a_2}]}\right|
+\]
+\end{task}
+\begin{note}
+Прямые в пр-ве пересекаются $\iff (\overline{r_2} - \overline{r_1}, \overline{a_1}, \overline{a_2}) = 0$
+\end{note}
