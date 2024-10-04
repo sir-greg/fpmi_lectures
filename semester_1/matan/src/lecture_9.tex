@@ -218,4 +218,121 @@ x_n \neq a, x_n \rightarrow a \Rightarrow x_n^{2} \rightarrow a^{2} \iff f(x_n) 
     По опр-ю Гейне $b = \lim_{x\to a}h(x)$
     \end{proof}
   \item [C4: ] \textbf{(Свойство локализации)} Если $f$ и $g$ совпадают на $\overset{\circ}{B_{\delta}}(a) \cap E$ и $\lim_{x\to a} f(x) = b$, то сущ-ет $\lim_{x \to a}g(x) = b$
+  \item [C5: ] \textbf{(Арифм. операции с пределами)} Пусть $\lim_{x\to a} f(x) = b, \lim_{x\to a} g(x) = c$. Тогда:
+    \begin{itemize}
+      \item [1) ]
+    \[
+    \lim_{x\to a} (f(x) \pm g(x)) = b \pm c
+    \]
+      \item [2) ]
+    \[
+    \lim_{x\to a} (f(x)g(x)) = bc
+    \]
+  \item [3) ] Если $c \neq 0$ и $g(x) \neq 0$ на $E$, то:
+\[
+    \lim_{x\to a} \frac{f(x)}{g(x)} = \frac{b}{c}
+\]
+    \end{itemize}
+    \begin{consequence}
+    Если сущ-ет величина справа, то сущ-ет величина слева и рав-во выполняется
+    \end{consequence}
+    \begin{proof}
+    Рассм. произвольную п-ть:
+    \[
+      \set{x_n}, x_n \in E \backslash \set{a}, x_n \rightarrow a
+    \]
+    Тогда $f(x_n) \rightarrow b$ и $g(x_n) \rightarrow c$. По св-вам предела п-ти:
+    \[
+      f(x_n) \pm g(x_n) \rightarrow b \pm c
+    \]
+    \[
+      f(x_n)g(x_n) \rightarrow bc
+    \]
+    \[
+      \frac{f(x_n)}{g(x_n)} \rightarrow \frac{b}{c}
+    \]
+    $\Rightarrow$ По опр. предела ф-цию по Гейне:
+    \[
+      (f \pm g)(x) \rightarrow b \pm c
+    \]
+    \[
+      (fg)(x) \rightarrow bc
+    \]
+    \[
+      \left(\frac{f}{g}\right)(x) \rightarrow \frac{b}{c}
+    \]
+    При $x \rightarrow a$.
+    \end{proof}
+  \item [C6: ] \textbf{(Лок. огр-ть)} Если сущ. конечный $\lim_{x\to a} f(x)$, то
+    \[
+      \exists \delta > 0, \exists C > 0, \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E ( \left|f(x)\right| \leq C)
+    \]
+    \begin{proof}
+    Пусть $\lim_{x\to a} f(x) = b$. Тода
+    \[
+      \exists \delta > 0, \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E ( b - 1 < f(x) < b + 1) (\varepsilon = 1)
+    \]
+   Положим тогда $C = \left|b\right| + 1$.
+    \end{proof}
+  \item [C7: ] \textbf{(Предел композиции)} Пусть заданы ф-ции:
+    \[
+    f: E \rightarrow \R, f(E) \subset D, g: D \rightarrow \R \colon 
+    \]
+    \[
+    \lim_{x\to a} f(x) = b, \lim_{y\to b} g(y) = c
+    \]
+    Пусть вып-но хотя бы одно из условий:
+    \begin{itemize}
+      \item [1) ] $f(x) \neq b$ в некот. проколотой окр-ти $a$
+      \item [2) ] $g(b) = c$
+    \end{itemize}
+    Тогда $\lim_{x\to a} g(f(c)) = c = \lim_{y\to b} g(y)$
+    \begin{proof}
+    Зафикс. $\varepsilon > 0$. По опр-ю предела ф-ции:
+    \[
+    \exists \sigma > 0, \forall y \in \overset{\circ}{B_{\sigma}}(b) \cap D ( g(y) \in B_{\varepsilon}(c))
+    \]
+    \[
+    \exists \delta > 0, \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E (f(x) \in B_{\sigma}(b))
+    \]
+    \begin{itemize}
+      \item [1) ] Уменьшая $\delta > 0$, если необ-мо, можно считать, что $f(x) \neq b$ для всех $x \in \overset{\circ}{B_{\delta}}(a) \cap E$. \\
+
+        Тогда $f(x) \in \overset{\circ}{B_{\sigma}}(b)$, $a$ - ...,
+        \[
+        g(f(x)) \in B_{\varepsilon}(c)
+        \]
+        Сл-но, $c = \lim_{x\to a} (g \circ f)(x)$
+      \item [2) ] Если $f(x) = b$, для некот. т. $x \in \overset{\circ}{B_{\delta}}(a) \cap E$, то
+        \[
+          g(f(x)) = g(b) = c \in B_{\varepsilon}(c)
+        \]
+        Сл-но, $g(f(x)) \in B_{\varepsilon}(c)$, для всех $x \in \overset{\circ}{B_{\delta}}(a)$. Так что $c = \lim_{x\to a} (g \circ f)(x)$
+    \end{itemize}
+    \end{proof}
+    \begin{note}
+    Выполнение хотя бы одного из условий \textbf{существенно} для $\exists$ предела.
+    \end{note}
+    \begin{example}
+    \[
+    f: \R \rightarrow \R, f(x) = 
+    \begin{cases}
+    1, x = 0 \\
+    0, x \neq 0
+    \end{cases}
+    \]
+    \[
+    g = f
+    \]
+    \[
+    \lim_{x\to 0} f(x) = 0, \lim_{y\to 0} g(y) = 0, g(f(x)) = 
+    \begin{cases}
+    1, x \neq 0 \\
+    0, x = 0
+    \end{cases}
+    \]
+    \[
+    \lim_{x\to 0} g(f(x)) = 1 \pm \lim_{y\to 0} g(y)
+    \]
+    \end{example}
 \end{itemize}

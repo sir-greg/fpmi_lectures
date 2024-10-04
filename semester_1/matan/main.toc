@@ -1,6 +1,7 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 8}{3}{}%
-\contentsline {subsection}{\numberline {1.1}\textsection 3: Топология $\mathbb {R}$}{3}{}%
-\contentsline {section}{\numberline {2}Лекция 9}{7}{}%
-\contentsline {subsection}{\numberline {2.1}\textsection 4: Непрерывные ф-ции}{9}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Предел ф-ции в точке}{9}{}%
+\contentsline {section}{\numberline {1}Лекция 9}{3}{}%
+\contentsline {subsection}{\numberline {1.1}\textsection 4: Непрерывные ф-ции}{5}{}%
+\contentsline {subsubsection}{\numberline {1.1.1}Предел ф-ции в точке}{5}{}%
+\contentsline {section}{\numberline {2}Лекция 10}{10}{}%
+\contentsline {subsection}{\numberline {2.1}Критерий Коши для предела ф-ции}{10}{}%
+\contentsline {subsection}{\numberline {2.2}Односторонние пределы}{11}{}%

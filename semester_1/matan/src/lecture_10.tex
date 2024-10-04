@@ -1,0 +1,157 @@
+\section{Лекция 10}
+\subsection{Критерий Коши для предела ф-ции}
+\begin{theorem}[Критерий Коши сущ-е предела ф-ции]
+Пусть:
+\[
+f: E \rightarrow \R
+\]
+$a$ предельная точка мн-ва $E$ \\
+\begin{equation}
+  \label{eq:kushi_krit}
+\exists \lim_{x\to a} f(x) \in \R \iff \forall \varepsilon > 0, \exists \delta > 0 \colon \forall x, x' \in \overset{\circ}{B_{\delta}}(a) \cap E (\left|f(x) - f(x')\right| < \varepsilon)
+\end{equation}
+\end{theorem}
+\begin{proof}
+  ~\newline
+  \begin{itemize}
+    \item [$\Rightarrow)$] Заф. $\varepsilon > 0$. Пусть предел ф-ции = $b$. По опр. предела ф-ции:
+      \[
+        \exists \delta > 0, \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E (\left|f(x) - b\right| < \frac{\varepsilon}{2})
+      \]
+      Тогда для любых $x, x' \in \overset{\circ}{B_{\delta}}(a) \cap E$:
+      \[
+      \left|f(x) - f(x')\right| \leq \left|f(x) - b\right| + \left|f(x') - b\right| < \frac{\varepsilon}{2} \cdot 2 = \varepsilon
+      \]
+  \item [$\Leftarrow)$] Пусть для $f$ выполнено ($\ref{eq:kushi_krit}$). Покажем, что $f$ удов-ет опр-ю предела по Гейне. Заф. $\varepsilon > 0$ и выберем соотв. $\delta > 0$ из $(\ref{eq:kushi_krit})$.рассм. произ. п-ть:
+    \[
+      \set{x_n}, x_n \in E \backslash \set{a}, x_n \rightarrow a
+    \]
+    Тогда $\exists N, \forall n \geq N (x_n \in \overset{\circ}{B_{\delta}}(a) \cap E)$, а значит:
+    \[
+    \left|f(x_n) - f(x_m)\right| < \varepsilon, \forall n, m \geq N
+    \]
+    Так что п-ть $\set{f(x_n)}$ - фундаментальна $\Rightarrow$ по критерию Коши для п-тей $f(x_n) \rightarrow b \in \R$. \\
+    Рассм. ещё п-ть $\set{y_n}, y_n \in E \backslash \set{a}, y_n \rightarrow a$. Тогда:
+    \[
+      \varepsilon > 0, \exists n_0, \forall n \geq n_0 (x_n, y_n \in \overset{\circ}{B_{\delta}}(a) \cap E)
+    \]
+    Значит:
+    \[
+    \left|f(x_n) - f(y_n)\right| < \varepsilon
+    \]
+    Сл-но, $f(x_n) - f(y_n) \rightarrow 0$, откуда $f(y_n) \rightarrow b$. По Гейне, \[
+    b = \lim_{x\to a} f(x)
+    \]
+  \end{itemize}
+\end{proof}
+
+\subsection{Односторонние пределы}
+\begin{definition}
+Пусть $f: E \rightarrow \R, a \in \R$. \\
+
+Если $a$ - предельная точка мн-ва $(a; +\infty) \cap E$, то: 
+\[
+\lim_{x\to a} f|_{(a; +\infty) \cap E} (x) 
+\]
+наз-ся \textbf{пределом справа} ф-ции $f$ в т. $a$. \\
+
+Если $a$ предельная точка мн-ва $(-\infty; a) \cap E$, то:
+\[
+\lim_{x\to a} f|_{(-\infty; a) \cap E}(x)
+\]
+наз-ся \textbf{пределом слева} ф-ции $f$
+\end{definition}
+\begin{symb}
+  \[
+    f(a + 0) \text{ или } \lim_{x\to a + 0} f(x)
+  \]
+  \[
+    f(a - 0) \text{ или } \lim_{x\to a - 0} f(x)
+  \]
+  По опр-ю:
+  \[
+    f(+\infty - 0) = \lim_{x\to +\infty} f(x)
+  \]
+  \[
+    f(-\infty + 0) = \lim_{x\to -\infty} f(x)
+  \]
+\end{symb}
+\begin{lemma}
+Пусть $a \in \R$ и задана $f: E \rightarrow \R$ \\
+
+Пусть $a$ - предел. точка мн-ва $(-\infty; a) \cap E$ и $(a; +\infty) \cap E$. Тогда:
+\[
+\exists \lim_{x\to a} f(x) (\text{в } \R) \iff f(a + 0) = f(a - o)
+\]
+\end{lemma}
+\begin{proof}
+  \begin{itemize}
+    \item [$\Rightarrow$]
+Это вытекает из св-ва предела по подмножеству.
+\item [$\Leftarrow$] $f(a = 0) = b = f(a - 0)$. Заф. $\varepsilon > 0$. По опр-ю одност. пределов:
+  \[
+  \exists \delta_1 > 0, \forall x \in (a - \delta_1, a) \cap E (f(x) \in B_{\varepsilon}(b))
+  \]
+  \[
+  \exists \delta_2 > 0, \forall x \in (a, a + \delta_2) \cap E ( f(x \in B_{\varepsilon}(a))
+  \]
+  Положим $\delta = min(d_1, d_2)$. Тогда:
+  \[
+  \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E (f(x) \in B_{\varepsilon}(b))
+  \]
+  Сл-но, $\exists \lim_{x\to a} f(x) = b$
+  \end{itemize}
+\end{proof}
+\begin{definition}
+Пусть $f:  E \rightarrow \R$ и $D \subset E$. \\
+
+Ф-ция $f$ наз-ся \underline{нестрого возрастающей (убывающей)} на $D$, если:
+\[
+\forall x_1, x_2 \in D ( x_1 < x_2 \Rightarrow f(x_1) \leq f(x_2)) \text{( соотв. $(f(x_1) \geq f(x_2))$ )}
+\]
+\end{definition}
+\begin{theorem}[О пределе монотонной ф-ции]
+  Пусть $a, b \in \overline{\R}; a < b$. Если ф-ция $f$ нестрого возрастает на $(a, b)$, то:
+  \[
+  \exists \lim_{x\to a + 0} f(x) = \underset{(a, b)}{\inf} f(x)
+  \]
+  \[
+  \exists \lim_{x\to b - 0} f(x) = \underset{(a, b)}{\sup} f(x)
+  \]
+  Если $f$ нестрого убыв., то $\sup$ и $\inf$ меняются местами.
+\end{theorem}
+\begin{proof}
+  Пусть $f$ нестрого возрастает на $(a, b)$. Положим $s = \underset{(a, b)}{\sup} f(x) \in \overline{\R}$. По опр-ю $\sup$:
+  \[
+  \forall r < s, \exists x_r \in (a, b) \colon (f(x_r) > r)
+  \]
+  Откуда в силу возрастания вып-но:
+  \[
+  r < f(x) \leq s, \forall x \in (x_r, b)
+  \]
+  Зафикс. $\varepsilon > 0$. Положим $s - \varepsilon = r$, если $s \in \R$, и $\frac{1}{\varepsilon} = r$, если $s = +\infty$. Тогда:
+  \[
+  f(x) \in B_{\varepsilon}(s), \forall x \in (x_r, b)
+  \]
+  Если $b \in \R$, то $\delta = b - x_2 \Rightarrow (b - \delta, b) \subset (x_r, b)$ \\
+  
+  Если $b = +\infty$, то $\delta = \frac{1}{\left|x_r\right| + 1} \Rightarrow (\frac{1}{\delta}, +\infty) \subset (x_2, b)$
+\end{proof}
+\begin{consequence}
+Если ф-ция $f$ монотонна на $(a, b)$ и $c \in (a, b)$, то сущ-ют конечные $f(c - 0)$ и $f(c + 0)$, причём
+\[
+  f(c - 0) \leq f(c) \leq f(c + 0), \text{ - если $f$ нестрого возр-ет;}
+\]
+\[
+  f(c - 0) \geq f(c) \geq f(c + 0) \text{ - если f нестрого убыв-ет.}
+\]
+\end{consequence}
+\begin{proof}
+Для опред-ти, пусть $f$ нестрого возр-ет на $(a, b)$. Тогда:
+\[
+f(x) \leq f(c), \forall x \in (a, c) \Rightarrow f(c - 0) = \underset{(a, c)}{\sup} f(x) \leq f(c)
+\]
+\[
+f(c) \leq f(x), \forall x \in (c, b) \Rightarrow f(c + 0) = \underset{(b, c)}{\inf} f(x) \geq f(c)
+\]
+\end{proof}
