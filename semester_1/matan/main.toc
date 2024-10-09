@@ -4,9 +4,11 @@
 \contentsline {subsection}{\numberline {1.2}Частичные пределы}{4}{}%
 \contentsline {section}{\numberline {2}Лекция 8}{7}{}%
 \contentsline {subsection}{\numberline {2.1}\textsection 3: Топология $\mathbb {R}$}{7}{}%
-\contentsline {section}{\numberline {3}Лекция 9}{11}{}%
+\contentsline {section}{\numberline {3}Лекция 9}{12}{}%
 \contentsline {subsection}{\numberline {3.1}\textsection 4: Непрерывные ф-ции}{14}{}%
 \contentsline {subsubsection}{\numberline {3.1.1}Предел ф-ции в точке}{14}{}%
 \contentsline {section}{\numberline {4}Лекция 10}{19}{}%
 \contentsline {subsection}{\numberline {4.1}Критерий Коши для предела ф-ции}{19}{}%
 \contentsline {subsection}{\numberline {4.2}Односторонние пределы}{20}{}%
+\contentsline {section}{\numberline {5}Лекция 11}{23}{}%
+\contentsline {subsection}{\numberline {5.1}Непрерывность ф-ции в точке}{23}{}%

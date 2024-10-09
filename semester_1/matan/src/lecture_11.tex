@@ -1,0 +1,130 @@
+\section{Лекция 11}
+\subsection{Непрерывность ф-ции в точке}
+\begin{definition}
+Пусть $E \subset \R, a \in E$ и $f: E \rightarrow \R$. Ф-ция $f$ наз-ся \underline{непрерывной} в точке $a$, если:
+\[
+\forall \varepsilon > 0, \exists \delta > 0, \forall x \in E (\left|x - a\right| < \delta \Rightarrow \left|f(x) - f(a)\right| < \varepsilon)
+\]
+Иначе:
+\[
+x \in B_{\delta}(a) \Rightarrow f(x) \in B_{\varepsilon}(f(a))
+\]
+\end{definition}
+\begin{note}
+Из опр-я следует, что ф-ция не меняет значение \textbf{резко}
+\end{note}
+\textbf{Св-во (отделимость)}: если $f: E \rightarrow \R$ - непр-на в точке $a$ и $f(a) > 0 (< 0)$, то
+\[
+  \exists \delta > 0, \forall x \in B_{\delta}(a) \cap E (f(x) > \frac{f(a)}{2} (< \frac{f(a)}{2}))
+\]
+\begin{proof}
+Пусть $f(a) > 0$. По непр-ти ф-ции в $a$, положим $\varepsilon = \frac{f(a)}{2}$. Тогда
+\[
+  \exists \delta > 0, \forall x \in B_{\delta}(a) \cap E (f(a) - \frac{f(a)}{2} < f(x) < f(a) + \frac{f(a)}{2}) \Rightarrow f(x) > \frac{f(a)}{2}
+\]
+\end{proof}
+\begin{note}
+В определении непр-ти ф-ции точка $a \in E \text{ - области определения}$, но \textbf{не обязана} быть предельной точкой $E$.
+\end{note}
+\begin{definition}
+Точка, принадлежащая мн-ву, но не явл-ся его предельной точкой наз-ся \textbf{изолированной}.
+\end{definition}
+\begin{example}
+\[
+  E = (1, 2] \cup \set{5}
+\]
+Тогда точка $5$ - изолированная точка мн-ва $E$
+\end{example}
+\begin{theorem}
+\label{th:num4}
+Пусть $f: E \rightarrow \R, a \in E$. Следующие утв-я эквив-ны:
+\begin{itemize}
+  \item [1) ] $f$ непр-на в $a$
+  \item [2) ] $\forall \set{x_n}, x_n \in E (x_n \rightarrow a \Rightarrow f(x_n) \rightarrow f(a))$
+  \item [3) ] Либо $a$ - изолированная точка мн-ва $E$, либо $a$ - предельная точка мн-ва $E$ и $\lim_{x\to a} f(x) = f(a)$
+\end{itemize}
+\end{theorem}
+\begin{proof}
+  ~\newline
+\begin{itemize}
+  \item [1 $\Rightarrow$ 2)]  Рассм. $\set{x_n}, x_n \in E, x_n \rightarrow a$. Заф. $\varepsilon > 0$. По опр-ю непр-ти
+    \[
+      \exists \delta > 0, \forall x \in B_{\delta}(a) \cap E (\left|f(x) - f(a)\right| < \varepsilon)
+    \]
+    Т.к. $x_n \rightarrow a$, то $\exists N, \forall n \geq N (x_n \in B_{\delta}(a) \cap E)$, а значит,
+    \[
+      \left|f(x_n) - f(a)\right| < \varepsilon, \forall n \geq N
+    \]
+    Сл-но, $f(x_n) \rightarrow f(a)$
+  \item [2 $\Rightarrow$ 3)] Если $a$ - предельная точка мн-ва $E$, то $\lim_{x\to a} f(x) = f(a)$, по опр-ю предела по Гейне. \\
+
+    В противном случае, $a$ - изолированная точка области определения.
+  \item [3 $\Rightarrow$ 1)] Если $a$ - изолированная точка мн-ва $E$, то $\exists \delta_0 > 0 \colon (B_{\delta_0}(a) \cap E = \set{a})$. Тогда опредение непр-ти выполняется для $\delta = \delta_0$. \\
+
+    Если $a$ - предельная точка мн-ва $E$, то по опр-ю предела по Коши:
+    \[
+    \forall \varepsilon > 0, \exists \delta > 0, \forall x \in E (0 < \left|x - a\right| < \delta \Rightarrow \left|f(x) - f(a)\right| < \varepsilon)
+    \]
+    При $x = a$, следствие выше выпол-ся (очевидно). Это означает, что $f$ непр-на в $a$.
+    
+\end{itemize}
+\end{proof}
+\begin{consequence}
+\label{cs:ar_op_nep}
+Если $f, g \colon E \rightarrow \R$ - непр-ны в $a \in E$, то в этой точке непр-ны ф-ции:
+\begin{itemize}
+  \item [1) ] $f \pm g$
+  \item [2) ] $f \cdot g$ \\
+  \item [3) ] При доп. усл-ии $g \neq 0$: $\frac{f}{g}$
+\end{itemize}
+\end{consequence} 
+\begin{proof}
+Рассм. произвольную п-ть $\set{x_n}, x_n \in E, x_n \rightarrow a$. Т. к. $f, g$ - непр-ны в $a$, то $f(x_n) \rightarrow f(a)$ и $g(x_n) \rightarrow g(a)$. Тогда по св-вам предела п-ти имеем:
+\begin{itemize}
+  \item [1) ] $f(x_n) \pm g(x_n) \rightarrow f(a) \pm g(a)$
+  \item [2) ] $f(x_n)g(x_n) \rightarrow f(a)g(a)$
+  \item [3) ] $\frac{f(x_n)}{g(x_n)} \rightarrow \frac{f(a)}{g(a)}$
+\end{itemize}
+По Теореме $(\ref{th:num4})$, эти ф-ции непрерывны в $a$.
+\end{proof}
+\begin{example}
+\[
+P(x) = a_n x^{n} + a_{n - 1}x^{n - 1} + a_{n - 2}x^{n - 2} + \ldots + a_0, (a_i \in \R)
+\]
+Эта ф-ция непр-на в каждой точке $a \in \R$
+\end{example}
+\begin{proof}
+\[
+x \mapsto x
+\]
+\[
+x \mapsto c, c \in \R
+\]
+Ф-ции выше непрерывны. Тогда по сл-ию $(\ref{cs:ar_op_nep})$ в $a$ непр-ны:
+\[
+  x \mapsto x^{k}, k \in \N
+\]
+А значит $P$ непр-на в $a$.
+\end{proof}
+\begin{theorem}[Непрерывность композиции]
+  \label{th:nepr_comp}
+Если ф-ция $f: E \rightarrow \R$ непр-на в $a$, $f(E) \subset D, g: D \rightarrow \R$ - непр-на в $b = f(a)$, то композиция $g \circ f \colon E \rightarrow \R$ непр-на в т. $a$.
+\end{theorem}
+\begin{proof}
+  Рассм. произвольную п-ть $\set{x_n}, x_n \in E, x_n \rightarrow a$. Тогда: $f(x_n) \rightarrow f(a)$ по непр-ти $f$ в $a$. Кроме того:
+  \[
+  g(f(x_n)) \rightarrow g(f(a)) \text{ - по непр-ти $g$ в $f(a)$} \iff
+  \]
+  \[
+    (g \circ f)(x_n) \rightarrow (g \circ f)(a)
+  \]
+  По Теореме $\ref{th:num4}$, ф-ция $g \circ f$ непр-на в т. $a$.
+\end{proof}
+\begin{definition}
+Пусть $f: E \rightarrow \R$ и $a \in E$. Если $f|_{[a, +\infty)}$ непр-но в $a$, то говорят, что $f$ \underline{непр-на справа в т. $a$}. \\
+
+Аналогично: $f|_{(-\infty, a]}$ непр-на в $a$, то $f$ \underline{непр-на слева в $a$.}
+\end{definition}
+\begin{note}
+Если $a$ - предел. точка мн-ва $[a, +\infty) \cap E$, то $f$ непр. справа в т. $a \iff f(a + 0) = f(a)$
+\end{note}
