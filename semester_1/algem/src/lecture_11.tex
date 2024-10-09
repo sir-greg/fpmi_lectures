@@ -1,0 +1,284 @@
+\section{Лекция 11}
+\subsection{Ортогональная классификация алг. кривых II порядка}
+\begin{definition}
+Алг. кривой (п-тью) наз-ся мн-во всех точек $V_2$ ($V_3$), удовл. ур-ию:
+\[
+P(x, y) = 0 (P(x, y, z) = 0)
+\]
+\end{definition}
+\begin{definition}
+Наименьшая из степеней мн-ов, задающих кривую (пов-ть) наз-ся её \textbf{порядком}.
+\end{definition}
+\begin{statement}
+Порядок алг. кривой (п-ти) не зависит от выбора ДСК.
+\end{statement}
+\begin{proof}
+$(O, \overline{e_1}, \overline{e_2})$ и $(O', \overline{e_1'}, \overline{e_2'})$
+\[
+S = S_{G\to G'} \iff G' = GS
+\]
+\[
+\begin{pmatrix}x \\ y \end{pmatrix} = S\begin{pmatrix}x' \\ y' \end{pmatrix} + \begin{pmatrix} \alpha \\ \beta \end{pmatrix}, O' \underset{(O, G)}{\longleftrightarrow}\begin{pmatrix}\alpha \\ \beta \end{pmatrix}
+\]
+\[
+\Gamma \colon P(x, y) = 0 \mapsto Q(x', y') = 0
+\]
+пор. $P(x, y) \geq $ пор. $Q(x', y')$
+\begin{note}
+Каждый моном мн-на $Q$ получается из соотв. монома мн-на $P$
+\end{note}
+В то же время $\exists$ обратная замена коор-т:
+\[
+\alpha = S\alpha' + \gamma
+\]
+\[
+\alpha - \gamma = S\alpha'
+\]
+\[
+ \alpha' = S^{-1}(\alpha - \gamma) = S^{-1}\alpha - S^{-1}\gamma
+\]
+пор. $Q(x', y') \geq $ пор. $P(x, y)$
+\end{proof}
+\begin{equation}
+Ax^{2} + 2Bxy + Cy^{2} + 2Dx + 2Ey + F = 0, (A^{2} + B^{2} + C^{2} \neq 0)
+\end{equation}
+Б. О. О. система коор-т - ПДСК. Будем упрощать, переходя к новой ПДСК $(O', G')$
+\begin{itemize}
+  \item [I)] Можно избавиться от слагаемого $2Bxy$ подходящим поворотом системы коор-т.
+    \[
+      G' = GS = G \begin{pmatrix}\cos \phi & -\sin\phi \\ \sin\phi & \cos\phi \end{pmatrix} \iff \begin{pmatrix}x \\ y \end{pmatrix} = \begin{pmatrix}\cos\phi & -\sin\phi \\ \sin\phi & \cos\phi\end{pmatrix}\begin{pmatrix}x' \\ y' \end{pmatrix}
+    \]
+    После перехода в новую ПДСК:
+    \[
+    A(x'\cos\phi - y'\sin\phi)^{2} + 2B(x'\cos\phi - y'\sin\phi)(x'\sin\phi + y'\cos\phi) + C(x'\sin\phi + y'\cos\phi)^{2} + \ldots = 
+    \]
+    \[
+  = A'x'^{2} + 2B'x'y' + C'y'^{2}
+    \]
+    \[
+    2B' = -2A\sin\phi\cos\phi + 2B(\cos^{2}\phi - \sin^{2}\phi) + 2C\sin\phi\cos\phi = (C - A)\sin 2\phi + 2B\cos 2\phi
+    \]
+    \begin{itemize}
+      \item [a)] Пусть $A \neq C$:
+        \[
+        B' = 0 \iff (C - A)\tg 2\phi + 2B = 0 \iff \tg 2\phi = \frac{2B}{A - C}
+        \]
+        \[
+        \tg 2\phi = \frac{2\tg \phi}{1 - \tg^{2}\phi}
+        \]
+      \item [b) ] Пусть $A = C$:
+        \[
+        B' = 0 \iff \cos 2\phi = 0
+        \]
+        Можем взять $\phi = \frac{\pi}{4}$
+    \end{itemize}
+  \begin{equation}
+  A'x'^{2} + C'y'^{2} + 2D'x' + 2E'y' + F' = 0
+  \end{equation}
+\item [II)]
+  \begin{lemma}
+    Если хотя бы один из коэф-ов при квадратах коор-т (т. е. $A'$ или $C'$) - ненулевой, то подходящим параллельным переносом начала коор-т вдоль соотв. оси можно избавиться от линейного члена по соотв. коор-те. [Если $A' \neq 0$, то можно избавиться от члена $2D'x'$; $C' \neq 0 \rightarrow 2E'y'$]
+  \end{lemma}
+  \begin{proof}
+  Пусть $A' \neq 0$:
+  \[
+  A'(x'^{2} + \frac{2D'}{A'}x' + \frac{D'}{A'}) + C'y'^{2} + 2E'y' + F' - \frac{(D')^{2}}{A'} = 0
+  \]
+  Замена коор-т:
+  \[
+  \begin{cases}
+  x'' = x' + \frac{D'}{A'} \\
+  y'' = y'
+  \end{cases}
+  \]
+  \[
+  \Rightarrow A'x''^{2} + C'y'^{2} + 2E'y' + F'' = 0
+  \]
+  Применение леммы никак не меняет коэф-ти квадратичной части ур-я.
+  \end{proof}
+\end{itemize}
+
+Получили:
+\begin{equation}
+Ax^{2} + Cy^{2} + 2Dx + 2Ey + F = 0
+\end{equation}
+\textbf{3 случая:}
+\begin{itemize}
+  \item [1) ] $AC > 0$ - эллиптический тип кривых (E)
+  \item [2) ] $AC < 0$ - гиперболический тип (H)
+  \item [3) ] $A = 0$ или $C = 0$ - параболлический тип (P)
+\end{itemize}
+\begin{itemize}
+  \item [E) ] Эллиптический случай: $AC > 0$: применяя лемму приведём ур-е к виду:
+    \begin{equation}
+      \label{eq:etype}
+    Ax^{2} + Cy^{2} = -F
+    \end{equation}
+    При необходимости домножаем ур-е $(\ref{eq:etype})$ на $(-1)$, далее считаем, что $A > 0, C > 0$ \\
+    Пусть $F' \neq 0$:
+    \[
+      \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = \begin{cases}
+      1, \text{ (1)} \\
+      -1, \text{ (2)}\\
+      0, \text{ (3)}
+      \end{cases}
+    \]
+    Где $a^{2} = \frac{F}{A}, b^{2} = -\frac{F}{C}$. В ур-ях (1)-(3) м. считать, что $a \geq b > 0$. Иначе, если $a < b$, то применим $R(\frac{\pi}{2})$:
+    \[
+      \begin{pmatrix}x' \\ y' \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix}X \\ Y \end{pmatrix}
+    \]
+    \[
+      \frac{x'^{2}}{a^{2}} + \frac{y'^{2}}{b^{2}} = \frac{X^{2}}{b^{2}} + \frac{Y^{2}}{a^{2}}, b > a
+    \]
+    \begin{definition}
+    Ур-ие (1) наз-ся каноническим ур-ем эллипса, а соотв. кривая - эллипс.
+    \end{definition}
+    \begin{definition}
+    Ур-ие (2) наз-ся каноническим ур-ем мнимого эллипса, а кривая - мнимый эллипс.
+    \end{definition}
+    \begin{definition}
+    Ур-ие (3) наз-ся канонический ур-ем пары пересекающихся мнимых прямых, а кривая - пара пересекающихся мнимых прямых.
+    \end{definition}
+  \item [H)] Гиперболический случай: $AC < 0$: \\
+    Применяя лемму, получим:
+    \[
+    A'x^{2} + C'y^{2} = -F''
+    \]
+    \begin{itemize}
+      \item [1) ] $F'' \neq 0$. При необходимости , применяя поворот на $R(\frac{\pi}{2})$, получим:
+        \[
+        \text{знак}(A') = \text{знак}(-F'')
+        \]
+        \[
+          \text{знак}(C') = -\text{знак}(F'') = \text{знак}(F'')
+        \]
+        Разделим на $(-F'')$:
+        \begin{equation}
+          \label{eq:num4}
+          \frac{x''^{2}}{a^{2}} - \frac{y''^{2}}{b^{2}} = 1
+        \end{equation}
+        \[
+        a^{2} = -\frac{F''}{A'} > 0, b^{2} = \frac{F''}{C'} > 0
+        \]
+        $a \lor b$ не имеет значения.
+        \begin{definition}
+        Ур-ие $\ref{eq:num4}$ наз-ся канон. ур-ем гиперболы, а кривая - гипербола.
+        \end{definition}
+      \item [2) ] $F'' = Q \colon $
+        \begin{equation}
+          \label{eq:num5}
+          \frac{x''^{2}}{a^{2}} - \frac{y''^{2}}{b^{2}} = 0
+        \end{equation}
+        \begin{definition}
+        Ур-ие $\ref{eq:num5}$ наз-ся ур-ем пары действительных прямых, а кривая - пара действительных прямых. 
+        \end{definition}
+      \item [P) ] $A' = 0$ либо $C' = 0$. При необходимости применяя $R(\frac{\pi}{2})$, можно считать, что $A' = 0$. Применяя лемму, аннулируем линейную часть:
+        \[
+        C'y'^{2} + 2D'x' + F' = 0
+        \]
+      \item [1) ]
+        Пусть $D' \neq 0$:
+        \[
+        C'y'^{2} + 2D'(x' + \frac{F'}{2D'}) = 0
+        \]
+        Замена:
+        \[
+          \begin{cases}
+          x' + \frac{F''}{2D''} = x* \\
+          y* = y'
+          \end{cases}
+        \]
+        \[
+        C'y*^{2} + 2D'x* = 0
+        \]
+        \[
+        y*^{2} = 2px^{*}, p = -\frac{D'}{C'}
+        \]
+        \begin{note}
+        Параметр $p$ м. считать полож. $p > 0$. Иначе применим поворот $R(\pi)$:
+        \[
+          \begin{cases}
+        X* = -X \\
+        Y* = -y
+          \end{cases}
+        \]
+        \begin{equation}
+          \label{eq:num6}
+        y*^{2} = 2px 
+        \end{equation}
+        \end{note}
+        \begin{definition}
+        Ур-е $(\ref{eq:num6})$ наз-ся канон. ур-ем параболы.
+        \end{definition}
+    \end{itemize}
+  \item [2) ] Пусть $D = 0$:
+    \[
+    y'^{2} = \begin{cases}
+      a^{2}, \text{ (7)} \\
+      -a^{2}, \text{ (8)} \\
+      0, \text{ (9)}
+    \end{cases}
+    \]
+    \begin{definition}
+    Ур-ем (7) наз-ся кан. ур-е пары действ. параллельных прямых
+    \end{definition}
+    \begin{definition}
+    Ур-ем (8) наз-ся кан. ур-е пары мнимых. параллельных прямых
+    \end{definition}
+    \begin{definition}
+    \ldots пара действ. совпад. прямых.
+    \end{definition}
+\end{itemize}
+\begin{note}
+ПДСК $ \rightarrow $ ПДСК - и все указ. преобразования сохр. ориент. пл-ти.
+\end{note}
+\begin{theorem}
+Всякую кривую второго порядка можно привести к одному из 9 канон. видов.
+\end{theorem}
+\subsection{Инвариант кривых II пор.}
+\begin{equation*}
+Ax^{2} + 2Bxy + Cy^{2} + 2Dx + 2Ey + F = 0
+\end{equation*}
+\begin{definition}
+Инвариантом ур-я кривой, наз-ся непостоянная ф-ция от её коэф-ов, которая не меняется при переходе от ПДСК к ПДСК.
+\end{definition}
+\begin{theorem}
+Следующие 3 ф-ции являются инвариантами кривой: 
+\[
+  \triangle = \begin{vmatrix}A & B & D \\ B & C & E \\ D & E & F \end{vmatrix}, \delta = \begin{vmatrix}A & B \\ B & C \end{vmatrix}, I = A + C
+\]
+\end{theorem}
+\begin{proof}
+Запишем ур-е в матричном виде:
+\[
+  \begin{pmatrix}x & y & z \end{pmatrix} \begin{pmatrix}A & B & D \\ B & C & E \\ D & E & F \end{pmatrix} \begin{pmatrix}x \\ y \\ z \end{pmatrix}  = 0, (z = 1)
+\]
+\[
+  \begin{pmatrix}x \\ y \end{pmatrix} = \begin{pmatrix}\cos\phi & -\sin\phi \\ \sin\phi & \cos\phi \end{pmatrix}\begin{pmatrix}x' \\ y' \end{pmatrix} + \begin{pmatrix}\alpha \\ \beta \end{pmatrix} \iff \begin{pmatrix}x \\ y \\ z \end{pmatrix} = \begin{pmatrix}\cos\phi & -\sin\phi & \alpha \\ \sin\phi & \cos\phi & \beta \\
+0 & 0 & 1\end{pmatrix}\begin{pmatrix}x' \\ y' \\ z' \end{pmatrix}
+\]
+В новой ПДСК:
+\[
+  \begin{pmatrix}x' & y' & z' \end{pmatrix} \begin{pmatrix}\cos\phi & \sin\phi & 0 \\ -\sin\phi & \cos\phi & 0 \\ \alpha & \beta & 1 \end{pmatrix}\begin{pmatrix}A & B & D \\ B & C & E \\ D & E & F \end{pmatrix}\begin{pmatrix}\cos\phi & -\sin\phi & \alpha \\ \sin\phi & \cos\phi & \beta \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix}x' \\ y' \\ z' \end{pmatrix} |_{z' = 1} = 0
+\]
+\[
+  A' = \begin{pmatrix}\cos\phi & \sin\phi & 0 \\ -\sin\phi & \cos\phi & 0 \\ \alpha & \beta & 1\end{pmatrix} \begin{pmatrix} A & B & D \\ B & C & E \\ D & E & F \end{pmatrix} \begin{pmatrix}\cos\phi & -\sin\phi & \alpha \\ \sin\phi & \cos\beta & \beta \\ 0 & 0 & 1 \end{pmatrix}
+\]
+\[
+  \triangle' = det\begin{pmatrix}\cos\phi & \sin\phi & 0 \\
+    -\sin\phi & \cos\phi & 0 \\ \alpha & \beta & 1\end{pmatrix} \triangle \cdot det\begin{pmatrix}\cos\phi & -\sin\phi & \alpha \\ \sin\phi & \cos\phi & \beta \\ 0 & 0 & 1 \end{pmatrix} = \triangle
+\]
+\[
+  \delta' = det R(-\phi) \delta \cdot det R(\phi) \Rightarrow \delta' = \delta
+\]
+\begin{definition}
+\textbf{След квадратной матрицы} $tr A$ - сумма чисел, стоящих на главной диагонали.
+\end{definition}
+\begin{note}
+ \[
+ tr (AB) = tr(BA)
+ \]
+\end{note}
+$I' = tr(R(-\phi) \delta R(\phi)) = tr(\delta \cdot R(\phi) R(-\phi)) = tr(\delta) = I$
+\end{proof}
+

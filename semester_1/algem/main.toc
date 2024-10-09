@@ -12,3 +12,6 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Основные понятия}{10}{}%
 \contentsline {subsubsection}{\numberline {2.1.2}Мономиальное упорядочение}{12}{}%
 \contentsline {subsection}{\numberline {2.2}Алгебраические кривые}{14}{}%
+\contentsline {section}{\numberline {3}Лекция 11}{15}{}%
+\contentsline {subsection}{\numberline {3.1}Ортогональная классификация алг. кривых II порядка}{15}{}%
+\contentsline {subsection}{\numberline {3.2}Инвариант кривых II пор.}{20}{}%

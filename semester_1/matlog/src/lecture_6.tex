@@ -1,0 +1,254 @@
+\section{Лекция 6}
+\begin{definition}
+\textbf{Вывод} - п-ть $\phi_1, \ldots, \phi_n$, т. ч. $\forall i\colon$
+\begin{itemize}
+  \item $\phi_i$ - аксиома
+  \item $\phi_i$ - получается по правилам MP из $\phi_i, \phi_k, j < i, k < i$. \\
+    Это значит, что $\phi_k \eqcirc \phi_j \rightarrow \phi_i$
+\end{itemize}
+Ф-ла \textbf{выводима} $(\vdash \phi)$, если $\phi$ встреч-ся в нек-ром выводе.
+\end{definition}
+\begin{theorem}
+$\phi$ - тавтология $ \Rightarrow (\vdash \phi)$ 
+\end{theorem}
+\begin{example}
+\[
+  (\neg A \lor B) \rightarrow (A \rightarrow B)
+\]
+\begin{itemize}
+  \item [1)] \[
+  \neg A \rightarrow (A \rightarrow B) \text{ аксиома 9}
+  \]
+\item [2) ] \[
+  B \rightarrow (A \rightarrow B) \text{ - аксиома 9}
+\]
+\item [3) ] \[
+  (\neg A \rightarrow (A \rightarrow B)) \rightarrow ((B \rightarrow (A \rightarrow B)) \rightarrow ((A \lor B) \rightarrow (A \rightarrow B)))
+\]
+\item [4) ] \[
+  (B \rightarrow (A \rightarrow B)) \rightarrow ((\neg A \lor B) \rightarrow (A \rightarrow B)) \text{ - MP 1, 3}
+\]
+\item [5) ] \[
+  (\neg A \lor B) \rightarrow (A \rightarrow B)
+\]
+\end{itemize}
+\end{example}
+\begin{definition}
+Вывод из мн-ва посылок $\Gamma$ - это п-ть $\phi_1, \phi_2, \ldots, \phi_n$ при этом $\phi_i$ может быть либо аксиомой, либо эл-т $\Gamma$, либо получается по m. p.
+\end{definition}
+
+\begin{lemma}[О дедукции]
+\[
+\Gamma \vdash A \rightarrow B \iff \Gamma \cup \set{A} \vdash B
+\]
+\end{lemma}
+\begin{example}[Силлогизм]
+\[
+ \vdash (A \rightarrow B) \rightarrow ((B \rightarrow C) \rightarrow (A \rightarrow C)) \iff
+\]
+\[
+\iff \set{A \rightarrow B} \vdash (B \rightarrow C) \rightarrow (A \rightarrow C)
+\]
+\[
+\iff \set{A \rightarrow B, B \rightarrow C} \vdash (A \rightarrow C)
+\]
+\[
+\iff \set{A, A \rightarrow B, B \rightarrow C} \vdash C
+\]
+\begin{itemize}
+  \item [1) ] $A$ - посылка
+  \item [2) ] $A \rightarrow B$ - посылка
+  \item [3) ] $B$ по MP 1, 2
+  \item [4) ] $B \rightarrow C$ - посылка
+  \item [5) ] $C$ - MP 3, 4
+\end{itemize}
+\end{example}
+\begin{proof}
+\begin{itemize}
+  \item [$\Rightarrow)$] Если вывели $A \rightarrow B$, то из $\Gamma \cup \set{A}$ можно вывести $B$ по MP
+  \item [$\Leftarrow)$] Пусть $\Gamma \cup \set{A} \vdash B$. Тогда сущю вывод $\phi_1, \ldots, \phi_n \eqcirc B$ из $\Gamma \cup \set{A}$ \\
+
+    Каждый $\phi_i$ - либо акс., либо $\in \Gamma$, либо $= A$, либо вывод-ся по MP. Мы докажем по инд-ции, что $\Gamma \vdash A \rightarrow \phi_i$:
+    \begin{itemize}
+      \item [1) ] $\phi_i$ - акс.
+        \begin{itemize}
+          \item [1) ] $\phi_i$
+          \item [2) ] $\phi_i \rightarrow (A \rightarrow \phi_i)$ - A1
+          \item [3) ] $A \rightarrow \phi_i$, MP 1, 2.
+        \end{itemize}
+      \item [2) ] $\phi_i \in \Gamma$, аналогичен (1)
+      \item [3) ] $\phi_i \eqcirc A$. На прошлой лекции выводили $\vdash A \rightarrow A$ без $\Gamma$
+      \item [4) ] $\phi_i$ по MP: $\exists j, k, < i$:
+        \[
+        \phi_k \eqcirc (\phi_j \rightarrow \phi_i)
+        \]
+        По инд-ции: $\Gamma \vdash A \rightarrow \phi_j, \Gamma \vdash A \rightarrow \phi_k$, т. е. $\Gamma \vdash A \rightarrow (\phi_j \rightarrow \phi_i)$:
+        \[
+          (A \rightarrow (\phi_j \rightarrow \phi_i)) \rightarrow ((A \rightarrow \phi_j) \rightarrow (A \rightarrow \phi_i)) \text{ - A2}
+        \]
+        \[
+          (A \rightarrow \phi_j) \rightarrow (A \rightarrow \phi_i) \text{ - MP}
+        \]
+        \[
+          (A \rightarrow \phi_i) \text{ - MP}
+        \]
+    \end{itemize}
+\end{itemize}
+\end{proof}
+\begin{example}
+\[
+\vdash (A \land B) \rightarrow (B \land A)
+\]
+\[
+A \land B \vdash B \land A
+\]
+\begin{itemize}
+  \item [1) ] $A \land B$ - посылка
+  \item [2) ] $(A \land B) \rightarrow B$ - акс. 4
+  \item [3) ] $B$ - MP 1, 2
+  \item [4) ] $(A \land B) \rightarrow A$ - акс. 3
+  \item [5) ] $A$ - MP 1, 4
+  \item [6) ] $(B \rightarrow (A \rightarrow (B \land A)))$ - акс. 5
+  \item [7) ] $A \rightarrow (B \land A)$ - MP 3, 6
+  \item [8) ] $B \land A$ - MP 5, 7
+\end{itemize}
+\end{example}
+\begin{lemma}[Правила введения и разбиения конъюнкции]
+\[
+\Gamma \cup \set{A \land B} \vdash C
+\]
+\[
+\iff \Gamma \cup \set{A, B} \vdash C
+\]
+Также:
+\[
+\Gamma \vdash A \land B \iff \begin{cases}
+\Gamma \vdash A \\
+\Gamma \vdash B
+\end{cases}
+\]
+\end{lemma}
+\begin{example}
+  \[
+    (A \rightarrow \neg A) \rightarrow \neg A 
+  \]
+  Вывод: 
+  \begin{itemize}
+    \item [1-5)] $A \rightarrow A$
+    \item [6)] $(A \rightarrow A) \rightarrow ((A \rightarrow \neg A) \rightarrow \neg A)$ - A10
+    \item [7) ] $(A \rightarrow \neg A) \rightarrow \neg A$ - MP 5,6
+  \end{itemize}
+\end{example}
+\begin{example}
+\[
+\vdash A \rightarrow \neg \neg A
+\]
+\[
+\iff A \vdash \neg \neg A
+\]
+\[
+  \vdash \neg A \rightarrow (A \rightarrow B) \iff
+\]
+\[
+  \neg A \vdash A \rightarrow B \iff \neg A, A \vdash B \iff A \vdash \neg A \rightarrow B
+\]
+\[
+  \vdash A \rightarrow (\neg A \rightarrow B)
+\]
+\[
+  A \vdash \neg \neg A
+\]
+\begin{itemize}
+  \item [1) ] $A \rightarrow (\neg A \rightarrow B)$
+  \item [2) ] $A$ - посылка
+  \item [3) ] $\neg A \rightarrow B$, mp 2, 1
+  \item [4) ] $A \rightarrow (\neg A \rightarrow \neg B)$
+  \item [5) ] $\neg A \rightarrow \neg B$, MP 2, 4
+  \item [6) ] $(\neg A \rightarrow B) \rightarrow ((\neg A \rightarrow \neg B) \rightarrow \neg \neg A)$ - A10
+  \item [7) ] $(\neg A \rightarrow \neg B) \rightarrow \neg \neg A$ - MP 3, 6
+  \item [8) ] $\neg \neg A$ - MP 5, 7
+\end{itemize}
+\end{example}
+\begin{lemma}[Правило рассуждения от противного]
+  ~\newline
+\begin{center}
+\begin{tabular}{ c c c } 
+  $\Gamma, A \vdash B$ & & $\Gamma, A \vdash \neg B$ \\
+ \hline
+                       & $\Gamma \vdash \neg A$ & 
+\end{tabular}
+\end{center}
+\end{lemma}
+\begin{proof}
+\[
+  \begin{cases}
+\Gamma, A \vdash B \iff \Gamma \vdash A \rightarrow B \\
+\Gamma, A \vdash \neg B \iff \Gamma \vdash A \rightarrow \neg B  
+  \end{cases} \iff \Gamma \vdash \neg A  \text{, А10 + MP x2}
+\]
+\end{proof}
+\begin{example}[Закон контрапозиции]
+\begin{center}
+\begin{tabular}{ c c c } 
+  $A \rightarrow B, \neg B, A \vdash B$ & & $A \rightarrow B, \neg B, A, \vdash \neg B$\\
+ \hline Рассуждение от противного
+ & $A \rightarrow B, \neg B \vdash \neg A$ &  \\
+ \hline ЛОД x2
+ & $\vdash (A \rightarrow B) \rightarrow (\neg B \rightarrow \neg A)$ & 
+\end{tabular}
+\end{center}
+\end{example}
+\begin{example}[Закон Де Моргана]
+\[
+\vdash (\neg A \lor \neg B) \rightarrow \neg (A \land B)
+\] 
+\[
+\iff (\neg A \lor \neg B) \vdash A \land B
+\]
+\begin{itemize}
+  \item [1) ] $(A \land B) \rightarrow A$ - акс. 3
+  \item [2) ] $\neg A \rightarrow \neg(A \land B)$ - закон контрапозиции.
+  \item [3) ] $(A \land B) \rightarrow B$ - акс. 4
+  \item [4) ] $\neg B \rightarrow \neg(A \land B)$ - контрапозиция
+  \item [5) ] $(\neg A \rightarrow \neg(A \land B)) \rightarrow ((\neg B \rightarrow \neg (A \land B)) \rightarrow ((\neg A \lor \neg B) \rightarrow \neg (A \land B)))$
+  \item [6)] MP 2x
+\end{itemize}
+\end{example}
+\begin{lemma}[Правило контрапозиции]
+\begin{center}
+\begin{tabular}{ c} 
+  $\Gamma, A \vdash B$ \\
+ \hline
+  $\Gamma, \neg B \vdash \neg A$
+\end{tabular}
+\end{center}
+\end{lemma}
+\begin{lemma}[Правило разбора случаев]
+  \begin{center}
+  \begin{tabular}{ c c c } 
+    $\Gamma, A \vdash C$ & & $\Gamma, B \vdash C$ \\
+   \hline
+                         & $\Gamma, A \lor B \vdash C$ &\\
+  \end{tabular}
+  \end{center}
+\end{lemma}
+\begin{lemma}[Правило исчерп. разбора случаев]
+\begin{center}
+\begin{tabular}{ c c c } 
+  $\Gamma, A \vdash B$ & & $\Gamma, \neg A \vdash B$ \\
+ \hline
+                       & $\Gamma \vdash B$ & \\
+\end{tabular}
+\end{center}
+\end{lemma}
+\begin{example}
+\begin{center}
+\begin{tabular}{ c c c } 
+  $\neg \neg A, A \vdash A$ & & $\neg \neg A, \neg A \vdash A$ \\
+  \hline
+                            & $\neg \neg A \vdash A$ & \\
+ \hline
+                            & $\vdash \neg \neg A \rightarrow A$ &\\
+\end{tabular}
+\end{center}
+\end{example}

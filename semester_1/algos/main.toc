@@ -3,3 +3,8 @@
 \contentsline {subsection}{\numberline {1.1}Биномиальная куча}{3}{}%
 \contentsline {subsection}{\numberline {1.2}Амортизационный анализ}{4}{}%
 \contentsline {subsubsection}{\numberline {1.2.1}Динамический массив \\ (std::vector)}{5}{}%
+\contentsline {section}{\numberline {2}Лекция 6}{5}{}%
+\contentsline {subsection}{\numberline {2.1}Связные списки}{6}{}%
+\contentsline {subsection}{\numberline {2.2}Куча Фиббоначи}{7}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Consolidate (Операция причёсывания кучи)}{8}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Анализ времени работы}{8}{}%
