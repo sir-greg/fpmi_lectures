@@ -12,3 +12,4 @@
 \contentsline {subsection}{\numberline {4.2}Односторонние пределы}{20}{}%
 \contentsline {section}{\numberline {5}Лекция 11}{23}{}%
 \contentsline {subsection}{\numberline {5.1}Непрерывность ф-ции в точке}{23}{}%
+\contentsline {subsection}{\numberline {5.2}Непрерывность ф-ции на мн-ве}{27}{}%

@@ -128,3 +128,130 @@ x \mapsto c, c \in \R
 \begin{note}
 Если $a$ - предел. точка мн-ва $[a, +\infty) \cap E$, то $f$ непр. справа в т. $a \iff f(a + 0) = f(a)$
 \end{note}
+\begin{definition}
+  Пусть $f: E \rightarrow \R$ и $a \in E$.\\
+  Если $f$ не явл. непрерывной в т. $a$, то говорят, что $f$ \underline{разрывна (имеет разрыв)} в т. $a$, а саму т. $a$ наз-ют \underline{точкой разрыва} $f$. \\
+  Классифицируем точки разрыва:
+  \begin{itemize}
+    \item [1) ] Пусть ф-ция $f$ определена в некот. проколотой окр-ти т. $a$. Если сущ-ют конечные односторонние пределы $f(a - 0), f(a + 0)$ и среди трёх чисел $f(a + 0), f(a - 0), f(a)$ не все равны, то т. $a$ наз-ся \underline{точкой разрыва I рода} ф-ции $f$
+    \item [2) ] В противном случае т. $a$ наз-ся \underline{точкой разрыва II рода ф-ции $f$}
+  \end{itemize}
+  Если $a$ - т. разрыва I рода и $f(a + 0) = f(a - 0)$, то точка $a$ наз-ся \underline{точкой устранимого разрыва}.
+\end{definition}
+\begin{example}
+\begin{itemize}
+  \item [1) ] $f: \R \rightarrow \R$ :
+    \[
+    f(x) = sign(x) \colon= \begin{cases}
+    1, x > 0 \\
+    0, x = 0 \\
+    -1, x < 0
+    \end{cases}
+    \]
+    \[
+    f(0 + 0) = 1, f(0 - 0) = -1
+    \]
+    Т. $x = 0$ - т. разрыва I рода.
+
+  \item [2) ] $f: \R \rightarrow \R$ :
+    \[
+    f(x) = sign^{2}(x)
+    \]
+    Тогда $x = 0$ - т. устранимого разрыва.
+  \item [3) ] \[
+  f: \R \backslash \set{0} \rightarrow \R, f(x) = \frac{1}{x}
+  \]
+  \[
+  f(0 + 0) = +\infty, f(0 - 0) = -\infty \Rightarrow x = 0 \text{ - точка разрыва II рода.}
+  \]
+\item [4) ] \[
+D(x) = \begin{cases}
+1, x \in \Q \\
+0, x \in \R \backslash \Q
+\end{cases}
+\]
+Покажем, что $D$ - разрывна в каждой точке.
+\end{itemize}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] $ a \in \Q \colon $
+    \[
+      x_n = a + \frac{1}{n} \rightarrow a, a_n > a, D(x_n) = 1 \rightarrow 1
+    \]
+    \[
+    x_n' = a + \frac{\sqrt{2}}{n} \rightarrow a, x_n' > a, D(x_n') = 0 \rightarrow 0
+    \]
+    Получаем, что правого предела в $a$ не сущ-ет
+  \item [b) ] $a \not\in \Q \colon$
+    \[
+    x_n = a + \frac{1}{n} \rightarrow a, x_n > a, D(x_n) = 0 \rightarrow 0
+    \]
+    \[
+    x_n' = \frac{[na] + 1}{n} \rightarrow a, x_n' > a, D(x_n') = 1 \rightarrow 1
+    \]
+    Сл-но, не сущ-ет $D(a + 0)$.
+\end{itemize}
+Таким образом, $a$ - т. разрыва II рода.
+\end{proof}
+\end{example}
+\subsection{Непрерывность ф-ции на мн-ве}
+\begin{definition}
+Ф-ция $f: E \rightarrow \R$ наз-ся непрерывной (на $E$), если $f$ непр-на на каждой точке $a \in E$ \\
+
+Если $D \subset E$, то $f$ непр-на на $D$, если $f|_{D}$ непр-на.
+\end{definition}
+\begin{example}
+  $x \mapsto \frac{P(x)}{Q(x)}$ - рациональная ф-ция. \\
+  Она непр-на на $E = \set{s \colon Q(x) \neq 0}$. (по сл-ию $\ref{cs:ar_op_nep}$)
+\end{example}
+\begin{note}
+Чарльз. Лью курс по мат. анализу "Скелет мат. анализа"
+\end{note}
+\begin{lemma}
+  \label {lm:f_nepr_ogr}
+Если ф-ция $f$ непр-на на $[a, b]$, то $f$ огр. на $[a, b]$
+\end{lemma}
+\begin{proof}
+Предположим, что $f$ не огр-на. Тогда:
+\[
+  \forall n \in \N, \exists x_n \in [a, b] \colon (\left|f(x_n)\right| > n)
+\]
+По инд-ции опр-на $\set{x_n} \subset [a, b]$. По т. Больцано-Вейерштрасса $\set{x_n}$ имеет сх-ся подп-ть $\set{x_{n_k}}, x_{n_k} \rightarrow x_0$. Переходя к пределу при $k \rightarrow \infty$ в:
+\[
+a \leq x_{n_k} \leq b
+\]
+получаем, что $x_0 \in [a, b]$. По непр-ти $f(x_{n_k}) \rightarrow f(x_0)$!!! Но ведь,
+\[
+  (\left|f(x_{n_k})\right| > n_k \geq k \rightarrow +\infty)
+\]
+\end{proof}
+\begin{theorem}[Теорема Вейерштрасса]
+  \label{th:num6}
+  Если $f$ - непр-на на $[a, b]$, то $\exists x_m, x_M \in [a, b]$, в кот. вып-но:
+  \[
+  f(x_M) = \underset{[a, b]}{\sup} f(x), f(x_m) = \underset{[a, b]}{\inf} f(x)
+  \]
+\end{theorem}
+\begin{proof}
+По лемме ($\ref{lm:f_nepr_ogr}$) мн-во значений $f([a, b])$ ограничено, поэтому опр-ны числа $M = \underset{[a, b]}{\sup} f(x), m = \underset{[a, b]}{\inf} f(x)$. \\
+По опр-ю $\sup$, $\forall n \in N, \exists x_n \in [a, b] (M - \frac{1}{n} < f(x_n) \leq M)$. По инд-ции опр-на п-ть $\set{x_n} \subset [a, b]$, причём $f(x_n) \rightarrow M$. \\
+По т. Больцано-Вейерштрасса $\set{x_n}$ имеет сх-ся подп-ть $\set{x_{n_k}}$:
+\[
+  x_{n_k} \rightarrow x_M \in [a, b]
+\]
+Тогда по непр-ти:
+\[
+f(x_{n_k}) \rightarrow f(x_M)
+\]
+С другой стороны, $f(x_{n_k}) \rightarrow M$ $\Rightarrow f(x_M) = M$ в силу ед-ти предела. \\
+Случай $\inf$ док-ся аналогично.
+\end{proof}
+\begin{note}
+Утв-я, аналогичные лемме $(\ref{lm:f_nepr_ogr})$ и теореме $\ref{th:num6}$ неверны для интервалов.
+\end{note}
+\begin{example}
+$f(x) = x$. $f$ непр-на на $(0, 1)$. $f$ - огр-на, но $\not\exists$ минимального и максимального значения.
+\[
+\underset{(0, 1)}{\sup}f(x) = 1 \neq f(x) \forall x \in (0, 1)
+\]
+\end{example}
