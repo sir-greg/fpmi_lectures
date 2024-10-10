@@ -1,0 +1,212 @@
+\section{Лекция 6}
+\subsection{Плотный порядок. Изоморфизм}
+Отношение частичного порядка:
+\begin{itemize}
+  \item [1) ] $x \leq x$ - рефлексивность
+  \item [2) ] $(x \leq y \land y \leq x) \Rightarrow x = y$ - антисимметричность
+  \item [3) ] $(x \leq y \land y \leq z) \Rightarrow x \leq z$ - транзитивность
+\end{itemize}
+Отношение линейного порядка:
+\begin{itemize}
+  \item [4) ] $\forall x, y \colon x \leq y \lor y \leq x$
+\end{itemize}
+Упор. мн-во $(A, \leq_A)$ \\
+Наибольший эл-т - $M \colon \forall x, x \leq M$. \\
+Наименьший эл-т - $m \colon \forall x, x \geq m$ \\
+Максимальный эл-т - $M \colon \neg \exists x \colon x > M$ (или $\forall x \colon x \leq M \lor (x \text{ не сравним с } M)$) \\
+Минимальный эл-т $m \colon \neg \exists x \colon x < m$
+
+\begin{definition}
+\textbf{Плотный порядок}:
+\[
+\forall x, y (x < y \rightarrow \exists z \colon x < z < y)
+\]
+\end{definition}
+\begin{statement}
+Плотный порядок - либо тривиальный (т. е. разл-ные эл-ты не сравнимы), либо опр. на бесконечном мн-ве.
+\end{statement}
+\begin{definition}
+\textbf{Изоморфизм} упор. мн-в $(A, \leq_A)$ и $(B, \leq_B)$ - это такая биекция $f: A \rightarrow B$, что:
+\[
+  \forall x, y \colon (x \leq_A y \iff f(x) \leq_B f(y))
+\]
+\end{definition}
+\begin{example}
+\[
+(\set{n | 30 \vdots n}, \vdots) \text{ и } (2^{\set{a, b, c}}, \subset)
+\]
+\end{example}
+\begin{example}
+  \[
+    (\Q \cap (0, 1), \leq) \text{ и } (\Q \cap (0, +\infty), \leq)
+  \]
+  \[
+  x \mapsto \frac{1}{1 - x} - 1
+  \]
+\end{example}
+\begin{theorem}
+Любые два счётных плотно, линейно упоряд. мн-ва без наиб. и наим. эл-тов изоморфны:
+\end{theorem}
+\begin{example}
+\[
+  \Q, \Q_2 = \set{\frac{a}{2^{n}} | a \in \Z, n \in \N}, \Q[\sqrt{2}] = \set{a + b\sqrt{2} | a, b \in \Q},
+\]
+\[
+  \mathbb{A} \text{ - корни мн-ов с целыми коэфф-ми}
+\]
+\end{example}
+\begin{proof}
+\[
+A = \set{a_0, a_1, \ldots}, B = \set{b_0, b_1, \ldots}
+\]
+Построим \textbf{инъекцию} $f$:
+\begin{itemize}
+  \item [1) ] Построим $a_0 \rightarrow b_0$
+  \item [2) ] Б. О. О. $a_1 > a_0$. Т. к. в $B$ нет наибольшего, то есть $b_i \colon b_i > b_0$. Тогда добавим $a_1 \rightarrow b_i$
+  \item [3) ] Пусть для $a_k, k \leq n - 1$ соединения проведены. Проведём для $a_n$. Рассм. три случая:
+    \begin{itemize}
+      \item [I) ] $a_n < a_k, \forall k \leq n - 1$. Тогда отобразим его в $b_p \colon b_p < b_i, \forall i \text{ из использованных ранее}$.
+      \item [II) ] $a_n > a_k, \forall k \leq n - 1$. Тогда отобразим его в $b_p \colon b_p > b_i, \forall i$ из использованных ранее.
+      \item [III) ] Иначе у $a_n$ есть использованные ранее соседи $a_i$ и $a_j$. Т. к. $A$ и $B$ - лин. упор.: $\exists p \colon f(a_i) < b_p < f(a_j)$. Добавим $a_n \rightarrow b_p$
+    \end{itemize}
+\end{itemize}
+Как добиться, чтобы постр. ф-ция была сюрьекцией? Варианты:
+\begin{itemize}
+  \item [1) ] Каждый раз брать эл-т $B$ с наим номером из подходящих.
+  \item [2) ] Действовать по очереди: сначала брать эл-т $A$ с наим. номером, кот. ещё не рассмотрен, и отправлять в $B$. Затем эл-т $B$ с наим. номером, кот. ещё не рассм, и отправлять в $A$. И т. д.
+\end{itemize}
+\end{proof}
+
+\subsection{Предпорядки}
+\begin{definition}
+\textbf{Предпорядок (Предпочтения)} - отношение, обладающее рефлексивностью и транзитивностью.
+\end{definition}
+\begin{definition}
+  \textbf{Полный предпорядок (Рациональные предпочтения)} - предпорядок + любые два сравнимы. (или полн. + транз.)
+\end{definition}
+\begin{symb}
+\[
+a \succsim b \text{ - предпор.}
+\]
+\[
+a \sim b \iff (a \succsim b \land b \succsim) \text{ - отношение безразличия} 
+\]
+\[
+a \succ \iff (a \succ b \land \neg(b \succ a)) \text{ - строгий предпорядок}
+\]
+Нетранзитивно: $a \succ b \succ c \succ a$
+\end{symb}
+\begin{theorem}[Структурная теорема о предпорядке на мн-ве $A$]
+  ~\newline
+\begin{itemize}
+  \item [1) ] Отношение безразличия - это отношение эквив-ти на $A$
+  \item [2) ] На эл-ах $A/_{\sim}$ можно ввести отношение \\
+    $S \leq T$, если $\exists x \in S, y \in T \colon x \precsim y$ \\
+    Это отнош. будет част. пор. на $A/_{\sim}$
+  \item [3) ] $\leq$ лин. пор. $\iff$ $\precsim$ - полон.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+  ~\newline
+  \begin{itemize}
+    \item 
+      \begin{itemize}
+        \item [1) ] Рефл.: $a \precsim a \Rightarrow (a \precsim a \land a \precsim a) \Rightarrow a \sim a$
+        \item [2) ] Симм.:
+          \[
+            a \sim b \iff (a \precsim b \land b \precsim a) \iff (b \precsim a \land a \precsim b) \iff b \sim a
+          \]
+        \item [3) ] Транзитивность: \[
+          \begin{cases}
+          a \sim b \\
+          b \sim c
+          \end{cases} \iff
+          \begin{cases}
+             a \precsim b \land b \precsim a \\
+             b \precsim c \land c \precsim b
+          \end{cases} \iff
+          \begin{cases}
+          a \precsim c \\
+          c \precsim a
+          \end{cases} \Rightarrow a \sim c
+        \]
+      \end{itemize}
+    \item
+      \begin{itemize}
+        \item [1) ] Рефл $ S \neq \emptyset \Rightarrow \exists x \in S \Rightarrow \text{т. к. } x \precsim x \Rightarrow S \leq S$
+        \item [2) ] Транз. $R \leq S \leq T$:
+          \[
+          \begin{cases}
+          x \in R \\
+          y, z \in S \\
+          t \in T \\
+          x \precsim y \\
+          z \precsim t
+          \end{cases} \Rightarrow y \precsim z \Rightarrow x \precsim t \Rightarrow R \leq T 
+          \]
+        \item [3) ] Антисимм.:
+          \[
+          S \leq T, T \leq S
+          \]
+          \[
+            \begin{cases}
+          x \in S, y \in T \Rightarrow x \precsim y \\
+          z \in T, t \in S \Rightarrow z \precsim t \\
+          x \sim t \\
+          y \sim z
+            \end{cases} \Rightarrow y \sim z \precsim t \sim x \Rightarrow y \precsim x \Rightarrow x \sim y \Rightarrow S = T 
+          \]
+      \end{itemize}
+    \item
+      \begin{itemize}
+        \item [$\Leftarrow$)] $S, T$ - классы
+          \[
+          x \in S, y \in T \colon
+          \]
+          Если $x \precsim y \Rightarrow S \leq T$ \\
+          Если $y \precsim x \Rightarrow T \leq S$
+        \item [$\Rightarrow)$] Даны $x, y$:
+          \[
+          x \in S, y \in T, \text{ б. о. о. } S \leq T
+          \]
+          \[
+          \Rightarrow \exists z \in S, t \in T \colon z \precsim t
+          \]
+          \[
+          x \sim z \precsim t \sim y \Rightarrow x \precsim y
+          \]
+          $S$ - класс эквив., $T$ - класс эквив.
+      \end{itemize}
+  \end{itemize}
+\end{proof}
+
+\subsubsection{Агрегирование предпорядков}
+$A$ - мн-во, $\precsim_1, \ldots, \precsim_n$ - препорядки $\Rightarrow$ \\
+$F: (\precsim_1, \precsim_2, \ldots, \precsim_n) \mapsto \precsim $
+
+\begin{definition}
+\textbf{Агрегирование по больш-ву}:
+\[
+  x \trianglelefteq y, \text{ если } \#\set{i | x \precsim_i y} \leq \#\set{i | y \precsim_i x}
+\]
+\end{definition}
+Парадокс Кондорсе:
+\[
+\begin{cases}
+  a \precsim_1 b \precsim_1 c \\
+  b \precsim_2 c \precsim_2 a \\
+  c \precsim_3 a \precsim_3 b
+\end{cases} \Rightarrow a \trianglelefteq b \trianglelefteq c \trianglelefteq a
+\]
+\begin{theorem}
+Любое полное отношение может быть реализовано как результат агрегирование предпорядков
+\end{theorem}
+\begin{proof}
+Эл-ты $x, y, a_1, a_2, \ldots, a_{n - 2}$. Также есть два предпорядка $\prec$ и $\prec'$, т. ч.:
+\[
+  x \prec y \prec a_1 \prec \ldots \prec a_{n - 2}
+\]
+\[
+  a_{n - 2} \prec' a_{n - 3} \ldots a_2 \prec a_1 \prec x \prec y 
+\]
+\end{proof}

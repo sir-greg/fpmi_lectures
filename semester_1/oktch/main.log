@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  3 OCT 2024 12:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  10 OCT 2024 12:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -716,42 +716,22 @@ LaTeX Font Warning: Font shape `T2A/stix/b/n' undefined
 
 
 
-[2] (./src/lecture_4.tex
+[2] (./src/lecture_5.tex
 
 LaTeX Font Warning: Font shape `T2A/stix/m/it' undefined
-(Font)              using `T2A/stix/m/n' instead on input line 2.
+(Font)              using `T2A/stix/m/n' instead on input line 14.
 
 
 
 [3]
-Overfull \hbox (2.38622pt too wide) in paragraph at lines 78--79
-\T2A/stix/m/it/12 Воспользуемся $[]$. Возь-мјм диа-го-наль-ную
- []
-
-./src/lecture_4.tex:85: Double superscript.
-<recently read> ^
-                 
-l.85 ...pha_{k}^{k}$, С‚Рѕ $d_{k}^{k} = d_{k}^{k}'
-                                                   = 1 - \alpha_{k}^{k}$, С‡...
-I treat `x^1^2' essentially like `x^1{}^2'.
-
-
 
 [4]
-
-[5]) (./src/lecture_5.tex
-
-[6]
-
-[7]
-
-[8]
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 115.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/stix/ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 )
 
-[9{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/stix/stix-ts1.enc}]
+[5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/stix/stix-ts1.enc}]
 Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
@@ -778,6 +758,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
 
 
+[6]) (./src/lecture_6.tex
+Overfull \hbox (22.25525pt too wide) in paragraph at lines 13--18
+\T2A/stix/m/it/12 Максимальный эл-т - $\LS1/stix/m/it/12 M [] [] \LS1/stix/m/n/12 ›З\LS1/stix/m/it/12 x [] [] x > M$ \T2A/stix/m/it/12 (или $\LS1/stix/m/n/12 Е\LS1/stix/m/it/12 x [] [] x \LS2/stixcal/m/n/12 f \LS1/stix/m/it/12 M \LS1/stix/m/n/12 в .\LS1/stix/m/it/12 x[]M\LS1/stix/m/n/12 /$\T2A/stix/m/it/12 ) 
+ []
+
+
+
+[7]
+Overfull \hbox (93.20885pt too wide) in paragraph at lines 68--69
+[]$\LS1/stix/m/it/12 a[] < a[]; \LS1/stix/m/n/12 Е\LS1/stix/m/it/12 k \LS2/stixcal/m/n/12 f \LS1/stix/m/it/12 n \LS1/stix/m/n/12 * 1$\T2A/stix/m/it/12 . То-гда отоб-ра-зим его в $\LS1/stix/m/it/12 b[] [] [] b[] < b[]; \LS1/stix/m/n/12 Е\LS1/stix/m/it/12 i[]$\T2A/stix/m/it/12 . 
+ []
+
+
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
+
+
+
+[9]
+Overfull \hbox (20.54718pt too wide) detected at line 158
+[] \LS1/stixsf/m/n/12 Щ \LS1/stix/m/it/12 y \LS1/stix/m/n/12 н \LS1/stix/m/it/12 z Л t \LS1/stix/m/n/12 н \LS1/stix/m/it/12 x \LS1/stixsf/m/n/12 Щ \LS1/stix/m/it/12 y Л x \LS1/stixsf/m/n/12 Щ \LS1/stix/m/it/12 x \LS1/stix/m/n/12 н \LS1/stix/m/it/12 y \LS1/stixsf/m/n/12 Щ \LS1/stix/m/it/12 S \LS1/stix/m/n/12 = \LS1/stix/m/it/12 T
+ []
+
+
+
 [10])
 
 [11] (./main.aux)
@@ -791,15 +804,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 10748 strings out of 473579
- 159305 string characters out of 5728235
- 1936957 words of memory out of 5000000
- 33441 multiletter control sequences out of 15000+600000
- 615958 words of font info for 157 fonts, out of 8000000 for 9000
+ 10727 strings out of 473579
+ 159007 string characters out of 5728235
+ 1937957 words of memory out of 5000000
+ 33423 multiletter control sequences out of 15000+600000
+ 608859 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,9n,82p,275b,332s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,9n,82p,385b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathbb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathex.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathscr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathtt.pfb>
-Output written on main.pdf (11 pages, 181002 bytes).
+Output written on main.pdf (11 pages, 181672 bytes).
 PDF statistics:
  107 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream

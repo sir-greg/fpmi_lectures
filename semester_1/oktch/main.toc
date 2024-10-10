@@ -1,6 +1,8 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 4}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Бинарные отношения}{5}{}%
-\contentsline {section}{\numberline {2}Лекция 5}{7}{}%
-\contentsline {subsection}{\numberline {2.1}Отношения эквивалентности ($\sim $)}{7}{}%
-\contentsline {subsection}{\numberline {2.2}Отношение порядка ($\leq $)}{9}{}%
+\contentsline {section}{\numberline {1}Лекция 5}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Отношения эквивалентности ($\sim $)}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Отношение порядка ($\leq $)}{5}{}%
+\contentsline {section}{\numberline {2}Лекция 6}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Плотный порядок. Изоморфизм}{7}{}%
+\contentsline {subsection}{\numberline {2.2}Предпорядки}{9}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Агрегирование предпорядков}{11}{}%
