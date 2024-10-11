@@ -1,0 +1,247 @@
+\section{Лекция 12}
+\begin{lemma}
+  \label{lm:bp}
+Если $f$ - непр-на на $[a, b]$ и $f(a)f(b) < 0$, то
+\[
+  \exists c \in [a, b] \colon f(c) = 0
+\]
+\end{lemma}
+\begin{proof}
+Можно считать, что $f(a) < 0 < f(b)$. В противном случае заменим $f$ на $(-f)$. \\
+Построим п-ть отр-ов $\set{[a_n, b_n]}$ по индукции:
+\[
+[a_1, b_1] \colon= [a, b] \text{ и если } [a_k, b_k] \text{ - построен, положим } 
+\]
+\[
+[a_{k + 1}, b_{k + 1}] = \begin{cases}
+[a_k, \frac{a_k + b_k}{2}], \text{ если } f(\frac{a_k + b_k}{2}) \geq 0 \\
+[\frac{a_k + b_k}{2}, b_k], \text{ если } f(\frac{a_k + b_k}{2}) < 0
+\end{cases}
+\]
+По индукции будет построена стягивающаяся п-ть вложенных отр-ов $\set{[a_n, b_n]}$, т. ч.:
+\[
+  f(a_n) \leq 0 \\
+  f(b_n) > 0
+\]
+По т. Кантора о вложенных отр-ах, сущ-ет $c \in \bigcap_{n = 1}^{\infty} [a_n, b_n]$, причём $a_n \rightarrow c$ и $b_n \rightarrow c$. По непр-ти в точке $c$, переходя в нер-ве к пределу:
+\[
+f(a_n) \leq 0 < f(b_n) \Rightarrow f(c) \leq 0 \leq f(c) \Rightarrow f(c) = 0
+\]
+\end{proof}
+\begin{definition}
+Будем говорить, что число $s$ лежит строго между числа $\alpha$ и $\beta$, если $max(a, b) > s > min(a, b)$.
+\end{definition}
+\begin{theorem}[Больцано-Коши о промежуточных значениях]
+  \label{th:bc_mid_values}
+Если ф-ция $f$ непр-на на $[a, b]$ и число $s$ лежит строго между $f(a)$ и $f(b)$, то:
+\[
+\exists c \in (a, b) \colon f(c) = s
+\]
+\end{theorem}
+\begin{proof}
+Рассм. $g = f - s$. Тогда $g$ непр-на на $[a, b]$. Сл-но, $g(a)g(b) < 0$. Тогда по лемме ($\ref{lm:bp}$)
+\[
+  \exists c \in (a, b) \colon g(c) = 0 \iff f(c) = s
+\]
+\end{proof}
+\begin{task}
+Приведите пример разрывной ф-ции $f: [0, 1] \rightarrow \R$, т. ч. $\forall [a, b] \subset [0, 1]$, $f$ принимает все значения между $f(a)$ и $f(b)$
+\end{task}
+Напомним, что $I \subset \R$ - промежуток $\iff$ 
+\[
+\forall x, y \in I ([x, y] \subset I)
+\]
+\begin{consequence}
+  \label{cs:cs_th7}
+Если ф-ция $f$ непр-на на промеж. $I$, то $f(I)$ - промежуток.
+\end{consequence}
+\begin{proof}
+Выберем $y_1, y_2 \in f(I)$ ($y_1 < y_2$) $\Rightarrow$
+\[
+  \exists x_1, x_2 \in I \colon (f(x_1) = y_1, f(x_2) = y_2)
+\]
+Если $y_1 < y < y_2$, то, по теореме ($\ref{th:bc_mid_values}$) $ \exists x \in (x_1, x_2) \colon f(x) = y$. Т. к. $I$ - промежуток, $x_1, x_2 \in I$, то $x \in I$, а значит $y \in f(I)$, т. е. $f(I)$ - промежуток.
+\end{proof}
+\begin{task}
+Док-те, что если $f$ - непр-на на $[a, b]$, то $f([a, b])$ - отрезок
+\end{task}
+\begin{lemma}
+  Пусть $f$ монотонна на пром-ке $I$. Если $f(I)$ - это пром-к, то $f$ - непр-на на $I$.
+\end{lemma}
+\begin{proof}
+~\newline
+
+Пусть $f$ нестрого возрастает на $I$. Если $f$ разрывна в точке $c \in I$. То $f(c - 0) \leq f(c) \leq f(c + 0)$ и хотя бы один из интервалов $(f(c - 0), f(c))$ или $(f(c), f(c + 0))$ непуст.\\
+
+(Если $c$ - концевая точка $I$, то сущ-ет только один из пределов, для кот. и проводим рассуждение.) \\
+Пусть $Y = (f(c), f(c + 0)) \neq \emptyset$. Тогда
+\[
+  \forall t \in I, t \leq c (f(t) \leq f(c))
+\]
+Также
+\[
+  \forall t \in I, t > c (f(t) > \underset{(c, \sup I)}{\inf} f(x) \geq f(c + 0))
+\]
+Сл-но, $f(I)$ не явл. пром-ом.
+\end{proof}
+\begin{theorem}[об обратной ф-ции]
+  \label{th:rev_func_th}
+  Пусть $f$ непр-на и строго монотонна на пром. $I$, тогда:
+  \begin{itemize}
+    \item [1) ] $f(I)$ - пром-ок
+    \item [2) ] $f: I \rightarrow f(I)$ - биекция
+    \item [3) ] $f^{-1}: f(I) \rightarrow I$ - непр-на и строго монотонна на $f(I)$
+\end{itemize}
+\end{theorem}
+\begin{proof}
+По следствию $(\ref{cs:cs_th7})$,  $Y = f(I)$ явл-ся пром-ом. Ф-ция $f$ инъективна в силу строгой монотонности. \\
+
+Сл-но, $f: I \rightarrow Y$ - биекция, и сущ-ют $f^{-1}: Y \rightarrow I$ \\
+
+Б. О. О. пусть $f$ строго возрастает на $I$ \\
+
+Пусть $y_1, y_2 \in Y, y_1 < y_2 \Rightarrow \exists x_1, x_2 \in I \colon f(x_1) = y_1, f(x_2) = y_2$ \\
+
+Если $x_1 \geq x_2 \Rightarrow f(x_1) \geq f(x_2)$ - в силу возрастания $f$ $\Rightarrow y_1 \geq y_2!!!$ \\
+
+Таким образом, если $y_1, y_2 \in Y (y_1 < y_2 \Rightarrow f^{-1}(y_1) < f^{-1}(y_2))$ - т. е. $f^{-1}$ строго возрастает на $Y$. \\
+
+$f^{-1}(Y) = I$ - пром-к $\Rightarrow f^{-1}$ - непр-на на $Y$
+\end{proof}
+\begin{example}
+Для $\forall x \geq 0, n \in \N \exists! y \geq 0 \colon y^{n} = x$. Пишут, что:
+\[
+  y = \sqrt[n]{x}
+\]
+Кроме того, $f(x)\colon [0; +\infty) \rightarrow \R, f(x) = \sqrt[n]{x}$ - непр-на и строго монотонна. 
+\end{example}
+\begin{proof}
+Рассм. ф-цию $g: [0; +\infty) \rightarrow \R, g(y) = y^{n}$ \\
+
+Ф-ция $g$ - непр-на и строго возрастает на $[0; +\infty)$, причём:
+\[
+  g(0) = 0, \lim_{y\to +\infty} g(y) = +\infty
+\]
+По теореме ($\ref{th:rev_func_th}$) $\exists f = g^{-1} \colon [0; +\infty) \rightarrow [0; +\infty)$:
+\[
+  f(x) = \sqrt[n]{x}
+\]
+\end{proof}
+\subsection{Счётные и несчётные мн-ва}
+\begin{definition}
+Мн-во $A$ наз-ся \underline{счётным} если $\exists f: \N \rightarrow A$ - биекция.
+\end{definition}
+\begin{note}
+\[
+A = \set{a_1, a_2, \ldots}
+\]
+\[
+  \forall i, j (i \neq j \Rightarrow a_i \neq a_j)
+\]
+\end{note}
+\begin{example}
+\[
+\Z \text{ - счётно}
+\]
+\[
+  \ldots \ldots -2, -1, 0, 1, 2, \ldots
+\]
+\[
+h(n) = \begin{cases}
+  \frac{n - 1}{2}, \text{ n - нечётно} \\
+  -\frac{n}{2}, \text{ n - чётно}
+\end{cases}
+\]
+\end{example}
+\begin{lemma}
+Всякое бесконечное мн-во $A \subset \N$ - счётно.
+\end{lemma}
+\begin{proof}
+Пусть $n_1 = min(A)$. Если $n_1\ldots n_k$ - определена, то по инд-ции определим:
+\[
+n_{k + 1} = min(A \backslash \set{n_1\ldots n_k})
+\]
+Поскольку при переходе к подмн-ву минимум не уменьшается и $n_{k+ 1} \not\in \set{n_1, \ldots n_k}$, то $n_{k + 1} > n_k$ \\
+
+Предположим, что $\exists m \in A$ и $m \neq n_k, \forall k$. Тогда по инд-ции
+\[
+  n_k < m, \forall k \Rightarrow m > n_m \geq m!!!
+\]
+Сл-но, $\sigma: \N \rightarrow A, \sigma(k) = n_k$ - строго возр. биекция.
+\end{proof}
+\begin{definition}
+Мн-во \underline{не более чем счётно}, если оно конечно или счётно.
+\end{definition}
+\begin{consequence}
+Всякое подмн-во счётного мн-ва не более чем счётно.
+\end{consequence}
+\begin{proof}
+Рассм. конечное подмн-ва $A$ счётного мн-ва $X$. $g: X \rightarrow \N$ - биекция $\Rightarrow$
+\[
+  g\colon A \rightarrow g(A) \text{ - биекция мн-ва $A$ и $g(A) \subset \N$}
+\]
+\end{proof}
+\begin{theorem}
+$\N \times \N$ - счётно
+\end{theorem}
+\begin{proof}
+Идея: Сделаем таблицу и рассматриваем её подиагонально, затем нумеруем эл-ты в диагоналях. \\
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+  $(k, m)$ & 1& 2& 3& \\
+ \hline
+    1       & $(1, 1)$ & $(1, 2)$ & $(1, 3)$ & \ldots \\
+ \hline
+    2       & $(2, 1)$ & $(2, 2)$ & $(2, 3)$ & \ldots \\
+ \hline
+    3       & $(3, 1)$ & $(3, 2)$ & $(3, 3)$ & \ldots \\
+ \hline
+    4       & $(4, 1)$ & $(4, 2)$ & $(4, 3)$ & \ldots \\
+ \hline
+\end{tabular}
+\end{center}
+\[
+p \in \N
+\]
+\[
+M_p = \set{(k, m) \colon 1 \leq m \leq p, k = p + 1 - m}
+\]
+\[
+g(p) = 1 + 2 + \ldots + p - 1 = \frac{p(p - 1)}{2}
+\]
+\[
+N_p = \set{n \colon g(p) + 1 \leq n \leq g(p) + p = g(p + 1)}
+\]
+\[
+f: \N \times \N \rightarrow \N
+\]
+\[
+f(k, m) = g(k + m - 1) + m
+\]
+\end{proof}
+\begin{consequence}
+Мн-во $\Q$ - счётно.
+\end{consequence}
+\begin{proof}
+Любое рац. число можно записать в виде несокр. дроби $\frac{p}{q}$, т. е.:
+\[
+f_1 \colon r \rightarrow (p, q) \text{ - инъекция}
+\]
+\[
+\Q \rightarrow \underset{(p, q)}{\Z \times \N} \rightarrow \N \times \N \rightarrow \N
+\]
+\[
+F: \Q \rightarrow \N, F = f_3 \circ f_2 \circ f_1 \text{ - инъекция}
+\]
+\[
+\Rightarrow F(\Q) \subset \N \Rightarrow \Q \text{ - не более чем счётно и беск $\Rightarrow$ счётно}
+\]
+\end{proof}
+\begin{theorem}
+$\R$ несчётно
+\end{theorem}
+\begin{proof}
+Пред-м, что $\R = \set{x_n | n \in \N}$ \\
+Рассм. $[a, b] \subset \R$. Разобъём $[a, b]$ на три отр-ка и обозн.  $[a_1, b_1]$ тот из ни, который не сод-т $x_1$. По инд-ции построим п-ть влож. отр-ов $\set{[a_k, b_k]}$, не содержащую $x_k, \forall k$. Однако сущ-ет точка, общая для всех отр-ов $\Rightarrow \forall n x \in [a, b], x_n \not\in x_n \Rightarrow \forall n \colon x_n \neq x$
+\end{proof}

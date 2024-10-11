@@ -1,0 +1,297 @@
+\section{Лекция 12}
+\subsection{Классификация КВП}
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ Эллиптический тип: $a \geq b > 0$ & Инварианты \\
+ \hline & \\
+ 1) Эллипс: $\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = 1$ & $\delta > 0, I \cdot \triangle < 0$ \\ & \\
+ \hline& \\
+  2) Мнимый эллипс: $\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = -1$ & $\delta > 0, I \cdot \triangle > 0$ \\& \\
+ \hline& \\
+ 3) Пара пересек. мнимых прямых: $\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = 0$ & $\delta > 0, \triangle = 0$ \\ & \\
+ \hline
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+  Гиперболический тип: $a > 0, b > 0$ & Инварианты \\
+ \hline& \\
+ 4) Гипербола: $\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1$ & $\delta < 0, \triangle \neq 0$  \\ & \\
+ \hline& \\
+ 5) Пара пересек. действ. прямых: $\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 0$ & $\delta < 0, \triangle = 0$ \\ & \\
+ \hline
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ Параболический тип: $p, a > 0$ & Инварианты \\
+ \hline& \\
+ 6) Парабола: $y^{2} = 2px$ & $\delta = 0, \triangle \neq 0$ \\& \\
+ \hline& \\
+ 7) Пара || действ. прямых: $y^{2} = a^{2}$ & $\delta = 0$ \\ &\\
+ 8) Пара || мнимых прямых: $y^{2} = -a^{2}$ &$\triangle = 0$ \\ &\\
+ 9) Пара совпад. действ. прямых: $y^{2} = 0$ &  \\ & \\
+ \hline
+\end{tabular}
+\end{center}
+Для различения 7-9):
+\[
+  K = \begin{vmatrix}A & D \\ D & F \end{vmatrix} + \begin{vmatrix}C & E \\ E & F \end{vmatrix}
+\]
+\subsection{Центр КВП}
+\begin{equation}
+  \label{eq:general_sol}
+\Gamma \colon P(x, y) = Ax^{2} + 2Bxy + Cy^{2} + 2Dx + 2Ey + F = 0
+\end{equation}
+\begin{definition}
+Точка $O(x_0, y_0)$ наз-ся центром кривой $\Gamma$ (а также центром её мн-на), если $\forall \overline{s} = (\alpha, \beta)$ вып-ся рав-во:
+\begin{equation}
+P(x_0 + \alpha, y_0 + \beta) = P(x_0 - \alpha, y_0 - \beta)
+\end{equation}
+\end{definition}
+\begin{statement}
+Пусть $O(x_0, y_0)$ - центр кривой $\Gamma$ (и мн-на $P$). Тогда т. $A$ принадлежит $\Gamma \iff A' \in \Gamma$ - точка, симметричная т. $A$ отн-но центра $O$
+\end{statement}
+\begin{proof}
+Пусть $A \underset{}{\longleftrightarrow} \begin{pmatrix}x_0 + \alpha \\ y_0 + \beta \end{pmatrix}, A'  \underset{}{\longleftrightarrow} \begin{pmatrix}x_0 - \alpha \\ y_0 - \beta \end{pmatrix}$:
+\[
+A \in \Gamma \iff P(x_0 + \alpha, y_0 + \beta) = 0 \iff P(x_0 - \alpha, y_0 - \beta) = 0 \iff A' \in \Gamma
+\]
+\end{proof}
+\begin{note}
+Центр $\Gamma$ не обязан лежать в $\Gamma$
+\end{note}
+\begin{statement}
+Точка $O(x_0, y_0)$ явл-ся центром $\Gamma$ (и $P(x, y)$) $\iff$:
+\begin{equation}
+  \label{seq:center_system}
+\begin{cases}
+Ax_0 + By_0 + D = 0 \\
+Bx_0 + Cy_0 + E = 0
+\end{cases}
+\end{equation}
+\end{statement}
+\begin{proof}
+\[
+P(x_0 + \alpha, y_0 + \beta) = A(x_0 + \alpha)^{2} + 2B(x_0 + \alpha)(y_0 + \beta) + C(y_0 + \beta)^{2} + 2D(x_0 + \alpha) + 2E(y_0 + \beta) + F
+\]
+\[
+P(x_0 - \alpha, y_0 - \beta) = A(x_0 - \alpha)^{2} + 2B(x_0 - \alpha)(y_0 - \beta) + C(y_0 - \beta)^{2} + 2D(x_0 - \alpha) + 2E(y_0 - \beta) + F
+\]
+\[
+P(x_0 + \alpha, y_0 + \beta) - P(x_0 - \alpha, y_0 - \beta) = 4\alpha(Ax_0 + By_0 + D) + 4\beta(Bx_0 + Cy_0 + E) = 0, \forall \alpha, \beta \in \R
+\]
+\[
+\iff \begin{cases}
+Ax_0 + By_0 + D = 0 \\
+Bx_0 + Cy_0 + E = 0
+\end{cases}
+\]
+\end{proof}
+\subsection{Центральные кривые}
+\begin{definition}
+КВП наз-ся \textbf{центральной}, если она имеет единственный центр. (Этот центр \textbf{не обязан} лежать на КВП)
+\end{definition}
+\begin{statement}
+\begin{itemize}
+  \item [a) ] Кривая $\Gamma$ явл. центральной $\iff$
+    \[
+      \delta = \begin{vmatrix}A & B \\ B & C \end{vmatrix} \neq 0
+    \]
+  \item [b) ] Св-во кривой $\Gamma$ быть центральной не зависит от выбора ПДСК.
+  \item [c) ] Пусть $\Gamma$ - центральная кривая, содерж. хотя бы одну точку. Тогда $\Gamma$ содержитединственный центр симметрии $O_0$, причём $O_0 = O \underset{}{\longleftrightarrow} \begin{pmatrix} x_0 \\ y_0 \end{pmatrix}$
+\end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] По т. Крамера, $O(x_0, y_0)$ - единственный центр $\iff$
+    \[
+      \delta = \begin{vmatrix}A & B \\ B & C \end{vmatrix} \neq 0
+    \]
+  \item [b) ] Т. к. $\delta$ - инвариант, то и св-во быть центральной также не меняется при замене ПДСК.
+  \item [c) ] Пусть $O(x_0, y_0)$ - центр и он единств. $\iff \delta \neq 0$, тогда можно сказать, что $\Gamma$ имеет эллиптический или гиперболический тип. Тогда:
+    \[
+    \frac{x^{2}}{a^{2}} \pm \frac{y^{2}}{b^{2}} - C = 0 \text{ - ур-е КВП}
+    \]
+    \[
+    \Rightarrow B = D = E = 0 \Rightarrow \begin{pmatrix}x_0 \\ y_0 \end{pmatrix} = \begin{pmatrix}0 \\ 0 \end{pmatrix} \text{ - решение системы $(\ref{seq:center_system})$}
+    \]
+    Тогда $\Gamma$ содержит единственный центр симметрии $O_0$, причём $O_0 \equiv O(x_0, y_0)$
+\end{itemize}
+\end{proof}
+\subsection{Св-ва КВП}
+\subsubsection{Эллипс}
+\[
+\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = 1
+\]
+\[
+a \text{ - большая полуось}
+\]
+\[
+b \text{ - малая полуось}
+\]
+\[
+c = \sqrt{a^{2} - b^{2}} < a \text{ - фокусное расстояние}
+\]
+\[
+F_1(c, 0), F_2(-c, 0) \text{ - фокусы}
+\]
+\[
+\varepsilon = \frac{c}{a} \text{ - эксцентриситет} 
+\]
+\[
+  0 \leq \varepsilon < 1
+\]
+При $a = b$, $\varepsilon = 0$ \\
+Директрисы:
+\[
+d_1 \colon x = \frac{a}{\varepsilon}
+\]
+\[
+  d_2 \colon x = -\frac{a}{\varepsilon}
+\]
+\begin{statement}
+$A \underset{}{\longleftrightarrow} \begin{pmatrix}x \\ y \end{pmatrix} \in $ эллипсу $\iff$
+\[
+\iff AF_1 = \left|a - \varepsilon x\right|  \iff AF_2 = \left|a + \varepsilon x\right|
+\]
+Т. к. $\left|x\right| \leq a$ (если $\begin{pmatrix}x \\ y \end{pmatrix} \in$ эллипсу), то модули раскрываются с положительным знаком.
+\end{statement}
+\begin{proof}
+\[
+0 = AF_1^{2} - (a - \varepsilon x)^{2} = (x - c)^{2} + y^{2} + a^{2} + 2a\varepsilon x - \varepsilon^{2}x^{2} = (1 - \varepsilon^{2}) x^{2} + 2x(-c + a\varepsilon) + c^{2} + y^{2} - a^{2} \Rightarrow
+\]
+\[
+\Rightarrow 1 - \varepsilon^{2} - 1 - \frac{c^{2}}{a^{2}} = \frac{a^{2} - c^{2}}{a^{2}} = \frac{b^{2}}{a^{2}} \Rightarrow
+\]
+\[
+= \frac{b^{2}}{a^{2}}x^{2} + y^{2} - b^{2} = b^{2}(\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} - 1) = 0
+\]
+\end{proof}
+\begin{theorem}
+\[
+\frac{AF_1}{p(d_1, A)} = \varepsilon = \frac{AF_2}{p(d_2, A)}
+\]
+\end{theorem}
+\begin{proof}
+\[
+\varepsilon p(A, d_1) = \varepsilon \left|x - \frac{a}{\varepsilon}\right| = \left|\varepsilon x - a\right| = AF_1
+\]
+\end{proof}
+\begin{theorem}[Характеристической св-во эллипса]
+  Точка $A\begin{pmatrix}x \\ y \end{pmatrix} \in $ эллипсу $\iff$
+  \[
+  AF_1 + AF_2 = 2a
+  \]
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] \underline{Необходимость}:
+    \[
+    AF_1 + AF_2 = a - \varepsilon x + a + \varepsilon x = 2a
+    \]
+  \item [b) ] \underline{Достаточность}:
+    Пусть: $AF_1 + AF_2 = 2a$, тогда $\left|x\right| \leq a$.
+    От прот., пусть $\left|x\right| > a \Rightarrow$
+    \[
+    AF_1 + AF_2 \geq \left|x - c\right| + \left|x + c\right| \geq \left|x - c + x + c\right| = \left|2x\right| > 2a \text{ - противоречие.}
+    \]
+    Если $\left|x\right| = a \Rightarrow$
+    \[
+    \begin{system_or}
+    x = a\\
+    x = -a
+    \end{system_or} \Rightarrow A\colon a - c + a + c = 2a \text{ для $-a$ аналогично. }
+    \]
+  (Остальное док-во...) 
+\end{itemize}
+\end{proof}
+\subsubsection{Гипербола}
+\[
+\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1
+\]
+$c = \sqrt{a^{2} + b^{2}}$ - фокусное расст. \\
+$F_1(c, 0), F_2(-c, 0)$ - фокусы \\
+
+$\varepsilon = \frac{c}{a} > 1$  \\
+$d_1 \colon x = \frac{a}{\varepsilon}$ \\
+$d_2 \colon x = -\frac{a}{\varepsilon}$
+\begin{statement}
+Точка $A(x \\ y) \in $ гиперболе $\iff$
+\[
+AF_1 = \left|a - \varepsilon x\right|, AF_2 = \left|\varepsilon x + a\right|
+\]
+\[
+\left|x\right| \geq a
+\]
+\[
+\varepsilon \left|x\right| > a
+\]
+\end{statement}
+\begin{proof}
+\[
+ 0 = AF_1^{2} - (\varepsilon x - a)^{2} = (x - c)^{2} + y^{2} - \varepsilon^{x}x^{2} + 2\varepsilon ax - a^{2} - a^{2} = (1 - \varepsilon^{2})x^{2} + 2x(-c + \varepsilon a) + c^{2} + y^{2} - a^{2} = 
+\]
+\[
+ = -\frac{b^{2}}{a^{2}}x^{2} + y^{2} + b^{2} = 0
+\]
+\end{proof}
+\begin{consequence}
+\[
+\frac{AF_1}{p(A, d_1)} = \varepsilon
+\]
+\end{consequence}
+\begin{proof}
+\[
+\varepsilon \cdot p(A, d_1) = \varepsilon\left|x - \frac{a}{\varepsilon}\right| = \left|\varepsilon x - a\right| = AF_1
+\]
+\end{proof}
+\begin{theorem}[Характеристическое св-во гиперб.]
+  \[
+  A\begin{pmatrix}x \\ y \end{pmatrix} \in \text{ гиперболы} \iff \left|AF_2 - AF_1\right| = 2a
+  \]
+
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item [a) ]
+Пусть $A \in $ правой ветви гиперболы:
+\[
+\left|AF_2 - AF_1\right| = AF_2 - AF_1 = \varepsilon x + a - (\varepsilon x - a) = 2a
+\]
+    \item [b) ] Пусть изв., что $AF_2 - AF_1 = 2a$, и покажем, что $A \in $ правой части.
+      \[
+      \sqrt{(x + c)^{2} + y^{2}} = \sqrt{(x - c)^{2} + y^{2}} + 2a
+      \]
+      \[
+        (x + c)^{2} + y^{2} = 4a^{2} + 4a\sqrt{(x - c)^{2} + y^{2}} + (x - c)^{2} + y^{2}
+      \]
+      \[
+      4xc - 4a^{2} = 4a\sqrt{(x - c)^{2} + y^{2}}
+      \]
+      \[
+      x^{2}c^{2} - 2a^{2}cx + a^{4} = a^{2}(x^{2} - 2cx + c^{2} + y^{2})
+      \]
+  \[
+    x^{2}(c^{2} - a^{2}) + a^{4} - a^{2}c^{2} - a^{2}y^{2} = 0
+  \]
+  \[
+    x^{2}b^{2} + a^{4} - a^{2}c^{2} - a^{2}y^{2} = 0
+  \]
+  \[
+    x^{2}b^{2} + a^{4} - a^{2}(a^{2} + b^{2}) - a^{2}y^{2} = 0
+  \]
+  \[
+    x^{2}b^{2} - a^{2}b^{2} - a^{2}y^{2} = 0
+  \]
+  \[
+   \frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} - 1 = 0 
+  \]
+  \[
+  0 = 0
+  \]
+  \end{itemize}
+\end{proof}
