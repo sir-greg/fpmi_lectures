@@ -6,3 +6,12 @@
 \contentsline {subsection}{\numberline {1.4}Св-ва КВП}{6}{}%
 \contentsline {subsubsection}{\numberline {1.4.1}Эллипс}{6}{}%
 \contentsline {subsubsection}{\numberline {1.4.2}Гипербола}{7}{}%
+\contentsline {section}{\numberline {2}Лекция 13}{9}{}%
+\contentsline {subsection}{\numberline {2.1}Св-ва гиперболы}{9}{}%
+\contentsline {subsection}{\numberline {2.2}Св-ва параболы}{10}{}%
+\contentsline {subsection}{\numberline {2.3}Диаметры невырожд. кривых}{11}{}%
+\contentsline {subsubsection}{\numberline {2.3.1}Гипербола}{11}{}%
+\contentsline {subsubsection}{\numberline {2.3.2}Эллипс}{12}{}%
+\contentsline {subsubsection}{\numberline {2.3.3}Параболы}{12}{}%
+\contentsline {subsection}{\numberline {2.4}Сопряжённые диаметры}{13}{}%
+\contentsline {subsection}{\numberline {2.5}Касательные к КВП}{13}{}%

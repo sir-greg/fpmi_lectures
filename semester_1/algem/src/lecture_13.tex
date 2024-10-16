@@ -1,0 +1,244 @@
+\section{Лекция 13}
+\subsection{Св-ва гиперболы}
+\[
+\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1
+\]
+\begin{definition}
+\textbf{Асимптотами} гиперболы наз-ся гиперболы:
+\[
+\frac{x}{a} \pm \frac{y}{b} = 0
+\]
+\end{definition}
+\begin{statement}
+Пусть $A \underset{}{\longleftrightarrow} \begin{pmatrix}x \\ y \end{pmatrix}$ - т. гиперболы, с указанным ур-ем. Тогда произведение расстояний от $A$ до асимптот = const
+\end{statement}
+\begin{proof}
+\[
+p(A, l_1)p(A, l_2) = \frac{\left|\frac{x}{a} - \frac{y}{b}\right|}{\sqrt{\frac{1}{a^{2}} + \frac{1}{b^{2}}}}\frac{\left|\frac{x}{a} + \frac{y}{b}\right|}{\sqrt{\frac{1}{a^{2}} + \frac{1}{b^{2}}}} = \frac{\left|\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}}\right|}{\frac{1}{a^{2}} + \frac{1}{b^{2}}} = \frac{1}{\frac{1}{a^{2}} + \frac{1}{b^{2}}} = \frac{a^{2}b^{2}}{a^{2} + b^{2}}
+\]
+\end{proof}
+\begin{consequence}
+Пусть т. $A$ движется по одной из ветвей гиперболы, т. ч.:
+\[
+p(A, O(0, 0)) \rightarrow +\infty
+\]
+Тогда верно \textbf{одно} из двух:
+\[
+\begin{system_or}
+p(A, l_1) \rightarrow 0 \\
+p(A, l_2) \rightarrow 0
+\end{system_or}
+\]
+\end{consequence}
+\begin{proof}
+Для правой верхней полуветви.
+\[
+x = a\ch t\\
+y = b\sh t
+\]
+\[
+\Rightarrow \frac{a^{2}\ch^{2}t}{a^{2}} - \frac{b^{2}\sh^{2}t}{b^{2}} = 1
+\]
+\[
+\Rightarrow \ch^{2}t - \sh^{2}t = 1 \text{ основное гиперболическое тождество}
+\]
+\[
+\Rightarrow A(t) \in \text{ гиперболе}
+\]
+\[
+p(A, l_2) = \frac{\left|\frac{x(t)}{a} + \frac{y(t)}{b}\right|}{\sqrt{\frac{1}{a^{2}} + \frac{1}{b^{2}}}} \rightarrow +\infty
+\]
+\[
+p(A, l_1) = \frac{const}{p(A, l_2)} \Rightarrow p(A, l_1) \rightarrow 0 
+\]
+\end{proof}
+\subsection{Св-ва параболы}
+Канон. ур-е: \[
+  y^{2} = 2px, p > 0
+\]
+\[
+F\left(\frac{p}{2}, 0\right)
+\]
+\[
+d \colon x = -\frac{p}{2}
+\]
+\begin{statement}
+Т. $A \underset{}{\longleftrightarrow} \begin{pmatrix}x \\ y \end{pmatrix}$ принадлежит параболе $y^{2} = 2px \iff$
+\[
+AF = \left|x + \frac{p}{2}\right|
+\]
+\end{statement}
+\begin{proof}
+\[
+AF^{2} - \left(x + \frac{p}{2}\right)^{2} = \left(x - \frac{p}{2}\right)^{2} + y^{2} - \left(x + \frac{p}{2}\right)^{2} = -2xp + y^{2} = -2xp + 2xp = 0
+\]
+\end{proof}
+\begin{consequence}
+Парабола - это ГМТ $A$, т. ч.:
+\[
+  \frac{p(A, F)}{p(A, d)} = 1
+\]
+\end{consequence}
+\begin{proof}
+\[
+p(A, d) = \left|x + \frac{p}{2}\right| = AF \Rightarrow \frac{AF}{AF} = 1
+\]
+\end{proof}
+\begin{definition}
+Будем считать, что $\varepsilon_{\text{пар.}} = 1$
+\end{definition}
+
+\begin{theorem}[Об эксцентриситете]
+Для любой невырожденной КВП ($\triangle \neq 0$):
+\[
+  \frac{p(A, F)}{p(A, d)} = \varepsilon
+\]
+\end{theorem}
+\begin{statement}
+Две КВП подобны тогда и только тогда, когда они имеют равный эксцентриситет.
+\end{statement}
+
+\subsection{Диаметры невырожд. кривых}
+\subsubsection{Гипербола}
+\[
+\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1
+\]
+Пусть $A \underset{}{\longleftrightarrow} \begin{pmatrix}x_0 \\ y_0 \end{pmatrix}$ - середина хорды гиперболы, имеющей напр. вектор $\overline{v} = \begin{pmatrix}\alpha \\ \beta \end{pmatrix}$:
+\[
+\begin{cases}
+x = x_0 + \alpha t\\
+y = y_0 + \beta t \\
+\end{cases}
+\]
+\[
+\left(\frac{\alpha^{2}}{a^{2}} - \frac{\beta^{2}}{b^{2}}\right)t^{2} + 2\left(\frac{x_0\alpha}{a} - \frac{y_0\beta}{b^{2}}\right)t + \frac{x_0^{2}}{a^{2}} - \frac{y_0^{2}}{b^{2}} - 1 = 0
+\]
+Т. к. $A$ - середина хорды, то член при $t$ равен $0$ - необх. и дост. условие:
+\[
+\Rightarrow \frac{\alpha}{a^{2}}x - \frac{\beta}{b^{2}}y = 0 \text{ - диаметр гиперболы, сопряж. с $\overline{v}$}
+\]
+\subsubsection{Эллипс}
+Аналогично гиперболе, получаем:
+\[
+\frac{\alpha}{a^{2}}x + \frac{\beta}{b^{2}}y = 0 \text{ - диаметр эллипса, сопряж с $\overline{v} \underset{}{\longleftrightarrow} \begin{pmatrix}\alpha \\ \beta \end{pmatrix}$}
+\]
+\subsubsection{Параболы}
+\[
+y^{2} = 2px
+\]
+\[
+A \underset{}{\longleftrightarrow} \begin{pmatrix}x_0 \\ y_0 \end{pmatrix} \text{ - середина хорды, с напр. вектором } \begin{pmatrix}\alpha \\ \beta \end{pmatrix}
+\]
+\[
+  (y_0 + \beta t)^{2} = 2p(x_0 + \alpha t)
+\]
+\[
+  y_0^{2} + 2y_0\beta t + \beta^{2}t^{2} - 2px_0 - 2p\alpha t = 0
+\]
+\[
+  \beta^{2}t^{2} + t(2y_0\beta - 2p\alpha) + y_0^{2} - 2px_0 = 0
+\]
+\[
+\Rightarrow y = p\frac{\alpha}{\beta} \text{ - ур-е диаметра, сопряж с вектором $\begin{pmatrix}\alpha \\ \beta \end{pmatrix}$}
+\]
+Вывод: любой диаметр параболы || её оси.
+\begin{theorem}
+Мн-во всех середин хорд данного напр-я $\overline{v}$ невырожд. КВП всегда лежит на одной прямой, кот. наз-ся диаметром, сопряж. напр. $\overline{v}$
+\end{theorem}
+\begin{note}
+У эллипса и гиперболы диаметр проходит через центр кривой, а у параболы диаметр параллелен её оси.
+\end{note}
+\subsection{Сопряжённые диаметры}
+\begin{theorem}
+Пусть $\Gamma$ - эллипс или гипербола, $\overline{v} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}$ - задаёт напр. на пл-ти. Пусть $d$ - диаметр, сопряж. $\overline{v}$. Пусть также $\overline{w}$ - напр. вектор диаметра $d$. Пусть теперь $d'$ - диаметр, сопряжённый $\overline{w}$. Тогда $d' || \overline{v}$
+\end{theorem}
+\begin{proof}[Для гиперболы]
+  Пусть $AB$ - хорда с напр. $\overline{v}$. 
+  \[
+  C = Sym_O(A)
+  \]
+  \[
+  D = Sym_O(B)
+  \]
+  \[
+  ABCD \text{ - пар-м}
+  \]
+  $d$ проходит через середины $AB$ и $CD$ $\Rightarrow$ $d'$ проходит через сер-ны $AD$ и $BC$. Тогда, по постр., $d' || AB || CD || \overline{v}$.
+
+\end{proof}
+\begin{definition}
+Построенные пары диаметров ($d$ и $d'$) наз-ся взаимно сопряжёнными. (Т. е. каждый из них делит пополам хорды, параллельные другому диаметру)
+\end{definition}
+\subsection{Касательные к КВП}
+\begin{equation}
+F(x, y) = Ax^{2} + 2Bxy + Cy^{2} + 2Dx + 2Ey + F = 0
+\end{equation}
+\begin{definition}
+Особая точка КВП, это центр, принадлежащий кривой.
+\begin{itemize}
+  \item [a) ] Точка пересечения пары пересекающихся действ. прямых - особая.
+  \item [b) ] Точка пересечения пары пересек. мнимых прямых - особая.
+  \item [c) ] Каждая точка пары совпавших действ. прямых - особая.
+\end{itemize}
+Считается, что в особой точке, касат. к кривой не определена.
+\end{definition}
+Исключая из рассм. особые точки и неособые точки, лежащие на прямой, входящей в состав $\Gamma$, мы получаем случаи эллипса, гиперболы и параболы.
+\begin{definition}
+Касательная к $\Gamma$ в т. $M \underset{}{\longleftrightarrow} \begin{pmatrix}x_0 \\ y_0 \end{pmatrix}$ наз-ся предельное положение секущей, когда длина хорды секущей стремится к 0.
+\end{definition}
+\[
+F_1(x, y) = Ax + By + C = 0
+\]
+\[
+F_2(x, y) = Bx + Cy + D = 0
+\]
+Секущ. через т. $M$:
+\[
+l\colon \begin{cases}
+x = x_0 + \alpha t \\
+y = y_0 + \beta t
+\end{cases}
+\]
+\[
+F(x(t), y(t)) = A(x_0 + \alpha t)^{2} + 2B(x_0 + \alpha t)(y_0 + \beta t) + C(y_0 + \beta t)^{2} + 2D(x_0 + \beta t) + 2E(y_0 + \beta t) + F = 0
+\]
+\[
+Pt^{2} + 2Qt + R = 0
+\]
+\[
+  P = A\alpha^{2} + 2B\alpha\beta + C\beta^{2} = \begin{pmatrix}\alpha & \beta \end{pmatrix}\begin{pmatrix}A & B \\ B & C \end{pmatrix}\begin{pmatrix}\alpha \\ \beta \end{pmatrix}
+\]
+\[
+  Q = (Ax_0 + By_0 + D)\alpha + (Bx_0 + Cy_0 + E)\beta
+\]
+\[
+  R = F(x_0, y_0) = 0, \text{ т. к. } M\begin{pmatrix}x_0 \\ y_0 \end{pmatrix} \in \Gamma
+\]
+\begin{equation}
+  \label{eq:eq}
+  t(Pt + 2Q) = 0
+\end{equation}
+Если $P = 0 \iff \begin{pmatrix}\alpha & \beta \end{pmatrix}\begin{pmatrix}A & B \\ B & C \end{pmatrix}\begin{pmatrix}\alpha \\ \beta \end{pmatrix} = 0$, прямая $l$, проходя через т. $M \in \Gamma$, далее нигде с $\Gamma$ не пересекается.
+\begin{definition}
+Напр. $\begin{pmatrix}\alpha \\ \beta \end{pmatrix}$ наз-ся асимптотическим направлением:
+\[
+\begin{bmatrix}\begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \begin{pmatrix}a \\ b \end{pmatrix} \text{ или } \begin{pmatrix}a \\ -b \end{pmatrix}\end{bmatrix}
+\]
+\end{definition}
+\begin{statement}
+Если:
+\begin{itemize}
+  \item $\delta < 0$, то $\Gamma$ имеет 2 асимп. напр-я.
+  \item $\delta = 0$, то $\Gamma$ имеет 1 асимп. напр-я.
+  \item $\delta > 0$, то нет асимп. напр-я.
+\end{itemize}
+\end{statement}
+Пусть $\begin{pmatrix}\alpha \\ \beta \end{pmatrix}$ - не асимп. напр-е: \\
+Ур-ие $(\ref{eq:eq})$ имеет 2 корня:
+\[
+\begin{system_or}
+t_0 = 0 \\
+t_1
+\end{system_or}
+\]
+Привидение  полож. секущ. т. и т. т., .........
