@@ -1,0 +1,216 @@
+\section{Лекция 13}
+\subsubsection{Долг прошлой жизни}
+\begin{theorem}[О разрывах монот. ф-ции]
+  \label{th:monot_div}
+  Пусть $a, b \in \overline{\R}, a < b$. Если $f$ монотонна на $(a, b)$, то $f$ на $(a, b)$ может иметь разрывы только I рода, причём их не более чем счётно.
+\end{theorem}
+\begin{proof}
+Пусть $f$ нестрого возр. на $(a, b)$. Тогда по следствию из т. о пределах монотонной ф-ции, для всякой т. $c \in (a, b)$ $\exists$ конечные $f(c - 0), f(c + 0)$, причём:
+\[
+  f(c - 0) \leq f(c) \leq f(c + 0)
+\]
+Таким образом иметь на $(a, b)$ разрывы только I рода. \\
+
+Пусть $c, d \in (a, b), c < d$. Тогда для $\alpha \in (c, d)$. Рассм.:
+\[
+  f(c + 0) = \underset{x \in (c, b)}{\inf} f(x) \leq f(\alpha) \leq \underset{x \in (a, d)}{\sup} f(x) = f(d - 0)
+\]
+\end{proof}
+Поэтому если $c, d$ - точки разрыва ф-ции $f$, то интервалы $(f(c - 0), f(c + 0))$ и $(f(d - 0), f(d + 0))$ - невырожд. и не пересекаются. Поставим в соотв. каждому такому интервалу точку $\in \Q$, содержащееся в нём. Тем самым установим биекцию между мн-вом таких интервалов и подмножеством $\Q$. Сл-но таких интервалов не более чем счётно.
+
+\subsection{Равномерная непр-ть}
+Пусть $E \subset \R$ и $f: E \rightarrow \R$ \\
+Напомним, что $f$ непр-на на $E$, если:
+\[
+\forall x' \in E, \forall \varepsilon > 0, \exists \delta > 0, \forall x' \in E (\left|x - x'\right| < \delta \Rightarrow \left|f(x) - f(x')\right| < \varepsilon)
+\]
+\begin{definition}
+Ф-ция $f$ наз-ся \textbf{равномерно непрерывной} (на $E$), если:
+\[
+\forall \varepsilon > 0, \exists \delta > 0, \forall x, x' \in E (\left|x - x'\right| < \delta \Rightarrow \left|f(x) - f(x')\right| < \varepsilon)
+\]
+\end{definition}
+\begin{note}
+Если $f$ р. н. (равномерно непр-на) на $E$, то $f$ непр-на на $E$
+\end{note}
+\begin{task}
+Если $f$ и $g$ р. н. на $E$ и огр-ны, то $fg$ - р. н. на $E$
+\end{task}
+\begin{definition}
+Ф-ция $f: E \rightarrow \R$ наз-ся \textbf{липшицевой}, если:
+\[
+\exists C > 0, \forall x, x' \in E (\left|f(x) - f(x')\right| \leq C\left|x - x'\right|)
+\]
+\end{definition}
+\begin{note}
+Всякая липшицева ф-ция явл-ся р. н. (Дост-но положить $\delta = \frac{\varepsilon}{C}$)
+\end{note}
+\begin{example}
+\[
+f: \R \rightarrow \R, f(x) = \left|x\right| \text{ - липшицева}
+\]
+\end{example}
+\begin{proof}
+\[
+\left||x| - |x'|\right| \leq |x - x'|, \forall x \in x' \in \R
+\]
+\end{proof}
+\begin{example}
+\[
+f: \R \rightarrow \R, f(x) = x^{2} \text{ - непр-на, \textbf{но не р. н.}}
+\]
+\end{example}
+\begin{note}
+  $f$ не р. н. $\iff$
+  \[
+  \exists \varepsilon > 0, \forall \delta > 0, \exists x, x' \in E (\left|x - x'\right| < \delta \land \left|f(x) - f(x')\right| \geq \varepsilon)
+  \]
+\end{note}
+\begin{proof}
+Для произвольного $\delta > 0$ положим, $x' = \frac{1}{\delta}, x = \frac{1}{d} + \frac{\delta}{2}$. Тогда:
+\[
+\left|x - x'\right| = \frac{\delta}{2} < \delta \land \left|f(x) - f(x')\right| = \left(\frac{1}{d} + \frac{\delta}{2}\right)^{2} - \frac{1}{\delta^{2}} = 1 + \frac{\delta^{2}}{4} > 1
+\]
+Сл-но, $f$ не р. н.
+\end{proof}
+\begin{theorem}[Кантора]
+  Если $f$ непр-на на $[a, b]$, то $f$ - р. н. на $[a, b]$
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [I)] Предположим, что $f$ не явл-ся р. н. Тогда полагая $\delta = \frac{1}{n}, n \in \N$, получаем $x_n, x_n' \in [a, b]$, т. ч.
+    \[
+      \left|x_n - x_n'\right| < \frac{1}{n} \land \left|f(x_n) - f(x_n')\right| \geq \varepsilon
+    \]
+    По т. Б-В $\set{x_n}$ имеет сх-ся подп-ть $\set{x_{n_k}}, x_{n_k} \rightarrow x_0 \in [a, b]$. Имеем
+    \[
+      x_{n_k} - \frac{1}{n_k} < x_{n_k}' < x_{n_k} + \frac{1}{n_k} \Rightarrow x_{n_k}' \rightarrow x_0 \text{ По т. о зажатой п-ти}
+    \]
+    Поэтому, в силу непр-ти, $f$ в $x_0$:
+    \[
+    \lim_{k\to\infty} f(x_{n_k}) = \lim_{k\to \infty} f(x_{n_k}') = f(x_0)
+    \]
+    Что противоречит $\left|f(x_{n_k}) - f(x_{n_k}')\right| \geq \varepsilon > 0$
+\end{itemize}
+\end{proof}
+\begin{task}
+Пусть $f: E \rightarrow \R$ р. н. на $E$. Покажите, что
+\[
+  \exists ! F: closure(E) \rightarrow \R \text{ - непр-на на замыкании и } F|_{E} = f
+\]
+\end{task}
+
+\subsection{Показательная и логарифмическая ф-ции}
+\begin{definition}
+Ф-ция $\exp \colon \R \rightarrow \R, \exp = \lim_{n\to\infty} \left(1 + \frac{x}{n}\right)^{n}$ наз-ся \underline{экспонентой}.
+\end{definition}
+\begin{note}
+Сх-ть $\left(1 + \frac{x}{n}\right)^{n}$ устанавливалась ранее для всях $x \in \R$
+\end{note}
+\begin{theorem}
+Для любых $x, y \in \R$ справедливо:
+\[
+\exp(x + y) = \exp(x)\exp(y)
+\]
+\end{theorem}
+\begin{proof}
+Введём об-е $a_n(x) = \left(1 + \frac{x}{n}\right)^{n}$. Оценим: 
+\[
+a_n(x)a_n(y) - a_n(x + y)
+\]
+Тогда, в силу тождества:
+\[
+b^{n} - a^{n} = (b - a)(b^{n - 1} + b^{n - 2}a + b^{n - 3}a^{2} + \ldots + ba^{n - 2} + a^{n - 1})
+\]
+\[
+  a_n(x)a_n(y) - a_n(x + y) = \left(1 + \frac{x + y}{n} + \frac{xy}{n^{2}}\right)^{n} - \left(1 + \frac{x + y}{n}\right)^{n} = 
+\]
+\[
+= \frac{xy}{n^{2}}Q(x, y), Q(x, y) = \sum_{k = 0}^{n - 1} b^{n - 1 - k}a^{k}
+\]
+Где:
+\[
+b = \left(1 + \frac{x}{n}\right)\left(1 + \frac{y}{n}\right), a = \left(1 + \frac{x + y}{n}\right)
+\]
+П-ть $\set{a_n(\left|x\right|)}$, нестрого возрастает, начиная с некот. $n_0$ (см. док-во сх-ти):
+\[
+  \left|\left(1 + \frac{x}{n}\right)^{p}\right| \leq \left(1 + \frac{|x|}{n}\right)^{p} \leq \left(1 + \frac{|x|}{n}\right)^{n} \leq \exp(\left|x\right|), p = 1, \ldots, n
+\]
+Сл-но, каждое слагаемое в $Q(x, y)$ оценивается по модулю $C = \exp\left|x + y\right|\exp\left|x\right|\exp\left|y\right|$. Тогда получаем:
+\[
+ \left|a_n(x)a_n(y) - a_n(x + y)\right| \leq \frac{\left|x\right|\left|y\right|C}{n}
+\]
+Переходя к пределу, получаем, что:
+\[
+\left|\exp(x)\exp(y) - \exp(x + y)\right| \leq 0
+\]
+Ч. Т. Д.
+\end{proof}
+\begin{consequence}
+\[
+\exp x > 0 \text{ и } \exp(-x) = \frac{1}{\exp(x)}, \forall x \in \R
+\]
+\end{consequence}
+\begin{proof}
+  \[
+    \exp(x) = \exp(\frac{x}{2} + \frac{x}{2}) = \exp ^{2}(\frac{x}{2})
+  \]
+  \[
+  \exp(x)\exp(-x) = 1
+  \]
+\end{proof}
+\begin{lemma}
+\begin{itemize}
+  \item [a) ] \[
+  \exp(x) \geq 1 + x, \forall x \in \R
+  \]
+\item [b) ]\[
+  \exp(x) \leq \frac{1}{1 - x}, \forall x < 1
+\]
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Зафикс. $N \in \N$, т. ч. $\frac{x}{N} \geq -1$. Тогда по нер-ву Бернулли:
+\[
+\forall n \geq N \colon \left(1 + \frac{x}{n}\right)^{n} \geq 1 + x
+\]
+Пред. переходом получаем:
+\[
+ \exp(x) \geq 1 + x \text{ - пункт a)}
+\]
+По нер-ву п. а):
+\[
+\exp(-x) \geq 1 - x > 0, \text{ при $x < 1$}
+\]
+\[
+\exp(x) = \frac{1}{\exp(-x)} \leq \frac{1}{1 - x}
+\]
+\end{proof}
+\begin{theorem}
+Ф-ция $\exp$ непр-на, строго возр. и отображает $\R$ на $(0, +\infty)$
+\end{theorem}
+\begin{proof}
+По нер-ву из предыдущей леммы, при $x < 1$ имеем:
+\[
+1 + x \leq \exp(x) \leq \frac{1}{1 - x}
+\]
+Откуда при $x \rightarrow 0$, $\exp(x) \rightarrow 1$. Тогда для $\forall a \in \R$:
+\[
+\lim_{x\to a} \exp(x) = \begin{bmatrix} t + a = x \\ t = x - a \\ t \rightarrow 0\end{bmatrix} = \lim_{t\to 0} \exp(t + a) = \lim_{t\to 0} \exp(a) \exp(t) = \exp(a)
+\]
+$\Rightarrow$ ф-ция непр-на на $\R$ \\
+
+Пусть $x, y \in \R, x < y$. Тогда:
+\[
+\exp(y) - \exp(x) = \exp(x)(\exp(y - x) - 1) \geq (y - x)\exp(x) > 0
+\]
+Т. к.
+\[
+  \lim_{x\to+\infty} \exp(x) = +\infty \Rightarrow \underset{\R}{\sup} \exp = +\infty
+\]
+\[
+\lim_{x\to-\infty} \exp(x) = \lim_{x\to +\infty} \frac{1}{\exp(x)} = 0 \Rightarrow \underset{\R}{\inf}\exp = 0
+\]
+Сл-но, $\exp(\R) = (0, +\infty)$
+\end{proof}
+

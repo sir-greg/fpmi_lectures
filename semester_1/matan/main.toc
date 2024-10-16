@@ -1,19 +1,7 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 4}{3}{}%
-\contentsline {subsection}{\numberline {1.1}\textsection 2. Предел последовательности}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Определение предела}{3}{}%
-\contentsline {section}{\numberline {2}Лекция 5}{7}{}%
-\contentsline {subsection}{\numberline {2.1}Монотонные п-ти}{8}{}%
-\contentsline {subsection}{\numberline {2.2}Последовательность вложенных отрезков}{10}{}%
-\contentsline {section}{\numberline {3}Лекция 6}{11}{}%
-\contentsline {subsection}{\numberline {3.1}Бесконечные пределы}{11}{}%
-\contentsline {subsection}{\numberline {3.2}Дополнения к ранним теоремам}{12}{}%
-\contentsline {subsection}{\numberline {3.3}Подпоследовательности}{13}{}%
-\contentsline {section}{\numberline {4}Лекция 7}{15}{}%
-\contentsline {subsection}{\numberline {4.1}Критерий Коши}{15}{}%
-\contentsline {subsection}{\numberline {4.2}Частичные пределы}{17}{}%
-\contentsline {section}{\numberline {5}Лекция 11}{20}{}%
-\contentsline {subsection}{\numberline {5.1}Непрерывность ф-ции в точке}{20}{}%
-\contentsline {subsection}{\numberline {5.2}Непрерывность ф-ции на мн-ве}{24}{}%
-\contentsline {section}{\numberline {6}Лекция 12}{26}{}%
-\contentsline {subsection}{\numberline {6.1}Счётные и несчётные мн-ва}{29}{}%
+\contentsline {section}{\numberline {1}Лекция 12}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Счётные и несчётные мн-ва}{6}{}%
+\contentsline {section}{\numberline {2}Лекция 13}{8}{}%
+\contentsline {subsubsection}{\numberline {2.0.1}Долг прошлой жизни}{8}{}%
+\contentsline {subsection}{\numberline {2.1}Равномерная непр-ть}{8}{}%
+\contentsline {subsection}{\numberline {2.2}Показательная и логарифмическая ф-ции}{10}{}%
