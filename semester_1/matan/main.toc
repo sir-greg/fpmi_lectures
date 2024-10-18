@@ -1,7 +1,8 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 12}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Счётные и несчётные мн-ва}{6}{}%
-\contentsline {section}{\numberline {2}Лекция 13}{8}{}%
-\contentsline {subsubsection}{\numberline {2.0.1}Долг прошлой жизни}{8}{}%
-\contentsline {subsection}{\numberline {2.1}Равномерная непр-ть}{8}{}%
-\contentsline {subsection}{\numberline {2.2}Показательная и логарифмическая ф-ции}{10}{}%
+\contentsline {section}{\numberline {1}Лекция 13}{3}{}%
+\contentsline {subsubsection}{\numberline {1.0.1}Долг прошлой жизни}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Равномерная непр-ть}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Показательная и логарифмическая ф-ции}{5}{}%
+\contentsline {section}{\numberline {2}Лекция 14}{8}{}%
+\contentsline {subsubsection}{\numberline {2.0.1}Ликбез по тригономе}{10}{}%
+\contentsline {subsubsection}{\numberline {2.0.2}Сравнение ф-ций}{12}{}%

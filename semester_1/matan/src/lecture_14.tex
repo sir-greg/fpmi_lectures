@@ -1,0 +1,223 @@
+\section{Лекция 14}
+\begin{definition}
+Натуральным логарифмом наз-ся ф-ция $\ln \colon (0, +\infty)$, обратная к $\exp$
+\end{definition}
+\begin{note}
+По т. об обратной ф-ции и св-в экспоненты, можно получить св-ва нат. логарифма:
+\begin{itemize}
+  \item $\ln$ непр-на на обл-ти определения.
+  \item $\ln$ строго возр.
+  \item $\ln$ отображет $(0, +\infty)$ на $\R$, при этом, если $x_1, x_2 > 0 \Rightarrow$
+    \[
+    \ln(x_1 \cdot x_2) = \ln (x_1) + \ln (x_2)
+    \]
+\end{itemize}
+\end{note}
+\begin{definition}
+Пусть $a > 0, a \neq 1$. \underline{Показательной ф-цией с основанием $a$} наз-ся ф-ция: $x \mapsto a^{x} = \exp(x\ln a), x \in \R$
+\end{definition}
+\begin{note}
+Показательная ф-ция непр-на, строго монотонна (при $a > 1$ строго возрастает, иначе - строго убывает), а также отображает $\R$ на $(0, +\infty)$
+\end{note}
+\begin{note}
+Пусть $n \in \N, n > 1$. Тогда:
+\[
+  \left(a^{\frac{1}{n}}\right)^{n} = \exp(\frac{1}{n}\ln a) \cdot \exp(\frac{1}{n}\ln a) = \exp(\ln a) = a
+\]
+Сл-но, $a^{\frac{1}{n}} = \sqrt[n]{a}$
+\end{note}
+\begin{definition}
+Пусть $a > 0, a \neq 1$. \underline{Логарифмической ф-цией с основанием $a$} наз-ся ф-ция $\log_a \colon (0; +\infty) \rightarrow \R$. Обратная к показательной ф-ции $x \mapsto a^{x}, x \in \R$
+\end{definition}
+\begin{note}
+Логарифмическая ф-ция непр-на, строго монотонна и отображает $(0, +\infty)$ на $\R$. Кроме того:
+\[
+x = a^{y} \iff x = \exp(y\ln a) \iff \ln(x) = y\ln a \Rightarrow \log_a(x) = \frac{\ln x}{\ln a}
+\]
+\end{note}
+\begin{definition}
+Пусть $a \in \R$. \underline{Степенной ф-цией с показателем $\alpha$} наз-ся ф-ция $x \mapsto x^{\alpha}, x \in E$, где:
+\begin{itemize}
+  \item [1) ] $\alpha \in \N \cup \set{0} \Rightarrow E = \R$, при этом $x^{0} = 1, x^{\alpha} = \underset{\alpha \text{ раз}}{x \cdot \ldots \cdot x}$
+  \item [2) ] $\alpha \in -\N \Rightarrow E = \R \backslash \set{0}$, при этом $x^{\alpha} = \frac{1}{x^{-\alpha}}$
+  \item [3) ] $\alpha \in \R \backslash \Z \Rightarrow E = (0, +\infty)$, при этом $x^{\alpha} = \exp(\alpha\ln x)$
+\end{itemize}
+\end{definition}
+\begin{note}
+Если в последнем случае $\alpha > 0$, то полагаем $0^{\alpha} = 0$ (т. е. $0$ включаем в $E$), это согласуется с тем, что:
+\[
+  \lim_{x \to +0} \exp(\alpha \ln x) = 0
+\]
+\end{note}
+\begin{note}
+Из св-в $\exp$ и $\ln$ получаем, что степенная ф-ция непр-на на $E$, на $(0, +\infty)$ строго возрастает на  при $\alpha > 0$ и строго убывает при $\alpha < 0$
+\end{note}
+\begin{lemma}[Замечательные пределы]
+\[
+\lim_{x\to 0} \frac{e^{x} - 1}{x} = 1
+\]
+Кроме того:
+\[
+\lim_{x\to 0} \frac{\ln(x + 1)}{x} = 1
+\]
+\[
+\lim_{x\to 0} (1 + x)^{\frac{1}{x}} = e
+\]
+\end{lemma}
+\begin{proof}
+По пред. лемме при $x < 1$:
+\[
+1 + x \leq e^{x} \leq \frac{1}{1 - x} \iff x \leq e^{x} - 1 \leq \frac{x}{1 - x} \iff
+\]
+\[
+  \begin{cases}
+1 \leq \frac{e^{x} - 1}{x} \leq \frac{1}{1 - x}, x > 0 \\
+\frac{1}{1 - x} \leq \frac{e^{x} - 1}{x} \leq 1, x < 0
+  \end{cases} \Rightarrow \lim_{x\to 0} \frac{e^{x} - 1}{x} = 1
+\]
+Ф-ция $g(y) = \begin{cases}
+\frac{y}{e^{y} - 1}, y \neq 0 \\
+1, y = 0
+\end{cases}$ - непр. в 0. Также $f(x) = \ln(x + 1)$ непр-на в 0. Тогда композиция $g \circ f$ непр-на в 0
+\[
+h(x) = g \circ f(x) \Rightarrow h(x) = \begin{cases}
+  \frac{\ln(x + 1)}{x}, x > 0 \\
+  1, x = 0
+\end{cases}
+\]
+\[
+  \Rightarrow \lim_{x\to 0} h(x) = \lim_{x\to 0} \frac{\ln (x + 1)}{x} = g(0) = 1 
+\]
+Тогда и $\exp \circ h(x) = (1 + x)^{\frac{1}{x}}$ непр-на в 0 $\Rightarrow \lim_{x\to 0} (1 + x)^{\frac{1}{x}} = e^{1} = e$
+\end{proof}
+\begin{task}
+Док-те, что $\lim_{x\to 0} \frac{(1 + x)^{\alpha} - 1}{x} = \alpha$
+\end{task}
+\begin{example}
+\[
+e^{\pi} \lor \pi^{e}
+\]
+\end{example}
+\begin{proof}
+\[
+e^{x} > 1 + x
+\]
+\[
+x = \frac{\pi}{e} + 1
+\]
+\[
+e^{\frac{\pi}{e} - 1} > \frac{\pi}{e} \iff e^{\frac{\pi}{e}} > \pi \Rightarrow e^{\pi} > \pi^{e}
+\]
+\end{proof}
+\subsubsection{Ликбез по тригономе}
+\begin{lemma}
+Для всех $x \in (0, \frac{\pi}{2})$ верно:
+\[
+\sin x < x < \tg x
+\]
+\end{lemma}
+\begin{proof}
+Picture:
+\[
+S_{\triangle AOB} < S_{\text{сек. } AOB} < S_{\triangle AOC}
+\]
+\[
+\Rightarrow \frac{1}{2}\sin x < \frac{1}{2} x < \frac{1}{2}\tg x
+\]
+\end{proof}
+\begin{consequence}
+Для всех $x \in \R$. Верно $\left|\sin x\right| < \left| x\right|$, причём рав-во имеет место только при $x = 0$
+\end{consequence}
+\begin{proof}
+Если $x \in (0, \frac{\pi}{2})$, то нер-во следует по лемме. \\
+Если $x \geq \frac{\pi}{2}$, то $\left|\sin x\right| \leq 1 < \frac{\pi}{2} \leq x$ \\
+Если $x < 0$, то $\left|\sin x\right| = \left|\sin (-x)\right| < \left| (-x)\right| = \left| x\right|$
+\end{proof}
+\begin{consequence}
+Ф-ции $\sin$ и $\cos$ непр-ны на $\R$.
+\end{consequence}
+\begin{proof}
+Пусть $a \in \R$, тогда:
+\[
+\left|\sin x - \sin a\right| = 2\left|\sin \frac{x - a}{2}\right|\left|\cos \frac{x + a}{2}\right| \leq 2\frac{\left|x - a\right|}{2} = \left|x - a\right| \rightarrow 0
+\]
+Сл-но, $\sin x$ в точке $a$ равен $\sin a \Rightarrow \sin x$ - непр-на. Аналогично доказывается непр-ть $\cos x$ или из ф-л тригонометрии:
+\[
+  \cos x = \sin(\frac{\pi}{2} - x) \Rightarrow
+\]
+$\cos x$ непр-н как композиция непр. ф-ций.
+\end{proof}
+\begin{consequence}
+\[
+\lim_{x\to 0} \frac{\sin x}{x} = 1
+\]
+\end{consequence}
+\begin{proof}
+$x \in (0, \frac{\pi}{2}) \Rightarrow \frac{\sin x}{x} < 1$ и $\cos x < \frac{\sin x}{x} < 1$ (из леммы)
+В силу чётности, $\lim_{x\to_-0} \frac{\sin x}{x} = 1$ $\Rightarrow$ предел = 1. 
+\end{proof}
+\begin{definition}
+Обратные тригонометрические ф-ции:
+\begin{itemize}
+  \item [1) ] $\arcsin$:
+    \[
+    \arcsin = (\sin|_{[-\frac{\pi}{2}, \frac{\pi}{2}]})^{-1}
+    \]
+  \item [2) ] $\arccos \colon [-1, 1] \rightarrow [0, \pi]$
+    \[
+    \arccos = (\cos|_{[0, \pi]})^{-1}
+    \]
+  \item[3) ] $\arctg \colon \R \rightarrow (-\frac{\pi}{2}, \frac{\pi}{2})$
+    \[
+    \arctg = (\tg|_{(-\frac{\pi}{2}, \frac{\pi}{2})})^{-1}
+    \]
+  \item [4) ] $\arcctg \colon \R \rightarrow (0, \pi)$
+    \[
+    \arcctg = (\ctg|_{(0, \pi)})^{-1}
+    \]
+\end{itemize}
+\end{definition}
+\begin{definition}
+\underline{Основными элементарными ф-циями} наз-ся:
+\begin{itemize}
+  \item $x \mapsto c, c \in \R$
+  \item $x \mapsto a^{x}, a > 0, a \neq 1$
+  \item $x \mapsto \log_a x, a > 0, a \neq 1$
+  \item $x \mapsto x^{\alpha}$
+  \item $\sin, \cos, \tg, \ctg$
+  \item $\arcsin, \arccos, \arctg, \arcctg$
+\end{itemize}
+\end{definition}
+\begin{definition}
+\underline{Элементарной ф-цией} наз-ся любая ф-ция, полученная конечным числом арифметических операций или взятием их композиции.
+\end{definition}
+\begin{example}
+\[
+\sh \colon \R \rightarrow \R, \sh x = \frac{e^{x} - e^{-x}}{2}
+\]
+\[
+\ch \colon \R \rightarrow \R, \ch x = \frac{e^{x} + e^{-x}}{2}
+\]
+\[
+  \th \colon \R \rightarrow \R, \th = \frac{\sh x}{\ch x}
+\]
+\[
+\cth \colon \R \backslash \set{0} \rightarrow \R, \cth x = \frac{\ch x}{\sh x}
+\]
+\end{example}
+\begin{theorem}
+Всякая элементарная ф-ция непр-на на своей области определения.
+\end{theorem}
+\subsubsection{Сравнение ф-ций}
+\begin{definition}
+Пусть $f, g \colon E \rightarrow \R$, $a$ - предельная точка $E$ и сущ-ет $\alpha \colon E \rightarrow \R$ и $\delta > 0$, такие, что
+\[
+  f(x) = \alpha(x)g(x), \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E
+\]
+Тогда:
+\begin{itemize}
+\item [1) ] Если $\alpha(x) \rightarrow 1$ при $x \rightarrow a$, то говорят, что ф-ции $f$ и $g$ \underline{эквивалентны} \underline{(асимптотически равны)} при $x \rightarrow a$. Пишут $f(x) \sim g(x)$ при $x \rightarrow a$
+  \item [2) ]  Если $\alpha(x) \rightarrow 0$ при $x \rightarrow a$, то говорят, что ф-ция $f$ \underline{беск. мала по сравн. с ф-цией} $g$ при $x \rightarrow a$, пишут $f(x) = o(g(x))$, при $x \rightarrow a$
+  \item [3) ] Если $\alpha$ - огр-на, то говорят, что ф-ция $f$ \underline{ограничена по сравнению} с $g$ при $x \rightarrow a$. Пишут, что $f(x) = O(g(x)), x \rightarrow a$
+\end{itemize}
+\end{definition}
