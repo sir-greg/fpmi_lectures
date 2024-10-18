@@ -100,3 +100,23 @@ S(k) \geq 1 + 1 + S(0) + \ldots + S(k - 2)
 \[
 S(k) = \Omega(\phi^{k + 2})
 \]
+\begin{statement}
+\[
+  2 + F_2 + F_3 + \ldots + F_k = F_{k + 2}
+\]
+\end{statement}
+\begin{proof}
+\[
+k = 2\colon 2 + F_2 = 3 = F_3
+\]
+\[
+k = k\colon 2 + F_2 + \ldots + F_{k + 1} = F_{k + 3}
+\]
+\end{proof}
+\[
+F_n = \frac{\phi^{n} - (-\phi)^{-n}}{\sqrt{5}}, \phi = \frac{1 + \sqrt{5}}{2} > 1
+\]
+\[
+F_n = \Theta(\phi^{n}) \Rightarrow S(k) = \Omega(\phi^{k})
+\]
+Если в дереве $n$ вершин, то макс. степень корня $\leq \log_{\phi}(n)$

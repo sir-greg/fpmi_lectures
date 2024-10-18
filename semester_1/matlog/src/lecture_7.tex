@@ -1,0 +1,239 @@
+\section{Лекция 7}
+\begin{theorem}[О полноте ИВ]
+$\phi$ - тавтология $\Rightarrow$ $\phi$ выводима
+\end{theorem}
+Правило исчерп. разбора случаев:
+Пусть $\Gamma$ - нек-рое мн-во ф-ул, при это $\Gamma, A \vdash B$ и $\Gamma, \neg A \vdash B$ \\
+Тогда: $\Gamma \vdash B$ \\
+\begin{center}
+\begin{tabular}{ c c c } 
+  $\Gamma, A \vdash B$ & & $\Gamma, \neg A \vdash B$ \\
+ \hline
+                       & $\Gamma \vdash B$ & \\
+\end{tabular}
+\end{center}
+\begin{symb}
+\[
+p ^{\varepsilon} \eqcirc \begin{cases}
+p, \varepsilon = 1 \\
+\neg p, \varepsilon = 0
+\end{cases}
+\]
+\end{symb}
+\begin{lemma}[Основная]
+Пусть $\phi$ - ф-ла от $n$ переменных ($\overline{p} = (p_1, \ldots, p_n)$).
+\[
+  (a_1, \ldots, a_n) \in \set{0, 1}^{n}, \phi(a_1, \ldots, a_n) = a \in \set{0, 1}
+\]
+\end{lemma}
+Тогда:
+\[
+p_1^{a_1}, p_2^{a_2}, \ldots, p_n^{a_n} \vdash \phi^{a}
+\]
+Рассм. переход: \\
+ОСНОВНАЯ ЛЕММА $\Rightarrow$ ТЕОРЕМА О ПОЛНОТЕ ИВ \\
+\[
+\phi \text{ - тавтология} \Rightarrow \text{ при всех } (a_1, \ldots, a_n)
+\]
+\[
+\phi(a_1, \ldots, a_n) = 1 \underset{\text{По лемме}}{\Longrightarrow} p_1^{a_1}, \ldots, p_n^{a_n} \vdash \phi
+\]
+\begin{example}
+$n = 3$:
+le Picture
+\end{example}
+\begin{lemma}[Базовая]
+  ~\newline
+  AND-ы:
+\[
+A, B \vdash A \land B
+\]
+\[
+\neg A, B \vdash \neg(A \land B)
+\]
+\[
+A, \neg B \vdash \neg(A \land B)
+\]
+\[
+\neg A, \neg B \vdash \neg(A \land B)
+\]
+  OR-ы:
+  \[
+  A, B \vdash A \lor B
+  \]
+  \[
+  \neg A, B \vdash A \lor B
+  \]
+  \[
+  A, \neg B \vdash A \lor B
+  \]
+  \[
+  \neg A, \neg B \vdash \neg(A \lor B)
+  \]
+  Implication-ы:
+  \[
+  A, B \vdash A \rightarrow B
+  \]
+  \[
+  \neg A, B \vdash A \rightarrow B
+  \]
+  \[
+  A, \neg B \vdash \neg (A \vdash B)
+  \]
+  \[
+  \neg A, \neg B \rightarrow A \rightarrow B
+  \]
+  И ещё: 
+  \[
+  \neg A \vdash \neg A
+  \]
+  \[
+  A \vdash \neg(\neg A)
+  \]
+\end{lemma}
+\begin{proof}[Док-во основной леммы]
+  Инд-ция по построению ф-лы:
+  \begin{itemize}
+    \item [База)] Переменная: $p_i^{a_i} \vdash p_i^{a_i}$
+    \item [Переход) ] Пусть, например:
+      \[
+      \phi \eqcirc (\xi \land \eta)
+      \]
+      \[
+      \xi(a_1, \ldots, a_n) = a, \eta(a_1, \ldots, a_n) = b \Rightarrow \phi(a_1, \ldots, a_n) = a \cdot b
+      \]
+      По предположению индукции:
+      \[
+      p_1^{a_1}, p_2^{a_2}, \ldots, p_n^{a_n} \vdash \xi^{a} \text{ и } p_1^{a_1}, p_2^{a_2}, \ldots, p_n^{a_n} \vdash \eta^{b}
+      \]
+      По базовой лемме:
+      \[
+      \xi^{a}, \eta^{b} \vdash \phi^{a\cdot b}
+      \]
+      Запишем эти 3 вывода (\textbf{подряд}):
+      \[
+      p_1^{a_1}, \ldots, p_n^{a_n} \phi^{a \cdot b}
+      \]
+  \end{itemize}
+
+\end{proof}
+\begin{proof}[Другое док-во]
+  Пусть $\Gamma$ - мн-во пропозициональных ф-л.
+  \begin{definition}
+  $\Gamma$ \textbf{совместно}, если при некот. значениях переменных все ф-лы из $\Gamma$ истинны.
+  \end{definition}
+  \begin{definition}
+  $\Gamma$ - \textbf{противоречиво}, если для некот. ф-лы $\phi$ верно:
+  \[
+  \begin{cases}
+  \Gamma \vdash \phi \\
+  \Gamma \vdash \neg \phi
+  \end{cases}
+  \]
+  \begin{theorem}
+  $\Gamma$ совместна $\overset{*}{\iff} $ $\Gamma$ непротиворечива.
+  \end{theorem}
+  \end{definition}
+  Рассмотрим связь теоремы о совм. и непрот. с теор. о корр. и полн.:
+  \begin{theorem}[О корректности]
+  \[
+  \vdash \phi \Rightarrow \set{\neg \phi} \text{ - противор.} \overset{*}{\Longrightarrow} \set{\neg \phi} \text{ - несовм.} \Rightarrow \forall a, \neg \phi(a) = 0 \iff \phi(a) = 1 \Rightarrow
+  \] 
+  \[
+  \Rightarrow \phi \text{ - тавтология}
+  \]
+  \end{theorem}
+  \begin{theorem}[О полноте]
+  \[
+  \phi \text{ - тавтология} \Rightarrow \set{\neg \phi} \text{ - несовм.} \overset{*}{\Rightarrow} \set{\neg\phi} \text{ - противоречиво} \Rightarrow \neg\neg \phi \vdash \phi
+  \] 
+  \begin{center}
+  \begin{tabular}{ c c c } 
+    $\neg \phi \vdash B$ & & $\neg \phi \vdash \neg B$ \\
+   \hline
+                       & $\vdash \neg \neg \phi$ & 
+  \end{tabular}
+  \end{center}
+  \end{theorem}
+\end{proof}
+\begin{proof}
+\begin{itemize}
+  \item [1) ] $\Gamma$ против. $\Rightarrow$  $\Gamma$ несовм.
+    \begin{theorem}[Обобщённая теорема о корректности]
+      Если $\Gamma \vdash A$ и все ф-лы из $\Gamma$ верны на $(a_1, \ldots, a_n)$, то и $A$ верна на том же наборе. 
+    \end{theorem}
+    Д-во: индукция по номеру ф-лы в выводе.
+    \[
+    \Gamma \text{ - совм.} \Rightarrow \text{ Все ф-лы из $\Gamma$ верны на нек-ром наборе. }
+    \]
+    \[
+    \Gamma \vdash \phi \Rightarrow \phi \text{ верно на том же наборе}
+    \]
+    \[
+    \Gamma \vdash \neg\phi \Rightarrow \neg\phi \Rightarrow -----||-----
+    \]
+    Но $\phi$ и $\neg\phi$ не м. б. верны одновременно. Противор.
+  \item [2) ] $\Gamma$ непрот. $\Rightarrow$ $\Gamma$ совм. \\
+    Пусть $\triangle$ непрот. Будем говорить, что $\triangle$ - полное, если для $\forall \phi$ верно $\triangle \vdash \phi$ или $\triangle \vdash \neg \phi$.
+    \begin{lemma}[I]
+    $\Gamma$ непрот $\Rightarrow \Gamma \subset \triangle$ для некот. полного непрот. $\triangle$
+    \end{lemma}
+    \begin{lemma}[II]
+     $\triangle$ полное, непрот. $\Rightarrow \triangle$ - совм.
+    \end{lemma}
+    \begin{proof}[Док-во леммы $I$ для счётного мн-ва перемен.]
+      Если переменных сч. мн-во то и ф-лы тоже. \\
+      Пусть $\phi_1, \phi_2, \ldots, \phi_n$ - все ф-лы. \\
+      Опр. $\Gamma_i$ по инд-ции:
+      \[
+      \Gamma_0 = \Gamma, \Gamma_i = \begin{cases}
+      \Gamma_{i - 1} \cup \set{\phi_i}, \text{ - если это непрот.} \\
+      \Gamma_{i - 1} \cup \set{\neg\phi_i} \text{ - иначе}
+      \end{cases}
+      \]
+      \begin{statement}
+      Все $\Gamma_i$ - непрот.
+      \begin{proof}
+      \[
+        \begin{cases}
+      \Gamma_{i - 1} \cup \set{\phi_i} \text{ - прот. } \Rightarrow \Gamma_{i - 1} \vdash \neg\phi_i \\
+      \Gamma \cup \set{\neg\phi_i} \text{ - прот. } \Rightarrow \Gamma_{i - 1} \vdash \neg\neg \phi_i
+        
+        \end{cases}
+      \]
+      $\Rightarrow \Gamma_{i - 1}$ - прот. $\Rightarrow$ пришли к противоречию.
+      
+      \end{proof}
+      \end{statement} 
+      \[
+        \Gamma_0 \subset \Gamma_1 \subset \Gamma_2 \subset \ldots
+      \]
+      \[
+      \triangle = \bigcup_{i = 0}^{\infty} \Gamma_i \text{ - тоже непрот.}
+      \]
+      Если $\triangle$ прот., то прот. использ. кон. число ф-л из $\triangle$. Каждое $\delta_j$ лежит в $\Gamma_{k_j}$. Тогда прот. выв-ся из $\Gamma_{max\set{k_j}}$. Но все конечные $\Gamma_i$ непрот.
+      \begin{proof}[Док-во леммые II]
+      $\triangle$ - полн. $\Rightarrow$ для перем. $p_i$, $\triangle \vdash p_i \lor \triangle \vdash \neg p_i$. \\
+      Набор. значений:
+      \begin{equation}
+        \label {sys:*}
+        p_i = \begin{cases}
+        1, \triangle \vdash p_i \\
+        0, \triangle \vdash \neg p_i
+        \end{cases}
+      \end{equation}
+      Д-м, что ф-лы из $\triangle$ верны на системе $(\ref{sys:*})$. Ф-ла - перем. $\Rightarrow$ согл. опр. системы $(\ref{sys:*})$:
+      \[
+      \phi \eqcirc \neg \psi
+      \]
+      \end{proof}
+      Более общ утв.:
+      \[
+        \begin{cases}
+          \triangle \vdash \phi \Rightarrow \phi \text{ верна на системе ($\ref{sys:*}$)} \\
+          \triangle \not\vdash \phi \Rightarrow \phi \text{ - неверна на системе ($\ref{sys:*}$)} 
+        \end{cases}
+        \]
+    \end{proof}
+\end{itemize}
+\end{proof}

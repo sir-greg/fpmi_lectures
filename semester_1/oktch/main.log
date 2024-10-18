@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  15 OCT 2024 13:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  17 OCT 2024 12:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -833,9 +833,21 @@ Overfull \hbox (20.54718pt too wide) detected at line 158
 
 
 
-[19])
+[19]) (./src/lecture_7.tex
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
-[20] (./main.aux)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+
+[20])
+
+[21] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -846,18 +858,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 10774 strings out of 473579
- 159908 string characters out of 5728235
+ 10782 strings out of 473579
+ 160087 string characters out of 5728235
  1940957 words of memory out of 5000000
- 33461 multiletter control sequences out of 15000+600000
+ 33466 multiletter control sequences out of 15000+600000
  615958 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,13n,82p,385b,338s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathbb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathex.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathscr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathtt.pfb>
-Output written on main.pdf (20 pages, 209223 bytes).
+Output written on main.pdf (21 pages, 213292 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 139 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

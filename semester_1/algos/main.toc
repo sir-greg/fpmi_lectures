@@ -8,3 +8,5 @@
 \contentsline {subsection}{\numberline {2.2}Куча Фиббоначи}{7}{}%
 \contentsline {subsubsection}{\numberline {2.2.1}Consolidate (Операция причёсывания кучи)}{8}{}%
 \contentsline {subsubsection}{\numberline {2.2.2}Анализ времени работы}{8}{}%
+\contentsline {section}{\numberline {3}Лекция 7}{9}{}%
+\contentsline {subsection}{\numberline {3.1}Стеки и очереди}{9}{}%

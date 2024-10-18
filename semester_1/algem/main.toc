@@ -1,17 +1,27 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 12}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Классификация КВП}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Центр КВП}{4}{}%
-\contentsline {subsection}{\numberline {1.3}Центральные кривые}{5}{}%
-\contentsline {subsection}{\numberline {1.4}Св-ва КВП}{6}{}%
-\contentsline {subsubsection}{\numberline {1.4.1}Эллипс}{6}{}%
-\contentsline {subsubsection}{\numberline {1.4.2}Гипербола}{7}{}%
-\contentsline {section}{\numberline {2}Лекция 13}{9}{}%
-\contentsline {subsection}{\numberline {2.1}Св-ва гиперболы}{9}{}%
-\contentsline {subsection}{\numberline {2.2}Св-ва параболы}{10}{}%
-\contentsline {subsection}{\numberline {2.3}Диаметры невырожд. кривых}{11}{}%
-\contentsline {subsubsection}{\numberline {2.3.1}Гипербола}{11}{}%
-\contentsline {subsubsection}{\numberline {2.3.2}Эллипс}{12}{}%
-\contentsline {subsubsection}{\numberline {2.3.3}Параболы}{12}{}%
-\contentsline {subsection}{\numberline {2.4}Сопряжённые диаметры}{13}{}%
-\contentsline {subsection}{\numberline {2.5}Касательные к КВП}{13}{}%
+\contentsline {section}{\numberline {1}Лекция 2}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Упражняемся}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Векторная алгебра}{3}{}%
+\contentsline {subsection}{\numberline {1.3}Операции с векторами}{4}{}%
+\contentsline {subsubsection}{\numberline {1.3.1}I. Сложение}{4}{}%
+\contentsline {subsubsection}{\numberline {1.3.2}Умножение вектора на $\lambda \in \mathbb {R}$}{5}{}%
+\contentsline {subsection}{\numberline {1.4}Системы векторов в пр-ве $V_i$}{6}{}%
+\contentsline {section}{\numberline {2}Лекция 12}{8}{}%
+\contentsline {subsection}{\numberline {2.1}Классификация КВП}{8}{}%
+\contentsline {subsection}{\numberline {2.2}Центр КВП}{9}{}%
+\contentsline {subsection}{\numberline {2.3}Центральные кривые}{10}{}%
+\contentsline {subsection}{\numberline {2.4}Св-ва КВП}{11}{}%
+\contentsline {subsubsection}{\numberline {2.4.1}Эллипс}{11}{}%
+\contentsline {subsubsection}{\numberline {2.4.2}Гипербола}{12}{}%
+\contentsline {section}{\numberline {3}Лекция 13}{14}{}%
+\contentsline {subsection}{\numberline {3.1}Св-ва гиперболы}{14}{}%
+\contentsline {subsection}{\numberline {3.2}Св-ва параболы}{15}{}%
+\contentsline {subsection}{\numberline {3.3}Диаметры невырожд. кривых}{16}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Гипербола}{16}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Эллипс}{17}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Параболы}{17}{}%
+\contentsline {subsection}{\numberline {3.4}Сопряжённые диаметры}{18}{}%
+\contentsline {subsection}{\numberline {3.5}Касательные к КВП}{18}{}%
+\contentsline {section}{\numberline {4}Лекция 14}{20}{}%
+\contentsline {subsection}{\numberline {4.1}Алгебраические структуры}{20}{}%
+\contentsline {subsection}{\numberline {4.2}Сравнения и вычеты}{22}{}%

@@ -1,0 +1,71 @@
+\section{Лекция 7}
+\subsection{База}
+Сложение, умножение. \\
+Прицнип Дирихле. \\
+$\set{a_1, \ldots, a_n}$ \\
+Сочетания: без и с повторениями. \\
+Размещения: без и с повторениями. \\
+$C_n^{k}$ - число сочет. без повтор. (или $\begin{pmatrix} n \\ k \end{pmatrix}$) \\
+$\overline{C_n^{k}}$ - число сочет. с повт.
+\begin{theorem}
+  \[
+    \overline{A_n^{k}} = n^{k}
+  \]
+  \[
+    A_n^{k} = n(n - 1)\ldots(n - k + 1) = \frac{n!}{(n - k)!}
+  \]
+  \[
+    C_n^{k} = \frac{A_{n}^{k}}{k!} = \frac{n!}{k!(n - k)!}
+  \]
+  \[
+    \overline{C_{n}^{k}} = C_{n + k - 1}^{k}
+  \]
+\end{theorem}
+\begin{proof}
+  Для док-ва последнего, сделаем биекцию:\\
+
+  k-сочет с повтор. $\longleftrightarrow$ п-сть из 0 и 1 длины $n + k - 1$ с $k$ ед-цами. \\
+
+  \begin{example}
+    \[
+    n = 26, \set{a, b, c, \ldots}, k = 4, \set{m, a, m, a}
+    \]
+    \[
+    \underset{a}{11}0\underset{b}{}0\underset{c}{}0\ldots 0\underset{m}{11}0\ldots 0\underset{y}{}0\underset{z}{}
+    \]
+  \end{example}
+\end{proof}
+
+$V = \set{\overline{x} = (x_1, \ldots, x_8)\colon \forall i, x_i \in \set{-1, 0, 1}, x_1^{2} + \ldots x_8^{2} = 4}$
+\[
+\left|V\right| = C_{8}^{4} \cdot 2^{4} = 1120
+\]
+\[
+  (\overline{x}, \overline{y}) = x_1y_1 + \ldots + x_8y_8
+\]
+Рассм. произв. $W \subset V \colon \forall \overline{x}, \overline{y} \in W \colon (\overline{x}, \overline{y}) \neq 0$
+\begin{statement}
+$\forall W \colon \left|W\right| \leq 140$
+\end{statement}
+\begin{task}
+$\set{1, 2, \ldots, 30}$ \\
+$M_1, \ldots, M_{15}$ - различные 5-сочет. \\
+Можно ли покрасить числа 1, .., 30 в 2 цвета, чтобы все $M_i$ были неодноцветными?
+\end{task}
+\begin{solution}
+Всего раскрасок: $2^{30}$ \\
+Кол-во раскрасок, в кот-ых $M_i$ закрашено в один цвет: $2^{26}$ \\
+Кол-во раскрасок, в кот-ых хотя бы одно $M_i$ закрашено в один цвет:
+\[
+  \text{кол-во} \leq 2^{26} \cdot 15 < 2^{30}
+\]
+\end{solution}
+Тождества:
+\begin{itemize}
+  \item [1) ] \[
+  C_{n}^{k} = C_{n}^{n - k}
+  \]
+\item [2) ] \[
+  C_{n}^{k} = C_{n - 1}^{k - 1} + C_{n - 1}^{k}
+\]
+\end{itemize}

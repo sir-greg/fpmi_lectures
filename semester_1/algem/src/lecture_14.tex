@@ -1,0 +1,294 @@
+\section{Лекция 14}
+\subsection{Алгебраические структуры}
+\begin{definition}
+\textbf{Группой} наз-ся мн-во $G$ с опред. на нём бинарной алг. операцией. (Обозначим как $*\colon G \times G \rightarrow G$ - отображение) \\
+Кроме того, * удовл. след. св-вам:
+\begin{itemize}
+  \item [I) ] Ассоциативность: $(a*b)*c = a*(b*c)$ 
+  \item [II) ] $\exists$ нейтрального эл-та $e$ отн-но $*$:
+    \[
+    a * e = e * a = a
+    \]
+  \item [III) ] $\exists$ обратный эл-т $a^{-1}$:
+    \[
+    a * a^{-1} = a^{-1} * a = e
+    \]
+\end{itemize}
+\end{definition}
+\begin{example}
+  \begin{itemize}
+    \item [1) ]
+$(\Z, +), (\Q, +), (\R, +)$ - $0$ нейтр. эл-т, $\forall a \rightarrow -a $ - противоположный (обратный) эл-т.
+\item [2) ] $(\R \backslash \set{0}, *), (\Q \backslash \set{0}, *)$ 
+\item [3) ] $(\R, *)$ - не группа, нарушается III для 0
+\item [4) ] Пусть $X$ - произв. мн-во, $S(X)$ - мн-во всех вз. однозн. отобр. $X \rightarrow X$:
+  \[
+    \phi, \psi \text{ - вз. одн. отобр.}
+  \]
+  \[
+    (\phi \cdot \psi)(x) = \phi(\psi(x))
+  \]
+  Тогда:
+  \[
+    (S(X), \circ) \text{ - группа}
+  \]
+  \[
+  e(x) = x
+  \]
+\item [5) ] Пусть $X = \set{1, 2, \ldots n}$
+  \[
+  \phi \colon \set{1, 2, \ldots n} \rightarrow \set{1, 2, \ldots n} \text{ - подстановка}
+  \]
+  \[
+  S(\set{1, 2, \ldots n}) = S_n \text{ - симметрич. группа степени $n$.}
+  \]
+\end{itemize}
+\end{example}
+\begin{statement}
+Во всякой группе $G$ нейтральный эл-т единственный.
+\end{statement}
+\begin{proof}
+  \[
+  e = e * e' = e'
+\]
+\end{proof}
+\begin{definition}
+Пусть $G$ группа. Эл-т $b$ наз-ся \textbf{левым обратным} к $a$, если $b * a = e$ \\
+
+Эл-т $c$ наз-ся правым обратным к $a$, если $c * a = e$
+\end{definition}
+\begin{statement}
+$\forall a \in G$ левый обратный к нему совпад. с правым обратным к нему и совпад. с $a^{-1}$
+\end{statement}
+\begin{proof}
+  \[
+  b * a = e, a * c = e
+  \]
+\[
+  c = e * c = (b * a) * c = b * (a * c) = b * e = b
+\]
+\[
+  \Rightarrow b * a = a * b = e \Rightarrow b = a^{-1}
+\]
+В част-ти, для каждого эл-та $a$ обратный эл-т единственный.
+\end{proof}
+\begin{definition}
+Мн-во $R$ с опред. на нём бинарной алг. операциями $"+"$ и $"*"$ наз-ся кольцом, если эти операции удовл. св-вам:
+\item [a) ] $(R, +)$ - абелева группа (т. е. группа с комутативностью).
+\item [b) ] Ассоц. $*$
+\item [c) ] Левая и правая дистрибутивность $*$ отн-но $+$:
+  \[
+    (a + b) * c = a * c + b * c
+  \]
+  \[
+    a * (b + c) = a * b + a * c
+  \]
+\end{definition}
+\begin{example}
+\begin{itemize}
+  \item [1) ] $(\Z, +, *), (\Q, +, *), (\R, +, *)$ - 0 - нейтр. эл-т $+$
+  \item [2) ] $(M_n(\R), +, *)$
+\end{itemize}
+\end{example}
+\begin{definition}
+Если в $R$ $\exists 1 \in R$, т. ч.:
+\[
+1 * a = a * 1 = a, \forall \in R
+\]
+то 1 наз-ся единицей кольца.
+\end{definition}
+\subsection{Сравнения и вычеты}
+\begin{definition}
+Назовём $a, b \in Z$ сравнимыми по модулю $n$ $(n \in \N, n > 1)$, если $a$ и $b$ имеют равные остатки при делении на $n$.
+\end{definition}
+\begin{symb}
+  \[
+  a \equiv b \pmod n \iff a - b = qn, q \in \Z
+  \]
+  \[
+  2 \equiv 17 \pmod 5
+  \]
+  \[
+  3 \equiv 0 \pmod 3
+  \]
+\end{symb}
+\begin{note}
+Сравнения по одному и другому $\mod$ можно складывать и умножать:
+\[
+  \begin{cases}
+a_1 \equiv b_1 \pmod n \\
+a_2 \equiv b_2 \pmod n  
+  \end{cases} \Rightarrow \begin{cases}
+  a_1 \pm a_2 \equiv b_1 \pm b_2 \pmod n \\
+  a_1 \cdot a_2 \equiv b_1 \cdot b_2 \pmod n
+  \end{cases}
+\]
+\end{note}
+\begin{proof}
+\[
+  (a_1 \pm a_2) - (b_1 \pm b_2) = (a_1 - b_1) \pm (a_2 - b_2) = q_1n \pm q_2 n = n(q_1 \pm q_2) \vdots n
+\]
+\[
+  a_1 a_2 = (b_1 + q_1n)(b_2 + q_2n) = (b_1b_2 + (q_2b_1 + q_1b_2 + q_1q_2n)n) \vdots n
+\]
+\[
+ \Rightarrow a_1a_2 - b_1b_2 \vdots n
+\]
+\end{proof}
+\begin{symb}
+\[
+a \in \Z 
+\]
+\[
+\set{a + n\cdot q} \Rightarrow \overline{a} \text{ - класс вычетов $a$ по модулю $n$}
+\]
+Классы вычетов по модулю $n$ $\rightarrow \Z_n$:
+\[
+\overline{0}, \overline{1}, \overline{2}, \ldots, \overline{n - 1}
+\]
+\end{symb}
+\begin{note}
+\[
+\overline{a} + \overline{b} = \overline{a + b}
+\]
+\[
+\overline{a} \cdot \overline{b} = \overline{a \cdot \overline{b}}
+\]
+\end{note}
+Проверка коректности:
+\[
+  \begin{cases}
+a \equiv a_1 \pmod n \\ 
+b \equiv b_1 \pmod n  
+  \end{cases} \Rightarrow \overline{a} + \overline{b} \overset{?}{=} \overline{a_1} + \overline{b_1}
+\]
+\[
+a + b \equiv a_1 + b_1
+\]
+\[
+\overline{a} + \overline{b} \equiv \overline{a + b} \equiv \overline{a_1 + b_1} \equiv \overline{a_1} + \overline{b_1}
+\]
+\begin{statement}
+Мн-во $Z_n$ классов вычетов по мод. $n$ явл-ся кольцом с операциями $"+", "*"$
+\end{statement}
+\begin{proof}
+Опер-ция опр-на и кореектна:
+\[
+  (\Z_n, +) \text{ - абелева группа}
+\]
+  \[
+  \overline{0} \text{ - нейтральный эл-т}
+  \]
+\end{proof}
+\begin{definition}
+Пусть $R$ - кольцо с 1. \\
+Эл-т $a \in R$ - обратимый $\iff \exists b \in R \colon a * b = b * a = 1$
+\end{definition}
+\begin{definition}
+$R^{*}$ - мн-во всех обратимых эл-ов кольца $R$ с 1.
+\end{definition}
+\begin{statement}
+$R^{*}$ - группа с операцией умножения.
+\end{statement}
+\begin{proof}
+Покажем, что если $a$ обратим, то обратный к нему эл-т $b$ тоже обратим:
+\[
+a * b = b * a = 1 \Rightarrow \text{ по опр-ю это верно }
+\]
+\[
+\Rightarrow a \in R^{*} \Rightarrow b \in R^{*}
+\]
+Покажем теперь, что если $a, b \in R^{*} \Rightarrow a * b \in R^{*}$:
+\[
+a, b \in R^{*} \Rightarrow a^{-1}, b^{-1} \in R^{*}
+\]
+\[
+  (ab)^{-1} = b^{-1}a^{-1}
+\]
+\[
+  abb^{-1}a^{-1} = a * 1 * a^{-1} = 1
+\]
+\[
+\Rightarrow a \cdot b \in R^{*}
+\]
+\end{proof}
+\begin{task}
+$Z_n^{*}$ - мн-во всех классов вычетов, взаимно простых с $n$.
+\end{task}
+\begin{statement}
+  В любом кольце $R$:
+  \[
+  0 * a = a * 0 = 0, \forall a \in R
+  \]
+\end{statement}
+\begin{proof}
+\[
+ 0 * a + 0 * a = (0 + 0) * a = 0 * a
+\]
+\[
+0 * a = 0
+\]
+\end{proof}
+\begin{consequence}
+Если $R$ - ненулевое кольцо с 1. То $0 \neq 1$:
+\end{consequence}
+\begin{proof}
+  От прот. пусть $0 = 1$: \\
+$\forall a \in R\colon a = a * 1 = a * 0 = 0 \Rightarrow R$ - нулевое. Противоречие!!!
+\end{proof}
+\begin{consequence}
+Если $R$ ненулевое кольцо с 1, то $0 \not\in R^{*}$
+\end{consequence}
+\begin{definition}
+Мн-во $F$ с опред. на нём бинарными алг. операциями $+, *$ наз-ся \textbf{полем}, если:
+\begin{itemize}
+  \item [1) ] $(F, +)$ - абелева группа с нейтр. эл-ом 0.
+  \item [2) ] $(F \backslash \set{0}, *)$ - абелева группа с нейтр. эл-ом 1.
+  \item [3) ]  $(a + b)c = ac + bc$ - дистрибутивность.
+\end{itemize}
+\end{definition}
+\begin{note}
+В любом поле содерж. 0 и 1. $\Rightarrow \left|F\right| \geq 2$
+\end{note}
+\begin{note}
+\[
+F^{*} = F \backslash \set{0}\text{ - мультипликативная группа поля}
+\]
+\end{note}
+\begin{definition}
+Поле - это коммутативное колько с 1, у кот. каждый ненулевой эл-т обратим.
+\end{definition}
+\begin{example}
+\begin{itemize}
+  \item [1) ] $(\Q, +, *)$ - поле рац. чисел.
+  \item [2) ] $(\R, +, *)$ - поле действ. чисел.
+  \item [3) ] $(\C, +, *)$ - поле комплексных чисел.
+  \item [4) ] $(Boolean)$
+\end{itemize}
+\end{example}
+\begin{statement}
+В поле нет делителей нуля.
+\end{statement}
+\begin{proof}
+ Пусть $a \cdot b = 0, a \neq 0, b \neq 0$:
+ \[
+ a \cdot b = 0 \Rightarrow a = 0 \cdot b ^{-1} = 0 !!!
+ \]
+\end{proof}
+\begin{theorem}
+Кольцо классов вычетов $\Z_n$ явл-ся полем $\iff$ $n$ - простое.
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] Необходимость. Пусть $n$ - сост. $\Rightarrow \exists p, q > 1 \colon n = pq$
+    \[
+    \overline{p} \cdot \overline{q} = \overline{p\cdot q} = \overline{n} = \overline{0} \Rightarrow \overline{p}, \overline{q} \text{ - делители 0 - противоречие с тем, что $\Z_n$ - поле!!!}
+    \]
+  \item [b) ] Дост. Пусть $n$ - простое, покажем, что $(\Z_n \backslash \set{0}, \cdot)$ - абелева группа. \\
+    Нетривиальная часть: покажем, что $\forall \overline{a} \neq \overline{0}$, обратимый:
+    \[
+    \overline{0} \cdot \overline{a}, \overline{1} \cdot \overline{a}, \ldots, \overline{(n - 1)}\overline{a} \text{ - попарно различны.}
+    \]
+    
+\end{itemize}
+\end{proof}
