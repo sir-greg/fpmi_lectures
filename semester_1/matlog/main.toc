@@ -1,3 +1,4 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 6}{3}{}%
-\contentsline {section}{\numberline {2}Лекция 7}{7}{}%
+\contentsline {section}{\numberline {1}Лекция 5}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Логический вывод}{4}{}%
+\contentsline {section}{\numberline {2}Лекция 6}{6}{}%

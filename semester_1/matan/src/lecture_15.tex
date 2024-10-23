@@ -1,0 +1,66 @@
+\section{Лекция 15}
+\begin{definition}
+Пусть $f$ опр-на в некот. окр-ти $+\infty$. Пряая $y = kx + b$ наз-ся наклонной асимптотой $f$ при $x \rightarrow +\infty$, если:
+\[
+f(x) = kx + b + o(1), x \rightarrow +\infty
+\]
+Аналогично опр-ся накл. асимптота при $x \rightarrow -\infty$
+\end{definition}
+\begin{theorem}
+Пусть $f$ опр-на в некот. окр-ти $+\infty, k, b \in \R$. Прямая $y = kx + b$ - наклонная асимптота $f$ при $x \rightarrow +\infty \iff$
+\[
+k = \lim_{x\to +\infty} \frac{f(x)}{x} \text{ и } b = \lim_{x\to +\infty}(f(x) - kx)
+\]
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [$\Rightarrow$) ] Пусть $y = kx + b$, накл. асимпт. $f$ при $x \rightarrow +\infty$, тогда $f(x) = kx + b + o(1), x \rightarrow +\infty \Rightarrow$
+    \[
+      \frac{f(x)}{x} = k + \frac{1}{x}(b + o(1)) \Rightarrow \lim_{x\to +\infty} \frac{f(x)}{x} = k
+    \]
+    \[
+      f(x) - kx = b + o(1) \Rightarrow \lim_{x\to +\infty} (f(x) - kx) = b
+    \]
+  \item [$\Leftarrow$)] Рассм. $\alpha(x) = f(x) - kx - b$, где $k, b$ - пределы из усл-я:
+    \[
+    \lim_{x\to +\infty}  \alpha(x) = 0
+    \]
+    Сл-но, $f(x) = kx + b + \alpha(x), \alpha(x) \rightarrow 0, x \rightarrow +\infty$
+\end{itemize}
+\end{proof}
+\begin{note}
+Справедливо аналогичное утв-е при $x \rightarrow -\infty$
+\end{note}
+\begin{definition}
+Пусть $a \in \R$. Ф-ция $f$ опр-на на $(\alpha, a)$ или $(a, \beta)$. \\
+Прямая $x = a$ наз-ся вертикальной асимптотой ф-ции $f$, если хотя бы один из $f(a + 0)$ или $f(a - 0)$ равен $+\infty(-\infty)$
+\end{definition}
+\subsection{Дифференцируемые ф-ции}
+Пусть $I$ - невырожд. пром-к в $\R$ (содержит более 1 точки).
+\begin{definition}
+  Пусть $f: I \rightarrow \R, a \in I$:
+  \[
+  f'(a) = \lim_{x\to a} \frac{f(x) - f(a)}{x - a} \text{ - производная ф-ции $f$ в точке $a$}
+  \]
+  Если предел конечен, то $f$ наз-ся \underline{дифференцируемой} в $a$.
+\end{definition}
+\begin{example}
+\begin{itemize}
+  \item [1) ] $f: \R \rightarrow \R, f(x) = kx + b$
+    \[
+    f'(a) = \lim_{x\to a} \frac{k(x - a)}{x - a} = k
+    \]
+  \item [2) ] $f: \R \rightarrow \R, f(x) = sign(x)$ 
+    \[
+    f'(0) = \lim_{x\to 0} \frac{sign(x) - 0}{x - 0} = \lim_{x\to 0} \frac{1}{\left|x\right|} = +\infty
+    \]
+\end{itemize}
+\end{example}
+\underline{Геометрический смысл производной}: Пусть $f$ дифф. в $a$:
+\[
+l \colon y = \frac{f(t) - f(a)}{t - a}(x - a) + f(a) \text{ - прямая, проход. через $(a, f(a)), (t, f(t))$}
+\]
+Тогда: 
+\[
+  K_{\text{сек.}} = \frac{f(t) - f(a)}{t - a} \rightarrow f'(a) = K_{\text{кас.}}, t \rightarrow a
+\]

@@ -6,3 +6,5 @@
 \contentsline {section}{\numberline {2}Лекция 14}{8}{}%
 \contentsline {subsubsection}{\numberline {2.0.1}Ликбез по тригономе}{10}{}%
 \contentsline {subsubsection}{\numberline {2.0.2}Сравнение ф-ций}{12}{}%
+\contentsline {section}{\numberline {3}Лекция 15}{16}{}%
+\contentsline {subsection}{\numberline {3.1}Дифференцируемые ф-ции}{16}{}%

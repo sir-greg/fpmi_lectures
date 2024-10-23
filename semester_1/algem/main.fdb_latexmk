@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1729236347.1531 "main.tex" "main.pdf" "main" 1729236347.64694 0
+["pdflatex"] 1729680312.08476 "main.tex" "main.pdf" "main" 1729680312.65881 0
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labi1200.tfm" 1725282838.58337 3592 9415307df98650ffeddaa22e262436dc ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1725258418.94669 3308 eee81981029f67083258db36df06e523 ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1722950259.82679 3304 6a543c07045572737981351171e0505e ""
@@ -47,6 +47,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
@@ -127,13 +128,14 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1722811609 5483422 a1ef07ac981a8b7f5985102f2de312a6 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1722811645 8239395 770efc74df93586a44891e8f654c98d2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1722811606.09035 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "main.aux" 1729236347.57675 3452 dc2f0dcbc85fc1477dad6219ce1c682e "pdflatex"
-  "main.tex" 1729231122.57001 685 fc2bdd53f72cf0cfabb66d770cc67ec8 ""
-  "main.toc" 1729236347.57675 2128 bf76bc7b9bd40c645782ea219b1c0ae7 "pdflatex"
+  "main.aux" 1729680312.58015 3964 90d07631f72fc7653b6d5ceccaa0edc1 "pdflatex"
+  "main.tex" 1729675084.00674 716 93e941d30f60a57d9f1d9994fd0b02fd ""
+  "main.toc" 1729680312.58015 2476 2cb2be5c964ec7d10bac1d79a7e91474 "pdflatex"
   "preamble/preamble.tex" 1726813426.44336 2429 cb9f97af8bac638f87b01dd1a99e295d ""
   "src/lecture_12.tex" 1728631546.84668 10764 6530c7606553c5c572d291daa4b3c77e ""
   "src/lecture_13.tex" 1729075472.75007 9909 5e218be70e142708548600c8e94e6e6f ""
-  "src/lecture_14.tex" 1729236345.22341 9634 2e5858c31edf69bba4bac23825a2d8f4 ""
+  "src/lecture_14.tex" 1729675602.74675 10093 f6c2a3e08e9fb416b8be356d24402b42 ""
+  "src/lecture_15.tex" 1729680310.90681 9067 5bcaeb24e7d0ceb6b156ec09b36f4e09 ""
   "src/lecture_2.tex" 1726684424.92001 11561 dbaeb7b01690f4f0b2012691ce0c670b ""
   (generated)
   "main.aux"

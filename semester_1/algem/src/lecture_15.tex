@@ -1,0 +1,262 @@
+\section{Лекция 15}
+\subsection{Характеристика поля}
+$F$ - поле.
+\[
+\exists 0, 1 \in F, 0 \neq 1 \\
+\]
+\[
+\underset{n}{1 + 1 + 1 + \ldots + 1} = n_F
+\]
+Положим: \\ 
+\[
+  0_F = 0
+\]
+
+\[
+  (-n_F) = -(n_F), n \in \N
+\]
+\begin{lemma}
+\[
+  (n + m)_F = n_F + m_F
+\]
+\[
+  (nm)_F = n_F \cdot m_F
+\]
+\end{lemma}
+\begin{proof}
+  $n > 0, m > 0$:
+  \[
+    (\underset{n}{1 + 1 + \ldots + 1})(\underset{m}{1 + 1 + \ldots + 1}) = \underset{n \cdot m}{1 + 1 + \ldots + 1}
+  \]
+\end{proof}
+\begin{definition}
+\textbf{Хар-кой поля} $F$ наз-ся наим. \underline{натур.} число $n \in \N$, т. ч.:
+\[
+n_F = 0
+\]
+Если $\forall n \in \N, n_F \neq 0$, то говорят, что хар-ка равна $0$.
+\end{definition}
+\begin{example}
+$\Z_p \colon \underset{p}{\overline{1} + \overline{1} + \ldots + \overline{1}} = \overline{0} = \overline{p}$ \\
+Поля: $\Q, \R, \C$ имеют хар-ку 0.
+\end{example}
+\begin{symb}
+$char(F)$ - хар-ка поля $F$
+\end{symb}
+\begin{statement}
+ Если поле $F$ имеет ненулевую хар-ку ($char(F) \neq 0$), то $char(F) = p$, где $p$ - простое число.
+\end{statement}
+\begin{proof}
+От прот., пусть $char(F) = n$, $n$ - составное:
+\[
+n = p \cdot q, 1 < p, q < n
+\]
+\[
+n_F = p_F \cdot q_F = 0!!! \text{(Прот-е, т. к. в поле нет делителей нуля.)}
+\]
+\[
+\Rightarrow char(F) \text{ - простое.}
+\]
+\end{proof}
+\begin{definition}
+Пусть $G$ - группа/кольцо/поле. Непустое подмн-во $H \subset G$ наз-ся \textbf{подгруппой/подкольцом/подполем}, если оно само является группой/кольцом/полем, отн-но операции, опр-ой на $G$.
+\end{definition}
+\begin{statement}
+Если $H$ - подгруппа в группе $G$, то $e_G = e_H$.
+\end{statement}
+\begin{proof}
+\[
+e_H \cdot e_H = e_H
+\]
+В $G$ для $e_H$ есть обратный $e_H^{-1}$:
+\[
+e_H = e_H \cdot e_G = e_G
+\]
+\end{proof}
+\begin{consequence}
+У подкольца $0$ совпадает с $0$ кольца, а у всякого подполя 0 и 1 совпадают с 0 и 1 поля.
+\end{consequence}
+\[
+  (F, +) \text{ - аб. гр. с нейтр. эл-ом 0}
+\]
+\[
+  (F, *) \text{ - аб. гр. с нейтр. эл-ом 1}
+\]
+\begin{statement}[Критерий подгруппы]
+Непустое подмн-во $H$ в группе $G$ явл. подгруппой в ней $\iff$
+\begin{itemize}
+  \item [a) ] $H$ замкнуто отн-но групповой оп-ции в $G$ (*)
+    \[
+    \forall a, b \in H (a * b \in H)
+    \]
+  \item [b) ] $H$ замкнуто отн-но взятия обратного эл-та, т. е.:
+    \[
+    \forall a \in H (a^{-1} \in H)
+    \]
+\end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [1) ] \textbf{Необх.} Пусть $H$ - подгруппа в $G$ [$H \leq G$] - очев., по опр-ю подгруппы.
+  \item [2) ] \textbf{Дост.} $H \neq \emptyset$ и выполн-ся усл-я $a), b)$
+    \[
+    a) \iff \text{"*" опр-на в $H$} 
+    \]
+    \begin{itemize}
+      \item Ассоц-ть вып-ся в $H$, т. к. вып-ся в $G$
+      \item $\forall a \in H, \exists a^{-1} \in H$
+      \item $\forall a \in H \Rightarrow \exists a^{-1} \in H \Rightarrow a * a^{-1} = e \in H$
+    \end{itemize}
+\end{itemize}
+\end{proof}
+\begin{statement}
+Пусть $G$ - группа/кольцо/поле. Пусть $G_i$ - подгруппа/подкольцо/подполе $G$. Тогда:
+\[
+\bigcap_{i}^{} G_i \text{ - подгруппа/подкольцо/подполе}
+\]
+\end{statement}
+\begin{proof}
+Докажем для поля $F$:
+\[
+\forall i, F_i \leq F
+\]
+\[
+  (F_i, +) \text{ - аб. группа} \Rightarrow 
+\]
+\[
+  \forall i \colon 
+\begin{cases}
+\forall a, b \in F_i \Rightarrow a + b \in F_i \\
+\forall a \in F_i \Rightarrow -a \in F_i
+\end{cases} \rightarrow \bigcup_{i}^{} (F_i, +) \text{ - аб. группа.}
+\]
+\[
+\forall i \colon (F_i^{*}, *) \text{ - аб. группа} \Rightarrow \forall a, b \in F_i^{*} \Rightarrow a * b \in F_i, a^{-1} \in F_i \Rightarrow (\bigcap_{i}^{}F_i^{*}) \text{ - аб. группа.}
+\]
+\end{proof}
+\subsection{Гомоморфизим и изоморфизм групп.}
+Пусть $(G_1, *)$, $(G_2, *)$ - группы.
+\begin{definition}
+Отображение $\phi: G_1 \rightarrow G_2$ наз-ся гомоморфизмом, если $\phi$ сохраняет в этих группах операции.
+\[
+\forall a, b \in G_i \hookrightarrow \phi(a \circ b) = \phi(a) * \phi(b)
+\]
+\end{definition}
+\begin{definition}
+  Отобр. $\phi: X \rightarrow Y$ наз-ся инъективным, если:
+  \[
+  \forall a, b \in X \colon a \neq b \hookrightarrow \phi(a) \neq \phi(b)
+  \]
+\end{definition}
+\begin{definition}
+  Отобр. $\phi: X \rightarrow Y$ наз-ся сюрьективным, если:
+  \[
+  \phi(X) = Y, (\forall y \in Y, \exists x \in X \colon \phi(x) = y)
+  \]
+\end{definition}
+\begin{definition}
+  Отобр. $\phi \colon X \rightarrow Y$  наз-ся биективным, если оно С + И.
+\end{definition}
+\begin{definition}
+  \textbf{Изоморфизм} - биективный гомоморфизм.
+\end{definition}
+\begin{note}
+Всё перечисленное для групп переносится на кольца и поля.
+\end{note}
+\begin{statement}
+При гомоморфизме групп $f: G_1 \rightarrow G_2$:
+\begin{itemize}
+  \item [a) ] Нейтральный эл-т переходит в нейтральный:
+    \[
+    f(e_{G_1}) = e_{G_2}
+    \]
+  \item [b) ] $\phi$ - коммутирует со взятием обратно эл-та:
+    \[
+    \phi(a^{-1}) = \phi^{-1}(a)
+    \]
+\end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] $*$ - умножение:
+    \[
+    e_1 * e_1 = e_1 \Rightarrow \phi(e_1) \cdot \phi(e_1) = \phi(e_1) = \phi^{-1}(e_1)
+    \]
+    \[
+    \phi(e_1) = \phi(e_1) \cdot e_2 = e_2
+    \]
+  \item [b) ] \[
+  a \cdot a^{-1} = a^{-1} \cdot a = e_1
+  \]
+  \[
+  \phi(a) \phi(a^{-1}) = \phi(a^{-1}) \phi(a) = e_2
+  \]
+  \[
+  \phi(a^{-1}) = \phi^{-1}(a)
+  \]
+\end{itemize}
+\end{proof}
+\begin{consequence}
+При гомоморфизме полей 0 и 1 первого поля переходят в 0 и 1 второго.
+\end{consequence}
+\subsection{Простое подполе}
+\begin{definition}
+Поле $F$ наз-ся \textbf{простым}, если оно не имеет подполей, отличных от него самого.
+\end{definition}
+\begin{example}
+Поле $\Q$ и $\Z_p$ - простые поля.
+\end{example}
+\begin{proof}
+  Пусть $M \subset \Q$ - простое.
+  \[
+    0, 1 \in M
+  \]
+  \[
+  \underset{n}{1 + 1 + \ldots + 1} = n \in M \Rightarrow \frac{1}{n} \in M \Rightarrow \frac{m}{n} \in M \Rightarrow \Q \subset M
+  \]
+  \[
+  \Rightarrow M = \Q
+  \]
+  Аналогично, пусть $N \subset \Z_p$:
+  \[
+  \overline{0}, \overline{1} \in N \Rightarrow k * \overline{1} = \underset{k}{\overline{1} + \overline{1} + \ldots + \overline{1}} \in N \Rightarrow \Z_p \subset N \Rightarrow \Z_p = N 
+  \]
+\end{proof}
+\begin{theorem}
+Всякое поле содержит пустое подполе, и притом только 1.
+\end{theorem}
+\begin{proof}
+$F$ содержит подполя $F_i$ ($F_i \subset F$). Положим:
+\[
+D = \bigcap_{F_i \leq F}^{} F_i \Rightarrow D \leq F, \text{ причём $D$ в любом другом подполе поля $F$}
+\]
+Почему $D$ простое подполе? \\
+От прот., пусть $M \leq D \leq F \Rightarrow M \leq F \land D \not\subset M!!$, т. е. есть подполе $F$, в кот. нет $D$ - противоречие. \\
+Почему оно единственно? \\
+От прот., пусть $D$ и $D'$ - 2 простых подполя $\Rightarrow D \cap D'$ - подполе поля $F$. \\
+\[
+D \cap D' \subset D, D' \Rightarrow D \cap D' = D, D' \Rightarrow D = D'
+\]
+\end{proof}
+\begin{theorem}[Об описании простых подполей]
+  \begin{itemize}
+    \item [a)] Если $char(F) = 0$, то его простое подполе $D$ изоморфно $\Q$
+    \item [b) ] Если $char(F) = p, p$ - простое, то его простое подполе $D$ изоморфно $\Z_p$
+  \end{itemize}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] $0, 1 \in D$. Если $n_F = 0 \Rightarrow n = 0$
+    \[
+    \Rightarrow \underset{n}{1 + 1 + \ldots + 1} = n_F \in D \Rightarrow \exists \text{ вложение } \Z \text{ в } F \colon n \vdash n_F
+    \]
+    Это гомоморфизм, т. к.:
+    \[
+      (n + m) = n_F + m_F
+    \]
+    \[
+      (n \cdot m)_F = n_F \cdot m_F
+    \]
+    Пусть $n_F = m_F \Rightarrow (n \cdot m)_F = 0 \Rightarrow n - m = 0 \Rightarrow n = m$
+\end{itemize}
+\end{proof}

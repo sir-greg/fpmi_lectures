@@ -221,3 +221,167 @@ $x \in (0, \frac{\pi}{2}) \Rightarrow \frac{\sin x}{x} < 1$ и $\cos x < \frac{\
   \item [3) ] Если $\alpha$ - огр-на, то говорят, что ф-ция $f$ \underline{ограничена по сравнению} с $g$ при $x \rightarrow a$. Пишут, что $f(x) = O(g(x)), x \rightarrow a$
 \end{itemize}
 \end{definition}
+\begin{note}
+Если $g(x) \neq 0$ в некот. проколот. окр-ти $a$, с учётом обл. опр-я, то:
+\begin{itemize}
+  \item [1) ] \[
+  f(x) \sim g(x), x \rightarrow a \iff \lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a}\alpha(x) = 1
+  \]
+\item [2) ] \[
+  f(x) = o(g(x)), x \rightarrow a \iff \lim_{x\to a} \frac{f(x)}{g(x)} = 0
+\]
+\item [3) ] \[
+  f(x) = O(g(x)), x \rightarrow a \iff \exists M > 0, \exists \delta > 0, \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E \left(\left|\frac{f(x)}{g(x)}\right| \leq M\right)
+\]
+\end{itemize}
+\begin{proof}
+  \begin{itemize}
+    \item [$\Rightarrow$)]
+Следует из опр-я.
+  \item [$\Leftarrow$)] Положим:
+    \[
+      \alpha \colon E \rightarrow \R, \alpha(x) = \begin{cases}
+        \frac{f(x)}{g(x)}, x \in \overset{\circ}{B_{\delta}}(a) \cap E \\
+        \text{что угодно}, \text{ иначе}
+      \end{cases}
+    \]
+  \end{itemize}
+\end{proof}
+\end{note}
+\begin{task}
+Доказать, что $\sim$ - отн. эквив-ти.
+\end{task}
+\begin{example}
+\begin{itemize}
+  \item [1) ] \[
+  x^{n} = o(x^{m}), x \rightarrow 0 \iff n > m
+  \]
+  \[
+  x^{n} = x^{n - m} x^{m}
+  \]
+\item [2) ] \[
+  x^{n} = o(x^{m}), x \rightarrow \pm \infty \Rightarrow m > n
+\]
+\item [3) ] \[
+  x = O(\sin x), x \rightarrow 0
+\]
+  \[
+  x + \cos x = O(x), x \rightarrow \pm \infty
+  \]
+\item [4) ] \[
+  x \sim \sin x \sim e^{x} - 1 \sim \ln(1 + x), x \rightarrow 0
+\]
+\end{itemize}
+\end{example}
+\begin{note}
+  Читаем $f(x) = O(g(x)), f(x) = o(g(x))$ - слева направо!
+\end{note}
+\begin{lemma}
+\[
+x \rightarrow a
+\]
+Тогда справедливо:
+\begin{itemize}
+  \item [1) ] \[
+  o(f) \pm o(f) = o(f), O(f) \pm O(f) = O(f)
+  \]
+\item [2) ] \[
+  o(f) = O(f)
+\]
+\item [3) ] \[
+  o(O(f)) = o(f), O(o(f)) = o(f)
+\]
+\item [4) ] \[
+  o(f)O(g) = o(fg)
+\]
+\end{itemize}
+\end{lemma}
+\begin{proof}
+\begin{itemize}
+  \item [3) ]\[
+      \begin{cases}
+  u = o(v), x \rightarrow a \\
+  v = O(f), x \rightarrow a
+      \end{cases} \Rightarrow 
+      \begin{cases}
+       u(x) = \alpha(x)v(x)  \\
+       v(x) = \beta(x)f(x)
+      \end{cases} \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E
+  \]
+  \[
+  \Rightarrow u(x) = \alpha(x)\beta(x)f(x) = \gamma(x)f(x), \gamma \rightarrow 0, x \rightarrow a
+  \]
+  \[
+  \Rightarrow u(x) = o(f), x \rightarrow a
+  \]
+\end{itemize}
+\end{proof}
+\begin{lemma}
+\begin{itemize}
+  \item [1) ] \[
+  f(x) \sim g(x), x \rightarrow a \iff f(x) = g(x) + o(g(x)), x \rightarrow a
+  \]
+\item [2) ] \[
+  f_1(x) \sim f_2(x), g_1(x) \sim g_2(x), x\rightarrow a \Rightarrow f_1(x)g_1(x) \sim f_2(x)g_2(x)
+\]
+Кроме того, если $g_{1, 2}(x) \neq 0$ в некот. прок. окр-ти $a$, то:
+\[
+  \frac{f_1(x)}{g_1(x)} \sim \frac{f_2(x)}{g_2(x)}, x \rightarrow a
+\]
+\item [3) ] \[
+    f(x) \sim g(x), x \rightarrow a
+\]
+То пределы $f(x), g(x)$ при $x \rightarrow a$ сущ-ют одновременно (в $\overline{\R}$), и если сущ-ют, то равны.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+\begin{itemize}
+  \item [1) ] \[
+  f(x) \sim g(x), x \rightarrow a \iff f(x) = \alpha(x) g(x), x \in \overset{\circ}{B_{\delta}}(a), \alpha(x) \rightarrow 1
+  \]
+  \[
+  f(x) = \alpha(x) g(x) =  g(x) + g(x)\underset{\rightarrow 0}{(\alpha(x) - 1)} \iff f(x) = g(x) + o(g(x))
+  \]
+\item [2) ] Пусть $g_1(x) \neq 0, \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E$
+  \[
+  g_2(x) = \alpha(x) g_1(x), \forall x \in \overset{\circ}{B_{\delta}}(a) \cap E
+  \]
+  \[
+  \alpha(x) \rightarrow 1, x \rightarrow a
+  \]
+  Т. к. $\alpha(x)$, то $\exists \delta_1 > 0, \forall \in \overset{\circ}{B_{\delta_1}}(a) \cap E (\alpha(x) \in (\frac{1}{2}, \frac{3}{2}))$ \\
+  $\delta_0 = min(\delta, \delta_1)$. Тогда $g_2(x) \neq 0$ на $\overset{\circ}{B_{\delta_2}}(a) \cap E$ \\
+  Рассм. $\frac{1}{g_1(x)}, \frac{1}{g_2(x)}, x \in \overset{\circ}{B_{\delta}}(a) \cap E \Rightarrow \forall x\in \overset{\circ}{B_{\delta}}(a) \cap E (\frac{1}{g_1(x)} = \frac{1}{\alpha(x)g_2(x)}) \Rightarrow \frac{1}{g_1(x)} \sim \frac{1}{g_2(x)}, x \rightarrow a$
+\end{itemize}
+\end{proof}
+\begin{example}
+\[
+  \lim_{x\to 0} \frac{\tg x - \sin x}{(\sqrt {x + 4} - 2)(2^{x} - 1)^{2}}
+\]
+\end{example}
+\begin{solution}
+\[
+\lim_{x\to 0} \frac{\tg x}{x} = \lim_{x\to 0} \frac{\sin x}{x} \cdot \frac{1}{\cos x} = 1 \Rightarrow \tg x \sim x, x \rightarrow 0
+\]
+\[
+\tg x - \sin x = \frac{\sin x}{\cos x}(1 - \cos x) = \frac{2\sin x \sin^{2}\frac{x}{2}}{\cos x} \sim 2 \cdot x \cdot (\frac{x}{2})^{2} \sim \frac{x^{3}}{2}, x \rightarrow 0
+\]
+\[
+  \sqrt{x + 4} - 2 = \frac{x}{\sqrt{x + 4} + 2} \sim \frac{x}{4}, x \rightarrow 0
+\]
+\[
+  e^{x} - 1 \sim x, x \rightarrow 0
+\]
+\[
+  \lim_{x\to 0} \frac{\tg x - \sin x}{(\sqrt {x + 4} - 2)(2^{x} - 1)^{2}} = \lim_{x\to 0} \frac{\frac{1}{2}x^{3}}{\frac{x}{4} \cdot x^{2}} = 2
+\]
+\[
+\tg x \sim x, x \rightarrow 0 \iff \tg x = x + o(x), x \rightarrow 0
+\]
+\[
+\sin x \sim x, x \rightarrow 0 \iff \sin x = x + o(x), x \rightarrow 0
+\]
+\[
+\tg x - \sin x = o(x), x \rightarrow
+\]
+\end{solution}
