@@ -1,0 +1,165 @@
+\section{Лекция 8}
+\subsection{Продоложние про тождества}
+\begin{itemize}
+  \item [3) ]
+\[
+  C_{n}^{0} + C_{n}^{1} + C_{n}^{2} + \ldots C_{n}^{n} = 2^{n}
+\]
+\item [4) ] \[
+    (C_{n}^{0})^{2} + \ldots + (C_{n}^{n})^{2} = C_{2n}^{n}
+\]
+\begin{proof}
+\begin{itemize}
+  \item [4) ] Рассм. $\set{a_1, \ldots, a_{2n}}$ \\
+
+    Выберем из этого мн-ва все возм. $n$-сочетания без повторений. Их $C_{2n}^{n}$ \\
+    \[
+    \set{\underset{k\text{ объектов}}{a_1, \ldots, a_n}; \underset{n - k \text{ объектов}}{a_{n + 1}, \ldots a_{2n}}}
+    \]
+    Из левой половины выбираем $k$ обЪектов, из левой соотв. - $n - k$. Кол-во способов так сделать:
+    \[
+    C_{n}^{k}C_{n}^{n - k} = (C_{n}^{k})^{2}
+    \]
+    Складывая по всем $k$:
+    \[
+    \sum_{k = 0}^{n} (C_{n}^{k})^{2} = C_{2n}^{n}
+    \]
+\end{itemize}
+\end{proof}
+\underline{Вопрос}: $\sum_{k = 0}^{n} (C_{n}^{k})^{4}$
+\item [5) ] Рассм. $\set{a_1, \ldots, a_n, a_{n + 1}}$. Выберем из этого мн-ва все возможные $m$-сочетания \underline{с повторениями}. Их:
+  \[
+    \overline{C_{n + 1}^{m}} = C_{n + m}^{m} = C_{n + m}^{n}
+  \]
+  Для $k = 0, 1, \ldots, m$ рассм. по отдельности все $m$-сочет. с повторениями, в каждом из которых ровно $k$ объектов $a_1$. Их:
+  \[
+  \overline{C_{n}^{m - k}} = C_{n + m - k - 1}^{m - k} = C_{n + m - k - 1}^{n - 1}
+  \]
+  Получаем тождество:
+  \[
+ \sum_{k = 0}^{m} C_{n - 1 + m - k}^{n - 1} = C_{n + m}^{n} 
+  \]
+\begin{consequence}
+  \[
+    n = 1\colon \underset{m + 1}{1 + 1 + 1 + \ldots + 1} = C_{m + 1}^{1}
+  \]
+  \[
+    n = 2\colon (m + 1) + (m) + \ldots + 1 = C_{m + 2}^{2} = \frac{(m + 2)!}{2!m!} = \frac{m(m + 1)}{2}
+  \]
+  \[
+  n = 3\colon \text{ Сумма квадратов :)}
+  \]
+\end{consequence}
+ \item [6) ] Полиномиальная ф-ла:
+   \[
+     (x_1 + \ldots + x_k)^{n} = \underset{\text{n раз}}{(x_1 + \ldots + x_k) \ldots (x_1 + \ldots + x_k)}
+   \]
+   \begin{task}
+   Комбинаторная задача: посчитать кол-во способов получить из слова КОМБИНАТОРИКА перестановкой букв разные слова.
+   \end{task}
+   \begin{solution}
+   Всего букв: 13.
+    \begin{center}
+    \begin{tabular}{ |c|c| } 
+     \hline
+    к - 2 \\ 
+     \hline
+     о - 2 \\
+     \hline
+     м - 1 \\
+     \hline
+     б - 1 \\
+     \hline
+     и - 2 \\
+     \hline
+    а - 2 \\
+     \hline
+     н - 1 \\
+     \hline
+     т - 1 \\
+     \hline
+     р - 1 \\
+     \hline
+    \end{tabular}
+    \end{center}
+    \[
+    \Rightarrow C_{13}^{2}C_{11}^{2}C_{9}^{1}\ldots C_{1}^{1} = \frac{13!}{2!2!1!1!\ldots 1!}
+    \]
+   \end{solution}
+   \begin{task}
+   Даны $n_1$ объектов $a_1$, $n_2$ объектов $a_2$, \ldots $n_k$ объектов $a_k$. Сколько способов сформировать п-ти из этих объектов.
+   \end{task}
+   \begin{solution}
+   $P(n_1, n_2, \ldots, n_k)$ - кол-во способов сформировать п-ть из наших объектов.
+   \begin{theorem}
+     \[
+     P(n_1, \ldots, n_k) = \frac{n!}{n_1! \ldots n_k!}
+     \]
+   \end{theorem}
+   \end{solution}
+   Тогда:
+   \[
+     (x_1 + \ldots + x_k)^{n} = \underset{\text{n раз}}{(x_1 + \ldots + x_k) \ldots (x_1 + \ldots + x_k)} = \ldots + P(n_1, \ldots, n_k) x_1^{n_1} \ldots x_k^{n_k}, 
+   \]
+   \[
+   P(n_1, \ldots, n_k) \text{ - полиномиальный коэфф.}
+   \]
+   \[
+   n_1 \text{ - кол-во скобок, из кот. взяли $x_1$}
+   \]
+   \[
+   n_2 \text{ - ... $x_2$}
+   \]
+   \[
+   \vdots
+   \]
+   \[
+   n_k \text{ - ... $x_k$}
+   \]
+   \[
+   n_1 + \ldots + n_k = n, \forall i, n_i \geq 0 \Rightarrow x_1^{n_1}\ldots x_k^{n_k}
+   \]
+ \item [6) ] \[
+ \sum_{n_1 + \ldots + n_k = n}^{}P(n_1, \ldots, n_k) = k^{n}
+ \]
+\item [7) ] Ф-ла включений-исключений: есть $N$ объектов и $\alpha_1, \ldots, \alpha_n$ - св-ва:
+  \begin{theorem}
+  \[
+  N(\alpha_1', \ldots, \alpha_n') = N - N(\alpha_1) - \ldots - N(\alpha_n) + N(\alpha_1, \alpha_2) + \ldots + N(\alpha_{n - 1}, \alpha_n) - \ldots + (-1)^{n}N(\alpha_1, \ldots, \alpha_n)
+  \]
+  \[
+  N(\alpha_1', \ldots, \alpha_n') = 
+  \]
+  \end{theorem}
+  \begin{proof}
+  Индукция по числу свойств:
+  \begin{itemize}
+    \item База: 
+      \[
+      n = 1 \colon N(\alpha_1') = N - N(\alpha_1)
+      \]
+    \item Переход:
+      \[
+      \forall N, \forall a_1, \ldots, a_N, \forall k \leq n - 1, \forall \alpha_1, \ldots \alpha_k \text{ - выполнена теорема.}
+      \]
+      Берём произв. $N, a_1, \ldots, a_N, \alpha_1, \ldots, \alpha_n$. Рассм. св-ва $\alpha_1, \ldots \alpha_{n - 1}$:
+      \begin{equation}
+        \label{eq:prep}
+      N(\alpha_1', \ldots, \alpha_{n - 1}') = N - N(\alpha_1) - \ldots - N(\alpha_{n - 1}) + \ldots + (-1)^{n - 1}N(\alpha_1, \ldots, \alpha_{n - 1})
+      \end{equation}
+      Выберем из $a_1, \ldots, a_N$ те объекты, кот. обладают св-вом $\alpha_n$. Их $N(\alpha_n) = M$, обозначим их, как: $b_1, \ldots, b_M$:
+      \[
+      M(\alpha_1', \alpha_2', \ldots \alpha_{n - 1}') = M - M(\alpha_1) - M(\alpha_2) - \ldots - M(\alpha_{n - 1}) + \ldots + (-1)^{n - 1}(M(\alpha_1, \ldots, \alpha_{n - 1})) = 
+      \]
+      \begin{equation}
+        \label{eq:last}
+      =  N(\alpha_1', \ldots, \alpha_{n - 1}', \alpha_n) = N(\alpha_n) - N(\alpha_1, \alpha_n) - \ldots - N(\alpha_{n - 1}, \alpha_n) + \ldots + (-1)^{n - 1}(N(\alpha_1, \ldots, \alpha_{n}))
+      \end{equation}
+      Тогда, чтобы получить $N(\alpha_1', \ldots, \alpha_n')$, вычислим $(\ref{eq:prep})$ - $(\ref{eq:last})$:
+      \[
+      N(\alpha_1', \ldots, \alpha_n') = N - N(\alpha_1) - \ldots - N(\alpha_n) + N(\alpha_1, \alpha_2) + \ldots + N(\alpha_{n - 1}, \alpha_n) + \ldots + (-1)^{n}N(\alpha_1, \ldots, \alpha_n)
+      \]
+  \end{itemize}
+  \end{proof}
+
+\end{itemize}

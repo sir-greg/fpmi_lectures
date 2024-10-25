@@ -257,6 +257,61 @@ D \cap D' \subset D, D' \Rightarrow D \cap D' = D, D' \Rightarrow D = D'
     \[
       (n \cdot m)_F = n_F \cdot m_F
     \]
-    Пусть $n_F = m_F \Rightarrow (n \cdot m)_F = 0 \Rightarrow n - m = 0 \Rightarrow n = m$
+    Пусть $n_F = m_F \Rightarrow (n \cdot m)_F = 0 \Rightarrow n - m = 0 \Rightarrow n = m$ \\
+    Покажем, что и поле $\Q$ может быть изоморфно вложено в $F$ $\Rightarrow$ Нужно построить инъективный гомоморфизм: \\
+    Определеим соотв.: $\Q \rightarrow \frac{m}{n}, m \in \Z, n \in \N \mapsto $ решение ур-я $n_F \cdot x = m_F$, т. е. $x = m_F \cdot n_F^{-1}$ \\
+    Проверим:
+    \begin{itemize}
+      \item [1) ] Сохранение сложения:
+        \[
+        \frac{m}{n_1}, \frac{m_2}{n_2} \Rightarrow \frac{m_1}{n_1} + \frac{m_2}{n_2} = \frac{m_1n_2 + m_2n_1}{n_1n_2} \mapsto (n_{1_F}n_{2_F}) y = m_{1_F}n_{2_F} + m_{2_F}n_{1_F}
+        \]
+        \[
+        \frac{m_1}{n_1} \mapsto n_{1_F} x_1 = m_{1_F}
+        \]
+        \[
+        \frac{m_2}{n_2} \mapsto n_{2_F} x_2 = m_{2_F}
+        \]
+        \[
+        x_1 + x_2 \overset{?}{=} y
+        \]
+        Домножим ур-ия с $x_1$ и $x_2$ на $n_2$ и $n_1$ соотв. и сложим их:
+        \[
+        n_{1_F}n_{2_F}(x_1 + x_2) = m_{1_F}n_{2_F} + m_{2_F}n_{1_F}
+        \]
+        Т. к. решение единственно, то $y = x_1 + x_2$
+      \item [2) ] Сохрание умножения:
+        \[
+        \frac{m_1}{n_1} \cdot \frac{m_2}{n_2} \mapsto n_1n_2 y = m_1m_2
+        \]
+        \[
+        y \overset{?}{=} x_1x_2 
+        \]
+        Перемножим ур-ия с $x$-ми:
+        \[
+          n_{1_F}n_{2_F} x_1x_2 = m_{1_F}m_{2_F} \Rightarrow y = x_1x_2, \text{ т. к. решение единственно}
+        \]
+      \item [3) ] Инъективность
+          \[
+          \frac{m_1}{n_1} \mapsto \text{ решение } n_{1_F} x = m_{1_F} \Rightarrow x = n_{1_F}^{-1}m_{1_F}
+          \]
+          \[
+          \frac{m_2}{n_2} \mapsto x \colon n_{2_F} x = m_{2_F} \Rightarrow x = n_{2_F}^{-1}m_{2_F}
+          \]
+          \[
+          \Rightarrow n_1m_2 = n_2m_1 \Rightarrow (n_1m_2 - n_2m_1) = 0
+          \]
+          \[
+         char(F) = 0 \Rightarrow n_2m_1 = n_1m_2 \Rightarrow \frac{n_2}{m_2} = \frac{n_1}{m_1}
+          \]
+          $\Rightarrow$ $\exists$ в $F$ подполе $D_F \cong \Q$
+    \end{itemize}
+  \item [b) ] \[
+  char(F) = p \text{ и } 0, 1 \in F \Rightarrow n_F \in F, \forall n
+  \]
+  \[
+  \Rightarrow \set{0_F, \ldots, (p - 1)_F} \cong \Z_p
+  \]
+  Тогда в $D_F$ есть простое подполе, изом. $\Z_p$ $\Rightarrow$ $D_F \cong \Z_p$
 \end{itemize}
 \end{proof}

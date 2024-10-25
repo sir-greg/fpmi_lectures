@@ -1,0 +1,221 @@
+\section{Лекция 8}
+\begin{center}
+  Ф-лы \\
+\begin{tabular}{ |c|c| } 
+ \hline
+  Выполнимые & Невыполнимые \\ 
+ \hline
+\end{tabular}
+\end{center}
+\subsection{Выр-ем задачи через вып-ть ф-л}
+\begin{itemize}
+  \item [1) ] \textbf{Раскраски:} \\
+    Дан граф $G = (V, E)$. Цель, построить 3-раскраску
+    \[
+      V \rightarrow \set{1, 2, 3} \colon (v, u) \in E \Rightarrow col(u) \neq col(v)
+    \]
+    \begin{center}
+    Вершина $u \mapsto (p_u, q_u)$ \\
+    \begin{tabular}{ c c } 
+      цвет & знач перем \\
+      не сущ & 00 \\
+      1 & 01 \\
+      2 & 10 \\
+      3 & 11
+    \end{tabular}
+    \end{center}
+    Усл-ие на ребро: \\
+    \[
+      (v, u) \mapsto (p_u \neq p_v) \lor (q_u \neq q_v)
+    \]
+    Итоговая ф-ла:
+    \[
+    \bigcap_{(v, u) \in E}^{} (p_u \neq p_v) \lor (q_u \neq q_v)
+    \]
+    Вып-ма т. и т. т., когда граф раскрашен в 3 цвета.
+  \item [2) ] \textbf{Расстановка ферзей}:
+    \[
+    n \times n \colon p_{ij} = \begin{cases}
+    1, \text{ на клетке $(i, j)$ стоит ферзь} \\
+    0, \text{ иначе}
+    \end{cases}
+    \]
+    \[
+      (p_{i 1} \lor \ldots \lor p_{i n}) \text{ - в i-ой строке > 1 Ф.}
+    \]
+    \[
+      (\neg p_{ij} \lor \neg p_{ik}) \text{ - в i-ой строке $\leq 1$ Ф}
+    \]
+    \[
+      (\neg p_{i k} \lor \neg p_{j k}) \text{ - в i-ой вертикали $\leq 1$ Ф}
+    \]
+    \[
+      (\neg p_{i j} \lor \neg p_{i - k, j - k}) \text{ на диагонали $\leq 1$ Ф}
+    \]
+    \[
+      (\neg p_{i j} \lor \neg p_{i - k, j - k}) \text{ на побочной диагонали $\leq 1$ Ф}
+    \]
+  Вся ф-ла - конкатенация всех условий.
+\item [3) ] \textbf{З-ча о клике}: \\
+  Дан граф $G, q_{u v} = 1 \iff (u, v) \in E$ \\
+  Вопрос: $\exists?$ клика из $k$ вершин. \\
+  \[
+    (v_1, v_2, \ldots, v_k) \colon \forall i \neq j, (v_i, v_j) \in E
+  \]
+  \[
+  \bigvee_{(v_1, v_2, \ldots, v_k)} \bigwedge_{i \neq j} q_{v_i, v_j} \text{ - длина $\sim C_{n}^{k}$} =
+  \]
+  \[
+  = \frac{n!}{k! (n - k)!} > \frac{(n - k)^{k}}{k!} > \left(\frac{n - k}{k}\right)^{k} \underset{k = \frac{n}{10}}{=} 9^{\frac{n}{10}}
+  \]
+\end{itemize}
+
+Можно ли понимать $v_1, v_2, \ldots, v_k$ как перемен. и написать ф-лу:
+\[
+\bigwedge_{i \neq j} (v_i \neq v_j \land q_{v_i, v_j}) ?
+\]
+Это не булева ф-ла, т. к. перем. встреч. в индексе.
+
+\[
+p_u = \begin{cases}
+1, \text{ u в клике} \\
+0, \text{ иначе}
+\end{cases}
+\]
+\[
+  (p_u \land p_v) \rightarrow q_{u v}
+\]
+\[
+p_1 + p_2 + \ldots + p_n \geq k
+\]
+Или: $(u, v) \not\in E \Rightarrow (\neg p_u \land \neg p_v)$.
+
+Будем делать так:
+\[
+  p_{i u} \text{ - вершина $u$ - $i$-ая в клике}
+\]
+\[
+  (p_{i 1} \lor \ldots \lor p_{i n}) \text{ - под каждым номером есть вершина, $i \in \set{1, \ldots, k}$}
+\]
+\[
+i \neq j \Rightarrow (\neg p_{i v} \lor \neg p_{j v}) \text{ - у одной верш. не м. б. 2 номеров.}
+\]
+\[
+  (u, v) \not\in E \Rightarrow (\neg p_{i u} \lor \neg p_{j v}) \text{ - антиребро не м. б. внутри клики.}
+\]
+\subsubsection{Обобщаем. Метод резолюций}
+Ф-ла - конъюнкция всех усл. - КНФ. \\
+
+Пусть дана КНФ, будем рассм. её как набор дизъюнктов. \\
+
+Правило Res: \begin{center}
+\begin{tabular}{ c c c } 
+  $A \lor x$ & & $B \lor \neg x$ \\
+ \hline
+             & $A \lor B$ - \textbf{резольвента} & 
+\end{tabular}
+\end{center}
+
+\begin{statement}
+Если на данном наборе вып. $A \lor x$ и $B \lor \neg x$, то вып-мо и $A \lor B$
+\end{statement}
+\begin{consequence}
+Если исх. ф-ла вып-ма, то и все резольвенты тоже.
+\end{consequence}
+Пустой дизъюинкт: $\perp$
+\begin{center}
+\begin{tabular}{ c c c } 
+  $x$ & & $\neg x$ \\ 
+ \hline
+      & $\perp$ &
+\end{tabular}
+    
+\begin{tabular}{c c c}
+  $x \lor y$ & & $\neg x \lor \neg y$ \\
+  \hline
+             & $y \lor \neg y$ &
+\end{tabular}
+
+\begin{tabular}{c c c}
+  $p \lor x$ & & $p \lor r \lor \neg x$ \\
+  \hline
+             & $p \lor r$ & 
+\end{tabular}
+\end{center}
+Метод резолюций: строим всё новые резольвенты, пока либо не будет выведен $\perp$, либо не прекратится появление новых дизъюнктов. \\
+\begin{theorem}[О корректности метода резол.]
+Если исх. ф-ла вып., то $\perp$ нельзя вывести.
+\end{theorem}
+\begin{proof}
+Если можно вывести, то $\perp$ будет ист., но он $\equiv 0$
+\end{proof}
+\begin{example}
+Ферзи 2 x 2
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ $p$ & $q$ \\ 
+ \hline
+ $r$ & $s$ \\
+ \hline
+\end{tabular}
+\end{center}
+Усл-ие:
+\[
+p \lor q
+\]
+\[
+r \lor s
+\]
+\[
+\neg p \lor \neg q
+\]
+\[
+\neg r \lor \neg q
+\]
+\[
+\neg p \lor \neg s
+\]
+\[
+\neg q \lor \neg r
+\]
+\begin{center}
+\begin{tabular}{ c c c }
+  $ p \lor q $ & & $ \neg p \lor \neg s $ \\
+\hline
+             & $ q \lor \neg s $ & 
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{ c c c }
+$  $ & & $  $ \\
+\hline
+& $  $ &
+\end{tabular}
+\end{center}
+Picture
+\end{example}
+\begin{theorem}(О полноте)
+Если $\perp$ нельзя вывести, то ф-ла выполнима.
+\end{theorem}
+\begin{proof}
+Все выводимые дизъюнкты разобъём на классы.
+\[
+C_0 \subset C_1 \subset C_2 \subset \ldots \subset C_k
+\]
+$C_i$ - дизъюнкты, зависящ. только от переменных $p_1, \ldots, p_i$ ($C_0 = \emptyset$, т. к. $\perp$ - невыводим). \\
+
+Будем док-ть по инд-ции, что одновр. вып. все дизъюнкты из $C_i$. \\
+ММИ:
+\begin{itemize}
+  \item База: $C_0 = \emptyset \Rightarrow $  очев.
+  \item Переход: пусть все ф-лы из $C_{i - 1}$ вып-ны на знач. $a_1, \ldots a_{i - 1}$. Рассм. ф-лы из $C_i$, кот. ещё не выполнены за счёт этих значений. \\
+    Предположим, что среди них есть ф-ла с $p_i$ и ф-ла с $\neg p_i$:
+    \[
+    p_i \lor D_0 \text{ и } \neg p_i \lor D_1
+    \]
+    Раз эти ф-лы остались, то $D_0(a_1, \ldots, a_{i - 1}) = 0$ и $D_1(a_1, \ldots, a_{i - 1}) = 0$. Но $D_0 \lor D_1$ явл-ся резольвентой: $(p_i \lor D_0), (\neg p_i \lor D_1)$. Тогда $D_0 \lor D_1 \in C_{i - 1}$, и тогда должно быть: $D_0 \lor D_1 = 1$!!! \\
+    Следовательно, все оставшиеся ф-лы либо с $p_i \Rightarrow p_i = 1$, либо с $\neg p_{i} \Rightarrow p_i = 0$
+\end{itemize}
+\end{proof}
+Как это связано с тафтологиями? А это уже совсем другая история.

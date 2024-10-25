@@ -1,0 +1,219 @@
+\section{Лекция 16}
+\subsection{Линейные пр-ва}
+Пусть $F$ - поле. \\
+\begin{definition}
+\textbf{ЛП (линейным пр-вом)} над полем $F$ наз-ся мн-во $V$, на кот. опр-ны оп-ции:
+\begin{itemize}
+  \item [a) ] Сложение эл-ов из
+    \[
+      V \colon \forall a, b \in V \hookrightarrow a + b \in V
+    \]
+  \item [b) ] Умножение эл-ов $V$ на число из $F$:
+    \[
+      \forall \lambda \in F, a \in V, \lambda a \in V
+    \]
+  \item [c) ] $(V_1, +)$ - абелева группа.
+  \item [d) ] Унитарность:
+    \[
+      1 * a = a, \forall a \in V
+    \]
+  \item [e) ] Ассоциативность отн-но скалярного множителя:
+    \[
+      (\lambda \cdot \mu) a = \lambda \cdot (\mu a), \forall \lambda, \mu \in F, a \in V
+    \]
+  \item [f)] Дистрибутивность:
+    \[
+      (\lambda + \mu) a = \lambda a + \mu a
+    \]
+  \item [g)] \[
+    \lambda(a + b) = \lambda a + \lambda b
+  \]
+\end{itemize}
+Эл-ты ЛП принято называть \textbf{векторами}. $\overline{0}$ - нулевой вектор.
+\end{definition}
+\begin{example}
+\begin{itemize}
+  \item [0) ] Нулевое пр-во $\set{\overline{0}}$:
+    \[
+    \overline{0} + \overline{0} = \overline{0}
+    \]
+    \[
+    \lambda \overline{0} = \overline{0}
+    \]
+  \item [1) ] $M_{m \times n}(F)$ - лин. пр-во отн-но естественных операций.
+    \[
+    M_{m \times 1}(F) = \Set{\begin{pmatrix}a_1 \\ a_2 \\ \vdots \\ a_m \end{pmatrix}} = F^{m} \text{ - арифметическое пр-во над $F$ раз-ти $m$}
+    \]
+  \item [2) ] $V_i, i = 1, 2, 3$. $F = \R$
+  \item [3) ] $F[x]$ - пр-во мн-нов с коэфф-ми из поля $F$
+    \[
+    F_n[x] = \set{f(x) \in F[x] | deg(f) \leq n}
+    \]
+\end{itemize}
+\end{example}
+\subsubsection{Подпр-во ЛП}
+Пусть $V$ - ЛП на поле $F$.
+\begin{definition}
+Непустое подмн-во $W \subset V$, наз-ся \textbf{подпр-вом} в $V$, если оно само явл-ся ЛП отн-но операций, опред. в $V$.
+\end{definition}
+\begin{symb}
+$W \leq V$ - $W$ подпр-во $V$
+\end{symb}
+\begin{statement}
+Если $W \leq V$, то $0_W = 0_V$, и если для $w \in W, -w $ - ему прот. вектор в $W$, то он же явл-ся прот. вектором в $V$.
+\end{statement}
+\begin{proof}
+Было доказано в терминах подгрупп.
+\end{proof}
+\begin{statement}[Критерий подпр-ва]
+Непустое подмн-во $W \subset V$ над $F$ - подпр-во в $V$ $\iff$
+\begin{itemize}
+  \item [a) ] $W$ замкнуто от-но сложения, т. е.:
+    \[
+    \forall a, b \in W \hookrightarrow a + b \in W
+    \]
+  \item [b) ] $W$ замкнуто от-но умножения на скаляр, т. е.:
+    \[
+    \forall \lambda \in F, \forall a \in W \hookrightarrow \lambda a \in W
+    \]
+\end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [$\Rightarrow$)] Очевидно.
+  \item [$\Leftarrow$)] Пусть усл-ия $a$ и $b$ вып-ся. Верно ли:
+\[
+  W \overset{?}{\leq} V
+\]
+\[
+  a \in W \colon (-1)a \in W. \text{ Покажем, что $(-1)a = -a$}
+\] 
+\[
+  (-1)a + a = (-1)a + 1 \cdot a = (-1 + 1) a = 0 a = \overline{0}
+\]
+\[
+  a + (-a) = \overline{0} \Rightarrow \overline{0} \in W
+\]
+Из этих следствий следует верность критерия подпр-ва.
+\end{itemize}
+\end{proof}
+\begin{consequence}
+Пересечение любого числа подпр-в ЛП $V$ само явл-ся подпр-вом.
+\end{consequence}
+\begin{proof}
+$W_i \leq V \Rightarrow \bigcap_{i}^{} W_i \leq V$
+\end{proof}
+\subsubsection{Подполе лин. объектов системы векторов}
+Пусть $S$ - произв. сист. векторов из $V$ (возм. бесконечное)
+\begin{definition}
+Линейная оболочка системы $S$ наз-ся наименьшая по включению подпр-во в $V$, содерж. $S$
+\end{definition}
+\begin{symb}
+\[
+<S> = \bigcap_{W \leq V, S \leq W}^{} W
+\]
+\end{symb}
+\begin{statement}
+$<S> = \Set{\sum_{i = 1}^{n} \alpha_i s_i | s_i \in S, \alpha_i \in F, n \in \Z_{+}}$
+\end{statement}
+\begin{note}
+Если $n = 0$, то рассм. $\overline{0}$
+\end{note}
+\begin{proof}
+\[
+L = \Set{\sum_{i = 1}^{n} \alpha_i s_i | s_i \in S, \alpha_i \in F, n \in \Z_{+}}
+\]
+\[
+s_i \in S \Rightarrow 1 \cdot s_i \in L \Rightarrow \forall s \in S, s \in L
+\]
+Покажем, что $L \leq V \land S \subset L$:
+\[
+\sum_{i}^{} \alpha_i s_i \in L, \sum_{i}^{} \beta_i s_i \in L \Rightarrow \sum_{i}^{} (\alpha_i + \beta_i) s_i \in L
+\]
+\[
+\lambda(\sum_{}^{} \alpha_i s_i) = \sum_{i}^{} (\lambda \alpha_i) s_i \Rightarrow L \leq V
+\]
+По опред. $\Rightarrow <S> \subset L$. Теперь покажем $L \subset <S>$:
+\[
+s_i \in S, \forall i \Rightarrow s_i \in <S>
+\]
+Т. к. $<S>$ - подпр-во $V$
+\[
+  \Rightarrow \alpha \cdot s_i \in <S>, \forall \alpha \in F\Rightarrow \sum_{i}^{} \alpha_i s_i \in <S> \Rightarrow L \subset <S>
+\]
+\end{proof}
+\begin{definition}
+Если $<S> = V$, то говорят, что $V$ порождено $S$.
+\end{definition}
+\begin{definition}
+ЛП $V$ наз-ся \textbf{конечно-порождённым}, если оно имеет конечное порождающее мн-во
+\end{definition}
+\subsubsection{Базис}
+\begin{definition}
+  Пусть $V$ - ЛП над $F$. Базисом в $V$ наз-ся уп. система векторов $G = \begin{pmatrix}e_1 & e_2 & e_3 & \ldots & e_n \end{pmatrix}$, если вып-ны усл-ия:
+  \begin{itemize}
+    \item [a) ] $G$ - ЛНЗ над $F$ (т. е. $\sum_{i}^{}\alpha_i e_i = \overline{0} \iff \alpha_i = 0 \in F, \forall i$).
+    \item [b) ] Каждый вектор пр-ва $V$ представим в виде ЛК векторов $G$. Это усл-ие равносильно следующему:
+      \[
+      <\set{e_1, \ldots, e_n}> = V
+      \]
+  \end{itemize}
+\end{definition}
+\begin{example}
+\begin{itemize}
+  \item [1) ] $F^{n}$ базис:
+    \[
+      e_1 = \begin{pmatrix}1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, e_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \ldots e_n = \begin{pmatrix} 0 \\ 0 \\ 0 \\ \vdots \\ 1 \end{pmatrix}
+    \]
+    \[
+    \begin{pmatrix}\alpha_1 \\ \vdots \\ \alpha_n \end{pmatrix} = \sum_{i = 1}^{n} \alpha_i e_i
+    \]
+  \item [2) ] $F_n[x]$ базис:
+    \[
+    1, x, x^{2}, \ldots, x^{n}
+    \]
+\end{itemize}
+\end{example}
+\begin{statement}
+Всякое конечнопорождённое ЛП $V$ имеет базис.
+\end{statement}
+\begin{proof}
+Среди все конечных мн-во, порождающих $V$, выберем наименьшее по мощности. (мощность конечного мн-ва - это число его эл-ов). $\Rightarrow S_0$. Явл-ся ли $S_0$ базисом? \\
+
+Если $S_0$ ЛЗ, то $\exists s_0 \in S_0$, представимый как ЛК остальных эл-ов мн-ва $\Rightarrow S_0 \subset <S_0 \backslash \set{s_0}> \Rightarrow <S_0 \backslash \set{s_0}> = V$. Но это противоречие с тем, что $S_0$ - наименьшее по мощности. $\Rightarrow S_0$ - ЛНЗ.
+\end{proof}
+\begin{statement}[Основная лемма теории ЛП]
+  $V$ - ЛП над $F$. $V = \begin{pmatrix} u_1 & \ldots & u_n \end{pmatrix}$ и $W = \begin{pmatrix}w_1 & \ldots & w_m \end{pmatrix}$. Известно, что $\forall w_i \in W$ - представим как ЛК векторв $V$. Тогда, если $m > n$, то сист. $W$ - ЛЗ 
+\end{statement}
+\begin{proof}
+Индукция по $n$:
+\begin{itemize}
+  \item База: n = 1
+\[
+V = \begin{pmatrix} u \end{pmatrix}
+\]
+По усл-ию:
+\[
+w_1 = \lambda_1 u, w_2 = \lambda_2 u, \ldots w_m = \lambda_m u
+\]
+Если $\exists \lambda_i = 0$, то $W$ - ЛЗ. Иначе возьмём ЛК:
+\[
+\lambda_2 w_1 - \lambda_1 w_2 + 0w_3 + 0w_4 + \ldots + 0w_m = 0 \Rightarrow W \text{ - ЛЗ}
+\]
+  \item Переход: пусть утв. справедливо, для $V$, т. ч. $|V| = n - 1$. Докажем, для $|V| = n$:
+    \[
+    w_1 = \sum_{i = 1}^{n} \lambda_{1i} u_i
+    \]
+    \[
+    \vdots
+    \]
+    \[
+    w_j = \sum_{i = 1}^{n} \lambda_{ji} u_i
+    \]
+    Для каждого $i = 2, m$, отнимем от $w_i$ $w_1 \cdot \frac{\lambda_{1i}}{\lambda_{11}}$. Таким образом перейдем к системам:
+    \[
+      \overline{V} = \begin{pmatrix}u_2 & \ldots & u_n \end{pmatrix}, \overline{W} = \begin{pmatrix}w_2 - w_1 \cdot \frac{\lambda_{1i}}{\lambda_{11}} & \ldots \end{pmatrix}
+    \]
+    По предположению индукции: $\overline{W}$ - ЛЗ $\Rightarrow W$ - ЛЗ.
+\end{itemize}
+\end{proof}
