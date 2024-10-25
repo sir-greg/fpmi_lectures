@@ -1,0 +1,196 @@
+\section{Лекция 16}
+\begin{theorem}[О линейной апроксимации]
+  Ф-ция $f$ дифф-ма в $a \iff \exists A \in \R\colon$
+  \begin{equation}
+  f(x) = f(a) + A(x - a) + o(x - a), x \rightarrow a
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  Положим $A = f'(a)$:
+\begin{itemize}
+  \item [$\Rightarrow$)] Опр-м
+    \[
+      \alpha: I \rightarrow \R, \alpha(x) = \begin{cases}
+      \frac{f(x) - f(a)}{x - a} - f'(a), x \neq a \\
+      \text{произв.}, x = a
+      \end{cases}
+    \]
+    Тогда $\lim_{x\to a} \alpha(x) = 0$ и:
+    \[
+    f(x) - f(a) = f'(a)(x - a) + \alpha(x)(x - a), \text{ т. е. вып-но при $A = f'(a)$}
+    \]
+  \item [$\Leftarrow$)] ... см. учебник.
+\end{itemize}
+\end{proof}
+\begin{consequence}
+Если $f$ дифф-ма в $a$, то она непр-на в $a$.
+\end{consequence}
+\begin{note}
+Обратное неверно.
+\end{note}
+\begin{definition}
+Пусть $f: I \rightarrow \R, a \in I$, Тогда:
+\[
+f_{+}'(a) = \lim_{x\to a + 0} \frac{f(x) - f(a)}{x - a}
+\]
+\[
+f_{-}'(a) = \lim_{x\to a - 0} \frac{f(x) - f(a)}{x - a}
+\]
+Соотв. правая и левая производные.
+\end{definition}
+\begin{note}
+Если $a \in (int)I \Rightarrow \exists f'(a) \iff \exists f_{+}'(a) = f_{-}'(a) = f'(a)$. \\
+Если $a$ - концевая точка $I$, то производная равна соотв. одност. пределу.
+\end{note}
+\begin{task}
+Док-ть, что если $\exists f_{+}'(a), f_{-}'(a)$, то $f$ непр-на в $a$.
+\end{task}
+\begin{theorem}
+Пусть $f, g \colon I \rightarrow \R, \alpha, \beta \in \R$. Если $f, g$ дифф-мы в $a$, то:
+\begin{itemize}
+  \item [1) ] $\exists (\alpha f + \beta g)' = \alpha f' + \beta g'$ 
+  \item [2) ] $\exists (fg)' = f'g + fg'$ 
+  \item [3) ] Если $g \neq 0$ на $I$, то $\exists (\frac{f}{g})' = \frac{f'g - fg'}{g^{2}}$ 
+\end{itemize}
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item [2) ]
+\[
+fg(x) - fg(a) = (f(x) - f(a))g(x) + f(a)(g(x) - g(a))
+\]
+\[
+  \frac{fg(x) - fg(a)}{x - a} = \frac{f(x) - f(a)}{x - a} g(x) + f(a) \frac{g(x) - g(a)}{x - a}
+\]
+Перейдём к пределу $x \rightarrow a$, учитывая непр-ть в т. $a$ ф-ции $g$:
+\[
+  (fg)'(a) = f'g(a) + fg'(a)
+\]
+\item [3) ] Перейдём к пределу при $x \rightarrow a$ в рав-ве:
+  \[
+    \frac{\frac{1}{g}(x) - \frac{1}{g}(a)}{x - a} = \frac{g(a) - g(x)}{g(x)g(a)} \cdot \frac{1}{x - a} \rightarrow -\frac{g'(a)}{g^{2}(a)}
+  \]
+  Тогда п. 3. следует из п. 2.
+  \end{itemize}
+\end{proof}
+\begin{theorem}[Производная композиции]
+Пусть $I, G$ - пром-ки в $\R$. Если ф-ция $f: I \rightarrow G$ диф-ма в т. $a$, ф-ция $g: G \rightarrow \R$ диф-ма в $b$ и $b = f(a)$, то композиция $g \circ f \colon I \rightarrow \R$ диф. в $a$, причём:
+\[
+  (g \circ f)(a) = g'(f(a)) \cdot f'(a)
+\]
+\end{theorem}
+\begin{proof}
+\[
+  \frac{g(f(x)) - g(f(a))}{x - a} = \frac{g(f(x)) - g(f(a))}{f(x) - f(a)} \cdot \frac{f(x) - f(a)}{x - a}
+\]
+Рассм. $h\colon I \rightarrow \R, h(y) = \begin{cases}
+  \frac{g(y) - g(b)}{y - b}, y \neq b \\
+  g'(b), y = b
+\end{cases}$
+Тогда $h$ непр-на в $y = b$. Покажем, что при $x \in I, x \neq a$, верно:
+\begin{equation}
+  \label{eq:per}
+  \frac{g(f(x)) - g(f(a))}{x - a} = h(f(x)) \cdot \frac{f(x) - f(a)}{x - a}
+\end{equation}
+При $f(x) = f(a)$, обе части обнуляются. Иначе, если $f(x) \neq f(a)$, то $\ref{eq:per}$ верно в силу определения $h$. \\
+Т. к. $h$ непр-на в $y = b$, то $\lim_{x\to a} h(f(x)) = h(b) = g'(b)$, по т. о пределе композиции. Поэтому существует:
+\[
+\lim_{x\to a} (g \circ f)(x) = \frac{(g \circ f)(x) - (g \circ f)(a)}{x - a} = g'(b)f'(a) = g'(f(a))f'(a)
+\]
+\end{proof}
+\begin{theorem}[Предел обратной ф-ции]
+Пусть ф-ция $f: I \rightarrow \R$ непр-на и строго монотонна на пром-ке $I$. Если $f$ дифф-ма в точке $a \in I$ и $f'(a) \neq 0$, то обр. ф-ция $f^{-1} \colon f(I) \rightarrow I$ - дифф-ма в т. $f(a) = b$ причём:
+\[
+  (f^{-1})'(b) = \frac{1}{f'(a)}
+\]
+\end{theorem}
+\begin{proof}
+По т. об обр. ф-ции на $f(I)$ опр-на ф-ция $f^{-1}$, кот. там непр-на и строго монотонна. Следовательно, $f^{-1}(t) \rightarrow a, t \rightarrow b$ и $f^{-1}(t) \neq a$ при $t \neq b$. Поэтому по св-ву предела композиции:
+\[
+\lim_{t\to b} \frac{f^{-1}(t) - f^{-1}(b)}{t - b} = \lim_{t\to b} \frac{f^{-1}(t) - f^{-1}(b)}{f(f^{-1})(t) - f(f^{-1}(b))} = \lim_{x\to a} \frac{x - a}{f(x) - f(a)} = \frac{1}{f'(a)}
+\]
+(Заменили $f(x) = t, x = f^{-1}(t)$) \\
+Следовательно $f^{-1}$ дифф-ма в т. $b$.
+\end{proof}
+\begin{note}
+Если при вып-нии остальных условий, $f'(a) = 0$, то обратная ф-ция не дифф-ма в точке $b$. Иначе, при дифф-нии получаем:
+\[
+  f^{-1}(f(x)) = x \Rightarrow (f^{-1})'(b)f'(a) = 1
+\]
+\end{note}
+\begin{theorem}[Таблица производных]
+\begin{itemize}
+  \item [1) ] \[
+  c' = 0, c \in \R
+  \]
+\item [2) ] \[
+  (a^{x})' = a^{x}\ln a, a > 0, a \neq 1
+\]
+\item [3) ] \[
+  (\log_a x)' = \frac{1}{x \ln a}, a > 0, a \neq 1
+\]
+\item [4) ] \[
+  (x^{\alpha})' = \alpha x^{\alpha - 1}
+\]
+\item [5) ] \[
+  (\sin x)' = \cos x
+\]
+\item [6) ] \[
+  (\cos x)' = -\sin x
+\]
+\item [7) ] \[
+    (\tg x)' = \frac{1}{\cos^{2}x}, x \neq \frac{\pi}{2} + \pi k, k \in \Z
+\]
+\item [8) ] \[
+    (\ctg x)' = -\frac{1}{\sin^{2}x}, x \neq \pi k, k \in \Z
+\]
+\item [9) ] \[
+  (\arcsin x)' = -(\arccos x)' = \frac{1}{\sqrt{1 - x^{2}}}, x \in (-1, 1)
+\]
+  \item [10) ] \[
+      (\arctg x)' = -(\arcctg x)' = \frac{1}{1 + x^{2}}
+  \]
+\end{itemize}
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item [2) ] \[
+        (e^{x})' = \lim_{t\to x} \frac{e^{t} - e^{x}}{t - x} = e^{x}\lim_{t\to x} \frac{e^{t - x} - 1}{t - x} = e^{x}
+    \]
+    \[
+      (a^{x})' = e^{x\ln a} = e^{x\ln a} (x\ln a)' = a^{x}\ln a
+    \]
+  \item [3) ] По т. о производной обр. ф-ции:
+    \[
+      (\log_a x)' = \frac{1}{(a^{y})'} = \frac{1}{a^{y}\ln a}, y = \log_a x
+    \]
+    \[
+    \Rightarrow a^{y} = x \Rightarrow \frac{1}{a^{y}\ln a} = \frac{1}{x\ln a}
+    \]
+  \item [4) ] \[
+      (x^{a})' = (e^{a\ln x})' = e^{a\ln x} \cdot \frac{a}{x}  = x^{a} \cdot \frac{a}{x} = ax^{a - 1}
+  \]
+\item [5) ] По первому зам. пределу и непр-ти $\cos$:\[
+\lim_{t\to x} \frac{\sin t - \sin x}{t - x} = \lim_{t\to x} \frac{2\sin\frac{t - x}{2} \cos\frac{t + x}{2}}{\frac{t - x}{2}} = \cos x
+\]
+\item [6) ] \[
+    (\cos x)' = (\sin(\frac{\pi}{2} - x))' = \cos(\frac{\pi}{2} - x) \cdot (-1) = -\sin x
+\]
+\item [7) ] \[
+  (\tg x)' = (\frac{\sin x}{\cos x})' = \frac{\cos^{2}x + \sin^{2}x}{\cos^{2}x} = \frac{1}{\cos^{2}x}
+\]
+\item [8) ] \[
+  \ctg x \text{ - аналогично}
+\]
+\item [9) ] \[
+    (\arcsin x)' = \frac{1}{(\sin y)'}, = \frac{1}{\cos y}, y = \arcsin x \Rightarrow x = \sin y
+\]
+Т. к. $x \in (-1, 1) \Rightarrow y \in (-\frac{\pi}{2}, \frac{\pi}{2}) \Rightarrow \cos y > 0 \Rightarrow \cos y = \sqrt{1 - \sin^{2}y} = \sqrt{1 - x^{2}}$
+\[
+\Rightarrow (\arcsin x)' = \frac{1}{\sqrt{1 - x^{2}}}
+\]
+\item [10) ] \[
+  (\arctg x)' = \frac{1}{(\ctg y)'} = -\sin^{2}y = 
+\]
+  \end{itemize}
+\end{proof}

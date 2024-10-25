@@ -8,3 +8,4 @@
 \contentsline {subsubsection}{\numberline {2.0.2}Сравнение ф-ций}{12}{}%
 \contentsline {section}{\numberline {3}Лекция 15}{16}{}%
 \contentsline {subsection}{\numberline {3.1}Дифференцируемые ф-ции}{16}{}%
+\contentsline {section}{\numberline {4}Лекция 16}{17}{}%
