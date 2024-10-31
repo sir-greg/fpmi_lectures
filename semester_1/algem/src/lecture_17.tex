@@ -1,0 +1,205 @@
+\section{Лекция 17}
+\subsection{Конечномерные ЛП}
+\begin{definition}
+Линейное пр-во $V$ над $F$ наз-ся $n$-мерным (или размерности $n$), если в $V$ сущ-ет ЛНЗ система, сост. из $n$ векторов, а всякая система, векторов, сост. из $n + 1$ вектора - ЛЗ. \\
+
+Если же $\forall n \in \N$ в пр-ве $V$ $\exists$ ЛНЗ система из $n$ векторов, то $V$ наз-ся бесконечномерным.
+\end{definition}
+\begin{symb}
+\[
+dim_F V = n \text{ или } dim_F V = \infty
+\]
+\end{symb}
+\begin{theorem}
+Пусть $V$ - конечномерное ЛП над $F$. Тогда любые два базиса в $V$ обязательно имеют одинаковое число векторов. (или равномощны) \\
+Причём их кол-во равно $dim_F V$.
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] Если $G$ и $Q$ - базисы, имеющие разное число эл-ов, то базис, с большим числом веткоров - ЛЗ, по основой лемме.
+  \item [b)]  Покажем, что число векторов в базисе $G$ $= dim_F V$.
+    \[
+      G = \begin{pmatrix} e_1 & e_2 & \ldots & e_n \end{pmatrix},  \text{ - ЛНЗ}
+    \]
+    Покажем, что любая сист. из $W \colon \left|W\right| = n + 1 \text{ - ЛНЗ} \Rightarrow dim_F V = n$
+\end{itemize}
+\end{proof}
+\begin{note}
+Иногда размерность определяют как число базисных векторов.
+\end{note}
+\begin{note}
+В пр-ве $\Set{\overline{0}}$ - пустой базис. $\left|\emptyset\right| = 0 \Rightarrow dim_F \set{\overline{0}} = 0$
+\end{note}
+\begin{example}
+\begin{itemize}
+  \item [1) ] $V_i, i = 1, 2, 3$, $dim V_i = i$
+  \item [2) ]
+    \[
+      F^{n} = \Set{\begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n\end{pmatrix}}, dim F^{n} = n
+    \]
+    Базис:
+    \[
+    \begin{pmatrix}1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \ldots \begin{pmatrix}0 \\ 0 \\ 0 \\ \vdots \\ 1 \end{pmatrix}
+    \]
+  \item [3) ] \[
+  M_{m \times n} (F), dim M_{m \times n} = m \cdot n
+  \]
+\item [4) ] \[
+  F_n[x] \text{ - мн-ны с коэффициентами из поля $F$}, dim F_n[x] = n + 1
+\]
+Базис: $1, x, x^{2}, \ldots, x^{n}$
+\item [5) ] $\C$ - над $\C$: $dim_\C \C = 1$. Базис: 1 \\
+      $\C$ - над $\R \colon dim_\R \C = 2$. Базис: 1, $i$
+      \[
+      z = a \cdot 1 + b \cdot i, a, b \in \R
+      \]
+    \item [6) ] $\R$ над $\Q$ - бесконечномерное ЛП. Докажем бесконечномерность от противного:
+      \begin{proof}
+      Пусть $dim_\Q \R = n$. Выберем произвольное число $r \in \R, r \underset{G}{\longleftrightarrow} \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \ldots \\ \alpha_n \end{pmatrix}, \alpha_i \in \Q$. Т. е. $\R \cong \Q^{n}$ - счётно, что противоречит континуальности $\R$.
+      \end{proof}
+\end{itemize}
+\end{example}
+\begin{theorem}
+Пусть $S$ - произв. система (конеч. или бесконечная) система векторов в конечномерном ЛП $V$ над $F$. Тогда макс. ЛНЗ подсистема $S_0$ в $S$ образует базис в $<S>$. \\
+(P. S. Максимальная, т. е. если добавить ещё один вектор, то она станет ЛЗ).
+\end{theorem}
+\begin{proof}
+По т. из прошлой лекции, каждый вектор из $<S>$ представим в виде ЛК веткоров из $S$. Покажем, что $\forall s \in S$ представим в виде ЛК вект. из $S_0$.
+\begin{itemize}
+  \item $s \in S_0$ - очев
+  \item $s \in S \backslash S_0$. Рассм. $(S_0, s)$. Она ЛЗ по соглашению максимальности. Тогда вектор $s$ представим в виде ЛК векторов из $S_0$.
+\end{itemize}
+\end{proof}
+\begin{consequence}
+ЛП $V$ над $F$ конечномерное $\iff$ $V$ - конечнопорождённое.
+\end{consequence}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] Необх. Пусть $dim_F V < \infty$. Тогда конечный базис - это порождающая система.
+  \item [b) ] Дост. Пусть $V$ - конечнопорождённое $\overset{Th}{\Rightarrow}$ $\exists$ конечный базис $\Rightarrow$ его мощность $= dim_F V$
+\end{itemize}
+\end{proof}
+\begin{theorem}
+Любую ЛНЗ систему векторов конечномерного ЛП $V$ можно дополнить до базиса в $V$. 
+\end{theorem}
+\begin{proof}
+Пусть $S$ состоит из всех векторов $V$. Тогда $<S> = V$. Пусть $S_0$ - ЛНЗ подсистема в $S$. Пусть $\left|S_0\right| = k$, т. е. $S_0$ сост. из $k$ векторов. Если $S_0$ - макс. ЛНЗ подсистема в $S$, то, по предыдущей теореме, это базис. Иначе $\exists S_{k + 1} \in S$, т. ч. $S_1 = (S_0, S_{k + 1})$ - ЛНЗ. Если $S_1$ - макс. ЛНЗ подсист., то $S$ - базис в $<S>$. Т. к. $V$ - конечномерное, то этот процесс оборвётся за конечное число шагов, т. к. не сущ-ет ЛНЗ подсистемы из больше чем $dim_F V$ векторов.
+\end{proof}
+$V$ - конечном. ЛП над $F$, $G = \begin{pmatrix} e_1 & e_2 & \ldots & e_n \end{pmatrix}$ - базис в $V$. \\
+\[
+a \in V, a = \sum_{i = 1}^{n} \alpha_i e_i = E \cdot \alpha, \alpha = \begin{pmatrix}\alpha_1 \\ \ldots \\ \alpha_n \end{pmatrix} \in F^{n}
+\]
+\begin{statement}
+\begin{itemize}
+  \item [a) ] Для каждого вектора $a \in V$, его коорд. столбец отн-но базиса $G$ определён одно-но.
+  \item [b) ] При сложении векторов, их коорд. столбцы складываются, а при умножении вектора на $\lambda \in F$, коорд. столбец умнож. на $\lambda$.
+\end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \[
+  a = G \alpha, b = G \beta
+  \]
+  \[
+  a + b = G\alpha + G\beta = G(\alpha + \beta)
+  \]
+  \[
+  \lambda a = \lambda G \alpha = G (\lambda\alpha)
+  \]
+\end{itemize}
+\end{proof}
+\subsubsection{Изоморфизм ЛП}
+\begin{definition}
+Пусть $V$ и $W$ - ЛП над $F$. Тогда $\phi: V \rightarrow W$. Наз-ся изоморфизмом, если:
+\begin{itemize}
+  \item [a) ] $\phi$ - биективно
+  \item [b) ] $\phi$ - сохр. определённые в $V$ и $W$ оп-ции:
+    \[
+    \phi(a + b) = \phi(a) + \phi(b)
+    \]
+    \[
+    \forall \lambda \in F, \phi(\lambda a) = \lambda\phi(a)
+    \]
+    \begin{note}
+    $\phi(\overline{0_v}) = \overline{0_w}$
+    \end{note}
+\end{itemize}
+\end{definition}
+\begin{theorem}
+Пусть $V$ - конечном. ЛП над $F$ и $dim_F V = n$. Тогда $V \cong F^{n}$ (изоморфно).
+\end{theorem}
+\begin{proof}
+  Фикс. $G = \begin{pmatrix} e_1 & e_2 & \ldots & e_n \end{pmatrix}$ - базис в $V_0$.
+  \[
+    V \ni a \overset{\phi}{\longleftrightarrow} \begin{pmatrix} \alpha_1 \\ \vdots \\ \alpha_n \end{pmatrix}, \text{ т. ч. } a = G \alpha
+  \]
+  \[
+  \phi: V \rightarrow F^{n} \text{ по пред. утв. сохр. $+$ и $\cdot \lambda$}
+  \]
+  Проверим биективность:
+  \begin{itemize}
+    \item $\phi$ - инъективно? 
+      \[
+      \phi(a) = \phi = \beta = \phi(b) \Rightarrow \phi(a - b) = \phi(a) - \phi(b) = \alpha - \beta = 0 \Rightarrow 
+      \]
+      \[
+      a - b = G \cdot 0 = \overline{0} \Rightarrow a = b
+      \]
+    \item $\phi$ - Сюрьективно?
+      \[
+      \forall \alpha \in F^{n} \colon \exists a = G \alpha \Rightarrow \phi(a) = \alpha
+      \]
+      Ч. Т. Д.
+  \end{itemize}
+\end{proof}
+\begin{consequence}[Теорема об изоморфизме лин. пр-в]
+Два конечном. ЛП $V_1$ и $V_2$ над $F$ изоморфны $\iff$ $dim_F V_1 = dim_F V_2$
+\end{consequence}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] Необх. Пусть $dim_F V_1 = n \Rightarrow G = \begin{pmatrix} e_1 & \ldots & e_n \end{pmatrix}$ - базис в $V_1$. \\ 
+
+    $\exists $ изоморф. $\phi: V_1 \rightarrow V_2$. $\phi(G) = \begin{pmatrix}\phi(e_1) & \ldots & \phi(e_n) \end{pmatrix}$ - базис ли в $V_2$? \\
+    \[
+    \forall b \in V_2 \colon b = \phi(a) = \phi(G \cdot \alpha) = \phi(G) \cdot \alpha
+    \]
+    \[
+    \phi(G) \text{ - ЛНЗ} \left(\phi\left(\sum_{i}^{}\alpha_i e_i\right) = \sum_{i}^{}\alpha_i \phi(e_i)\right)
+    \]
+    Т. к. при изоморф. ЛНЗ $\mapsto$ ЛНЗ.
+    \[
+    \Rightarrow dim_F V_2 = n
+    \]
+  \item [b) ] По предыдущей теореме, $V_1 \underset{\phi}{\cong} F^{n} \underset{\psi}{\cong} V_2$. Тогда $V_1 \underset{\phi \circ \psi^{-1}}{\cong} V_2$ ($\phi \circ \psi^{-1}$ - композиция изоморфизмов).
+\end{itemize}
+\end{proof}
+\begin{consequence}
+Если пр-ва рассм. над одним и тем же полем, то единственной существенной хар-ой этих пр-в является размерность.
+\end{consequence}
+\begin{theorem}
+Пусть $F$ - конечное поле, т. ч. $char(F) = p$ - простое. Тогда $\exists n \in \N$, т. ч. $\left|F\right| = p ^{n}$
+\end{theorem}
+\begin{proof}
+ Было док-но, что в $F, \exists D_F \cong \Z_p, \left|\Z_p\right| = p$. Рассм. поле $F$ как ЛП над полем $D_F$.
+ \[
+   dim_{D_F} F = n, G \text{ - базис $F$ над $D_F$}
+ \]
+ \[
+ \forall a \in F, a = G\begin{pmatrix}\alpha_1 \\ \ldots \\ \alpha_n \end{pmatrix}, \alpha \in D_F^{n}, \left|F\right| = \left|\Set{\begin{pmatrix}\alpha_1 \\ \vdots \\ \alpha_n \end{pmatrix}}, \alpha_i \in D_F\right| = p \times p \ldots p \times p = p^{n}
+ \]
+\end{proof}
+\begin{note}
+Пусть $V$ - ЛП размерности $m$ над конечным полем $F \colon \left|F\right| = p ^{n}$. Тогда $\left|V\right| = p ^{nm}$
+\end{note}
+\begin{proof}
+  \[
+    G = \begin{pmatrix} e_1 & \ldots & e_n\end{pmatrix}
+  \]
+  \[
+  V \ni v = G \begin{pmatrix}\alpha_1 \\ \vdots \\ \alpha_n \end{pmatrix}
+  \]
+  \[
+  \left|V\right| = p ^{n} \times \ldots \times p ^{n} = (p ^{n})^{m} = p ^{nm}
+  \]
+\end{proof}
+Вывод: конечномерное ЛП над конечным полем, содержит конечное число элементов.

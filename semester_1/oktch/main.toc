@@ -18,3 +18,6 @@
 \contentsline {subsection}{\numberline {5.1}База}{20}{}%
 \contentsline {section}{\numberline {6}Лекция 8}{22}{}%
 \contentsline {subsection}{\numberline {6.1}Продоложние про тождества}{22}{}%
+\contentsline {section}{\numberline {7}Лекция 9}{25}{}%
+\contentsline {subsection}{\numberline {7.1}Циклические п-ти}{26}{}%
+\contentsline {subsection}{\numberline {7.2}Формула обращения Мёбиуса}{27}{}%

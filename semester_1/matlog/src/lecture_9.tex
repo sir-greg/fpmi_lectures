@@ -1,0 +1,91 @@
+\section{Лекция 9}
+Использование резолюций для проверки тавтологий: \\
+
+$\phi$ - тавтология $\iff$ $\neg \phi$ - противоречие $\iff$ $\neg \phi$ невып. 
+
+$\phi$ - тавтология $\iff$ из нек-ой задачи о вып-ти КНФ, постр. по $\neg \phi$, можно вывести $\perp$ (Пустой дизъюнкт)\\
+
+Резольвента:
+\begin{center}
+\begin{tabular}{ c c c } 
+ $A \lor x$ & & $B \lor \neg x$ \\ 
+ \hline
+            & $A \lor B$ & 
+\end{tabular}
+\end{center}
+
+Получение $\perp$:
+\begin{center}
+\begin{tabular}{ c c c } 
+  $p$ & & $\neg p$ \\
+ \hline
+      & $\perp$ &
+\end{tabular}
+\end{center}
+К исх. дизъюнктам добавляем все возм. резольв. \\
+$\Rightarrow$ $\phi$ невып. $\iff$ можно вывести $\perp$ \\
+Как по $\phi$ построить КНФ, используемый в методе??? (Преобразование Цейтина) \\
+\begin{example}
+\[
+  (p \land q) \lor (r \rightarrow \neg s)
+\]
+Строим дерево.
+\end{example}
+
+Тут получили 3-КНФ: в каждой скобке $\leq 3$ литерала. \\
+На 2-КНФ метод. резол. работает за $O(n)$ шагов. \\
+На 3-КНФ может быть экспоненциально долгим. 
+
+\subsection{Языки 1-ого порядка}
+Алфавит:
+\begin{itemize}
+  \item [1) ] Индивидные переменные. $x, y, z$
+  \item [2) ] Функциональный символ. $f^{(1)}, g^{(2)}$\\ (С указанием числа арг-ов) \\
+    В т. ч. константные символы. ($f^{(0)}$) - ф-циональные символы валентности 0.
+  \item [3) ] Предикатные символы. (С указ. валентности) ($P^{(1)}, Q^{(1)}$)
+  \item [4) ] $\neg, \land, \lor, \rightarrow$
+  \item [5) ] Кванторы: $\forall, \exists$
+  \item [6) ] Служебные: "(", ")", ","
+\end{itemize}
+\begin{note}
+Символы из пп. 2, 3. в совокупности наз-ся сигнатурой.
+\end{note}
+\begin{definition}
+\textbf{Термы} - это:
+\begin{itemize}
+  \item [1)] $x$ - переменная $\Rightarrow$ $x$ - терма
+  \item [2) ] $c$ - константный символ $\Rightarrow$ $c$ - терм.
+  \item [3) ] $t_1, \ldots, t_k$ - термы, $f$ - ф-ция. символ вал-ти $k$ $\Rightarrow$ $f(t_1, \ldots, t_k)$ - терм. \\
+\end{itemize}
+\end{definition}
+\begin{definition}
+\textbf{Формулы} - это:
+\begin{itemize}
+  \item [4) ] $t_1, \ldots, t_k$ - термы, $P$ - предикат. символ вал-ти $k \Rightarrow P(t_1, \ldots, t_k)$ - ф-ла (атомарная).
+  \item [5) ] $\phi$ - ф-ла $\Rightarrow \neg\phi$ - ф-ла
+  \item [6) ] $\phi, \psi$ ф-лы $\Rightarrow (\phi \land \psi), (\phi \lor \psi), (\phi \rightarrow \psi)$ - ф-лы
+  \item [7) ] $\phi$ - ф-ла, $x$ - перем. $\Rightarrow \exists x \phi, \forall x \phi$ - ф-лы
+    Не запрещается писать записи вида $\exists x \forall X P(x)$, или $\exists x P(y)$ \\
+    Часто добавляют отдельный вид атомарных ф-л:
+    \[
+    t_1 = t_2
+    \]
+\end{itemize}
+\end{definition}
+\subsubsection{Интерпретация}
+$M$ - непустое мн-во - носитель интерпретации. \\
+$f$ - функциональный символ вал-ти $k > 0$, $[f]: M^{k} \rightarrow M$ \\
+$c$ - конст. символ., $c \in M$ \\
+$P$ - предикатный символ вал-ти $k$., $[P]: M^{k} \rightarrow \set{0, 1}$ \\
+$Var$ - мн-во переменных. \\
+Оценка - $\pi \colon Var \rightarrow M$ \\
+Если заданы интерпретация и оценка, то определены значения всех термов и ф-л: $[t](\pi) \in M, [\phi](\pi) \in \set{0, 1}$
+\begin{itemize}
+  \item [1)] $t \eqcirc x \Rightarrow [t](\pi) = \pi(x)$ 
+  \item [2) ] $t \eqcirc C \Rightarrow [t](\pi) = [C]$
+  \item [3) ] $t \eqcirc f(t_1, \ldots, t_k) \Rightarrow [t](\pi) = [f]([t_1](\pi), [t_2](\pi), \ldots, [t_k](\pi_k))$
+  \item [4) ] $t \eqcirc P(t_1, \ldots, t_k) \Rightarrow [\phi](\pi) = [P]([t_1](\pi), \ldots, [t_k](\pi))$
+  \item [5) ] $\phi \eqcirc \neg \phi \Rightarrow [\phi](\pi) = neg([\phi](\pi))$
+  \item [6) ] $\phi \eqcirc (\phi \land \eta) \Rightarrow and([\phi](\pi), [\eta](\pi))$
+  \item [7) ]
+\end{itemize}

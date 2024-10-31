@@ -1,0 +1,162 @@
+\section{Лекция 17}
+
+\begin{definition}
+Пусть $\phi, \psi: T \rightarrow \R, E = \phi(T)$. Говорят, что ф-ция $f: E \rightarrow \R$ параметрически задана системой уравнений:
+\[
+\begin{cases}
+x = \phi(t) \\
+y = \psi(t)
+\end{cases} t \in T
+\]
+Если для $\forall t_1, t_2 \in T \left(\phi(t_1) = \phi(t_2) \Rightarrow \psi(t_1) = \psi(t_2)\right)$ и $f(x) = \psi(t)$ при $x = \phi(t)$ \\
+В част-ти, если $\phi$ обратима, то $f = \psi \circ \phi^{-1}$
+\end{definition}
+\begin{consequence}
+  Пусть $T$ - это пром-к, $\phi$ непр-на, строго монотонна на $T$, $\phi$ и $\psi$ дифф-мы в т. $t$ и $\phi'(t) \neq 0$. Тогда параметрически заданная ф-ция $f = \psi \circ \phi^{-1}$ дифф-ма в т. $x = \phi(t)$, причём: 
+  \[
+  f'(x) = (\psi \circ \phi^{-1})' = (\psi')(\phi^{-1}(x)) \cdot (\phi^{-1}(x))' = \frac{\psi'(\phi^{-1}(x))}{\phi'(\phi^{-1}(x))} = \frac{\psi'(t)}{\phi'(t)}
+  \]
+\end{consequence}
+\begin{definition}
+Говорят, что ф-ция $f$ дифф-ма на мн-ве $D$, если $f$ дифф-ма в каждой точке из $D$. \\
+Ф-ция $x \mapsto f'(x), x \in D$, также наз-ся производной и обозн-ся в $f'$
+\end{definition}
+
+\subsection{Дифференциал ф-ции}
+\begin{definition}
+  Пусть $f: \underset{\text{пром.}}{I} \rightarrow \R$ - дифф-ма в т. $a$. Линейная ф-ция $h \mapsto f'(a) \cdot h, h \in \R$, наз-ся дифференциалом $f$ в т. $a$ и обозн-ся $df_a$. \\
+  Для ф-ции $x \mapsto x$ дифф. в каждой точке, $dx(h) = 1 \cdot h$, поэтому значение дифф-ла $df_a(h) = f'(a) dx(h), h \in \R$ или в функциональной записи:
+  \[
+  df_a = f'(a) dx
+  \]
+\end{definition}
+\begin{consequence}
+В условиях теоремы ($\ref{th:ar_der}$) (арифметические оп-ции с пределами):
+\begin{itemize}
+  \item \[
+  \dd{(\alpha f + \beta g)}_a = \alpha \dd{f}_a + \beta \dd{g}_a
+  \]
+\item \[
+  \dd{f \cdot g}_a = g(a)\dd{f}_a + f(a)\dd{g}_a 
+\]
+\item \[
+  \dd{\left(\frac{f}{g}\right)}_a = \frac{g(a)\dd{f}_a - f(a)\dd{g}_a}{g^{2}(a)}
+\]
+\end{itemize}
+\end{consequence}
+\begin{consequence}
+В условиях теоремы о производной сложной ф-ции:
+\[
+\dd{(g \circ f)}_a = \dd{g}_b \circ \dd{f}_a, b = f(a)
+\]
+\end{consequence}
+\begin{proof}
+\[
+\dd{(g \circ f)}_a(h) = g'(f(a)) f'(a) \dd{x}(h) = g'(b) \dd{f}_a(h) = \dd{g}_b (\dd{f}_a(h)), h \in \R
+\]
+\end{proof}
+\begin{note}
+Ф-ла $\dd{f}_x = f'(x) dx$ верна, как в случае с независимой переменной $x$, так и в случае $x = \phi(t)$ (независимость формы 1-ого дифференциала).
+\end{note}
+\begin{consequence}
+В условиях теоремы о дифференицровании обратной ф-ции верно:
+\[
+\dd{(f^{-1})}_b = (\dd{f}_a)^{-1}, b = f(a)
+\]
+\end{consequence}
+\begin{proof}
+Следует из того, что:
+\[
+k \mapsto \frac{1}{f'(a)} \cdot k \text{ - обратная ф-ция к линейной } h \mapsto f'(a) h
+\]
+\end{proof}
+\subsection{Теоремы о среднем}
+\begin{definition}
+Пусть $f$ опр-на на интервале, содержащем т. $a$. Точка $a$ наз-ся \textbf{точкой локального максимума} ф-ции $f$, если:
+\[
+\exists \delta > 0, \forall x \in \overset{\circ}{B_{\delta}}(a) \left(f(x) \leq f(a)\right)
+\]
+
+Т. е. $f(a) = \underset{x \in B_{\delta}(a)}{max} f(x)$. \\
+
+Если $"<"$, то $a$ - \textbf{точка строгого лок. максимума.} \\
+
+Аналогично определяется \textbf{точка (строгого) лок. минимума}. \\
+
+Точки локального максимума (минимума) наз-ся \textbf{точками экстремума} ф-ции.
+\end{definition}
+\begin{theorem}[Ферма (необх. усл-ие экстремума)]
+Пусть $f$ опр-на в некот. окр-ти точки $a$. Если $a$ - точка лок. экстремума ф-ции $f$ и в этой точке $\exists f'(a)$, то $f'(a) = 0$
+\end{theorem}
+\begin{proof}
+Пусть, для опр-ти, $a$ - точка лок. максимума, тогда:
+\[
+\exists \delta > 0, \forall x \in (a - \delta, a) \cup (a, a + \delta) \left(f(x) \leq f(a)\right)
+\]
+Имеем:
+\[
+  \frac{f(x) - f(a)}{x - a} \leq 0, x \in (a, a + \delta) \Rightarrow f'(a) = f'_+(a) \leq 0
+\]
+\[
+  \frac{f(x) - f(a)}{x - a} \geq 0, x \in (a - \delta, a) \Rightarrow f'(a) = f'_-(a) \geq 0
+\]
+\[
+\Rightarrow \exists f'(a) = 0
+\]
+\end{proof}
+\underline{Геометрический смысл}: касательная горизонтальна. \\
+В дальнейшем, отрезок $[a, b]$ предполагается невырожденным.
+\begin{theorem}[Ролля]
+Если $f$ непр-на на $[a, b]$, дифф-ма на $(a, b)$ и $f(a) = f(b)$, то:
+\[
+\exists c \in (a, b) \colon f'(c) = 0
+\]
+\end{theorem}
+\begin{proof}
+Если $f$ постоянна на $[a, b]$, то $f'(c) = 0, \forall c \in (a, b)$ \\
+Пусть $f$ непостоянна на $[a, b] \Rightarrow \exists d \in (a, b) \colon f(d) \neq f(a)$ \\
+Если $f(d) > f(a)$, то $\exists c \in [a, b] \colon f(c) = \underset{[a, b]}{max} f(x) \geq f(d) > f(a)$. По т. Ферма $f'(c) = 0$ \\
+ Иначе, если $f(d) < f(a)$ - заменяем $max$ на $min$
+\end{proof} 
+\underline{Геом. смысл:} Есть точка, кас. к которой - горизонтальна.
+\begin{consequence}
+Пусть $f$ - дифф-ма на пром-ке $I$, тогда между любыми двумя различными нулями ф-ции $f$ найдётся хотя бы один нуль производной.
+\end{consequence}
+\begin{theorem}[Лагранжа]
+Если $f$ - непр-на на $[a, b]$, дифф-ма на $(a, b)$, то:
+\[
+ \exists c \in (a, b) \colon f(b) - f(a) = f'(c)(b - a)
+\]
+\end{theorem}
+\begin{proof}
+Рассм. ф-цию
+\[
+  h(x) = f(x) - \frac{f(b) - f(a)}{b - a} \cdot (x - a) - f(a)
+\]
+Ф-ция $h$ непр-на на $[a, b]$, дифф-ма на $(a, b)$, $h(a) = 0 = h(b)$. По т. Ролля:
+\[
+\exists c \in (a, b) \colon h'(c) = 0
+\]
+Т. е. \[
+h'(c) = f'(c) - \frac{f(b) - f(a)}{b - a} = 0
+\]
+Ч. Т. Д.
+\end{proof}
+\underline{Геометрический смысл:} интерпретируя $f'(c)$ и $\frac{f(b) - f(a)}{b - a}$  как угловые коэфф-ты.
+\begin{task}
+Пусть $f$ непр-на на $[a, b)$ и дифф-ма на $(a, b)$. Покажите, что если $\exists f'(a + 0)$, то $\exists f'_+(a) = f'(a + 0)$
+\end{task}
+\begin{consequence}[Оценка приращений]
+Пусть $f$ непр-на на пром-ке $I$ и дифф-ма на $int(I)$. Если:
+\[
+\exists M > 0, \forall x \in int(I) \left|f'(x)\right| \leq M
+\]
+То:
+\[
+\forall x, y \in (\left|f(y) - f(x)\right| \leq M \cdot \left|y - x\right|)
+\]
+Т. е. $f$ - липшицева.
+\end{consequence}
+\begin{proof}
+ Пусть $x, y \in I, x \neq y$. Тогда, по Т. Лагранжа, между $x$ и $y$ найдётся т. $c$, что $f(y) - f(x) = f'(c) (y - x)$. Т. к. $c \in int(I)$, то $\left|f(c)\right| \leq M$. Отсюда следует заявленная оценка.
+\end{proof}

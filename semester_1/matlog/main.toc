@@ -1,5 +1,7 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 7}{3}{}%
-\contentsline {section}{\numberline {2}Лекция 8}{7}{}%
-\contentsline {subsection}{\numberline {2.1}Выр-ем задачи через вып-ть ф-л}{7}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Обобщаем. Метод резолюций}{9}{}%
+\contentsline {section}{\numberline {1}Лекция 8}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Выр-ем задачи через вып-ть ф-л}{3}{}%
+\contentsline {subsubsection}{\numberline {1.1.1}Обобщаем. Метод резолюций}{5}{}%
+\contentsline {section}{\numberline {2}Лекция 9}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Языки 1-ого порядка}{7}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Интерпретация}{8}{}%

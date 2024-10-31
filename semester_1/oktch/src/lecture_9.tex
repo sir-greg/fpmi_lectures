@@ -1,0 +1,138 @@
+\section{Лекция 9}
+\begin{itemize}
+  \item [7) ] \[
+  C_{n}^{0} - C_{n}^{1} + \ldots + (-1)^{n} C_{n}^{n} = \begin{cases}
+  1, n = 0 \\
+  0, n > 0
+  \end{cases}
+  \]
+\item [8) ] Рассм. $A = \set{a_1, \ldots, a_n}, m < n, m > 0$. Выберем из $A$ все возм. $m$-разм. с повтор. Их $n^{m}$. $N = n^{m}, \alpha_1, \ldots \alpha_m$. Размещ. обладает св-вом $\alpha_i \iff \alpha_i \not\in$ размещению. 
+  \[
+  N(\alpha_i) = (n - 1)^{m}, N(\alpha_i, \alpha_j) = (n - 2)^{m}
+  \]
+  \[
+  N(\alpha_1', \ldots, \alpha_n') = 0
+  \]
+  По формуле вкл.-искл.:
+  \[
+  N(\alpha_1', \ldots, \alpha_n') = n^{m} - n(n - 1)^{m} + C_{n}^{2}(n - 2)^{n} + \ldots
+  \]
+  \[
+  \Rightarrow 0 = \sum_{k = 0}^{n} (-1)^{k} C_{n}^{k} (n - k)^{m}
+  \]
+\end{itemize}
+\begin{task}
+Задача о беспорядках: \\
+\begin{definition}
+Беспорядок - перестановка, при кот. $\sigma_i \neq i, \forall i = \overline{1,n}$
+\end{definition}
+Найдём кол-во беспорядков для $n = 100\colon$. Пусть $\alpha_i$ - св-во, при кот. $\sigma_i = i$, посчитаем:
+\[
+N = 100!
+\]
+\[
+N(\alpha_1', \alpha_2', \ldots, \alpha_n') = 100! - 99! * 100 + C_{100}^{2} \cdot 98! - \ldots = \sum_{k = 0}^{n} C_{n}^{k} (n - k)! = !n
+\]
+При раскрытии $C$-шек, получаем:
+\[
+N(\alpha_1', \ldots, \alpha_n') = \frac{1}{0!} - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \ldots + \frac{1}{100!}\approx \frac{1}{e}
+\]
+"Физической интуицией" получаем:
+\[
+\left(1 - \frac{1}{100}\right)^{100} \approx \frac{1}{e}
+\]
+\end{task}
+\subsection{Циклические п-ти}
+Алфавит: $X = \set{b_1, \ldots, b_r}$. Из b-шек составляем слова длины $n$.
+\[
+a_1a_2\ldots a_n, \forall i, a_i \in X
+\]
+\[
+a_1 \rightarrow a_2 \rightarrow a_3 \rightarrow \ldots \rightarrow a_{n - 1} \rightarrow a_n \rightarrow a_1
+\]
+Т. е. $a_1\ldots a_n$ отождествляется с $a_2\ldots a_n a_1$, $a_3\ldots a_n a_1 a_2, \ldots$.\\
+Однако $r^{n}$ - кол-во обычных слов, т. е. $n$ не всегда делит $r^{n}$. 
+\begin{example}
+\[
+r = 3, X = \set{C, O, H}, n = 4\colon
+\]
+Следующие слова нужно поделить на 4:
+\[
+COCH
+\]
+\[
+OCHC
+\]
+\[
+CHCO
+\]
+\[
+HCOC
+\]
+Эти на 2:
+\[
+COCO
+\]
+\[
+OCOC
+\]
+А это на 1:
+\[
+CCCC
+\]
+Для решение этой задачи, для начала, изучим следующий мощный инструмент:
+\end{example}
+\subsection{Формула обращения Мёбиуса}
+\begin{theorem}[ОТА]
+\[
+\forall n \geq 2, \exists! \set{p_1, \ldots p_s}, \set{a_1, \ldots a_s} \colon
+\]
+\[
+n = p_1^{\alpha_1} \cdot \ldots \cdot p_s^{\alpha_s}
+\]
+(Это наз-ся \textbf{каноническим разложением} $n$)
+\end{theorem}
+\begin{definition}
+\textbf{Функция Мёбиуса} $\mu(n)\colon$
+\[
+\mu(n) = \begin{cases}
+1, n = 1 \\
+(-1)^{s}, n = p_1 \cdot \ldots \cdot p_s \\
+0, \text{ иначе}
+\end{cases}
+\]
+\end{definition}
+\begin{lemma}
+\[
+\sum_{d | n}^{} \mu(d) = \begin{cases}
+1, n = 1 \\
+0, \text{ иначе}
+\end{cases}
+\]
+\end{lemma}
+\begin{proof}
+Пусть $n \geq 2 \Rightarrow n = p_1^{\alpha_1} \cdot \ldots \cdot p_k^{\alpha_k}$ \\
+\[
+  (d | n) \Rightarrow (d = p_1^{\beta_1} \cdot \ldots \cdot p_k^{\beta_k}, \forall i, 0 \leq \beta_i \leq \alpha_i)
+\]
+\[
+  \sum_{d | n}^{} \mu(d) = \sum_{\beta_1 = 0}^{\alpha_1} \ldots \sum_{\beta_k = 0}^{\alpha_k} \mu(p_1^{\beta_1} \cdot \ldots \cdot p_k^{\beta_k}) =\sum_{\beta_1 = 0}^{1} \ldots \sum_{\beta_k = 0}^{1} \mu(p_1^{\beta_1} \cdot \ldots \cdot p_k^{\beta_k})
+\]
+\[
+ = \mu(1) + C_{k}^{1} (-1) + C_{k}^{2} (-1)^{2} + \ldots + C_{k}^{k}(-1)^{k} = \sum_{i = 0}^{k} (-1)^{k} C_{k}^{i} = 0
+\]
+\end{proof}
+\begin{theorem}[Формула обращения Мёбиуса]
+Пусть $f = f(n)$ - ф-ция $n \in \N$. Пусть $g(n) = \sum_{d | n}^{} f(d)$. Тогда:
+\[
+f(n) = \sum_{d | n}^{} \mu(d) g\left(\frac{n}{d}\right) = \sum_{d | n}^{} \mu\left(\frac{n}{d}\right) g(d)
+\]
+\end{theorem}
+\begin{proof}
+\[
+\sum_{d | n}^{} \mu(d) \sum_{d' | \frac{n}{d}}^{} f(d') = \sum_{(d, d') \colon d \cdot d' | n}^{} \mu(d)f(d') = \sum_{d | n}^{} f(d) \sum_{d' | \frac{n}{d}}^{} \mu(d') = 
+\]
+\[
+= f(n) \cdot \sum_{d' | 1}^{} \mu(d') + \sum_{d | n, d < n}^{} f(d) \sum_{d' | \frac{n}{d}}^{} \mu(d') = f(n) \cdot 1 + \sum_{d | n, d < n}^{} f(d) \cdot 0 = f(n)
+\]
+\end{proof}

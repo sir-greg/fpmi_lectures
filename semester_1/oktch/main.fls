@@ -334,6 +334,9 @@ INPUT src/lecture_7.tex
 INPUT ./src/lecture_8.tex
 INPUT ./src/lecture_8.tex
 INPUT src/lecture_8.tex
+INPUT ./src/lecture_9.tex
+INPUT ./src/lecture_9.tex
+INPUT src/lecture_9.tex
 INPUT main.aux
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
