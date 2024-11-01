@@ -1,0 +1,168 @@
+\section{Лекция 18}
+\begin{theorem}[Коши]
+ Если $f, g$ - непр-ны на $[a, b]$, дифф-мы на $(a, b)$ и $g \neq 0$ на $(a, b)$, то
+ \[
+   \exists c \in (a, b) \colon \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{g'(c)}
+ \]
+\end{theorem}
+\begin{proof}
+Отметим, что $g(b) \neq g(a)$ (исходя из т. Ролля: $\exists \xi \in (a, b) \colon g'(\xi) = 0$). Рассм. ф-цию:
+\[
+h(x) = f(x) - \frac{f(b) - f(a)}{g(b) - g(a)} \cdot (g(x) - g(a))
+\]
+Тогда $h$ непр-на на $[a, b]$, диф-ма на $(a, b)$ и $h(a) = f(a) = h(b)$. По т. Ролля:
+\[
+\exists c \in (a, b) \colon h'(c) = f'(c) - \frac{f(b) - f(a)}{g(b) - g(a)} \cdot g'(c) = 0
+\]
+Поскольку $g'(c) \neq 0$, получаем то, что хотели:
+\[
+  \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{g'(c)}
+\]
+\end{proof}
+\underline{Геом. смысл}: такой же, как в т. Лагранжа. Для парам. заданной ф-ции:
+\[
+\begin{cases}
+x = g(t), \\
+y = f(t),
+\end{cases} t\in [a, b]
+\]
+\begin{note}
+В теореме Ферма требуется лишь сущ-е производной, поэтому в опир-ся на неё теоремах Ролля, Лагранжа и Коши остаются справедливыми при замене условия дифференцируемости ф-ции на $(a, b)$ существованием там производной в $\overline{\R}$ 
+\end{note}
+\begin{example}
+\[
+f: \R \rightarrow \R, f(x) = \begin{cases}
+x^{2}\sin \frac{1}{x}, x \neq 0 \\
+0, x = 0
+\end{cases}
+\]
+\[
+f'(x) = \begin{cases}
+2x \sin \frac{1}{x} - \cos \frac{1}{x}, x \neq 0 \\
+0, x = 0
+\end{cases}
+\]
+Однако не сущ-ет $f'(\pm 0)$, т. е. $f'$ разрывна в нуле.
+\end{example}
+\begin{theorem}[Дарбу]
+Если $f$ дифф-ма на $[a, b]$. то для $s$, лежащего строго между $f'(a), f'(b)$, верно:
+\[
+  \exists c \in (a, b) \colon f'(c) = s
+\]
+\end{theorem}
+\begin{proof}
+Пусть для определённости $f'(a) < s < f'(b)$. Положим $\phi(x) = f(x) - sx$. Тогда $\phi$ дифф-ма на $[a, b]$:
+\[
+\phi'(a) = f'(a) - s < 0 < f'(b) - s = \phi'(b)
+\]
+Пусть $\phi(c) = \underset{[a, b]}{\inf} \phi(x)$ (сущ-ет по т. Вейерштрасса). \\
+При $c = a$ получаем:
+\[
+  \frac{\phi(x) - \phi(a)}{x - a} \geq 0, \forall x \in (a, b] \Rightarrow \phi'(a) \geq 0!!! \Rightarrow c \neq a
+\]
+Аналогично показ-ся, что $c \neq b$ $\Rightarrow c \in (a, b) \Rightarrow \phi'(c) = 0$, (По т. Ферма) т. е. $f'(c) = s$.
+\end{proof}
+\subsection{Приложения теореме о среднем}
+\begin{theorem}[Условия монотонности]
+Пусть ф-ция $f$ непр-на на пром-ке $I$ и дифф-ма на $int(I)$.
+\begin{itemize}
+  \item [1) ] Ф-ция $f$ нестрого возр-ет (убывает) на I $\iff$ $f'(x) \geq 0 \left(\leq 0\right), \forall x \in int(I)$
+  \item[2) ] Если $f'(x) < 0 \left(> 0\right), \forall x \in int(I)$, то ф-ция $f$ строго убывает (возрастает).
+  \item [3) ] Ф-ция $f$ постоянна на $I$ $\iff$ $f'(x) = 0, \forall x \in int(I)$
+\end{itemize}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [1) ] 
+    \begin{itemize}
+      \item [$\Rightarrow$)] Пусть $f$ нестрого возрастает на $I$, $x \in int(I)$. Тогда $f(y) \geq f(x), \forall y \in(x, \sup I)$. Поэтому $f'(x) = f'(x) = \lim_{y\to x + 0} \frac{f(y) - f(x)}{y - x} \geq 0$
+      \item [$\Leftarrow$)] Пусть $x, y \in I $ и $x < y$. По т. Лагранжа
+        \[
+          \exists c \in (x, y) \colon f(y) - f(x) = f'(c) (y - x)
+        \]
+        Т. к. $c \in int(I) \Rightarrow f'(c) \geq 0$, а значит, что $f(y) - f(x) \geq 0 \Rightarrow f(y) \geq f(x)$
+        \begin{note}
+        При замене $\geq$ на $>$ в $\Rightarrow$ получаем док-во п. 2.
+        \end{note}
+        \begin{note}
+        Док-во убыв. может быть сведено к рассм. $-f(x)$, где $f$ - убыв.
+        \end{note}
+        \begin{note}
+        Обратное утв. к п. 2 \textbf{неверно}. Рассм. $f: \R \rightarrow \R, f(x) = x^{3}$. Она строго возрастает, но $f'(0) = 0$
+        \end{note}
+    \end{itemize}
+\end{itemize}
+\end{proof}
+\begin{example}
+Найти все дифф-мые ф-цие, удовл. в усл-ию:
+\[
+f'(x) = f(x), \forall x \in I
+\]
+\end{example}
+\begin{solution}
+Рассм. $g(x) = f(x) e^{-x}$. Тогда:
+\[
+g'(x) = f'(x) e^{-x} - f(x) e^{-x} = 0, x \in I \text{ т. к. } f(x) = f'(x), x \in I
+\]
+По т. об условии монотонности, получаем, что $\exists c \in \R, g(x) = c, \forall x \in I$
+\end{solution}
+\begin{consequence}[Достаточные условия экстремума]
+Пусть $f$ опр-на на $(\alpha, \beta)$ и $a \in (\alpha, \beta)$. Пусть $f$ дифф-ма на $(\alpha, \beta) \backslash \set{a}$ и непр-на в $a$. Справ-вы след. утв-я:
+\begin{itemize}
+  \item [1) ] Если $f'(x) \geq 0, \forall x \in (\alpha, a)$ и $f'(x) \leq 0$ для $\forall x \in (a, \beta)$, то $a$ --- точка лок. максимума ф-ции $f$ (строгого, если нер-ва строгие).
+  \item [2) ] Если $f'(x) \leq 0, \forall x \in (\alpha, a)$ и $f'(x) \geq 0, \forall x \in (a, \beta)$, то $a$ - точка лок. минимума ф-ции $f$ (строгого, если нер-ва строгие).
+\end{itemize}
+\end{consequence}
+\begin{proof}
+\begin{itemize}
+  \item [1) ] По теореме об условии монотонности, ф-ция $f$ нестрого возр. на $(\alpha, a]$ и нестрого убывает на $[a, \beta)$. Поэтому $f(x) \leq f(a), \forall x \in (\alpha, \beta) \Rightarrow a$ --- точка лок. максимума. Если нер-ва для производной строгие, то возр-е/убыв-е строгое $\Rightarrow$ нер-ва строгие $\Rightarrow$ $a$ --- точка строгого лок. максимума.
+\end{itemize}
+\end{proof}
+\begin{consequence}[О доказательстве нер-в]
+Пусть $f, g$ - непр-ны на $[a, b)$ и дифф-мы на $(a, b), f(a) \leq g(a) $ и $f'(x) \leq g'(x)$ ($<$), $\forall x \in (a, b)$. Тогда $f(x) \leq g(x) (<), \forall x \in (a, b)$
+\end{consequence}
+\begin{proof}
+Рассм. $h(x) = g(x) - f(x)$
+\[
+h'(x) = g'(x) - f'(x) \geq 0, \forall x \in (a, b) \Rightarrow h \text{ --- нестрого возрастает}
+\]
+\[
+\Rightarrow h(x) \geq h(a) \geq 0 \Rightarrow g(x) - f(x) \geq 0 \Rightarrow f(x) \leq g(x), \forall x \in (a, b)
+\]
+\end{proof}
+\begin{example}
+\[
+e^{x} > 1 + x + \frac{x^{2}}{2!} + \frac{x^{3}}{3!} + \ldots + \frac{x^{n}}{n!}, x > 0
+\]
+\end{example}
+\begin{proof}
+  ММИ:
+\begin{itemize}
+  \item $n = 1$ --- очев.
+  \item Пусть утв. верно для $n - 1$. Док-ем для $n$. Рассм.:
+    \[
+    f(x) = e^{x}, g(x) = 1 + x + \frac{x^{2}}{2!} + \ldots + \frac{x^{n}}{n!}, x \in [0; +\infty)
+    \]
+    \[
+    f(0) = g(0), f'(x) = e^{x} > 1 + x + \ldots + \frac{x^{n - 1}}{(n - 1)!} = g'(x)
+    \]
+    Тогда $f(x) > g(x)$ по предыдущему следствию.
+\end{itemize}
+\end{proof}
+\begin{theorem}[Усиление условия монотонности]
+Пусть ф-ция $f$ непр-на на $[a, b]$ и $A$ не более чем счётное мн-во, $A \subset [a, b]$. Если $f$ дифф-ма на $[a, b] \backslash A$. $f'(x) \geq 0$ и на $[a, b] \backslash A$, то $f$ нестрого возр.
+\end{theorem}
+\begin{proof}
+Дост-но установить, что $f(a) \leq f(b)$. Рассм. сначала случай $f'(x) > 0$ на $[a, b] \backslash A$. Предположим, что $f(a) > f(b)$. $f(A)$ не более чем счётно $\rightarrow \exists d \not \in f(A)$ и $f(a) > d > f(b)$. Рассм. $B = \set{x \in [a, b] \colon f(x) = d}$. \\
+Положим $c = \sup B$. Т. к. $B$ - замкнуто, то $c \in B$. В част-ти,
+\[
+  f'(c) > 0, \text{ т. к. $c \not \in A, c \in (a, b)$}
+\]
+С другой стороны:
+\[
+\forall x \in (c, b), f(x) < d \text{ (по т. о пром. значениях)}
+\]
+\[
+f'(c) = \lim_{x\to c + 0} \frac{f(x) - f(c)}{x - c} \leq 0!!!
+\]
+\end{proof}
