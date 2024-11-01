@@ -1,0 +1,258 @@
+\section{Лекция 18}
+$F$ - поле
+\begin{definition}
+Система линейных ур-ий (СЛУ) - система ур-ий, сост. из ур-ий первой степени:
+\begin{equation}
+  \label{eq:general_lse}
+\begin{cases}
+a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_n = b_1 \\
+a_{21} x_1 + a_{22} x_2 + \ldots + a_{2n} x_n = b_2 \\
+\vdots \\
+a_{m1} x_1 + a_{m 2} x_2 + \ldots + a_{mn} x_n = b_m
+\end{cases}
+\end{equation}
+ Причём, $a_{ij}, b_i \in F$ \\
+\end{definition}
+\begin{symb}
+  \[
+  A \in M_{m \times n}(F)
+  \]
+  \[
+  X = \begin{pmatrix}x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} \in F^{n}
+  \]
+  \[
+  B \in F^{m}
+  \]
+  Тогда система записывается в формате:
+  \[
+  AX = B
+  \]
+  Расширенной матрицей $A$ наз-ся:
+  \[
+  \widetilde{A} = (A | B) \in M_{m \times (n + 1)}(F)
+  \]
+\end{symb}
+\begin{definition}
+СЛУ наз-ся \textbf{совместной}, если она имеет хотя одно решение. Если она не имеет решений, то она \textbf{несовместна}.
+\end{definition}
+\begin{definition}
+Совместная СЛУ наз-ся \textbf{определённой}, если она имеет \textbf{единтсвенное решение}, и \textbf{неопределённой} ---  иначе.
+\end{definition}
+\begin{statement}
+Всякое решение $X$ системы ($\ref{eq:general_lse}$) - это набор коэф., с кот. столбец $B$ свобоных членов, представляется в виде ЛК столбцов матрицы $A$.
+\end{statement}
+\begin{proof}
+Стобцы матрицы $AX$ - это ЛК столбцов $A$ с коэф. из $X$
+\end{proof}
+\begin{consequence}
+Если столбцы $A$ - ЛНЗ, то система ($\ref{eq:general_lse}$) имеет не более чем одно решение.
+\end{consequence}
+\begin{proof}
+Если $A$ - несовместна, то следствие верно. Иначе: \\
+Пусть $X_1 \neq X_2$ --- два решения. 
+\[
+AX_1 = b
+\]
+\[
+AX_2 = b
+\]
+\[
+\Rightarrow AX_1 - AX_2 = A(X_1 - X_2) = 0, \text{ причём } X_1 - X_2 \neq 0
+\]
+Получили, что есть нетрив. ЛК столбоцов матрицы $A$, дающая 0, что противоречит ЛНЗ столбцов $A$.
+\end{proof}
+\begin{definition}
+Системе:
+\[
+AX = B
+\]
+Соотв. \textbf{однородная} система:
+\[
+AX = 0
+\]
+\end{definition}
+\begin{statement}
+Мн-во $V_0$ решений однородной СЛУ явл-ся подпр-ом в $F^{n}$ ($V_0 \leq F^{n}$)
+\end{statement}
+\begin{proof}
+\[
+X_1, X_2 \in V_0
+\]
+\[
+AX_1 + AX_2 = A(X_1 + X_2) = 0 \Rightarrow (X_1 + X_2) \in V_0
+\]
+\[
+AX_1 = 0 \Rightarrow \lambda A X_1 = 0, \lambda \in F 
+\]
+\[
+X = 0 \in V_0
+\]
+\[
+\Rightarrow V_0 \leq F^{n}
+\]
+\end{proof}
+\begin{statement}
+Пусть даны: неоднородн система $AX = B$ и $V_b$ --- её мн-во решений. Пусть также $X_0$ --- частное решение этой СЛУ. \\
+Пусть $AX = 0$ соотв. однородн. СЛУ и $V_0$ - её решения. Тогда:
+\[
+V_b = X_0 + V_0
+\]
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [$\supseteq$)] \[
+  X_0 + V_0 = \set{X_0 + u | u \in V_0}
+  \]
+  \[
+  A(X_0 + u) = AX_0 + Au = AX_0 = B \Rightarrow X_0 + u \in V_b
+  \]
+\item [$\subseteq$)] \[
+\forall X \in V_b
+\]
+\[
+AX = B = AX_0 \Rightarrow A(X - X_0) = B \Rightarrow X - X_0 \in V_0 \Rightarrow X \in V_0 + X_0
+\]
+\end{itemize}
+\end{proof}
+\subsection{Элементарные преобразования строк матрицы}
+\begin{definition}
+Элементарные преобразования (ЭП) строк матрицы $M_{m\times n}(F)$ --- это преобразования 3-ех типов:
+\begin{itemize}
+  \item [I тип:] $(i \neq j) \colon $ К $i$-ой строке $M$ прибавляем $j$-ую строку, умноженную на $\lambda \in F$:
+    \[
+    \overline{a_i} \mapsto \overline{a_i} + \lambda \overline{a_j}
+    \]
+  \item [II тип: ] $(i \neq j)\colon $ перемена местами $i$-ой и $j$-ой строки:
+    \[
+    \overline{a_i} \leftrightarrow \overline{a_j}
+    \]
+  \item [III тип: ] $i$-ая строка умножается на $\lambda \neq 0$.
+\end{itemize}
+\end{definition}
+\begin{statement}
+ЭП строк $M$ $\iff$ умножению $M$ слева на одну из элементарных матриц.
+  \[
+  E_{ij} \text{ - матрица с 1 в $(i; j)$ и 0 в других местах}
+  \]
+\begin{itemize}
+  \item [I тип:] \[
+      D_{ij} = E + \lambda E_{ij}
+  \]
+\item [II тип:]
+      \[
+      P_{ij} = E - E_{ii} - E_{jj} + E_{ij} + E_{ji}
+      \]
+  \item [III тип:]
+    \[
+      Z_i = E + E_{ii} \cdot \lambda
+    \]
+\end{itemize}
+\end{statement}
+\begin{statement}
+Все матрицы ЭП обратимы.
+\end{statement}
+\begin{proof}
+\[
+D_{ij}^{-1}(\lambda) = D_{ij}(-\lambda)
+\]
+\[
+P^{-1}_{ij} = P_{ij}
+\]
+\[
+Z_i^{-1}(\lambda) = Z_i(\lambda^{-1})
+\]
+\end{proof}
+\begin{task}
+Показать, что если совершать умножение матрицы $M$ на матрицы ЭП нужно размера \textbf{справа}, то получатся ЭП столбцов.
+\end{task}
+\begin{definition}
+  Для строки $\begin{pmatrix} a_1 & a_2 & \ldots & a_n \end{pmatrix}$, первый ненулевой её эл-т наз-ся \textbf{лидером}. (или ведущим элементом)
+\end{definition}
+\begin{example}
+\[
+  \begin{pmatrix}0 & 0 & 0 & \underline{7} & 4 & 0 & 0 \end{pmatrix}
+\]
+\end{example}
+\begin{definition}
+  Матрица $A_{m \times n}$ наз-ся \textbf{ступенчатой}, если выполняются два условия:
+  \begin{itemize}
+    \item [a) ] Если $a_{ij}$ и  $a_{i + 1, k}$ --- лидеры 2-х соседний строк, то $j < k$
+    \item [b) ] Ниже нулевой строки $A$ могут расп-ся только нулвые строки $A$.
+  \end{itemize}
+\end{definition}
+\begin{theorem}
+  Всякую матрицу можно привести к ступенчатому виду с помощью конечного числа ЭП строк.
+\end{theorem}
+\begin{proof}[Док-во: \textbf{Прямой ход метода Гаусса}]
+$A_{m \times n}$. Доказывать будем индукцией по $m$ (числу строк). 
+\begin{itemize}
+  \item [База: ] $m = 1$ - очев., т. к. одна строка --- это уже ступеначатая матрица.
+  \item [Предп. инд.: ] Пусть дана матрица размер $(m - 1) \times n$ - утв. справедливо. Д-ем для матр. $m \times n$. \\
+    
+    Найдём в матрице $A$ лидера строки с наименьшим номером столбца. При необходимости, передвинем его на 1-ую строку $A$. Пусть теперь $a_{1k}$ - лидер первой строки. Используя ЭП $I$ типа, обнулим $k$-ые члены строк ниже. Мысленно уберём $1$-ую строку и применим предп. инд-ции к оставшейся матрице. Получили матрицу ступ. вида.
+\end{itemize}
+\end{proof}
+\begin{definition}
+Ступенчатая матрица $A$ наз-ся упрощённой, если вып-ся два усл-ия:
+\begin{itemize}
+  \item [a)] Лидеры всех строк равны $1$. \\
+  \item [b) ] Столбцы, содерж. лидеров строк, содержат только нулевые эл-ты, за искл. лидера, кот. равен $1$
+\end{itemize}
+\end{definition}
+\begin{theorem}
+Всякую ненулевую матрицу, можно привести к упрощ. виду, с помощью конечного числа ЭП строк.
+\end{theorem}
+\begin{proof}[Док-во: \textbf{Обратный ход метода Гаусса}]
+Приведём $A$ к ступенч. виду. Пусть $a_{1 k_1}, a_{2 k_2}, \ldots, a_{r k_r}$ --- лидеры строк ступ. матрицы $A'$. \\
+Для каждого $i=\overline{1,r}$ умножим $i$-ую строку на $\frac{1}{a_{i k_i}}$. Тогда лидеры станут равны 1. \\
+Затем, будем идти от $r$-ой строки к $1$-ой. Для $i$-ой строки, обнулим эл-ты $a_{j k_i}$ над ней ЭП $I$-ого типа. Получили нужный вид.
+\end{proof}
+\begin{theorem}
+Если от СЛУ $(A | B)$ перейти к СЛУ $(A' | B')$ с помощью конечного числа ЭП строк, то эти системы эквив-ны.
+\end{theorem}
+\begin{proof}
+Дост-но док-ть для одно ЭП:
+\[
+\exists \text{ ЭМ } Q \colon (A' | B') = (QA | QB)
+\]
+$V$ - мн-во решений СЛУ $(A | B)$. $V'$ - мн-во решений СЛУ $(A' | B')$. \\
+\[
+X_0 \in V \Rightarrow AX_0 = B \Rightarrow QAX_0 = QB \Rightarrow A'X_0 = B' \Rightarrow X_0 \in V'
+\]
+\[
+X_0' \in V' \Rightarrow A'X_0' = B' \Rightarrow Q^{-1}A'X_0' = Q^{-1}B' \Rightarrow AX_0' = B \Rightarrow X_0' \in V
+\]
+\end{proof}
+\subsection{Метод Гаусса}
+\[
+AX = B
+\]
+\[
+  \widetilde{A} = (A | B) \text{ - расширенная матрицы}
+\]
+\begin{itemize}
+  \item [I шаг:] Приведём $\widetilde{A}$ к ступ. виду $\widetilde{A}_\text{ступ.}$
+  \begin{itemize}
+    \item [I случай: ] В $\widetilde{A}_\text{ступ.}$ есть лидер в столбце своб. членов $\Rightarrow $ СЛУ несовм.
+    \item [II случай: ] В $\widetilde{A}_\text{ступ.}$ такого лидера нет. Покажем, что СЛУ совместна. \\
+      Пусть лидеры в $\widetilde{A}_\text{ступ.}$: $a_{1 k_1}, a_{2 k_2}, \ldots a_{r k_r}$
+      \begin{definition}
+      Назовём $x_{k_1}, x_{k_2}, \ldots, x_{k_r}$ --- \textbf{главными} (базисными), а остальные --- \textbf{свободными} (параметрические).
+      \[
+      1 \leq k_1 < \ldots < k_r \leq n
+      \]
+      \end{definition}
+      \begin{itemize}
+        \item [II, a)] Все неизв. --- главные (свободных нет). Тогда $r = n$:
+          \[
+            \begin{cases}
+            a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_n = b_1 \\
+            a_{21} x_1 + a_{22} x_2 + \ldots + a_{2n} x_n = b_2 \\
+            \vdots \\
+            a_{m 1} x_1 + a_{m 2} x_2 + \ldots + a_{m n} x_n = b_m
+            \end{cases}
+          \]
+          Тогда $x_i = b_i$
+      \end{itemize}
+  \end{itemize}
+\end{itemize}

@@ -11,3 +11,6 @@
 \contentsline {section}{\numberline {3}Лекция 17}{14}{}%
 \contentsline {subsection}{\numberline {3.1}Конечномерные ЛП}{14}{}%
 \contentsline {subsubsection}{\numberline {3.1.1}Изоморфизм ЛП}{18}{}%
+\contentsline {section}{\numberline {4}Лекция 18}{20}{}%
+\contentsline {subsection}{\numberline {4.1}Элементарные преобразования строк матрицы}{22}{}%
+\contentsline {subsection}{\numberline {4.2}Метод Гаусса}{25}{}%
