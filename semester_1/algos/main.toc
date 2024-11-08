@@ -25,3 +25,6 @@
 \contentsline {subsubsection}{\numberline {5.2.2}Анализ времени работы}{18}{}%
 \contentsline {section}{\numberline {6}Лекция 7}{19}{}%
 \contentsline {subsection}{\numberline {6.1}Стеки и очереди}{19}{}%
+\contentsline {section}{\numberline {7}Лекция 10}{20}{}%
+\contentsline {subsubsection}{\numberline {7.0.1}Метод потенциалов}{22}{}%
+\contentsline {subsubsection}{\numberline {7.0.2}Возвращаемся к $splay$-дерево}{22}{}%

@@ -153,7 +153,9 @@ e^{x} > 1 + x + \frac{x^{2}}{2!} + \frac{x^{3}}{3!} + \ldots + \frac{x^{n}}{n!},
 Пусть ф-ция $f$ непр-на на $[a, b]$ и $A$ не более чем счётное мн-во, $A \subset [a, b]$. Если $f$ дифф-ма на $[a, b] \backslash A$. $f'(x) \geq 0$ и на $[a, b] \backslash A$, то $f$ нестрого возр.
 \end{theorem}
 \begin{proof}
-Дост-но установить, что $f(a) \leq f(b)$. Рассм. сначала случай $f'(x) > 0$ на $[a, b] \backslash A$. Предположим, что $f(a) > f(b)$. $f(A)$ не более чем счётно $\rightarrow \exists d \not \in f(A)$ и $f(a) > d > f(b)$. Рассм. $B = \set{x \in [a, b] \colon f(x) = d}$. \\
+Дост-но установить, что $f(a) \leq f(b)$. \\ 
+
+Рассм. сначала случай $f'(x) > 0$ на $[a, b] \backslash A$. Предположим, что $f(a) > f(b)$. $f(A)$ не более чем счётно $\rightarrow \exists d \not \in f(A)$ и $f(a) > d > f(b)$. Рассм. $B = \set{x \in [a, b] \colon f(x) = d}$. \\
 Положим $c = \sup B$. Т. к. $B$ - замкнуто, то $c \in B$. В част-ти,
 \[
   f'(c) > 0, \text{ т. к. $c \not \in A, c \in (a, b)$}
@@ -165,4 +167,20 @@ e^{x} > 1 + x + \frac{x^{2}}{2!} + \frac{x^{3}}{3!} + \ldots + \frac{x^{n}}{n!},
 \[
 f'(c) = \lim_{x\to c + 0} \frac{f(x) - f(c)}{x - c} \leq 0!!!
 \]
+\end{proof}
+\begin{consequence}
+Пусть $f$ - непр-на на $[a, b]$ и дифф-ма на $[a, b] \backslash A$, где $A \subset [a, b]$ - не более чем счётно. Если $m \leq f' \leq M$ на $[a, b] \backslash A$, то:
+\[
+  m(b - a) \leq f(b) - f(a) \leq M(b - a)
+\]
+\end{consequence}
+\begin{proof}
+Дост-но применить предыдущую теорему для ф-ций:
+\[
+\phi(x) = f(x) - mx
+\]
+\[
+\psi(x) = Mx - f(x)
+\]
+На $[a, b]$
 \end{proof}

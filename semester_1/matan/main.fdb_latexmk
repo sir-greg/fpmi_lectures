@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1730452399.47451 "main.tex" "main.pdf" "main" 1730452400.02452 0
+["pdflatex"] 1730884254.84666 "main.tex" "main.pdf" "main" 1730884255.41896 0
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labi0600.tfm" 1729066403.83003 3616 533b69491362bcd4e10eac14abd8d9e7 ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labi0800.tfm" 1729066401.2667 3552 fea43286ec2de1c7c51680e52e6c4f4a ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labi1200.tfm" 1725282838.58337 3592 9415307df98650ffeddaa22e262436dc ""
@@ -133,16 +133,17 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1722811609 5483422 a1ef07ac981a8b7f5985102f2de312a6 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1722811645 8239395 770efc74df93586a44891e8f654c98d2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1722811606.09035 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "main.aux" 1730452399.95003 2128 0d115f43864bf60d04a046f286e8a233 "pdflatex"
-  "main.tex" 1730447247.01667 713 c24d79d3b14140a46348ff666981e7eb ""
-  "main.toc" 1730452399.95003 1260 2fc3debb101d443fb179bcbd6b284a52 "pdflatex"
+  "main.aux" 1730884255.34002 2378 71402a1d6058ace8927f58f74b970478 "pdflatex"
+  "main.tex" 1730879165.91001 744 2c64b0634a780e7181596a32d2cf3a61 ""
+  "main.toc" 1730884255.34002 1428 9bb08e223dd8cf15a269893cf8f40ce0 "pdflatex"
   "preamble/preamble.tex" 1730275353.19335 2500 4cdc2956e4a1fa97d9e60c16197c5433 ""
   "src/lecture_13.tex" 1729069867.42341 8688 b1c7cc0884190501ec28e41df10d9e23 ""
   "src/lecture_14.tex" 1729673083.98671 14327 71fedc7979570aae1f61ad0adad1adff ""
   "src/lecture_15.tex" 1729675058.63674 3011 96ced4cc5e68d27e605fb6235eefb9ad ""
   "src/lecture_16.tex" 1730275771.04669 7628 fa9868ade02d9ad95adb3163602c65d0 ""
   "src/lecture_17.tex" 1730279838.65341 7625 bb512191eed77e73424f83b1521cadaf ""
-  "src/lecture_18.tex" 1730452397.79003 8602 168b97eb2a994d74f3947e01df7a8900 ""
+  "src/lecture_18.tex" 1730879817.81002 9089 19ee1bed9632aa1ccd8c5c61000b49f7 ""
+  "src/lecture_19.tex" 1730884254.19669 9076 37c2027f8652c5003e05d39579b142e8 ""
   (generated)
   "main.aux"
   "main.log"

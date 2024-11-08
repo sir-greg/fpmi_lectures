@@ -1,0 +1,188 @@
+\section{Лекция 19}
+Важным приложением теоремы Коши о среднем, явл-ся правило Лопиталя:
+\begin{theorem}[Правило Лопиталя для неопределённости $\frac{0}{0}$]
+Пусть $-\infty \leq a < b \leq +\infty$, ф-ции $f, g$ опр-ны на $(a, b)$ и дифф-мы, причём $g' \neq 0$ на $(a, b)$. Пусть:
+\begin{itemize}
+  \item [1) ] \[
+  \lim_{x\to a + 0} f(x) = \lim_{x\to a + 0} g(x) = 0
+  \]
+\item[2) ] \[
+\lim_{x\to a + 0} \frac{f'(x)}{g'(x)} = L \in \overline{\R}
+\]
+Тогда:
+\[
+\exists \lim_{x\to a + 0} \frac{f(x)}{g(x)} = \lim_{x\to a + 0} \frac{f'(x)}{g'(x)}
+\]
+\end{itemize}
+\end{theorem}
+\begin{proof}[Простое]
+$a \in \R$. Сущ-е предела установим по Гейне. Рассм. $\set{x_n} \subset (a, b) \colon x_n \rightarrow a$. Доопределим по непр-ни ф-ций $f, g$ в т. $a$, положив $f(a) = g(a) = 0$. По т. Коши о среднем: 
+\[
+[a, x_n] \colon \frac{f(x_n)}{g(x_n)} = \frac{f(x_n) - f(a)}{g(x_n) - g(a)} = \frac{f'(c_n)}{g'(c_n)}, \text{ для некот. т. $c_n \in (a, x_n)$}
+\]
+Т. к. $a < c_n < \underset{\rightarrow a}{x_n} \Rightarrow c_n \rightarrow a$. Поэтому:
+\[
+\lim_{n\to +\infty} \frac{f(x_n)}{g(x_n)} = \lim_{n\to +\infty} \frac{f'(c_n)}{g'(c_n)} = L
+\]
+По опр-ю Гейне $\lim_{x\to a + 0} \frac{f(x)}{g(x)} = L$
+\end{proof}
+\begin{note}
+Рассм. отдельно случай $a = -\infty$. Можно считать, что $b < 0$. Рассм. ф-ции:
+\[
+\phi(t) = f\left(-\frac{1}{t}\right), \psi(t) = g\left(-\frac{1}{t}\right), t \in (0, -\frac{1}{b})
+\]
+\[
+\lim_{t\to +0} \phi(t) = \lim_{x\to -\infty} f(x) = 0
+\]
+\[
+\lim_{t\to +0} \psi(t) = \lim_{x\to -\infty} g(x) = 0
+\]
+\[
+\lim_{t\to +0} \frac{\phi'(t)}{\psi'(t)} = \lim_{t\to +0} \dfrac{f'\left(-\frac{1}{t}\right) \cdot \frac{1}{t^{2}}}{g'\left(-\frac{1}{t}\right) \cdot \frac{1}{t^{2}}} = \lim_{x\to -\infty} \frac{f'(x)}{g'(x)} = L
+\]
+По доказанному, $\exists \lim_{t\to +0} \frac{\phi(t)}{\psi(t)} = L \Rightarrow \exists \lim_{x\to -\infty} \frac{f(x)}{g(x)} = L$
+\end{note}
+\begin{lemma}
+Пусть $\set{a_n}, \set{b_n}$ - числ. п-ти, причём $\lim_{n\to\infty} b_n = 1$. Тогда:
+\[
+\overline{\lim_{n\to \infty}} a_n b_n = \overline{\lim_{n\to \infty}} a_n
+\]
+\[
+\underline{\lim_{n\to \infty}} a_n b_n = \underline{\lim_{n\to \infty}} a_n
+\]
+\end{lemma}
+\begin{proof}
+ Введём обоз-я:
+ \[
+ \overline{\lim_{n\to\infty}} a_n b_n = c, \overline{\lim_{n\to\infty}} a_n = a
+ \]
+ \[
+ \exists \set{n_k}, n_k \text{ - строго возр.}  \colon a_{n_k} b_{n_k} \rightarrow c \Rightarrow a_{n_k} = \frac{a_{n_k} b_{n_k}}{b_{n_k}} \rightarrow \frac{c}{1} \leq a
+ \]
+ \[
+ \exists \set{m_k}, m_k \text{ - строго возр. } \colon a_{m_k} \rightarrow a, b_{m_k} \rightarrow 1 \Rightarrow a_{m_k} b_{m_k} \rightarrow a \leq c
+ \]
+ \[
+ \Rightarrow a = c
+ \]
+ Док-во для нижнего предела аналогично.
+\end{proof}
+\begin{theorem}[Правило Лопиталя для неопр. $\frac{\infty}{\infty}$]
+Всё то же самое, но в $(1) \colon$
+\[
+\lim_{x\to a+0} \left|f(x)\right| = \lim_{x\to a+0} \left|g(x)\right| = +\infty
+\]
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [1) ] $L \in \R, (L = +\infty)$. Рассм. $\set{x_n} \subset (a, b), x_n \rightarrow a$. Зафикс. $\varepsilon > 0$. По усл-ию $(2), \exists y \in (a, b), \forall c \in (a, y), \left|\frac{f'(c)}{g'(c)} - L\right| < \varepsilon$. Можно считать, что все $x_n \in (a, y), f\neq 0, g \neq 0$ на $(a, y)$. По т. Коши о среднем $\frac{f(x_n) - f(y)}{g(x_n) - g(y)} = \frac{f'(c_n)}{g'(c_n)}$, для некот. $c_n \in (x_n, y)$. Т. к.:
+    \[
+    \left|\frac{f'(c_n)}{g'(c_n)} - L\right| < \varepsilon, \left(\frac{f'(c)}{g'(c)} > M\right)
+    \]
+  Тогда:
+  \[
+  L - \varepsilon < \frac{f(x_n) - f(y)}{g(x_n) - g(y)} < L + \varepsilon, \left(\frac{f(x_n) - f(y)}{g(x_n) - g(y)} > M\right)
+  \]
+  \[
+  \iff L - \varepsilon < \frac{f(x_n)\left(1 - \frac{f(y)}{f(x_n)}\right)}{g(x_n)\left(1 - \frac{g(y)}{g(x_n)}\right)} < L + \varepsilon, \left(\frac{f(x_n)\left(1 - \frac{f(y)}{f(x_n)}\right)}{g(x_n)\left(1 - \frac{g(y)}{g(x_n)}\right)} > M\right)
+  \]
+  Однако $1 - \frac{f(y)}{f(x_n)} \rightarrow 1$ (аналогично с $g$). \\
+  Воспользуемся леммой и получим:
+  \[
+ \left(M < \right) L - \varepsilon \leq \underline{\lim_{n\to\infty}} \frac{f(x_n)}{g(x_n)} \leq \overline{\lim_{n\to\infty}} \frac{f(x_n)}{g(x_n)} \leq L + \varepsilon
+  \]
+  Т. к. $\varepsilon > 0$ - произвольное, то:
+  \[
+  \overline{\lim_{n\to\infty}} \frac{f(x_n)}{g(x_n)} = \underline{\lim_{n\to\infty}} \frac{f(x_n)}{g(x_n)} = L
+  \]
+  След-но:
+  \[
+  \exists \lim_{n\to\infty} \frac{f(x_n)}{g(x_n)} = L
+  \]
+  Тогда по Гейне $\exists \lim_{n\to\infty} \frac{f(x)}{g(x)} = L$
+\end{itemize}
+\end{proof}
+\begin{note}
+Правило Лопиталя остётся верным и для $x \rightarrow b - 0$, (дост-но сделать замену $x \rightarrow -x$). А значит, оно верно и для $x \rightarrow x_0$.
+\end{note}
+\begin{task}
+Докажите, что в правиле Лопиталя для $\frac{\infty}{\infty}$ можно снять условие $\lim_{x\to +\infty} \left|f(x)\right| = +\infty$
+\end{task}
+\begin{example}
+  \begin{itemize}
+    \item [1) ]
+\[
+\lim_{x\to +\infty} \frac{\ln x}{x^{\alpha}} = 0, \alpha > 0
+\]
+\[
+\lim_{x\to +\infty} \frac{\ln x}{x^{\alpha}} = \left[\frac{\infty}{\infty}\right] = \lim_{x\to +\infty} = \frac{1}{\alpha x^{\alpha}} = 0
+\]
+\item [2) ] \[
+\lim_{x\to+\infty} \frac{x^{\alpha}}{a^{x}} = 0, \alpha > 0, a > 1
+\]
+\[
+ \lim_{x\to+\infty} \frac{x^{\alpha}}{a^{x}} = \left[\frac{\infty}{\infty}\right] = \lim_{x\to +\infty} \frac{1}{a^{x} \ln a} = 0
+\]
+\[
+  \frac{x^{\alpha}}{a^{x}} = \left(\frac{x}{a^{\frac{x}{a}}}\right)^{\alpha}, \lim_{y\to 0} y^{\alpha} = 0
+\]
+  \end{itemize}
+\end{example}
+\begin{task}
+  Доказать:
+\[
+\exists \lim_{x\to +\infty} \frac{x + \sin x}{x}
+\]
+\begin{note}
+Здесь \textbf{не применимо} правило Лопиталя.
+\end{note}
+\end{task}
+
+\subsection{Производные высших порядков}
+Производные высших порядков определяются индуктивно.
+\begin{definition}
+Пусть $n \in \N$. Положим $f^{(1)} = f'$. Если $n > 1, f^{(n - 1)}$ - определена в некот. окр-ти точки $a$ и дифф-ма в т. $a$, то \textbf{$f$ наз-ся дифф-мой $n$ раз в точке $a$} и $f^{(n)}(a) = (f^{(n - 1)})'(a)$ \\
+
+Также считаем, что $f^{(0)} = f$ \\
+
+\end{definition}
+\begin{note}
+Сущ-е производной $n$-го порядка $f$ в т. $a$ влечёт при $n > 1$ существование производной $(n - 1)$-го порядка в некот. окр-ти точки $a$.
+\end{note}
+\begin{note}
+Т. к. операция взятия производной линейна, справедливо следующее:
+\[
+  (\alpha f(x) + \beta g(x) )^{(n)} = \alpha f^{(n)}(x) + \beta g^{(n)} (x)
+\]
+\end{note}
+\begin{theorem}[Ф-ла Лейбница]
+Если $f, g$ дифф-ма $n$ раз в точке $x$, то их произведение также дифф-мо $n$ раз в точке $x$, причём справедлива ф-ла:
+\[
+  (fg)^{(n)} = \sum_{k = 0}^{n} C_{n}^{k} f^{(k)}(x) g^{(n - k)}(x)
+\]
+\end{theorem}
+\begin{proof}
+Док-во проведем через ММИ по $n$:
+\begin{itemize}
+  \item База $n = 1$ - проверяли
+  \item Предположим утв-е верно для $n$. Тогда покажем, что утв-е верно для $n + 1$. Тогда:
+    \[
+      (fg)^{(n + 1)} = ((fg)^{(n)})' = \left(\sum_{k = 0}^{n} C_{n}^{k} f^{(k)} g^{(n - k)}\right)' = \sum_{k = 0}^{n} C_{n}^{k} (f^{(k + 1)}g^{(n - k)} + f^{(k)}g^{(n - k + 1)}) =
+    \]
+    \[
+    = \sum_{k = 1}^{n + 1} C_{n}^{k - 1} \left(f^{(k)}g^{(n + 1 - k)}\right) + \sum_{k = 0}^{n} C_{n}^{k} (f^{(k)}g^{(n + 1 - k)}) = 
+    \]
+    \[
+    = f^{(0)}g^{(n + 1)} + \sum_{k = 1}^{n} \underset{= C_{n + 1}^{k}}{\left(C_{n}^{k - 1} + C_{n}^{k}\right)} f^{(k)}g^{(n + 1 - k)} + f^{(n + 1)} g^{(0)} = \sum_{k = 0}^{n + 1} C_{n + 1}^{k} f^{(k)} g^{(n + 1 - k)}
+    \]
+\end{itemize}
+\end{proof}
+\begin{definition}
+Ф-ция $f$ наз-ся $n$ раз дифф-мой на мн-ве $D$, если $f$ дифф-ма $n$ раз в каждой точке из $D$. Если при этом ф-ция $x \mapsto f^{(n)}(x)$ - непр-на, то $f$ наз-ся $n$ раз непрерывно дифф-мой на $D$. 
+\end{definition}
+\begin{symb}
+$C^{n}(D)$ - мн-во $n$ раз непр-но дифф-мой на $D$ ф-ций. \\
+\[
+C^{\infty}(D) = \bigcap_{n = 1}^{\infty} C^{n}(D)
+\]
+\end{symb}

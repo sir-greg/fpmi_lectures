@@ -1,0 +1,114 @@
+\section{Лекция 10}
+\subsection{Напоминание}
+$\sigma$ - сигнатура, сост. из функц. и пред. символов. и им соотв. валентности.
+\[
+  \mu = (M, I_M), I_M \text{ - соотв. символам $\sigma$ функций и предикатов}
+\]
+\[
+\pi \colon Var \rightarrow M
+\]
+\[
+[\phi]_M(\pi) - ?
+\]
+Рекурсия по постр.$\phi$:
+\begin{itemize}
+  \item [1) ] \[
+  \phi = P(t_1, \ldots, t_n)
+  \]
+  \[
+  [\phi]_M(\pi) = [P]_M([t_1]_M(\pi), \ldots, [t_n]_M(\pi))
+  \]
+    \item [2) ] \[
+    \phi = (\psi_0 \underset{\land, \lor, \rightarrow}{(operation)} \psi_1), \phi = \neg \psi \text{ - аналогично.}
+    \]
+    \[
+    [\phi]_M(\pi) = \underset{OR, IMPL}{AND}([\psi_0]_M(\pi), [\psi_1]_M(\pi))
+    \]
+  \item[3) ] \[
+  \phi = \exists x, \psi
+  \]
+  \[
+  [\phi]_M(\pi) = 1 \iff \text{ найдётся $a \in M$, т. ч. $[\phi]_M (\pi_{x\rightarrow a}) = 1$}
+  \]
+  \[
+  [\phi]_M(\pi) = \underset{a \in M}{\bigvee} [\phi]_M (\pi_{x \mapsto a}) 
+  \]
+  \[
+  \pi_{x \rightarrow a}(y) = \begin{cases}
+  \pi(y), y \neq x \\
+  a, y = x
+  \end{cases}
+  \]
+\item [4) ] Аналогично ($3$), но с $\bigwedge$ вместо $\bigvee$
+\end{itemize}
+\begin{definition}
+\textbf{Параметры} терма $t$:
+\begin{itemize}
+  \item [1) ] \[
+  t = x \in Var \Rightarrow Par(t) = \set{x}
+  \]
+\item [2) ] \[
+  t = c \text{ - константа из $\sigma$} \Rightarrow Par(t) = \emptyset
+\]
+\item [3) ] \[
+  t = f(t_1, \ldots, t_n), f \text{ - функциональный символ вал-ти $n$} \Rightarrow Par(t) = \bigcup_{i = 1}^{n} Par(t_i)
+\]
+\end{itemize}
+\end{definition}
+\begin{definition}
+Параметры формулы $\phi$:
+\begin{itemize}
+  \item [1) ] \[
+  \phi = P(t_1, \ldots, t_n) \Rightarrow Par(\phi) = \bigcup_{i = 1}^{n} Par(t_i)
+  \]
+\item [2) ] \[
+\phi = \neg \psi \Rightarrow Par(\phi) = Par(\psi)
+\]
+\item[ 3) ] \[
+\phi = (\psi_0 \underset{\land, \lor, \rightarrow}{(operation)} \psi_1) \Rightarrow Par(\phi) = Par(\psi_0) \cup Par(\psi_1)
+\]
+\item [4) ] \[
+\phi = (\exists / \forall) x, \psi\Rightarrow Par(\phi) = Par(\psi) \set{x}
+\]
+\end{itemize}
+\end{definition}
+\begin{theorem}
+\begin{itemize}
+  \item [a) ] Если $\pi, \pi'$ --- оценки и для любой пер. $x \in Par(t), \pi(x) = \pi'(x)$, то $[t]_M(\pi) = [t]_M(\pi')$
+  \item [b) ] Если $\pi, \pi'$ - оценки, т. ч. для $\forall x \in Par(\phi), \pi(x) = \pi'(x)$ то $[\phi]_M(\pi) = [\phi]_M(\pi')$
+\end{itemize}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] Индукция по пост. $t$:
+    \begin{itemize}
+      \item [1) ] \[
+      t = x \Rightarrow [t]_M(\pi) = \pi(x) = \pi'(x) = [t]_M(\pi')
+      \]
+    \item [2) ] \[
+        t = c \Rightarrow [t]_M(\pi) = [c]_M = [t]_M(\pi')
+    \]
+  \item [3) ] \[
+    t = f(t_1, \ldots, t_n), f \text{ --- функциональный символ вал-ти $n$}
+  \]
+  \[
+  Par(t_i) \subset Par(t)
+  \]
+  \[
+  [t]_M(\pi) = [f]_M([t_1]_M(\pi), \ldots, [t_n]_M(\pi)) = 
+  \]
+  \[
+  = [f]_M([t_1]_M(\pi'), \ldots, [t_n]_M(\pi')) = [t]_M(\pi')
+  \]
+    \end{itemize}
+  \item [b) ] Индукция по построению $\phi$:
+    \begin{itemize}
+      \item [1) ] $\phi = P(t_1, \ldots, t_n) \Rightarrow [\phi]_M(\pi) =$ \[
+      =[P]_M([t_1]_M(\pi), \ldots, [t_n]_M[\pi]) = [P]_M([t_1]_M(\pi'), \ldots, [t_n]_M(\pi')) = [\phi]_M(\pi'))
+      \]
+    \item [2) ] $\phi = (\psi_0 \land \psi_1) \Rightarrow [\phi]_M[\pi] = AND([\psi_0]_M(\pi), [\psi_1]_M(\pi)]) = And([\psi_0]_M(\pi'), [\psi_1]_M(\pi')) = [\phi]_M(\pi')$ Аналогично для других операций и для отрицания.
+  \item [3) ] $\phi = \exists x, \psi$ \[
+  Par(\phi) = Par(\psi) \backslash \set{x}
+  \] $[\phi]_M(\psi) = \bigvee_{a \in M} [\phi]_M(\pi_{x\mapsto a}) = \bigvee_{a \in M} [\phi]_M(\pi_{x \mapsto a}') = [\phi]_M(\pi')$ \item [4) ] $\phi = \forall x, \psi \text{ -  аналогично $3)$}$ \end{itemize}
+\end{itemize}
+\end{proof}

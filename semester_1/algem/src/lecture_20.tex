@@ -1,0 +1,261 @@
+\section{Лекция 20}
+\subsection{Применения рангов матрицы}
+\begin{definition}
+Минор $M_{ij}$ наз-ся \textbf{невырожденным} если $\rk M_{ij}$ = k
+\end{definition}
+\begin{definition}
+\textbf{Рангом матрицы по минору} наз-ся максимальный порядок среди порядков всех невырожденных миноров.
+  \[
+  \rk_M A
+  \]
+\end{definition}
+\begin{theorem}[Фробениуса]
+Для $\forall$ матрицы $A$:
+\[
+\rk_r A = \rk_c A = \rk_M A
+\]
+\end{theorem}
+\begin{statement}
+Минор явл-ся невырожденным $\iff$ его $\det \neq 0$
+\end{statement}
+Рассм. однородн систему:
+\[
+AX = 0
+\]
+\[
+V = X_0 + V_0
+\]
+$X_0$ - частн. реш, $V_0$ - общ. реш. однородн. матрицы.
+\begin{definition}
+Матрица $F$ наз-ся фунд. матрицей системы $AX = 0$, если по столбцам этой матрицы располагаются коор-т столбцы базиса пр-ва $V_0$ $\iff$
+\begin{itemize}
+  \item [a) ] $AF = 0$
+  \item [b) ] Столбцы $F$ - ЛНЗ.
+  \item [c) ] Каждое решение $X_0$ однор. системы $AX = 0$ --- ЛК стобцов $F$.
+\end{itemize}
+\end{definition}
+\begin{note}
+Если система $AX = 0$ имеет только тривиальное решение, то говорят, что \textbf{фунд. матрицы не сущ-ет}.
+\end{note}
+Если $\rk A = r$, то имеем $r$ --- главных неизвестных, $n - r = d$ --- свободных неизвестных.
+\begin{theorem}
+Для упрощ. системы $(E_r | D) X = 0$, фунд. матрица $\Phi = \begin{pmatrix}-D \\ E_d \end{pmatrix}$
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] \[
+      AF = \begin{pmatrix}E_r & D  \end{pmatrix} \begin{pmatrix}-D \\ E_d \end{pmatrix} = E_r \cdot (-D) + D \cdot E_d = -D + D = 0
+  \]
+\item [b) ] \[
+\Phi \begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_d \end{pmatrix} = \begin{pmatrix}-D \\ E_d \end{pmatrix} \cdot \begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_d \end{pmatrix} = \begin{pmatrix} * \\ \vdots \\ * \\ \lambda_1 \\ \vdots \\ \lambda_d \end{pmatrix} = 0 \Rightarrow \lambda_i = 0, \forall i
+\]
+\item [c) ] \[
+X_0 \in V_0 \Rightarrow X_0 = \begin{pmatrix} * \\ \vdots \\ * \\ x_1 \\ \vdots \\ x_d \end{pmatrix}
+\]
+\[
+V_0 \ni Y_0 = \Phi \begin{pmatrix}x_1 \\ \ldots \\ x_d \end{pmatrix} = \begin{pmatrix} -D \\ E_d \end{pmatrix} \begin{pmatrix}x_1 \\ \vdots \\ x_d \end{pmatrix} = \begin{pmatrix} * \\ \vdots \\ * \\ x_1 \\ \vdots \\ x_d \end{pmatrix} \Rightarrow Y_0 = X_0
+\]
+\end{itemize}
+\end{proof}
+\begin{consequence}
+\[
+\dim V_0 = d = n - \rk A
+\]
+\end{consequence}
+\begin{theorem}[Кронекера-Капелли]
+  СЛУ $AX = B$ --- совместна $\iff \rk A = \rk \begin{pmatrix} A & B \end{pmatrix}$
+\end{theorem}
+\begin{proof}
+  Приведём $\begin{pmatrix} A & B \end{pmatrix}$ к ступенч. виду. СЛУ явл. совм. (Гаусс) $\iff$ нет лидера в столбце свою. членов.
+\end{proof}
+\begin{theorem}[Критерий определённости совм. СЛУ]
+  Совместная СЛУ определенна, если её ранг равен числу неизвестных.
+
+\end{theorem}
+\begin{theorem}
+Пусть $C = AB$, тогда $\rk C \leq min(\rk A, \rk B)$
+\end{theorem}
+\begin{proof}
+$i$-ая строка $C$ явл-ся ЛК строк $B \Rightarrow \dim rows(C) \leq \dim rows(B) \iff \rk C \leq \rk B
+$
+Аналогично, $\rk C \leq \rk A \Rightarrow \rk C \leq min(\rk A, \rk B)$
+
+\end{proof}
+\subsubsection{Применнеие рангов к исследованию квадр. матрицы на обратимость}
+\begin{definition}
+  $A \in M_n(\mathbb{F})$ наз-ся обратимой $\iff \exists A^{-1} \in M_n(\mathbb{F}) \colon$
+  \[
+  A^{-1}A = A A^{-1} = E_n
+  \]
+\end{definition}
+\begin{definition}
+Матрица $A$ наз-ся обратимой слева, если $\exists B \in M_n(\mathbb{F})\colon BA = E$, справа --- $\exists C \in M_n(\mathbb{F}) \colon AC = E$
+\end{definition}
+\begin{theorem}[Об обратной матрице]
+Следующие условия на квадратную матрицу $A_{n\times n}$ эквив-ны:
+\begin{itemize}
+  \item [1) ] $A$ - обратима
+  \item [2) ] $A$ - обратима слева или справа.
+  \item [3) ] $A$ - невырожд.
+  \item [4) ] $A$ приводится к $E_n$ с помощью ЭП \textbf{только строк или только столбцов}.
+  \item [5) ] $A$ представима в виде произведения элементарных матриц.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+  ~\newline
+\begin{itemize}
+  \item [$1 \Rightarrow 2$)] Очев.
+  \item [$2 \Rightarrow 3$)] Пусть $B \cdot A = E$. При этом ранг $E = n \leq min(\rk A, \rk B) \leq \rk A \leq n$. Получаем $\rk A = n \Rightarrow A$ - невырожд.
+  \item [$3 \Rightarrow 4$)] Приведём невырожд. матрицу к упрощ. виду. Получим $A_{\text{упрощ.}} = E_n$. Чтобы получить преобразования через строки, вместо столбцов (или наоборот):
+    \[
+    Q_k \cdot \ldots \cdot 
+    \]
+  \item [$4 \Rightarrow 5$)] Из п. 4, получаем:
+    \[
+    \exists Q_1, \ldots, Q_k \colon Q_k \cdot \ldots \cdot Q_1 A = E
+    \]
+    \[
+\Rightarrow    A = Q_1^{-1} \cdot \ldots \cdot Q_k^{-1}E 
+    \]
+  \item [$5 \Rightarrow 1$)] \[
+      A = T_1 \cdot \ldots \cdot T_k \Rightarrow A^{-1} = T_k^{-1} \cdot \ldots \cdot T_1^{-1}
+  \]
+  \[
+  A A^{-1} = A^{-1} A = E
+  \]
+\end{itemize}
+\end{proof}
+\begin{consequence}
+Вырожденные матрицы необратимы
+\end{consequence}
+\begin{consequence}
+Произведение двух невырож. матриц невырожд.
+\end{consequence}
+\begin{consequence}
+  Мн-во всех невырож. матриц образует группу отн-но операции $"\cdot"$
+\end{consequence}
+\begin{proof}
+Операция определена по предыдущему следствию. Ассоцитавность выполняется. Нейтральный элемент --- $E$. Обратные матрицы также невырождены.
+\end{proof}
+\begin{symb} 
+  $GL_n(\mathbb{F})$ --- General Linear Group. 
+\end{symb}
+\subsection{Операции над подпространствами}
+$V$ - конечномерн. пр-во
+\[
+U \leq V, W \leq V
+\]
+\begin{definition}
+Пересечением подпр-в $U$ и $W$ наз-ся мн-во:
+\[
+U \cap W = \set{x \in V | x \in U \land x \in W}
+\]
+\end{definition}
+\begin{statement}
+\[
+U \cap W \leq V
+\]
+Доказать сам-но.
+\end{statement}
+\begin{note}
+Объединение двух подпр-вом не явл-ся подпр-вом в общем случае.
+\end{note}
+\begin{definition}
+Алг. сумма подпр-в $U, W$:
+\[
+U + W = \set{x_1 + x_2 | x_1 \in U, x_2 \in W}
+\]
+\end{definition}
+\begin{statement}
+\[
+U + W \leq V
+\]
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] \[
+  x,y \in U + W \Rightarrow x = x_1 + x_2, y = y_1 + y_2
+  \]
+  Где $x_1, y_1 \in U, x_2, y_2 \in W$
+  \[
+  x + y = x_1 + x_2 + y_1 + y_2 = (x_1 + y_1) + (x_2 + y_2) \Rightarrow x + y \in U + W
+  \]
+\item [b) ] Остальное док-ть сам-но.
+\end{itemize}
+\end{proof}
+\begin{definition}
+  $U_i \leq V, \forall i = \overline{1, n}$
+\[
+  \sum_{i = 1}^{n} U_i = \Set{\sum_{i = 1}^{n} x_i | x_i \in U_i}
+\]
+\end{definition}
+\begin{statement}
+Пусть $U_i = <S_i>, i = \overline{1, n}$. Тогда
+\[
+  \sum_{i = 1}^{n} U_i = <S_1 \cup S_2 \ldots \cup S_n>
+\]
+\end{statement}
+\begin{definition}
+Объединение упор. систем векторов подразумевается конкатенация этих систем (приписывание).
+\end{definition}
+\begin{statement}
+Пусть $L = <\bigcup_{i = 1}^{n} S_i>$.
+\[
+  U_i = <S_i> \subseteq L  \Rightarrow U_1 + \ldots U_n \leq L
+\]
+В обратную сторону:
+\[
+  L = <\bigcup_{i = 1}^{n} S_i> \subset <\bigcup_{i = 1}^{n} U_i> = U_1 + \ldots + U_n
+\]
+\[
+\Rightarrow \sum_{i = 1}^{n} U_i = <\bigcup_{i = 1}^{n} S_n>
+\]
+\end{statement}
+\begin{consequence}
+  \[
+    \dim (\sum_{i = 1}^{n} U_i) \leq \sum_{i = 1}^{n} \dim U_i
+  \]
+\end{consequence}
+\begin{proof}
+Пусть $S_i$ --- базис в $U_i$. $\dim(\sum_{i = 1}^{n} U_i)$ равна мощности макс. ЛНЗ подсистеме $\bigcup_{i = 1}^{n} S_i \leq $ мощности $ \bigcup_{i = 1}^{n} S_i \leq$
+\[
+  \leq \left|\bigcup_{i = 1}^{n} S_i\right| \leq \sum_{i = 1}^{n} \left|S_i\right| = \sum_{i = 1}^{n} \dim U_i
+\]
+\end{proof}
+\begin{consequence}
+$\dim(\sum_{i = 1}^{n} U_i) = \sum_{i = 1}^{n} \dim U_i \iff$ когда объединение базисов в $U_i$ дает базис в $\sum_{i = 1}^{n} U_i$
+\end{consequence}
+\begin{definition}
+  Пусть $U_i \leq V$. $\sum_{i = 1}^{n} U_i $ наз-ся \textbf{прямой суммой подпр-в}, если $\forall x \in \sum_{i = 1}^{n} U_i$:
+  \[
+  \exists! (x_1, x_2, \ldots, x_k), x_i \in U_i \colon x = \sum_{i = 1}^{n} x_i 
+  \]
+
+\end{definition}
+\begin{symb}
+  \[
+    \bigoplus_{i = 1}^{n} U_i \text{ - прямая сумма}
+  \]
+\end{symb}
+\begin{definition}[ЛНЗ для подпр-в]
+Подпр-ва $U_1, \ldots U_n$ наз-ся ЛНЗ, если:
+\[
+\sum_{i = 1}^{n} x_i = \overline{0}, x_i \in U_i \iff \forall i \colon x_i = \overline{0}
+\]
+\end{definition}
+\begin{theorem}[О характризации прямой суммы подпр-в]
+Пусть $U_i \leq V_i, i = \overline{1, k}$. Тогда следующие условия эквив-ны:
+\begin{itemize}
+  \item [1) ] \[
+  \sum_{i = 1}^{n} U_i = \bigoplus_{i = 1}^{n} U_i
+  \]
+\item [2) ] \[
+\forall i = \set{1, \ldots, n} \colon U_i \cap (\sum_{j = 1, j \neq i}^{n} U_j) = \set{\overline{0}}
+\]
+\item [3) ] \[
+U_1, \ldots, U_n \text{ --- ЛНЗ}
+\]
+\item [4) ] Объединение базисов $U_i$ даёт базис в сумме $U_i$
+\item [5) ] $\sum_{i = 1}^{n} \dim U_i = \dim(\sum_{i = 1}^{n} U_i)$
+\end{itemize}
+\end{theorem}

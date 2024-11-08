@@ -256,6 +256,9 @@ INPUT src/lecture_7.tex
 INPUT ./src/lecture_8.tex
 INPUT ./src/lecture_8.tex
 INPUT src/lecture_8.tex
+INPUT ./src/lecture_10.tex
+INPUT ./src/lecture_10.tex
+INPUT src/lecture_10.tex
 INPUT main.aux
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb

@@ -5,3 +5,5 @@
 \contentsline {section}{\numberline {2}Лекция 9}{7}{}%
 \contentsline {subsection}{\numberline {2.1}Языки 1-ого порядка}{7}{}%
 \contentsline {subsubsection}{\numberline {2.1.1}Интерпретация}{8}{}%
+\contentsline {section}{\numberline {3}Лекция 10}{9}{}%
+\contentsline {subsection}{\numberline {3.1}Напоминание}{9}{}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  1 NOV 2024 12:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  6 NOV 2024 12:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -703,28 +703,71 @@ Overfull \hbox (4.41974pt too wide) in paragraph at lines 110--111
 
 
 [28]
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
-[29])
+ []
 
-[30] (./main.aux)
+
+
+[29]) (./src/lecture_19.tex
+Overfull \hbox (4.45886pt too wide) in paragraph at lines 4--5
+[]$[]$ \T2A/cmr/bx/n/12 7.1 \T2A/cmr/m/n/12 (Пра-ви-ло Ло-пи-та-ля для неопре-де-лјн-но-сти $[]$)\T2A/cmr/bx/n/12 . []\T2A/cmr/m/it/12 Пусть $\OMS/cmsy/m/n/12 ^^@1 ^^T
+ []
+
+
+
+[30]
+
+[31]
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+
+
+[33]
+Overfull \hbox (65.62587pt too wide) detected at line 171
+\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 fg\OT1/cmr/m/n/12 )[] = ((\OML/cmm/m/it/12 fg\OT1/cmr/m/n/12 )[])[] = [][] = [] \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]g[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 f[]g[]\OT1/cmr/m/n/12 ) =
+ []
+
+
+Overfull \hbox (28.43123pt too wide) detected at line 177
+\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 f[]g[] \OT1/cmr/m/n/12 + [] []\OML/cmm/m/it/12 f[]g[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 f[]g[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 C[]f[]g[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+)
+
+[34] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8687 strings out of 473579
- 133966 string characters out of 5728235
+ 8695 strings out of 473579
+ 134145 string characters out of 5728235
  1940957 words of memory out of 5000000
- 31392 multiletter control sequences out of 15000+600000
+ 31397 multiletter control sequences out of 15000+600000
  581376 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,96p,619b,339s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (30 pages, 369299 bytes).
+Output written on main.pdf (34 pages, 388375 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
+ 219 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

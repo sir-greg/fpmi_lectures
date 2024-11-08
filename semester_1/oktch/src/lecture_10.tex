@@ -1,0 +1,164 @@
+\section{Лекция 10}
+Вспоминаем задачу:
+\[
+X = \set{b_1, \ldots, b_r} \text{ - алфавит}
+\]
+\[
+n, a_1, \ldots, a_n \text{ --- линейная последовательность}
+\]
+П-ть $r^{n}$:
+\[
+  (a_1, \ldots, a_n)
+\]
+Циклический сдвиг $a_1, \ldots, a_n \rightarrow a_2, a_3, \ldots, a_n, a_1$ \\
+\begin{definition}
+Обозначаем как $d$ --- \textbf{период линейной п-ти}, т. е. $min$ кол-во циклических сдвигов, переводящих её в себя.
+\end{definition}
+\begin{lemma}
+$d | n$
+\end{lemma}
+\begin{proof}
+Предположим, что $n = kd + r, 1 \leq r < d$. Тогда, сдвинув $a_1, \ldots, a_n$ на $d$, $k$ раз, получим исходную п-ть. Сдвинув на $n$ 1 раз, тоже получаем исх. п-ть. Отсюда, получаем, что сдвигая $a_1, \ldots, a_n$ на $n - k \cdot d = r$, тоже получ. исх. п-ть. Но $r < d$ --- противоречие.
+\end{proof}
+\begin{lemma}
+$a_1, \ldots, a_n$ - периода $d$, то она представляется, как $\frac{n}{d}$ одинаковых кусков длины $d$:
+\[
+a_1, \ldots, a_n = a_1, \ldots a_d, a_{d + 1}, \ldots, a_{2d}, a_{2d + 1}, \ldots
+\]
+\end{lemma}
+\begin{proof}
+Очев.
+\end{proof}
+Пусть $V$ - мн-во всех линейных п-тей сост. из нашего алфавита (т. е. $|V| = r^{n}$) \\
+\[
+1 = d_1 < d_2 < d_3 \ldots < d_s = n \text{ - все делители числа $n$}
+\]
+\[
+V_i = \set{\set{a_n} \in V | \set{a_n} \text{ - имеет период $d_i$}}
+\]
+\[
+V = V_1 \sqcup V_2 \sqcup V_3 \sqcup \ldots \sqcup V_s
+\]
+\[
+\Rightarrow r^{n} = \left|V_1\right| + \ldots + \left|V_s\right|
+\]
+Пусть $W_i$ - мн-во лин п-тей длины $d_i$ и периода $d_i$
+\[
+\left|W_i\right| = \left|V_i\right|
+\]
+\[
+\Rightarrow r^{n} = \left|W_1\right| + \ldots + \left|W_s\right|
+\]
+Обозначим $U_i$ - мн-во различных цикл. п-тей, кот. отвечают лин. п-тям из $W_i$. Тогда очевидно, что:
+\[
+  \frac{|W_i|}{d_i} = |U_i|
+\]
+Введём обозначение:
+\[
+M(d_i) = |U_i|
+\]
+Получаем:
+\[
+r^{n} = d_1M(d_1) + d_2M(d_2) + \ldots d_sM(d_s)
+\]
+\[
+r^{n} = \sum_{d | n}^{} dM(d)
+\]
+Напомним ф-лу обращения Мёбиуса:
+\[
+g(n) = \sum_{d | n}^{} f(d) \Rightarrow
+\]
+\[
+\Rightarrow f(n) = \sum_{d | n}^{} \mu(d) g\left(\frac{n}{d}\right) = \sum_{d | n}^{} \mu\left(\frac{n}{d}\right) g(d)
+\]
+Получаем:
+\[
+nM(n) = \sum_{d | n}^{} \mu(d) \cdot r^{\frac{n}{d}}
+\]
+\[
+M(n) = \frac{1}{n}\sum_{d | n}^{} \mu(d) \cdot r^{\frac{n}{d}}
+\]
+Тогда ответ, т. е. кол-во циклических п-тей длины $n$, представим как теорему:
+\begin{theorem}
+\[
+T_r(n) = \sum_{d | n}^{} M(d) = \sum_{d | n}^{} \frac{1}{d} \left(\sum_{d' | d}^{} \mu(d') r^{\frac{d}{d'}}\right)
+\]
+\end{theorem}
+\subsection{Обращение Мёбиуса на чумe (част. уп. мн-во)}
+\[
+  \mathscr{P} = (A, \preceq)
+\]
+Локально конечный: $\forall y \in A$
+\[
+\left|\set{ x \preceq y }\right| < \infty
+\]
+\[
+  (\N, \leq), (\N, |)
+\]
+\[
+  (2^{\set{1, 2, \ldots, n}}, \subseteq)
+\]
+\subsubsection{Ф-ция Мёбиуса}
+\[
+x, y \in \mathbb{A}, x \preceq y
+\]
+\[
+\mu(x, x) = 1
+\]
+\[
+x \prec y \colon \mu(x, y) = -\sum_{z \colon x \preceq z \prec y}^{} \mu(x, z)
+\]
+\begin{theorem}
+Если $\mu(x, y)$ - это ф-ция Мёбиуса на $(\N, |)$, а $\mu(n)$ - обратная ф-ция Мёбиуса, тогда:
+\[
+\mu(x, y) = \mu\left(\frac{y}{x}\right)
+\]
+\end{theorem}
+\begin{proof}
+\[
+\mu(x, x) = \mu\left(\frac{x}{x}\right) = 1
+\]
+Индукция по величине $\frac{y}{x}$: 
+\[
+\mu(x, y) = -\sum_{z \colon x \preceq z \prec y}^{} \mu(x, z) = -\sum_{z \colon x \preceq z \prec y}^{} \mu\left(\frac{z}{x}\right)
+\]
+Распишем $y = x \cdot p_1^{\alpha_1} \cdot \ldots \cdot p_s^{\alpha_s}$. Тогда:
+\[
+\frac{z}{x} = p_1^{\beta_1} \cdot \ldots \cdot p_s^{\beta_s}, \exists i \colon \beta_i < \alpha_i
+\]
+Рассм. несколько случаев:
+\begin{itemize}
+  \item [1) ] $\alpha_1 = \ldots = \alpha_s = 1$. Тогда:
+\[
+-\sum_{\ldots}^{} \mu\left(\frac{z}{x}\right) = -\sum_{\beta_1 = 0}^{1} \ldots \sum_{\beta_s = 0}^{1} \mu\left(p_1^{\beta_1}\cdot\ldots\cdot p_s^{\beta_s}\right) + \mu\left(p_1 \cdot \ldots \cdot p_s\right)
+\]
+В рамках док-ва ф-лы обращ. Мёбиуса, страшная сумма слева $= 0$. Получаем:
+\[
+ = \mu(p_1 \cdot \ldots \cdot p_s)
+\]
+  \item [2) ] $\exists i \colon \alpha_i > 1$. Тогда всё то же самое, как и в случае 1 (по опр. ф-ции Мёбиуса)
+\end{itemize}
+\end{proof}
+\begin{theorem}[Ф-ла обращения Мёбиуса]
+  Пусть $g(y) = \sum_{x \preceq y}^{} f(x)$. Тогда:
+  \[
+    f(y) = \sum_{x \preceq y}^{} \mu(x, y) g(x)
+  \]
+\end{theorem}
+\begin{proof}
+\[
+\sum_{x \preceq y}^{} \mu(x, y) \cdot g(x) =\sum_{x \preceq y}^{} \mu(x, y) \cdot \sum_{z \preceq x}^{}  f(z) = \sum_{(x, z) \colon z \preceq x \preceq y}^{} \mu(x, y) \cdot f(z) = 
+\]
+\[
+ = \sum_{z \preceq y}^{} f(z) \left(\sum_{x \colon z \preceq x \preceq y}^{} \mu(x, y)\right) = 1 + \sum_{z \prec y}^{} f(z) \left(\sum_{x \colon z \preceq x \preceq y}^{} \mu(x, y)\right)
+\]
+Док-во сводится к лемме:
+\begin{lemma}
+\[
+\forall z, y \colon z \prec y
+\]
+\[
+\sum_{x \colon z \preceq x \preceq y}^{}\mu(x, y) = 0
+\]
+\end{lemma}
+\end{proof}

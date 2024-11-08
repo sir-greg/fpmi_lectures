@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  30 OCT 2024 18:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  6 NOV 2024 17:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -617,27 +617,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
 
 
-[8])
+[8]) (./src/lecture_10.tex
 
-[9] (./main.aux)
+[9]
+Overfull \hbox (52.1581pt too wide) detected at line 55
+\OML/cmm/m/it/12 t \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[]; [] ; t[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; f[] \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 Par\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 Par\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 )
+ []
+
+
+Overfull \hbox (13.78629pt too wide) in paragraph at lines 77--78
+[]\T2A/cmr/m/it/12 Если $\OML/cmm/m/it/12 ^^Y; ^^Y[]$ \T2A/cmr/m/it/12 --- оцен-ки и для лю-бой пер. $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 Par\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; ^^Y\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) =
+ []
+
+
+Overfull \hbox (1.7546pt too wide) in paragraph at lines 78--79
+[]\T2A/cmr/m/it/12 Если $\OML/cmm/m/it/12 ^^Y; ^^Y[]$ \T2A/cmr/m/it/12 - оцен-ки, т. ч. для $\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 Par\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; ^^Y\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$ \T2A/cmr/m/it/12 то $\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 ) =
+ []
+
+
+
+[10]
+Overfull \hbox (47.22466pt too wide) detected at line 108
+\OT1/cmr/m/n/12 = [\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 ][]([\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 ][][\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 ]) = [\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 ][]([\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 )) = [\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 ))
+ []
+
+
+Overfull \hbox (97.09703pt too wide) in paragraph at lines 109--110
+[]$\OML/cmm/m/it/12 ^^^ \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12  [] \OMS/cmsy/m/n/12 ^ \OML/cmm/m/it/12  []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ) \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 ][][\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 ] = \OML/cmm/m/it/12 AND\OT1/cmr/m/n/12 ([\OML/cmm/m/it/12  []\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12  []\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 )]) = \OML/cmm/m/it/12 And\OT1/cmr/m/n/12 ([\OML/cmm/m/it/12  []\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12  []\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 )) =
+ []
+
+)
+
+[11] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8067 strings out of 473579
- 125862 string characters out of 5728235
+ 8073 strings out of 473579
+ 125989 string characters out of 5728235
  1935957 words of memory out of 5000000
- 30799 multiletter control sequences out of 15000+600000
+ 30802 multiletter control sequences out of 15000+600000
  576962 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,12n,82p,367b,267s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (9 pages, 240539 bytes).
+Output written on main.pdf (11 pages, 260972 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
