@@ -16,3 +16,5 @@
 \contentsline {subsection}{\numberline {6.1}Приложения теореме о среднем}{27}{}%
 \contentsline {section}{\numberline {7}Лекция 19}{30}{}%
 \contentsline {subsection}{\numberline {7.1}Производные высших порядков}{33}{}%
+\contentsline {section}{\numberline {8}Лекция 20}{35}{}%
+\contentsline {subsection}{\numberline {8.1}Формула Тейлора}{35}{}%
