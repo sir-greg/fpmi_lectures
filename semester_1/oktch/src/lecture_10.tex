@@ -150,7 +150,7 @@ x \prec y \colon \mu(x, y) = -\sum_{z \colon x \preceq z \prec y}^{} \mu(x, z)
 \sum_{x \preceq y}^{} \mu(x, y) \cdot g(x) =\sum_{x \preceq y}^{} \mu(x, y) \cdot \sum_{z \preceq x}^{}  f(z) = \sum_{(x, z) \colon z \preceq x \preceq y}^{} \mu(x, y) \cdot f(z) = 
 \]
 \[
- = \sum_{z \preceq y}^{} f(z) \left(\sum_{x \colon z \preceq x \preceq y}^{} \mu(x, y)\right) = 1 + \sum_{z \prec y}^{} f(z) \left(\sum_{x \colon z \preceq x \preceq y}^{} \mu(x, y)\right)
+ = \sum_{z \preceq y}^{} f(z) \left(\sum_{x \colon z \preceq x \preceq y}^{} \mu(x, y)\right) = f(y) + \sum_{z \prec y}^{} f(z) \left(\sum_{x \colon z \preceq x \preceq y}^{} \mu(x, y)\right)
 \]
 Док-во сводится к лемме:
 \begin{lemma}
@@ -158,7 +158,7 @@ x \prec y \colon \mu(x, y) = -\sum_{z \colon x \preceq z \prec y}^{} \mu(x, z)
 \forall z, y \colon z \prec y
 \]
 \[
-\sum_{x \colon z \preceq x \preceq y}^{}\mu(x, y) = 0
+\sum_{x \colon z \preceq x \preceq y}^{}\mu(x, y) = I_{z = y}
 \]
 \end{lemma}
 \end{proof}

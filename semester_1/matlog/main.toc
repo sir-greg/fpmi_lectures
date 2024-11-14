@@ -1,9 +1,4 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 8}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Выр-ем задачи через вып-ть ф-л}{3}{}%
-\contentsline {subsubsection}{\numberline {1.1.1}Обобщаем. Метод резолюций}{5}{}%
-\contentsline {section}{\numberline {2}Лекция 9}{7}{}%
-\contentsline {subsection}{\numberline {2.1}Языки 1-ого порядка}{7}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Интерпретация}{8}{}%
-\contentsline {section}{\numberline {3}Лекция 10}{9}{}%
-\contentsline {subsection}{\numberline {3.1}Напоминание}{9}{}%
+\contentsline {section}{\numberline {1}Лекция 10}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Напоминание}{3}{}%
+\contentsline {section}{\numberline {2}Лекция 11}{5}{}%

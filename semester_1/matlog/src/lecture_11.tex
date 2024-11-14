@@ -1,0 +1,149 @@
+\section{Лекция 11}
+\begin{definition}
+Предварённая нормальная формула $\colon$
+\[
+\underset{\text{Кванторы}}{\exists \forall \exists \exists \forall \ldots} \underset{\text{Бескванторная формула}}{(\ldots)}
+\]
+\end{definition}
+\begin{theorem}
+У любой ф-лы 1-ого порядка $\exists$ эквив. ей формула в предв. нормальной форме.
+\end{theorem}
+\begin{proof}
+Будем проводить эквив-ные преобразования:
+\begin{itemize}
+  \item [1) ] $\neg \exists x \phi \sim \forall x \neg \phi$
+    \[
+      \neg \forall x \phi \sim \exists x \neg\phi
+    \]
+  \item [2) ] $(\forall x \phi \land \forall x \psi) \sim \forall x (\phi \land \psi)$
+        \[
+          (\exists x \phi \lor \exists x \psi) \sim \exists x (\phi \lor \psi)
+        \]
+  \item [3) ] \[
+    \exists x (\phi \land \psi) \rightarrow (\exists x\phi \land \exists x \psi)
+  \]
+  \textbf{Это не эквивалентность! Поэтому нельзя применять}
+\[
+  (\forall x \phi \lor \forall x \psi) \rightarrow \forall x(\phi \lor \psi)
+\]
+   Нужно сделать замену переменной.
+   \[
+   \exists x \phi \sim \exists y \underline{\phi(y / x)}
+   \]
+   Получили ф-лу $\phi$ с подстановкой $y$ вместо $x$.
+   \[
+   \phi(y / x) \text{ --- \textbf{все свободные вхожд. $x$ замен-ся на $y$}}
+   \]
+   ! При этом, эти вхождения не должны подпадать под д-ие кванторов по $y$, и $y$ не входит свободно в ф-лу $\phi$. \\
+   \underline{\textbf{Рассм. примеры некорректных подстановок:}}
+   \begin{itemize}
+     \item [1) ] $\exists x \forall y A(x, y) \not\rightarrow \exists y \forall y A(y, y)$
+     \item [2) ] $\exists x A(x, y) \not\rightarrow \exists y A(y, y)$
+   \end{itemize}
+  Иначе, замена на новую переменную корректна.
+\item [4) ] $(\exists x \phi) \land \psi \sim \exists x (\phi \land \psi)$, причём $x \not \in Params(\psi)$ \\
+
+$(\exists x \phi \land \psi) \sim \exists y \phi(y / x) \land \psi \sim \exists y (\phi(y / x) \land \psi)$, если $x \in Params(\psi)$, $y$ не встречается в $\phi$ и $\psi$ \\
+
+  $\exists \phi \lor \psi \sim \exists x (\phi \lor \psi), \forall \text{ --- аналог.}$ \\
+
+  $(\exists x \phi \rightarrow \psi) \sim \forall x (\phi \rightarrow \psi)$ \\
+
+  $(\psi \rightarrow \exists x \phi) \sim \exists x (\psi \rightarrow \phi)$
+\end{itemize}
+\end{proof}
+\begin{note}
+Значение ф-лы зависит только от значения её параметров. $\Rightarrow$ Ф-ла с $k$ пар-рами при фикс. интерпретации задаёт $k$-местный предикат.
+\end{note}
+\begin{definition}
+Предикат наз-ся \textbf{выразимым} в данной интерпретации, если его можно задать ф-лой 1-ого порядка.
+\end{definition}
+\begin{example}
+$(\N, S, =), S(n) = n + 1$. Тогда:
+\[
+x = 0 \iff \neg \exists y \colon x = S(y)
+\]
+\[
+x = 1 \iff \exists y \colon (x = S(y) \land \underset{\text{Здесь подставляем строчку выше}}{y = 0})
+\]
+\end{example}
+\begin{example}
+$(\N, \cdot, =)$ \\
+$x = 0 \iff \forall y \cdot x = x$ \\
+$x = 1 \iff \forall y \cdot x = y$
+\[
+x \colon y \iff \exists z ( x = y \cdot z )
+\]
+\[
+  p \text{ --- простое} \iff (p \neq 1 \land \forall q (p \divby q \rightarrow (q = 1 \lor q = p)))
+\]
+\[
+  d = gcd(x, y) \iff (x \divby d \land y \divby d \land \forall k((x \divby k \land y \divby k) \rightarrow d \divby k))
+\]
+\[
+  d = lcm(x, y) \iff (c \divby x \land c \divby y \land \forall k ((k \divby x \land k \divby y) \rightarrow k \divby c))
+\]
+\end{example}
+\begin{example}
+$(2^{A}, \subset)$
+\[
+x = y \iff (x \subset y \land y \subset x)
+\]
+\[
+x = \emptyset \iff \forall y \colon x \subset y
+\]
+\[
+\left|x\right| = 1 \iff (\neg(x = \emptyset) \land \forall y (y \subset x \rightarrow (y = \emptyset \lor y = x)))
+\]
+\[
+z = x \cup y \iff (x \subset z \land y \subset z \land \forall t ((x \subset t \land y \subset t) \rightarrow (z \subset t)))
+\]
+\end{example}
+\begin{example}
+Метрическая геометрия:
+\[
+  (\R^{2}, E), E(x, y) \text{ --- значит, что $\left|x - y\right| = 1$, т. е. расстояние от точки $x$ до $y$ $ = 1$}
+\]
+\[
+x = y \iff \forall z (E(x, z) \rightarrow E(y, z))
+\]
+\[
+\left|x - y\right| = 2 \iff \exists! z (E(x, z) \land E(y, z))
+\]
+Или:
+\[
+\exists z ((E(x, z) \land E(y, z)) \land \forall t((E(x, t) \land E(y, t)) \rightarrow t = z))
+\]
+\[
+\left|x - y\right| = \sqrt{3}
+\]
+Рисуем прямоугольный треугольник с гипотенузой длины $= 2$ и катетом длины $= 1$. Тогда катет от $x$ до $y$ имеет длину $\sqrt{3}$
+\[
+\exists z \exists t (E(x, z) \land E(z, t) \land E(x, t) \land E(y, t) \land \left|y - z\right| = 2)
+\]
+\end{example}
+\begin{example}
+$(\N, S, =)$
+\[
+y = x + k, k \text{ --- параметр}
+\]
+\[
+y = \underset{k \text{ раз}}{S(S(S(\ldots (S(}x)))))
+\]
+\[
+y = x + k \iff \exists z (y = z + \frac{k}{2} \land z = x + \frac{k}{2})
+\]
+\[
+\iff \exists z \forall u \forall v \left(((u = y \land v = z) \lor (u = z \land v = x)) \rightarrow u = v + \frac{k}{2}\right)
+\]
+\[
+len(k) = len(\frac{k}{2}) + C
+\]
+\[
+k = 1 \text{ --- база индукции}, y = x + 1 \iff y = S(x)
+\]
+Общая длина: $C\log_2 k$
+\[
+  k \text{ --- нечётно} \Rightarrow y = x + k \iff \exists z (y = S(z) + \frac{k - 1}{2} \land z = x + \frac{k - 1}{2})
+\]
+\end{example}

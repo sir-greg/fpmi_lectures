@@ -1,0 +1,170 @@
+\section{Лекция 11}
+\begin{lemma}
+\[
+\sum_{x \preceq y \preceq z}^{} \mu(z, y) = I_{x = y}
+\]
+\end{lemma}
+\begin{proof}
+$x \prec y$ \\
+Докажем индукцие по длине самой \underline{длинной} цепочки вида:
+\[
+  x \prec x_1 \prec x_2 \prec \ldots \prec x_k \prec y
+\]
+\begin{itemize}
+  \item База индукции: $x \prec y$, а между ними ничего нет.
+    \[
+    \sum_{x \preceq z \preceq y}^{} \mu(z, y) = \mu(y, y) + \sum_{x \preceq z \prec y}^{} \mu(z, y) = 1 + \mu(x, y) = 1 - \sum_{x \preceq z \prec y}^{} \mu(x, z) =
+    \]
+    \[
+    = 1 - \mu(x, x) = 0
+    \]
+  \item Шаг индукции: \[
+  \sum_{x \preceq z \preceq y}^{} \mu(z, y) = 1 + \sum_{x \preceq z \prec y}^{} \mu(z, y) = 1 - \sum_{x \preceq z \prec y}^{} \sum_{z \preceq u \prec y}^{} \mu(z, u) = 
+    \]
+    \[
+    = 1 - \sum_{x \preceq u \prec y}^{} \sum_{x \preceq z \prec u}^{} \mu(z, u) = 1 - \sum_{x \preceq u \prec y}^{} I_{x = u} = 1 - 1 = 0
+    \]
+\end{itemize}
+\end{proof}
+\begin{theorem}
+\textbf{Формула обращения Мёбиуса:} \\
+\[
+g(y) = \sum_{x \preceq y}^{} f(x) \Rightarrow f(y) = \sum_{x \preceq y}^{} \mu(x, y) g(x)
+\]
+\end{theorem}
+\begin{example}
+Рассм. чум:
+\[
+  (2^{\set{1, 2, \ldots, n}}, \subseteq)
+\]
+Пусть есть ещё некоторые мн-ва $A_1, \ldots, A_n$. Определим также ф-ции:
+\[
+I \in 2^{\set{1, 2, \ldots, n}}
+\]
+$f(I)$ --- кол-во эл-ов мн-в $A_1, \ldots, A_n$, к-рые принадлежат всем таким $A_i$, что $i \not\in I$, т. е.:
+\[
+f(I) = \left|\bigcap_{i \not\in I}^{} A_i\right|
+\]
+\[
+f(\set{1, 2, \ldots, n}) = \left|\bigcup_{i = 1}^{n} A_i\right|
+\]  
+$g(I)$ --- кол-во эл-ов мн-в $A_1, \ldots,A_n$, кот-рые принадлежат таким $A_i$, что $i \not \in I$, и не принадлежит всем остальным $A_i$.
+\[
+f(I) = \sum_{I' \subseteq I}^{} g(I')
+\]
+\[
+n = 4 \colon A_1, \ldots, A_4
+\]
+\[
+  I = \set{1, 2}, f(I) = \left|A_3 \cap A_4\right|
+\]
+\[
+  (I' \subseteq I) \iff (I' \in \set{\set{1, 2}, \set{1}, \set{2}, \emptyset})
+\]
+\[
+g(\set{1, 2}) = \left|A_3 \cap A_4 \backslash A_1 \backslash A_2\right|
+\]
+\[
+g(\set{1}) = \left|A_2 \cap A_3 \cap A_4 \backslash A_1\right|
+\]
+\[
+g(\set{2}) = \left|A_1 \cap A_3 \cap A_4 \backslash A_2\right|
+\]
+\[
+g(\emptyset) = \left|A_1 \cap A_2 \cap A_3 \cap A_4\right|
+\]
+\[
+g(\set{1, 2, \ldots, n}) = 0
+\]
+Применим ФОМ (ф-лу обращения Мёбиуса):
+\[
+g(I) = \sum_{I' \subseteq I}^{} \mu(I', I) f(I')
+\]
+\[
+I = \set{1, 2, \ldots, n} \Rightarrow g(I) = 0 = \sum_{I' \subseteq \set{1, 2, \ldots, n}}^{} \mu(I', \set{1, 2, \ldots, n}) \cdot f(I') =
+\]
+\begin{lemma}
+  \[
+  \mu(I', \set{1, 2, \ldots, n}) = (-1)^{\left|I\right| - \left|I'\right|}
+  \]
+\end{lemma}
+\begin{proof}
+   Индукция по $\left|I\right| - \left|I'\right|$:
+   \begin{itemize}
+     \item Шаг:
+       \[
+         I' \subset I \colon \mu(I', I) = -\sum_{I' \subseteq I'' \subset I}^{} \mu(I', I'') = -\sum_{I' \subseteq I'' \subset I}^{} (-1)^{\left|I''\right| - \left|I'\right|}
+       \]
+       \[
+         \left|I''\right| = \left|I'\right|, \left|I'\right| - 1, \ldots, \left|I\right| - 1
+       \]
+       $\Rightarrow$ Кол-во $I''$ мощности $k \colon C_{\left|I\right| - \left|I'\right|}^{k - \left|I'\right|}$
+       \[
+       \Rightarrow  -\sum_{I' \subseteq I'' \subset I}^{} (-1)^{\left|I''\right| - \left|I'\right|} = -\sum_{k = \left|I'\right|}^{\left|I\right| - 1} C_{\left|I\right| - \left|I'\right|}^{k - \left|I'\right|} (-1)^{k - \left|I'\right|} = \begin{bmatrix} l = \left|I'\right| \end{bmatrix} = -\sum_{l = 0}^{\left|I\right| - \left|I'\right| - 1} C_{\left|I\right| - \left|I'\right|}^{l}(-1)^{l} = (0 - (-1)^{\left|I\right| - \left|I'\right|}) = 
+       \]
+       \[
+       = (-1)^{\left|I\right| - \left|I'\right|}
+       \]
+   \end{itemize}
+\end{proof}
+\[
+ = \left|\bigcup_{i = 1}^{n} A_i\right| + \sum_{I' \subseteq \set{1, 2, \ldots, n}}^{} (-1)^{n - \left|I'\right|} \cdot \left|\bigcap_{i \not\in I'}^{} A_i\right|
+\]
+\end{example}
+\subsection{Линейные рекуррентные соотношения с постоянными коэффициентами}
+\[
+F_{n + 2} = F_{n + 1} + F_n, F_0 = 0, F_1 = 1
+\]
+Последовательность $\set{y_n}_{n = 0}^{\infty}$ удовл. лин. рек. соотношению $k$-ого порядка с коэф. $a_1, \ldots, a_k \in \R$, если $\forall n$:
+\[
+  a_ky_{n + k} + a_{k - 1}y_{n + k - 1} + \ldots + a_1 y_{n + 1} + a_0 y_n = 0
+\]
+\[
+  k = 1\colon a_1 y_{n + 1} + a_0 y_n = 0 \Rightarrow y_n = \left(-\frac{a_0}{a_1}\right) y_0
+\]
+\[
+  k = 2\colon a_2y_{n + 2} + a_1 y_{n + 1} + a_0 y_n = 0
+\]
+Алгоритм:
+\begin{itemize}
+  \item [1) ] Составим ур-е:
+    \[
+    a_2x^{2} + a_1x + a_0 = 0
+    \]
+    \[
+    a_2(x - \lambda_1)(x - \lambda_2) = 0
+    \]
+    \begin{itemize}
+      \item [I)] $\lambda_1 \neq \lambda_2$
+    \begin{theorem}
+    \begin{itemize}
+      \item [1) ] $\forall c_1, c_2 \in \R$ п-ть, задающая ф-лой $y_n = c_1\lambda_1^{n} + c_2\lambda_2^{n}$ удовл. рекурсии.
+      \item [2) ] Если $\set{y_n}_{n = 0}^{\infty}$ удовл. рек. соотнош., то $\exists c_1, c_2\colon$
+        \[
+        y_n = c_1\lambda_1^{n} + c_2\lambda_2^{n}
+        \]
+    \end{itemize}
+    \end{theorem}
+    \begin{proof}
+    \begin{itemize}
+      \item [1) ] \[
+      a_2(c_1\lambda_1^{n + 2} + c_2\lambda_2^{n + 2}) + a_1(c_1\lambda_1^{n + 1} + c_2\lambda_2^{n + 1}) + a_0(c_1\lambda_1^{n} + c_2\lambda_2^{n}) = 
+      \]
+      \[
+      = c_1\lambda_1^{n}(a_2\lambda_1^{2} + a_1\lambda_1 + a_0) + c_2\lambda_2^{n}(a_2\lambda_2^{2} + a_1\lambda_2 + a_0) = 0 + 0 = 0
+      \]
+    \item [2) ] Сост. систему:
+      \[
+      \begin{cases}
+      c_1 + c_2 = y_0 \\
+      c_1\lambda_1 + c_2\lambda_2 = y_1
+      \end{cases}
+      \]
+      \[
+      y_n^{*} = c_1^{*} \lambda_1^{n} + c_2^{*} \lambda_2^{n}, c_1^{*}, c_2^{*} \text{ - решение системы}
+      \]
+      По п. 1, это соотнош. удовл. рек. соотнош. $\Rightarrow$ $y_n = y_n^{*} \Rightarrow$ Победа. 
+    \end{itemize}
+    \end{proof}
+    \end{itemize}
+\end{itemize}

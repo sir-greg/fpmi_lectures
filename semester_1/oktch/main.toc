@@ -13,3 +13,5 @@
 \contentsline {section}{\numberline {5}Лекция 10}{15}{}%
 \contentsline {subsection}{\numberline {5.1}Обращение Мёбиуса на чумe (част. уп. мн-во)}{17}{}%
 \contentsline {subsubsection}{\numberline {5.1.1}Ф-ция Мёбиуса}{17}{}%
+\contentsline {section}{\numberline {6}Лекция 11}{19}{}%
+\contentsline {subsection}{\numberline {6.1}Линейные рекуррентные соотношения с постоянными коэффициентами}{21}{}%

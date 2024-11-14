@@ -1,0 +1,206 @@
+\section{Лекция 21}
+\begin{theorem}[Остаточный член в форме Лагранжа]
+  Пусть $f$ дифф-ма $n + 1$ раз на $(\alpha, \beta)$ и $a \in (\alpha, \beta)$. Тогда:
+  \[
+  \forall x \in (\alpha, \beta), x \neq a \exists c \in (a, x) \colon f(x) = \sum_{k = 0}^{n} \frac{f'(a)}{k!}(x - a)^{k} + \frac{f^{(n + 1)}(c)}{(n + 1)!}(x - a)^{n + 1}
+  \]
+\end{theorem}
+\begin{proof}
+  Пусть для опр-ти $x > a$. Рассм. ф-ции:
+  \[
+  \phi(t) = f(t) + f'(t)(x - t) + \frac{f''(t)}{2}(x - t)^{2} + \ldots + \frac{f^{(n)}(t)}{n!}(x - t)^{n}
+  \]
+  \[
+  \psi(t) = (x - t)^{n + 1}
+  \]
+  Ф-ции $\phi, \psi$ дифф-мы на $[a, x]$. Продифф-ем (по $t$):
+  \[
+  \phi'(t) = f'(t) + (-f'(t) + f''(t)(x - t)) + \ldots
+  \]
+  После сокращений, получаем:
+  \[
+  \phi'(t) = \frac{f^{(n + 1)}(t)}{n!}(x - t)^{n}
+  \]
+  \[
+  \psi'(t) = -(n + 1)(x - t)^{n}
+  \]
+  При этом, $\psi'(t) \neq 0$ на $(a, x) \Rightarrow$ По т. Коши о среднем:
+  \[
+  \exists c \in (a, x) \colon \frac{\phi(x) - \phi(a)}{\psi(x) - \psi(a)} = \frac{\phi'(c)}{\psi'(c)}
+  \]
+  \[
+  \iff \frac{f(x) - \sum_{k = 0}^{n} \frac{f^{(n)}(a)}{k!}(x - a)^{k}}{-(x - a)^{n + 1}} = \frac{\frac{f^{(n + 1)}(c)}{n!}(x - c)^{n}}{-(n + 1)(x - c)^{n}}
+  \]
+  Откуда следует:
+  \[
+  f(x) = \sum_{k = 0}^{n} \frac{f^{(n)}(a)}{k!}(x - a)^{k} + \frac{f^{(n + 1)}(c)}{(n + 1)!}(x - a)^{n + 1}
+  \]
+\end{proof}
+\begin{note}
+ Если в док-ве теоремы положить $\psi(t) = x - t$, то получим $r_n(x) = \frac{f^{(n + 1)}(c)}{n!}(x - c)(x - a)^{n}$
+\end{note}
+\begin{example}
+Покажем, что числе $e$ --- иррационально
+\end{example}
+\begin{proof}
+Формула Маклорена ф-ции $f(x) = e^{x}$ с остаточным членом в форме Лагранжа. $\exists \theta \in (0, 1)$:
+\[
+e^{x} = 1 + \frac{x}{1!} + \frac{x^{2}}{2!} + \ldots + \frac{x^{n}}{n!} + \frac{e^{\theta x}}{(n + 1)!} x^{n + 1}
+\]
+Пусть $e = \frac{p}{q}$:
+\[
+n!(\frac{p}{q} - (1 + \frac{1}{1!} + \ldots + \frac{1}{n!})) = \frac{e^{\theta}}{n + 1}
+\]
+\[
+\Rightarrow \exists N \colon \forall n \geq N (0 < \frac{e^{\theta}}{n + 1} < 1)
+\]
+Положим $n = max\set{N, q}$. Тогда $LHS \in \Z, RHS \in (0, 1)!!!$
+\end{proof}
+\begin{definition}
+Пусть $f$ опр-на на пром-ке $I$. Ф-ция $f$ наз-ся \textbf{выпуклой вниз} (\textbf{выпуклой}) на $I$, если  $\forall x_1, x_2 \in I, x_1 \neq x_2 \forall t \in (0, 1)$
+\[
+  f((1 - t)x_1 + tx_2) \leq (1 - t)f(x_1) + tf(x_2)
+\]
+Ф-ция $f$ наз-ся \textbf{выпкулой вверх} (\textbf{вогнутая}) на $I$, если $\forall x_1, x_2 \in I, x_1 \neq x_2, \forall t \in (0, 1)$. Если нер-ва строгие, то приходим к определению строгой выпуклости (вогнутости). \\
+\end{definition}
+\textbf{Геометрический смысл}: \\
+Пусть $x_1, x_2 \in I, x_1 < x_2$. рассмотрим прямую, проходящую через точки $(x_1, f(x_1)), (x_2, f(x_2))$:
+\[
+\lambda(x) = \frac{f(x_2) - f(x_1)}{x_2 - x_1}(x - x_1) + f(x_1)
+\]
+Пусть $t \in (0, 1)$, тогда:
+\[
+x = (1 - t)x_1 + tx_2
+\]
+\[
+x = x_1 + t(x_2 - x_1) \in (x_1, x_2)
+\]
+По опр-ю выпуклости вниз:
+\[
+f(x) \leq \lambda(x)
+\]
+Т. е. выпуклость означает, что \textbf{график ф-ции лежит не выше любой своей хорды}. (для строгой выпуклости --- строго ниже, за исключением концов) \\
+\begin{note}
+Из опр-я следует, что $f$ вогнута $\iff $ $-f$ выпукла.
+\end{note}
+Далее будем рассматривать только случай выпуклости:
+\begin{example}
+\begin{itemize}
+  \item [1) ] Ф-ция $f(x) = kx + b$
+  \item [2) ] $f(x) = x^{2}, x \in \R$ --- выпукла вниз.
+    \begin{proof}
+    \[
+      ((1 - t)x_1 + tx_2)^{2} \leq (1 - t)x_1^{2} + tx_2^{2}
+    \]
+    \[
+      (1 - t)^{2}x_1^{2} + 2(1 - t)t x_1x_2 + t^{2}x_2^{2} \leq (1 - t)x_1^{2} + tx_2^{2}
+    \]
+    \[
+      2(1 - t)tx_1x_2 \leq (1 - t)(1 - 1 + t)x_1^{2} + t(1 - t)x_2^{2}
+    \]
+    \[
+    2x_1x_2 \leq x_1^{2} + x_2^{2}
+    \]
+    \end{proof}
+  \item [3) ]\[
+    f(x) = \begin{cases}
+    0, x \in [0, 1) \\
+    1, x = 1
+    \end{cases}
+  \] 
+  --- выпуклая вниз ф-ция на $[0, 1]$
+\end{itemize}
+\end{example}
+\begin{note}
+Чаще всего, по опр-ю док-ть трудно. Если ф-ция дифф-ма, то можно задать эквив-ное опр-е.
+\end{note}
+\begin{theorem}
+  \label{th:vip}
+Пусть $f$ нерп-ны на невырожд. пром-ке $I$ и дифф-ма на $\inter I$. Тогда след. утв-я эквив-ны:
+\begin{itemize}
+  \item [1) ]$f$ выпукла вниз 
+  \item [2) ]$f(x) \geq f(x_0) + f'(x_0)(x - x_0), \forall x \in I, x_0 \in \inter I$
+  \item [3) ] $f'$ нестрого возр. на $\inter I$
+\end{itemize}
+\begin{proof}
+  ~\newline
+\begin{itemize}
+  \item [$1 \Rightarrow 2$)] Пусть $x \in I, x_0 \in \inter I$. Положим $h = x - x_0$, тогда опр-е вып-ти даёт.
+    \[
+    f(x_0 + th) \leq (1 - t)f(x_0) + tf(x) \text{ или } f(x_0 + th) - f(x_0) \leq t(f(x) - f(x_0))
+    \]
+    \[
+    f'(x_0)t h + o(t h) \leq t(f(x) - f(x_0))
+    \]
+    \[
+    f'(x_0) h + o(h) \leq f(x) - f(x_0)
+    \]
+    Перейдём к пределу по $h \rightarrow 0$:
+    \[
+    f'(x_0) h \leq f(x) - f(x_0) \Rightarrow f(x) \geq f(x_0) + f'(x_0) (x - x_0)
+    \]
+    Ч. Т. Д.
+  \item [$2 \Rightarrow 3$)] Пусть $x, y \in \inter I, x < y$, тогда:
+    \[
+    f(y) \geq f(x) + f'(x)(y - x)
+    \]
+    \[
+    f(x) \geq f(y) + f'(y)(x - y)
+    \]
+    \[
+    0 \geq (f'(x) - f'(y))(y - x)
+    \]
+    $y > x \Rightarrow f'(x) - f'(y) \leq 0 \Rightarrow f'(x) \leq f'(y)$
+  \item [$3 \Rightarrow 1$) ] Заф. $x_1, x_2 \in I, x_1 < x_2, t \in (0, 1)$. Положим $x =  (1 - t)x_1 + tx_2$. По т. Лагранжа о среднем:
+    \[
+    \exists c_1 \in (x_1, x) \colon f(x) - f(x_1) = f'(c_1)(x - x_1)
+    \]
+    \[
+    \exists c_2 \in (x, x_2) \colon f(x_2) - f(x) = f'(c_2) (x_2 - x) 
+    \]
+    Т. к. $c_1 < c_2 \Rightarrow f'(c_1) \leq f'(c_2) \Rightarrow$
+    \[
+      \frac{f(x) - f(x_1)}{x - x_1} \leq \frac{f(x_2) - f(x)}{x_2 - x}
+    \]
+    \[
+    x - x_1 = t(x_2 - x_1)
+    \]
+    \[
+    x_2 - x = (1 - t)(x_2 - x_1)
+    \]
+    \[
+      \frac{f(x) - f(x_1)}{t} \leq \frac{f(x_2) - f(x)}{1 - t}
+    \]
+    \[
+      (f(x) - f(x_1))(1 - t) \leq t(f(x_2) - f(x))
+    \]
+    \[
+      f(x) \leq (1 - t)f(x_1) + tf(x_2)
+    \]
+    Т. е. $f$ выпукла вниз на $I$.
+\end{itemize}
+\end{proof}
+\end{theorem}
+\textbf{Геометрический смысл (2)}:\\
+График выпуклой вниз ф-ции лежит не ниже любой своей касательной на $I$.
+
+\begin{theorem}[Строгая версия пред. теоремы.]
+Пусть $f$ нерп-ны на невырожд. пром-ке $I$ и дифф-ма на $\inter I$. Тогда след. утв-я эквив-ны:
+  \item [1) ]$f$ строго выпукла вниз 
+  \item [2) ]$f(x) > f(x_0) + f'(x_0)(x - x_0), \forall x \in I, x_0 \in \inter I$
+  \item [3) ] $f'$ строго возр. на $\inter I$
+\end{theorem}
+\begin{proof}
+Док-ва: импликаций $(2 \Rightarrow 3)$ и $(3 \Rightarrow 1)$ переносятся заменой нестрогих нерав-в на строгие. $(1 \Rightarrow 2)$ придётся док-ть снова: \\
+Запишем нер-во $(\geq)$ теоремы $\ref{th:vip}$ для $z = x_0 + t h$:
+\[
+f(z) \geq f(x_0) + f'(x_0) (z - x_0)
+\]
+В силу строгой вып-ти:
+\[
+f(z) < (1 - t)f(x_0) + tf(x)
+\]
+\[
+\Rightarrow f(x_0 + t h) ????????
+\]
+\end{proof}
