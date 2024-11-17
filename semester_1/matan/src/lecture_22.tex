@@ -1,0 +1,158 @@
+\section{Лекция 22}
+\begin{consequence}
+Пусть $f$ непр-на на пром. $I$ и дважды дифф-ма на $\inter I$.
+\begin{itemize}
+  \item [1) ] Ф-ция $f$ выпукла вниз на $I$ $\iff f''(x) \geq 0, x \in \inter I$
+  \item[2) ] Если $f''(x) > 0$ на $\inter I$, то $f$ строго выпукла вниз на $I$.
+\end{itemize}
+\end{consequence}
+\begin{example}
+\begin{itemize}
+  \item [1) ] $y = a^{x}, a \neq 1$, строго выпукла вниз на $\R$, т. к.:
+    \[
+      (a^{x})'' = a^{x}\ln^{2} a > 0
+    \]
+  \item [2) ] $y = \ln x$, строго вогнута (выпукла вверх) на $(0, +\infty)$, т. к.:
+    \[
+      (\ln x)'' = -\frac{1}{x^{2}} < 0
+    \]
+  \item [3) ] $y = x^{p}$ на $(0, +\infty), p \in (-\infty, 0) \cup (1, +\infty)$
+    \[
+      (x^{p})'' = p(p - 1)x^{p - 2} > 0 \Rightarrow \text{ выпукла вниз}
+    \]
+    При $p \in (0, 1)$ --- вогнута.
+  \item [4) ] $\ln(1 + x) < x$, при $x > -1, x \neq 0$:
+    \[
+    y = \ln(1 + x) \text{ --- строго выпукла вверх (вогнута) на $(-1, +\infty)$}
+    \]
+    \[
+    y = x \text{ --- касат. к $x \mapsto \ln(1 + x)$ в точке $x = 0$}
+    \]
+    По т. $\ref{16s}$ получаем заявленное нер-во.
+\end{itemize}
+\end{example}
+\begin{definition}
+Пусть $f$ опр-на на пром-ке $I$ и $a \in \inter I$. Если:
+\begin{itemize}
+  \item [1) ] ф-ция $f$ имеет различный характер выпуклости на $(a - \delta, a], [a, a + \delta)$ для некот. $\delta > 0$
+  \item [2) ] $\exists f'(a) \in \overline{\R}$
+  \item [3) ] $f$ --- непр-на в $a$.
+\end{itemize}
+Тогда точка $a$ наз-ся \textbf{точкой перегиба} ф-ции $f$.
+\end{definition}
+\begin{consequence}
+Если ф-ция $f$ дважды дифф-ма на $\inter I$ и $a \in \inter I$ --- точка перегиба $f$, то $f''(a) = 0$:
+\end{consequence}
+\begin{proof}
+  Пусть для опр-ти $f$ выпукла вниз на $(a - \delta, a]$ и выпукла вверх (вогнута) на $[a, a + \delta), \delta > 0$. Тогда $f'$ нестрого возрастает на $(a - \delta, a]$ и $f'$ нестрого убывает на $[a, a + \delta)$. Следовательно $a$ --- точка локального максимума ф-ции $f'$. По Т. Ферма $f''(a) = 0$
+\end{proof}
+Выпуклость ф-ции гарантирует её "хорошее поведение" на $(a, b)$ \\
+\textbf{Ключом является следующий факт:}
+\begin{lemma}[Лемма о 3-ёх хордах]
+  \label{lm:3hord}
+  Пусть ф-ция $f$ выпукла вниз на $(a, b)$ и $a < x_1 < x < x_2 < b$. Тогда:
+  \begin{equation}
+    \label{*}
+    \frac{f(x) - f(x_1)}{x - x_1} \leq \frac{f(x_2) - f(x_1)}{x_2 - x_1} \leq \frac{f(x_2) - f(x)}{x_2 - x}
+  \end{equation}
+\end{lemma}
+\begin{proof}
+Рассм. $\lambda(t) = \frac{f(x_2) - f(x_1)}{x_2 - x_1}(t - x_1) + f(x_1)$. Тогда $f(x_1) = \lambda(x_1), f(x_2) = \lambda(x_2)$ и ввиду выпуклости вниз $f(t) \leq \lambda(t)$. Поэтому:
+\[
+  \frac{f(x) - f(x_1)}{x - x_1} \leq \frac{\lambda(x) - \lambda(x_1)}{x - x_1}, \frac{\lambda(x_2) - \lambda(x)}{x_2 - x} \leq \frac{f(x_2) - f(x)}{x_2 - x}
+\]
+Однако обе дроби с $\lambda$ равны:
+\[
+  \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+\]
+\end{proof}
+\begin{task}
+Д-те, что каждое из этих нер-в эквив-но вып-ти вниз.
+\end{task}
+\begin{consequence}
+  \label{monot:vip}
+Для любой точки $x \in (a, b)$ ф-ция $\nu \colon (a, b) \backslash \set{x} \rightarrow \R$,
+\[
+\nu(y) = \frac{f(y) - f(x)}{y - x}
+\]
+нестрого возрастает на $(a, b) \backslash \set{x}$
+\end{consequence}
+\begin{proof}
+$y, z \in (a, b) \backslash \set{x}, y < z$
+\end{proof}
+\begin{theorem}
+\label{17s}
+Если ф-ция $f$ выпукла вниз на $(a, b)$, то $f$ непр-на на $(a, b)$ и дифф-ма там, за исключением не более чем счётного мн-ва.
+\end{theorem}
+\begin{proof}
+Зафикс. $x \in (a, b), \nu(y) = \frac{f(y) - f(x)}{y - x}$. По следствию $\ref{monot:vip}$, $\nu(y)$ нестрого возрастает. Тогда по теореме о пределах монотонной функции, сущ-ют конечные $\nu(x - 0) \leq \nu(x + 0)$, т. е. $\exists$ конечные левая и правая производная  $f$ в точке $x\colon f_-'(x) \leq f_+'(x) \Rightarrow f$ непр-на слева и справа в точке $x$, а значит непр-на в точке $x$. \\
+
+Перейдём к пределу в левом нер-ве $\ref{*}$ при $x \rightarrow x_1 + 0$, а также в правом нер-ве $\ref{*}$ при $x \rightarrow x_2 - 0$. Получаем:
+\[
+f_+'(x_1) \leq \frac{f(x_2) - f(x_1)}{x_2 - x_1} \leq f_-'(x_2)
+\]
+Учитывая, что $f_-'(x_1) \leq f_+'(x_1)$, отсюда следует, что $g = f_-'$ нестрого возр-ет на $(a, b)$ \\
+
+По т. о разрывах монотонной ф-ции $g$ может иметь на $(a, b)$ разрывы только $I$ рода и их не более чем счётно. Покажем, что в точках непр-ти $g$ ф-ция $f$ дифф-ма. В самом деле, выберем $x_0 < x$, тогда $f_-'(x_0) \leq f_+'(x_0) \leq f_-'(x)$, откуда:
+\[
+0 \leq f_+'(x_0) - f_-'(x_0) \leq f_+'(x) - f_-'(x_0)
+\]
+$\Rightarrow f_+'(x_0) = f_-'(x_0) \Rightarrow $ $f$ дифф-ма в т. $x_0$
+\end{proof}
+\begin{theorem}[Нер-во Йенсена]
+\label{18}
+Пусть ф-ция $f$ выпукла (вогнута) на $I$. $x_1, \ldots, x_n \in I$ и $\lambda_1, \ldots, \lambda_n \geq 0$, т. ч. $\sum_{i = 1}^{n} \lambda_i = 1$. Тогда справедливо:
+\[
+f\left(\sum_{i = 1}^{n} \lambda_i x_i\right) \leq \sum_{i = 1}^{n} \lambda_i f(x_i), (\geq)
+\]
+\end{theorem}
+\begin{proof}
+Пусть ф-ция $f$ выпукла на $I$.\\
+ММИ:
+\begin{itemize}
+  \item $n = 2$ --- в точности опр-е выпуклости
+\item Пусть нер-во верно для $n$. Установим справедливость для $n + 1$. Т. к. случай $\lambda_{n + 1} = 1$ --- очев., считаем, что $\lambda_{n + 1} < 1$. Положим:
+  \[
+  y = \frac{\lambda_1}{1 - \lambda_{n + 1}} x_1 + \ldots + \frac{\lambda_n}{1 - \lambda_{n + 1}} x_n
+  \]
+  Т. к. $\sum_{i = 1}^{n} \frac{\lambda_i}{1 - \lambda_{n + 1}} = 1$ :
+  \[
+    \underset{k}{\min} x_k \leq y \leq \underset{k}{\max} x_k
+  \]
+  \[
+  \Rightarrow f\left(\sum_{i = 1}^{n + 1} \lambda_i x_i\right) = f\left((1 - \lambda_{n + 1})y + \lambda_{n + 1}x_{n + 1}\right) \leq (1 - \lambda_{n + 1})f(y) + \lambda_{n + 1}f(x_{n + 1})
+  \]
+  По предположению инд-ции:
+  \[
+  f(y) \leq \sum_{i = 1}^{n} \frac{\lambda_1}{1 - \lambda_{n + 1}} f(x_i)
+  \]
+  Подставляя $f(y)$ в пред-ее нер-во, получаем то, что нужно.
+\end{itemize}
+\end{proof}
+\begin{example}
+Пусть $x_1, \ldots x_n \geq 0$, тогда:
+\[
+  \frac{\sum_{i = 1}^{n} x_i}{n} \geq \sqrt[n]{\prod_{i = 1}^{n} x_i}
+\]
+\end{example}
+\begin{proof}
+$y = \ln x, \lambda_1 = \ldots = \lambda_n = \frac{1}{n}$ \\
+По нер-ву Йенсена:
+\[
+\ln\left(\sum_{i = 1}^{n} \frac{1}{n}x_i\right) \geq \frac{1}{n}\sum_{i = 1}^{n} \ln x_i = \ln\left(\prod_{i = 1}^{n} x_i\right)^{\frac{1}{n}}
+\]
+\[
+\Rightarrow \frac{\sum_{i = 1}^{n} x_i}{n} \geq \sqrt[n]{\prod_{i = 1}^{n} x_i}
+\]
+\end{proof}
+\begin{example}[Нер-во Гельдера]
+  Пусть $a_1, \ldots, a_n, b_1, \ldots, b_n \geq 0$ и
+  \[
+    p, q > 1, \frac{1}{p} + \frac{1}{q} = 1
+  \]
+  Тогда справ-во нер-во:
+  \[
+  \sum_{k = 1}^{n} a_k b_k \leq \left(\sum_{k = 1}^{n} a_k^{p}\right)^{\frac{1}{p}} \left(\sum_{k = 1}^{n} b_k^{p}\right)^{\frac{1}{p}}
+  \]
+
+\end{example}

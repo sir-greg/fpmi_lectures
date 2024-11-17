@@ -19,3 +19,4 @@
 \contentsline {section}{\numberline {8}Лекция 20}{35}{}%
 \contentsline {subsection}{\numberline {8.1}Формула Тейлора}{35}{}%
 \contentsline {section}{\numberline {9}Лекция 21}{40}{}%
+\contentsline {section}{\numberline {10}Лекция 22}{44}{}%
