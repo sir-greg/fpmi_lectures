@@ -152,7 +152,43 @@ $y = \ln x, \lambda_1 = \ldots = \lambda_n = \frac{1}{n}$ \\
   \]
   Тогда справ-во нер-во:
   \[
-  \sum_{k = 1}^{n} a_k b_k \leq \left(\sum_{k = 1}^{n} a_k^{p}\right)^{\frac{1}{p}} \left(\sum_{k = 1}^{n} b_k^{p}\right)^{\frac{1}{p}}
+  \sum_{k = 1}^{n} a_k b_k \leq \left(\sum_{k = 1}^{n} a_k^{p}\right)^{\frac{1}{p}} \left(\sum_{k = 1}^{n} b_k^{q}\right)^{\frac{1}{q}}
   \]
 
 \end{example}
+\begin{proof}
+\[
+f = x^{p} \text{ --- выпукла вниз }
+\]
+\[
+x_k = \frac{a_k}{b_k^{\frac{q}{p}}}, \lambda_k = \frac{b_k^{q}}{\sum_{i = 1}^{n} b_i^{q}}
+\]
+\[
+  \lambda_k x_k = \frac{a_k b_k^{q\left(1 - \frac{1}{p}\right)}}{\sum_{i = 1}^{n} b_i^{q}} = \frac{a_k b_k}{\sum_{i = 1}^{n} b_i^{q}}
+\]
+\[
+  \lambda_k f(x_k) = \frac{b_k^{q}}{\sum_{i = 1}^{n} b_i^{q}} \frac{a_k^{p}}{b_k^{q}} = \frac{a_k^{p}}{\sum_{i = 1}^{n} b_i^{q}}
+\]
+\[
+  \left(\frac{\sum_{i = 1}^{n} a_i b_i}{\sum_{i = 1}^{n} b_i^{q}}\right)^{p} \leq \frac{\sum_{i = 1}^{n} a_i^{p}}{\sum_{i = 1}^{n}b_i^{q}} \iff \sum_{i = 1}^{n} a_i b_i \leq \left(\sum_{i = 1}^{n} a_i^{p}\right)^{\frac{1}{p}} \left(\sum_{i = 1}^{n} b_i^{q}\right)^{\frac{1}{q}}
+\]
+\end{proof}
+\begin{example}[Нер-во Минковского]
+Пусть $a_1, \ldots, a_n, b_1, \ldots, b_n \geq 0$ и $p \geq 1$. Тогда:
+\[
+\left(\sum_{i = 1}^{n} (a_i + b_i)^{p}\right)^{\frac{1}{p}} \leq \left(\sum_{k = 1}^{n} a_k^{p}\right)^{\frac{1}{p}} + \left(\sum_{k = 1}^{n} b_k^{p}\right)^{\frac{1}{p}}
+\]
+\end{example}
+\begin{proof}
+$p = 1$ --- верно. $p > 1, q = \frac{p}{p- 1}$:
+\[
+  (a_1 + b_1)^{p} + \ldots + (a_n + b_n)^{p} = (a_1 + b_1)(a_1 + b_1)^{p - 1} + \ldots + (a_n + b_n)(a_n + b_n)^{p - 1} = 
+\]
+\[
+ = a_1 (a_1 + b_1)^{p - 1} + \ldots + a_n(a_n + b_n)^{p - 1} + b_1(a_1 + b_1)^{p - 1} + \ldots + b_n(a_n + b_n)^{p -1} \underset{\text{нер-во Гельдера}}{\leq} \ldots
+\]
+\[
+  \left(\sum_{i = 1}^{n} a_i^{p}\right)^{\frac{1}{p}} \cdot \left(\sum_{i = 1}^{n} (a_i + b_i)^{p}\right)^{\frac{1}{q}} + \left(\sum_{i = 1}^{n} b_1^{p}\right)^{\frac{1}{p}}\left(\sum_{i = 1}^{n} (a_i + b_i)^{p}\right)^{\frac{1}{q}}
+\]
+Поделим LHS и RHS на $\left(\sum_{i = 1}^{n} (a_i + b_i)^{p}\right)^{\frac{1}{q}}$ и получим желаемый результат.
+\end{proof}

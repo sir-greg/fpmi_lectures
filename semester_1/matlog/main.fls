@@ -320,6 +320,9 @@ INPUT /home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx0800.tfm
 INPUT /home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx0600.tfm
 INPUT /home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/lati0800.tfm
 INPUT /home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/lati0600.tfm
+INPUT ./src/lecture_12.tex
+INPUT ./src/lecture_12.tex
+INPUT src/lecture_12.tex
 INPUT main.aux
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb

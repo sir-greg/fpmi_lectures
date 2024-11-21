@@ -15,3 +15,5 @@
 \contentsline {subsubsection}{\numberline {5.1.1}Ф-ция Мёбиуса}{17}{}%
 \contentsline {section}{\numberline {6}Лекция 11}{19}{}%
 \contentsline {subsection}{\numberline {6.1}Линейные рекуррентные соотношения с постоянными коэффициентами}{21}{}%
+\contentsline {section}{\numberline {7}Лекция 12}{22}{}%
+\contentsline {subsection}{\numberline {7.1}Разбиение чисел на слагаемые}{23}{}%

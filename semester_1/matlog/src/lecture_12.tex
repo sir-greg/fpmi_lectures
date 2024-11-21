@@ -1,0 +1,177 @@
+\section{Лекция 12}
+\[
+<\Z, S, = >
+\]
+\[
+x = 0 \iff x + x = x
+\]
+\[
+<\N, \cdot, = >
+\]
+\subsection{Метод автоморфизма}
+Аддитивная ф-ция:
+\[
+f(x + y) = f(x) + f(y)
+\]
+Лин. ф-ция:
+\[
+f(\alpha \cdot x + \beta \cdot y) = \alpha f(x) + \beta f(y)
+\]
+Мультипликативная ф-ция:
+\[
+  \phi(x \cdot y) = \phi(x) \cdot \phi(y)
+\]
+Монотонная ф-ция:
+\[
+x \leq y \iff f(x) \leq f(y)
+\]
+Задана сигнатура $(P, \ldots, f, \ldots)$. Интерпретации с носит. $A$ и $B$:
+\[
+[P]_A, \ldots, [f]_A \text{ и } [P]_B, \ldots, [f]_B
+\]
+\[
+\gamma \colon A \rightarrow B \text{ --- гомоморфизм, если}
+\]
+\begin{itemize}
+  \item [1) ] При всех $x_1, \ldots, x_k \in A$.
+    \[
+    [P]_A (x_1, \ldots, x_k) \iff [P]_B (\gamma(x_1), \ldots, \gamma(x_k))
+    \]
+    "Предикаты сохраняются"
+  \item [2) ] При всех $x_1, \ldots x_k \in A$:
+    \[
+    \gamma([f]_A(x_1, \ldots, x_k)) = [f]_B(\gamma(x_1), \ldots, \gamma(x_k))
+    \]
+     Для конст. симв.:
+     \[
+     \gamma([c]_A) = [c]_B
+     \]
+\end{itemize}
+\begin{definition}
+Автоморфизм:
+\begin{itemize}
+  \item [1) ] $A = B$
+  \item [2) ] $\gamma$ - биекция
+\end{itemize}
+\end{definition}
+\begin{theorem}[Об автоморфизмах]
+\label{th:automorphism}
+Пусть $A$ --- интерпр. сигнатуры $(P, \ldots, f, \ldots)$, $\alpha$ --- автоморфизм, $Q$ --- выразимый предикат. Тогда при всех $x_1, \ldots, x_k \in A$:
+\begin{equation}
+  \label{auth:eq}
+Q(x_1, \ldots, x_k) \iff Q(\alpha(x_1), \ldots, \alpha(x_k))
+\end{equation}
+Сл-ие, если при некот-ром автоморфизме $\alpha$ эквиваленция ($\ref{auth:eq}$) неверна, то $Q$ невыразим:
+\end{theorem}
+\begin{example}
+$(\Z, S, =)$
+\[
+\alpha(x = x + C)
+\]
+\[
+Q(x) \iff x \divby 2
+\]
+\end{example}
+\begin{example}
+$(\Z, +, =)$
+\[
+\alpha(x) = -x
+\]
+\[
+Q(x, y) \iff x > y
+\]
+\end{example}
+\begin{example}
+\[
+n = 2^{a} \cdot 3^{b} \cdot k, k \not\divby 2, k \not\divby 3
+\]
+\[
+\alpha(2^{a} \cdot 3^{b} \cdot k) = 2^{b} \cdot 3^{a} \cdot k
+\]
+\[
+\alpha(0) = 0
+\]
+\[
+Q(x, y) \iff x > y
+\]
+\end{example}
+\begin{proof}[Доказательство теоремы:]
+Докажем индукцией по построению:
+\begin{itemize}
+  \item [1) ] $t$ --- терм $\Rightarrow$ при всех $x_1, \ldots, x_k \in A$:
+    \[
+    [t](\alpha(x_1), \ldots, \alpha(x_k)) = \alpha([t](x_1,\ldots, x_k))
+    \]
+  \item[2) ] $\phi$ --- ф-ла $\Rightarrow$ При всех $x_1, \ldots, x_k \in A$:
+    \[
+    [\phi](\alpha(x_1), \ldots, \alpha(x_k)) \iff [\phi](x_1, \ldots, x_k)
+    \]
+  \item [3) ] Переменная $\alpha(x) = \alpha(x)$, конст. символ $[c] = \alpha([c])$ \\
+    Конст. символ: $[c] = \alpha([c])$ \\
+    Сост. терм:
+    \[
+    [f(t_1, \ldots, t_m)](\alpha(x_1), \ldots \alpha(x_k)) = [f]([t_1](\alpha(x_1), \ldots, \alpha(x_k)), [t_m]) = 
+    \]
+    \[
+     = [f](\alpha([t_1](x_1, \ldots, x_k)), \ldots, \alpha([t_m](x_1, \ldots, x_k))) = 
+    \]
+    \[
+     = \alpha([f]([t_1](x_1, \ldots, x_k), [t_m](x_1, \ldots, x_k))) = 
+    \]
+    \[
+     = \alpha([f(t_1, \ldots, t_m)](x_1, \ldots, x_k))
+    \]
+    Атом. формулы --- аналогично термам
+    \[
+    \bigwedge_{y}^{} [\phi](\alpha(x_1), \ldots, \alpha(x_k), y) = \bigwedge_{y}^{}[\phi](\alpha(x_1), \ldots, \alpha(x_k), \alpha(y)) = 
+    \]
+    \[
+     = \bigwedge_{y}^{} (x_1, \ldots, x_k, y) = [\forall y, \phi] (x_1, \ldots, x_k)
+    \]
+\end{itemize}
+\end{proof}
+\begin{example}
+\[
+<\N, S, = > \text{ --- нет автоморфизма, $\leq$ --- невыраз.}
+\]
+$0$ --- выразим: $x = 0 \iff \neg \exists y \colon x = S(y)$
+\begin{consequence}
+Выразим в $<\N, S, = > \iff $ выразим в $< \N, S, 0, = >$
+\end{consequence} 
+\end{example}
+\begin{theorem}[Об элиминации кванторов]
+\label{quant_elim}
+Любая ф-ла в $< \N, S, 0, = >$ равна некот. бесквант. ф-ле
+\end{theorem}
+\begin{consequence}
+$x \leq y$ не выраз. в $< \N, S, = >$
+\end{consequence}
+\begin{proof}
+  $x \leq y$ выразима в $< \N, S, = > \Rightarrow x \leq y$ выразима в $< \N, S, 0, = >$ бескванторной ф-лой, т. е. пропозиц. формулой, в к-рую, вместо переменных подставл. атомарн. формулы. \\
+  Ат. формулы:
+  \[
+  S(S(\ldots S(U))) = S(S(\ldots S(v)))
+  \]
+  \[
+  u \text{ --- переменная или $0$}, v \text{ --- тоже}
+  \]
+  Значит $u = v + d, d \in \Z$ (ф-ла-комбинация кон. числа усл-ий)
+  \[
+  d_1, \ldots, d_n \text{ --- все числа из усл.}
+  \]
+  \[
+  M  = max\set{d_1, \ldots, d_n} + 1
+  \]
+  Рассм $x = m, y = 2M$ и $x = 2M, y = M$ \\
+  Все атом. ф-лы, кроме тожд. истины, будут ложны $\Rightarrow$ комбинация приним. одинаковые значения: \\
+  Но $x \leq y$ верно для $x = M, y = 2M$ и неверно для $x = 2M, y = M \Rightarrow$ наша ф-ла не выр-ет $x \leq y$
+\end{proof}
+\begin{proof}[Доказательство теоремы об элиминации]
+\begin{itemize}
+  \item [1) ] Ат. ф-лы бескв.
+  \item [2) ] $\phi \land \phi' \Rightarrow \neg \phi \land \neg \phi'$, аналог. для $\land, \lor, \rightarrow$
+  \item [3) ] $\forall x \phi \sim \neg \exists x \neg \phi$
+  \item [4) ] $\exists x \phi \sim \exists x \underset{\text{бескванторный}}{\phi'}$ \\
+    Атомарные ф-лы, зависящие от $x$: $T, \perp, x = t_i$
+\end{itemize}
+\end{proof}

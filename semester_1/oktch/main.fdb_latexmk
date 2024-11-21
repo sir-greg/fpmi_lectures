@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1731575158.35568 "main.tex" "main.pdf" "main" 1731575159.66437 0
+["pdflatex"] 1732179389.21531 "main.tex" "main.pdf" "main" 1732179390.62538 0
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labi1200.tfm" 1725282838.58337 3592 9415307df98650ffeddaa22e262436dc ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1725258418.94669 3308 eee81981029f67083258db36df06e523 ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1722950259.82679 3304 6a543c07045572737981351171e0505e ""
@@ -130,12 +130,13 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1722811609 5483422 a1ef07ac981a8b7f5985102f2de312a6 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1722811645 8239395 770efc74df93586a44891e8f654c98d2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1722811606.09035 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "main.aux" 1731575159.47003 2277 fe488a88801cdb2c1b0dc61a1ae581c1 "pdflatex"
-  "main.tex" 1731570231.11333 602 b7fa746c273bdb44731a2922f7b71744 ""
-  "main.toc" 1731575159.47003 1411 6e1dc597b83575591e94c82044e1913e "pdflatex"
+  "main.aux" 1732179390.39511 2758 258ef13edd844667e1fb0ab4f7d01eb0 "pdflatex"
+  "main.tex" 1732175876.69363 633 f84bc3a5d4fce804371afc2646652a9d ""
+  "main.toc" 1732179390.39511 1580 7d1d2661ce59150e6882f9ae715b9a00 "pdflatex"
   "preamble/preamble.tex" 1730968630.56338 2482 e0cfa1fd53254613bc168e8851ff8735 ""
   "src/lecture_10.tex" 1731571203.27335 5665 c10929a17279965317dbf940d5271e09 ""
   "src/lecture_11.tex" 1731575157.37003 6320 c84878c76de097bc7a59311f48e40b36 ""
+  "src/lecture_12.tex" 1732179387.76844 2691 344b72e48dda87057d13809b113b2949 ""
   "src/lecture_6.tex" 1728551296.17003 8887 1ea5726f8052ebec5d474838f415a13a ""
   "src/lecture_7.tex" 1729756924.77669 2382 e37937751da2f31e86735507b8414d1c ""
   "src/lecture_8.tex" 1729760779.48341 6285 b39e75ae4a83cdd16801329cc2d60d0b ""

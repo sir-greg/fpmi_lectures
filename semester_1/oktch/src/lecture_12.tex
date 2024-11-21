@@ -1,0 +1,105 @@
+\section{Лекция 12}
+\begin{equation}
+\label{eq:char}
+a_k y_{n + k} + a_{k - 1} y_{n + k - 1} + \ldots + a_0 y_n = 0
+\end{equation}
+Хар-ое ур-ие:
+\[
+a_k x^{k} + \ldots + a_0 = 0
+\]
+\begin{theorem}[Основная теорема алгебры]
+\label{th:base_algebra_th}
+Мн-н степени $k$ имеет $k$ комплексных корней, т. е.:
+\[
+P(x) = a_k x^{k} + \ldots + a_0 = a_k \prod_{i = 0}^{k} (x - \lambda_i)
+\]
+где,
+\[
+P(\lambda_i) = 0, \lambda_i \in \C
+\]
+\end{theorem}
+Возьмём эти корни из хар-ого ур-ия. Пусть:
+\[
+\mu_1, \ldots, \mu_r
+\]
+Этот же список корней, без \textbf{дубликатов}. Также:
+\[
+m_1, \ldots, m_r
+\]
+Это кратности этих корней.
+\[
+1 \leq r \leq k
+\]
+\[
+\sum_{i = 1}^{r} m_i = k
+\]
+Обозначим за:
+\[
+P_l(n) = c_l n^{l} + \ldots + c_0 
+\]
+--- произвольный мн-н степени $l$
+\begin{theorem}
+\label{th:linear_recurrense_general_solution}
+\begin{itemize}
+  \item [1) ] \[
+  \forall P_{m_1 - 1}^{1}(n), \ldots, P_{m_r - 1}^{r}(n)
+  \]
+  \[
+ \hookrightarrow y_n = P_{m_1 - 1}^{1}(n) \mu_1^{n} + \ldots + P_{m_r}^{r}(n)\mu_r^{n}
+  \]
+  --- удовлетворяет $(\ref{eq:char})$
+\item [2) ] Если $\set{y_n}_{n = 1}^{\infty}$ удовл. $(\ref{eq:char})$, то $\exists P_{m_1 - 1}^{1}, \ldots, P_{m_r - 1}^{r} \colon$
+  \[
+  y_n = < \text{ запись из п. 1} >
+  \]
+\end{itemize}
+\end{theorem}
+\subsection{Разбиение чисел на слагаемые}
+\[
+n \in \N \colon n = x_1 + \ldots + x_t
+\]
+\[
+\forall i \colon x_i \in \set{n_1, \ldots, n_k}
+\]
+(***Офигенные примеры с помидором и попойкой***)
+\begin{theorem}[Решение попойки (упор. разбиений)]
+\label{solve:popoika}
+\[
+F(n; n_1, \ldots, n_k) = F(n - n_1; n_1, \ldots, n_k) + \ldots + F(n - n_k; n_1, \ldots, n_k)
+\]
+\[
+F(0; n_1, \ldots, n_k) = 1; F(-n; n_1, \ldots, n_k) = 0
+\]
+\end{theorem}
+\begin{consequence}
+\[
+F(n;, 1, 2, \ldots, n) = 2^{n - 1}
+\]
+\end{consequence}
+\begin{proof}
+ ММИ:
+ \begin{itemize}
+   \item [1) ] $n = 1 \colon F(1; 1) = 1 = 2^{1 - 1}$
+   \item [2) ] \[
+   F(n; 1, \ldots, n) = F(n - 1; 1, \ldots, n - 1) + 
+   \]
+   \[
+    + F(n - 2; 1, 2, \ldots, n - 2) + \ldots + F(1; 1) + F(0; 0) = 
+   \]
+   \[
+    = 2^{n - 2} + 2^{n - 1} + \ldots + 1 + 1 = 2^{n - 1}
+   \]
+ \end{itemize}
+\end{proof} 
+\begin{theorem}[Решение помидора (неупор. разбиения)]
+\label{solve:tomato}
+\[
+f(n; n_1, \ldots, n_k) = f(n - n_1; n_1, \ldots, n_k) + f(n; n_2, \ldots, n_k)
+\]
+\[
+f(0; \ldots) = 1
+\]
+\[
+f(-n; \ldots) = 0
+\]
+\end{theorem}

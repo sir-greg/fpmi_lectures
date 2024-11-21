@@ -1,22 +1,4 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 13}{3}{}%
-\contentsline {subsubsection}{\numberline {1.0.1}Долг прошлой жизни}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Равномерная непр-ть}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Показательная и логарифмическая ф-ции}{5}{}%
-\contentsline {section}{\numberline {2}Лекция 14}{8}{}%
-\contentsline {subsubsection}{\numberline {2.0.1}Ликбез по тригономе}{10}{}%
-\contentsline {subsubsection}{\numberline {2.0.2}Сравнение ф-ций}{12}{}%
-\contentsline {section}{\numberline {3}Лекция 15}{16}{}%
-\contentsline {subsection}{\numberline {3.1}Дифференцируемые ф-ции}{16}{}%
-\contentsline {section}{\numberline {4}Лекция 16}{17}{}%
-\contentsline {section}{\numberline {5}Лекция 17}{22}{}%
-\contentsline {subsection}{\numberline {5.1}Дифференциал ф-ции}{23}{}%
-\contentsline {subsection}{\numberline {5.2}Теоремы о среднем}{24}{}%
-\contentsline {section}{\numberline {6}Лекция 18}{26}{}%
-\contentsline {subsection}{\numberline {6.1}Приложения теореме о среднем}{27}{}%
-\contentsline {section}{\numberline {7}Лекция 19}{30}{}%
-\contentsline {subsection}{\numberline {7.1}Производные высших порядков}{33}{}%
-\contentsline {section}{\numberline {8}Лекция 20}{35}{}%
-\contentsline {subsection}{\numberline {8.1}Формула Тейлора}{35}{}%
-\contentsline {section}{\numberline {9}Лекция 21}{40}{}%
-\contentsline {section}{\numberline {10}Лекция 22}{44}{}%
+\contentsline {section}{\numberline {1}Лекция 22}{3}{}%
+\contentsline {section}{\numberline {2}Лекция 23}{8}{}%
+\contentsline {subsection}{\numberline {2.1}Неопределённый интеграл}{8}{}%
