@@ -2,3 +2,7 @@
 \contentsline {section}{\numberline {1}Лекция 21 (СКИП))}{3}{}%
 \contentsline {section}{\numberline {2}Лекция 22}{3}{}%
 \contentsline {subsection}{\numberline {2.1}Сопряжённое пр-во}{3}{}%
+\contentsline {section}{\numberline {3}Лекция 24(вроде)}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Операции над ЛО}{6}{}%
+\contentsline {subsection}{\numberline {3.2}Ранг лин. отображения}{7}{}%
+\contentsline {subsection}{\numberline {3.3}Изменение матр. ЛО при замене базисов}{7}{}%
