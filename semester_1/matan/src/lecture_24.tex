@@ -1,0 +1,199 @@
+\section{Лекция 24}
+\subsection{Интегралы Римана и его св-ва}
+Пусть $[a, b]$ --- невырожденный отрезок.
+\begin{definition}
+Разбиение $T$ отр-ка $[a, b]$ наз-ся конечный набор точек $\set{x_i}_{i = 0}^{n}$, т. ч. $a = x_0 < x_1 < \ldots < x_{n} = b$. Введём обозн-я:
+\[
+\triangle x_i = x_i - x_{i - 1}, \left|T\right| = \underset{1 \leq i \leq n}{\max} \triangle x_i
+\]j
+\end{definition}
+Пусть ф-ция $f$ опр-на на $[a, b]$ и $T$ --- разбиение $[a, b]$. Положим:
+\[
+m_i = \underset{x \in [x_{i - 1}, x_{i}]}{\inf} f(x)
+\]
+\[
+M_i = \underset{x \in [x_{i - 1}, x_i]}{\sup} f(x)
+\]
+Сумма:
+\[
+S_{T}(f) = \sum_{i = 1}^{n} M_i \triangle x_i
+\]
+\[
+s_{T}(f) = \sum_{i = 1}^{n} m_i \triangle x_i
+\]
+Эти суммы наз-ся верхней и нижней суммами Дарбу ф-ции $f$, отвеч. разбиению $T$
+\begin{lemma}
+  \label{lm:1}
+  Пусть $T, T'$ --- разбиения $[a, b] \colon T \subset T'$, тогда:
+  \[
+  s_{T}(f) \leq s_{T'}(f) \leq S_{T'}(f) \leq S_{T}(f)
+  \]
+\end{lemma}
+\begin{proof}
+Пусть $T = \set{x_i}_{i = 1}^{n}$. Рассм. сначала случай, когда:
+\[
+T' = T \cup \set{c}, c \not\in T
+\]
+Сущ-ет такое $k$, что:
+\[
+c \in (x_{k - 1}, x_k)
+\]
+Положим:
+\[
+m_k' = \underset{[x_{k - 1}, c]}{\inf} f(x), m_k'' = \underset{[c, x_k]}{\inf} f(x)
+\]
+Тогда:
+\[
+m_k'', m_k' \geq m_k 
+\]
+\[
+\Rightarrow s_{T'}(f) = \sum_{i - 1}^{k - 1} m_{i}\triangle x_i + \sum_{i = k + 1}^{n} m_i \triangle x_i + m_k' (c - x_{k - 1}) + m_k'' (x_k - c) \geq 
+\]
+\[
+ \geq \sum_{i - 1}^{k - 1} m_{i}\triangle x_i + \sum_{i = k + 1}^{n} m_i \triangle x_i + m_k\underset{\triangle x_k}{(c - x_{k - 1} + x_k - c)} =  s_{T}(f)
+\]
+Аналогично док-ся правое нер-во.
+\end{proof}
+\begin{lemma}
+\label{lm:1'}
+Пусть $\left|f\right| \leq M$ и $T'$ получена из $T$ добавлением $m$ точек, тогда:
+\[
+s_T'{f} - s_T{f} \leq 2Mm\left|T\right|
+\]
+\[
+S_T{f} - S_{T'}(f) \leq 2Mm\left|T\right|
+\]
+\end{lemma}
+\begin{proof}
+Пусть $T' = T \cup \set{c}$, тогда:
+\[
+S_{T'}(f) - S_{T}(f) = \underset{\leq 2M}{(m_k' - m_k)}(c - x_{k - 1}) + \underset{\leq 2M}{(m_k'' - m_k)}(x_k - c) \leq 
+\]
+\[
+ \leq 2M\underset{\leq \left|T\right|}{(c - x_{k - 1} + x_k - c)} \leq 2M\left|T\right|
+\]
+Общий результат получается индукцией по $M$. Для верхний сумм --- аналогично.
+\end{proof}
+Из леммы $(\ref{lm:1})$ получаем утв-е:
+\begin{consequence}
+  \label{cs:1}
+Для любых разбиений $T_1, T_2$ отр-ка $[a, b]$ вып-но:
+\[
+s_{T_1}(f) \leq S_{T_2}(f)
+\]
+\end{consequence}
+\begin{proof}
+Рассм. $T = T_1 \cup T_2$, тогда по лемме $(\ref{lm:1})$:
+\[
+s_{T_1}(f) \leq s_{T}(f) \leq S_{T}(f) \leq S_{T_2}(f)
+\]
+\end{proof}
+\begin{definition}
+Величины:
+\[
+\underline{\int_{a}^{b} f} = \sup s_T(f)
+\]
+\[
+\overline{\int_{a}^{b} f} = \inf S_T(f)
+\]
+Наз-ся соотв. верхними и нижними интегралами Дарбу.
+\end{definition}
+\begin{consequence}
+  \label{cs:2}
+  Переходя в нер-ве следствия $\ref{cs:1}$ к $\inf$ по всем разбиемниям $T_1$ при фикс $T_2$, и к $\sup$ по всем разбиениям $T_2$ при фикс. $T_1$, получаем:
+\[
+s_{T}(f) \leq \underline{\int_{a}^{b} f} \leq \overline{\int_{a}^{b} f} \leq S_{T}(f)
+\]
+\end{consequence}
+\begin{definition}
+Пусть ф-ция $f$ опр-на на отр-ке $[a, b]$, ф-ция $f$ наз-ся \textbf{интегрируемой (по Риману)}, если:
+\[
+  \underline{\int_{a}^{b} f} = \overline{\int_{a}^{b} f} \in \R \text{ --- конечны}
+\]
+Число $I = \underline{\int_{a}^{b} f} = \overline{\int_{a}^{b} f}$ наз-ся определённым интегралом ф-ции $f$ по $[a, b]$. Мн-во всех интегрируемых по Риману на $[a, b]$ ф-ций будем обозначать, как $\mathcal{R}$
+\end{definition}
+\begin{example}
+$f = 1$ на $[a, b] \Rightarrow $ для любых разбиений $T = \set{x_i}_{i = 0}^{n}$:
+\[
+s_T(f) = S_T(f) = \sum_{i = 1}^{n} (x_i - x_{i - 1}) = x_n - x_0 = b - a \Rightarrow
+\]
+\[
+\Rightarrow \overline{\int_{a}^{b} f} = \underline{\int_{a}^{b} f} = b - a
+\]
+\end{example}
+\begin{lemma}
+\label{lm:2}
+Если $f$ интегрируема по Риману на $[a, b]$, то $f$ огр-на на $[a, b]$
+\end{lemma}
+\begin{proof}
+Пусть $f$ не огр. сверху на $[a, b]$, тогда для произв. разб. $T$ ф-ция $f$ не огр. сверху на $[x_{i - 1}, x_{i}]$ для некот. $i$, а значит:
+\[
+M_i = +\infty \Rightarrow \overline{\int_{a}^{b} f} = +\infty
+\]
+Если $f$ не огр. снизу, то $\underline{\int_{a}^{b} f} = -\infty$.
+\end{proof}
+\begin{note}
+Ограниченность ф-ции является \textbf{необходимым, но не достаточным условием интегрируемости.}
+\end{note}
+\begin{example}
+Ф-ция Дирихле:
+\[
+\mathcal{D}(x) = \begin{cases}
+1, x \in \Q \\
+0, x \in \R \backslash \Q
+\end{cases}
+\]
+Для произвольного отр-ка $[a, b]$, имеем:
+\[
+s_T(\mathcal{D}) = 0, S_T(\mathcal{D}) = b - a
+\]
+\[
+\Rightarrow \underline{\int_{a}^{b} f} = 0, \overline{\int_{a}^{b} f} = b - a
+\]
+\end{example}
+\begin{consequence}[Аддитивность подотрезков]
+  Пусть $a < c < b$. Ф-ция $f$ интегрируема по Риману на $[a, b] \iff f $ интегрируема на $[a, c]$ и $[c, b]$, при этом справ-ва формула:
+  \[
+    \int_{a}^{b} f \, dx = \int_{a}^{c} f \, dx + \int_{c}^{b} f \, dx
+  \]
+\end{consequence}
+\begin{proof}
+Покажем, что:
+\[
+  \underline{\int_{a}^{b} f \, dx} = \underline{\int_{a}^{c} f \, dx} + \underline{\int_{c}^{b} f \, dx}
+\]
+Пусть $T_1 = \set{x_i}_{i = 0}^{k}$ --- разбиение $[a, c]$, $T_2 = \set{x_i}_{i = k + 1}^{n}$ --- разбиение $[c, b]$, тогда $T = T_1 \cup T_2$ --- разбиение $[a, b]$, причём:
+\[
+s_{T}(f) = \sum_{i = 0}^{k} m_i \triangle x_i + \sum_{i = k + 1}^{n} m_i \triangle x_i = 
+\]
+\begin{equation}
+  \label{eq:*}
+  = s_{T_1}(f) + s_{T_2}(f)
+\end{equation}
+Сл-но, $\underline{\int_{a}^{b} f} \geq s_{T_1}(f) + s_{T_2}(f)$ \\
+Переходя в последнем нер-ве к $\sup$ сначала по всем разбиениям $T_2$ отр-ка $[c, b]$, затем по всем разбиениям $T_1$ отр-ка $[a, c]$ получим:
+\[
+\underline{\int_{a}^{b} f} \geq \underline{\int_{a}^{c} f} + \underline{\int_{c}^{b} f}
+\]
+С другой стороны, из $\eqref{eq:*}$ следует:
+\[
+s_T(f) \leq \underline{\int_{a}^{c} f} + \underline{\int_{c}^{b} f}
+\]
+Рассм. произв. разбиение $\tilde{T}$ отр-ка $[a, b]$ и $T = \tilde{T} \cup \set{c}$:
+\[
+s_{\tilde{T}}(f) \leq s_{T}(f) \leq \underline{\int_{a}^{c} f} + \underline{\int_{c}^{b} f}
+\]
+\[
+\Rightarrow \underline{\int_{a}^{b} f} \leq \underline{\int_{a}^{c} f} + \underline{\int_{c}^{b} f}
+\]
+\[
+\Rightarrow  \underline{\int_{a}^{b} f} = \underline{\int_{a}^{c} f} + \underline{\int_{c}^{b} f}
+\]
+Аналогично для верхнего интеграла Дарбу. \\
+Пусть $f \in \mathcal{R}[a, b]$, тогда:
+\[
+  \int_{a}^{b} f(x) \, dx = \underline{\int_{a}^{b} f} = \underline{\int_{a}^{c} f} + \underline{\int_{c}^{b} f} \leq \overline{\int_{a}^{c} f} + \overline{\int_{c}^{b} f} = \overline{\int_{a}^{b} f} = \int_{a}^{b} f(x) \, dx
+\]
+Сл-но $\underline{\int_{a}^{c} f} = \overline{\int_{a}^{c} f}, \underline{\int_{c}^{b} f} = \overline{\int_{c}^{b} f}$ \\
+Пусть $f \in \mathcal{R}$
+\end{proof}
