@@ -1,0 +1,172 @@
+\section{Лекция 13}
+\subsection{Элиминация кванторов}
+$<N, S, O, = >$, $S$ - successor
+\begin{theorem}
+\label{}
+Любая ф-ла в сигнатуре $(S, O, =)$ эквив-на в вышеуказанной интерпретации нек-рой бескванторной ф-ле. \\
+(Т. е. булевой комбинации атомарных формул.)
+\end{theorem}
+\begin{proof}
+Инд-ция по построению ф-лы.
+\begin{itemize}
+  \item [1) ] База: атомарная ф-лы --- бескванторная
+  \item [2)] Переход: 
+    \begin{itemize}
+      \item 
+    $\phi \eqcirc \neg \psi \Rightarrow $ по предположению индукции, $\psi \sim \psi', \psi'$ --- бескванторная $\Rightarrow \phi \sim \neg \psi'$ --- бесквант.
+  \item $\phi \eqcirc (\psi \land \eta) \Rightarrow \psi \sim \psi', \eta \sim \eta', \phi \sim (\psi' \land \eta')$ --- аналогично, $\lor, \rightarrow$
+  \item \[
+  \forall x \phi \sim \neg \exists x \neg \phi 
+  \]
+  В случае с $\exists x \phi$ нужны содержательные рассуждения, т. е. цель:
+  \[
+  \exists \mapsto \text{ конечная дизъюнкция}
+  \]
+  \[
+  \exists x \phi \sim \exists x \phi', \phi' \text{ --- бесквант.}
+  \]
+  Рассмотрим атомарные формулы:
+  \[
+  S(S(\ldots (S(u)))) = S(S(S(\ldots (S(v)))))
+  \]
+  $u, v$ --- либо переменные, либо $0$
+  \[
+  u \eqcirc v \eqcirc x \Rightarrow \text{ф-ла $\perp$ или $T$}
+  \]
+  Рассм., что может быть в $\phi$:
+  \[
+  S(S(\ldots(S(0)))) = x \text{ --- задано значение $x$}
+  \]
+  \[
+  S(S(\ldots(S(x)))) = 0 \text{ --- тождественная ложь, т. к. $\N$}
+  \]
+  \[
+  S(S(\ldots(S(y)))) = x, x = y + c
+  \]
+  \[
+  S(S(\ldots(S(x)))) = y
+  \]
+  Итог: $\exists x \phi, \phi$ --- бул. комбинация $\perp, T$ и равенств вида $x = d, x = y + c, x = y - c$, а также некот. кол-во $t_1, \ldots, t_k$ --- все правые части. Опять же, рассм несколько случаев:
+  \begin{itemize}
+    \item [I) ] $x \not \in \set{t_1, \ldots, t_k} \Rightarrow$ все рав-ва $x = t_i$ ложны $\Rightarrow \phi(x)$ не зависит от конкретного значения $x$.
+    \item [II) ] Иначе:
+      \[
+      \exists x \phi \sim \phi|_{\text{все $x = t_i$ ложны}} \lor \bigvee_{i}^{} \phi[t_i / x]
+      \]
+      \begin{note}
+      Выражения с вычет. преобразуются, в сложение с другой части.
+      \end{note}
+  \end{itemize}
+    \end{itemize}
+\end{itemize}
+\end{proof}
+\begin{definition}
+Две интерпретации одной сигнатуры элемент. эквив., если в них верны один и те же ф-лы 1-ого порядка.
+\end{definition}
+\begin{theorem}
+$<\R, \leq>, <\Q, \leq>$ --- элементарно эквив-ны.
+\end{theorem}
+\begin{proof}
+В обеих интерпретациях верна теорема об элиминации кванторов, причём она происходит одинаково. \\
+Отличие предыдущих в формуле $\exists x \phi$. Заменим $\phi$ на эквив. ДНФ.
+\[
+  x = y \iff (x \leq y \land y \leq x)
+\]
+\[
+  x < y \iff (x \leq y \land \neg (y \leq x))
+\]
+\[
+  \phi = C_1 \lor \ldots \lor C_k
+\]
+где $C_i$ --- конъюнкция $x_j \leq y_j$ или $\neg(x_j \leq y_j)$:
+\[
+  (x_j \leq y_j) \mapsto (x_j < y_j) \lor (x_j = y_j)
+\]
+\[
+  \neg(x_j \leq y_j) \mapsto y_j < x_j
+\]
+ Рассмотрим по дистриб. $\Rightarrow$ $\phi = C_1' \lor \ldots \lor C_m'$ \\
+ $C_i'$ --- конъюнкция ф-ул вида $x_j = y_j$ или $x_j < y_j$
+ \[
+  \exists x \phi \sim \exists x (C_1' \lor \ldots \lor C_m') \sim \exists x C_1' \lor \ldots \lor \exists x C_m' 
+ \]
+ \[
+ \exists x ((x > a_1) \land \ldots \land (x > a_o) \land (x < b_1) \land \ldots \land (x < b_q)) \land
+ \]
+ \[
+  \land (x = c_1) \land \ldots \land (x = c_r) \land \text{(возможно.)} \land x = x \land x < x \land y < z
+ \]
+ \begin{example}
+ \[
+ \exists x (x > a \land x > b \land x < c \land x < d) \iff a < c \land a < d \land b < c \land b < d
+ \]
+ \end{example}
+\end{proof}
+\subsubsection{Игра Эренфойхтаsa}
+\begin{theorem}
+Интерпретации. элем. эквив-ны $\iff$ \\
+
+В некот-рой игре есть выигр. страт. у нек-рого игрока. \\
+
+Правила: заданы 2 интерпретации $A$ и $B$, сигнат. которых сост. только из предикатных символов. $(P_1, \ldots, P_n)$ \\
+
+2 игрока: новатор и консерватор \\
+
+Цель новатора (Н): показать, что $A$ и $B$ отличаются \\
+
+Цель консерватора (К): показать, что $A = b$ \\
+
+Подготовка: (Н) фиксир. число ходов $m$ \\
+
+На $i$-ой стадии: отмечено $a_1, \ldots, a_{i - 1} \in A$, $b_1, \ldots, b_{i - 1} \in B$ \\
+
+Н выбирает  $a_i \in A$ или $b_i \in B$, $K$ отмечает. наоборот, $b_i \in B$ или $a_i \in A$ соотв. \\
+
+Итог игры: \\
+
+$P_j$ --- предикат вал-сти $l$ \\
+\[
+P_j(a_{i_1}, \ldots a_{i_l}) \neq P_j(b_{i_1}, \ldots b_{i_l}) \Rightarrow \text{ выиграл $H$}
+\]
+\begin{example}
+$<\N, \leq>, <\Z, \leq>$
+\[
+\exists x \forall y, x \leq y \text{ --- верно в $\N$, но не в $\Z$}
+\]
+$H$ выигравает за 2 хода:
+\begin{itemize}
+  \item [1) ] $H\colon 0 \in \N, K \colon b \in \Z$
+  \item [2)] $H \colon (b - 1) \in \Z, K \colon a \in \N$
+\end{itemize}
+Но $a \geq 0$ --- верно, а $b - 1 \geq b$ --- ложно.
+\end{example}
+\begin{example}
+$<\Z, \leq>, <\Q, \leq>$
+\[
+\forall y \forall z (y < z \rightarrow \exists v (y < v < z))
+\]
+H выигрывает за 3 хода:
+\begin{itemize}
+  \item [1) ] $H\colon 0 \in \Z, K \colon b_0 \in \Q$
+  \item [2) ] $H\colon 1 \in \Z, K \colon b_1 \in \Q$
+    \[
+    b_0 \geq b_1 \Rightarrow H \text{ --- выиграл}
+    \]
+    \[
+    b_0 < b_1 \Rightarrow H \colon \frac{b_0 - b_1}{2}, K\colon a \in \Z, \text{ причём: } a \leq 0 \lor a \geq 1 \Rightarrow H \text{ --- выиграл}
+    \]
+\end{itemize}
+\end{example}
+\begin{example}
+$<\Q, \leq>$ и $<\R, \leq>$ \\
+Выигрывает $K$, даже если не фиксировать число ходов. \\
+$H$ ставит точку, либо совпадающую с уже выбранной, либо больше всех, либо меньше всех, либо внутри интервала.
+\end{example}
+\begin{example}
+$\Z$ и $\Z + \Z$ \\
+Заметим, что в $\Z + \Z$ есть есть беск. интервалы. \\
+Поэтому выигр. $K$, \underline{если} кол-во ходов фикс. \\
+Разделим все интервалы на большие (бесконечные или кон. $\geq 2^{l}$, где $l$ - число ходов до конца игры) и малые ($< 2^{l}$) \\
+Новатор не может поделить большой интервал на два маленьких
+\end{example}
+\end{theorem}

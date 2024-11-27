@@ -1,19 +1,9 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 6}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Плотный порядок. Изоморфизм}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Предпорядки}{5}{}%
-\contentsline {subsubsection}{\numberline {1.2.1}Агрегирование предпорядков}{6}{}%
-\contentsline {section}{\numberline {2}Лекция 7}{7}{}%
-\contentsline {subsection}{\numberline {2.1}База}{7}{}%
-\contentsline {section}{\numberline {3}Лекция 8}{9}{}%
-\contentsline {subsection}{\numberline {3.1}Продоложние про тождества}{9}{}%
-\contentsline {section}{\numberline {4}Лекция 9}{12}{}%
-\contentsline {subsection}{\numberline {4.1}Циклические п-ти}{13}{}%
-\contentsline {subsection}{\numberline {4.2}Формула обращения Мёбиуса}{14}{}%
-\contentsline {section}{\numberline {5}Лекция 10}{15}{}%
-\contentsline {subsection}{\numberline {5.1}Обращение Мёбиуса на чумe (част. уп. мн-во)}{17}{}%
-\contentsline {subsubsection}{\numberline {5.1.1}Ф-ция Мёбиуса}{17}{}%
-\contentsline {section}{\numberline {6}Лекция 11}{19}{}%
-\contentsline {subsection}{\numberline {6.1}Линейные рекуррентные соотношения с постоянными коэффициентами}{21}{}%
-\contentsline {section}{\numberline {7}Лекция 12}{22}{}%
-\contentsline {subsection}{\numberline {7.1}Разбиение чисел на слагаемые}{23}{}%
+\contentsline {section}{\numberline {1}Лекция 9}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Циклические п-ти}{4}{}%
+\contentsline {subsection}{\numberline {1.2}Формула обращения Мёбиуса}{4}{}%
+\contentsline {section}{\numberline {2}Лекция 10}{6}{}%
+\contentsline {subsection}{\numberline {2.1}Обращение Мёбиуса на чумe (част. уп. мн-во)}{8}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Ф-ция Мёбиуса}{8}{}%
+\contentsline {section}{\numberline {3}Лекция 11}{10}{}%
+\contentsline {subsection}{\numberline {3.1}Линейные рекуррентные соотношения с постоянными коэффициентами}{12}{}%

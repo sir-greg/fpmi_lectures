@@ -4,3 +4,6 @@
 \contentsline {section}{\numberline {2}Лекция 11}{5}{}%
 \contentsline {section}{\numberline {3}Лекция 12}{8}{}%
 \contentsline {subsection}{\numberline {3.1}Метод автоморфизма}{8}{}%
+\contentsline {section}{\numberline {4}Лекция 13}{11}{}%
+\contentsline {subsection}{\numberline {4.1}Элиминация кванторов}{11}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Игра Эренфойхтаsa}{14}{}%
