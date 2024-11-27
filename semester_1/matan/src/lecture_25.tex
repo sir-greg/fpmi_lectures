@@ -1,0 +1,190 @@
+\section{Лекция 25}
+\begin{consequence}
+  Если $f \in R[a, b]$ и $[c, d] \subset [a, b]$, тогда $f \in R[c, d]$
+\end{consequence}
+\begin{note}
+  \[
+  \int_{a}^{a} f(x) \, dx = 0
+  \]
+  \[
+  \int_{b}^{a} f(x) \, dx = -\inf_{a}^{b} f(x) \, dx
+  \]
+\end{note}
+\begin{task}
+Проверить, что аддитивность верна при любом расположении точек $a, b, c$
+\end{task}
+\begin{consequence}
+\label{cs:riemann_feature_2}
+Пусть $f, g \in R[a, b]$, и $\lambda, \mu \in \R$. Тогда
+\[
+  \lambda f + \mu g \in R[a, b]
+\]
+\[
+  \int_{a}^{b}  (\lambda f + \mu g) \, dx = \lambda \int_{a}^{b} f \, dx + \mu \int_{a}^{b} f \, dx
+\]
+\end{consequence}
+\begin{proof}
+\begin{note}
+$\lambda \geq 0, A, B \subset \R$:
+\[
+\sup(\lambda A) = \lambda \sup A
+\]
+\[
+\lambda(\sup A + \sup B) = \sup A + \sup B
+\]
+\[
+  \sup(-A) = -\inf A
+\]
+\end{note}
+Пусть $\lambda \geq 0$. Т. к. $\underset{x \in E}{\inf} \lambda f(x) = \lambda \underset{x \in E}{\inf} f(x)$, для любого $E \subset [a, b]$, то $s_T(\lambda f) = \lambda s_T(f)$ для произвольного разб-я $T$ отр-к $[a, b]$. По опр-ю:
+\[
+  \underline{\int_{a}^{b}  \lambda f \, dx} = \underset{T}{\sup} s_T(\lambda f) = \lambda \underline{\int_{a}^{b} f \, dx}
+\]
+Аналогично устанавливается, что верхний интеграл Дарбу обладает таким св-вом (св-вом однородности). \\
+Т. к. $\underset{E}{\inf} -f = -\underset{E}{\sup} f, \forall E \subset [a, b]$, то
+\[
+\underline{\int_{a}^{b} (-f)} = -\overline{\int_{a}^{b} f}, \overline{\int_{a}^{b} (-f)} = -\underline{\int_{a}^{b} f}
+\]
+Сл-но, $(-f) \in R[a, b], \int_{a}^{b} (-f) = -\int_{a}^{b} f, \lambda < 0 \Rightarrow \lambda = (-1) \left|\lambda\right|$ \\
+Т. к.
+\[
+  \underset{x \in E}{\inf} (f(x) + g(x)) \geq \underset{x \in E}{\inf} f(x) + \underset{x \in E}{\inf} g(x)
+\]
+То для произвольного разб-я $T$ отр-ка $[a, b]$ имеем
+\[
+  s_T(f + g) \geq s_T(f) + s_T(g)
+\]
+Сл-но, $\underline{\int_{a}^{b} (f + g) \, dx} \geq \underline{\int_{a}^{b} f \, dx} + \underline{\int_{a}^{b} g \, dx}$ \\
+Аналогично:
+\[
+\overline{\int_{a}^{b} (f + g) \, dx} \leq \overline{\int_{a}^{b} f \, dx} + \overline{\int_{a}^{b} g \, dx}
+\]
+Вычтем из нер-ва для верхнего интеграла нер-во для нижнего:
+\[
+0 \leq \overline{\int_{a}^{b}  (f + g) \, dx} - \underline{\int_{a}^{b} (f + g)\, dx} \leq \left(\overline{\int_{a}^{b} f \, dx} - \underline{\int_{a}^{b} f \, dx}\right) + 
+\]
+\[
+ + \left(\overline{\int_{a}^{b} g \, dx} - \underline{\int_{a}^{b} g \, dx}\right) = 0
+\]
+Т. к. $f, g \in R[a, b]$, то $\overline{\int_{a}^{b}  (f + g) \, dx}$, т. е. $f + g \in R[a, b]$ и
+\[
+  \int_{a}^{b} (f + g) \, dx = \int_{a}^{b} f \, dx + \int_{a}^{b} g \, dx
+\]
+\end{proof}
+\begin{consequence}
+  \label{cs:riemann_feature_3}
+  Пусть $f, g \in R[a, b]$ и $f \leq g$ на $[a, b]$. Тогда:
+  \[
+  \int_{a}^{b} f \, dx \leq \int_{a}^{b} g \, dx
+  \]
+\end{consequence}
+\begin{proof}
+Для произвольного разбиения $T$ имеем $f(x) \leq g(x), \forall x \in [x_{i}, x_{i + 1}]$ $\Rightarrow$
+\[
+s_{T}(f) \leq s_{T}(g) \Rightarrow
+\]
+\end{proof}
+\subsection{Мн-во интегрируемых ф-ций}
+\begin{definition}
+Пусть $f$ опр-на на $E \subset \R$. \textbf{Колебание (осциляцией)} ф-ции $f$ на $E$ наз-ся
+\[
+  \omega(f, E) = \underset{x, y \in E}{\sup} \left|f(x) - f(y)\right|
+\]
+\end{definition}
+\begin{note}
+Перепишем в более удобном виде:
+\[
+  \omega(f, E) = \underset{x, y \in E}{\sup} (f(x) - f(y)) = \underset{x, y \in E}{\sup} (f(x) + (-f(y))) = \underset{x \in E}{\sup} f(x) + \underset{y \in E}{\sup} f(y) =
+\]
+\[
+ = \underset{x \in E}{\sup} f(x) - \underset{y \in E}{\inf} f(y)
+\]
+\end{note}
+Пусть $f$ опр-на на $[a, b]$ и $T = \set{x_i}_{i = 0}^{n}$ --- разбиение $[a, b]$, тогда:
+\[
+\Omega_T(f) = \sum_{i = 1}^{n} w(f, [x_{i - 1}, x_i])\triangle x_i = \sum_{i = 1}^{n} (M_i - m_i) \triangle x_i
+\]
+Отметим, что $SZ_T(f)$ конечно $\iff$ $f$ ограничена на $[a, b]$. В этом случае:
+\[
+\Omega_T(f) = S_T(f) - s_T(f)
+\]
+\begin{theorem}
+\label{th:3}
+\[
+  f \in R[a, b] \iff \forall \varepsilon > 0 \exists T \text{ --- разб-е, } [a, b] \hookrightarrow \Omega_T{f} < \varepsilon
+\]
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [$\Rightarrow$)]
+    \[
+    \underline{\int_{a}^{b} f} = \overline{\int_{a}^{b} f} = I
+    \]
+    Заф. $\varepsilon > 0$. По опр-ю интеграла Дарбу: $\exists T_1, T_2$ --- разб-я $[a, b]$:
+    \[
+    s_{T_1}(f) > I - \frac{\varepsilon}{2}, S_{T_2} < I + \frac{\varepsilon}{2}
+    \]
+    \[
+    T = T_1 \cup T_2 \text{ --- разб. $[a, b]$}
+    \]
+    Тогда:
+    \[
+    \Omega_T(f) = S_T(f) - s_T(f) \leq S_{T_2}(f) - s_{T_1}(f) < \varepsilon
+    \]
+  \item [$\Leftarrow$)] Т. к. $\Omega(f)$ конечна, то $f$ огр-на на $[a, b]$, тогда ввиду нер-в:
+    \[
+    0 \leq \overline{\int_{a}^{b} f} - \underline{\int_{a}^{b} f} \leq S_T(f) - s_T(f) = \Omega_T(f) < \varepsilon
+    \]
+    Т. к. $\varepsilon > 0$ --- любое, то $\overline{\int_{a}^{b} f} = \underline{\int_{a}^{b} f}$, т. е. $f \in R[a, b]$
+\end{itemize}
+\end{proof}
+\begin{consequence}
+  \label{cs:crit_integ_rieman_1}
+Если $f$ непр-на на $[a, b]$, то $f$ интегр. на $[a, b]$
+\end{consequence}
+\begin{proof}
+Заф. $\varepsilon > 0$. По т. Кантора, $f$ равномерно непрерывна на $[a, b]$. Поэтому
+\[
+  \exists \delta > 0 \colon \forall x', x'' \in [a, b] (\left|x' - x''\right| < \delta \Rightarrow \left|f(x') - f(x'')\right| < \frac{\varepsilon}{b - a})
+\]
+Рассм. разб. $T = \set{x_i}_{i = 0}^{n} \colon \left|T\right| < \delta$ \\
+По т. Вей-са $\exists x_i', x_i'' \in [x_{i - 1}, x_i] \colon M_i = f(x_i'), m_i = f(x_i'')$ \\
+Т. к. $\left|x_i'' - x_i'\right| \leq \triangle x_i < \delta$, то $\left|f(x_i'') - f(x_i')\right| < \frac{\varepsilon}{b - a} \Rightarrow$
+\[
+\Omega_T(f) = \sum_{ i =1 }^{n} (f(x_i') - f(x_i''))\triangle x_i < \frac{\varepsilon}{b - a} \sum_{ i = 1}^{n} \triangle x_i = \varepsilon
+\]
+По теореме $\ref{th:3}$, $f \in R[a, b]$
+\end{proof}
+\begin{consequence}
+  \label{cs:crit_integ_rieman_2}
+  Если $f$ монот. на $[a, b]$, то $f$ инт. на $[a, b]$
+\end{consequence}
+\begin{proof}
+Пусть для опр-ти $f$ нестрого возр-ет на $[a, b]$, тогда для произв. разб. $T$ имеем:
+\[
+\Omega_T(f) = \sum_{i = 1}^{n} (f(x_i) - f(x_{i - 1}))\triangle x_i \leq \sum_{i = 1}^{n} (f(x_i) - f(x_{i - 1})) \left|T\right|
+\]
+Сл-но, $\Omega_T(f) \leq (f(b) - f(a))\left|T\right|, f \in R[a, b]$
+\end{proof}
+\begin{theorem}
+\label{th3:crit_integ_rieman_3}
+Пусть $f$ огр. на $[a, b]$ и $f \in R[c, d]$ на любом $[c, d] \subset (a, b)$. Тогда $f \in R[a, b]$
+\end{theorem}
+\begin{proof}
+Пусть $\left|f\right| \leq M$. Заф. $\varepsilon > 0$.  \\
+Положим $c = a + \frac{\varepsilon}{6M}, d = b - \frac{\varepsilon}{6M}$. Положим $f \in R[c, d]$, поэтому по теореме $\ref{th:3}$, $\exists T_0 \text{ --- разб. } \colon \Omega_{T_0}(f) < \frac{\varepsilon}{3}$
+\[
+T = T_0 \cup \set{a, b} \text{ --- разб. $[a, b]$}
+\]
+Тогда:
+\[
+\Omega_T(f) = \omega(f, [a, c])(c - a) + \Omega_{T_0}(f) + \omega(f, [d, b])(b - d)
+\]
+Т. к. $\left|f\right| \leq M, \omega(f, [a, c]) \leq 2M, \omega(f, [d, b]) \leq 2M$, то
+\[
+\Omega_T(f) \leq 2M * \frac{\varepsilon}{6M} + \frac{\varepsilon}{3} + 2M\frac{\varepsilon}{6M} = \varepsilon
+\]
+\[
+\Rightarrow f \in R[a, b]
+\]
+\end{proof}

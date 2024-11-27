@@ -4,3 +4,5 @@
 \contentsline {subsection}{\numberline {2.1}Неопределённый интеграл}{8}{}%
 \contentsline {section}{\numberline {3}Лекция 24}{10}{}%
 \contentsline {subsection}{\numberline {3.1}Интегралы Римана и его св-ва}{10}{}%
+\contentsline {section}{\numberline {4}Лекция 25}{15}{}%
+\contentsline {subsection}{\numberline {4.1}Мн-во интегрируемых ф-ций}{17}{}%
