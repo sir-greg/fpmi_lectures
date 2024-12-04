@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1730912166.81442 "main.tex" "main.pdf" "main" 1730912167.35902 0
+["pdflatex"] 1733330532.32575 "main.tex" "main.pdf" "main" 1733330533.81981 0
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1725258418.94669 3308 eee81981029f67083258db36df06e523 ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1722950259.82679 3304 6a543c07045572737981351171e0505e ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1728.tfm" 1725264308.81669 3312 d199be9bd555944e2403193d58a0256a ""
@@ -54,6 +54,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb" 1215737283 140176 d4962f948b4cc0adf4d3dde77a128c95 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb" 1215737283 135942 859a90cad7494a1e79c94baf546d7de5 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb" 1215737283 139826 9213617a7cb78635fc326b859c0b2273 ""
@@ -130,11 +131,12 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1722811609 5483422 a1ef07ac981a8b7f5985102f2de312a6 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1722811645 8239395 770efc74df93586a44891e8f654c98d2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1722811606.09035 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "main.aux" 1730912167.28007 4816 3b9430510cef8209bedef8551d781311 "pdflatex"
-  "main.tex" 1730907191.51 525 294fad49adb79e6033c5d94dc6331793 ""
-  "main.toc" 1730912167.28341 2447 a3cae0f3b2f40a07ecc668d732651295 "pdflatex"
+  "main.aux" 1733330533.61793 5115 90119a68fdd61d6cb03b157bc8cdd289 "pdflatex"
+  "main.tex" 1733327192.01835 556 b38d10379081425aa600243b818aee1c ""
+  "main.toc" 1733330533.62126 2635 1db73019a9d72c042fa9a971c17df1cb "pdflatex"
   "preamble/preamble.tex" 1726674650.23001 2506 7a6edac638f9122247cfea951bd9c0de ""
-  "src/lecture_10.tex" 1730912165.07674 4825 9c37752e489e9358b6455f82fe23a32f ""
+  "src/lecture_10.tex" 1730912194.12341 4825 9c37752e489e9358b6455f82fe23a32f ""
+  "src/lecture_11.tex" 1733330531.72458 4602 d89e0a628d8e057d66d4dc1eb828bc43 ""
   "src/lecture_2.tex" 1726674295.24334 5873 ba58c060964572569adc883973362355 ""
   "src/lecture_3.tex" 1726678794.7334 5097 a4d84ad64bcff75c4b476dc6b6c9b9b1 ""
   "src/lecture_4.tex" 1727283614.81341 5422 2a7b63e1de32ca21c691f7d3a4957b2c ""

@@ -1,30 +1,32 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 2}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Сортировки}{3}{}%
-\contentsline {subsubsection}{\numberline {1.1.1}Merge Sort (Сортировка слиянием)}{4}{}%
-\contentsline {subsubsection}{\numberline {1.1.2}Quick Sort \\ (Быстрая сортировка; Сортировка Хоара)}{5}{}%
-\contentsline {subsubsection}{\numberline {1.1.3}Quick Select}{6}{}%
-\contentsline {section}{\numberline {2}Лекция 3}{6}{}%
-\contentsline {subsection}{\numberline {2.1}Дерандомизация}{6}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Derandomized Quick Sort}{8}{}%
-\contentsline {subsection}{\numberline {2.2}Сортировка чисел}{8}{}%
-\contentsline {subsubsection}{\numberline {2.2.1}Least significant digit sort}{9}{}%
-\contentsline {section}{\numberline {3}Лекция 4}{9}{}%
-\contentsline {subsection}{\numberline {3.1}Кучи}{9}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Бинарная (двоичная) куча}{10}{}%
-\contentsline {subsubsection}{\numberline {3.1.2}HeapSort}{11}{}%
-\contentsline {subsubsection}{\numberline {3.1.3}Удаление из кучи}{12}{}%
-\contentsline {section}{\numberline {4}Лекция 5}{13}{}%
-\contentsline {subsection}{\numberline {4.1}Биномиальная куча}{13}{}%
-\contentsline {subsection}{\numberline {4.2}Амортизационный анализ}{15}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}Динамический массив \\ (std::vector)}{15}{}%
-\contentsline {section}{\numberline {5}Лекция 6}{16}{}%
-\contentsline {subsection}{\numberline {5.1}Связные списки}{17}{}%
-\contentsline {subsection}{\numberline {5.2}Куча Фиббоначи}{17}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Consolidate (Операция причёсывания кучи)}{18}{}%
-\contentsline {subsubsection}{\numberline {5.2.2}Анализ времени работы}{18}{}%
-\contentsline {section}{\numberline {6}Лекция 7}{19}{}%
-\contentsline {subsection}{\numberline {6.1}Стеки и очереди}{19}{}%
-\contentsline {section}{\numberline {7}Лекция 10}{20}{}%
-\contentsline {subsubsection}{\numberline {7.0.1}Метод потенциалов}{22}{}%
-\contentsline {subsubsection}{\numberline {7.0.2}Возвращаемся к $splay$-дерево}{22}{}%
+\contentsline {section}{\numberline {1}Лекция 2}{4}{}%
+\contentsline {subsection}{\numberline {1.1}Сортировки}{4}{}%
+\contentsline {subsubsection}{\numberline {1.1.1}Merge Sort (Сортировка слиянием)}{5}{}%
+\contentsline {subsubsection}{\numberline {1.1.2}Quick Sort \\ (Быстрая сортировка; Сортировка Хоара)}{6}{}%
+\contentsline {subsubsection}{\numberline {1.1.3}Quick Select}{7}{}%
+\contentsline {section}{\numberline {2}Лекция 3}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Дерандомизация}{7}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Derandomized Quick Sort}{9}{}%
+\contentsline {subsection}{\numberline {2.2}Сортировка чисел}{9}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Least significant digit sort}{10}{}%
+\contentsline {section}{\numberline {3}Лекция 4}{10}{}%
+\contentsline {subsection}{\numberline {3.1}Кучи}{10}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Бинарная (двоичная) куча}{11}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}HeapSort}{12}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}Удаление из кучи}{13}{}%
+\contentsline {section}{\numberline {4}Лекция 5}{14}{}%
+\contentsline {subsection}{\numberline {4.1}Биномиальная куча}{14}{}%
+\contentsline {subsection}{\numberline {4.2}Амортизационный анализ}{16}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Динамический массив \\ (std::vector)}{16}{}%
+\contentsline {section}{\numberline {5}Лекция 6}{17}{}%
+\contentsline {subsection}{\numberline {5.1}Связные списки}{18}{}%
+\contentsline {subsection}{\numberline {5.2}Куча Фиббоначи}{18}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Consolidate (Операция причёсывания кучи)}{19}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Анализ времени работы}{19}{}%
+\contentsline {section}{\numberline {6}Лекция 7}{20}{}%
+\contentsline {subsection}{\numberline {6.1}Стеки и очереди}{20}{}%
+\contentsline {section}{\numberline {7}Лекция 10}{21}{}%
+\contentsline {subsubsection}{\numberline {7.0.1}Метод потенциалов}{23}{}%
+\contentsline {subsubsection}{\numberline {7.0.2}Возвращаемся к $splay$-дерево}{23}{}%
+\contentsline {section}{\numberline {8}Лекция 11 (Хэш таблицы)}{24}{}%
+\contentsline {subsection}{\numberline {8.1}Совершенное хэширование}{26}{}%

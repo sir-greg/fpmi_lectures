@@ -1,0 +1,92 @@
+\section{Лекция 11 (Хэш таблицы)}
+Хотим сделать хэш-таблицу.
+\begin{definition}
+Ключи $x \neq y$  образуют коллизию отн-но $h$, если $h(x) = h(y)$
+\end{definition}
+\begin{note}
+Пусть $h$ --- случайная, а $x \neq y$ --- ключи. Тогда:
+\[
+P_h(h(x) = h(y)) = \frac{1}{k}
+\]
+\end{note}
+\begin{proof}
+$P_h(h(x) = h(y)) = \sum_{i = 1}^{k} \underbrace{P(h(x) = i, h(y) = i)}_{\frac{1}{k^{2}}} = \frac{1}{k}$ 
+\end{proof}
+Версии:
+\begin{itemize}
+  \item Алгоритмы (хэш-таблица цепочками)
+    \[
+    h \colon U \rightarrow \set{0, 1, \ldots, m - 1}
+    \]
+    Заводим $m$ односвязных списков $l_0, \ldots, l_{m - 1}$
+    \begin{itemize}
+      \item insert x: вычисл. $i = h(x)$ добавл. $x$ в список $l_i$ (добавляем в начало)
+      \item erase x: вычисл. $i = h(x)$, удалить $x$ из $h(i)$
+      \item find x: вычисл. $i = h(x)$, проверяем, есть ли $x$ в $l_i$
+    \end{itemize}
+\end{itemize}
+\begin{note}
+Если всего добавлено $n$ ключей, то вообщем размеры всех списков $\approx \frac{n}{m}$. Более того, если $x$ --- левый ключ, то мат. ожид. дляны списка $l_{h(x)}$ есть $\frac{n}{m}$
+\end{note}
+\[
+E\left|l_{h(x)}\right| = \sum_{i = 1}^{n} P_{h}(h(y_i) = h(x)) = \frac{n}{m}
+\]
+\begin{definition}
+Пусть $H = \set{h_s \colon U \rightarrow \set{0, 1, \ldots, m - 1}}$
+\end{definition}
+Такое сем-во ф-ций наз-ся универ. сем-вом хэш. ф-ций, если $\forall x \neq y\in U$
+\[
+P_s(h_s(x) = h_s(y)) \leq \frac{1}{m}
+\]
+Мораль: вместо идеальной хэш ф-ции можно брать $h_s \in H$
+\begin{statement}
+Пусть $U = \Z_p = \set{0, 1, \ldots, p - 1}$, $p$ --- простое, тогда при любом $m < p$ след. сем-во будет универс. $H = \set{h_{a, b}(x) = ((a x + b) \% p) \% m}$, $a, b \in \Z_p$
+\end{statement}
+\begin{proof}
+Пусть $x \neq y \in \Z_p$. Хотим оценить $P_{a, b}(h_{a, b}(x) = h_{a, b}(y))$
+\[
+  \underbrace{(ax + b) \% p}_{u} \% m \text{ и } \underbrace{(ay + b) \% p}_{v} \% m
+\]
+\begin{itemize}
+  \item [1) ] $u = v \Rightarrow (ax + b) \% p = (ay + b) \% p \Rightarrow a(x - y) \% p = 0$
+    \[
+    \Rightarrow x - y \% p = 0 
+    \]
+    $P(u = v) = \frac{1}{p}$
+  \item [2) ] $u \neq v$
+    \[
+      \begin{pmatrix}x & 1 \\ y & 1 \end{pmatrix}\begin{pmatrix}a \\ b \end{pmatrix} = \begin{pmatrix}u \\ v \end{pmatrix} \text{ в $\Z_p$}
+    \]
+    Невыр. $\Rightarrow$ $\exists$ реш. $(a, b)$
+    \[
+    P_{a, b}(h(x) = h(y)) \leq \frac{1}{p} + P_{u \neq v}(u \% m = v \% m)
+    \]
+    Т. к. все пары $(u \neq v)$ равновероятно получаются:
+    \[
+      (x, y) \rightarrow ((ax + b) \% p, (ay + b) \% p)
+    \]
+    Кол-во коллизий есть $v$ есть $\approx \frac{1}{p}$
+\end{itemize}
+\end{proof}
+\textbf{Новый алгоритм}: \\
+Заведем пустую хэш-таблицу с $m$ списками, пусть $n$ кол-во добавленных эл-ов. \\
+$\alpha = \frac{n}{m}$ --- Load factor \\
+insert, erase, find --- делаются как раньше. \\
+rehash --- когда $\alpha$ превышает некий порог (обычно $0.75$), то увеличиваем $m$ вдвое, выбираем новое $h$, перекладываем всё в новую hash table.
+\begin{theorem}
+\label{}
+В среднем такая структура работает за $O^{*}(1)$ в среднем.
+\end{theorem}
+\subsection{Совершенное хэширование}
+\begin{theorem}[(б/д) Парадокс дней рождения]
+Пусть $x_1, \ldots, x_n$ --- случайные числа в $\Z_m$:
+\begin{itemize}
+  \item [1) ] Если $m \geq n^{2}$, то $P(\text{есть коллизии}) \leq \frac{1}{2}$
+  \item [2) ] Если $m \leq \frac{1}{5}n^{2}$, то $P(\text{есть коллизии}) > \frac{1}{2}$
+  \item [3) ] Более того, если $H$ - сем-во универс. хэш ф-ций, то пункт $1)$ берём даже, если вместо $x_1, \ldots, x_n$ брать $h(x_1), \ldots, h(x_n)$
+\end{itemize}
+\end{theorem}
+В структуре лежат только $x_1, \ldots, x_n$:
+insert x $\in \set{x_1, \ldots, x_n}$ \\
+erase x $\in \set{x_1, \ldots, x_n}$ \\
+find x (x --- любой)
