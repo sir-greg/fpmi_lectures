@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  27 NOV 2024 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  28 NOV 2024 12:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -555,82 +555,49 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 
 
-[2] (./src/lecture_9.tex
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+[2] (./src/lecture_12.tex
 
- []
-
-
-
-[3]
+[3]) (./src/lecture_13.tex
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
-
- []
-
-) (./src/lecture_10.tex
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
-
+Overfull \hbox (4.08214pt too wide) in paragraph at lines 60--64
+\OML/cmm/m/it/12 n[]$ \T2A/cmr/m/n/12 --- кол-во раз-би-е-ний $\OML/cmm/m/it/12 n$ \T2A/cmr/m/n/12 на раз-лич-ные сла-га-е-мые, чис-ло кот-ых \T2A/cmr/bx/n/12 нечјт-
  []
 
 
 
 [6]
+Overfull \hbox (14.73172pt too wide) detected at line 122
+[][] [][] \OT1/cmr/m/n/12 = [] + (1 \OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] \OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n \OT1/cmr/m/n/12 + 1) + 2 \OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 n \OT1/cmr/m/n/12 + [] + (\OML/cmm/m/it/12 n \OT1/cmr/m/n/12 + 1) \OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 1)\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 + []
+ []
+
+
 
 [7]
 
-[8]) (./src/lecture_11.tex
+[8])
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-
- []
-
-
-
-[10{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (190.03625pt too wide) detected at line 104
-\OMS/cmsy/m/n/12 ) ^^@ []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] = \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] = [] = \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] = (0 \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[]) =
- []
-
-
-
-[11]
-Overfull \hbox (7.03125pt too wide) in paragraph at lines 141--142
-[]$\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 c[]; c[] \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 R$ \T2A/cmr/m/it/12 п-ть, за-да-ю-щая ф-лой $\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 c[]^^U[] \OT1/cmr/m/n/12 +
- []
-
-
-
-[12])
-
-[13] (./main.aux)
+[9] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8078 strings out of 473579
- 126017 string characters out of 5728235
- 1938957 words of memory out of 5000000
- 30804 multiletter control sequences out of 15000+600000
- 579600 words of font info for 97 fonts, out of 8000000 for 9000
+ 8068 strings out of 473579
+ 125866 string characters out of 5728235
+ 1936957 words of memory out of 5000000
+ 30800 multiletter control sequences out of 15000+600000
+ 578373 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,9n,82p,518b,405s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (13 pages, 298555 bytes).
+ 77i,9n,82p,319b,283s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on main.pdf (9 pages, 267096 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

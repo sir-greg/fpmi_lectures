@@ -1,0 +1,194 @@
+\section{Лекция 27}
+\subsection{Ф-ла Ньютона Лейбница}
+\begin{theorem}[Ф-ла Ньютона-Лейбница]
+\label{th:27-Newton-Leibniz}
+Если $f \in R[a, b]$ и имеет (обобщ.) первообразную на $[a, b]$, то:
+\[
+\int_{a}^{b} f \, dx = F(b) - F(a)
+\]
+\end{theorem}
+\begin{proof}
+Пусть $T = \set{x_i}_{i = 0}^{n}$ --- разбиение $[a, b]$. Если $F$ --- первообразная, то по т. Лагранжа:
+\[
+\exists c_i \in (x_{i - 1}, x_i) \colon F(x_i) - F(x_{i - 1}) = f(c_i) \triangle x_i
+\]
+А значит ($m_i = \underset{[x_{i - 1}, x_i]}{\inf} f, M_i = \underset{[x_{i - 1}, x_i]}{\sup} f$)
+\[
+m_i \triangle x_i \leq F(x_i) - F(x_{i - 1}) \leq M_i \triangle x_i
+\]
+\begin{note}
+Для обобщённой первообразной это нер-во вып-ся по следствию т. $10'$.
+\end{note}
+Просуммируем получ. нер-ва, то $i = 1, \ldots, n$, получим:
+\[
+s_T(f) \leq F(b) - F(a) \leq S_T(x_i)
+\]
+Перейдём к $\sup$ слева и к $\inf$ справа по всем разбиениям $T$:
+\[
+\underline{\int_{a}^{b}} f \, dx \leq F(b) - F(a) \leq \overline{\int_{a}^{b}} f \, dx
+\]
+Т. к. $f \in R[a, b]$, то "$=$", а значит:
+\[
+\int_{a}^{b} f(x) \, dx = F(b) - F(a)
+\]
+\end{proof}
+\subsection{Интеграл с переменным пределом}
+\begin{definition}
+Пусть $I$ --- невырожд. пром-к и $a \in I$. Пусть $f$ опр-на на $I$ и $f \in R[\alpha, \beta], \forall [\alpha, \beta] \subset I$. Тогда:
+\[
+F\colon I \rightarrow R
+\]
+\[
+F(x) = \int_{a}^{x} f(t) \, dt
+\]
+наз-ся \underline{интегралом с переменным верх. пределом}.
+\end{definition}
+\begin{theorem}[Основаная теорема интегрального исчисления]
+\label{th:27-Basic-Integral-Theorem(8)}
+Пусть $f$ опр-на на пром. $I, a \in I$, пусть $f \in R[\alpha, \beta], \forall [\alpha, \beta] \subset I$. Тогда $F$ непр-на на $I$. Кроме того, если $f$ непр. в т. $x$, то $F$ дифф-ма в т. $x$ и $F'(x) = f(x)$
+\end{theorem}
+\begin{proof}
+Пусть $x \in I$. Выберем $\sigma > 0$ так, что:
+\[
+[\alpha, \beta] = [x - \sigma, x + \sigma] \cap I \text{---  невырожд. отрезок}
+\]
+По усл-ию $f \in R[\alpha, \beta]$, в част-ти $f$ огр-на на $[\alpha, \beta], \left|f\right| \leq \left|M\right|$, на $[\alpha, \beta]$ \\
+Тогда для $\forall y \in [\alpha, \beta]$:
+\[
+\left|F(y) - F(x)\right| = \left|\int_{a}^{y} f(t) \, dt - \int_{a}^{x} f(t) \, dt\right| = 
+\]
+\[
+ = \left|\int_{x}^{y} f(t) \, dt\right| \leq \left|\int_{x}^{y} \left|f(t)\right| \, dt\right| \leq M|y - x|
+\]
+Сл-но, $\lim_{y\to x} F(y) = F(x) \iff F$ непр-на в произвольной т. $x$ $\iff F$ непр-на на $I$ \\
+Зафикс. $\varepsilon > 0$. По опр-ю непр-ти $f$ в т. $x$
+\[
+  \exists \delta > 0, \forall t \in \overset{\circ}{B_{\delta}}(x) \cap I, \left|f(t) - f(x)\right| < \varepsilon
+\]
+Тогда для любого $y \in \overset{\circ}{B_{\delta}}(x) \cap I$:
+\[
+\left|\frac{F(y) - F(x)}{y - x} - f(x)\right| = \left|\frac{1}{y - x}\int_{x}^{y}  f(t) \, dt - \frac{1}{y - x} \int_{x}^{y} f(x) \, dt\right| = 
+\]
+\[
+=  \frac{1}{\left|y -x \right|}\left|\int_{x}^{y} (f(t) - f(x)) \, dt\right| = \frac{1}{\left|y - x\right|} \left|\int_{x}^{y} \left|f(t) - f(x)\right| \, dt\right| \leq
+\]
+\[
+ \leq  \varepsilon \cdot \frac{1}{\left|y -x \right|} \left| \int_{x}^{y}\, dt\right| = \varepsilon
+\]
+Ч. Т. Д.
+\end{proof}
+\begin{consequence}
+Всякая непр-ная на пром. $I$ ф-ция имеет первообразную. Всякая монотонная на $I$ ф-ция имеет обобщённую первообразную.
+\end{consequence}
+\begin{note}
+Если $f \in R[a, b]$ и имеет (обобщ.) первообразную по $F$ на $[a, b]$, то $F$ с точностью до константы совпадает с интегралом с переменным пределом.
+\end{note}
+\subsection{Приёмы интегрирования}
+\begin{theorem}
+\label{th:ways-of-integration(9)}
+Пусть $f$ непр-на на $I$, $\phi \colon [\alpha, \beta] \rightarrow I$ дифф-ма на $[\alpha, \beta], \phi \in R[\alpha, \beta]$, тогда:
+\[
+\int_{a}^{b} f(x) \, dx = \int_{\alpha}^{\beta} (f \circ \phi) \phi'(t) \, dt
+\]
+Где $a = \phi(\alpha), b = \phi(\beta)$
+\end{theorem}
+\begin{proof}
+Т. к. $f$ непр-на, то $f \circ \phi$ непр-на на $[\alpha, \beta]$, а значит, $(f \circ \phi) \cdot \phi' \in R[\alpha, \beta]$. Пусть $F$ --- первообраз. $f$ на $I$. Т. к.:
+\[
+  (F \circ \phi)' = F'(\phi) \cdot \phi' = (f \circ \phi) \phi'
+\]
+на $[\alpha, \beta]$ \\
+По ф-ле Н-Л:
+\[
+  \int_{\alpha}^{\beta} (f \circ \phi) \phi'(t) \, dt = F \circ \phi \vert_{\alpha}^{\beta} = F(\phi(\beta)) - F(\phi(\alpha)) = F(b) - F(a) = \int_{a}^{b} f(x) \, dx
+\]
+\end{proof}
+\begin{theorem}
+\label{th:integration-by-parts(10)}
+Пусть $f, g$ дифф-мы на $[a, b]$ и $f', g' \in R[a, b]$. Тогда:
+\[
+\int_{a}^{b} f'(x)g(x) \, dx = f(x)g(x)|_{a}^{b} - \int_{a}^{b} f(x)g'(x) \, dx
+\]
+(Ф-ла интегрирования по частям)
+\end{theorem}
+\begin{proof}
+Обозначим:
+\[
+h = f'g + fg'
+\]
+Т. к.:
+\[
+h = (fg)'
+\]
+то $fg$ --- первообразная $h$ на $[a, b]$. По ф-ле Ньютона-Лейбница получаем:
+\[
+\int_{a}^{b} f'g \, dx + \int_{a}^{b} fg' \, dx = (fg)|_{a}^{b} = f(b)g(b) - f(a)g(a)
+\]
+\end{proof}
+\begin{example}
+  \[
+    Y_m = \int_{0}^{\frac{\pi}{2}} \sin^{m}x \, dx, m \in \N_0
+  \]
+\end{example}
+\begin{proof}
+Для $m \geq 2$ по ф-ле инт-я по частям имеем:
+\[
+Y_m = \int_{a}^{b} \sin^{m - 1}x (-\cos x)' \, d = \underbrace{-\sin^{m - 1}x \cos x |_{0}^{\frac{\pi}{2}}}_{=0} + (m - 1)\int_{0}^{\frac{\pi}{2}} \sin^{m - 2}\cos^{2}x \, dx = 
+\]
+\[
+ = (m - 1)(Y_{m - 2} - Y_m) \Rightarrow Y_M = \frac{m - 1}{m} Y_{m - 2}
+\]
+\[
+ \Rightarrow Y_M = 
+ \begin{cases}
+ \frac{(m - 1)!!}{m!!} \frac{\pi}{2}, m \text{ --- чёт.} \\
+ \frac{(m - 1)!!}{m!!}, m \text{ --- нечет.}
+ \end{cases}
+\]
+\end{proof}
+\begin{example}[Ф-ла Валлиса]
+  \[
+  \pi = \lim_{n\to \infty} \frac{1}{n} \left(\frac{(2n)!!}{(2n - 1)!!}\right)^{2}
+  \]
+\end{example}
+\begin{proof}
+На $[0, \frac{\pi}{2}]$
+\[
+  \sin^{2n + 1}x \leq \sin^{2n} x \leq \sin^{2n - 1} x
+\]
+Из предыдущего примера:
+\[
+  \frac{(2n)!!}{(2n + 1)!!} \leq \frac{(2n - 1)!!}{(2n)!!}\frac{\pi}{2} \leq \frac{(2n - 2)!!}{(2n - 1)!!}
+\]
+Обозначим $x_n = \frac{1}{n}\left(\frac{(2n)!!}{(2n - 1)!!}\right)^{2}$
+\[
+\vdots
+\]
+\end{proof}
+\begin{theorem}
+\label{th:integr-mid-theorem(11)}
+Пусть $f, g \in R[a, b], m \leq f \leq M$ на $[a, b], g$ не меняет знака на $[a, b]$. Тогда $\exists \lambda \in [m, M]$:
+\[
+  \int_{a}^{b} f(x)g(x) \, dx = \lambda \int_{a}^{b} g(x) \, dx
+\]
+
+\end{theorem}
+\begin{proof}
+Пусть $g \geq 0$:
+Тогда:
+\[
+  mg \leq fg \leq Mg
+\]
+\[
+  m \int_{a}^{b} g(x) \, dx \leq \int_{a}^{b} f(x)g(x) \, dx \leq M\int_{a}^{b} g(x) \, dx
+\]
+Если $\int_{a}^{b} g(x) \, dx = 0 \Rightarrow \int_{a}^{b} f(x)g(x) \, dx = 0$ \\
+Если $\int_{a}^{b} g(x) \, dx \neq 0 (> 0)$, то:
+\[
+\lambda = \frac{\int_{a}^{b} f(x)g(x) \, dx}{\int_{a}^{b} g(x) \, dx} \in [m; M]
+\]
+Случай $g \leq 0$ св-ся аналогично.
+\end{proof}
+\begin{task}
+Док-ть, что $\lambda$ может быть выбрана на $(m; M)$
+\end{task}

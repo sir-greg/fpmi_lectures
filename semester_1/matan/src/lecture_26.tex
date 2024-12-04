@@ -1,0 +1,171 @@
+\section{Лекция 26}
+\begin{theorem}
+\label{th5}
+Пусть $f \in R[a, b]$, $m \leq f \leq M$ на $[a, b]$ и ф-ция $g$ непрерыв. на $[m, M]$. Тогда $g \circ f \in R[a, b]$
+\end{theorem}
+\begin{proof}
+Обозначим $h = g \circ f$. По т. Кантора, ф-ция $g$ равн. непр. на $[m, M]$. Заф. $\varepsilon > 0$. Тогда
+\[
+  \exists \delta > 0, \forall y', y'' \in [m, M] \left(\left|y' - y''\right| < \delta \Rightarrow \left|g(y') - g(y'')\right| < \varepsilon\right)
+\]
+Можно считать, что $\delta < \varepsilon$. По теореме $\ref{th3:crit_integ_rieman_3}$:
+\[
+\exists T = \set{x_k}_{k = 1}^{n} \text{ отр-ка } [a, b] \colon
+\]
+\[
+  \Omega_T(f) < \delta^{2}
+\]
+Положим $\omega_k$ - колебание $h$ на $[x_{k - 1}, x_{k}]$. Тогда:
+\[
+\Omega_T(h) = \sum_{k = 1}^{n} \omega_k \triangle x_k = \sum_{k \in A}^{} \omega_k \triangle x_k + \sum_{k \in B}^{} \omega_k \triangle x_k
+\]
+где $A$ --- мн-во тех номеров, для кот-ых $\omega(f, [x_{k - 1}, x_k]) < \delta$, а $B$ --- мн-во остальных номеров. Если $k \in A$, то
+\[
+  \forall x', x'' \in [x_{k - 1}, x_k] \colon \left|f(x') - f(x'')\right| < \delta,
+\]
+а значит
+\[
+  \left|h(x') - h(x'')\right| = \left|g(f(x')) - g(f(x''))\right| < \varepsilon
+\]
+Поэтому $\omega_k \leq \varepsilon$:
+\[
+\sum_{k \in A}^{} \omega_k \triangle x_k \leq \varepsilon \sum_{k = 1}^{n} \triangle x_k = \varepsilon(b - a)
+\]
+Оценим вторую сумму. Отметим, что:
+\[
+\delta \sum_{k \in B}^{} \triangle x_k \leq \sum_{k \in B}^{} w(f, [x_{k - 1}, x_k])\triangle x_i \leq \sum_{k = 1}^{n} w(f, [x_{k - 1}, x_k]) \triangle x_i = \Omega_T(f) < \delta^{2}
+\]
+\[
+\Rightarrow \sum_{k \in B}^{} \triangle x_k < \delta < \varepsilon
+\]
+Ф-ция $g$ непр-на на $[m, M]$, а значит, огр., $\left|g\right| \leq C$. Тогда $\omega_k \leq 2C$. В итоге:
+\[
+\Omega_T(h) = \sum_{k \in A}^{} \omega_k \triangle x_k + \sum_{k \in B}^{} \omega_k \triangle x_k < \varepsilon(b -a + 2C)
+\]
+По теореме $\ref{th:3}$
+\end{proof}
+\begin{task}
+Композиция двух ф-ций, интегрируемых по Риману, необязательно интегрируема.
+\end{task}
+\begin{consequence}
+Пусть $f, g \in R[a, b]$, тогда:
+\begin{itemize}
+  \item [1) ] $f \cdot g \in R[a, b]$
+  \item [2) ]
+    \[
+      \left|f\right| \in R[a, b] \text{ и } \left|\int_{a}^{b} f \, dx\right| \leq \int_{a}^{b} \left|f\right| \, dx
+    \]
+\end{itemize}
+\end{consequence}
+\begin{proof}
+  \begin{itemize}
+    \item [1) ]
+$t \mapsto t^{2}$ --- непр-на на $\R \overset{\text{теор. $\ref{th5}$}}{\Rightarrow} f^{2} \in R[a, b]$
+\[
+f \cdot g = \frac{1}{4}((f + g)^{2} - (f - g)^{2}) \in R[a, b]
+\]
+    \item [2) ] $t \mapsto \left|t\right|$ --- непр. на $\R \overset{\text{теор. $\ref{th5}$}}{\Rightarrow}$ $\left|f\right| \in \R[a, b]$
+      \[
+      \Rightarrow -\left|f\right| \leq f \leq \left|f\right| \Rightarrow \text{очев.}
+      \]
+  \end{itemize}
+\end{proof}
+Пусть $T = \set{x_i}_{i = 0}^{n}$ --- разб. $[a, b]$, $\xi = \set{\xi_i}_{i = 1}^{n}$, где $\xi_i \in [x_{i - 1}, x_i]$. Пара  $(T, \xi)$ наз-ся \underline{отмеченным разбиением}. Пусть $f$ опр-на на $[a, b]$ и $(T, \xi)$ --- отмеч. разб. Тогда:
+\[
+  \sigma_T(f, \xi) = \sum_{i = 1}^{n} f(\xi_i)\triangle x_i
+\]
+Наз-ся \underline{суммой Римана}, отвечающей ($T, \xi$)
+\begin{lemma}
+  \label{lm3}
+Для всякого разб-я $T$ отр-ка $[a, b]$ выполнено,
+\[
+  s_T(f) = \underset{\xi}{\inf} \sigma_T(f, \xi)
+\]
+\[
+  S_T(f) = \underset{\xi}{\sup} \sigma_T(f, \xi)
+\]
+\end{lemma}
+\begin{proof}
+Пусть $T = \set{x_i}_{i = 0}^{n}$. Т. к. $f(x) \geq m_i, \forall x \in [x_{i - 1}, x_i]$, то $\sigma_T(f, \xi) \geq s_T(f)$ \\
+Заф. $\varepsilon > 0$ и выберем $\xi_i' \in [x_{i - 1}, x_i]$, так что:
+\[
+f(\xi_i') < m_i + \frac{\varepsilon}{b - a}, \xi' = \set{\xi_i'}
+\]
+\[
+\sigma_T(f, \xi') = \sum_{i = 1}^{n} f(\xi_i') \triangle x_i < \sum_{i = 1}^{n} \left(m_i + \frac{\varepsilon}{b - a}\right)\triangle x_i = 
+\]
+\[
+ = s_T(f) + \frac{\varepsilon}{b - a} \sum_{i = 1}^{n} \triangle x_i = s_T(f) + \varepsilon
+\]
+Таким образом $s_T(f)$ --- инфимум мн-ва $\set{\sigma_T(f, \xi) \colon \set{\xi}}$
+\end{proof}
+\begin{lemma}
+\label{lm:4}
+Если $f$ огр-на на $[a, b]$, то
+\[
+  \forall \varepsilon > 0, \exists \delta > 0 \colon \forall T \text{ --- разб. $[a, b]$, } \left|T\right| < \delta
+\]
+\[
+  \underline{\int_{a}^{b}} f - s_T(f) \, dx < \varepsilon, S_T(f) - \overline{\int_{a}^{b}} f  \, dx
+\]
+\end{lemma}
+\begin{proof}
+$M > 0, \left|f\right| \leq M$ на $[a, b]$. Заф. $\varepsilon > 0$, по опр-ю $\underline{\int_{a}^{b}} f$ найдётся $T_{\varepsilon} = \set{x_i}_{i = 0}^{m}$, что:
+\[
+\underline{\int_{a}^{b}} f - s_{T_\varepsilon}(f) < \frac{\varepsilon}{2}
+\]
+Пусть $T$ произв. разб. $[a, b]$ и $R = T \cup T_\varepsilon$. Т. к. $R$ получено из $T$, добавим $\leq m$, то $S_{R}(f) - s_T(f) \leq 2Mm\left|T\right|$, а значит:
+\[
+\underline{\int_{a}^{b}} f - s_T(f)  = \underline{\int_{a}^{b}} f - s_{T_\varepsilon}(f) + S_{T_\varepsilon}(f) - s_{T}(f) < \frac{\varepsilon}{2} + S_R(f) - s_T(f) < \frac{\varepsilon}{2} + 2Mm\left|T\right|
+\]
+\end{proof}
+\begin{theorem}[Критерий Дарбу]
+\label{th6:crit_Darbonapht}
+След. утв. эквив-ны:
+\begin{itemize}
+  \item [1) ] $f$ интегр. на $[a, b]$
+  \item [2) ] $\exists I \in \R, \forall \varepsilon > 0, \exists \delta > 0 \forall (T, \xi)(\left|T\right| < \delta \Rightarrow \left|\sigma_T(f, \xi) - I\right| < \varepsilon)$
+\end{itemize}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [$1 \Rightarrow 2$)] \[
+  \underline{\int_{a}^{b}} f = \overline{\int_{a}^{b}} f = I 
+  \]
+  Заф. $\varepsilon > 0$. По лемме $\ref{lm4}$:
+  \[
+  \exists \delta > 0, \forall T \text{ --- разб. $[a, b]$}, \left|T\right| < \delta
+  \]
+  \[
+  \forall \set{\xi}, I - \varepsilon < s_T(f) \leq \sigma_T(f, \xi) \leq S_T(f) < I + \varepsilon \Rightarrow I - \varepsilon < \sigma_T(f, \xi) < I + \varepsilon
+  \]
+\item [$2 \Rightarrow 1$)] Заф. $\varepsilon > 0$. Тогда $\exists \delta > 0$
+  \[
+  \forall (T, \xi) , \left|T\right| < \delta \colon
+  \]
+  \[
+  I - \varepsilon < \sigma_T(f, \xi) < I + \varepsilon
+  \]
+  \[
+  I - \varepsilon \leq s_T(f) \leq S_T(f) \leq I + \varepsilon
+  \]
+  \[
+  \Rightarrow I - \varepsilon \leq \underline{\int_{a}^{b}} f \leq \overline{\int_{a}^{b}} f \leq I + \varepsilon 
+  \]
+  Т. к. $\varepsilon > 0$, любое, то $\underline{\int_{a}^{b}} f = \overline{\int_{a}^{b}} f$
+\end{itemize}
+\end{proof}
+\begin{consequence}
+Пусть $f \in R[a, b]$ и $(T_n, \xi_n)$ --- послед. отм. разб. $[a, b]$, $\left|T_n\right| \rightarrow 0$ при $n \rightarrow \infty$. Тогда:
+\[
+\sigma_{T_n}(f, \xi_n) \rightarrow \int_{a}^{b} f \, dx
+\]
+Заф. $\varepsilon > 0$. Найдётся $\delta > 0$ из $(2)$, то $\exists N \forall n \geq N (\left|T_n\right| < \delta)$, а значит $\left|\sigma_{T_n}(f, \xi_n) - \int_{a}^{b} f \, dx\right| < \varepsilon$
+\end{consequence}
+\begin{theorem}[Формула Ньютона Лейбница]
+\label{th:Newton-Leibniz}
+Если $f \in R[a, b]$ и имеет (обобщ.) первообразную $F$ на $[a, b]$, то:
+\[
+\int_{a}^{b} f \, dx = F(b) - F(a)
+\]
+\end{theorem}

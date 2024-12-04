@@ -188,3 +188,20 @@ T = T_0 \cup \set{a, b} \text{ --- разб. $[a, b]$}
 \Rightarrow f \in R[a, b]
 \]
 \end{proof}
+\begin{consequence}
+Пусть $f$ огр-на на $[a, b]$ и мн-во точек разрыва $f$ на $[a, b]$ конечно. Тогда $f$ интегрируема на $[a, b]$
+\end{consequence}
+\begin{proof}
+Добавим к точкам разрыва $a, b$:
+\[
+a = x_0 < x_1 < x_2 < \ldots < x_N = b
+\]
+По теореме $\ref{th3:crit_integ_rieman_3}$, ф-ция $f \in R[c, d], \forall [c, d] \subset [x_{i - 1}, x_i] \Rightarrow f \in R[x_{i - 1}, x_i]$. Благодаря св-ву аддитивности интеграла, получаем, что $f$ интегрируема на $[a, b]$
+\end{proof}
+\begin{example}
+\[
+f(x) = \sin \frac{1}{x}, f(0) = a, a \in \R
+\]
+Тогда $f \in R[-1, 1]$
+\end{example}
+

@@ -1,0 +1,265 @@
+\section{Лекция 26}
+\subsection{Определители произовльного порядка}
+\[
+\sigma \colon M \rightarrow M \text{ --- подстановка}
+\]
+\begin{statement}
+  Следующие три определения эквив-ны: подстановка наз-ся \textbf{чётной}, если:
+\begin{itemize}
+  \item [1) ] Чётности верхней и нижней строк совпадают
+  \item [2) ] $n_1 + n_2 \text{ --- чётно}$, где $n_i$ - число инверсий в $i$-ой строке ($i = 1, 2$)
+  \item [3) ] Она раскладывается в произведение чётного числа транспозиций
+\end{itemize}
+\end{statement}
+\begin{proof}
+  ~\newline
+\begin{itemize}
+  \item [$1 \iff 2$) ] $n_1 + n_2 \in 2\Z \iff \begin{pmatrix}n_1 \\ n_2 \end{pmatrix} = \begin{pmatrix}\text{ч} \\ \text{ч}\end{pmatrix}\lor \begin{pmatrix}n_1 \\ n_2 \end{pmatrix} = \begin{pmatrix}\text{нч} \\ \text{нч} \end{pmatrix} \iff $чётность строк совпадет
+  \item [$1 \iff 3$)] Т. к. каждая транспозиция меняет чётность кол-ва инверсий, то число множителей в произведении чётно.
+\end{itemize}
+\end{proof}
+\begin{symb}
+\textbf{Знак подстановки}:
+\[
+\varepsilon \colon S_h \rightarrow \set{\pm 1}
+\]
+\[
+\varepsilon(\sigma) = \begin{cases}
+1, \text{ если } \sigma \text{ --- чётно} \\
+-1, \text{если } \sigma \text{ --- нечётно}
+\end{cases} = (-1)^{\inv(\sigma)} = (-1)^{\tau(\sigma)}
+\]
+\[
+\inv(\sigma) \text{ --- суммарное число инверсий ($n_1 + n_2$)}
+\]
+\[
+\tau(\sigma) \text{ --- размер минимального по кол-ву транспозиций разложения $\sigma$}
+\]
+\end{symb}
+\begin{statement}
+Знак перестановки явл-ся гомоморфизмом мультипликативных групп:
+\[
+\varepsilon(\sigma \cdot p) = \varepsilon(\sigma) \cdot \varepsilon(p)
+\]
+\end{statement}
+\begin{proof}
+\[
+\sigma = \tau_1 \ldots \tau_k
+\]
+\[
+p = \tau_1' \ldots \tau_s'
+\]
+\[
+\Rightarrow \sigma \cdot p = \tau_1 \ldots \tau_k \cdot \tau_1' \ldots \tau_s'
+\]
+\[
+\varepsilon(\sigma \cdot p) = (-1)^{k + s} = (-1)^{k} (-1)^{s} = \varepsilon(\sigma) \cdot \varepsilon(p)
+\]
+\end{proof}
+Вспомним определитель 3-его порядка:
+\[
+  \begin{vmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{vmatrix} = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{21}a_{32}a_{13} - 
+\]
+\[
+  - a_{13}a_{22}a_{31} - a_{11}a_{23}a_{32} - a_{21}a_{12}a_{33}
+\]
+Сделаем сопоставление:
+\[
+  a_{i_1 j_1} a_{i_2 j_2} a_{i_3 j_3} \mapsto \begin{pmatrix}i_1 & i_2 & i_3 \\ j_1 & j_2 & j_3 \end{pmatrix}
+\]
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+  Слагаемое & Подстановка $\sigma$ & $\varepsilon(\sigma)$ \\
+ \hline
+  $a_{11} a_{22} a_{33}$ & $id$ & $+1$ \\
+  $a_{12}a_{23}a_{31}$ & $\begin{pmatrix}1 & 2 & 3 \\ 2 & 3 & 1\end{pmatrix}$ & $+1$ \\
+  $a_{13}a_{21}a_{32}$ & $\begin{pmatrix}1 & 2 & 3 \\ 3 & 1 & 2 \end{pmatrix}$ & $+1$ \\
+  \vdots & \vdots & \vdots \\
+ \hline
+\end{tabular}
+\end{center}
+На основании этой таблицы строиться формула общего вида (и соотв. определение):
+\[
+  \det A = \left|A\right| = \sum_{\sigma \in S_n}^{} \varepsilon(\sigma) a_{1 \sigma(1)} a_{2 \sigma(2)} \cdot \ldots \cdot a_{n \sigma(n)}
+\]
+\begin{statement}
+При транспонировании матрицы $A$ её определитель не меняется. Пусть $a_{1 \sigma(1)}\ldots a_{n \sigma(n)}$ входит в состав $\det A$ (и соотв. в состав $\det (A^{T})$)
+\[
+  \det A \rightarrow \varepsilon\begin{pmatrix}1 & 2 & \ldots & n \\ \sigma(1) & \sigma(2) & \ldots & \sigma(n) \end{pmatrix}
+\]
+\[
+  \det A^{T} \rightarrow \varepsilon\begin{pmatrix}\sigma(1) & \sigma(2) & \ldots & \sigma(n) \\ 1 & 2 & \ldots & n \end{pmatrix}
+\]
+\end{statement}
+\subsection{Полилинейные кососимметрические ф-ции} 
+\begin{definition}
+$f \colon V^{n} \rightarrow F$ наз-ся \textbf{полилинейной}, если она линейна по каждому из своих арг-ов:
+\end{definition}
+\[
+V^{n} = \set{(a_1, \ldots, a_n), a_i \in V}
+\]
+\[
+f(a_1, \ldots, a_n) \in F
+\]
+Линейность подразумевает:
+\begin{itemize}
+  \item [1) ] Аддитивность:
+    \[
+    f(\ldots, a_i + a_i', \ldots) = f(\ldots, a_i, \ldots) + f(\ldots, a_i', \ldots)
+    \]
+  \item [2) ] Однородность:
+    \[
+    \forall \lambda \in F \colon f(\ldots \lambda a_i \ldots) = \lambda f(\ldots a_i \ldots)
+    \]
+\end{itemize}
+Пусть $\charac F \neq 2$
+\begin{definition}
+Полилин. ф-ция $f \colon V^{n} \rightarrow F$ наз-ся кососимметрическим, если:
+\begin{itemize}
+  \item [a)] $f(\ldots a_i \ldots a_j \ldots) = -f(\ldots a_j \ldots a_i \ldots), i \neq j$
+  \item [b)] $f(\ldots a \ldots a \ldots) = 0$
+\end{itemize}
+\end{definition}
+\begin{proof}
+  ~\newline
+\begin{itemize}
+  \item [a) $\Rightarrow$ b)] \[
+  f(\ldots a \ldots a \ldots) = -f(\ldots a \ldots a \ldots) 
+  \]
+  Если $\charac F = 2$, то опр-е не пол-ся. Иначе всё ок.
+\item [b) $\Leftarrow$ a)]
+  \[
+  0 = f(\ldots a_i + a_j \ldots a_i + a_j) = f(\ldots a_i \ldots a_j \ldots) + f(\ldots a_i \ldots a_i \ldots) + 
+  \]
+  \[
+   + f(\ldots a_j \ldots a_j \ldots) + f(\ldots a_j \ldots a_i \ldots) = 
+  \]
+  \[
+    = f(\ldots a_i \ldots a_j \ldots) + f(\ldots a_j \ldots a_i \ldots)
+  \]
+\end{itemize}
+\end{proof}
+\begin{note}
+В случае $\charac F = 2$, п. $b) $ выбирается в кач-ве опр-я.
+\end{note}
+\begin{statement}
+Пусть $f \colon V^{n} \rightarrow F$ --- полилин. кососим., тогда $\forall \sigma \in S_n$
+\[
+f(a_{\sigma(1)} \ldots a_{\sigma(n)}) = \varepsilon(\sigma) f(a_1\ldots a_n)
+\]
+\end{statement}
+\begin{proof}
+  Индукция по $\tau(\sigma)$:
+  \begin{itemize}
+    \item [База: ] $\tau(\sigma) = 1 \Rightarrow \sigma$ --- очев.
+    \item [Переход:] Пусть для $\sigma$, т. ч. $\tau(\sigma) < k$, утв-е вып-ся. Тогда для $\tau(\sigma) = k$, утв-е верно, (делаем ещё один $swap$, чётность мен-ся, и утв-е верно)
+  \end{itemize}
+\end{proof}
+\begin{theorem}[О характеризации определителя его св-вам]
+\label{th:polilin_and_kos_1}
+\[
+A \in M_n(F)
+\]
+Тогда:
+\begin{itemize}
+  \item [a) ] $\det A$ --- полилин., кососим. ф-ция от строк (или столбцов) матрицы $A$
+  \item [b) ] Пусть $f \colon M_n(F) \rightarrow F$ --- полилин. кососим. ф-ция от строк (или столбцов) матрицы. Тогда:
+    \[
+    f(A) = f(E) \cdot \det A, \text{ где $E$ --- единич. матрица}
+    \]
+\end{itemize}
+\begin{proof}
+  \begin{itemize}
+    \item [a) ] Зафикс. все элем-ты, матрицы $A$ : $a_{ij}, i > 1$:
+      \[
+      \det A = \sum_{\sigma \in S_n}^{} \varepsilon(\sigma) \cdot a_{1 \sigma(1)} \ldots a_{n \sigma(n)} = \sum_{j}^{} \alpha_j a_{1j}
+      \]
+      --- лин. форма коорд. $I$ строки. \\
+      \begin{itemize}
+        \item [1)]
+    $\charac F \neq 2$. Проверим, что $\det A$ --- кососим ф-ция от строк $A$:
+    \[
+    \det (\overline{a_1} \ldots \overline{a_i} \ldots \overline{a_j} \ldots \overline{a_n}) \overset{?}{=} -\det (\overline{a_1} \ldots \overline{a_j} \ldots \overline{a_i} \ldots \overline{a_n})
+    \]
+    \begin{itemize}
+      \item [I. ] $a_{1 \sigma(1)} \ldots a_{i \sigma(i)} \ldots a_{j \sigma(j)} \ldots a_{n \sigma(n)} \mapsto \det A$
+      \item [II. ] $a_{1 \sigma(1)} \ldots a_{j \sigma(j)} \ldots a_{i \sigma(i)} \ldots a_{n \sigma(n)} \mapsto \det A'$
+    \end{itemize}
+     $\Rightarrow \varepsilon(I) = -\varepsilon(II) \Rightarrow \det A' = -\det A$
+   \item [2) ] $\charac F = 2$
+     \[
+     \det (\overline{a_1} \ldots \overline{a_i} \ldots \overline{a_j} \ldots \overline{a_n}) \overset{?}{=} 0, (\overline{a_i} = \overline{a_j})
+     \]
+      \end{itemize}
+    \item [b) ] \[
+        e_1 = \begin{pmatrix}1 & 0 & \ldots & 0 \end{pmatrix}
+    \]
+    \[
+      e_2 = \begin{pmatrix}0 & 1 & \ldots & 0 \end{pmatrix}
+    \]
+    \[
+      \vdots
+    \]
+    \[
+      e_n = \begin{pmatrix}0 & 0 & \ldots & 1 \end{pmatrix}
+    \]
+      \[
+    f(a_1, \ldots, a_n) = f\left(\sum_{j_1}^{} a_{1 j_1}e_{j_1}, \sum_{j_2}^{} a_{2, j_2} e_{j_2} \ldots \sum_{j_n}^{} a_{n j_n} e_{j_n}\right) = 
+    \]
+    \[
+     = \sum_{j_1}^{} \sum_{j_2}^{} \ldots \sum_{j_n}^{} \varepsilon(j) a_1 {j_1} \ldots a_{n j_n} f(e_1, \ldots, e_n) = \det A f(E)
+    \]
+  \end{itemize}
+\end{proof}
+\end{theorem}
+\begin{statement}
+\begin{itemize}
+  \item [a) ] Если над матрицей $A$ совершить ЭП строк $I$ типа ($a_i \mapsto a_i + \lambda a_j$), то опр-тель не меняется.
+  \item [b) ] При преобразованиях второго типа ($a_i \leftrightarrow a_j$) опр-тель изменит свой знак.
+  \item [c) ] При преобразованиях третьего типа $(a_i \mapsto \lambda a_i)$ опр-тель умножается на $\lambda$
+\end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] \[
+      \det (\overline{a_1} \ldots \overline{a_i} + \lambda\overline{a_j} \ldots \overline{a_n}) = 
+  \]
+  \[
+   = \det(\overline{a_1} \ldots \overline{a_i} \ldots \overline{a_n}) + \lambda\det (\overline{a_1} \ldots \overline{a_j} \ldots \overline{a_j} \ldots \overline{a_n}) = 
+  \]
+  \[
+   = \det(\overline{a_1} \ldots \overline{a_i} \ldots \overline{a_n})
+  \]
+\item [b)] Из кососим.
+\item [c) ] Следсвие однородности.
+\end{itemize}
+\end{proof}
+\begin{definition}
+Матрица $A \in M_n(F)$ наз-ся верхнетреугольной (нижнетреугольной), если $a_{ij} = 0, i > j (i < j)$
+\end{definition}
+\begin{statement}
+Определитель верхнетреугольной (нижнетреугольной) матрицы равен произведению эл-ов на главной диагонали.
+\end{statement}
+\begin{proof}
+  \[
+  \varepsilon(\sigma) a_{1 \sigma(1)} a_{2 \sigma(2)} \ldots a_{n \sigma(n)} \rightarrow \det A
+  \]
+  Если $\sigma \neq e$, то $\exists i$, т. ч. $\sigma(i) < i \Rightarrow a_{i \sigma(i)} = 0$ (Легко док-ть от прот.) $\Rightarrow$ единственное ненулевое произведение --- произведение эл-ов главной диагонали.
+\end{proof}
+\begin{definition}
+Минором $k$-ого порядка матрицы $A$ наз-ся $\det M_{j_1 j_2 \ldots j_k}^{i_1 i_2 \ldots i_k}$
+\end{definition}
+\begin{definition}
+Ранг матрицы по минорам наз-ся порядок её наибольшего ненулевого минора. ($\det M \neq 0$)
+\[
+\rk_M A
+\]
+\end{definition}
+\begin{theorem}[Фробениус, 1873-75 гг.]
+\label{th:minor_rk_is_ok}
+Все 3 понятия ранга матрицы эквив-ны, т. е.:
+\[
+\rk_r A = \rk_c A = \rk_M A
+\]
+\end{theorem}

@@ -6,3 +6,6 @@
 \contentsline {subsection}{\numberline {3.1}Операции над ЛО}{6}{}%
 \contentsline {subsection}{\numberline {3.2}Ранг лин. отображения}{7}{}%
 \contentsline {subsection}{\numberline {3.3}Изменение матр. ЛО при замене базисов}{7}{}%
+\contentsline {section}{\numberline {4}Лекция 26}{9}{}%
+\contentsline {subsection}{\numberline {4.1}Определители произовльного порядка}{9}{}%
+\contentsline {subsection}{\numberline {4.2}Полилинейные кососимметрические ф-ции}{11}{}%

@@ -1,0 +1,189 @@
+\section{Лекция 14}
+Расшир. ИВ на ф-лы $1$-ого порядка. \\
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ $\set{\text{Вывод. ф-лы}}$ & $=$ & $\set{\text{Общезнач. ф-лы}}$ \\
+ \hline
+                            & $\subset$ & Теор. о корр. \\
+ \hline
+                            & $\supset$ & Теор. о полноте \\
+ \hline
+
+\end{tabular}
+\end{center}
+Новый список аксиом:
+\begin{itemize}
+  \item Аксиомы 1-11 \\
+  \item Аксиомы 12: $\forall x \phi \rightarrow \phi(\sfrac{t}{x}), t$ --- терм, подстановка $\sfrac{t}{x}$ --- корректна.
+  \item $\phi(\sfrac{t}{x}) \rightarrow \exists x \phi$ \\ 
+$\phi(\sfrac{t}{x})$ --- результат замены своб. вхожд. $x$ на $t$, при этом своб. переменные из $t$ не попадают под д-ие кванторов $\phi$ 
+\end{itemize}
+Подстановка точно корректна, если:
+\begin{itemize}
+  \item [1) ] $t$ --- замкн. терм (сост. только из констант)
+  \item [2) ] $t \eqcirc x$
+\end{itemize}
+Примеры вывод ф-л:
+\begin{itemize}
+  \item [0) ] Все тавтологии (с подст. формул вместо переменных)
+  \item [1) ] $\forall x \phi \rightarrow \exists x \phi$ \\
+Вывод:
+\begin{itemize}
+  \item [1. ] $\forall x \phi \rightarrow \phi$ --- $A12$ \\
+  \item [2. ] $\phi \rightarrow \exists x\phi$ $A13$ \\
+  \item [3. ] $\forall x \phi \rightarrow \exists x \phi$ --- силлогизм.
+\end{itemize}
+\textbf{Правила Бёрнайса:}
+\begin{itemize}
+  \item $\Sigma$-правило:
+    \begin{center}
+    \begin{tabular}{ c} 
+      $\phi \rightarrow \psi$ \\
+     \hline
+     $\exists x \phi \rightarrow \psi$
+    \end{tabular}
+    \end{center}
+    \begin{note}
+    \textbf{Условие применимости:} $x$ не параметр $\psi$!
+    \end{note}
+  \item $\prod$-правило:
+    \begin{center}
+    \begin{tabular}{ c } 
+      $\psi \rightarrow \phi$ \\
+     \hline
+      $\psi \rightarrow \forall x \phi$
+    \end{tabular}
+    \end{center}
+    Опять же: $x$ не параметр  $\psi$
+\end{itemize}
+\item [2) ] $\exists x \forall y \phi \rightarrow \forall y \exists x \phi$ \\
+   Вывод:
+   \begin{itemize}
+     \item [1.] $\forall y \phi \rightarrow \phi$ $A12$ \\
+     \item [2. ] $\phi \rightarrow \exists x \phi$ $A13$
+     \item [3. ] $\forall y \phi \rightarrow \exists x \phi$ --- силлогизм
+     \item [4.] $\exists x \forall y \phi \rightarrow \exists x\phi$ --- $\Sigma$ --- Бёрн., $3$ 
+     \item [5. ] $\exists x \forall y \phi \rightarrow \forall y \exists x \phi$ --- $\prod$--- Бёрн., $4$
+   \end{itemize}
+  \textbf{Правило обобщения (Gen):}
+  \[
+  \frac{\phi}{\forall x \phi}
+  \]
+  \[
+  \phi \text{ общезн. } \Rightarrow \forall x \phi \text{ общезн.}
+  \]
+  При этом $(\phi \rightarrow \forall x \phi)$ --- необщезн.
+\item [3) ] Вывод \textbf{Gen}:
+  \[
+    \vdash \phi \Rightarrow \vdash \forall x \phi
+  \]
+  \begin{itemize}
+    \item [1. ] $\phi$ --- выводима \\
+    \item [2. ] $\psi$ (любая замкн. акс.)
+    \item [3. ] $\phi \rightarrow (\psi \rightarrow \phi)$ A1
+    \item [4. ] $\psi \rightarrow \phi$ MP 1, 3
+    \item [5. ] $\psi \rightarrow \forall x \phi$ --- $\prod$-Бёрн., 4
+    \item [6. ] $\forall x \phi$ MP 2, 5
+  \end{itemize}
+\item [4) ] $\neg \exists x \phi \leftrightarrow \forall x \neg \phi$
+  \[
+  \neg \forall x \phi \leftrightarrow \exists x \neg \phi
+  \]
+  \[
+  \forall x \neg \phi \rightarrow \neg \phi
+  \]
+  \[
+  \phi \rightarrow \neg \forall x \neg \phi
+  \]
+  \[
+  \exists x \phi \rightarrow \neg  \forall x \neg \phi
+  \]
+  \[
+  \forall x \neg \phi \rightarrow \neg \exists x \phi \text{ --- контрапоз.}
+  \]
+\item [5) ] Лемма о дедукции для ИП: \\
+  В кач-ве посылок используются только замкн. ф-лы (посылки также наз-ют аксиомами) \\
+  Теория --- любое мн-во замкн. ф-л \\
+  Модель теории --- интерпретация, в кот-рой все ф-лы теории истины. \\
+  Лемма о дедукции: Пусть $\Gamma$ --- теория, $A$ --- замкн. ф-ла, $B$ --- произв. ф-ла. \\ Тогда: $\Gamma \vdash (A \rightarrow B) \iff \Gamma \cup \set{A} \vdash B$
+  \begin{proof}
+    \begin{itemize}
+      \item [$\Rightarrow$)]
+        \begin{itemize}
+          \item [1. ] $A \rightarrow B$ (вывод)
+          \item [2. ] $A$ --- посылка
+          \item [3. ] $B$ (MP 1, 2)
+        \end{itemize}
+      \item [$\Leftarrow$)] Инд-ция $C_1, \ldots, C_n$ --- вывод $B$ из $\Gamma \cup \set{A}$. По инд-ции докажем $\Gamma \vdash A \rightarrow C_i$:
+        \[
+          C_i \text{ --- акс., эл-т $\Gamma$, ф-ла $A$ или получ. по MP --- аналог. д-ву для ИВ.}
+        \]
+        \[
+        C_i \text{ --- получ. по $\Sigma$-прав.}
+        \]
+        \[
+        C_i \eqcirc (\exists x \phi \rightarrow \psi), C_j \eqcirc (\phi \rightarrow \psi),j < i
+        \]
+        По предположению инд-ции: $\Gamma \vdash (A \rightarrow (\phi \rightarrow \psi))$ \\
+        Тавтология: $(A \rightarrow (\phi \rightarrow \psi)) \leftrightarrow (\phi \rightarrow (A \rightarrow \psi))$
+        \[
+        \Rightarrow \Gamma \vdash (\phi \rightarrow (A \rightarrow \psi)) \Rightarrow
+        \]
+        \[
+        \Rightarrow \Gamma \vdash (\exists x \phi \rightarrow (A \rightarrow \psi)) \text{ --- $\Sigma$-Бёрн}
+        \]
+        \[
+        \Rightarrow \Gamma \vdash (A \rightarrow (\exists x \phi \rightarrow \psi)) \Rightarrow \Gamma \vdash (A \rightarrow C_i)
+        \]
+        $C_i$ --- получ. по $\prod$-правилу:
+        \[
+        \Gamma \vdash (A \rightarrow (\psi \rightarrow \phi)) \Rightarrow \Gamma \vdash (A \rightarrow (\psi \rightarrow \forall x \phi))
+        \]
+        \[
+        \Rightarrow \Gamma \vdash ((A \land \psi) \rightarrow \psi) \Rightarrow \Gamma \vdash ((A \land \psi) \rightarrow \forall x \phi)
+        \]
+    \end{itemize}
+  \end{proof}
+\end{itemize}
+\textbf{Слабая форма.:} \\
+Теперь перейдём к теоремам: \\
+Теор. о корр. ИП: $\vdash \phi \Rightarrow \phi$ --- общезначима. \\
+Теор. о полн. ИП: $\phi$ --- общезнач. $\Rightarrow \vdash \phi$ \\
+\textbf{Сильная форма:} \\
+У любой непротиворечивой теории существует модель \\
+\textbf{Сильная форма} $\Rightarrow $ \textbf{слабая форма}.
+\[
+\phi \text{ --- общ. } \Rightarrow \forall x \phi \text{ --- общ.} \Rightarrow \set{\neg \forall x \phi} \text{ --- не имеет модели} \Rightarrow
+\]
+\[
+ \Rightarrow \set{\neg \forall x \phi} \text{ --- против.} \Rightarrow 
+\]
+\[
+\Rightarrow \begin{cases}
+\set{\neg \forall x \phi} \vdash A \\
+\set{\neg \forall x \phi} \vdash \neg A
+\end{cases} =
+\begin{cases}
+\vdash \neg \forall x \phi \rightarrow A \\
+\vdash \neg \forall x \phi \rightarrow \neg A
+\end{cases}
+\]
+\[
+\Gamma \text{ --- непротив. теория} \Rightarrow \text{ Есть модель.}
+\]
+Строим модель из замкн. термов. \\
+Проблема: может не быть конст. символов или функц. симв. Неясно, как опред. пред. симв.
+\begin{definition}
+$\Gamma$ --- полная теория, если для любой замкн. $\phi$ верно $\Gamma \vdash \phi$ или $\Gamma \vdash \neg \phi$
+\end{definition}
+\begin{lemma}
+Любая непрот. теория вложена в нек-рую полную.
+\end{lemma}
+Проблема: если $\Gamma \vdash \exists x\phi$, то $\psi$ должна быть ист. для нек-рого эл-та модели.
+\begin{definition}
+Теория $\Gamma$ наз-ся экзистенциально полной, если из $\Gamma \vdash \exists x \phi$ следует $\Gamma \vdash \phi(\sfrac{t}{x})$ для некоторого замкн. терма $t$
+\end{definition}
+\begin{lemma}
+Если $\Gamma$ --- непрот. теория в сигнатуре $\sigma \Rightarrow \exists \tau \supset \sigma, \triangle \supset \Gamma \colon \triangle$ --- непрот. теория в сигн. $\tau$ и $\triangle$ --- экзистенциально полная.
+\end{lemma}

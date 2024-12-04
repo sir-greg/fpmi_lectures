@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  27 NOV 2024 12:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  4 DEC 2024 12:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -647,9 +647,50 @@ Overfull \hbox (9.88106pt too wide) in paragraph at lines 82--83
 
 [17]
 
-[18])
+[18]) (./src/lecture_26.tex
 
-[19] (./main.aux)
+[19]
+
+[20]
+
+[21]
+Overfull \hbox (10.73071pt too wide) detected at line 120
+[]\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) = []\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 < [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 < [] \OT1/cmr/m/n/12 + 2\OML/cmm/m/it/12 Mm []
+ []
+
+
+LaTeX Warning: Reference `lm4' on page 22 undefined on input line 135.
+
+
+
+[22]
+Overfull \hbox (12.4731pt too wide) detected at line 141
+\OMS/cmsy/m/n/12 8 [] \OML/cmm/m/it/12 ; I \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 " < s[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 ^^[[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f; ^^X\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 < I \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 " \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 I \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 " < ^^[[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f; ^^X\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 < I \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 "
+ []
+
+) (./src/lecture_27.tex
+Overfull \hbox (11.83067pt too wide) in paragraph at lines 5--6
+[]$[]$ \T2A/cmr/bx/n/12 6.1 \T2A/cmr/m/n/12 (Ф-ла Нью-тона--Лейб-ни-ца)\T2A/cmr/bx/n/12 . []\T2A/cmr/m/it/12 Ес-ли $\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 R\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$ \T2A/cmr/m/it/12 и име-ет (обобщ.)
+ []
+
+
+
+[23]
+
+[24]
+
+[25]
+
+[26]
+Overfull \hbox (23.85072pt too wide) detected at line 137
+\OML/cmm/m/it/12 Y[] \OT1/cmr/m/n/12 = [][] [][] \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )[] \OML/cmm/m/it/12 d \OT1/cmr/m/n/12 = [] +(\OML/cmm/m/it/12 m \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1) [][] [][] [][] \OML/cmm/m/it/12 x dx \OT1/cmr/m/n/12 =
+ []
+
+
+
+[27])
+
+[28] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -660,18 +701,18 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 8696 strings out of 473579
- 133902 string characters out of 5728235
+ 8720 strings out of 473579
+ 134370 string characters out of 5728235
  1941957 words of memory out of 5000000
- 31407 multiletter control sequences out of 15000+600000
+ 31425 multiletter control sequences out of 15000+600000
  581244 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,7n,96p,625b,300s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,96p,625b,300s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (19 pages, 330495 bytes).
+Output written on main.pdf (28 pages, 373423 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
+ 200 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

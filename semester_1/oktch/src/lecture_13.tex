@@ -1,0 +1,186 @@
+\section{Лекция 13}
+\subsection{Диаграммы Юнга}
+$n \in \N$
+\[
+n = x_1 + \ldots + x_t
+\]
+\[
+x_1 \leq x_2 \leq \ldots \leq x_t
+\]
+\begin{symb}
+Канонический вид диаграммы юнга:
+\[
+x_1 \colon \underset{x_1 \text{ раз}}{\circ \circ \circ \ldots \circ}
+\]
+\[
+\vdots
+\]
+\[
+x_k \colon \underset{x_k \text{ раз}}{\circ \circ \circ \ldots \circ \circ \circ}
+\]
+\end{symb}
+
+\begin{theorem}
+\label{th:diag_ung_1}
+  Кол-во разб. (помидорных --- неупор.) числа $n$ на не более чем $k$ слагаемых равно кол-ву разб. числа $n + k$ на ровно $k$ слагаемых.
+\end{theorem}
+\begin{proof}
+Добавляем слева от диаграммы юнга столбец размера $k$. Получаем биекцию.
+\end{proof}
+\begin{theorem}
+\label{th:diag_ung_2}
+  Кол-во разб. (помидорных --- неупор.) числа $n$ на не более чем $k$ слагаемых равно кол-ву разб. числа $n + \frac{k(k + 1)}{2}$ на ровно $k$ различных слагаемых.
+\end{theorem}
+\begin{proof}
+  К $i$-ой строке слева добавляем $i$ единиц. Если числа были равными, то теперь нет. Нер-ва сохранились. Получили биекцию.
+\end{proof}
+\begin{theorem}
+\label{th:diag_ung_3}
+Кол-во разб. (помидорных --- неупор.) числа $n$ на не более чем $k$ слагаемых равно кол-ву разбиений числа $n$ на слагаемые величины $\leq k$.
+\end{theorem}
+\begin{proof}
+Инвертируем таблицу, превращая строки в столбцы.
+\end{proof}
+
+\subsection{Эйлер}
+\[
+  (1 - x)(1 - x^{2}) \ldots (1 - x^{n}) \ldots = 1 - x - x^{2} + x^{5} + x^{7} - x^{12} - x^{15} + \ldots
+\]
+\begin{theorem}
+\label{th:euler_1}
+Пусть $n = \frac{3k^{2} \pm k}{2}$, $k \in \N \cup \set{0}$. Тогда коэфф. при $x^{n}$ равен $(-1)^{k}$, если же $n \neq \frac{3k^{2} \pm k}{2}$, то коэфф. равен $0$.
+\end{theorem}
+Посмотрим, причём здесь разбиения? А вот причём: \\
+Коэффициент при $x^{n}$:
+\[
+  (-x^{n_1})(-x^{n_2})\ldots(-x^{n_t}) = (-1)^{t} x^{n}
+\]
+\[
+n_1 + n_2 + \ldots + n_t = n
+\]
+$n_{\text{чёт}}$ --- кол-во разбиений $n$ на различные слагаемые, число кот-ых \textbf{чётно} \\
+$n_{ \text{нечёт}}$ --- кол-во разбиений $n$ на различные слагаемые, число кот-ых \textbf{нечётно} \\
+Тогда коэф-т при $x^{n} \rightarrow n_{\text{чёт}} - n_{\text{нечёт.}}$
+\subsection{Формальные степенные ряды}
+На мн-ве объектов вида:
+\[
+A = (a_0, a_1, \ldots, a_n, \ldots), a_i \in \R
+\]
+(т. е. бесконечные п-ть чисел) \\
+Введём операции:
+\begin{itemize}
+  \item [1) ] \underline{Сложение}:
+    \[
+    B = (b_0, b_1, \ldots), C = A + B \Rightarrow \forall i \colon c_i = a_i + b_i
+    \]
+  \item [2) ] \underline{Умножение на число}: очев.
+  \item [3) ] \underline{Умножение ФСР:}
+    \[
+    A, B, C = A\cdot B
+    \]
+    \[
+    \forall i \colon c_i = \sum_{k = 0}^{i} a_k \cdot b_{i - k}
+    \]
+  \item [4) ] \underline{Взятие обратного}:
+    \[
+    A, C = \frac{1}{A} \iff AC = 1
+    \]
+    Это такое $C$, что:
+    \[
+    \begin{cases}
+    a_0c_0 = 1 \\
+    a_0c_1 + a_1c_0 = 0 \\
+    a_0c_2 + a_1c_1 + a_2c_0 = 0 \\
+    \vdots \\
+    \end{cases}
+    \]
+    Система разрешима $\iff$ $a_0 \neq 0$
+\end{itemize}
+
+\begin{example}
+  \[
+  \frac{1}{(1 - x^{2})^{2}} = \left(\frac{1}{1 - x^{2}}\right)^{2} = \left(\frac{1}{1 - x}\right)^{2}\left(\frac{1}{1 + x}\right)^{2}
+  \]
+  Деля в столбик $1$ на $1 - x$, получаем:
+  \[
+  \frac{1}{1 - x} = 1 + x + x^{2} + x^{3} + \ldots
+  \]
+  \[
+  \frac{1}{1 - x^{2}} = 1 + x^{2} + x^{4} + x^{6} + \ldots + x^{2n} + \ldots
+  \]
+  \[
+  \left(\frac{1}{1 - x^{2}}\right)^{2} = 1 + 2x^{2} + 3x^{4} + \ldots + (n + 1)x^{2n}
+  \]
+  \[
+  \left(\frac{1}{1-x}\right)^{2} = 1 + 2x + 3x^{2} + \ldots + (n + 1)x^{n}
+  \]
+  \[
+  \left(\frac{1}{1+x}\right)^{2} = 1 - 2x + 3x^{2} + \ldots + (-1)^{n}(n + 1)x^{n}
+  \]
+  \[
+  \left(\frac{1}{1 - x}\right)^{2}\left(\frac{1}{1 +x}\right)^{2} = \ldots + (1 \cdot (-1)^{n} \cdot (n + 1) + 2 \cdot (-1)^{n - 1} \cdot n + \ldots + (n + 1) \cdot 1) x^{n} + \ldots
+  \]
+  Т. е. коэф. при $x^{n}$:
+  \[
+  \sum_{k = 0}^{n} (k + 1) (-1)^{n - k} (n + 1 - k) = \begin{cases}
+  0, n = 2l + 1, l \in \N \\
+  l + 1, n = 2l, l \in \N
+  \end{cases}
+  \]
+\end{example}
+\subsection{Производящие ф-ции}
+\[
+a_0, \ldots, a_n, \ldots
+\]
+\[
+f(x) = \sum_{k = 0}^{n} a_k x^{k}
+\]
+\[
+S_n(x_0) = \sum_{k = 0}^{n} a_k x_0^{k}
+\]
+Ряд сходится, если:
+\[
+\exists \lim_{n\to \infty} S_n(x_0) \in \R
+\]
+\begin{theorem}[Коши-Адамар]
+\label{th:gen_functions_1}
+Пусть
+\[
+  p = \frac{1}{\overline{\lim_{n\to\infty}} \sqrt[n]{\left|a_n\right|}}
+\]
+Если $\left|x_0\right| < p$, то ряд с коэф. $\set{a_n}$ сх-ся. Если $\left|x_0\right| > p$, то расх-ся.
+\end{theorem}
+\begin{example}
+\begin{itemize}
+  \item [1) ] \[
+  \sum_{k = 0}^{\infty} x^{k}, \left|x_0\right| < 1 \text{ --- сх-ся}, \left|x_0\right| \geq 1 \text{ --- расх-ся}
+  \]
+\item [2) ] \[
+  \sum_{k = 0}^{\infty} 2^{k} x^{k}, \left|x_0\right| < \frac{1}{2} \text{ --- сх-ся}, \text{иначе расх-ся}
+\] 
+\item [3) ] \[
+a_k = \begin{cases}
+2^{k}, k \text{ --- чёт} \\
+-3^{k}, k \text{ --- нечет}
+\end{cases}
+\]
+\[
+\Rightarrow \left|x_0\right| < \frac{1}{3} \text{ --- сх-ся, иначе расх-ся}
+\]
+\item [4) ] \[
+  \sum_{k = 1}^{\infty} \frac{x^{k}}{k^{2}}
+\]
+\[
+  \left|x_0\right| < 1 \text{ --- сх-ся}
+\]
+\[
+  \left|x_0\right| > 1 \text{ --- расх-ся}
+\]
+\[
+  \left|x_0\right| = 1 \text{ --- СХ-СЯ и равен $\frac{\pi^{2}}{6}$}
+\]
+\item [5) ] \[
+  \sum_{k = 1}^{\infty} \frac{x^{k}}{k}, \left|x_0\right| = 1 \text{ --- расх-ся}
+\]
+\end{itemize}
+\end{example} 

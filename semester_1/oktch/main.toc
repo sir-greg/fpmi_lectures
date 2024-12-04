@@ -1,9 +1,8 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 9}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Циклические п-ти}{4}{}%
-\contentsline {subsection}{\numberline {1.2}Формула обращения Мёбиуса}{4}{}%
-\contentsline {section}{\numberline {2}Лекция 10}{6}{}%
-\contentsline {subsection}{\numberline {2.1}Обращение Мёбиуса на чумe (част. уп. мн-во)}{8}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Ф-ция Мёбиуса}{8}{}%
-\contentsline {section}{\numberline {3}Лекция 11}{10}{}%
-\contentsline {subsection}{\numberline {3.1}Линейные рекуррентные соотношения с постоянными коэффициентами}{12}{}%
+\contentsline {section}{\numberline {1}Лекция 12}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Разбиение чисел на слагаемые}{4}{}%
+\contentsline {section}{\numberline {2}Лекция 13}{5}{}%
+\contentsline {subsection}{\numberline {2.1}Диаграммы Юнга}{5}{}%
+\contentsline {subsection}{\numberline {2.2}Эйлер}{6}{}%
+\contentsline {subsection}{\numberline {2.3}Формальные степенные ряды}{6}{}%
+\contentsline {subsection}{\numberline {2.4}Производящие ф-ции}{8}{}%

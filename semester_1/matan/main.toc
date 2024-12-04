@@ -6,3 +6,8 @@
 \contentsline {subsection}{\numberline {3.1}Интегралы Римана и его св-ва}{10}{}%
 \contentsline {section}{\numberline {4}Лекция 25}{15}{}%
 \contentsline {subsection}{\numberline {4.1}Мн-во интегрируемых ф-ций}{17}{}%
+\contentsline {section}{\numberline {5}Лекция 26}{20}{}%
+\contentsline {section}{\numberline {6}Лекция 27}{24}{}%
+\contentsline {subsection}{\numberline {6.1}Ф-ла Ньютона Лейбница}{24}{}%
+\contentsline {subsection}{\numberline {6.2}Интеграл с переменным пределом}{25}{}%
+\contentsline {subsection}{\numberline {6.3}Приёмы интегрирования}{26}{}%
