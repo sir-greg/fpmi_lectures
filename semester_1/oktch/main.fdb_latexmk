@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1732784784.03776 "main.tex" "main.pdf" "main" 1732784785.23152 0
+["pdflatex"] 1733389566.51872 "main.tex" "main.pdf" "main" 1733389567.77844 0
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1725258418.94669 3308 eee81981029f67083258db36df06e523 ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1722950259.82679 3304 6a543c07045572737981351171e0505e ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx1728.tfm" 1725264308.81669 3312 d199be9bd555944e2403193d58a0256a ""
@@ -49,6 +49,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb" 1215737283 140176 d4962f948b4cc0adf4d3dde77a128c95 ""
@@ -124,12 +125,13 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1722811609 5483422 a1ef07ac981a8b7f5985102f2de312a6 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1722811645 8239395 770efc74df93586a44891e8f654c98d2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1722811606.09035 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "main.aux" 1732784785.04819 1446 21af67f7fd006639e8dddf8f054a51cf "pdflatex"
-  "main.tex" 1732779947.94789 670 1cff8492d9e6d13f1ab095a6b890a055 ""
-  "main.toc" 1732784785.04819 586 ec6db3aa177f370e529ee9c529e53722 "pdflatex"
+  "main.aux" 1733389567.58413 2130 2c52adfa5780d420c526814f54500a3d "pdflatex"
+  "main.tex" 1733384745.35005 701 b7b95612c227671c7991d8af95b3415a ""
+  "main.toc" 1733389567.58746 917 67642be05f99fd92d2657411ab203069 "pdflatex"
   "preamble/preamble.tex" 1730968630.56338 2482 e0cfa1fd53254613bc168e8851ff8735 ""
   "src/lecture_12.tex" 1732185471.87782 2691 344b72e48dda87057d13809b113b2949 ""
-  "src/lecture_13.tex" 1732784783.69485 6334 cca54a7bdb53b4db10027fbfe12f4405 ""
+  "src/lecture_13.tex" 1733385859.09384 6566 7da6c2f277583ec3dadbb1e6a98c53b0 ""
+  "src/lecture_14.tex" 1733389566.44746 6097 f1df21653227e034087a975c4eedb014 ""
   (generated)
   "main.aux"
   "main.log"

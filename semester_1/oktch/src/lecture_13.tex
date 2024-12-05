@@ -149,6 +149,12 @@ S_n(x_0) = \sum_{k = 0}^{n} a_k x_0^{k}
   p = \frac{1}{\overline{\lim_{n\to\infty}} \sqrt[n]{\left|a_n\right|}}
 \]
 Если $\left|x_0\right| < p$, то ряд с коэф. $\set{a_n}$ сх-ся. Если $\left|x_0\right| > p$, то расх-ся.
+\begin{note}
+Если $\left|x_0\right| < p$, то $f$ можно дифференцировать почленно:
+\[
+  f(x) = \sum_{k = 0}^{\infty} a_k x^{k} \Rightarrow f'(x) = \sum_{k = 1}^{\infty} ka_k x^{k - 1}
+\]
+\end{note}
 \end{theorem}
 \begin{example}
 \begin{itemize}

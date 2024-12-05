@@ -1,0 +1,197 @@
+\section{Лекция 14}
+\subsection{Простой пример}
+\begin{example}
+\begin{itemize}
+  \item [1. ] \[
+  \sum_{k = 0}^{n} k^{2} C_{n}^{k} \left(\frac{2}{3}\right)^{k}
+  \]
+  \[
+  a_k = C_{n}^{k}
+  \]
+  Производящая ф-ция этой п-ти $f(x) = \sum_{k = 0}^{n} C_{n}^{k} x^{k} = (1 + x)^{n}$
+  \[
+  f'(x) = \sum_{k = 0}^{n} kC_{n}^{k} x^{k - 1}
+  \]
+  \[
+  xf'(x) = \sum_{k = 0}^{n} kC_{n}^{k} x^{k}
+  \]
+  \[
+    (xf'(x))' = \sum_{k = 0}^{n} k^{2} C_{n}^{k} x^{k - 1}
+  \]
+  \[
+    x(xf'(x))'|_{x = \frac{2}{3}} \text{ --- ответ.}
+  \]
+\item [2. ] \[
+\sum_{k = 0}^{\infty} k^{2} F_k \left(\frac{2}{3}\right)^{k}
+\]
+\[
+  f(x) = \sum_{k = 0}^{\infty} F_k x^{k} = F_0 + F_1x + F_2x^{2} + \ldots + F_n x^{n} + \ldots
+\]
+  \[
+  xf(x) = \sum_{k = 0}^{\infty} x^{k + 1} F_k = F_0x + F_1 x^{2} + \ldots + F_n x^{n + 1} + \ldots
+  \]
+  \[
+  x^{2}f(x) = \sum_{k = 0}^{\infty} x^{k + 2} F_k = F_0 x^{2} + F_1 x^{3} + \ldots F_n x^{n + 2} + \ldots
+  \]
+  Сложим $xf(x)$ и $x^{2}f(x)$:
+  \[
+  xf(x) + x^{2}f(x) = F_0 x + (F_0 + F_1)x^{2} + (F_1 + F_2) x^{3} + \ldots + (F_{n - 1} + F_{n - 2}) x^{n} + \ldots = 
+  \]
+  \[
+   = f(x) - F_1x - F_0
+  \]
+  \[
+  xf(x) + x^{2}f(x) = f(x) - x 
+  \]
+  \[
+  f(x) = \frac{x}{1 - x - x^{2}}
+  \]
+  Радиус сх-ти:
+  \[
+  \sum_{k = 0}^{\infty} k^{2} F_k x^{k}
+  \]
+  Это:
+  \[
+  \frac{1}{\lim_{k\to \infty} \sqrt[k]{k^{2} F_k}} = \frac{1}{\phi} \approx = 0.62..
+  \]
+\end{itemize}
+\end{example}
+\subsection{Числа каталана}
+\[
+T_n = T_{n - 1}T_0 + T_{n - 2} T_1 + \ldots + T_0 T_{n - 1}
+\]
+\[
+T_0 = 1
+\]
+\[
+F(x) = T_0  + T_1x + T_2 x^{2} + \ldots + T_{n} x_n + \ldots
+\]
+\[
+F^{2}(x) = T_0^{2} + (T_0T_1 + T_1T_0)x + \ldots + (T_0T_n + T_{n - 1}T_1 + \ldots T_n T_0) x^{n} + \ldots
+\]
+\[
+F^{2}(x) = T_1 + T_2x + T_3x^{2} + \ldots + T_{n + 1}x^{n}
+\]
+\[
+xF^{2}(x) = F(x) - T_0;
+\]
+\[
+xF^{2}(x) - F(x) + 1 = 0
+\]
+\[
+F_{1, 2}(x) = \frac{1 \pm \sqrt{1 - 4x}}{2x}
+\]
+\[
+xF_{1, 2}(x) = \frac{1 \pm \sqrt{1 - 4x}}{2x}
+\]
+\[
+xF(x) = \frac{1 - \sqrt{1 - 4x}}{2}
+\]
+\[
+\sqrt{1 + x} = (1 + x)^{\frac{1}{2}} = 1 + C_{\frac{1}{2}}^{1} x + C_{\frac{1}{2}}^{2} x^{2} + \ldots
+\]
+\[
+C_{\frac{1}{2}}^{n} = \frac{\frac{1}{2}\left(\frac{1}{2} - 1\right)\ldots\left(\frac{1}{2} - n + 1\right)}{n!}
+\]
+\[
+C_{m}^{n} = \frac{m!}{n!(m - n)!} = \frac{m(m - 1)(m - 2)\ldots(m - n + 1)}{n!}
+\]
+\[
+-\frac{1}{2} C_{\frac{1}{2}}^{n} (-4)^{n} = -\frac{1}{2} (-1)^{n} \frac{4^{n}}{2^{n}n!} \cdot 1 \cdot (-1) (-3) (-5) \ldots (-(2n - 3)) = 
+\]
+\[
+ = \frac{2^{n - 1}}{n!} \cdot 1 \cdot 3 \cdot \ldots \cdot (2n - 3) = \frac{2^{n - 1}}{n!} \cdot \frac{(2n - 2)!}{2 \cdot 4 \cdot 6 \cdot \ldots \cdot (2n - 2)}
+\]
+\[
+ = \frac{2^{n - 1}(2n - 2)!}{n! 2^{n - 1}(n - 1)!} = \frac{(2n - 2)!}{n (n - 1)! (n - 1)!}  = \frac{1}{n} C_{2n - 2}^{n - 1}
+\]
+\[
+ \Rightarrow T_{n - 1} = \frac{1}{n} C_{2n - 2}^{n - 1}
+\]
+\[
+  \Rightarrow T_n = \frac{1}{n + 1} C_{2n}^{n}
+\]
+\subsection{Теорема Эрдеша, Гинзбурга, Зива}
+\begin{theorem}[Теорема Эрдеша, Гинзбурга, Зива]
+\label{th:erdesh-ginsburg-ziva-14}
+Пусть $a_1, \ldots, a_{2m - 1}$ --- произвольные целые числа. Тогда из них можно выбрать $m$ чисел, сумма к-рых делится на $m$.
+\end{theorem}
+
+Лирическое отступление в теорию сравнений:
+\begin{definition}
+\[
+a \equiv b \pmod{m} \iff m | (a - b)
+\]
+--- $a$ сравнимо с $b$ модулю $m$
+\end{definition}
+\begin{definition}
+Полная система вычетов по модулю $m$ --- набор из представителей каждого класса из $m$ классов эквив-ти.
+\end{definition}
+\begin{definition}
+Приведённая система вычетов по модулю $m$ --- система вычетов, причём каждый представитель взаимнопрост с $m$.
+\end{definition}
+\begin{symb}
+\[
+\text{НОД}(a, b) = (a, b)
+\]
+\[
+  \text{НОК}(a, b) = [a, b]
+\]
+\end{symb}
+\begin{theorem}[Малая теорема Ферма]
+\label{th:mlt_14}
+Пусть $p$ --- простое, $(a, p) = 1$. Тогда:
+\[
+a^{p - 1} \equiv 1 \pmod p
+\]
+\end{theorem}
+\begin{consequence}
+\[
+a^{p} \equiv a \pmod p
+\]
+\end{consequence}
+\begin{proof}
+\[
+  a^{p} = \underbrace{(1 + 1 + \ldots + 1)}_{a}^{p} = \underbrace{1^{p} + \ldots + 1^{p}}_{a} + \underbrace{\ldots\ldots\ldots\ldots}_{P(n_1, \ldots, n_a) = \frac{p!}{n_1! \cdot \ldots \cdot n_a!} \equiv 0 \pmod p}
+\]
+Доказали $a^{p} \equiv a \pmod p$
+\end{proof}
+\begin{proof}
+Рассм. $1, 2, \ldots, p - 1$. Рассм. $a \cdot 1, \ldots, a \cdot (p - 1)$. Докажем, что это то же приведённая система вычетов. Пусть $a \cdot x \equiv a \cdot y \pmod p$:
+\[
+a \cdot x \equiv a \cdot y \pmod p
+\]
+\[
+  a \cdot (x - y) \equiv 0 \pmod p \Rightarrow x \equiv y \pmod p
+\]
+Следовательно в ней нет равных по модулю, а следовательно:
+\[
+  (a \cdot 1) \cdot (a \cdot 2) \ldots (a \cdot p) \equiv 1 \cdot 2 \cdot \ldots \cdot (p - 1) \pmod p
+\]
+\[
+  a^{p - 1} (1 \cdot 2 \cdot \ldots \cdot (p - 1)) \equiv 1 \cdot 2 \cdot 3 \cdot \ldots \cdot (p - 1) \pmod p
+\]
+\[
+\Rightarrow a^{p - 1} \equiv 1 \pmod p
+\]
+\end{proof}
+\begin{theorem}[Эйлера]
+\label{th:euler_14}
+Пусть $m \in \N$. Пусть $(a, m) = 1$. Тогда $a^{\phi(m)} \equiv 1 \pmod m$
+\end{theorem}
+\begin{theorem}[Теорема Эрдеша, Гинзбурга, Зива]
+\label{th:erdesh-ginsburg-ziva-14}
+Пусть $a_1, \ldots, a_{2m - 1}$ --- произвольные целые числа. Тогда из них можно выбрать $m$ чисел, сумма к-рых делится на $m$.
+\end{theorem}
+\begin{proof}
+Докажем для $m = p$ --- простое. Предоположим противное:
+\[
+a_1, \ldots, a_{2p - 1}
+\]
+\[
+\forall I \subset \set{1, 2, \ldots, 2p - 1}, \left|I\right| = p
+\]
+\[
+\sum_{i \in I}^{} a_i \not\equiv 0 \pmod p 
+\]
+\end{proof}

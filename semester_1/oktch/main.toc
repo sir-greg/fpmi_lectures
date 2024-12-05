@@ -6,3 +6,7 @@
 \contentsline {subsection}{\numberline {2.2}Эйлер}{6}{}%
 \contentsline {subsection}{\numberline {2.3}Формальные степенные ряды}{6}{}%
 \contentsline {subsection}{\numberline {2.4}Производящие ф-ции}{8}{}%
+\contentsline {section}{\numberline {3}Лекция 14}{9}{}%
+\contentsline {subsection}{\numberline {3.1}Простой пример}{9}{}%
+\contentsline {subsection}{\numberline {3.2}Числа каталана}{10}{}%
+\contentsline {subsection}{\numberline {3.3}Теорема Эрдеша, Гинзбурга, Зива}{11}{}%
