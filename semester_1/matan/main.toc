@@ -11,3 +11,7 @@
 \contentsline {subsection}{\numberline {6.1}Ф-ла Ньютона Лейбница}{24}{}%
 \contentsline {subsection}{\numberline {6.2}Интеграл с переменным пределом}{25}{}%
 \contentsline {subsection}{\numberline {6.3}Приёмы интегрирования}{26}{}%
+\contentsline {section}{\numberline {7}Лекция 28}{28}{}%
+\contentsline {subsection}{\numberline {7.1}Завершаем интегральчики}{28}{}%
+\contentsline {subsection}{\numberline {7.2}Комплексные числа, многочлены и комплексные экспоненты}{29}{}%
+\contentsline {subsection}{\numberline {7.3}Вводим анализ на комплах}{32}{}%

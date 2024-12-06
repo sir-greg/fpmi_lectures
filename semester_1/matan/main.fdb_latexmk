@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1733303624.20123 "main.tex" "main.pdf" "main" 1733303625.61266 0
+["pdflatex"] 1733476315.7737 "main.tex" "main.pdf" "main" 1733476317.25683 0
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labi1200.tfm" 1725282838.58337 3592 9415307df98650ffeddaa22e262436dc ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx0600.tfm" 1727862052.59335 3328 53593f1a01a3d91a061bfab3b9495e9f ""
   "/home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/labx0800.tfm" 1725720212.53348 3312 b8ab24c48b05dd87fb4dc8a3f4f2271a ""
@@ -133,16 +133,17 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1722811609 5483422 a1ef07ac981a8b7f5985102f2de312a6 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1722811645 8239395 770efc74df93586a44891e8f654c98d2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1722811606.09035 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "main.aux" 1733303625.41767 2865 2f9bf6dfa5233b766b186a12097ca361 "pdflatex"
-  "main.tex" 1733298483.58338 1001 e7ef6a82137e14efde51376665bd1a75 ""
-  "main.toc" 1733303625.41767 1002 1104537a5fc9bb2d26e1ccfa3c25b249 "pdflatex"
+  "main.aux" 1733476317.03538 3515 1f1166108cc4716a01eee20d39bbb02b "pdflatex"
+  "main.tex" 1733471453.66289 1032 d407213b6f7822b254141fed2a2620c4 ""
+  "main.toc" 1733476317.03872 1416 680d7767a303fa05c086d7e7e9c6acd8 "pdflatex"
   "preamble/preamble.tex" 1732263782.87767 2569 4bcafab62cf9f48ea6458530d95309a1 ""
   "src/lecture_22.tex" 1732090674.90192 9982 2eef4352c49e9e6b62b02df61565744f ""
   "src/lecture_23.tex" 1732262714.23276 4904 3eb21471680681c88818fcddee48a7eb ""
   "src/lecture_24.tex" 1732695938.81709 8004 2985453d0024aa52b0a4e886cc940917 ""
   "src/lecture_25.tex" 1732867094.11693 8651 13bad56eea3de373d026aadeadd1cbba ""
   "src/lecture_26.tex" 1732871501.87855 7653 4c23aeec326ed650351c7971cd42efd4 ""
-  "src/lecture_27.tex" 1733303623.881 7734 ff78d385d4b80555c8e2a04741bbcf11 ""
+  "src/lecture_27.tex" 1733303626.90101 7734 ff78d385d4b80555c8e2a04741bbcf11 ""
+  "src/lecture_28.tex" 1733476314.28871 8617 0036e39c9b7cdf78666d64f64c74edfa ""
   (generated)
   "main.aux"
   "main.log"

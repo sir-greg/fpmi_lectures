@@ -1,0 +1,200 @@
+\section{Лекция 28}
+\subsection{Завершаем интегральчики}
+\begin{note}
+Пусть $f \in R[a, b]$ и $f \geq 0$ на $[a, b]$. Если $\exists x_0 \in [a, b], f(x_0) > 0$ и $f$ непр-на в $x_0$, то $\int_{a}^{b} f(x) \, dx > 0$
+\end{note}
+\begin{proof}
+По св-ву отделимости $\exists \delta > 0, \forall x \in [x_0 - \delta, x_0 + \delta] \cap [a, b]$, $(f(x) > \frac{f(x_0)}{2})$. Тогда $[c, d]$ --- невырожд. отрезок и по св-ву аддитивности интеграла:
+\[
+\int_{a}^{b} f(x) \, dx = \int_{a}^{c} f(x) \, dx + \int_{c}^{d} f(x) \, dx + \int_{d}^{b} f(x) \, dx \geq \int_{c}^{d} f(x) \, dx \geq \frac{f(x_0)}{2}(d - c) > 0
+\]
+\end{proof}
+\begin{theorem}
+\label{th:last_taylor_element_in_integral_form(12)}
+Пусть $f$ дифф-ма ($n + 1$) раз на $(\alpha, \beta)$ и $f^{(n + 1)} \in R[c, d] \forall [c, d] \subset (\alpha, \beta)$. Тогда для любых $a, x \in (\alpha, \beta)$ выполнено:
+\[
+f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(a)}{k!} (x - a)^{k} + \frac{1}{n!}\int_{a}^{x} (x - t)^{n}f^{(n + 1)}(t) \, dt
+\]
+\end{theorem}
+\begin{proof}
+ММИ по $n$.
+\begin{itemize}
+  \item База $n = 0$:
+    \[
+    f(x) = f(a) + \int_{a}^{x} f'(t) \, dt
+    \]
+  \item (Ф-ла Н-Л) Пусть $n > 1$ и предположим, что утв. верно для $n - 1$, т. е.:
+    \[
+    r_{n - 1}(x) = \frac{1}{(n - 1)!}\int_{a}^{x} (x - t)^{n - 1} f^{(n)}(t) \, dt
+    \]
+    Проинтегрируем по частям:
+    \[
+    r_{n - 1}(x) = -\frac{1}{n!}\int_{a}^{x} ((x - t)^{n})' f^{(n)}(t) \, dt = -\frac{1}{n!} (x - t)^{n}f^{(n)}|_{t = a}^{t = x} + 
+    \]
+    \[
+     + \frac{1}{n!} \int_{a}^{x} (x - t)^{n}f^{(n + 1)}(t) \, dt
+    \]
+    \[
+    = \frac{f^{(n)}(a)}{n!}(x - a)^{n} + \frac{1}{n!}\int_{a}^{x} (x - t)^{n} f^{(n + 1)}(t) \, dt
+    \]
+    Таким образом:
+    \[
+    r_n(x) = \frac{1}{n!} \int_{a}^{x} (x - t)^{n} f^{(n + 1)}(t) \, dt
+    \]
+\end{itemize}
+\end{proof}
+\subsection{Комплексные числа, многочлены и комплексные экспоненты}
+\begin{definition}
+Множеством комплексных чисел $\C$ наз-ся мн-во $\R^{2}$ с введёнными на нём операциями:
+\[
+  (a, b) + (c, d) = (a + c, b + d)
+\]
+\[
+  (a, b) \cdot (c, d) = (ac - bd, ad + bc)
+\]
+  Отн-но введённых операций $\C$ явл-ся полем с нулём $(0, 0)$ и единицей $(1, 0)$
+\end{definition}
+\begin{note}
+Пару $(a, 0)$ отождествляют с действительным числом $a$. Такое отождествление согласовано с операциями:
+\[
+  (a, 0) + (b, 0) = (a + b, 0)
+\]
+\[
+  (a, 0) \cdot (b, 0) = (ab, 0)
+\]
+В этом смысле $\R \subset \C$. \\
+Пару $(0, 1)$ называют \underline{мнимой единицей} и обозначают буквой $i$. Из определения умножения:
+\[
+  i^{2} = -1
+\]
+Т. к. $(a, b) = (a, 0) + (b, 0) \cdot (0, 1)$, то комплексное число $z = (a, b)$ представимо в виде:
+\[
+z = a + bi
+\]
+Такое представление наз-ся \underline{алгебраической формой записи} комплексного числа, при этом:
+\[
+a =: \Re z \text{ --- вещественная часть $z$}
+\]
+\[
+b =: \Im z \text{ --- мнимая часть $z$}
+\]
+\end{note}
+\begin{definition}
+Пусть $z = a + bi$. Тогда действительное число $\left|z\right| = \sqrt{a^{2} + b^{2}}$ наз-ся \underline{модулем комплексного числа} $z$. 
+$\overline{z} = a - bi$ наз-ся \underline{сопряжённым} к комплексному числу $z$
+\end{definition}
+\begin{lemma}
+Пусть $z, w \in \C$. Тогда:
+\begin{itemize}
+  \item [1) ] $\left|\overline{z}\right| = \left|z\right|$
+  \item [2) ] $\overline{z + w} = \overline{z} + \overline{w}$
+  \item [3) ] $\overline{z \cdot w} = \overline{z} \cdot \overline{w}$
+  \item [4) ] $z \cdot \overline{z} = \left|z\right|^{2}$. В част-ти:
+    \[
+    z^{-1} = \frac{\overline{z}}{\left|z\right|^{2}}, z \neq 0
+    \]
+  \item [5) ] $\left|zw\right| = \left|z\right|\left|w\right|$
+  \item [6) ] $\left|z + w\right| \leq \left|z\right| + \left|w\right|$
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Все св-ва, кроме последнего, вытекают из опр-я. Установим св-во $6$:
+\[
+\left|z + w\right|^{2} = (z + w)(z - w) = \left|z\right|^{2} + z\overline{w} + \overline{z}w + \left|w\right|^{2}
+\]
+Положим $t = z\overline{w}$, тогда $\overline{t} = \overline{z}w$, а значит,
+\[
+z\overline{w} + \overline{z}w = 2\Re t
+\]
+Т. к. $\Re t \leq \left|t\right|$, а $\left|t\right| = \left|z\right|\left|w\right|$, то:
+\[
+  \left|z + w\right|^{2} \leq \left|z\right|^{2} + 2 \left|z\right|\left|w\right| + \left|w\right|^{2} = (\left|z\right| + \left|w\right|)^{2}
+\]
+\end{proof}
+\begin{note}
+По ММИ рав-ва ($5$) и ($6$) распространяются на произвольное конечное кол-во сомножителей/слагаемых.
+\end{note}
+Пусть $(r, \phi)$ --- полярные коор-ты $z = x + iy$. Тогда $r = \left|z\right|, \phi$ --- аргумент $z$ (определён с точностью до слагаемого $2\pi n, n \in \Z$). Если $\phi \in (-\pi, \pi]$, то $\phi = \arg z$ --- \underline{главное значение арг-та}. \\
+Т. к. $x = r\cos\phi, y = r\sin\phi$, то $z$ представимо в виде:
+\[
+  z = r(\cos\phi + i\sin\phi)
+\]
+Такое представление наз-ся \underline{тригонометрической формой записи} комплексного числа $z$.
+\begin{note}
+  \begin{itemize}
+    \item [1) ]
+Установим, когда $r_1(\cos \phi_1 + i\sin\phi_1) = r_2(\cos\phi_2 + i\sin\phi_2)$
+\[
+\iff r_1 = r_2, \text{ смотрим на модули}
+\]
+\[
+\Rightarrow \phi_1 = \phi_2 + 2\pi n, n \in \Z
+\]
+  \item [2) ]
+    \[
+      z_1 = r_1(\cos\phi_1 + i\sin\phi_1)
+    \]
+    \[
+      z_2 = r_2(\cos\phi_2 + i \sin\phi_2)
+    \]
+    \[
+    z_1 z_2 = r_1r_2 (\cos(\phi_1 + \phi_2) + i\sin(\phi_1 + \phi_2))
+    \]
+  \item [3) ] $z^{-1} = \frac{\overline{z}}{\left|z\right|^{2}} = \frac{r(\cos\phi - i\sin\phi)}{r^{2}} = \frac{1}{r}(\cos(-\phi) + i\sin(-\phi))$
+  \end{itemize}
+\end{note}
+\begin{statement}[Формула Муавра]
+  Если $z = r(\cos\phi + i\sin\phi) \neq 0$ и $n \in \Z$, то $z^{n} = \left|z\right|^{n}(\cos n\phi + i\sin n\phi)$
+\end{statement}
+\begin{definition}
+Комплексное число $w$ наз-ся корнем $n$-ой степени из комплексного числа $z$, если $w^{n} = z$
+\end{definition}
+\begin{lemma}
+Если $z \neq 0$ и $n \in \N$, то сущ-ют ровно $n$ корней $n$-степени из $z$, они задаются формулой:
+\[
+w_k = \sqrt[n]{\left|z\right|}(\cos \phi_k + i\sin\phi_k), \phi_k = \frac{\phi + 2\pi k}{n}, k = 0, \ldots, n - 1
+\]
+\end{lemma}
+\begin{proof}
+  \begin{itemize}
+    \item [a) ]
+\[
+w_k^{n} = \left|z\right|(\cos n\phi_k + i\sin n\phi_k) = z
+\]
+    \item [b) ] Если $m \geq n$, то $m = nq + r$, где $r \in \set{0, 1, \ldots, n - 1}$
+      \[
+      w_m = w_{nq + r} = w_r
+      \]
+    \item [c) ] $p, r \in \set{0, 1, \ldots, n - 1}, p \neq q$. Покажем, что $w_p \neq w_r$. От прот., пусть $w_p = w_r \Rightarrow$
+      \[
+        \phi_p = \phi_r + 2\pi s, s \in \Z
+      \]
+      \[
+      \iff \frac{\phi + 2\pi p}{n} = \frac{\phi + 2\pi r}{n} + 2pii s
+      \]
+      \[
+       \iff p - r = ns
+      \]
+      Т. к. $\left|p - r\right| < n \Rightarrow s = 0 \Rightarrow p = r!!!$
+  \end{itemize}
+\end{proof}
+\subsection{Вводим анализ на комплах}
+\begin{definition}
+Пусть $\set{z_n} \subset \C$ и $z_0 \in \C$. Говорят, что $\set{z_n}$ сх-ся к $z_0$, если:
+\[
+\lim_{n\to\infty} \left|z_n - z_0\right| = 0
+\]
+Пишут $\lim_{n\to\infty} z_n = z_0$ или $z_n \rightarrow z_0$
+\end{definition}
+\begin{lemma}
+Пусть $z_n = x_n + iy_n, x_n = \Re z_n, y_n = \Im z_n, n \in \N_0$
+\[
+z_n \rightarrow z_0 \iff x_n \rightarrow x_0, y_n \rightarrow y_0
+\]
+\end{lemma}
+\begin{proof}
+\[
+\left|\Re z\right| \leq \left|z\right| \leq \left|\Re z\right| + \left|\Im z\right|
+\]
+(Слева можно поставить $\Im z$)
+\end{proof}
