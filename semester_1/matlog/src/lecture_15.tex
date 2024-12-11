@@ -1,0 +1,157 @@
+\section{Лекция 15}
+\begin{theorem}[Теорема Гёделя о полноте]
+\label{th:Gedel_fullness}
+Теория $\Gamma$ непрот. $\Rightarrow$ у $\Gamma$ есть модель.
+\end{theorem}
+\begin{proof}
+\begin{lemma}[I]
+ Любую непротиворечивую теорию можно расширить до полной непротиворечивой.
+\end{lemma}
+\begin{lemma}[II]
+ Любую непротиворечивую теорию можно расширить до экзистенциальной полной в расшир. сигнатуре.
+\end{lemma}
+\begin{lemma}[III]
+Возможно выполнить леммы $I$ и $II$ одновременно.
+\end{lemma}
+\begin{lemma}[IV]
+Полная непротиворечивая экзистенциальная теория имеет модель.
+\end{lemma}
+\end{proof}
+\underline{Напомним определения:}
+\begin{definition}
+$\triangle$ полная \underline{в сигнатуре} $\sigma$, если для любой замкнутой формулы $\phi$ этой сигн.:
+\[
+  \triangle \vdash \phi \text{ ИЛИ } \triangle \vdash \neg\phi 
+\]
+\end{definition}
+\begin{lemma}[I]
+  $\Gamma$ --- непрот. в сигн. $\sigma$ $\Rightarrow$ сущ. $\triangle \supset \Gamma$ --- непрот., полн. в сигн. $\sigma$
+\end{lemma}
+\begin{proof}[Док-во (Для \underline{конечн. или сч.} мн-во переменных и $\sigma$)]
+$\phi_1, \phi_2, \ldots$ --- все замкн. ф-лы.
+\[
+\Gamma_0 = \Gamma, \Gamma_{i + 1} = \begin{cases}
+\Gamma_{i} \cup \set{\phi_{i + 1}}, \text{ если непрот. } \\
+\Gamma_{i} \cup \set{\neg\phi_{i + 1}}, \text{ иначе}
+\end{cases}
+\]
+\begin{statement}
+Все $\Gamma_i$ --- непрот.
+\end{statement}
+\begin{proof}
+От противного, пусть $\Gamma_{i + 1}$ --- противоречиво. Тогда:
+\[
+\begin{cases}
+  \Gamma_{i} \cup \set{\phi_{i + 1}} \text{ --- прот. } \\
+  \Gamma_i \cup \set{\neg\phi_{i + 1}} \text{ --- прот.}
+\end{cases}
+\]
+Отсюда $\Gamma_{i} \vdash \neg \phi_{i + 1}$ и $\Gamma_{i} \vdash \neg\neg \phi_{i + 1}$, из чего следует, что $\Gamma_{i}$ --- противоречиво --- противоречие. Т. е. $\Gamma_{i}$ --- непрот. $\Rightarrow$ $\Gamma_{i + 1}$ --- непрот. По индукции получаем, что все $\Gamma_{i}$ --- непрот.
+\end{proof}
+$\triangle = \bigcup_{i = 0}^{\infty} \Gamma_i$ --- полное, т. к. $\triangle \ni \phi_i$ или $\triangle \ni \neg \phi_i$. При этом $\triangle$ непрот., т. к. иначе кон. подмн-во $\triangle$ противоречиво $\Rightarrow$ какое-то $\Gamma_{i}$ --- противоречиво.
+\end{proof}
+\begin{definition}
+Теория $\Gamma$ экзистенц. полна отн-но сигнатуры $\sigma$, если для любой замкнутой формулы вида $\exists x \phi$, если $\Gamma \vdash \exists x \phi$, то для некот. константного символа $c \in \sigma$ (вариация замкнутого терма) выполнено $\Gamma \vdash \phi(\sfrac{c}{x})$.
+\end{definition}
+\begin{lemma}[II]
+$\Gamma$ --- непрот. теория в сигн. $\sigma$ $\Rightarrow$ сущ. теория $\triangle \supset \Gamma$ и сигн. $\tau \supset \sigma$, т. ч.:\\
+Если $\Gamma \vdash \exists x \phi$ и $\phi$ в сигн. $\sigma$, то для некоторой константы $c\in \tau$ верно $\triangle \vdash \phi(\sfrac{c}{x})$
+\end{lemma}
+\begin{proof}[Док-во (для сч. сигнатуры)]
+Если $\Gamma \vdash \exists x \phi$, то добавим в сигнатуре конст. $C_\phi$, а в теорию --- ф-лу $\phi(\sfrac{C_\phi}{x})$. \\
+Почему не будет противоречия? \\ 
+От противного, пусть $\Gamma \cup \set{\phi(\sfrac{C_\phi}{x})} \vdash \psi, \neg \psi$. \\
+По лемме о дедукции $\Gamma \vdash \phi(\sfrac{C_\phi}{x}) \rightarrow \psi$ и $\Gamma \vdash \phi(\sfrac{C_\phi}{x}) \rightarrow \neg \psi$. Можно считать, что $\psi$ --- замкн., иначе применим Акс. 9. и не сод. $C_\phi$ \\
+Получим $\Gamma \vdash \phi(\sfrac{y}{x}) \rightarrow \psi, y$ --- своб. переменных. По $\sum$-правилу Бёрнайса.
+\[
+\Gamma \vdash \exists y \phi (\sfrac{y}{x}) \rightarrow \psi
+\]
+Переим. переменные: $\Gamma \vdash \exists x \phi \rightarrow \psi$ \\
+Т. к. $\Gamma \vdash \exists x P$, то $\Gamma \vdash \psi$. Аналог. $\Gamma \vdash \neg \psi \Rightarrow \Gamma$ --- прост.
+\end{proof}
+\begin{lemma}[III.]
+  Пусть $\Gamma$ --- непрот. теория в сигн. $\sigma$. Тогда сущ. теория $\triangle \supset  \Gamma$ и сигн. $\tau \supset \sigma$, т. ч. $\triangle$ --- непрот., полн. и экзист. полн. отн. $\tau$.
+\end{lemma}
+\begin{proof}
+Идея: поочерёдно применим леммы 1 и 2.
+\[
+\Gamma_0 = \Gamma, \sigma_0 = \sigma
+\]
+\[
+\Gamma \supset \Gamma_0, \sigma_1 = \sigma_0, \Gamma_1 \text{ полная отн-но $\sigma_1$}
+\]
+\[
+\Gamma_2 \supset \Gamma_1, \sigma_2 \supset \sigma_1, \Gamma_2 \text{ экзист. полная отн-но $\sigma_1$} 
+\]
+\[
+  \Gamma_3 \supset \Gamma_2, \sigma_3 = \sigma_2, \Gamma_3 \text{ --- полная отн-но $\sigma_3$}
+\]
+\[
+\vdots, \vdots
+\]
+\[
+\triangle = \bigcup_{i = 0}^{\infty} \Gamma_i, \tau = \bigcup_{i = 0}^{\infty} \sigma_i
+\] 
+$\phi$ замкн. ф-ла в сигн. $\tau \Rightarrow \phi$ --- замкн. ф-ла в сигнатуре $\sigma_i$ $\Rightarrow$ $\Gamma_{i + 1} \vdash \phi$ или $\Gamma_{i + 1} \vdash \neg \phi$ $\Rightarrow \triangle \vdash \phi$ или $\triangle \vdash \neg \phi$. Аналог. для экзист. полн.
+\end{proof}
+\begin{lemma}[IV]
+$\triangle$ --- непрот., полн., экзист. полн. теория в сигн. $\tau \Rightarrow \triangle$ имеет модель.
+\end{lemma}
+\begin{proof}
+Носитель --- замкн. термы. (составл. только из констант).
+\[
+[f]("t_1", \ldots, "t_k") = "f(t_1, \ldots, t_k)"
+\]
+\[
+[P]("t_1", \ldots, "t_k") = \begin{cases}
+1, \triangle \vdash P(t_1, \ldots, t_k) \\
+0, \triangle \vdash \neg P(t_1, \ldots, t_k)
+\end{cases}
+\]
+\end{proof}
+\begin{statement}
+Все формулы из $\triangle$ истины в этой интерпретации, а все замкнутые формулы не из $\triangle$ --- ложны. (не вывод. из $\triangle$)
+\end{statement}
+\begin{proof}
+Индукция по построению ф-лы:
+\begin{itemize}
+  \item Атомарная формула --- по опр.
+ \item $\phi \eqcirc \neg\psi$. Рассм. несколько случаев:
+   \[
+   \triangle \not\vdash \phi \iff \triangle \vdash \psi \Rightarrow \psi \text{ --- ист} \Rightarrow \phi \text{ --- ложна}
+   \]
+   \[
+   \triangle \vdash \phi \iff \triangle \vdash \neg \psi \Rightarrow \psi \text{ --- ложна} \Rightarrow \phi \text{ --- истина.}
+   \]
+   \[
+   \phi \eqcirc (\psi \land \eta) \text{ --- аналог.}
+   \]
+   \[
+   \phi \eqcirc \exists x \phi
+   \]
+   \[
+    \triangle \vdash \exists x \psi \overset{\text{экз. полная}}{\Rightarrow} \triangle \vdash \psi(\sfrac{t}{x}) \Rightarrow \psi(\sfrac{t}{x}) \text{ --- ист.} \Rightarrow \exists x \psi \text{ --- ист.}
+   \]
+   \[
+     \triangle \neg \exists x \psi \Rightarrow \text{ для всех $t$ ф-ла $\psi(\sfrac{t}{x})$ ложна},
+   \]
+   Тогда $\exists x \psi$ тоже ложна.
+   \[
+   \text{Иначе, если $\psi(\sfrac{t}{x})$ --- ист, то $\triangle \vdash \psi(\sfrac{t}{x})$} \Rightarrow \triangle \vdash \exists x \psi
+   \]
+   \[
+   \phi \eqcirc \exists x \psi \text{ --- аналог.}
+   \]
+\end{itemize}
+\end{proof}
+\begin{theorem}[Мальцева о компактности]
+\label{th:malcev_compact}
+Если $\Gamma$ --- теория, и любая кон. подтеория имеет модель, то и вся $\Gamma$ имеет модель.
+\end{theorem}
+\begin{proof}
+  Рассм. 2 случая:
+  \begin{itemize}
+    \item [1) ] $\Gamma$ --- против. $\Rightarrow$ конечная подтеория прот. $\Rightarrow$ не имеет модели.
+    \item [2) ] $\Gamma$ --- непротив. $\Rightarrow$ имеет модель.
+  \end{itemize}
+\end{proof}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  4 DEC 2024 18:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  11 DEC 2024 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -758,260 +758,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 
 
-[2] (./src/lecture_5.tex
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-
- []
-
-
-
-[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-
-[4]
-
-[5]) (./src/lecture_6.tex
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-
- []
-
-
-
-[7]
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
-
- []
-
-
-Overfull \hbox (48.61366pt too wide) in paragraph at lines 192--199
- [] 
- []
-
-
-
-[9]) (./src/lecture_7.tex
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 5--8
-
- []
-
-
-Overfull \hbox (13.56439pt too wide) in paragraph at lines 24--25
-[]$[]$ \T2A/cmr/bx/n/12 3.2 \T2A/cmr/m/n/12 (Ос-нов-ная)\T2A/cmr/bx/n/12 . []\T2A/cmr/m/it/12 Пусть $\OML/cmm/m/it/12 ^^^$ \T2A/cmr/m/it/12 - ф-ла от $\OML/cmm/m/it/12 n$ \T2A/cmr/m/it/12 пе-ре-мен-ных ($[] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 p[]; [] ; p[]\OT1/cmr/m/n/12 )$\T2A/cmr/m/it/12 ). 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--35
-
- []
-
-
-
-[11]
-
-[12]
-Overfull \hbox (42.36513pt too wide) detected at line 141
-\OMS/cmsy/m/n/12 ` \OML/cmm/m/it/12 ^^^ \OMS/cmsy/m/n/12 ) [] [] [] [] [] ) 8\OML/cmm/m/it/12 a; \OMS/cmsy/m/n/12 :\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 ) = 0  \OMS/cmsy/m/n/12 ([])  \OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 ) = 1 \OMS/cmsy/m/n/12 )
- []
-
-
-Overfull \hbox (8.04495pt too wide) detected at line 149
-\OML/cmm/m/it/12 ^^^[] \OMS/cmsy/m/n/12 ) [] [] [] [] [] ) ::\OML/cmm/m/it/12 ^^^ \OMS/cmsy/m/n/12 ` \OML/cmm/m/it/12 ^^^
- []
-
-
-Overfull \hbox (4.81813pt too wide) in paragraph at lines 185--188
-[]\T2A/cmr/m/n/12 Если пе-ре-мен-ных сч.
- []
-
-
-
-[13]
-
-[14]) (./src/lecture_8.tex
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 59--62
-
- []
-
-
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
-
- []
-
-
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 205--207
-
- []
-
-
-
-[18]) (./src/lecture_10.tex
-
-[19]
-Overfull \hbox (52.1581pt too wide) detected at line 55
-\OML/cmm/m/it/12 t \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[]; [] ; t[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; f[] \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 Par\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 Par\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 )
- []
-
-
-Overfull \hbox (13.78629pt too wide) in paragraph at lines 77--78
-[]\T2A/cmr/m/it/12 Если $\OML/cmm/m/it/12 ^^Y; ^^Y[]$ \T2A/cmr/m/it/12 --- оцен-ки и для лю-бой пер. $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 Par\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; ^^Y\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) =
- []
-
-
-Overfull \hbox (1.7546pt too wide) in paragraph at lines 78--79
-[]\T2A/cmr/m/it/12 Если $\OML/cmm/m/it/12 ^^Y; ^^Y[]$ \T2A/cmr/m/it/12 - оцен-ки, т. ч. для $\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 Par\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; ^^Y\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$ \T2A/cmr/m/it/12 то $\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 ) =
- []
-
-
-
-[20]
-Overfull \hbox (47.22466pt too wide) detected at line 108
-\OT1/cmr/m/n/12 = [\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 ][]([\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 ][][\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 ]) = [\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 ][]([\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 )) = [\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 ))
- []
-
-
-Overfull \hbox (97.09703pt too wide) in paragraph at lines 109--110
-[]$\OML/cmm/m/it/12 ^^^ \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12  [] \OMS/cmsy/m/n/12 ^ \OML/cmm/m/it/12  []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ) \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 ][][\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 ] = \OML/cmm/m/it/12 AND\OT1/cmr/m/n/12 ([\OML/cmm/m/it/12  []\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12  []\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 )]) = \OML/cmm/m/it/12 And\OT1/cmr/m/n/12 ([\OML/cmm/m/it/12  []\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12  []\OT1/cmr/m/n/12 ][](\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 )) =
- []
-
-) (./src/lecture_11.tex
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-
- []
-
-
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-
- []
-
-
-Overfull \hbox (53.35136pt too wide) detected at line 106
-\OT1/cmr/m/n/12 (\U/msb/m/n/12 R[]\OML/cmm/m/it/12 ; E\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; E\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )[]
- []
-
-
-
-[23]) (./src/lecture_12.tex
-
-[24]
-
-[25]
-
-[26]
-
-[27]) (./src/lecture_13.tex
-
-[28]
-
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-
- []
-
-
-
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
-
- []
-
-
-Overfull \hbox (13.26111pt too wide) detected at line 157
-\OML/cmm/m/it/12 b[] < b[] \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 H [] [] []; K [] [] a \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 Z\OML/cmm/m/it/12 ; []a \OMS/cmsy/m/n/12 ^^T \OT1/cmr/m/n/12 0 \OMS/cmsy/m/n/12 _ \OML/cmm/m/it/12 a \OMS/cmsy/m/n/12 ^^U \OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 H[]
- []
-
-
-
-[31]) (./src/lecture_14.tex
+[2] (./src/lecture_14.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
@@ -1048,36 +795,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
  []
 
 
-
-[32]
 Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
 
+
+[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
 
-
-[33]
 Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 
+
+[4]
 Overfull \hbox (31.38142pt too wide) detected at line 121
 \OML/cmm/m/it/12 C[][]
  []
 
 
 
-[34]
+[5]) (./src/lecture_15.tex
 
-[35])
+[6]
 
-[36] (./main.aux)
+[7]
+Overfull \hbox (3.54741pt too wide) in paragraph at lines 61--66
+[]\T2A/cmr/m/n/12 Если $\OT1/cmr/m/n/12 ^^@ \OMS/cmsy/m/n/12 ` 9\OML/cmm/m/it/12 x^^^$\T2A/cmr/m/n/12 , то до-ба-вим в сиг-на-ту-ре конст.
+ []
+
+
+
+[8]
+
+[9])
+
+[10] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -1085,22 +843,22 @@ L3 programming layer <2024-07-20>
 
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 2.90001pt have occurred.
+(Font)              up to 3.25pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 18313 strings out of 473579
- 352338 string characters out of 5728235
- 1939957 words of memory out of 5000000
- 40811 multiletter control sequences out of 15000+600000
- 587195 words of font info for 124 fonts, out of 8000000 for 9000
+ 18264 strings out of 473579
+ 351010 string characters out of 5728235
+ 1940957 words of memory out of 5000000
+ 40785 multiletter control sequences out of 15000+600000
+ 587542 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,12n,110p,433b,590s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (36 pages, 395498 bytes).
+ 107i,15n,110p,487b,590s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on main.pdf (10 pages, 255074 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
+ 130 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

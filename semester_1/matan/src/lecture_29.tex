@@ -1,0 +1,149 @@
+\section{Лекция 29}
+\subsection{Продолжаем про комплы}
+\begin{definition}
+$\set{z_n}$ наз-ся фундаментальной, если:
+\[
+\forall \varepsilon > 0, \exists N \forall m, n \in \N (\left|z_n - z_m\right| < \varepsilon)
+\]
+\end{definition}
+\begin{consequence}
+  \label{cs:fund_1}
+$\set{z_n}$ фундам. $\iff$ $\set{x_n}, \set{y_n}$ --- фундам.
+\end{consequence}
+\begin{theorem}[Критерий Коши в $\C$]
+\label{th:cauchey_in_C}
+$\set{z_n}$ сх-ся $\iff$ $\set{z_n}$ --- фундам.
+\end{theorem}
+\begin{consequence}
+  \label{cs:fund_2}
+  Пусть $\set{z_n}$ огр., т. е. $\exists C > 0 \forall n (\left|z_n\right| \leq C)$. Тогда $\set{z_n}$ имеет сх-ся подп-ть. $\set{z_{n_k}}$
+\end{consequence}
+\begin{proof}
+$\set{x_n}$ --- огр. $\Rightarrow \exists x_{n_k} \rightarrow x_0$ \\
+$\set{y_{n_k}}$ --- огр. $\Rightarrow \exists y_{n_{k_i}} \rightarrow y_0 \Rightarrow x_{n_{k_i}} \Rightarrow x_0$
+\[
+z_0 = z_0 + iy_0 \Rightarrow z_{n_{k_i}} \rightarrow z_0
+\]
+\end{proof}
+\begin{definition}
+$f:E \subset \C \rightarrow \C$ непр-на в точке $z_0$ $\iff$:
+\[
+  \forall \set{z_n} \subset E (z_n \rightarrow z_0 \Rightarrow f(z_n) \rightarrow f(z_0))
+\]
+\end{definition}
+\begin{example}
+  \[
+    f \colon \set{\left|z\right| \leq R} \rightarrow \R \Rightarrow \exists z_0, \left|z_0\right| \leq R \Rightarrow \exists z_0, \left|z_0\right| \leq R \colon
+  \]
+  \[
+    \underset{\left|z\right| \leq R}{\inf} f(z) = f(z_0)
+  \]
+\end{example}
+\begin{proof}
+$m = \underset{\left|z\right| \in R}{\inf} f(z)$. Рассм. $r_n \rightarrow m, r_n > m$.
+\[
+\exists z_n, \left|z_n\right| \leq R, m \leq f(z_n) < r_n
+\]
+В част-ти, $f(z_n) \rightarrow m$. $\set{z_n}$ огр. $\Rightarrow \exists z_{n_k} \rightarrow z_0 \Rightarrow \left|z_0\right| \leq R$. В част-ти, $\left||z| - |z_0|\right| \leq \left|z - z_0\right|$. В силу непр-ти $f$ в точке $z_0$.
+\[
+  f(z_{n_k}) \rightarrow f(z_0), f(z_{n_k}) \rightarrow m \Rightarrow f(z_0) = m
+\]
+\end{proof}
+\begin{definition}
+Многочлен --- это (понятно что)
+\end{definition}
+\begin{theorem}[Основная теорема алгебры]
+\label{th:base_algebra_th}
+Всякий многочлен положительной степени имеет корень.
+\end{theorem}
+\begin{proof}
+Пусть $P(z) = \sum_{k = 0}^{n} a_k z^{k}, \deg P(z) = n$
+\begin{itemize}
+  \item [I. ] Покажем, что $\exists z_0 \in \C, \underset{z \in \C}{\inf}\left|P(z)\right| = \left|P(z_0)\right|$ \\
+   Пусть $\left|z\right| \geq 1$. Тогда:
+   \[
+   \left|\sum_{k = 0}^{n - 1} a_k z^{k}\right| \leq \sum_{k = 0}^{n - 1} \left|a_k\right| \left|z\right|^{k} \leq \left|z\right|^{n - 1} \underbrace{\sum_{k = 0}^{n - 1} \left|a_k\right|}_{= A}
+   \]
+   Хотим:
+   \[
+   A \left|z\right|^{n - 1} \leq \frac{1}{2} \left|a_n\right| \left|z\right|^{n}
+   \]
+   \[
+   \left|z\right| \geq \frac{2A}{\left|a_n\right|}
+   \]
+   \[
+   \left|P(z)\right| = \left|a_n z^{n}\right| - \left|\sum_{k = 0}^{n - 1} a_k z^{k}\right| = \left|a_n\right| \left|z\right|^{n} - \frac{1}{2} \left|a_n\right|\left|z\right|^{n} = \frac{1}{2}\left|a_n\right|\left|z^{n}\right|
+   \]
+   \[
+   \frac{1}{2}\left|a_n\right|\left|z\right|^{n} \geq \left|a_0\right| \iff \left|z\right| \geq \sqrt[n]{\frac{2\left|a_0\right|}{\left|a_n\right|}}
+   \]
+   Положим $R = \max \set{1, \frac{2A}{\left|a_n\right|}, \sqrt[n]{\frac{2\left|a_0\right|}{\left|a_n\right|}}}$ \\
+   Тогда при $\left|z\right| \geq R$ выполнено:
+   \[
+   \left|P(z)\right| \geq \left|P_0\right|
+   \]
+   так что $\underset{\C}{\inf} \left|P(z)\right| = \underset{\left|z\right| \leq R}{\inf} \left|P(z)\right|$ \\
+   Согласно примерам:
+   \[
+   \exists z_0, \left|z_0\right| \leq R, \underset{\C}{\inf} \left|P(z)\right| = \left|P(z_0)\right|
+   \]
+ \item [II.] Докажем, что если $P(z_0) \neq 0$, то $\exists z_k \in \C$, т. ч. $\left|P(z_k)\right| < \left|P(z_0)\right|$. Рассм. $Q(z) = \frac{P(z + z_0)}{P(z_0)}, \deg Q = \deg P$ \\
+   Обозначим через $\alpha_k$ наим. коэф. $Q$, отлич от $0$, $k \geq 1$. Тогда $Q(z) = 1 + \alpha_k z^{k} + \ldots + \alpha_n z^{n}$. Рассм.:
+   \[
+   z_1 \in \C, \alpha_k z_1^{k} = -1, \text{ и пусть } t \in (0, 1)
+   \]
+   \[
+   Q(tz_1) = 1 - t^{k} + t^{k + 1}\phi(t), \text{ где $\phi(t)$ --- мн-н степени $n - k - 1$}
+   \]
+    $C$ --- наиб. из модулей коэф-тов $\phi(t)$, тогда $\left|\phi(t)\right| \leq C(n - k)$
+    \[
+    \left|Q(t z_1)\right| \leq 1 - t^{k} + t^{k + 1} \left|\phi(t)\right| \leq 1 - t^{k}(1 - tC(n - k))
+    \]
+    При $t \in \left(0, \frac{1}{C(n - k)}\right)$, $\left|Q(t z_1)\right| < 1$
+\end{itemize}
+\end{proof}
+\subsection{Комплексная экспонента $e^{z}$}
+\begin{statement}
+  Последовательность $a_n(z)$ сх-ся:
+\[
+a_n(z) = \left(1 + \frac{z}{n}\right)^{n} 
+\]
+\end{statement}
+\begin{proof}
+По формуле бинома:
+\[
+a_n(z) = 1 + \sum_{k = 1}^{n} C_{n}^{k} \frac{z^{k}}{n^{k}}, \text{ где}
+\]
+\[
+  \frac{C_{n}^{k}}{n^{k}} = \frac{1}{k!}\frac{n(n - 1) \ldots (n - k + 1)}{n^{k}} = \frac{1}{k!}\left(1 - \frac{1}{n}\right)\left(1 - \frac{2}{n}\right)\ldots\left(1 - \frac{k - 1}{n}\right)
+\]
+Пусть $n, m \in \N, n > m$. Т. к. $\left(1 - \frac{1}{n}\right)$ --- строго возрастает, то:
+\[
+  \frac{C_{n}^{k}}{n^{k}} > \frac{C_{m}^{k}}{m^{k}}, k = 1, \ldots, m
+\]
+Поэтому по нер-ву:
+\[
+\left|a_n(z) - a_m(z)\right| = \left|\sum_{k = 1}^{n} \left(\frac{C_{n}^{k}}{n^{k}} - \frac{C_{m}^{k}}{m^{k}}\right) + \sum_{k = m + 1}^{n} \frac{C_{n}^{k}}{n^{k}}z^{k}\right| \leq
+\]
+\[
+\leq \sum_{k = 1}^{n}\left(\frac{C_{n}^{k}}{n^{k}} - \frac{C_{m}^{k}}{m^{k}}\right)\left|z\right|^{k} + \sum_{k = m + 1}^{n} \frac{C_{n}^{k}}{n^{k}} \left|z\right|^{k} = a_n(\left|z\right|) - a_m(\left|z\right|) 
+\]
+Т. к. $\set{a_n(\left|z\right|)}$, то она фундам., а значит, $\set{a_n(z)}$ фундам. (в $\C$). Сл-но, $\set{a_n(z)}$ --- сх-ся.
+\end{proof}
+\begin{definition}
+Функция $e^{z} := \lim_{n\to\infty} \left(1 + \frac{z}{n}\right)^{n}, z \in \C$ наз-ся \underline{комплексной экспонентой}.
+\end{definition}
+\begin{statement}
+\[
+\forall z, w \in \C \colon e^{z + w} = e^{z}e^{w}
+\]
+\end{statement}
+\begin{proof}
+Такое же, как и в случае $\R$
+\end{proof}
+\begin{theorem}
+\label{th:exp_form}
+\[
+e^{z} = \lim_{n\to \infty} \sum_{k = 0}^{n} \frac{z^{k}}{k!}, \forall z \in \C
+\]
+\end{theorem}

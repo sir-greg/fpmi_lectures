@@ -15,3 +15,6 @@
 \contentsline {subsection}{\numberline {7.1}Завершаем интегральчики}{28}{}%
 \contentsline {subsection}{\numberline {7.2}Комплексные числа, многочлены и комплексные экспоненты}{29}{}%
 \contentsline {subsection}{\numberline {7.3}Вводим анализ на комплах}{32}{}%
+\contentsline {section}{\numberline {8}Лекция 29}{33}{}%
+\contentsline {subsection}{\numberline {8.1}Продолжаем про комплы}{33}{}%
+\contentsline {subsection}{\numberline {8.2}Комплексная экспонента $e^{z}$}{35}{}%
