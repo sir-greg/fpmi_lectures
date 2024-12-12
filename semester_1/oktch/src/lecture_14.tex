@@ -194,4 +194,14 @@ a_1, \ldots, a_{2p - 1}
 \[
 \sum_{i \in I}^{} a_i \not\equiv 0 \pmod p 
 \]
+\begin{itemize}
+  \item [1) ] По МЛТ, получаем:
+    \[
+    \sum_{I \subset \set{1, 2, \ldots, n}, \left|I\right| = p}^{} \left(\sum_{i \in I}^{} a_i\right)^{p - 1} \equiv C_{2p - 1}^{p} \equiv 1 \pmod p
+    \]
+  \item [2) ] Раскрывая как полином:
+    \[
+    \sum_{I \subset \set{1, 2, \ldots, n}, \left|I\right| = p}^{} \left(\sum_{i \in I}^{} a_i\right)^{p - 1} \equiv \sum_{I \subset \set{1, 2, \ldots, 2p - 1}, \left|I\right| = p}^{} \ldots
+    \]
+\end{itemize}
 \end{proof}
