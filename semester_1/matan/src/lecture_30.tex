@@ -1,0 +1,196 @@
+\section{Лекция 30}
+\begin{theorem}
+\label{th:exp_form}
+\[
+e^{z} = \lim_{n\to \infty} \sum_{k = 0}^{n} \frac{z^{k}}{k!}, \forall z \in \C
+\]
+\end{theorem}
+\begin{proof}
+ПУсть $z \in \C$. Заф. $\varepsilon > 0$ и выберем $m \in \N$, т. ч. $\left|z\right| \leq m$ и оценим при $n > m$ и $\frac{\left|z\right|^{m + 1}}{m!} < \frac{\varepsilon}{4}$
+\[
+\left|\sum_{k = 0}^{n} \frac{z^{k}}{k!} - \sum_{k = 0}^{n} \frac{C_{n}^{k}}{n^{k}} z^{k}\right| = \vert \sum_{k = 0}^{m} \frac{z^{k}}{k!} \left(1 - \left(1 - \frac{1}{n}\right)\ldots\left(1 - \frac{k - 1}{n}\right)\right) + 
+\]
+\[
+ + \sum_{k = m + 1}^{n} \frac{z^{k}}{k!} + \sum_{k = m + 1}^{n} \frac{z^{k}}{k!}\left(1 - \frac{1}{n}\right)\ldots\left(1 - \frac{k - 1}{n}\right)\vert \leq
+\]
+\[
+ \leq \sum_{k = 0}^{m} \frac{\left|z^{k}\right|}{k!}\left(1 - \left(1 - \frac{1}{n}\right)\ldots\left(1 - \frac{k - 1}{n}\right)\right) + 2\sum_{k = m + 1}^{n} \frac{\left|z^{k}\right|}{k!}
+\]
+Рассм. 2-ую сумму:
+\[
+\sum_{k = m + 1}^{n} \frac{\left|z^{k}\right|}{k!} = \frac{\left|z\right|^{m + 1}}{(m + 1)!} \left(1 + \frac{\left|z\right|}{m + 1} + \ldots + \frac{\left|z\right|^{n - m - 1}}{(m + 2)\ldots n}\right) \leq
+\]
+\[
+ \leq \begin{bmatrix}q = \frac{\left|z\right|}{m + 1} \end{bmatrix} \leq \frac{\left|z\right|^{m + 1}}{(m + 1)!}\left(1 + q + \ldots + q^{n - m + 1}\right) \leq 
+\]
+\[
+   \leq \frac{\left|z\right|^{m + 1}}{(m + 1)!} \cdot \frac{1}{1 - q} = \frac{\left|z\right|^{m + 1}}{(m + 1)!} \cdot \frac{m + 1}{m + 1 - \left|z\right|} \leq \frac{\left|z\right|^{m + 1}}{m!}
+\]
+Заметим, что $\frac{\left|z\right|^{m + 1}}{m!}$ --- б. м., т. е.
+\[
+\exists m_0 \colon \forall m \geq m_0, \frac{\left|z\right|^{m + 1}}{m!} < \frac{\varepsilon}{4}
+\]
+А т. к. длинная скобка при $n \rightarrow \infty$ стремиться к $0$, то всё получается и теорема доказана.
+\end{proof}
+\begin{example}
+$x \in \R$:
+\[
+\sum_{m = 0}^{2n} \frac{(ix)^{m}}{m!} = \sum_{m \text{ --- чёт}}^{} + \sum_{m \text{ --- нечёт.}}^{} = \sum_{m = 0}^{n} \frac{(-1)^{k}x^{2k}}{(2k)!} + i\sum_{k = 0}^{n - 1} \frac{(-1)^{k} x^{2k + 1}}{(2k + 1)!}
+\]
+Распишем разложение $\cos$ и $\sin$ по формуле Тейлора, с остаточным членом в форму Лагранжа.
+\[
+\cos x - \sum_{k = 0}^{n} \frac{(-1)^{k} x^{2k}}{(2k)!} = \frac{\cos^{(2n + 1)}(\xi) x^{2n + 1}}{(2n + 1)!}
+\]
+\[
+\Rightarrow 
+\left|\cos x - \sum_{k = 0}^{n} \frac{(-1)^{k} x^{2k}}{(2k)!}\right| \leq \left|\frac{x^{2n + 1}}{(2n + 1)!}\right|
+\]
+Получаем:
+\[
+e^{ix} = \cos x + i\sin x
+\]
+\end{example}
+\subsection{Обсуждаем модель $\R$}
+\subsubsection{Строим $\N$}
+\[
+<\N, +, \cdot, \leq>
+\]
+\[
+  0 = \emptyset
+\]
+\[
+  S(n) = n \cup \set{n}
+\]
+\[
+  \N = \set{0, S(0), S(S(0)), S(S(S(0))), \ldots}
+\]
+\[
+  a + 0 = a
+\]
+\[
+  a + S(b) = S(a + b)
+\]
+\[
+  a \cdot 0 = 0
+\]
+\[
+  a \cdot S(b) = a \cdot b + a
+\]
+\[
+  a \leq b \iff \exists c \colon (a + c = b)
+\]
+\[
+  x = a - b
+\]
+\[
+  (a, b), \text{ где }a, b \in \N
+\]
+\[
+  a - b = c - d \iff a + d = b + c \iff (a, b) \sim (c, d)
+\]
+\subsubsection{Строим $\Z$}
+\[
+\Z  = \sfrac{\N \times \N}{\sim}
+\]
+\[
+  (a - b) + (c - d) = (a + c) - (b + d)
+\]
+\[
+  (a, b) + (b, a) \sim (0, 0)
+\]
+\[
+  [(a, b)] + [(c, d)] = (a + c, b + d)
+\]
+\[
+  (a - b) \cdot (c - d) = (ac + bd) - (ad + bc)
+\]
+\[
+  [(a, b)] \cdot [(c, d)] = [ac + bd, ad + bc]
+\]
+\[
+  a - b \leq c - d \iff a + d \leq b + c \iff (a, b) \leq (c, d)
+\]
+Введём также инъекцию $i \colon \N \rightarrow \Z$:
+\[
+i(n) = [(n, 0)]
+\]
+\subsubsection{Строим $\Q$}
+\[
+\Q = \sfrac{\Z \times (\Z \backslash \set{0})}{\sim}
+\]
+\[
+  (a, b) \sim (c, d) \iff ad = bc
+\]
+\[
+  (a, b) + (c, d) = (ad + cb, bd)
+\]
+\[
+  (a, b) \cdot (c, d) = (ac, bd)
+\]
+\[
+  (a, b) \leq (c, d) \iff 
+\]
+\[
+ \iff (bd > 0 \land ad \leq bc) \lor (bd < 0 \land ad \geq bc)
+\]
+\[
+  (a, b) \cdot (b, a) \sim (1, 1)
+\]
+Введём также инъекцию: $i \colon \Z \rightarrow \Q$
+\[
+i(a) = [(a, 1)]
+\]
+\subsubsection{Строим $\R$}
+\[
+\R = \Q^{\N}
+\]
+\begin{definition}
+Посл-ть $a \colon \N \rightarrow \Q$ наз-ся \underline{фундаментальной}, если:
+\[
+\forall \varepsilon \in \Q_+, \exists N \in \N \colon \forall n, m \geq N (\left|a_n - a_m\right| < \varepsilon)
+\]
+\end{definition}
+\begin{definition}
+Число $r \in a$ наз-ся \underline{пределом посл-ти} $a \colon \N \rightarrow \Q$, если
+\[
+\forall \varepsilon \in \Q_+ \colon \exists N \in \N, \forall n \geq N (\left|a_n - r\right| < \varepsilon)
+\]
+\end{definition}
+\begin{symb}
+Мн-во фундаментальных последовательной назовём $C$ (от Cauchy).
+\end{symb}
+\[
+\R = \sfrac{C}{\sim}
+\]
+\[
+  (a_n) \sim (b_n) \iff (a_n - b_n) \overset{n \rightarrow \infty}{\longrightarrow} 0
+\]
+\begin{statement}
+Пусть $(a_n), (b_n) \in C$. Тогда $(a_n + b_n) \in C$
+\end{statement}
+\begin{proof}
+Заф. $\varepsilon \in \Q_+$. Выберем $N_1, N_2 \in \N$ так, что:
+\[
+\forall n, m \geq N_1 (\left|a_n - a_m\right| < \frac{\varepsilon}{2})
+\]
+\[
+\forall n, m \geq N_2 (\left|b_n - b_m\right| < \frac{\varepsilon}{2})
+\]
+\[
+\forall n, m \geq max(N_1, N_2) \colon
+\]
+\[
+  \left|(a_n + b_n) - (a_m + b_m)\right| \leq \left|a_n - a_m\right| + \left|b_n - b_m\right| < \varepsilon
+\]
+\end{proof}
+\begin{lemma}
+Пусть $(a_n) \in C$, тогда верно одно из трех:
+\begin{itemize}
+  \item [1) ] $a_n \rightarrow 0$
+  \item [2) ] $\exists r \in \Q_+, \exists N \in \N, \forall n \geq N, (a_n \geq r)$
+  \item [3) ] $\exists r \in \Q_-, \exists N \in \N \colon \forall n \geq N, (a_n \leq r)$
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Если $a_n \not\rightarrow 0$, то $\exists \varepsilon \in \Q_+, \forall N \in \N, \exists n > N, (\left|a_n\right| \geq \varepsilon)$
+\end{proof}
