@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  12 DEC 2024 12:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  7 JAN 2025 17:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -482,26 +482,30 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count319
 \l__pdf_internal_box=\box58
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `th:erdesh-ginsburg-ziva-14' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Info: Redefining \th on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Info: Redefining \th on input line 6.
 \c@lstlisting=\count320
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -530,63 +534,513 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+esvect on input line 6.
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 7.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 6.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 7.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}] (./main.toc)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}] (./main.toc
+
+[2])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
 
 
-[2] (./src/lecture_15.tex
+[3] (./src/lecture_1.tex
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 5.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Overfull \hbox (2.37727pt too wide) in paragraph at lines 13--14
+[]\T2A/cmr/m/n/12 Обычные (мож-но пе-ре-сдать (1(на КР)/0.8(На след. КР)/0.5(В ДЗ))) 
+ []
+
+
+
+[4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
+
+ []
+
+
+
+[5]
+
+[6]) (./src/lecture_2.tex
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+
+
+[8]
+Overfull \hbox (12.56055pt too wide) detected at line 139
+[] \OMS/cmsy/m/n/12 ) [] ) \OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 ) []
+ []
+
+
+
+[9]
+
+[10]) (./src/lecture_3.tex Excluding 'comment' comment.
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+
+
+[12]
+./src/lecture_3.tex:172: Undefined control sequence.
+l.172 РќРµСЃС‚СЂРѕРіР°СЏ: $A \simlE
+                                    B$, РµСЃР»Рё $\exists B' \subset B, A \c...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:175: Undefined control sequence.
+l.175 \item  РЎС‚СЂРѕРіР°СЏ: $A \simless
+                                         B$, РµСЃР»Рё $A \simlE B, A \not\co...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:175: Undefined control sequence.
+l.175 ...іР°СЏ: $A \simless B$, РµСЃР»Рё $A \simlE
+                                                   B, A \not\cong B$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+
+[13]
+./src/lecture_3.tex:183: Undefined control sequence.
+l.183 ...] Р РµС„Р»РµРєСЃРёРІРЅРѕСЃС‚СЊ: $A \simlE
+                                                   A$; РђРЅС‚РёСЂРµС„Р»РµРєС...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:183: Undefined control sequence.
+l.183 ...С„Р»РµРєСЃРёРІРЅРѕСЃС‚СЊ: $A \not\simless
+                                                   A$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:184: Undefined control sequence.
+l.184 ...] РўСЂР°РЅР·РёС‚РёРІРЅРѕСЃС‚СЊ: $A \simlE
+                                                   B, B \simlE C \Rightarrow...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:184: Undefined control sequence.
+l.184 ...РёС‚РёРІРЅРѕСЃС‚СЊ: $A \simlE B, B \simlE
+                                                   C \Rightarrow A \simlE C$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:184: Undefined control sequence.
+l.184 ...\simlE B, B \simlE C \Rightarrow A \simlE
+                                                   C$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:189: Undefined control sequence.
+l.189     A \simless
+                     B, B \simless C \Rightarrow A \simless C
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:189: Undefined control sequence.
+l.189     A \simless B, B \simless
+                                   C \Rightarrow A \simless C
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:189: Undefined control sequence.
+l.189 ...ss B, B \simless C \Rightarrow A \simless
+                                                   C
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:192: Undefined control sequence.
+l.192     A \simlE
+                   C \text{ - РёР· РїСЂРµРґС‹РґСѓС‰РµРіРѕ}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:201: Undefined control sequence.
+l.201 A \simlE
+               B, B \simlE A \Rightarrow A \cong B
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./src/lecture_3.tex:201: Undefined control sequence.
+l.201 A \simlE B, B \simlE
+                           A \Rightarrow A \cong B
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (23.69409pt too wide) detected at line 220
+\OML/cmm/m/it/12 f [] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 f [] \OMS/cmsy/m/n/12 n\OML/cmm/m/it/12 f [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 B[]\OMS/cmsy/m/n/12 n\OML/cmm/m/it/12 B[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 D[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 f []
+ []
+
+
+
+[14]) (./src/lecture_4.tex
+
+[15]
+Overfull \hbox (2.38622pt too wide) in paragraph at lines 78--79
+\T2A/cmr/m/n/12 Воспользуемся $[]$. Возь-мјм диа-го-наль-ную
+ []
+
+
+
+[16]
+./src/lecture_4.tex:88: Undefined control sequence.
+l.88 $\forall A \colon A \simless
+                                  2^{A}$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+
+[17]
+
+[18]
+./src/lecture_4.tex:186: Undefined control sequence.
+l.186     $\leq, \simlE
+                        \text{ (С‚РµРѕСЂ. Р¦РµСЂРјРµР»Рѕ)}$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+) (./src/lecture_5.tex
+
+[19]
+
+[20]
+
+[21]
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+
+
+[23]) (./src/lecture_6.tex
+Overfull \hbox (16.39145pt too wide) in paragraph at lines 13--18
+\T2A/cmr/m/n/12 Максимальный эл-т - $\OML/cmm/m/it/12 M [] [] \OMS/cmsy/m/n/12 :9\OML/cmm/m/it/12 x [] [] x > M$ \T2A/cmr/m/n/12 (или $\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x [] [] x \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 M \OMS/cmsy/m/n/12 _ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]M\OT1/cmr/m/n/12 )$\T2A/cmr/m/n/12 ) 
+ []
+
+
+
+[24]
+Overfull \hbox (97.01628pt too wide) in paragraph at lines 68--69
+[]$\OML/cmm/m/it/12 a[] < a[]; \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 k \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1$\T2A/cmr/m/n/12 . То-гда отоб-ра-зим его в $\OML/cmm/m/it/12 b[] [] [] b[] < b[]; \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 i[]$\T2A/cmr/m/n/12 . 
+ []
+
+
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
+
+
+
+[26]
+Overfull \hbox (35.2269pt too wide) detected at line 158
+[] \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 y \OMS/cmsy/m/n/12 ^^X \OML/cmm/m/it/12 z \U/msa/m/n/12 - \OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 ^^X \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 y \U/msa/m/n/12 - \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^X \OML/cmm/m/it/12 y \OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 S \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 T
+ []
+
+
+
+[27]) (./src/lecture_7.tex
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+
+[29]) (./src/lecture_8.tex
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+
+[30]
+
+[31]
+Overfull \hbox (55.1117pt too wide) detected at line 103
+\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 + [] + \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[] = [] = [] + \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n[]; [] ; n[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 x[] [] x[];
+ []
+
+
+
+[32]
+Overfull \hbox (130.7177pt too wide) detected at line 129
+\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; [] ; []\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 N \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ [] ^^@ \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; []\OT1/cmr/m/n/12 ) + [] + \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 + (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; [] ; []\OT1/cmr/m/n/12 )
+ []
+
+
+Overfull \hbox (0.57387pt too wide) in paragraph at lines 144--146
+\T2A/cmr/m/n/12 Берјм про-изв. $\OML/cmm/m/it/12 N; a[]; [] ; a[]; []; [] ; []$\T2A/cmr/m/n/12 . Рас-см. св-ва $\OML/cmm/m/it/12 []; [] []$\T2A/cmr/m/n/12 : 
+ []
+
+
+Overfull \hbox (46.90944pt too wide) detected at line 149
+[]\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; [] ; []\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 N \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ [] ^^@ \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) + [] + (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; [] ; []\OT1/cmr/m/n/12 )
+ []
+
+
+Overfull \hbox (133.85196pt too wide) detected at line 153
+\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; []; [] []\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 M \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ [] ^^@ \OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) + [] + (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[](\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; [] ; []\OT1/cmr/m/n/12 )) =
+ []
+
+
+Overfull \hbox (135.1133pt too wide) detected at line 157
+[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; [] ; []; []\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ [] ^^@ \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; []\OT1/cmr/m/n/12 ) + [] + (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[](\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; [] ; []\OT1/cmr/m/n/12 ))
+ []
+
+
+Overfull \hbox (156.37282pt too wide) detected at line 161
+\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; [] ; []\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 N \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ [] ^^@ \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; []\OT1/cmr/m/n/12 ) + [] + \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; []\OT1/cmr/m/n/12 ) + [] + (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; [] ; []\OT1/cmr/m/n/12 )
+ []
+
+) (./src/lecture_9.tex
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+
+[34]
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+) (./src/lecture_10.tex
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+
+
+[37]
+
+[38]
+
+[39]) (./src/lecture_11.tex
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+
+
+[41]
+Overfull \hbox (190.03625pt too wide) detected at line 104
+\OMS/cmsy/m/n/12 ) ^^@ []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] = \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] = [] = \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] = (0 \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[]) =
+ []
+
+
+
+[42]
+
+[43]) (./src/lecture_12.tex
+
+[44]
+
+[45]) (./src/lecture_13.tex
+
+[46]
+Overfull \hbox (4.08214pt too wide) in paragraph at lines 60--64
+\OML/cmm/m/it/12 n[]$ \T2A/cmr/m/n/12 --- кол-во раз-би-е-ний $\OML/cmm/m/it/12 n$ \T2A/cmr/m/n/12 на раз-лич-ные сла-га-е-мые, чис-ло кот-ых \T2A/cmr/bx/n/12 нечјт-
+ []
+
+
+
+[47]
+
+[48]
+Overfull \hbox (14.73172pt too wide) detected at line 122
+[][] [][] \OT1/cmr/m/n/12 = [] + (1 \OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] \OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n \OT1/cmr/m/n/12 + 1) + 2 \OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 n \OT1/cmr/m/n/12 + [] + (\OML/cmm/m/it/12 n \OT1/cmr/m/n/12 + 1) \OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 1)\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 + []
+ []
+
+
+
+[49]) (./src/lecture_14.tex
+
+[50]
+Overfull \hbox (20.67908pt too wide) detected at line 39
+\OML/cmm/m/it/12 xf\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 x[]f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 F[]x \OT1/cmr/m/n/12 + (\OML/cmm/m/it/12 F[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 + (\OML/cmm/m/it/12 F[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 + [] + (\OML/cmm/m/it/12 F[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 + [] =
+ []
+
+
+
+[51]
+
+[52]
+
+[53]
+
+[54]) (./src/lecture_15.tex
+
+[55]
 Overfull \hbox (41.31642pt too wide) in paragraph at lines 49--51
 \T2A/cmr/bx/it/12 Утверждение тео-ре-мы\T2A/cmr/m/it/12 : Ес-ли $\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; [] ; \OT1/cmr/m/n/12 0)$ \T2A/cmr/m/it/12 --- ре-ше-ние си-сте-мы, то $\OMS/cmsy/m/n/12 9\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; [] ; x[]\OT1/cmr/m/n/12 )$
  []
 
 
 
-[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[56]
 
-[4]
+[57])
 
-[5])
-
-[6] (./main.aux)
+[58] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 8053 strings out of 473579
- 125579 string characters out of 5728235
- 1935957 words of memory out of 5000000
- 30788 multiletter control sequences out of 15000+600000
- 577034 words of font info for 94 fonts, out of 8000000 for 9000
+ 8218 strings out of 473579
+ 129293 string characters out of 5728235
+ 1940957 words of memory out of 5000000
+ 30904 multiletter control sequences out of 15000+600000
+ 579910 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,8n,82p,430b,278s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (6 pages, 226542 bytes).
+ 77i,19n,82p,518b,405s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (58 pages, 515427 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 318 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
