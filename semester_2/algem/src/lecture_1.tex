@@ -1,1 +1,461 @@
 \section{Лекция 1}
+
+\subsection{Алгебра многочленов}
+$f: \R \rightarrow \R$
+\[
+f(x) = a_0 + a_1 x + a_2 x^{2} + \ldots + a_n x^{n}, n \in \N \cup \set{0}
+\]
+Количество $a_i$ --- конечно.
+\[
+\R[x], +, \cdot, \cdot \lambda, \lambda \in \R
+\]
+\[
+1, x, x^{2}, \ldots
+\]
+\[
+x^{m} \cdot x^{l} = x^{m + l}
+\]
+
+\begin{definition}
+  \textbf{Алгеброй над полем} $\mathbb{F}$ называется множество $A$ с определёнными на нём операциями: $+; \cdot; \cdot \lambda, \lambda \in \R$. Причём выполняются следующие свойства:
+  \begin{enumerate}
+    \item [1) ] $(A, +, \cdot\lambda)$ --- ЛП над $\mathbb{F}$
+    \item [2) ] $(A, +, \cdot)$ --- кольцо (\underline{не обязательно коммутативное})
+\[
+  \lambda (x \cdot y) = x \cdot (\lambda y) = (\lambda x) \cdot y, \forall \lambda \in \mathbb{F}, x, y \in A
+\]
+  \end{enumerate}
+\end{definition}
+\begin{example}
+\begin{enumerate}
+  \item $\R[x]$ --- алгебра многочленов (алгебра с единицей, т. к. это кольцо с единицей)
+  \item $M_n(\mathbb{F})$
+\end{enumerate}
+\end{example}
+\textbf{Вопрос:} что собой представляет $\Z_p[x]$? ($p$ - простое)
+
+  По МТФ, $\forall x \neq 0, \overline{x}^{p - 1} = 1 \Rightarrow \overline{x}^{p} = \overline{x}$.
+
+  Следовательно, $\overline{x}^{p} - \overline{x} \equiv 0$ (что очень плохо)
+
+  \textbf{Выход из ситуации}: рассм. многочлен как набор коэффициентов.
+
+  Положим $\tilde{R}$ --- коммутативное кольцо с $1$
+  \begin{definition}
+  \textbf{Многочленом над кольцом $\tilde{R}$ с 1} называется последовательность:
+  \[
+    (a_0, a_1, \ldots, a_n, \ldots)
+  \]
+  где лишь конечное число коэффициентов (из $\tilde{R}$) отличны от $0$ (такие п-ти называют \textbf{финитными}).
+  \end{definition}
+
+  Операции:
+\begin{itemize}
+  \item Сложение: $A = (a_i), B = (b_i)$:
+    \[
+    A + B = (a_i + b_i)
+    \]
+  \item Умножение: $A = (a_i), B = (b_i) \mapsto C = (c_i)$:
+    \[
+    c_k = \sum_{i = 0}^{k} a_i b_{k - i} 
+    \]
+    \begin{example}
+      \[
+        (a_0 + a_1 x)(b_0 + b_1 x) = a_0b_0 + (a_1b_0 + a_0b_1)x + a_1b_1x^{2}
+      \]
+    \end{example}
+  \item Умножение на $\lambda \in \tilde{R}$:
+    \[
+      (\lambda A) = (\lambda a_i)
+    \]
+\end{itemize}
+\begin{statement}
+\label{statement:01_1}
+Множество $\tilde{R}[x]$ всех многочленов над $\tilde{R}$ является коммутативным кольцом относительно $"+, \cdot"$
+\end{statement}
+\begin{proof}
+$(\tilde{R}[x], +)$ --- абелева группа с нейтральным эл-ом $0 = (0, 0, 0, \ldots )$
+
+$(\tilde{R}[x], \cdot)$ - коммутативная полугруппа.
+\[
+  BA \rightarrow c_k' = \sum_{j + i = k}^{} b_i \cdot a_j = c_k
+\]
+\[
+  (A\cdot B) \cdot C \overset{?}{=}  A \cdot (B \cdot C)
+\]
+\begin{equation}
+  ((A \cdot B) \cdot C)_k = \sum_{i = 0}^{k} (A \cdot B)_i \cdot c_{k - i} = \sum_{i = 0}^{k} \sum_{j = 0}^{i} a_j b_{i - j} c_{k - i}
+\end{equation}
+\begin{equation}
+  (A \cdot (B \cdot C))_k = \sum_{s = 0}^{k} a_s (BC)_{k - s} = \sum_{s = 0}^{k} \sum_{t = 0}^{k - s} a_s b_t c_{k - s - t}
+\end{equation}
+\[
+  i = s + t \iff t = i - s, 0 \leq t \leq k - s \Rightarrow 0 \leq i - s \leq k - s
+\]
+\[
+ \Rightarrow s \leq i \leq k
+\]
+\[
+  (2) = \sum_{s = 0}^{k} \sum_{i = s}^{k}a_s b_{i - s} c_{k - i} = \begin{bmatrix} s \mapsto j \end{bmatrix} = \sum_{j = 0}^{k} \sum_{i = j}^{k} a_j b_{i - j} c_{k - i}
+\]
+***Диаграмма, показывающая, что суммы пробегают одинаковые пары $(i, j)$***
+
+\[
+A(B + C) \overset{?}{=} AB + AC
+\]
+\[
+  (A(B + C))_k = \sum_{i = 0}^{k} a_i(b + c)_{k - i} = \sum_{i = 0}^{k} a_i b_{k - i} + \sum_{i = 0}^{k} a_{i} c_{k - i}.
+\]
+Ч. Т. Д.
+\end{proof}
+\begin{consequence}
+$\mathbb{F}[x]$ --- бесконечномерная алгебра с базисом: $1, x, x^{2}, \ldots$
+\end{consequence}
+\[
+1 = (1, 0, 0, 0, \ldots)
+\]
+\[
+1 \cdot a \overset{?}{=} a
+\]
+\[
+  (1 \cdot a)_k = \sum_{i = 0}^{k} 1_{i} \cdot a_{k - i} = \begin{bmatrix}i = 0 \end{bmatrix} = a_k
+\]
+\textbf{Вывод}: когда $\tilde{R}$ - кольцо с единицей, то и $\tilde{R}[x]$ --- кольцо с единицей.
+\begin{definition}
+\[
+x \colon= (0, 1, 0, 0, \ldots)
+\]
+\end{definition}
+\[
+x^{2} = x \cdot x = (0, 1, 0, 0, \ldots) \cdot (0, 1, 0, 0, \ldots)
+\]
+\[
+  (x^{2})_k = \sum_{i = 0}^{k} x_i x_{k - i} = \begin{cases}
+  1, k = 2 \\
+  0, k \neq 2
+  \end{cases}
+\]
+\[
+  x^{n} = (0, 0, \ldots, \underbrace{1}_{n + 1}, 0, \ldots)
+\]
+\[
+  (a_0, a_1, \ldots, a_n + 1, 0, 0, \ldots) = a_0 \cdot 1 + a_1 \cdot x + \ldots + a_{n} \cdot x^{n}
+\]
+\begin{definition}
+\textbf{Последний ненулевой коэффициент многочлена} $A = (a_1, \ldots, a_n, 0, \ldots)$ называется \textbf{старшим коэффициентом многочлена} $A$, а его \textbf{индекс} --- \textbf{степень многочлена}.
+\[
+\deg A = \max \set{i | a_i \neq 0}
+\]
+\end{definition}
+\begin{note}
+Степень нулевого многочлена обычна неопределена, либо равна $-\infty$
+\end{note}
+
+\begin{definition}
+\textbf{Коммутативное кольцо $R$} с единицей $1 \neq 0$ называется \textbf{областью целостности} (или целостностным кольцом), если:
+\[
+\forall a, b \in R \Rightarrow a \cdot b \neq 0, a \neq 0, b \neq 0
+\]
+(Т. е. в $R$ нет делителей нуля)
+\end{definition}
+\begin{statement}
+  \label{statement:01_2}
+Пусть $R$ --- область целостности. Тогда в $R$ справ-во правило сокращения:
+\[
+\begin{cases}
+ab = ac \\
+a \neq 0
+\end{cases} \Rightarrow b = c
+\]
+\end{statement}
+\begin{proof}
+\[
+a(b - c) = 0 \overset{\text{Область целостности}}{\Rightarrow} b - c = 0 \Rightarrow b = c
+\]
+\end{proof}
+\textbf{Вопрос:} пусть $R$ --- коммутативное кольцо с $1$, с правилом сокращения. Является ли тогда $R$ --- областью целостности.
+
+\begin{statement}
+\label{statement:01_3}
+Пусть $R$ --- коммутативное кольцо с $1$.
+\[
+A, B \in R[x]
+\]
+\begin{itemize}
+  \item [a) ] $\deg (A + B) \leq \max(\deg A, \deg B)$
+  \item [b) ] $\deg (A \cdot B) \leq \deg A + \deg B$
+  \item [c) ] Если вдобавок к условию, $R$ --- область целостности, то:
+    \[
+    \deg (A \cdot B) = \deg A + \deg B
+    \]
+\end{itemize}
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] Пусть $a = \deg A, b = \deg B$. Покажем, что если $n > \max(a, b)$, то $(A + B)_n = 0$
+    \[
+      (A + B)_n = a_n + b_n = 0 + 0 = 0
+    \]
+  \item [b) ] Пусть $n > a + b$. Покажем, что $(A \cdot B)_n = 0$
+    \[
+      (A \cdot B)_n = \sum_{i = 0}^{n} a_i b_{n - i} = \underbrace{\sum_{i = 0}^{a} a_i b_{n - i}}_{0, \text{т. к. }n - i > b} + \underbrace{\sum_{i = a + 1}^{n} a_i b_{n - i}}_{0, \text{т. к. $i > a$}}
+    \]
+    \[
+    i \leq a \iff -i \geq -a \Rightarrow n - i \geq n - a > b
+    \]
+  \item [c) ] $R$ --- область целостности:
+    \[
+      (A \cdot B)_n = (A \cdot B)_{a + b} = \underbrace{\sum_{i = 0}^{a - 1} a_i \cdot b_{n - i}}_{0} + \underbrace{(A)_a (B)_b}_{\neq 0} + \underbrace{\sum_{i = a + 1}^{n} a_i b_{n - i}}_{0} \neq 0
+    \]
+\end{itemize}
+\end{proof}
+\begin{consequence}
+Если $R$ --- область целостности, то $R[x]$ --- тоже область целостности.
+\end{consequence}
+\subsubsection{Многочлены нескольких переменных}
+Пусть мы строим многочлен над кольцом $R[x_1]$ (область целостности), тогда можно определить:
+\[
+R[x_1, x_2] = (R[x_1])[x_2]
+\]
+\[
+R[x_1, \ldots, x_n] := \underbrace{(R[x_1, \ldots, x_{n - 1}])}_{R'}[x_n]
+\]
+Если $(a_0, \ldots, a_n, \ldots)$ содержит бесконечно много ненулевых элементов, то оно принадлежит
+\[
+R[[x]] \text{ --- кольцу формальных степенный рядов (ФСР)}
+\]
+\subsubsection{Деление с остатком}
+Пусть $\mathbb{F}$ - поле. $\mathbb{F}[x]$ --- кольцо многочленов.
+\begin{theorem}
+\label{theorem:01_1}
+Пусть $A, B \in \mathbb{F}[x], B \neq 0$, тогда:
+\begin{itemize}
+  \item [a) ] $\exists$ представление.
+    \[
+    A = Q \cdot B + R, \text{ где } Q, R \in \mathbb{F}[x], R = 0, \text{либо } \deg R < \deg B
+    \]
+  \item [b) ] Неполное частное $Q$ и остаток $R$ определяются по $A$ и $B$ однозначно.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item [a) ] Пусть $A = 0$ или $\deg A < \deg B$
+      \[
+      A = 0 \cdot B + A \text{ --- наше разложение}
+      \]
+      Пусть теперь $\deg A \geq \deg B$ (докажем с помощью ММИ по $\deg A$)
+      \[
+      HT(A) = \alpha x^{a} \text{ --- старший член многочлена $A$}
+      \]
+      \[
+      HT(B) = \beta x^{b}
+      \]
+      \[
+      HT(A) = M \cdot HT(B), M = \frac{\alpha}{\beta}x^{a - b}
+      \]
+      \[
+      A' = A - MB
+      \]
+      \[
+      A' = Q' B + R', \text{ разложение существует по индукции}
+      \]
+      \[
+      A = MB + A' = MB + Q'B + R' = (M + Q')B + R'
+      \]
+    \item [b) ] Единственность:
+      \[
+      A = Q_1 B + R_1 = Q_2 B + R_2
+      \]
+      \[
+        (Q_1 - Q_2) B = R_2 - R_1 
+      \]
+      \[
+      R_2 - R_1 \leq \max(\deg R_1, \deg R_2) < \deg B
+      \]
+      \[
+      \deg ((Q_1 - Q_2) B) = \deg(Q_1 - Q_2) + \deg B
+      \]
+      Пусть $Q_1 \neq Q_2 \Rightarrow \deg((Q_1 - Q_2) B) \geq B$ --- противоречие.
+  \end{itemize}
+\end{proof}
+\begin{note}
+В кольце, кот. \textbf{не является областью целостности}, есть необратимые элементы $\Rightarrow$ \textbf{доказательство в этом случае нарушается}.
+\end{note}
+\subsubsection{Теорема Безу и схема Горнера}
+\[
+f(x) = a_0 x^{n} + a_1 x^{n - 1} + \ldots + a_{n - 1} x + a_n
+\]
+\begin{definition}
+Значением многочлена $f \in \mathbb{F}[x]$ на элементе $c \in \mathbb{F}$ называется:
+\[
+f(c) = a_0c^{n} + a_1 c^{n - 1} + \ldots + a_{n - 1}c + a_n
+\]
+Элемент $c$ называется корнем $f$, если:
+\[
+f(c) = 0
+\]
+\end{definition}
+\begin{statement}
+\label{statement:01_4}
+Значение $f$ на элементе $c \in F$ равно остатку от деления $f$ на линейный двучлен $x - c$.
+\end{statement}
+\begin{proof}
+  \[
+  f(x) = q(x)(x - c) + r(x)
+  \]
+  \[
+  r(x) = 0 \text{ или } \deg r < 1
+  \]
+  \[
+  f(c) = 0 + r(c) = r(c)
+  \]
+\end{proof}
+\begin{theorem}[Безу]
+\label{theorem:01_2}
+Элемент $c \in \mathbb{F}$ является корнем многочлена $f(x) \in \mathbb{F}[x]$ $\iff (x - c) |  f$
+\end{theorem}
+\begin{proof}
+$c$ --- корень $f$ $\iff f(c) = 0 \iff r = 0 \iff (x - c) | f$
+\end{proof}
+
+\textbf{Схема горнера}:
+
+Требуется разделить $f(x) = a_0 x^{n} + \ldots + a_{n - 1} x + a_n$ на $(x - c)$. (Лектор демонстрирует алгоритм)
+
+\textbf{Обоснование схемы Горнера}:
+\[
+f(x) = q(x) (x - c) + r = (b_0 x^{n - 1} + b_1 x^{n - 2} + \ldots + b_{n - 1})(x - c) + r = 
+\]
+\[
+ = b_0 x^{n} + (b_1 - c \cdot b_0) x^{n - 1} + \ldots + (b_{n - 1} - c \cdot b_{n - 2})x + r - b_{n - 1} \cdot c
+\]
+\[
+\begin{cases}
+a_0 = b_0 \\
+a_1 = b_1 - c \cdot b_0 \\
+a_2 = b_2 - c \cdot b_1 \\
+\vdots \\
+a_{n - 1} = b_{n - 1} - c \cdot b_{n - 2} \\
+a_{n} = r - b_{n - 1} \cdot c
+\end{cases}
+\]
+\subsubsection{НОД двух мн-ов. Алгоритм Евклида.}
+\begin{definition}
+$f$ делится на $g$, если:
+\[
+  f = q \cdot g, q \in \mathbb{F}[x]
+\]
+Обозначение: $f \vdots g$ или $g | f$
+\end{definition}
+\begin{definition}
+$f, g \in \mathbb{F}[x]$ называются \textbf{ассоциированными}, если:
+\[
+  f \vdots g \text{ и } g \vdots f
+\]
+\end{definition}
+\[
+f = q_1 \cdot g, \deg f = \deg q_1 + \deg g \Rightarrow \deg f \geq \deg g
+\]
+\[
+g = q_2 \cdot f \Rightarrow \deg g \geq \deg f
+\]
+\[
+\Rightarrow \deg g = \deg f
+\]
+\[
+\deg q_1 = \deg q_2 = 0
+\]
+\begin{definition}[НОД]
+Мн-н $d \in \mathbb{F}[x]$ наз-ся наибольшим общим делителем $f$ и $g$, (НОД($f, g$) = $d$), если:
+\begin{itemize}
+  \item [a) ] $f \vdots d$ и $g \vdots d$
+  \item [b) ] Если $d'$ --- общий делитель $f$ и $g$, то $d \vdots d'$
+\end{itemize}
+\end{definition}
+\begin{note}
+НОД($f, g$) определён \textbf{с точностью до ассоциированности}.
+\[
+d \text{ и } d' \text{ --- два НОДа}
+\]
+\[
+\Rightarrow d \vdots d', d' \vdots d \Rightarrow d \sim d'
+\]
+\end{note}
+\begin{definition}
+НОД($f, g$) называется \textbf{нормализованным}, если его старший коэффициент равен $1$.
+\end{definition}
+\begin{theorem}[О сущ-ии НОД]
+\label{theorem:01_3}
+Пусть $f, g \in \mathbb{F}[x]$, причём хотя бы один из них ненулевой. Тогда:
+\begin{itemize}
+  \item [a) ] НОД($f, g$) существует, НОД($f, g$) $\in \mathbb{F}[x]$
+  \item [b) ] Если $d = \text{НОД}(f, g)$, то $\exists u, v \in \mathbb{F}[x]$:
+    \[
+    u \cdot f + v \cdot g = d
+    \]
+\end{itemize}
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item [a) ] Доказательство конструктивное (изложение алгоритма Евклида).
+      \begin{itemize}
+        \item $f = 0, g \neq 0 \Rightarrow \text{НОД}(f, g) = g$
+         \[
+         0 \cdot f + 1 \cdot g = g \text{ --- ЛК}
+         \] 
+       \item $f \neq 0, g \neq 0$:
+         \begin{enumerate}
+           \item [1) ] $f = q_1 \cdot g + r_1$, где $r_1 = 0$ или $\deg r_1 < \deg g$
+           \item [2) ] $g = q_2 \cdot r_1 + r_2$, \ldots
+           \item [3) ] $r_1 = q_3 \cdot r_2 + r_3$, \ldots
+
+             \vdots
+
+            \item [$n$) ] $r_{n - 2} = q_n \cdot r_{n - 1} + r_n, r_n \neq 0$
+            \item [$n + 1$)] $r_{n - 1} = q_{n + 1} r_n$
+         \end{enumerate}
+         Получаем убывающую последовательность натуральных чисел:
+         \[
+         \deg r_1 > \deg r_2 > \ldots
+         \]
+         Где $r_i = 0$ или $\deg r_i = 0$
+         
+         Покажем, что $r_n$ - искомый НОД.
+         \[
+         r_{n-1} \vdots r_n \Rightarrow r_{n - 2} \vdots r_n \Rightarrow \ldots \Rightarrow f \vdots r_n, g \vdots r_n
+         \]
+         Пусть $f \vdots d'$ и $g \vdots d'$. Покажем, что $r_n \vdots d'$.
+
+         Из Рав-ва $(1)$ получаем, что и $r_1 \vdots d' \Rightarrow r_2 \vdots d' \Rightarrow \ldots \Rightarrow r_n \vdots d'$ 
+      \end{itemize}
+    \item [b) ] Покажем, что все остатки $r_i$ являются ЛК $f$ и $g$. $r_1$ --- очев. явл-ся ЛК $f$ и $g$. Далее: 
+      \[
+      r_2 = g - q_2 r_1 = g - q_2 (f - q_1 g) = (1 - q_1) g - q_2 f
+      \]
+      \[
+      r_{n - 2} = u'' f + v'' g
+      \]
+      \[
+      r_{n - 1}= u' f + v' g
+      \]
+      \[
+      r_n = r_{n - 2} - q_{n} r_{n - 1} = u'' f + v'' g - q_n u' f - q_n v' g = 
+      \]
+      \[
+       = (u'' - q_n u') f + (v'' - q_n v') g
+      \]
+      Ч. Т. Д.
+  \end{itemize}
+\end{proof}
+\begin{definition}
+Многочлены $f$ и $g$ называются \textbf{взаимнопростыми} если НОД($f, g$)$ = 1$ 
+\end{definition}
+\begin{note}
+$f$ и $g$ взаимнопросты $\iff$ $\exists u, v \in \mathbb{F}[x]\colon$
+\[
+u \cdot f + v \cdot g = 1
+\]
+\end{note}
+\begin{note}
+Схему горнера можно обобщить, когда степень делителя $= 2$.
+\end{note}
