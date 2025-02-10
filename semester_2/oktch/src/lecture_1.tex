@@ -1,0 +1,247 @@
+\section{Лекция 1}
+\subsection{Квадратичные вычеты и невычеты}
+Пусть $m \in \N$ --- наш модуль. Пусть $a \in \N \colon (a, m) = 1$. Рассмотрим сравнение:
+\begin{equation}
+  \label{eq:quadratic_residue_equation}
+x^{2} \equiv a \pmod m
+\end{equation}
+Мы говорим, что $a$ является \textbf{квадратичным вычетом по модулю $m$}, если у сравнения (\ref{eq:quadratic_residue_equation}) \textbf{есть решение}.
+
+Пусть $a$ --- квадратичный вычет. Будем всюду далее считать, что $m = p$ --- нечётное простое число. Тогда сравнение $(\ref{eq:quadratic_residue_equation})$ \textbf{имеет 2 решения по теореме Лагранжа}.
+
+\begin{theorem}[Лагранжа]
+\label{theorem:01_1}
+Пусть:
+\[
+  f(x) = a_n x^{n} + \ldots + a_1 x + a_0, a_i \in \Z_p
+\]
+Тогда сравнение:
+\[
+  f(x) \equiv 0 \pmod p
+\]
+Имеет $ \leq n$ корней.
+\end{theorem}
+\begin{proof}
+\underline{От противного}, пусть есть решения $x_1, \ldots, x_{n + 1}$. Представим $f(x)$ в виде:
+\[
+  f(x) = b_n(x - x_1)(x - x_2)\ldots(x - x_n) + 
+\]
+\[
+     +  b_{n - 1}(x - x_1)\ldots(x - x_{n - 1}) +
+\]
+\[
+        \vdots
+\]
+\[
+    +  b_1(x - x_1) + 
+\]
+\[
+      + b_0
+\]
+Рассм. $f(x_1) \equiv 0 \pmod p \Rightarrow f(x_1) \equiv b_0 \equiv 0 \pmod p$ 
+
+\[
+f(x_2) \equiv 0 \equiv b_1(x_2 - x_1) \Rightarrow b_1 \equiv 0 \pmod p
+\]
+Аналогичным образом, получаем, что $\forall i, b_i = 0$
+\end{proof}
+Таким образом, в нашем случае сравнение $(\ref{eq:quadratic_residue_equation})$ имеет ровно 2 корня:
+\[
+  x_1^{2} \equiv a \pmod p
+\]
+\[
+  (-x_1)^{2} \equiv a \pmod p
+\]
+Выпишем все квадратичные вычеты по модулю $p$:
+\[
+1^{2}, 2^{2}, \ldots, \left(\frac{p - 1}{2}\right)^{2}
+\]
+Покажем, что это действительно все корни:
+\[
+1^{2} \equiv (\pm 1)^{2}
+\]
+\[
+2^{2} \equiv (\pm 2)^{2}
+\]
+\[
+\vdots
+\]
+\[
+a^{2} \equiv (\pm a)^{2}
+\]
+Таким образом, все эти корни заполняют всю приведённую систему вычетов по модулю $p$. Поэтому мы имеем $\frac{p - 1}{2}$ \textbf{квадратичных вычетов} и $\frac{p - 1}{2}$ \textbf{квадратичных невычетов}.
+\begin{definition}
+\textbf{Символом Лежандра} числа $a$ по модулю $p$ (читается "$a$ по $p$"), называется число:
+\[
+  \left(\frac{a}{p}\right) = \begin{cases}
+  0, a = 0 \\
+  1, a \text{ --- квадратичный вычет} \\
+  -1, a \text{ --- квадратичный невычет}
+  \end{cases}
+\]
+\end{definition}
+\begin{statement}
+  \label{statement:01_1}
+\[
+\left(\frac{a}{p}\right) \equiv a^{\frac{p - 1}{2}} \pmod p
+\]
+\end{statement}
+\begin{proof}
+Рассм. МТФ:
+\[
+a^{p - 1} \equiv 1 \pmod p
+\]
+\[
+a^{p - 1} - 1 \equiv 1 \pmod p
+\]
+\[
+  (a^{\frac{p - 1}{2}} - 1)(a^{\frac{p - 1}{2}} + 1) \equiv 0 \pmod p
+\]
+Если $a$ квадратичный вычет, то:
+\[
+a \equiv x^{2} \pmod p \Rightarrow a^{\frac{p - 1}{2}} \equiv (x^{2})^{\frac{p - 1}{2}} \equiv x^{p - 1} \equiv 1 \pmod p
+\]
+У уравнения, $a^{\frac{p - 1}{2}} - 1 \equiv 0 \pmod p$ --- $\frac{p - 1}{2}$ корней, т. е. это все наши квадратичные вычеты. Таким образом:
+\[
+a^{\frac{p - 1}{2}} \equiv 1 \iff a \text{ --- квадратичный вычет}
+\]
+\[
+a^{\frac{p - 1}{2}} \equiv -1 \iff a \text{ --- квадратичный невычет}
+\]
+Таким образом:
+\[
+\left(\frac{a}{p}\right) \equiv a^{\frac{p - 1}{2}} \pmod p
+\]
+\end{proof}
+\begin{consequence}
+  \label{cs:01_1}
+\[
+\left(\frac{ab}{p}\right) = \left(\frac{a}{p}\right)\left(\frac{b}{p}\right)
+\]
+\end{consequence}
+\begin{consequence}
+  \label{cs:01_2}
+\[
+\left(\frac{a^{2}}{p}\right) = 1
+\]
+\end{consequence}
+\begin{consequence}
+  \label{cs:01_3}
+\[
+\left(\frac{-1}{p}\right) = (-1)^{\frac{p - 1}{2}} = \begin{cases}
+1, p = 4k + 1, k \in \Z \\
+-1, p = 4k + 3, k \in \Z
+\end{cases}
+\]
+\end{consequence}
+\begin{consequence}
+  \label{cs:01_4}
+\[
+\left(\frac{1}{p}\right) = 1
+\]
+\end{consequence}
+\begin{statement}
+  \label{statement:01_2}
+\[
+  a^{\frac{p - 1}{2}} \equiv (-1)^{\sum_{x = 1}^{p_1} \floor{\frac{2ax}{p}}} \pmod p
+\]
+\end{statement}
+\begin{proof}
+Рассм. $x = 1, 2, 3, \ldots, \frac{p - 1}{2}, p_1 := \frac{p - 1}{2}$
+\[
+ax = \varepsilon_x r_x \pmod p, \varepsilon_x \in \set{+1, -1}, r_x \in \set{1, \ldots, p_1}
+\]
+Перемножим все $ax$ и $\varepsilon_x r_x$, тогда т. к. $x$ и $r_x$ пробегают одни и те же числа, то:
+\[
+a^{\frac{p - 1}{2}} \equiv \varepsilon_1 \cdot \ldots \cdot \varepsilon_{p_1}
+\]
+\begin{statement}
+  \label{statement:01_3}
+\[
+\varepsilon_x = (-1)^{\floor{\frac{2ax}{p}}}
+\]
+\end{statement}
+\begin{proof}
+Рассм. случаи принадлежности $ax$ к:
+\begin{enumerate}
+  \item $\set{1, \ldots, p_1}$
+  \item $\set{p_1 + 1, p - 1}$
+\end{enumerate}
+\end{proof}
+Тогда:
+\[
+  a^{\frac{p - 1}{2}} \equiv (-1)^{\sum_{x = 1}^{p_1} \floor{\frac{2ax}{p}}} \pmod p
+\]
+\end{proof}
+\begin{statement}
+  \label{statement:01_4}
+Если $a$ --- \textbf{нечётное}, то:
+\[
+  \left(\frac{a}{p}\right) = (-1)^{\sum_{x = 1}^{p_1} \floor{\frac{ax}{p}}}
+\]
+\end{statement}
+\begin{proof}
+Рассм. $a$ --- нечёт. Рассм.
+\[
+  \left(\frac{2a}{p}\right) = \left(\frac{4(\sfrac{(a + 2)}{2})}{p}\right) = 
+\]
+\[
+  = \left(\frac{4}{p}\right)\left(\frac{\frac{1}{2}(a + p)}{p}\right) = (-1)^{\sum_{x = 1}^{p_1} \floor{\frac{(a + p)x}{p}}} = (-1)^{\sum_{x = 1}^{p_1} \floor{\frac{ax}{p}} + \sum_{x = 1}^{p_1} x} = 
+\]
+\[
+ = (-1)^{\sum_{x = 1}^{p_1} \floor{\frac{ax}{p}} + \frac{p_1(p_1 + 1)}{2}} = (-1)^{\sum_{x = 1}^{p_1} \floor{\frac{ax}{p}} + \frac{p ^{2} - 1}{8}}
+\]
+Подставим $a = 1$:
+\[
+  \left(\frac{2}{p}\right) = (-1)^{\frac{p ^{2} - 1}{8}}
+\]
+При этом в общем виде:
+\[
+  \left(\frac{2a}{p}\right) = \left(\frac{2}{p}\right) \left(\frac{a}{p}\right) = (-1)^{\frac{p ^{2} - 1}{8}}\left(\frac{a}{p}\right)
+\]
+Что равно тому, что получено выше. Сокращая одинаковые члены, получаем:
+\[
+  \left(\frac{a}{p}\right) = (-1)^{\sum_{x = 1}^{p_1} \floor{\frac{ax}{p}}}
+\]
+\end{proof}
+\begin{consequence}
+  \label{cs:01_5}
+  \[
+    \left(\frac{2}{p}\right) = (-1)^{\frac{p ^{2} - 1}{8}}
+  \]
+\end{consequence}
+\textbf{Квадратичный закон взаимности}
+
+Пусть $p$ и $q$ --- разные нечётные простые числа. Тогда:
+\begin{equation}
+  \label{eq:quadratic_law}
+\left(\frac{p}{q}\right)\left(\frac{q}{p}\right) = (-1)^{p_1 \cdot q_1}
+\end{equation}
+\begin{proof}
+\[
+\left(\frac{p}{q}\right)\left(\frac{q}{p}\right) = (-1)^{\sum_{x = 1}^{q_1} \floor{\frac{px}{q}} + \sum_{y = 1}^{p_1} \floor{\frac{qy}{p}}}
+\]
+Положим:
+\[
+S = \set{(x, y)\colon x = 1,\ldots q_1; y = 1, \ldots, p_1}, \left|S\right| = p_1 \cdot q_1
+\]
+\[
+S_1 = \set{(x, y) \in S \colon qy < px}
+\]
+\[
+S_2 = \set{(x, y) \in S \colon qy > px}
+\]
+Тогда:
+\[
+\left|S\right| = \left|S_1\right| + \left|S_2\right|
+\]
+\[
+qy < px \iff y < \frac{px}{q} \Rightarrow \left|S_1\right| = \sum_{x = 1}^{q_1} \floor{\frac{px}{q}}
+\]
+\[
+qy > px \iff x < \frac{qy}{p} \Rightarrow \left|S_2\right| = \sum_{y = 1}^{p_1} \floor{\frac{qy}{p}}
+\]
+\[
+\Rightarrow p_1q_1 = \left|S\right| = \left|S_1\right| + \left|S_2\right| = \sum_{x = 1}^{q_1} \floor{\frac{px}{q}} + \sum_{y = 1}^{p_1} \floor{\frac{qy}{p}}
+\]
+\end{proof}

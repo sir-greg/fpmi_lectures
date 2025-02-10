@@ -1,0 +1,3 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Лекция 1}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Квадратичные вычеты и невычеты}{3}{}%
