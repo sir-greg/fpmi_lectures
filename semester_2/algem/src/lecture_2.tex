@@ -1,0 +1,581 @@
+\section{Лекция 2}
+\subsection{Неприводимые многочлены}
+  $\mathbb{F}$ --- поле, $\mathbb{F}[x]$ --- кольцо многочленов над $\mathbb{F}$.
+\begin{definition}
+  Ненулевой многочлен $P$ с $\deg P > 0$ называется \textbf{неприводимым над полем $\mathbb{F}$}, если:
+  \[
+    P = A \cdot B \Rightarrow \begin{system_or}
+    \deg A = 0 \\
+    \deg B = 0
+    \end{system_or}
+  \]
+  Т. е. его нельзя разложить в произведение многочленов более низких степеней $\in \mathbb{F}[x]$
+\end{definition}
+\begin{example}
+  \[
+  x^{2} + 1 \in \R[x]
+  \]
+  \[
+    x^{2} + 1 = (x - \alpha)(x - \beta), \alpha, \beta \in \R
+  \]
+  \[
+  x^{2} - (\alpha + \beta) x + \alpha\beta
+  \]
+  \[
+  D = (\alpha + \beta)^{2} - 4\alpha\beta = (\alpha - \beta)^{2} \geq 0
+  \]
+  Однако дискриминант $x^{2} + 1 \in \R[x]$ отрицательный $\Rightarrow$ противоречие!.
+  \[
+  x^{2} + 1 \in \C[x]
+  \]
+  \[
+  \Rightarrow x^{2} + 1 = (x - i)(x + i)
+  \]
+\end{example}
+\begin{note}
+Понятие неприводимости многочлена бесмысленно, если мы не говорим о поле, над которым он построен.
+\end{note}
+\begin{note}
+Пусть $P$ --- неприводим, и $P \vdots A \Rightarrow \begin{system_or}
+  A = const \sim 1 \\
+  A \sim P
+\end{system_or}$
+\[
+\forall B \in \mathbb{F}, \text{НОД}(B, P) = \begin{system_or}
+1 \\ p, p \neq 1
+\end{system_or}
+\]
+Похожим свойством обладают простые числа в $\Z$.
+\end{note}
+\begin{statement}
+  \label{statement:02_1}
+Пусть $P$ --- неприводим над $\mathbb{F}$:
+\[
+  (A \cdot B) \vdots P \Rightarrow \begin{system_or}
+  A \vdots P \\
+  B \vdots P
+  \end{system_or}
+\]
+\end{statement}
+\begin{proof}
+От противного, пусть $A \not\vdots P \land B \not\vdots P$, тогда:
+\[
+  \begin{cases}
+  gcd(A, P) = 1 \\
+  gcd(B, P) = 1
+  \end{cases}
+\]
+По лемме из прошлой лекции:
+\[
+\exists u_1, v_1, u_2, v_2 \in \mathbb{F}[x]\colon \begin{cases}
+  u_1 A + v_1 P = 1 \\
+  u_2 B + v_2 P = 1
+\end{cases}
+\]
+\[
+\Rightarrow u_1 u_2 AB + (u_1 v_2 A + u_2 v_1 B + v_1 v_2 P)P = 1 \Rightarrow 1 \vdots P \Rightarrow \text{ противоречие! }
+\]
+\end{proof}
+\begin{consequence}
+  \label{consequence:02_1}
+Если $P$ --- неприводим, $A_1 \cdot A_2 \cdot \ldots \cdot A_n \vdots P$, то $\exists j \colon A_j \vdots P$
+\end{consequence}
+\begin{theorem}[Основная теорема арифметики для многочленов]
+\label{theorem:02_1}
+\begin{itemize}
+  \item [a) ] Пусть $A$ --- ненулевой многочлен из $\mathbb{F}[x], F$  --- поле. Тогда $\exists \alpha \in \mathbb{F}^{*}$ и непривод. многочлены над $\mathbb{F}$:
+  \[
+    P_1, P_2, \ldots, P_n
+  \]
+  Такие, что:
+  \[
+  A = \alpha P_1 P_2 \ldots P_n, n \geq 0
+  \]
+\item [б) ] Если $A = \alpha P_1 \ldots P_n = \beta Q_1 \ldots Q_m$, гдe $P_i$ и $Q_i$ --- неприводимые многочлены, то:
+  \[
+  \begin{cases}
+  n = m \\
+  \exists \sigma \in S_n \colon P_i \sim Q_{\sigma(i)}
+  \end{cases}
+  \]
+\end{itemize}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] Если $\deg A = 0, A = \alpha, \alpha \in \mathbb{F}^{*}$
+
+    Если $\deg A = 1$, то $A = P$ --- неприводим.
+
+    ММИ по $\deg A$:
+
+    Если $A$ --- неприводим, то утвеждение доказано. Иначе, $A = P \cdot Q$, т. ч. $\deg P, \deg Q < \deg A$, которые раскладываются в произведение неприводимых (по предположению индукции).
+  \item [б) ] Докажем ММИ по числу неприводимых множителей ($n$):
+
+    Если $n = 0 \Rightarrow A = \alpha \in \mathbb{F}^{*}$ --- единственно.
+
+    Иначе:
+    \[
+    A = \alpha P_1 \ldots P_n = \beta Q_1 \ldots Q_m 
+    \]
+    \[
+    \beta Q_1 \ldots Q_m \vdots P_n
+    \]
+    По утверждению $(\ref{statement:02_1})$ $\exists j \colon Q_j \vdots P_n \Rightarrow Q_j = \gamma P_n$
+    \[
+    \Rightarrow \alpha P_1 \ldots P_n = \beta \gamma Q_1 \ldots Q_{j - 1}Q_{j + 1}\ldots Q_m P_n
+    \]
+    Так как $\mathbb{F}[x]$ --- область целостности, мы можем сократить обе части на $P_n$:
+    \[
+    \alpha P_1 \ldots P_{n - 1} = \beta \gamma Q_1 \ldots Q_{j - 1}Q_{j + 1} Q_m
+    \]
+    По предположению индукции:
+    \[
+    \begin{cases}
+    n - 1 = m - 1 \\
+    \exists \sigma \colon \set{1, 2, \ldots, n - 1} \rightarrow \set{1, 2, \ldots, j - 1, j + 1, \ldots, n}
+    \end{cases}
+    \]
+    Доопределим: $\sigma(n) = j$, тогда $\forall i = 1, \ldots, n \colon P_i \sim Q_{\sigma(i)}$. Переход индукции доказан!
+\end{itemize}
+\end{proof}
+\begin{consequence}
+\label{consequence:02_2}
+Пусть $A = \alpha P_1^{n_1}\ldots P_s^{n_s}$, причём $P_i \not\sim P_j$, при $ i \neq j$. Тогда произвольный делитель многочлена $A$ имеет вид:
+\[
+  D = \gamma P_1^{m_1}\ldots P_s^{m_s}
+\]
+где $\forall i, 0 \leq m_i \leq n_i$
+\end{consequence}
+\begin{proof}
+\[
+A \vdots D \Rightarrow A = Q D
+\]
+$D, Q$ не имеют непр. множителей, которых нет в $A$:
+\[
+\Rightarrow Q = \beta P_1^{l_1}\ldots P_s^{l_s}
+\]
+\[
+  D = \gamma P_1^{m_1} \ldots P_s^{m_s}
+\]
+\[
+ P_{i}^{n_i} = P_i ^{m_i} \cdot P_i^{l_i} \Rightarrow n_i = m_i + l_i \Rightarrow 0 \leq m_i \leq n_i
+\]
+\end{proof}
+
+\subsection{Корни многочленов}
+\begin{definition}
+Пусть $f \in \mathbb{F}[x]$, $\mathbb{F}$ --- поле, тогда:
+\[
+  c \in F, f(c) = 0 \Rightarrow f \vdots (x - c)
+\]
+Пусть:
+\[
+  f \vdots (x - c), f \vdots (x - c)^{2}, \ldots, f \vdots (x - c)^{k}, f \vdots (x - c)^{k + 1}
+\]
+Тогда $c$ называется \textbf{корнем кратности $k$}.
+\end{definition}
+\begin{note}
+$c$ --- корень кратности $k \iff f = (x - c)^{k}q(x), q(c) \neq 0$. Если допустить $q(c) = 0$, то:
+\[
+  q(x) = (x - c)p(x) \Rightarrow f(x) = (x - c)^{k + 1}p(x), \text{ противречие}
+\]
+\end{note}
+\begin{theorem}
+\label{theorem:02_2}
+  Пусть $f \in \mathbb{F}[x], c_1, \ldots, c_m$ --- корни $f$, а $k_1, \ldots, k_m$ --- их кратности, и пусть $\deg f = n$, тогда:
+  \begin{equation}
+    \label{equation:02_1}
+    n \geq \sum_{i = 1}^{m} k_i
+  \end{equation}
+\end{theorem}
+\begin{proof}
+\[
+  f \vdots (x - c_1)^{k_1}, f \vdots (x - c_2)^{k_2}, \ldots, f \vdots (x - c_m)^{k_m}
+\]
+Т. к. $c_i \neq c_j$ при $i \neq j$, то $(x - c_i) \not\sim (x - c_j)$:
+\[
+  f \vdots (x - c_1)^{k_1}\ldots(x - c_m)^{k_m}
+\]
+\[
+  f = (x - c_1)^{k_1}\ldots(x - c_m)^{k_m}g
+\]
+\[
+  \sum_{i = 1}^{m} k_i = \deg f - \deg g \leq n
+\]
+\end{proof}
+\begin{note}
+ В неравенстве $(\ref{equation:02_1})$ равенство достигается $\iff f$ разлагается в произведение линейным множителей над $\mathbb{F}$
+\end{note}
+\begin{definition}
+  Если $f$ \textbf{разлагается в произведение линейный множителей} над полем $\mathbb{F}$, то говорят, что он \textbf{линейно факторизуем} над $\mathbb{F}$
+\end{definition}
+\textbf{Вопрос:} что будет, если поле $\mathbb{F}$ заменить на $R$ --- коммутативное кольцо с $1$?
+\begin{example}
+\[
+f = x^{2} + x, f \in \Z_6[x]
+\]
+Корни: $0, 2, 3, 5$
+
+Разложения:
+\begin{itemize}
+  \item [1) ] \[
+  x^{2} + x = x(x + 1) \Rightarrow \text{Корни: } 0, -1 \equiv 5 \pmod 6
+  \]
+\item[ 2) ]
+  \[
+  x^{2} + x = (x + 3)(x + 4) \Rightarrow \text{Корни: } -3 \equiv 3 \pmod 6, -4 \equiv 2 \pmod 6
+  \]
+\end{itemize}
+\end{example}
+\subsection{Основная теорема алгебры}
+\subsubsection{Доказательство ОТА}
+\begin{theorem}
+\label{theorem:02_3}
+  Пусть $f \in \C[z], \deg f > 0$, тогда $f$ имеет корень. В общем случае -- комплексный.
+\end{theorem}
+\begin{definition}
+  Будем говорить, что последовательность $\set{z_n} \rightarrow z$ (сходится к $z$), если:
+  \[
+    \left|z_n - z\right| \rightarrow 0, n \rightarrow +\infty
+  \]
+  Или же:
+  \[
+    \lim_{n\to \infty} z_n = z
+  \]
+\end{definition}
+\begin{lemma}
+  \label{lemma:02_1}
+  \[
+  \lim_{n\to \infty} z_n = z \iff \begin{cases}
+  \lim_{n\to\infty} x_n = x \\
+  \lim_{n\to\infty} y_n = y
+  \end{cases} 
+  \]
+  где $z_n = x_n + iy_n, z = x + iy$
+\end{lemma}
+\begin{lemma}
+  \label{lemma:02_2}
+  Если $\lim_{n \to \infty} z_n = z \Rightarrow \lim_{n\to \infty} \left|z_n\right| = \left|z\right|$
+\end{lemma}
+\begin{lemma}
+  \label{lemma:02_3}
+  Если:
+  \[
+  \begin{cases}
+  \lim_{n\to \infty} z_n = z \\
+  \lim_{n\to \infty} w_n = w
+  \end{cases} \Rightarrow \begin{cases}
+    \lim_{n\to \infty} (z_n \pm w_n) = z \pm w \\
+    \lim_{n\to \infty} (z_n \cdot w_n) = z \cdot w
+  \end{cases}
+  \]
+\end{lemma}
+\begin{consequence}
+  \label{consequence:02_3}
+  Если $\lim_{n\to \infty} z_n = z$, то $\forall f \in \C[z] \Rightarrow \lim_{n\to\infty} f(z_n) = f(z)$
+\end{consequence}
+\begin{definition}
+Будем говорить, что последовательность $z_n$ сходится к $\infty$, если:
+\[
+  \lim_{n\to \infty} z_n = \infty
+\]
+\end{definition} 
+\begin{lemma}
+ \label{lemma:02_4}
+ $\forall$ последовательности $\set{z_n}$, $\exists$ подпоследовательсть $\set{z_{n_k}}$, т. ч.:
+ \[
+  z_{n_k} \rightarrow z_0 \text{ или } z_{n_k} \rightarrow \infty
+ \]
+\end{lemma}
+\begin{lemma}
+  \label{lemma:02_5}
+  Если $\lim_{n\to \infty} = \infty$, то $\forall f \in \C[z]$ --- положительной степени:
+  \[
+    \lim_{n\to \infty} f(z_n) = \infty
+  \]
+\end{lemma}
+\begin{lemma}[Даламбер]
+  \label{lemma:02_6}
+  Пусть $f \in \C[z]$ и $f(z_0) \neq 0$, тогда $\forall \varepsilon > 0$ в $U_{\varepsilon}(z_0)$, есть $z \in U_{\varepsilon}(z_0)$, т. ч.:
+  \[
+    \left|f(z)\right| < \left|f(z_0)\right|
+  \]
+\end{lemma}
+\begin{proof}[Доказательство ОТА:]
+  \[
+  A = \underset{z \in \C}{\inf} \left|f(z)\right| \in \R_{\geq 0}
+  \]
+  Покажем, что $\inf$ достигается, т. е. $\exists z_0 \in \C$:
+  \[
+  \left|f(z_0)\right| = A
+  \]
+  По определению $\inf$, $\exists z_n \in \C \colon \lim_{n\to \infty} \left|f(z_n)\right| = A$ 
+
+  По лемме $(\ref{lemma:02_4})$, $\exists \set{z_{n_k}}$, т. ч.:
+  \[
+    z_{n_k} \rightarrow z_0 \lor z_{n_k} \rightarrow \infty
+  \]
+  Покажем, что случай $\set{z_{n_k}} \rightarrow \infty$ невозможен.
+  \[
+    \lim_{k \to \infty} z_{n_k} = \infty \Rightarrow \lim_{k\to \infty} \left|f(z_{n_k})\right| = \infty \text{ --- противоречие}
+  \]
+  Поэтому $\set{z_{n_k}} \rightarrow z_0 \Rightarrow f(z_{n_k}) \rightarrow f(z_0)$
+  \[
+  \lim_{k\to \infty} f(z_{n_k}) = \left|f(z_0)\right| = A
+  \]
+  По лемме Даламбера:
+  \[
+  A \neq 0 \Rightarrow f(z_0) \Rightarrow \exists z \in U_{\varepsilon}(z_0)\colon \left|f(z)\right| < \left|f(z_0)\right| = A = \underset{z \in \C}{\inf} \left|f(z)\right|
+  \]
+  Это противоречие $\Rightarrow A = 0, f(z_0) = 0$
+\end{proof}
+\begin{note}
+На экзамене нужно будет привести леммы (все кроме леммы Даламбера - б/д, док-во леммы Даламбера из анализа), и соотв. доказать теорему
+\end{note}
+\subsubsection{Следствия из ОТА}
+\begin{definition}
+Поле $\mathbb{F}$ называется алгебраически замкнутым, если:
+\[
+  \forall f \in \mathbb{F}[x], \deg F > 0
+\]
+Обязательно имеет хотя бы один корень.
+\end{definition}
+\begin{consequence}
+  \label{consequence:02_OTA_1}
+  Поле $\C$ --- алгебраически замкнуто
+\end{consequence}
+\begin{consequence}
+  \label{consequence:02_OTA_2}
+  Всякий многочлен положительной степени $n$ из $\C[x]$ линейно факторизуем. (можно разложить в произведение $n$ линейный множителей)
+\end{consequence}
+\begin{proof}
+  \[
+  \deg f = n
+  \]
+  По ОТА $\exists$ корень в $\C$:
+  \[
+  f = (x - c_1) q_1(x), \deg q_1 = n - 1
+  \]
+  \[
+  f = \alpha(x - c_1)(x - c_2) \ldots (x - c_n)
+  \]
+\end{proof}
+\begin{consequence}
+  \label{consequence:02_OTA_3}
+  Всякий многочлен из $\C[x]$ степени $n > 0$ имеет ровно $n$ корней, если $\forall$ корень считать столько раз, какова его кратность.
+\end{consequence}
+\begin{consequence}
+  \label{consequence:02_OTA_4}
+  Всякий многочлен из $\R[x]$ степени $n > 0$ разлагается в произведение линейный многочленов, а также квадратичных многочленов с отрицательным дискриминантом.
+\end{consequence}
+\begin{proof}
+  \[
+  f  \in \R[x] \subset \C[x]
+  \]
+  Пусть $c$ --- корень $f$, если:
+  \begin{itemize}
+    \item [а) ] $c \in \R \Rightarrow f \vdots (x - c) \Rightarrow f = (x - c)q(x), q \in \R[x]$
+
+      К $q(x)$ применим предположение индукции.
+    \item [б) ] $c \in \C \backslash \R$ --- корень $f(x)$
+      \[
+      f \vdots (x - c)
+      \]
+      Заметим, что $f(\overline{c}) = 0$, т. е. $\overline{c}$ --- тоже корень:
+      \[
+      f \vdots (x - \overline{c})
+      \]
+      \[
+      \Rightarrow f \vdots (x - c)(x - \overline{c}) = x^{2} - 2 \Real c \cdot x + \left|c\right|^{2}
+      \]
+      \[
+      f = (x^{2} - 2 \Real c \cdot x + \left|c\right|^{2}) q(x)
+      \]
+      Для многочлена:
+      \[
+      x^{2} - 2\alpha x + (\alpha^{2} + \beta^{2}), \alpha, \beta \in \R, \beta \neq 0
+      \]
+      \[
+      D = 4\alpha^{2} - 4(\alpha^{2} + \beta^{2}) = -4\beta^{2} < 0
+      \]
+      Поэтому всё ок и к $q$ применимо предположение индукции.
+  \end{itemize}
+\end{proof}
+\begin{note}
+  Если $f \in \R[x]$ и $c$ --- корень $f$ кратности $k$, $c \in \C \backslash \R$, то $\overline{c}$ тоже корень кратности $k$.
+\end{note}
+\begin{proof}
+  \[
+  f(x) = (x - c)^{k}q(x), q(x) \neq 0
+  \]
+  Применим слева и справа комплексное сопряжение:
+  \[
+  f(x) = (x - \overline{c})^{k} \overline{q}(x)
+  \]
+  Следовательно кратность корня $\overline{c}$ не меньше чем $k$. Пусть она больше, тогда:
+  \[
+  \overline{q}(\overline{c}) = 0 \iff \overline{q(c)} = 0 \iff q(c) = 0 \text{ противоречие }
+  \]
+\end{proof}
+\begin{consequence}
+  \label{consequence:02_OTA_5}
+  Если $f \in \R[x]$ и $\deg f$ --- нечётное число, то найдётся $c \in \R, f(c) = 0$
+\end{consequence}
+\begin{proof}
+  Каждому комплексному корню соотвествует сопряжённый ему же $\Rightarrow$ убрав все комплексные корни, останется хотя бы один "непарный" вещественный корень.
+\end{proof}
+\begin{consequence}[Описание неприводимых многочленов над полями $\C$ и $\R$]
+  \label {consequence:02_OTA_6}
+  ~\newline
+  \begin{itemize}
+    \item [а) ] Над полем $\C$ неприводимым являются многочлены первой степени, и только они.
+    \item [б) ] Над полем $\R$ неприводимыми являются многочлены первой степени, а также многочлены второй степени с отрицательным дискриминантом, и только они.
+  \end{itemize}
+\end{consequence}
+\subsection{Формальная производная}
+$\mathbb{F}$ --- поле, $\mathbb{F}[x]$ --- алгебра с базисом $1, x, x^{2}, \ldots$
+\[
+\frac{d}{dx} \colon x^{n} \mapsto n x^{n - 1}, \forall n \geq 0
+\]
+Распространим $\frac{d}{dx}$ на всё ЛП $\mathbb{F}[x]$ \underline{по линейности}:
+\[
+ \frac{d}{dx} \colon \mathbb{F}[x]  \rightarrow \mathbb{F}[x]
+\]
+Это оператор назовём \textbf{формальной произодной}.
+\begin{example}
+  \[
+  f(x) = x^{2p} + x^{p}, \mathbb{F} = \Z_p
+  \]
+  \[
+  \frac{df}{dx} = f'(x) = 2p x^{2p - 1} + px^{p - 1} = 0, (p \equiv 0 \pmod p)
+  \]
+\end{example}
+\begin{statement}
+  \label{statement:02_ddx_01}
+  Для формальной производной справедливы тождества:
+  \begin{itemize}
+    \item [а) ] Правило Лейбница:
+      \[
+      (fg)' = f'g + fg'
+    \]
+  \item [б) ] \[
+    (f_1 \ldots f_n)' = f_1'f_2\ldots f_n + f_1 f_2' \ldots f_n + \ldots + f_1 f_2 f_n'
+  \]
+\item [в) ] \[
+    (f^{n})' = n f^{n - 1} f'
+\]
+  \end{itemize}
+\end{statement}
+\begin{proof}
+  \begin{itemize}
+    \item [а) ] Пользуясь произв.:
+      \[
+      f = x^{k}, g = x^{m}
+      \]
+      \[
+        (x^{k + m})' = (k + m)x^{k +m - 1}
+      \]
+      \[
+      kx^{m + k - 1} + m x^{m + k - 1} = (k + m) x^{m + k - 1}
+      \]
+      LHS = RHS, Ч. Т. Д.
+    \item [б) ] Индукцией по $n$:
+      \[
+        ((f_1\ldots f_{n - 1}) f_n)' = (f_1 \ldots f_n)' f_n + (f_1 \ldots f_n) f_n' = 
+      \]
+      \[
+      = f_1'f_2\ldots f_n + \ldots + f_1 f_2 \ldots f_n'
+      \]
+    \item [в) ] Следствие б), при $f_1 = \ldots = f_n$
+  \end{itemize}
+\end{proof}
+\begin{theorem}
+\label{theorem:02_4}
+  Пусть $f \in \mathbb{F}[x]$, $f$ --- полож. степень, $F \ni c$ --- корень $f$, тогда:
+  \begin{itemize}
+    \item [а) ] $c$ --- кратный корень $f$ (т. е. кратность $\geq 2$) $\iff f(c) = f'(c) = 0$
+    \item [б) ] Если $c$ --- корень кратности $k$, то:
+      \[
+      f(c) = f'(c) = \ldots = f^{(k - 1)}(c) = 0
+      \]
+    \item [в) ] Если, вдобавок к б), $\charac \mathbb{F} = 0$ или $\charac \mathbb{F} > k$, то:
+      \[
+        f^{(k)}(c) \neq 0
+      \]
+  \end{itemize}
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item [а) ] \[
+    f(x) = q(x)(x - c)
+    \]
+    \[
+    f'(x) = q(x) + q'(x)(x - c)
+    \]
+    \[
+    \Rightarrow f'(c) = q(c)
+    \]
+    $c$ --- кратный корень $\iff q(x) \vdots (x - c) \iff q(c) = 0$, по т. Безу $ \iff f'(c) = 0$
+  \item [б) ] \[
+    f(x) = q(x) (x - c)^{k}
+  \]
+  \[
+    f'(x) = k(x - c)^{k - 1}q(x) + q'(x)(x - c)^{k} = (x - c)^{k - 1} (kq(x) + q'(x)(x - c))
+  \]
+  Следовательно $c$ --- корень производной кратности $\geq k - 1$. Применяя то же рассуждение много раз, получаем, что $c$ --- корень кратности $\geq 1$ многочлена $f^{(k - 1)}$:
+  \[
+  \Rightarrow f^{(k - 1)}(c) = 0
+  \]
+    \item [в) ] Рассмотрим ту скобку в п. б), подставим туда $c$:
+      \[
+        (\ldots)|_{x = c} = kq(c)
+      \]
+      \[
+      q(c) \neq 0
+      \]
+      \[
+      k \neq 0, (\text{по ограничнию на $\charac \mathbb{F}$})
+      \]
+      $\Rightarrow$ Тогда, проделывая те же рассуждения, что и в б), получаем, что $c$ --- простой корень (кратность $= 1$) многочлена $f^{(k - 1)}$. Пусть $f^{(k)}(c) = 0$, тогда по п. а), $c$ --- кратный корень $f^{(k - 1)} $ --- противоречие, следовательно $f^{(k)}(c) \neq 0$.
+  \end{itemize}
+\end{proof}
+\begin{note}
+  Из п. в) следует, что $c$ --- корень кратности $k$ многочлена $f$.
+\end{note}
+\begin{note}
+Условие на $\charac \mathbb{F}$ существенно.
+\end{note}
+\begin{example}
+\[
+  f(x) = x^{10} - x^{5} \in \Z_5[x]
+\]
+\[
+  f'(x) = 10x^{9} - 5x^{4} = 0
+\]
+\[
+  x = 0 \text{ --- корень кратности $5$, но п. в) не выполняется, т. к. $\charac \Z_5 = 5$}
+\]
+\end{example}
+\subsection{Поле частных области целостности}
+Пусть $A$ --- область целостности, $A^{*} = A \backslash \set{0}$, рассмотрим:
+\[
+  A \times A^{*} = \set{(f, g) | f \in A, g \in A^{*}}
+\]
+Будем записывать элементы этого множества, как:
+\[
+  \frac{f}{g} := (f, g)
+\]
+\begin{definition}
+  \[
+    \frac{f_1}{g_1} = \frac{f_2}{g_2} \iff f_1g_2 - f_2g_1 = 0
+  \]
+  \begin{itemize}
+    \item [1) ] $A \times A^{*} \rightarrow A \times A^{*}$
+      \[
+      \frac{f}{g} \mapsto \frac{f \cdot h}{g \cdot h}
+      \]
+      \[
+        (f \cdot a)
+      \]
+  \end{itemize}
+\end{definition}

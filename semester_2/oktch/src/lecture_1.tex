@@ -1,5 +1,6 @@
 \section{Лекция 1}
 \subsection{Квадратичные вычеты и невычеты}
+\subsubsection{Определение}
 Пусть $m \in \N$ --- наш модуль. Пусть $a \in \N \colon (a, m) = 1$. Рассмотрим сравнение:
 \begin{equation}
   \label{eq:quadratic_residue_equation}
@@ -80,6 +81,7 @@ a^{2} \equiv (\pm a)^{2}
   \end{cases}
 \]
 \end{definition}
+\subsubsection{Способы вычисления}
 \begin{statement}
   \label{statement:01_1}
 \[
@@ -210,7 +212,7 @@ a^{\frac{p - 1}{2}} \equiv \varepsilon_1 \cdot \ldots \cdot \varepsilon_{p_1}
     \left(\frac{2}{p}\right) = (-1)^{\frac{p ^{2} - 1}{8}}
   \]
 \end{consequence}
-\textbf{Квадратичный закон взаимности}
+\subsubsection{Квадратичный закон взаимности}
 
 Пусть $p$ и $q$ --- разные нечётные простые числа. Тогда:
 \begin{equation}
@@ -245,3 +247,4 @@ qy > px \iff x < \frac{qy}{p} \Rightarrow \left|S_2\right| = \sum_{y = 1}^{p_1} 
 \Rightarrow p_1q_1 = \left|S\right| = \left|S_1\right| + \left|S_2\right| = \sum_{x = 1}^{q_1} \floor{\frac{px}{q}} + \sum_{y = 1}^{p_1} \floor{\frac{qy}{p}}
 \]
 \end{proof}
+

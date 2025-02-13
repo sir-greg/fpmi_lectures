@@ -1,0 +1,184 @@
+\section{Лекция 2}
+\subsection{Матрица Адамара}
+\subsubsection{Определение}
+\begin{definition}
+  Матрица Адамара --- это квадратная матрица:
+\[
+  A_{n \times n} = \begin{pmatrix} a_{ij}\end{pmatrix}, a_{ij} \in \set{+1, -1}
+\]
+Такая, что любые две строки ортогональны (скалярное произведение в ОНБ $= 0$).
+\end{definition}
+Рассмотрим несколько случаев:
+\begin{itemize}
+  \item [$n = 1:$] \[
+  \begin{pmatrix} 1 \end{pmatrix}
+  \]
+\item [$n = 2:$] \[
+    \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+\]
+\item [$n = 3:$] Невозможно
+  \begin{note}
+    Матриц Адамара нечётного размера не существует (кроме $n = 1$)
+  \[
+  \Rightarrow n \geq 2 \Rightarrow n = 2k
+  \]
+  \end{note}
+\end{itemize}
+\subsubsection{Необходимое условие существования}
+\begin{theorem}
+\label{theorem:02_1}
+  $n \geq 2 \Rightarrow n = 4k, k \in \N$
+\end{theorem}
+\begin{proof}
+\begin{task}
+  Если у матрицы из $\pm 1$ попарно ортогональны строки, то у неё также попарно ортогональны и столбцы.
+\end{task}
+Б. О. О.:
+\[
+  H_n = \begin{pmatrix}1 & \ldots & 1 \\ 1 \\ \vdots & \pm 1 \\ 1 \end{pmatrix}
+\]
+Т. к. каждая строка ортогональна $1$-ой, то в каждой строке, кроме первой, поровну $1$ и $-1$
+
+Б. О. О.:
+
+Второя строка: $1, 1, 1, \ldots, 1, 1, 1, -1, -1, -1, \ldots, -1, -1, -1$
+
+Третья строка: $1, \ldots, 1, -1, \ldots, -1, 1, \ldots, 1, -1, \ldots, -1$
+
+Получаем 4 блока с одним скал. произведением: $x, \frac{n}{2} - x, \frac{n}{2} - x, x$:
+\[
+  x - \left(\frac{n}{2} - x\right) - \left(\frac{n}{2} - x\right) + x = 0
+\]
+\[
+  \Rightarrow 4x - n = 0
+\]
+\[
+  \Rightarrow n = 4x
+\]
+\end{proof}
+\textbf{Гипотеза Адамара:} $n = 4k$ --- достаточное условие, для существования матрицы Адамара.
+
+\subsubsection{Конструирование матриц Адамара}
+ Алгоритм построения $H_{2^{n}}$ из $H_{2^{n - 1}}$:
+ \[
+   H_{2^{n}} = \begin{pmatrix}H_{2^{n - 1}}  & H_{2^{n - 1}} \\ H_{2^{n - 1}} & (-1) \cdot H_{2^{n - 1}}\end{pmatrix}
+ \]
+ \begin{definition}
+  $A_n * B_m$ --- \textbf{кронекеровское умножение} квадратных матриц $A_n$ и $B_m$, задаваемое следующим образом:
+  \[
+    A_n * B_m = \begin{pmatrix}a_{11} \cdot B & \ldots & a_{1n} \cdot B \\ \vdots & \vdots & \vdots \\ a_{n 1} B & \ldots & a_{n n} \cdot B\end{pmatrix} = C_{mn}
+  \]
+ \end{definition}
+ \begin{theorem}
+ \label{theorem:02_2}
+  Если $A, B$ --- матрицы Адамара, то $A * B$ --- тоже матрица Адамара.
+ \end{theorem}
+ \begin{theorem}[I конструкция Пэли]
+ \label{theorem:02_3}
+  Пусть $p = 4k + 3$ --- простое число. Тогда существует $\exists$ матрица Адамара порядка $p + 1$.
+ \end{theorem}
+ \begin{proof}
+ Рассмотрим матрицу $Q = \begin{pmatrix}q_{ij} \end{pmatrix}$:
+ \[
+ q_{ij} = \left(\frac{i - j}{p}\right)
+ \]
+ Покажем, что скалярное произведение $\forall$ двух строк равно $-1$:
+ \[
+ \sum_{b = 1}^{p} \left(\frac{a - b}{p}\right) \left(\frac{a' - b}{p}\right) = \begin{bmatrix}c = a - b \\ a' - b = a' + a - b - a = c + a' - a \end{bmatrix} =
+ \]
+ \[
+ = \sum_{c = 1}^{p - 1} \left(\frac{c}{p}\right)\left(\frac{c + a' - a}{p}\right) = \sum_{c = 1}^{p - 1} \left(\frac{c}{p}\right)\left(\frac{c(1 + c^{-1}(a' - a))}{p}\right) = 
+ \]
+ \[
+ = \sum_{c = 1}^{p - 1} \left(\frac{1 + c^{-1}(a' - a)}{p}\right) = 0 - \left(\frac{1}{p}\right) = -1
+ \]
+ Тогда искомая матрица:
+ \[
+   H_{p + 1} = \begin{pmatrix}1 & \ldots & 1 \\ \vdots & Q'\\ 1\end{pmatrix}
+ \]
+  где $Q'$ матрица $Q$, где вместо $0$ стоят $-1$. Покажем, что это действительно матрица Адамара. Для двух строк $a$ и $a'$ скалярное произведение равно:
+  \[
+  -1 + 1 - \left(\frac{a - a'}{p}\right) - \left(\frac{a' - a}{p}\right) = 
+  \]
+  \[
+    = -\left(\underbrace{\left(\frac{-1}{p}\right)}_{-1} + 1\right)\left(\frac{a' - a}{p}\right) = 0
+  \]
+  \[
+  \left(\frac{-1}{p}\right) = (-1)^{\frac{p - 1}{2}} = (-1)^{\frac{4k + 2}{2}} = (-1)^{2k + 1} = -1
+  \]
+\end{proof}
+\begin{theorem}[II конструкция Пэли]
+\label{theorem:02_4}
+Пусть $p = 4k + 1$ --- простое. Тогда $\exists$ матрица Адамара порядка $2(p + 1)$.
+\end{theorem}
+\begin{note}
+В книжке Н. Холла "Комбинаторика" есть отдельная глава про матрицы Адамара (стоит прочитать).
+\end{note}
+\subsubsection{Плотность порядков матриц Адамара}
+\begin{theorem}[$\sfrac{\text{б}}{\text{д}}$]
+\label{theorem:02_5}
+  \[
+  \forall \varepsilon > 0, \exists n_0, \forall n \geq n_0 
+  \]
+ на отрезке $[n, (1 + \varepsilon)n]$ есть порядок матрицы Адамара.
+
+ Переформулировка:
+ \[
+  \exists f \colon f(n) = o(n)
+ \]
+ на отрезке $[n, n + f(n)]$ есть порядок матрицы Адамара.
+\end{theorem}
+\subsubsection{Коды, исправляющие ошибки}
+
+  Есть передатчик, приёмник и канал связи. По этому каналу связи передаются бинарные строки длины $n$. На канале есть помехи, т. е. произвольный бит может поменять значение. Пусть мы знаем, что кол-во ошибок $\leq k$. 
+
+\textbf{Вопрос:} как организовать словарь кодовых слов (строк, которых мы передаём), что, несмотря на ошибки, приёмник сможет однозначно понять исходное слово по искажённому?
+
+  Например, пусть наш словарь состоит из двух строк и $k = 1$:
+  \[
+    1110\ldots 0
+  \]
+  \[
+    0111\ldots 0
+  \]
+  Эти два слова могут исказиться до $1111\ldots 0$, т. е. мы их не сможем различить. С другой стороны:
+  \[
+    1110\ldots 0
+  \]
+  \[
+    0011\ldots 0
+  \]
+  Всегда можно различить, т. к. они не могут исказиться до одного и того же.
+
+\begin{definition}
+  \textbf{Расстояние Хэмминга} между двумя векторами --- это кол-во несовпадающих координат.
+\end{definition}
+
+  Основная задача кодирования: выбрать максимальное кол-во слов так (при заданных $n$ и $k$), чтобы \textbf{расстояние Хэминга между любыми двумя словами было $> 2k$}.
+
+\subsubsection{$(n, M, d)$-код}
+\begin{definition}
+  $(n, M, d)$-код --- тройка объектов, в которой:
+\begin{itemize}
+  \item $n$ -- длина кодового слова;
+  \item $M$ --- кол-во кодовых слов;
+  \item $d$ --- минимальное Хэммингово расстояние.
+\end{itemize}
+\end{definition}
+\begin{theorem}[Граница Плоткина]
+\label{theorem:02_6}
+  Пусть дан $(n, M, d)$-код, причём $2d > n$. Тогда $M \leq \frac{2d}{2d - n}$
+\end{theorem}
+\begin{proof}
+  Будет доказана в следующий раз
+\end{proof}
+\begin{note}
+  Матрицы Адамар дают неулучшаемую границу размера словаря.
+  \[
+    H = \begin{pmatrix}1 & \ldots & 1 \\ \vdots  & \pm 1 \\ 1  \end{pmatrix} \rightarrow \begin{pmatrix} \ldots & 1 \\ \pm 1 \\ \ldots\end{pmatrix}
+  \]
+  \[
+  \Rightarrow \left(n - 1, n, \frac{n}{2}\right)\text{-код}
+  \]
+  Рассмотрим код из строк матрицы Адамара, заметим, что он достигает границы Плоткина.
+\end{note}
