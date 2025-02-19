@@ -1,0 +1,266 @@
+\section{Лекция 3}
+\subsection{Инвариантные подпространства}
+$V$ --- ЛП над $\mathbb{F}$
+\begin{definition}
+  $\phi \colon V \rightarrow V$ называется \textbf{линейным оператором}, если выполняется свойство линейности (аддитивность + однородность):
+  \[
+    \forall x, y \in V, \lambda, \mu \in \mathbb{F}\colon \phi(\lambda x + \mu y) = \lambda \phi(x) + \mu \phi(y)
+  \]    
+\end{definition}
+\begin{note}
+  Если $e = \begin{pmatrix}e_1 & \ldots & e_n \end{pmatrix}$, то:
+  \[
+  \phi(e_j) = \sum_{i = 1}^{n} a_{ij} e_i
+  \]
+  \[
+    \begin{pmatrix}\phi(e_1) & \ldots & \phi(e_n) \end{pmatrix} = \begin{pmatrix}e_1 & \ldots & e_n \end{pmatrix} A
+  \]
+  \[
+  \phi(e) = eA \text{ --- компактное определение лин. оператора.}
+  \]
+  \[
+  x \underset{e}{\longleftrightarrow} \alpha, x = e\alpha 
+  \]
+  \[
+  \phi(x) \overset{\text{по лин.}}{=} \phi(e) \alpha = e \cdot A \cdot \alpha 
+  \]
+  \[
+  \Rightarrow x \underset{e}{\longleftrightarrow} \phi \Rightarrow \phi(x) \underset{e}{\longleftrightarrow} A \alpha
+  \]
+\end{note}
+\begin{symb}
+  $\mathcal{L}(V)$ --- множество линейный операторов, действующих в $V$:
+  \[
+  \dim \mathcal{L}(V) = (\dim V)^{2}
+  \]
+\end{symb}
+\begin{definition}
+  Умножение лин. операторов $\phi \cdot \psi$:
+  \[
+    (\phi \cdot \psi)(x) := \phi(\psi(x))
+  \]
+  \[
+    \phi \underset{e}{\longleftrightarrow} A, \psi \underset{e}{\longleftrightarrow} B \Rightarrow \phi \cdot \psi \underset{e}{\longleftrightarrow} AB
+  \]
+\end{definition}
+\begin{note}
+  $\dim \mathcal{L}(V)$ --- алгебра (ассоц.) линейных операторов:
+  \[
+  \mathcal{L}(V) \cong M_n(\mathbb{F})
+  \]
+  \[
+  \phi \underset{e}{\longleftrightarrow} A_\phi, \phi \in \mathcal{L}(V)
+  \]
+\end{note}
+\begin{definition}
+  Подпространство $U \leq V$ называется \textbf{инвариантным подпространством относительно} $\phi$, если $\forall x \in U, \phi(x) \in U \iff \phi(U) \leq U$
+\end{definition}
+\begin{example}
+  \begin{itemize}
+    \item $\phi = \varepsilon, \varepsilon x = x, \forall x \in V$
+      \[
+      \varepsilon(U) = U \leq U
+      \]
+    \item $\phi = 0, 0x = 0, \forall x \in V$
+      \[
+      \phi(U) = \set{0} \leq U
+      \]
+  \end{itemize}
+\end{example}
+\[
+\phi \colon V \rightarrow V \text{ --- лин. оп.}
+\]
+$U$ --- инвариантное подпр-во отн-но $\phi$
+\begin{definition}
+  Базис $e$ пространства $V$ называется \textbf{согласованным с инвариантным подпространством} $U$, если:
+  \[
+    \begin{pmatrix} e_1 & \ldots & e_k \end{pmatrix} \text{ --- базис в $U$}
+  \]
+  \[
+    \begin{pmatrix} e_1 & \ldots & e_k & e_{k + 1} & \ldots & e_n \end{pmatrix} \text{ --- базис в $V$}
+  \]
+\end{definition}
+\begin{statement}
+  \label{statement:03_3}
+  Подпространство $U$, инвар. отн-но $\phi \iff $ в базисе $e$, согласованном с $U$:
+  \[
+    A_\phi = \begin{pmatrix}\frac{A_U}{O} & \frac{B}{C} \end{pmatrix}, A_U \in M_k(\mathbb{F}), k = \dim U
+  \]
+\end{statement}
+\begin{proof}
+  Пусть $e$ --- согласован с $U$:
+  \[
+  U \text{ --- инвар. отн-но $\phi$} \iff \phi(e_j) \in U, 1 \leq j \leq k
+  \]
+  \[
+  \iff \phi(e_j) \underset{e}{\longleftrightarrow} \begin{pmatrix} * \\ * \\ * \\ \vdots \\ * \\ 0 \\ \vdots \\ 0 \end{pmatrix}, (k \text{ звёздочек})
+  \]
+  \[
+  \iff A_\phi = \begin{pmatrix} \frac{A_U}{O} \frac{B}{C} \end{pmatrix}
+  \]
+\end{proof}
+\begin{statement}
+  \label{statement:03_4}
+  Если $U, W$ инвариантные отн-но операции $\phi \colon V \rightarrow V$, то $U \cap W, U + W$ --- инвариантные подпространства.
+\end{statement}
+\begin{proof}
+\[
+\phi(U \cap W) \subseteq \underbrace{\phi(U)}_{\leq U} \cap \underbrace{\phi(W)}_{\leq W} \leq U \cap W
+\]
+\[
+  \phi(U + W) = \phi(U) + \phi(W) \leq U + W
+\]
+\end{proof}
+\begin{statement}[О коммутирующих операторах]
+  \label{statement:03_5}
+  Пусть $\phi, \psi \in \mathcal{L}(V)$ и $\phi \cdot \psi = \psi \cdot \phi$. Тогда пространства $\kernel \phi, \kernel \psi, \Image \phi, \Image \psi$ инварианты относительно каждого из них:
+\end{statement}
+\begin{proof}
+  \[
+  \phi(\kernel \phi) = \set{0} \leq \kernel \phi
+  \]
+  Пусть $y \in \Image \phi, y = \phi(x), x \in V$
+  \[
+  \phi(y) \in \Image \phi, \text{ по опр.}
+  \]
+  \[
+  x \in \kernel \phi, \phi(\psi(x)) = \psi(\phi(x)) = \psi(0) = 0 \Rightarrow \psi(x) \in \kernel \phi
+  \]
+  \[
+  y \in \Image \phi \Rightarrow \phi(x) = y, x \in V
+  \]
+  \[
+  \psi(y) = \psi(\phi(x)) = \phi(\psi(x)) \in \Image \phi
+  \]
+\end{proof}
+\begin{consequence}[О многочлене от оператора]
+  \[
+  f = a_0 x^{n} + \ldots a_{n - 1} x + a_n, a_i \in \mathbb{F}
+  \]
+  \[
+  f(\phi) := a_0 \phi^{n} + \ldots + a_{n - 1} \phi + a_n
+  \]
+  Для любого многочлена $f \in \mathbb{F}[x]$, $\kernel \phi$ и $\Image \phi$ инвариантны относительно $\phi$
+\end{consequence}
+\begin{proof}
+  \[
+  f(\phi) \cdot \phi = \phi \cdot f(\phi)
+  \]
+\end{proof}
+\subsubsection{Собственные векторы и собств. значение лин. оператора}
+\[
+\phi \colon V \rightarrow V \text{ --- лин. оп}
+\]
+$U$ --- одномерное инвар. подпр-во:
+\[
+\Rightarrow \exists \lambda \in \mathbb{F}\colon \phi(x) = \lambda x
+\]
+\begin{definition}
+  Ненулевой вектор $x \in V$, т. ч.:
+  \[
+    \phi(x) = \lambda x, \lambda \in \mathbb{F}
+  \]
+  называется \textbf{собственным вектором} оператора $\phi$, отвечающим $\lambda$
+\end{definition}
+\begin{definition}
+  $\lambda \in \mathbb{F}$, для которого $\exists x \neq 0 \in V$, т. ч.
+  \[
+    \phi(x) = \lambda x
+  \]
+  называется \textbf{собственным значением} оператора $\phi$
+\end{definition}
+\begin{note}
+  Соответствие собств. знач. $\leftrightarrow$ собств. вектор, не является однозначным (например $\phi = O$ или $\phi = \varepsilon$)
+\end{note}
+\begin{definition}
+    Пусть $\lambda \in \mathbb{F}$. Тогда подпространство:
+    \[
+    V_\lambda = \kernel(\phi - \lambda \varepsilon)
+    \]
+  называется \textbf{собственным подпространством, отвечающим $\lambda \in \mathbb{F}$ }
+\end{definition}
+\begin{note}
+$x \neq 0, x \in V_\lambda \Rightarrow (\phi - \lambda \varepsilon)(x) = \phi(x) - \lambda x = 0$
+\end{note}
+\begin{statement}
+\label{statement:03_6}
+$\underbrace{V_\lambda}_{\text{отн-но $\phi$}} \neq \set{0} \iff \lambda $ --- собств. знач. $\phi$
+\end{statement}
+\begin{proof}
+\begin{itemize}
+  \item [а) ] Необходимость: $V_\lambda \neq \set{0} \Rightarrow x \neq 0 \in V_\lambda$
+    \[
+    \phi(x) = \lambda x
+    \]
+  \item [б) ] Пусть $\lambda$ собств. знач. опер. $\phi$, т. е. $\exists x \neq 0$, т. ч.:
+    \[
+    \phi(x) = \lambda x \iff (\phi - \lambda\varepsilon)x = 0 \iff x \in \kernel(\phi - \lambda \varepsilon) = V_\lambda
+    \]
+    \[
+    \Rightarrow V_\lambda \neq \set{0}, \text{ считая, что $\lambda$ --- собств. знач. $\phi$}
+    \]
+\end{itemize}
+\end{proof}
+\begin{definition}
+  Ненулевые подпространства $U_1, \ldots, U_k \leq V$ называются ЛНЗ, если из усл.:
+  \[
+  u_1 + \ldots + u_k = 0, u_i \in U_i \Rightarrow \forall i, u_i = 0
+  \]
+\end{definition}
+\begin{theorem}
+\label{theorem:03_3}
+Пусть $\lambda_1, \ldots, \lambda_k$ --- попарно различные собств. знач. оператора $\phi$, тогда отвеч. им собств. подпространства:
+\[
+  V_{\lambda_1}, V_{\lambda_2}, \ldots, V_{\lambda_k} \text{ --- ЛНЗ}
+\]
+\end{theorem}
+\begin{proof}
+  От противного, пусть они ЛЗ $\iff \exists $ система векторов, т. ч. $u_i \neq 0, \sum_{}^{} u_i = 0, u_i \in V_{\lambda_i}$. Из всех таких систем выберем систему с $\min$ мощностью.
+  \[
+  s = \text{ мощностью системы }, 2 \leq s \leq k
+  \]
+  \[
+  \Rightarrow u_1, u_2, \ldots, u_s; u_i \in V_{\lambda_i}
+  \]
+  \[
+  u_1 + u_2 + \ldots + u_s = 0
+  \]
+  \[
+  \lambda_1 u_1 + \ldots + \lambda_s u_s = 0 \text{ --- применили $\phi$}
+  \]
+  \[
+  -\lambda_s u_1 - \ldots - \lambda_s u_s = 0 \text{ --- умножили изначальное выр-е на $-\lambda_s$} 
+  \]
+  \[
+  \Rightarrow (\lambda_1 - \lambda_s) u_1 + \ldots + (\lambda_1 - \lambda_{s - 1})u_{s - 1} = 0
+  \]
+  Получили систему меньшей мощности, дающую ноль $\Rightarrow \perp$
+\end{proof}
+\textbf{Как находить собственные значения и собственные векторы линейного оператора?}
+\[
+x \neq 0, \phi(x) = \lambda x, \lambda \in \mathbb{F}
+\]
+\[
+\phi \underset{e}{\longleftrightarrow} A, x \underset{e}{\longleftrightarrow} \begin{pmatrix}x_1 \\ \vdots \\ x_n \end{pmatrix}
+\]
+\[
+A\begin{pmatrix}x_1 \\ \vdots \\ x_n \end{pmatrix} = \begin{pmatrix} \lambda x_1 \\ \vdots \\ \lambda x_2 \end{pmatrix}
+\]
+Получаем систему:
+\begin{equation}
+  \label{equation:03_1}
+\begin{cases}
+  (a_{11} - \lambda) x_1 + a_{12}x_2 + \ldots a_{1n} x_n = 0 \\
+  a_{21} x_1 + (a_{22} - \lambda) x_2 + \ldots + a_{2n} x_n = 0 \\
+  \vdots \\
+  a_{n 1} x_1 + a_{n 2} x_2 + \ldots + (a_{n n} - \lambda) x_n = 0
+\end{cases}
+\end{equation}
+Система имеет нетрививальное решение $\iff \det (A - \lambda E) = 0 \iff \rk (A - \lambda E) < n$
+
+\begin{definition}
+  $\Lambda(\lambda) = \det (A - \lambda E)$ называется \textbf{характеристическим многочленом} матрицы $A$ (многочленом оператора $\phi$ отн-но $e$)
+\end{definition}
+\[
+\Lambda(\lambda) = (-1)^{n} \lambda^{n} + (-1)^{n - 1} \trace A \lambda^{n - 1} + \ldots + \det A
+\]

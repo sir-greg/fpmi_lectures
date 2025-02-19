@@ -556,26 +556,293 @@ $\mathbb{F}$ --- поле, $\mathbb{F}[x]$ --- алгебра с базисом 
   x = 0 \text{ --- корень кратности $5$, но п. в) не выполняется, т. к. $\charac \Z_5 = 5$}
 \]
 \end{example}
-\subsection{Поле частных области целостности}
-Пусть $A$ --- область целостности, $A^{*} = A \backslash \set{0}$, рассмотрим:
+\subsection{Рациональные дроби}
+\subsubsection{Определение}
+$A$ --- область целостности
 \[
-  A \times A^{*} = \set{(f, g) | f \in A, g \in A^{*}}
+A^{*} = A \backslash \set{0}
 \]
-Будем записывать элементы этого множества, как:
 \[
-  \frac{f}{g} := (f, g)
+A \times A^{*} = \set{(f, g)} = \Set{\frac{f}{g}}
 \]
-\begin{definition}
-  \[
-    \frac{f_1}{g_1} = \frac{f_2}{g_2} \iff f_1g_2 - f_2g_1 = 0
-  \]
-  \begin{itemize}
-    \item [1) ] $A \times A^{*} \rightarrow A \times A^{*}$
+\[
+\frac{f_1}{g_1} = \frac{f_2}{g_2} \iff f_1g_2 - f_2g_1 = 0
+\]
+\[
+h \in A^{*}, \frac{f}{g} \mapsto \frac{fh}{gh}
+\]
+Операции и свойства:
+\begin{itemize}
+  \item Сложение:
+    \[
+    \frac{f_1}{g_1} + \frac{f_2}{g_2} := \frac{f_1 g_2 + f_2 g_1}{g_1 g_2}
+    \]
+    \begin{proof}[Корректность:]
       \[
-      \frac{f}{g} \mapsto \frac{f \cdot h}{g \cdot h}
+      \frac{f_1}{g_1} = \frac{a}{b}, \frac{f_2}{g_2} = \frac{c}{d}
+      \]  
+      \[
+      \frac{a}{b} + \frac{c}{d} := \frac{ad + bc}{bd}
+      \]
+    \[
+      \frac{f_1 g_2 + f_2g_1}{g_1g_2} \overset{?}{=} \frac{ad + bc}{bd}
+    \]
+    \[
+      (f_1g_2 + f_2g_1)bd - (ad + bc)g_1 g_2 = f_1g_2bd + f_2g_1bd - adg_1g_2 - bcg_1g_2 = 
+    \]
+    \[
+    = g_2d\underbrace{(f_1b - ag_1)}_{0}  + bg_1\underbrace{(f_2d - cg_2)}_{0} = 0
+    \]
+
+    \end{proof}
+
+    Нейтральный по сложению:
+    \[
+      \frac{0}{g} = \frac{0 \cdot g}{g \cdot 1} = \frac{0}{1} \text{ --- нуль в $A \times A^{*}$}
+    \] 
+    $\Rightarrow (A \times A^{*}, +)$  --- абелева группа по сложению c нейтральным элементом $\frac{0}{1}$
+  \item Умножение:
+    \[
+      \frac{f_1}{g_1} \cdot \frac{f_2}{g_2} := \frac{f_1 f_2}{g_1 g_2}
+    \]
+    \begin{proof}[Коректность:]
+    \[
+    \frac{f_1}{g_1} = \frac{a}{b}, \frac{f_2}{g_2} = \frac{c}{d}
+    \] 
+    \[
+      \frac{f_1 f_2}{g_1 g_2} = \frac{ac}{bd}
+    \]
+    \end{proof}
+     Нейтральный элемент по умножению:
+     \[
+      \frac{1}{1} \cdot \frac{f}{g} = \frac{f}{g}
+     \]
+     $\Rightarrow (A \times A^{*}, +, \cdot)$ коммутативное кольцо с $1$.
+   \item Существование обратного:
+     \[
+     \frac{f}{g} \neq 0 = \frac{0}{1} \iff f \cdot 1 \neq g \cdot 0 \iff f \neq 0
+     \]
+     Пусть $\exists \frac{q}{f} \in A \times A^{*}$
+     \[
+     \frac{f}{g} \cdot \frac{g}{f} = \frac{1}{1} \text{ --- единств.}
+     \]
+\end{itemize}
+\begin{definition}
+  Построенное поле называется \textbf{полем частных кольца $A$} и обозначается $Q(A)$
+\end{definition}
+\begin{example}
+  \begin{enumerate}
+    \item $Q(\Z) = \Q$
+    \item $Q(F) = F$
+    \item $\mathbb{F}$ --- поле, $\mathbb{F}[x]$ --- область целостности:
+      \[
+      Q(\mathbb{F}[x]) = F(x) \text{ --- поле частных или поле рациональных функций}
+      \]
+      \begin{note}
+        \[
+        \charac \mathbb{F} = \charac Q(\mathbb{F}) 
+        \]
+      \end{note}
+  \end{enumerate}
+\end{example}
+
+
+\subsubsection{Разложение рациональных дробей}
+\begin{definition}
+  \textbf{Степень рациональной дроби} $\frac{f}{g}$:
+  \[
+  \deg \left(\frac{f}{g}\right) := \deg f - \deg g
+  \]
+\end{definition}
+\begin{definition}
+  Рациональная дробь $\frac{f}{g}$ называется \textbf{правильной}, если:
+  \[
+  \deg\left(\frac{f}{g}\right) < 0
+  \]
+  Или же:
+  \[
+  \deg f < \deg g
+  \]
+\end{definition}
+\begin{statement}
+  \label{statement:03_1}
+  Всякая рациональная дробь $\frac{f}{g} \in \mathbb{F}(x)$ представима в виде \textbf{суммы многочлена и правильной рациональной дроби}, причём такое \textbf{представление единственно}.
+\end{statement}
+\begin{proof}
+  \begin{itemize}
+    \item Существование: 
+      \[
+      \frac{f}{g}, f = q \cdot g + r \Rightarrow \frac{f}{g} = q + \frac{r}{g}
+      \]
+    \item Единственность:
+      \[
+     \frac{f}{g} = q_1 + \frac{r_1}{g}  = q_2 + \frac{r_2}{g}
       \]
       \[
-        (f \cdot a)
+      \deg r_1, \deg r_2 < \deg g
+      \]
+      \[
+      q_1 - q_2 = \frac{r_2 - r_1}{g}
+      \]
+      \[
+      \deg (q_1 - q_2) \geq 0, \deg (r_2 - r_1) \leq \max(\deg r_1, r_2) \leq \deg g
+      \]
+      \[
+      \Rightarrow \deg (r_1 - r_2) = \deg (q_1 - q_2) = 0 \Rightarrow \begin{cases}
+      q_1 = q_2 \\
+      r_1 = r_2
+      \end{cases} 
       \]
   \end{itemize}
+\end{proof}
+\begin{task}
+  \[
+  \deg \left(\frac{f_1}{g_1} - \frac{f_2}{g_2}\right) \leq \max\left(\deg \frac{f_1}{g_1}, \deg \frac{f_2}{g_2}\right)
+  \]
+  \[
+  \deg \left(\frac{f_1}{g_1} \cdot \frac{f_2}{g_2}\right) = \deg \left(\frac{f_1}{g_1}\right) + \deg \left(\frac{f_2}{g_2}\right)
+  \]
+\end{task}
+\begin{statement}
+  \label{statement:03_2}
+  Множество $\tilde{\mathbb{F}}(x)$, множество правильных рациональных дробей, образуют кольцо без единицы:
+  \[
+  \deg \frac{1}{1} = 0
+  \]
+\end{statement}
+\begin{theorem}
+\label{theorem:03_1}
+  Пусть $\frac{f}{g}$ --- правильная рациональная дробь, а также:
+  \[
+  g = g_1 \cdot g_2 \cdot \ldots \cdot g_s, \forall i \neq j, (g_i, g_j) = 1
+  \]
+  Тогда $\exists!$ представление:
+  \[
+  \frac{f}{g} = \frac{f_1}{g_1} + \ldots + \frac{f_s}{g_s}
+  \]
+\end{theorem}
+\begin{proof}
+  ММИ по $s$:
+  \begin{itemize}
+    \item База: $s = 2$:
+      ~\newline
+      \textbf{Существование}:
+      \[
+      g = g_1 \cdot g_2 \Rightarrow \exists u, v \colon ug_1 + vg_2 = 1
+      \]
+      \[
+      \frac{f}{g} = \frac{(ug_1 + vg_2)f}{g_1 g_2} = \underbrace{\frac{uf}{g_2} + \frac{vf}{g_1}}_{\text{не факт, что дроби правильные}}
+      \]
+      \[
+    uf = q_2 \cdot g_2 + f_2 
+      \]
+      \[
+      \Rightarrow \frac{f}{g} = q_2 + \frac{f_2}{g_2} + \frac{vf}{g_1} = q_2 + \frac{f_2}{g_2} + \frac{q_1 \cdot g_1 + f_1}{g_1} = q_1 + q_2 + \frac{f_2}{g_2} + \frac{f_1}{g_1}
+      \]
+      Т. к. $\frac{f}{g}$ --- правильная, то $q_1 + q_2 = 0$, итого:
+      \[
+      \frac{f}{g} = \frac{f_2}{g_2} + \frac{f_1}{g_1}
+      \]
+      \textbf{Единственность:}
+      \[
+      \frac{f}{g_1g_2} = \frac{f_1}{g_1} + \frac{f_2}{g_2} = \frac{f_1'}{g_1} + \frac{f_2'}{g_2}
+      \]
+      \[
+        \frac{f_1 - f_1'}{g_1} = \frac{f_2' - f_2}{g_2} \iff (f_1 - f_1')g_2 = (f_2' - f_2)g_1
+      \]
+      \[
+        (g_1, g_2) = 1 \Rightarrow (f_1 - f_1') \vdots g_1
+      \]
+      Но $\deg (f_1 - f_1') < \deg g_1 \Rightarrow f_1 = f_1'$, итого:
+      \[
+      \begin{cases}
+      f_1 = f_1' \\
+      f_2 = f_2'
+      \end{cases}
+      \]
+    \item Общий случай:
+      \[
+      \frac{f}{(g_1 \ldots g_{s - 1}) g_s} = \frac{F}{g_1 \ldots g_{s - 1}} + f_\frac{s}{g_s} \overset{\text{предп. инд.}}{=} \frac{f_1}{g_1} + \ldots + \frac{f_s}{g_s}
+      \]
+      Разложение единственно.
+  \end{itemize}
+\end{proof}
+\begin{consequence}
+  \label{consequence:03_1}
+  Пусть $\frac{f}{g}$ --- правильная рациональная дробь:
+  \[
+  g = p_1^{k_1} \ldots p_s^{k_s}, \forall i \neq j, (p_i, p_j) = 1
+  \]
+  Тогда:
+  \[
+  \frac{f}{g} = \frac{f_1}{p_1^{k_1}} + \ldots + \frac{f_s}{p_s^{k_s}} \text{ --- разложение единственно}
+  \]
+\end{consequence}
+\begin{definition}
+Правильная дробь вида:
+\[
+  \frac{f}{p^{k}}
+\]
+где $p$ --- неприводимый над $\mathbb{F}[x]$ многочлен, называется \textbf{приматной разложением}.
 \end{definition}
+\begin{definition}
+  Дробь $\frac{f}{p ^{k}}$ называется приматной дробью, если $\deg f < \deg p$
+\end{definition}
+\begin{theorem}[О разложение многочлена по степеням $p$]
+\label{theorem:03_2}
+  Пусть $f$ --- ненулевой многочлен, $p$ - многочлен неотрицательной степени, тогда $\exists!$ представление:
+  \[
+  f = \phi_0 + \phi_1 p + \phi_2 p ^{2} + \ldots \phi_n p ^{n}
+  \]
+  где $\deg \phi_i < \deg p$
+\end{theorem}
+\begin{proof}
+  Докажем индукцией по $\deg f$:
+  \begin{itemize}
+    \item База: $\deg f < \deg p$, то $f = f$.
+    \item Переход: для многочленов степени $< \deg f$ теорема доказана. Для $\deg f$:
+      ~\newline
+      \textbf{Существование:}
+      \[
+      f = q \cdot p + \phi_0, \deg \phi_0 < \deg p
+      \]
+      $\deg q < \deg f$, применим к нему предположение инукции:
+      \[
+      q = \phi_1 + \phi_2 p + \ldots + \phi_n p ^{n - 1}
+      \]
+      \[
+      \Rightarrow f = \phi_0 + \phi_1 p + \ldots + \phi_n p ^{n}
+      \]
+      \textbf{Единственность:}
+      \[
+      f = \phi_0 + p(\phi_1 + \phi_2 p \ldots + \phi_m \cdot p ^{m - 1}), \deg \phi_0 < \deg p
+      \] 
+      Эту запись можно трактовать только как деление с остатком, которое определяется однозначно $\Rightarrow$ $\phi_0$ --- остаток от деления $f$ на $p$. По предположению индукции:
+      \[
+      qp = f - \phi_0, 
+      \]
+      для $q$ существует единственное разложение:
+      \[
+      q = \phi_1 + \phi_2 p + \ldots \phi_m p ^{m - 1}
+      \]
+      Оставшиеся $\phi_i$ определяются аналогично.
+  \end{itemize}
+\end{proof}
+\begin{consequence}
+  \label{consequence:03_2}
+  Всякая правильная рациональная дробь может быть разложена в сумму простейших единственным образом.
+\end{consequence}
+\begin{proof}
+\[
+\frac{f}{p ^{k}} \text{ --- приматная дробь}
+\]
+\[
+f = \phi_0 + \phi_1 p + \ldots + \phi_{k - 1} p ^{k - 1}
+\]
+\[
+\frac{f}{p ^{k}} = \frac{\phi_0}{p ^{k}} + \frac{\phi_1}{p ^{k - 1}} + \ldots \frac{\phi_{k - 1}}{p}, \deg \phi_i < \deg p
+\]
+\end{proof}
+\begin{note}
+  Для нахождения разложения $f = a_0 x^{n} + \ldots + a_n$ по степеням $(x - c)$ существует аналог схемы Горнера.
+\end{note}
