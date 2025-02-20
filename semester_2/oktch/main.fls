@@ -251,7 +251,13 @@ INPUT src/lecture_2.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT /home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/lati0800.tfm
 INPUT /home/sergey/.texlive2024/texmf-var/fonts/tfm/lh/lh-t2a/lati0600.tfm
+INPUT ./src/lecture_ota.tex
+INPUT ./src/lecture_ota.tex
+INPUT src/lecture_ota.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+INPUT ./src/lecture_3.tex
+INPUT ./src/lecture_3.tex
+INPUT src/lecture_3.tex
 INPUT main.aux
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb

@@ -12,3 +12,7 @@
 \contentsline {subsubsection}{\numberline {2.1.4}Плотность порядков матриц Адамара}{11}{}%
 \contentsline {subsubsection}{\numberline {2.1.5}Коды, исправляющие ошибки}{11}{}%
 \contentsline {subsubsection}{\numberline {2.1.6}$(n, M, d)$-код}{12}{}%
+\contentsline {section}{\numberline {3}Основная теорема арифметики}{12}{}%
+\contentsline {section}{\numberline {4}Лекция 3}{15}{}%
+\contentsline {subsection}{\numberline {4.1}Доказательство границы Плоткина}{15}{}%
+\contentsline {subsection}{\numberline {4.2}}{16}{}%

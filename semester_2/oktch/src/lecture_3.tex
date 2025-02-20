@@ -1,0 +1,142 @@
+\section{Лекция 3}
+\subsection{Доказательство границы Плоткина}
+$(n, M, d)$ --- код
+\begin{itemize}
+  \item $n$ --- размерность
+  \item $M$ --- кол-во слов
+  \item $d$ --- минимальное хэммингово расстояние
+\end{itemize}
+\begin{theorem}[Плоткина]
+\label{theorem:03_1}
+Если $2d > n$, то:
+  \[
+  M \leq \frac{2d}{2d - n}
+  \]
+\end{theorem}
+\begin{proof}
+  Рассмотрим $(n, M, d)$-код, и запишем его слова как строки в матрице $M \times n$:
+  \[
+    \begin{pmatrix} a_{11} & a_{12} & a_{13} & \ldots & a_{1n} \\ a_{21} & a_{22} & a_{23} & \ldots & a_{2n} \\ \ldots & \ldots & \ldots & \ldots & \ldots \\ a_{M1} & a_{M 2} & a_{M 3} & \ldots & a_{Mn}\end{pmatrix}
+  \]
+  \[
+  a_{ij} \in \set{0, 1}
+  \]
+  \[
+  \sum_{k = 1}^{n} \sum_{i < j}^{} \left|a_{ik} - a_{j k}\right| = \sum_{i < j}^{} \underbrace{\sum_{k = 1}^{n} \left|a_{ik} - a_{j k}\right|}_{\text{Хэммингово расстояние между $i$-ым и $j$-ым словами}} \geq \sum_{i < j}^{} d = 
+  \]
+  \[
+   = \frac{M(M - 1)}{2} d
+  \]
+  Обозначим для данного $k$ буквой $x$ число единиц в $k$-ом столбце.  Тогда:
+  \[
+  \sum_{k = 1}^{n} \underbrace{\sum_{i < j}^{} \left|a_{ik} - a{j k}\right|}_{= x (M - x) \leq \frac{M^{2}}{4}} \leq \frac{nM^{2}}{4}
+  \]
+  Получаем:
+  \[
+  M\frac{M - 1}{2}d \leq \frac{nM^{2}}{4}
+  \]
+  \[
+  2(M - 1)d \leq nM
+  \]
+  \[
+  2Md - 2d \leq nM
+  \]
+  \[
+  M(2d - n) \leq 2d
+  \]
+  \[
+  M \leq \frac{2d}{2d - n}
+  \]
+\end{proof}
+
+\subsection{}
+Вспомним задачу прошлого семестра:
+\begin{task}
+  $30$ чисел. Выбраны $M_1, \ldots, M_{15}$ --- их $5$-сочетания. Можно ли покрасить эти $30$ чисел в красные и синие цвета, чтобы для $\forall i$ в $M_i$ были и красные, и синие числа.
+\end{task}
+Зачем-то, давайте ответим, возможно ли раскрасить так, чтобы в каждом $M_i$ разность кол-ва красных и синих шаров была по модулю $\leq 1$? Пока что, сформулируем теорему:
+
+\begin{theorem}
+\label{theorem:03_2}
+  Пусть $R_n = \set{1, 2, \ldots, n}$. Пусть:
+  \[
+    M_1, \ldots, M_n \subseteq R_n, \text{(какие-то подмножества)}
+  \]
+  Тогда $\exists$ раскраска $R_n$ в красные и синие nвета, при которой, для $\forall i$ в $M_i$ разность между количеством красных и синих чисел по модулю $\leq 6 \sqrt{n}$
+\end{theorem}
+Теорема доказывается в $4$-ом семестре через матрицы Адамара. Пока что, покажем, что эта границы неулучшаема.
+\begin{symb}
+$\chi$ --- раскраска $R_n$ в два цвета:
+\[
+  \chi \colon R_n \rightarrow \set{-1, +1}
+\]
+\[
+  \chi(M_i) = \sum_{j \in M_i}^{}\chi(j)
+\]
+\end{symb}
+Тогда утв-е теоремы звучит как:
+\[
+\forall M_1, \ldots, M_n \exists \chi \colon \forall i \left|\chi(M_i)\right| \leq 6\sqrt{n}
+\]
+\begin{theorem}
+\label{theorem:03_3}
+  Коль скоро существует матрица Адамара порядка $n$ существует, то:
+  \[
+  \exists M_1, \ldots, M_n \forall \chi \colon \exists i \left|\chi(M_i)\right| \geq \frac{\sqrt{n}}{2}
+  \]
+\end{theorem}
+\begin{proof}
+  Рассмотрим $H$, построим по ней совокупность $M_1, \ldots, M_n$. Возьмём каждую строки матрицы $H$, построим соответствие:
+  \[
+    M_i = \set{j | 1 \leq j \leq j \land H_{ij} = 1}
+  \]
+  Покажем выполнение теоремы для этого набора. Наше утв-е эквивалентно следующему:
+  \[
+  \forall \overline{v} \in \set{+1, -1}^{n} \exists \text{ координата вектора } \left(\frac{H + J}{2}\right)\overline{v} \colon \left|\overline{v}\right| \geq \frac{\sqrt{n}}{2}
+  \]
+  \[
+  J \text{ --- матрица из единиц}
+  \]
+  Покажем выполнимость утв-я сначала для $H\overline{v}$ вместо $\left(\frac{H + J}{2}\right)\overline{v}$
+  \[
+    H = \begin{pmatrix} \overline{h_1} & \overline{h_2} & \ldots & \overline{h_n}\end{pmatrix} \text{ --- векторы-столбцы}
+  \]
+  \[
+    (H\overline{v}, H\overline{v}) = (v_1 \overline{h_1} + v_2 \overline{h_2} + \ldots v_n\overline{h_n}, v_1 \overline{h_1} + v_2 \overline{h_2} + \ldots + v_n \overline{h_n}) =
+  \]
+  Выбирая ортонормированный базис, получаем:
+  \[
+   = v_1^{2} (\overline{h_1}, \overline{h_1}) + \ldots + v_n^{2} (\overline{h_n}, \overline{h_n}) = (\overline{h_1}, \overline{h_1}) + \ldots + (\overline{h_n}, \overline{h_n}) = n^{2}
+  \]
+  \[
+  H\overline{v} = (L_1, \ldots, L_n)
+  \]
+  \[
+    (H\overline{v}, H\overline{v}) = L_1^{2} + \ldots + L_n^{2} = n^{2} \Rightarrow \exists i \colon \left|L_i\right| \geq \sqrt{n}
+  \]
+  Соответственно, для $\frac{1}{2}H\overline{v}$ получаем оценку $\geq \frac{\sqrt{n}}{2}$. Теперь докажем для $\left(\frac{H + J}{2}\right)\overline{v}$. Рассмотрим $(H + J)\overline{v}$:
+  \[
+  \lambda = \sum_{i = 1}^{n} v_i
+  \]
+  \[
+    (H + J)\overline{v} = \begin{pmatrix} L_1 + \lambda \\ \ldots \\ L_n + \lambda\end{pmatrix}
+  \]
+  \[
+    ((H + J)\overline{v}, (H + J)\overline{v}) = \underbrace{L_1^{2} + \ldots + L_n^{2}}_{n^{2}} + 2\lambda(L_1 + \ldots + L_n) + \lambda^{2}n
+  \]
+  \[
+  \sum_{i = 1}^{n} L_i = \sum_{j = 1}^{n} v_j \left(\sum_{i = 1}^{n} h_{ij}\right) = v_1 n = \pm n
+  \]
+  \[
+  = n^{2} \pm 2\lambda n + \lambda^{2}n \Rightarrow
+  \]
+  Максимум при $\lambda = \mp 1$, но т. к. размер матрица Адамара чётный, то реальный минимум в $\underbrace{\lambda = -2, 0}_{n^{2} + 2\lambda n + \lambda^{2} n}$ или $\underbrace{\lambda = 0, 2}_{n^{2} - 2\lambda n + \lambda^{2}n}$. В любом случае получаем, что:
+  \[
+    ((H + J)\overline{v}, (H + J)\overline{v}) \geq n^{2}
+  \]
+  Следовательно хотя бы одна координата $\geq \sqrt{n}$. Оценка доказана.
+\end{proof}
+\begin{consequence}
+  \label{consequence:03_1}
+  При $n \rightarrow +\infty, \exists M_1, \ldots M_n \forall \chi \exists i \left|\chi(M_i)\right| \geq \frac{\sqrt{n}}{2}(1 + o(1))$
+\end{consequence}

@@ -1,0 +1,126 @@
+\section{Основная теорема арифметики}
+\begin{theorem}[ОТА]
+\label{theorem:extra_1}
+\begin{itemize}
+  \item [1) ]
+    \[
+      \forall n > 1, \exists! p_1, \ldots, p_s \colon n = p_1 p_2 \ldots p_s
+    \]
+    где $p_1, \ldots, p_s$ --- простые (не обязательно различные) числа (единственность с точностью до порядка)
+  \item [2) ] Пусть $p_i$ --- $i$-ое простое число, тогда:
+    \[
+    \forall n, \exists! (\alpha_1, \ldots, \alpha_n, \ldots), \alpha_i \in \Z_+, n = \prod_{i = 1}^{\infty} p_i^{\alpha_i}
+    \]
+\end{itemize}
+\end{theorem}
+\begin{definition}
+  $\nu_p(n)$ --- максимальная степень $p$, т. ч. $n \vdots p ^{\nu_p(n)}$, но $n \not\vdots p ^{\nu_p(n) + 1}$
+\end{definition}
+\begin{note}
+  \[
+  n \vdots m \iff \forall p, \nu_p(n) \geq \nu_p(m)
+  \]
+  \[
+  n = m \iff \forall p, \nu_p(n) = \nu_p(m)
+  \]
+\end{note}
+Использование:
+\begin{itemize}
+  \item [1) ] Оценка $\pi(x)$ --- кол-во простых $\leq x$
+  \item [2) ] Криптография: $q \cdot p \longleftrightarrow n$
+\end{itemize}
+
+\begin{proof}
+\begin{itemize}
+  \item [1) ] Существование (ММИ по $n$):
+    \begin{itemize}
+      \item База, $n$ --- простое $\Rightarrow n = n$
+      \item Переход: $n = m k = (p_1 \ldots p_s) \cdot (q_1 \ldots q_l)$
+    \end{itemize}
+  \item [2) ]
+    \begin{itemize}
+      \item [I) ] Напрямую. От противного, возьмём наименьшее $n$, для которого есть $> 1$ разложение: 
+        \[
+        n = p_1 \ldots p_s = q_1 \ldots q_k
+        \]
+        \[
+        p_1 \leq p_2 \leq \ldots \leq p_s
+        \]
+        \[
+        q_1 \leq q_2 \leq \ldots \leq q_k
+        \]
+        Если $p_1 = q_1$, тогда $\frac{n}{p_1} = p_2 \ldots p_s = q_2 \ldots q_k$, т. е. у нас есть меньшее число, у которого $> 1$ разложения $\Rightarrow \perp$. Тогда $p_1 \neq q_1$. Следовательно:
+        \[
+        n \geq p_1 p_2 \geq p_1^{2}
+        \]
+        \[
+        n \geq q_1^{2}
+        \]
+        \[
+        n \geq \max(p_1^{2}, q_1^{2}) \geq q_1(p_1 + 2) > q_1p_1 + 1
+        \]
+        Пусть $q_1 > p_1 \Rightarrow q_1 \geq p_1 + 2$. Тогда у числа $n - p_1q_1$, по предположению индукции, существует единственное разложение.
+        \[
+        1 < n - p_1 q_1 = \tau_1 \ldots \tau_m = p_1(p_2\ldots p_s - q_1) = q_1(q_2 \ldots q_k - p_1)
+        \]
+        \[
+        \Rightarrow (n - p_1q_1) \vdots p_1 \Rightarrow q_2\ldots q_k \vdots p_1 \Rightarrow \perp
+        \]
+      \item Через лемму Евклида:
+        \begin{lemma}[Евклид]
+            \[
+            mn \vdots p \Rightarrow \begin{system_or}
+            m \vdots p \\
+            n \vdots p
+            \end{system_or}
+            \] 
+        \end{lemma}
+        \begin{lemma}[Переформулировка]
+          \[
+          \begin{cases}
+            (m, k) = 1 \\
+            mn \vdots k
+          \end{cases} \Rightarrow n \vdots k
+          \] 
+        \end{lemma}
+        Покажем, что из леммы Евклида следует ОТА:
+        \[
+        n = p_1\ldots p_s = q_1 \ldots q_k
+        \]
+        \[
+        n = q_1 Q \vdots p_1 \Rightarrow \begin{system_or}
+        q_1 \vdots p_1 \Rightarrow q_1 = p_1 \\
+        Q \vdots p_1
+        \end{system_or}
+        \]
+        Получаем противоречие с $\min$ выбором $n$:
+        \begin{proof}[Доказательство переформулировки:]
+        \[
+        mx + ky = 1, nm \vdots k
+        \]
+        \[
+        mnx + kny = n \Rightarrow n \vdots k
+        \]
+        \end{proof}
+      \begin{definition}
+        $I \subset \Z$ --- идеал в $\Z$, если:
+        \begin{itemize}
+          \item [1) ] $\forall a, b \in I, a + b \subset I$
+          \item [2) ] $\forall a \in I, \forall b \in \Z, ab \in I$
+        \end{itemize}
+      \end{definition}
+      \begin{proof}[Доказательство леммы Евклида через Идеалы:]
+        ~\newline
+        Заф. $m; I = \set{a | ma \vdots p}$. Легко понять, что это идеал, причём $0, n, p \in I$. Пусть $d = \min I$, покажем, что $I = \set{cd | c \in \Z}$:
+        \begin{proof}
+          $a \in I, a = qd + r, 0 < r < d \Rightarrow r \in I$ --- противоречие с выбором $d$
+        \end{proof}
+        Т. к. $p \in I$, то:
+        \begin{itemize}
+          \item [1) ] $d = 1$, то тогда $m \vdots p$
+          \item [2) ] $d = p, n \in I$, то тогда $n \vdots p$
+        \end{itemize}
+      \end{proof}
+    \end{itemize}
+\end{itemize}
+\end{proof}
