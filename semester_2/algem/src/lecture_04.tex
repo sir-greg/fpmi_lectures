@@ -1,0 +1,443 @@
+\section{Лекция 4}
+\subsection{Структура линейного оператора}
+ОСЛУ:
+\begin{equation}
+  \label{eq:04_1}
+\begin{cases}
+  (a_{11} - \lambda)x_1 + a_{12} x_2 + \ldots + a_{1n} x_n = 0 \\
+  a_{21} x_1 + (a_{22} - \lambda)x_2 + \ldots + a_{2n}x_n = 0 \\
+  \ldots \\
+  a_{n 1} x_1 + a_{n 2} x_2 + \ldots + (a_{n n} - \lambda) x_{n} = 0
+\end{cases}
+\end{equation}
+Характеристический многочлен
+\[
+\chi_A(\lambda) = \det(A_\phi - \lambda E) = 0
+\]
+\begin{statement}[О свойствах характеристического многочлена матрицы $A$]
+\label{statement:04_1}
+  \begin{itemize}
+    \item [a) ] Корни характеристического многочлена $\chi_A(\lambda)$, принадлежащие $\mathbb{F}$, и только они являются собственными значениями лин. оператора $\phi$.
+    \item [б) ] Характеристический многочлен лин. оператора $\phi$ не зависит от выбора базиса (хотя $A_\phi$ зависит).
+  \end{itemize}
+\end{statement}
+\begin{proof}
+  \begin{itemize}
+    \item [а) ] Пусть $\chi_A(\lambda_0) = 0$. Тогда существует ненулевое решение $x_0$, такое что $\phi(x_0) = \lambda_0 x_0 \Rightarrow \lambda_0$ --- собственное значение оператора $\phi$. \\
+      Пусть $\lambda_0$ --- собственное значение $\phi$. $\exists x_0 \neq 0$, т. ч. $\phi(x_0) = \lambda_0 x_0$ $\Rightarrow$ система $(\ref{eq:04_1})$ имеет при $\lambda = \lambda_0$ имеет ненулевое решение при $\lambda = \lambda_0$ $ \Rightarrow \chi_A(\lambda_0) = 0 \Rightarrow \lambda_0$ --- корень. \\
+
+    \item [б) ]
+      Пусть $e, f$ --- базисы в $V$.
+      \[
+      B = S^{-1}AS, S = S_{e \to f}
+      \]
+      \[
+      \chi_B(\lambda) = \det(B - \lambda E) = \det(S^{-1}AS - S^{-1}(\lambda E)S) = 
+      \]
+      \[
+       = \underbrace{\det S^{-1}}_{\frac{1}{y}} \cdot \det(A - \lambda E) \cdot \underbrace{\det S}_{y} = \det = \det(A - \lambda E) = \chi_A(\lambda)
+      \]
+  \end{itemize}
+\end{proof}
+\begin{symb}
+  \[
+  \chi_\phi(\lambda) := \chi_{A_\phi}(\lambda)
+  \]
+  \[
+  \trace \phi := \trace A_\phi
+  \]
+  \[
+  \det \phi := \det A_\phi
+  \]
+\end{symb}
+\begin{consequence}
+\label{consequence:04_1}
+Если $V$ --- линейное пр-во над $\C$, $\dim V \geq 1$, то $\forall \phi \colon V \rightarrow V$ имеет хотя бы один вектор.
+\end{consequence}
+\begin{proof}
+$\chi_\phi(\lambda)$ по ОТА имеет хотя бы один корень $\in \C$.
+\end{proof}
+\begin{consequence}
+\label{consequence:04_2}
+Если $V$ --- линейное пространство над $\C$, а также
+\[
+  \dim V = 2k + 1, k \in \N
+\]
+то $\forall \phi \colon V \rightarrow V$ имеет хотя бы один собственный вектор.
+\end{consequence}
+\begin{proof}
+  $\chi_\phi(\lambda)$ имеет хотя бы один вещественный корень.
+\end{proof}
+\begin{note}
+$\exists $ линейный оператор, не имеющий собственный векторов:
+\[
+  R(\phi) = \begin{pmatrix}\cos \phi & -\sin \phi \\ \sin \phi & \cos \phi \end{pmatrix}, \phi \neq \pi n, n \in \Z
+\]
+\[
+\chi_{R(\phi)}(\lambda) = \lambda^{2} - 2\cos \phi \lambda + 1
+\]
+\[
+  D = 4\cos^{2} \phi - 4 = -4\sin^{2}\phi < 0
+\]
+Над $\C$ два корня: $e^{-i\phi}, e^{i\phi}$
+\[
+  B = \begin{pmatrix}e^{-i\phi} & 0 \\ 0 & e^{i\phi} \end{pmatrix}
+\]
+\end{note}
+\begin{definition}
+  Линейный оператор $\phi \colon V \rightarrow V$, $V$ над $\mathbb{F}$ называется \textbf{диагонализируемым}, если в $V$ $\exists$ базис $e$, в котором $A_\phi$ диагональна:
+  \[
+    A_\phi = \begin{pmatrix} \lambda_1 & 0 & \ldots & 0 \\ 0 & \lambda_2 & \ldots & 0 \\ 0 & 0 & \ddots &  0 \\ 0 & 0 & \ldots & \lambda_n\end{pmatrix}
+  \]
+\end{definition}
+\begin{theorem}[Критерий Диагонализируемости]
+\label{theorem:04_1}
+  $\phi \colon V \rightarrow V$ --- лин. оператор и пусть $\lambda_1, \ldots, \lambda_k$ --- все попарно различные собственные значения $\phi$. Тогда следующие условия эквивалентны:
+  \begin{itemize}
+    \item [а) ] $\phi$ диагонализируем
+    \item [б) ] В $V$ $\exists$ базис $e$, состоящий из собственных векторов для $\phi$
+    \item [в) ] $V = V_{\lambda_1} \oplus V_{\lambda_2} \oplus \ldots \oplus V_{\lambda_k}$
+      \[
+      V_{\lambda} = \ker(\phi - \lambda id)
+      \]
+  \end{itemize}
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item a) $\Rightarrow $ б):
+      \[
+      \exists e \colon  A_\phi = \begin{pmatrix} \lambda_1 & 0 & \ldots & 0 \\ 0 & \lambda_2 & \ldots & 0 \\ 0 & 0 & \ddots &  0 \\ 0 & 0 & \ldots & \lambda_n\end{pmatrix} \iff \phi(e_i) = \lambda_i e_i
+      \]
+    \item б) $\Rightarrow$ в): разобъём базисные векторы по группам с собственным значениями:
+      \[
+      \lambda_1 \colon e_{11}, e_{12}, \ldots, e_{1 s_1}
+      \]
+      \[
+      \vdots
+      \]
+      \[
+      \lambda_k \colon e_{k 1}, e_{k 2}, \ldots, e_{k s_k}
+      \]
+      Тогда верно, что:
+      \[
+      Q_1 = <e_{11}, \ldots, e_{1 s_1}> \leq V_{\lambda 1}
+      \]
+      \[
+      \vdots
+      \]
+      \[
+      Q_k = <e_{k 1}, \ldots, e_{k s_k}> \leq V_{\lambda_k} 
+      \]
+      Поэтому:
+      \[
+      Q_1 \oplus Q_2 \oplus \ldots \oplus Q_k = V
+      \]
+      Следовательно:
+      \[
+      V_{\lambda_1} + V_{\lambda_2} + \ldots + V_{\lambda_k} = V
+      \]
+      А т. к. $\lambda_i$ попарно различны, то по теореме о характеризации прямой суммы, т. к. $V_{\lambda_i}$ --- ЛНЗ, то:
+      \[
+      V_{\lambda_1} \oplus V_{\lambda_2} \oplus \ldots \oplus V_{\lambda_k} = V
+      \]
+      А также:
+      \[
+      Q_i = V_{\lambda_i}
+      \]
+    \item в) $\Rightarrow$ а): пусть:
+      \[
+      V_{\lambda_1} \oplus V_{\lambda_2} \oplus \ldots \oplus V_{\lambda_k} = V
+      \]
+      Пусть $\begin{pmatrix}e_{i1} & \ldots & e_{i s_i} \end{pmatrix}$ --- базис в $V_{\lambda_i}$, а $e = \set{e_{ij}}$, тогда:
+      \[
+        A_\phi = \begin{pmatrix}\lambda_1 & \ldots & \ldots \\
+        \ldots & \ddots & \ldots \\ \ldots & \ldots & \lambda_{1} & \ldots \\ \ldots & \ldots & \ldots & \lambda_{2} \\ \ldots & \ldots & \ldots & \ldots & \ddots & \ldots \\ \ldots & \ldots & \ldots \ldots & \ldots & \ldots & \lambda_{2} \\ \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ddots\end{pmatrix}
+      \]
+  \end{itemize}
+\end{proof}
+\subsubsection{Алгебраическая и геометрическая кратности собственных значений}
+Пусть $\phi \colon V \rightarrow V$ --- лин. оператор $V$ над $\mathbb{F}$:
+\[
+\chi_\phi(t) = \det(A - tE)
+\]
+Пусть $\lambda$ --- корень $\chi_\phi(t)$, т. е. $\lambda$ --- собственное значение оператора $\phi$.
+\begin{definition}
+Кратность $\lambda$, \textbf{как корня $\chi_\phi(t)$}, наз-ся \textbf{алгебраической кратностью} собсвтенного значения $\lambda$.
+  \[
+  alg(\lambda)
+  \]
+\end{definition}
+\begin{definition}
+  \textbf{Размерность собственного подпространства $V_\lambda$} называется \textbf{геометрической кратностью} собственного значения $\lambda$.
+  \[
+    \gem(\lambda)
+  \]
+\end{definition}
+\begin{note}
+Если $\lambda$ --- собственное значения оператора $\phi$, тогда:
+\[
+  \alg(\lambda) \geq 1
+\]
+\[
+  \gem(\lambda) \geq 1
+\]
+\end{note}
+\begin{statement}
+\label{statement:04_2}
+Пусть $\phi \colon V \rightarrow V$ --- лин. оператор. $U \leq V$ --- инвариантно отн-но $\phi$. $\psi = \phi|_{U} \in \mathcal{L}(U)$. Тогда:
+\[
+  \chi_\phi \vdots \chi_\psi
+\]
+\end{statement}
+\begin{proof}
+  Выберем базис в $V$, согласованный с инвариантным подпространством $U$:
+  \[
+    \underbrace{\underbrace{e_1, \ldots, e_k}_{\text{базис в $U$}}, e_{k + 1}, \ldots, e_n}_{\text{базис в $V$}} = e
+  \]
+  \[
+    A_\phi = \begin{pmatrix} \frac{A_{\psi}}{O} & \frac{B}{C} \end{pmatrix}, k = \dim U
+  \]
+  \[
+    \chi_\phi(t) = \begin{vmatrix} \frac{A_\psi - t E_k}{O} & \frac{B}{C - tE} \end{vmatrix} = \det(A_\psi - tE) \left|C - tE\right| = \chi_\psi(t) \cdot \chi_C(t)
+  \]
+  \[
+  \Rightarrow \chi_\phi(t) \vdots \chi_\psi(t)
+  \]
+\end{proof}
+\begin{consequence}
+  \label{consequence:04_3}
+  Пусть $\lambda$ --- произв. собственное значение оператора $\phi \colon V \rightarrow V$. Тогда $\gem(\lambda) \leq \alg(\lambda)$
+\end{consequence}
+\begin{proof}
+  $V_\lambda$ --- инвариантно отн-но $\phi$. $\psi = \phi|V_\lambda$
+  \[
+  \chi_\phi \vdots \chi_\psi
+  \]
+  \[
+  \chi_\psi = (\lambda - t)^{k}, k = \dim (V_\lambda)
+  \]
+  \[
+  \Rightarrow \chi_\phi(t) \vdots (\lambda - t)^{k} \Rightarrow \alg(\lambda) \geq k = \gem(\lambda)
+  \]
+\end{proof}
+\begin{note}
+  Пусть $\phi$ --- диагонализируем, значит $\exists e = \begin{pmatrix}e_1 & \ldots & e_n \end{pmatrix}$, т. ч.
+  \[
+    A_\phi = \begin{pmatrix} \lambda_1 & \ldots & 0 \\ 0 & \ddots & 0 \\ 0 & \ldots & v_n \end{pmatrix}
+  \]
+  Тогда $\phi(e_i) = \lambda_i e_i, \forall i = \overline{1,n}$. Базис, в кот. $\phi$ диагональная --- это базис, состоящий, из собственных векторов, а числа на главной диагонали --- собственные значения.
+  \[
+    \trace \phi = \trace A = \sum_{i = 1}^{n} \lambda_i
+  \]
+  \[
+    \det \phi = \det A = \prod_{i = 1}^{n} \lambda_i
+  \]
+  \[
+    \chi_\phi(t) = \prod_{i = 1}^{n}(\lambda_i - t) \text{ над $\mathbb{F}$ --- линейно факторизуем}
+  \]
+  \textbf{Вывод:} всякий диагонализируемый оператор \textbf{линейно факторизуем}, т. е. его характеристический многочлен линейно факторизуем.
+\end{note}
+\begin{consequence}
+  \label{consequence:04_4}
+  Если $\phi$ не является линейно факторизуем, то он и не диагонализируем.
+\end{consequence}
+\begin{theorem}
+\label{theorem:04_2}
+  Линейный оператор $\phi \colon V \rightarrow V$ с собственными значениями $\lambda_1, \ldots, \lambda_k$ является диагонализируемым $\iff$
+  \begin{itemize}
+    \item [а) ] $\phi$ --- линейно факторизуем над $\mathbb{F}$ (т. е. $\chi_\phi(t)$ --- линейно факторизуем)
+    \item [б) ] $\forall i = 1, \ldots, k \colon \alg(\lambda_i) = \gem(\lambda_i)$
+  \end{itemize}
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item [а) ] Необх.: пусть $\phi$ --- диагонализируем по Th $(\ref{theorem:04_1})$
+      \[
+      V = V_{\lambda_1} \oplus V_{\lambda_2} \oplus \ldots \oplus V_{\lambda_k}
+      \]
+      \[
+      n = \sum_{i = 1}^{k} \dim (V_{\lambda_i}) = \sum_{i = 1}^{k} \gem(\lambda_i) = \deg \chi_\phi \geq \sum_{i = 1}^{k} \alg(\lambda_i)
+      \]
+      Но $\forall i = \overline{1,n} \colon \gem(\lambda_i) \leq \alg(\lambda_i)$
+      \[
+      \Rightarrow \forall i = \overline{1,n} \colon \gem(\lambda_i) = \alg(\lambda_i)
+      \]
+      \item [б) ] Дост.: пусть а) и б) выполнены:
+        \[
+       \dim(\underbrace{V_{\lambda_1} \oplus \ldots \oplus V_{\lambda_k}}_{\text{т. к. $\lambda_i$ попарно различны}})  = \sum_{i = 1}^{k} \dim V_{\lambda_i} = \sum_{i = 1}^{k} \gem{\lambda_i} = \sum_{i = 1}^{k} \alg(\lambda_i) = \deg \chi_\phi = \dim V
+        \]
+        \[
+        V = V_{\lambda_1} \oplus \ldots \oplus V_{\lambda_k} \underbrace{\Rightarrow}_{\text{Th } \ref{theorem:04_1}} \phi \text{ --- диагонализируем}
+        \]
+  \end{itemize}
+\end{proof}
+\begin{example}[Одной лишь лин. факторизуемости $\phi$, даже в случае алг. замкнутого поля не достаточно, чтобы утверждать его диагонализируемост]
+\[
+  J_n(\lambda) = \begin{pmatrix} \lambda & 1 & 0 & \ldots & 0 \\ 0 & \lambda & 1 & \ldots & 0 \\ 0 & 0 & \ddots & \ldots & 0 \\ 0 & 0 & \ldots & \ldots & 1 \\ 0 & 0 & \ldots & \ldots & \lambda \end{pmatrix} \text{ --- Жорданова клетка порядка $n$, отвеч. $\lambda$}
+\]
+\[
+  \chi_{J_n(\lambda)}(t) = \begin{vmatrix} \lambda - t & 1 \\ 0 & \lambda - t & 1 \\ & & \ddots \\ \ & & & 1 \\ & & & \lambda - t \end{vmatrix} = (\lambda - t)^{n}
+\]
+\[
+\gem(\lambda) := \dim V_{\lambda} = \dim \ker(\phi - \lambda id) = \dim \ker(A - \lambda E) = \]
+\[
+  = n - \rk (A - \lambda E) = n - \rk (A_\lambda)
+\]
+\[
+ \gem(\lambda) = n - \rk J_n(\lambda) = n - (n - 1) = 1 < n
+\]
+\end{example}
+\subsection{Приведение линейно факторизуемого лин. оператора к верхнетреугольному виду}
+\begin{statement}
+  \label{statement:04_3}
+  Пусть $\phi \colon V \rightarrow V$ --- лин. оператор:
+  \[
+  \phi_{\lambda} = \phi - \lambda id
+  \]
+  Тогда следующие условия эквивалентны:
+  \begin{itemize}
+    \item [а) ] Подпространство $U \leq V$ инвариантно отн-но $\phi$
+    \item [б) ] $\exists \lambda \in \mathbb{F}\colon U$ --- инвариантно отн-но $\phi_{\lambda}$
+    \item [в) ] $\forall \lambda \in \mathbb{F} \colon U$ --- инвариатно отн-но $\phi_{\lambda}$
+  \end{itemize}
+\end{statement}
+\begin{proof}
+  а) $\Rightarrow$ в) $\underbrace{\Rightarrow}_{\text{очев.}}$ б) $\Rightarrow$ a)
+  \begin{itemize}
+    \item а) $\Rightarrow$ в): $x \in U, \phi_{\lambda}(x) := (\phi - \lambda id)(x) = \underbrace{\phi(x)}_{\in U} - \underbrace{\lambda x}_{\in U} \in U$
+    \item б) $\Rightarrow$ а): $\exists \lambda$, т. ч. $U$ --- инвариантно отн-но $\phi - \lambda id$. Покажем, что $U$ инвариантно относительно $\phi$.
+      \[
+      x \in U \colon \phi(x) = (\phi - \lambda id + \lambda id)(x) = \underbrace{(\phi - \lambda id)(x)}_{\in U} + \underbrace{(\lambda id)(x)}_{\in U} \in U
+      \]
+  \end{itemize}
+\end{proof}
+\begin{statement}
+\label{statement:04_4}
+Пусть $\phi \colon V \rightarrow V$ --- лин. оператор и $\chi_\phi(t)$ раскладывается на линейные множители (т. е. лин. факторизуем). $\dim_{\mathbb{F}} V = n$. Тогда у $\phi$ найдётся $(n - 1)$-мерное инвариантное подпространство.
+\end{statement}
+\begin{proof}
+  \[
+  \chi_\phi(t) = \prod_{i = 1}^{n} (\lambda_i - t) \Rightarrow \exists \lambda_n \in \mathbb{F}, \text{ кот. явл-ся собств. знач.}
+  \]
+  \[
+  V_{\lambda_n} = \ker(\phi - \lambda_n id) \neq \set{0} \Rightarrow \dim \Image (\phi - \lambda_n id) \leq n - 1
+  \]
+  Пусть $U \leq V$, т. ч. $\Image(\phi - \lambda_n id) \leq U$, $\dim U = n - 1$
+  \[
+    (\phi - \lambda_n id)(U) \subseteq \Image(\phi - \lambda_n id) \subseteq U \Rightarrow U \text{ --- инв. отн-но $\phi - \lambda id$}
+  \]
+  \[
+  \Rightarrow U \text{ --- инвариатно отн-но $\phi$}
+  \]
+\end{proof}
+\begin{note}
+  \textbf{Условие утв-я можно ослабить} (необходимо наличие хотя бы одного собств. знач-я у $\phi$)
+\end{note}
+\begin{theorem}
+\label{theorem:04_3}
+Пусть $\phi \colon V \rightarrow V$ --- лин. факторизуем над $\mathbb{F}$. Тогда $\exists e = \begin{pmatrix} e_1 & \ldots & e_n \end{pmatrix}$ в $V$, в котором:
+\[
+  A_\phi = \begin{pmatrix} \lambda_1 & * & * & \ldots & * \\ 0 & \lambda_2 & * & \ldots & * \\ 0 & 0 & \ddots & \ldots & * \\ 0 & 0 & 0 & \ddots & * \\ 0 & 0 & 0 & \ldots & \lambda_n \end{pmatrix}
+\]
+\end{theorem}
+\begin{proof}
+Покажем, что в $V$, $\exists$ цепочка вложенных подпространств, которые инв. отн-но $\phi$
+\[
+  \underbrace{\set{0} < U_1 < U_2 < \ldots < U_n = V, \dim U_i = i
+}_{\text{флаг. подпространств}}
+\]
+Докажем $\exists$-ие флага индукцией по $\dim V$:
+\begin{itemize}
+  \item База: $\set{0} < V_1 = V$ --- флаг
+  \item Переход: пусть для $\phi \colon W \rightarrow W$, $\dim W < n$, утв-е доказано. ($\phi$ линейно факторизуем). \\
+    По утверждению $(\ref{statement:04_4})$ в $V$ найдётся $U_{n - 1}$, инвариантное отн-но $\phi$:
+    \[
+    \psi = \phi|U_{n - 1} \text{ --- линейно факторизуем (?)}
+    \]
+    \[
+    \chi_\phi \vdots \chi_\psi
+    \]
+    \[
+    \chi_\phi(t) = \prod_{i = 1}^{n} (\lambda_i - t) \Rightarrow \chi_\psi(t) = \prod_{i \neq j}^{} (\lambda_i - t)
+    \]
+    По предположению индукции $\exists$ флаг $\psi$ -- инв, поэтому:
+    \[
+    \underbrace{\set{0} < U_1 < U_2 < \ldots < U_{n - 1} < U_n = V}_{\phi \text{ --- инв.}}
+    \]
+    Тогда в базисе $e$, согласов. с флагом, $\begin{pmatrix}e_1 & \ldots & e_k \end{pmatrix}$ --- базис в $U_k$.
+\end{itemize}
+\end{proof}
+\begin{consequence}
+\label{consequence:04_5}
+В условиях Th ($\ref{theorem:04_3}$), $\forall k = \overline{0, n-1}$ справедливо утв-е:
+\[
+  (\phi - \lambda_{k + 1}id)\ldots(\phi - \lambda_n id) V \subseteq U_k
+\]
+\end{consequence}
+\begin{proof}
+Индукцией по количеству скобок слева:
+\[
+  (\phi - \lambda_n id)V \overset{?}{\subseteq} U_{n- 1}
+\]
+\[
+  A - \lambda_n E = \begin{pmatrix} \lambda_1 - \lambda_n & \ldots & * \\ \ldots & \ldots & \ldots \\ \ldots & \ldots & 0 \end{pmatrix}\begin{pmatrix}x_1 \\ \vdots \\ x_n \end{pmatrix} = \begin{pmatrix}y_1 \\ \vdots \\ y_{n - 1} \\ 0 \end{pmatrix} \in U_{n - 1} = <e_1, \ldots, e_{n - 1}>
+\]
+  Предполжение индукции: \[
+    (\phi - \lambda_{k + 2}id) \ldots (\phi - \lambda_{n} id) V \subseteq U_{k + 1}
+  \]
+  \[
+    (\phi - \lambda_{k + 1})U_{k + 1} \subseteq U_k
+  \]
+  \[
+  \overbrace{\set{0} < U_1 < U_2 < \ldots < U_n}^{\text{инв. отн. $\phi$}} = V
+  \]
+  \[
+  U_{k + 1} = U_k \oplus <e_{k + 1}>
+  \]
+  \[
+    (\phi - \lambda_{k + 1} id) (U_k) \subseteq U_k \text{ --- т. к. $\phi$ --- инв.}
+  \]
+  \[
+    (\phi - \lambda_{k + 1}id) (e_{k + 1}) = \phi(e_{k + 1}) - \lambda_{k + 1}e_{k + 1} = 
+  \]
+  \[
+   = \sum_{i = 1}^{k} a_{i k + 1} e_i + \lambda_{k + 1} e_{k + 1} - \lambda_{k + 1}e_{k + 1} = \sum_{i = 1}^{k} e_{i k + 1}e_i \in U_{k}
+  \]
+\end{proof}
+\begin{theorem}[Гамильтона, Кэли]
+\label{theorem:04_4}
+Пусть $\phi \colon V \rightarrow V$ --- лин. факторизуем над $\mathbb{F}$ (лин. оператор). $\chi_\phi(t)$ --- его характеристический многочлен. Тогда:
+\[
+  \chi_\phi(\phi) = O \text{ --- нулевой оператор}
+\]
+Эквив. формулировка в терминах матрицы: пусть $A \in {M_n}(\mathbb{F})$, $\chi_A(t)$ --- характ. многочлен матрицы $A$, и он лин. фактор. над $\mathbb{F}$, тогда:
+\[
+  \chi_A(A) = 0
+\]
+\end{theorem}
+\begin{proof}
+  \[
+    k = 0 \Rightarrow (\phi - \lambda_1 id) \ldots (\phi - \lambda_n id) V \subset U_0 = \set{0}
+  \]
+  \[
+  \forall x\colon \prod_{i = 1}^{n} (\phi - \lambda_i id) (x) = (-1)^{n} \chi_\phi(\phi)(x) = 0
+  \]
+  \[
+  \Rightarrow \chi_\phi(\phi)(x) = 0
+  \]
+\end{proof}
+\begin{note}
+  Гамильтон и Кэли, независимо друг от друга, доказали это утв-е только для $\dim_{\C} V \leq 4$. Современное доказательство для общего случая принадлежит Фробениусу (1878 г.).
+\end{note}
+\begin{note}
+  В теореме Гамильтона-Кэли можно отказаться от линейной факторизуемости. Пусть $\mathbb{F}$ не алгебраически замкнуто и $\chi_\phi(t)$ не раскладывается на линейные множители над $\mathbb{F}$.
+  \[
+    F \subset K
+  \]
+  \[
+  \chi_\phi(\phi) = O, \phi \text{ --- в лин. пр-ве над $K$}
+  \]
+  \[
+    \chi_\phi(t) \in F(t) \text{ --- в лин. пр-ве над $\mathbb{F}$}
+  \]
+\end{note}

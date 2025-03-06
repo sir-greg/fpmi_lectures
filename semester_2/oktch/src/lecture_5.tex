@@ -1,0 +1,227 @@
+\section{Лекция 5}
+\subsection{Первообразные корни}
+\[
+  m \in \N, a \in \N, (a, m) = 1
+\]
+\begin{theorem}[Эйлера]
+\label{theorem:04_4}
+  \[
+  a^{\phi(m)} \equiv 1 \pmod m
+  \]
+\end{theorem}
+\begin{definition}
+  Показатель числа $a \pmod m$ ($\delta(a)$) --- это
+  \[
+    \min k > 0 \colon a^{k} \equiv 1 \pmod m
+  \]
+\end{definition}
+\begin{statement}
+  \[
+  \delta(a) | \phi(m)
+  \]
+\end{statement}
+\begin{definition}
+  $a$ --- \textbf{первообразный корень} $\mod m$, если
+  \[
+    \delta(a) = \phi(m)
+  \]
+  Обозначают как $g$.
+\end{definition}
+\begin{statement}
+Если по $\mod m$, $\exists $ первообразный корень $g$, то:
+\[
+  1, g, g^{2}, \ldots, g^{\phi(m) - 1}
+\]
+Образуют \textbf{всю} привидённую систему вычетов $\mod m$.
+\end{statement}
+\begin{statement}
+При $m = 2^{n}, n \geq 3$ первообразных корней $\mod m$ не существует.
+\end{statement}
+\begin{proof}
+  \[
+  \phi(m) = 2^{n - 1}
+  \]
+Покажем, что если
+\[
+  \begin{cases}
+  a = 2t + 1 \\
+  a^{2^{n - 1}}  \equiv 1 \pmod m
+  \end{cases} \Rightarrow a^{2^{n - 2}} \equiv 1 \pmod m
+\]
+\[
+a^{2} = 4t^{2} + 4t + 1 = 4t(t + 1) + 1 = 8t_1 + 1
+\]
+\[
+a^{4} = (8t_1 + 1)^{2} = 64t_1^{2} + 16t_1 + 1 = 16t_2
+\]
+\[
+a^{8} = 32t_3 + 1
+\]
+\[
+\Rightarrow a^{2^{k}} = 2^{k + 2}t_k + 1
+\]
+Таким образом:
+\[
+a^{2^{n - 2}} = 2^{n}t_{n - 1} + 1 \equiv 1 \pmod 2^{n} 
+\]
+\end{proof}
+\begin{theorem}
+\label{theorem:05_1}
+Первообразные корни $\mod m$ существуют, если и только если $m \in \set{2, 4, p ^{\alpha}, 2p ^{\alpha}}$, где $p$ --- нечётные простые.
+\end{theorem}
+
+\begin{definition}
+  \textbf{Дискретный логарим}:
+  \[
+    x = g^{b} \iff \ind_{g} b = x \pmod p
+  \]
+\end{definition}
+
+Докажем теорему для случая $m = p\colon$
+\begin{proof}
+  Положим $\tau = [\delta(1), \ldots, \delta(p - 1)]$. Тогда:
+  \[
+  x^{\tau} \equiv 1 \pmod p, \forall x \in \set{1, \ldots, p - 1} \Rightarrow \tau \geq p - 1
+  \]
+  С другой стороны:
+  \[
+  \tau = \prod_{i = 1}^{s} q_i^{\alpha_i}
+  \]
+  Тогда:
+  \[
+  \forall i = \overline{1,s}, \exists x_i \colon \delta(x_i) = a_i \cdot q_i ^{\alpha_i}
+  \]
+  \begin{statement}
+    \[
+      \delta(x_i^{\alpha}) = q_i^{\alpha_i}
+    \]
+  \end{statement}
+  \begin{statement}
+    \[
+    \delta \left(\prod_{i = 1}^{s} x_i^{a_i}\right) = \prod_{i = 1}^{s} q_i^{\alpha_i} = \tau
+    \]
+  \end{statement}
+  Отсюда следует, что
+  \[
+    \tau | (p - 1) \Rightarrow \tau \leq p - 1 \Rightarrow \tau = p - 1
+  \]
+  Ч. Т. Д.
+\end{proof}
+
+Теперь докажем для случая $p ^{\alpha}, \alpha > 1$
+\begin{proof}
+Пусть $g$ --- первообразый корень $\mod p$. Докажем:
+\begin{lemma}
+\[
+\exists t \colon (g + pt)^{p - 1} \equiv 1 + pu, (u, p) = 1
+\]
+\end{lemma}
+\begin{proof}
+  \[
+    (g + pt)^{p - 1} = g^{p - 1} + (p - 1) \cdot g^{p - 2} \cdot pt + p ^{2} \cdot a = 
+  \]
+  \[
+   = 1 + pb + (p - 1) \cdot g^{p - 2} \cdot pt + p ^{2} \cdot a = 
+  \]
+  \[
+   = 1 + p (b + (p - 1)g ^{p - 2} \cdot t + pa)
+  \]
+  Т. к. $(p - 1) g^{p - 2} \cdot t$ пробегает полную систему вычетов, то такое $t$ найдётся. 
+\end{proof}
+
+Пусть теперь $\delta = \delta(g + pt) \pmod p ^{\alpha}$. Хотим доказать, что:
+\[
+  \delta = p ^{\alpha - 1}(p - 1)
+\]
+\[
+  (g + pt)^{\delta} \equiv 1 \pmod p \Rightarrow (g + pt)^{ \delta} \equiv 1 \pmod p
+\]
+\[
+\Rightarrow \delta \vdots (p - 1)
+\]
+С другой стороны, $\delta | p ^{\alpha}(p - 1) \Rightarrow \delta = p ^{k}(p - 1)$
+\[
+  (g + pt)^{p - 1} = 1 + pu, (u, p) = 1
+\]
+\[
+  (g + pt)^{p(p - 1)} = (1 + pu)^{p} = 1 + p ^{2} u + p ^{3} a = 
+\]
+\[
+ = 1 + p ^{2}\underbrace{(u + pa)}_{u_1}, (u_1, p) = 1
+\]
+И т. д. получаем:
+\[
+  (g + pt)^{p ^{k}(p - 1)} = (1 + pu_{k - 1})^{p} = 1 + p ^{k + 1} u_k, (u_k, p) = 1
+\]
+Т. к.
+\[
+  \delta = \delta(g + pt) \Rightarrow 1 + p ^{k + 1}u_k \equiv 1 (\mod p^{\alpha})
+\]
+Отсюда следует, что $k + 1 = \alpha \Rightarrow k = \alpha - 1$
+\end{proof}
+Случай $2p^{\alpha}$ слишком тривиальный, чтобы его рассматривать.
+\[
+  \phi(2 p ^{\alpha}) = \phi(p ^{\alpha})
+\]
+Т. е. если $g + pt$ --- нечёт, то всё ок, иначе берём $g + pt + p ^{\alpha}$\\
+
+Доказательство того, что по другим модулям нет первообразных корней остаётся студенту.
+
+\begin{theorem}[Шевалле]
+\label{theorem:05_2}
+Пусть $F(x_1, \ldots, x_n)$ --- многочлен от $n$ переменных, $\deg F < n$. Пусть $p$ --- простое, тогда $N_p$ --- число решений сравнения:
+\[
+  F(x_1, \ldots, x_n) \equiv 0 \pmod p
+\]
+Тогда $N_p \equiv 0 \pmod p$
+\end{theorem}
+\begin{proof}
+Заметим, что:
+\[
+N_p \equiv \sum_{x_1 = 1}^{p} \ldots \sum_{x_n = 1}^{p} \left(1 - F^{p - 1}(x_1, \ldots, x_n)\right) = 
+\]
+\[
+ = p ^{n} - \sum_{x_1 = 1}^{p} \ldots \sum_{x_n = 1}^{p} F^{p - 1}(x_1 ,\ldots, x_n)
+\]
+\[
+  F ^{p - 1}(x_1, \ldots, x_n) = \ldots + c x_1^{\alpha_1} \ldots x_n^{\alpha_n} + \ldots
+\]
+Достаточно доказать, что на $p$ делится любая сумма вида:
+\[
+\sum_{x_1 = 1}^{p} \ldots \sum_{x_n = 1}^{p} x_1^{\alpha_1} \ldots x_n^{\alpha_n} = 
+\]
+\[
+ = \left(\sum_{x_1 = 1}^{p} x_1\right)\ldots\left(\sum_{x_n = 1}^{p} x_n\right)
+\]
+\begin{itemize}
+  \item \underline{Случай 1:} Если среди $\alpha_i$ есть ноль, то соответствующая сумма $ = p \Rightarrow $ всё произведение делится на $p$
+  \item \underline{Случай 2:} Пусть $p = 2$, тогда $\alpha_1 + \ldots + \alpha_n \leq n - 1 \Rightarrow $ выполняется \underline{случай 1}.
+  \item \underline{Случай 3:} Пусть $p \geq 3$:
+    \[
+      \alpha_1 + \ldots + \alpha_n \leq (p - 1)(n - 1)
+    \]
+    Пусть $\forall i, \alpha_i \geq 1 \Rightarrow \exists i\colon 1 \leq \alpha_i \leq p - 2$
+    \[
+    S = \sum_{x_i = 1}^{p} x_i^{\alpha_i}
+    \]
+    Возьмём $g$ --- первообразный корнеь $\mod p$, тогда:
+    \[
+    g^{\alpha_i} S = \sum_{x_i = 1}^{p} (gx)^{\alpha_i} \equiv S \pmod p
+    \]
+    \[
+    \Rightarrow S\underbrace{(g^{\alpha_i} - 1)}_{\neq 0} \equiv 0 \pmod p \Rightarrow S \equiv 0
+    \]
+\end{itemize}
+\end{proof}
+\subsubsection{Немного о шифровании}
+Есть Алиса, Боб и Ева. Алиса и Боб хотят передевать сообщение, чтобы Ева их не смогла подслушать. Алиса выбирает число $a$, меньшее заданного $p$ (простое, порядка $10^{200}$, \underline{известно всем участникам}), и вычисляет:
+\[
+  g^{\alpha} \pmod p.
+\]
+Результат отправляет Бобу. Боб задумывает $b < p$, вычисляет $g^{b} \pmod p$, отправляет Алисе. У Алисы и Боба есть $g^{a}$ и $g^{b}$, из которых они оба получают $g^{ab}$. Это число будет ключом, который Алиса и Боб будут использовать при переписке. \\
+Почему Ева не может узнать ключ? А потому, что задача \underline{дискретного логарифмирования}, т. е. решение ур-я (относитлельно $x$):
+\[
+  g^{x} \equiv c \pmod p
+\]
+это \underline{трудная задача} (в вычислительном плане).
+

@@ -1,0 +1,475 @@
+\section{Лекция 5}
+\subsection{Аннулирующие многочлены}
+$\phi \colon V \rightarrow V$ --- линейный оператор $V$ над $\mathbb{F}$, $P$ --- ненулевой многочлен из $\mathbb{F}[t]$
+\begin{definition}
+Многочлен $P$ называется \textbf{аннулирующим} для $\phi \iff P(\phi) = 0$
+\end{definition}
+\begin{example}
+  \[
+    id(x) = x
+  \]
+
+  \[
+    P = t - 1 \Rightarrow P(\phi) = \phi - 1 \cdot id = id - id = 0
+  \]
+\end{example}
+\begin{theorem}[Гамильтон-Кэли]
+\[
+\chi_\phi(\phi) = 0
+\]
+\end{theorem}
+Т. о. аннулирующий многочлен всегда существует.
+\[
+  \dim \mathcal{L}(V) = \dim ^{2} V = n^{2}
+\]
+\[
+id, \phi, \phi^{2}, \ldots, \phi^{n^{2}} \in \mathcal{L}(V) \Rightarrow \exists \alpha_i \in \mathbb{F} \colon \alpha_0 \cdot id + \alpha_1 \cdot \phi + \ldots + \alpha_{n^{2}} \phi^{n^{2}} = 0
+\]
+\begin{definition}
+\textbf{Минимальным многочленом} ($\mu_\phi$) линейного оператора $\phi \colon V \rightarrow V$ называется \textbf{аннулирующим многочленом минимальной степени.}
+  \[
+  \deg \mu_\phi \leq \deg P, P \text{ --- аннулирующий мн-н}
+  \]
+\end{definition}
+
+\begin{statement}
+  \label{statement:05_1}
+  $\phi \colon V \rightarrow V$, $\mu_\phi$ --- минимальный многочлен $\phi$, $P$ --- произвольный аннулирующий многочлен, тогда:
+  \[
+  P \vdots \mu_\phi
+  \]
+\end{statement}
+\begin{proof}
+  \[
+  P(t) = \mu_\phi(t) \cdot Q(t) + R(t)
+  \]
+  Покажем, что либо $R(t) \equiv 0$, либо $\deg P < \deg \mu_\phi$. Действительно:
+  \[
+  R(\phi) = \underbrace{P(\phi)}_{0} - \underbrace{\mu_\phi(\phi)}_{0} \cdot Q(\phi) = 0
+  \]
+\end{proof}
+\begin{consequence}
+\label{consequence:05_1}
+  $\mu_\phi$ определён с точностью до ассоциированности.
+\end{consequence}
+\begin{proof}
+  \[
+  \mu_\phi, \mu_\phi' \text{ --- мин. мн-ны $\phi$} \Rightarrow \mu_\phi \vdots \mu_\phi' \land \mu_\phi' \vdots \mu_\phi \text{$\Rightarrow$ они ассоциированы.}
+  \]
+\end{proof}
+\begin{consequence}
+\label{consequence:05_2}
+\[
+\chi_\phi \vdots \mu_\phi
+\]
+\end{consequence}
+\begin{consequence}
+\label{consequence:05_3}
+Корни $\chi_\phi(t)$, принадлежащие полю $\mathbb{F}$, являются корнями $\mu_\phi$ и наоборот.
+\end{consequence}
+\begin{proof}
+\textbf{Необ.:} $\lambda$ --- корень $\chi_\phi(t) \Rightarrow \lambda$ --- собств. значение $\phi$ $ \Rightarrow \exists x \neq 0$, т. ч. $\phi(x) = \lambda x \Rightarrow \phi^{n}(x) = \lambda^{n}x$
+\[
+  0 = \mu_\phi(\phi)(x) = \left(\sum_{i}^{} \alpha_i t^{i}\right)\Big|_{t = \phi}(x) = 
+\]
+\[
+ = \left(\sum_{i}^{} \alpha_i \lambda^{i}\right)(x) = \mu_\phi(\lambda) \cdot x = 0
+\]
+Поэтому $\lambda$ --- корень $\mu_\phi$
+\end{proof}
+\begin{theorem}[О взаимнопростых делителях аннулирующего многочлена]
+\label{theorem:05_1}
+  $\phi \colon V \rightarrow V$, $f$ --- аннулирующий многочлен $\phi$.
+  \[
+  f = f_1 \cdot f_2, \text{ где $f_1, f_2$ --- взаимнопросты.}
+  \]
+  Тогда, если $V_i = \ker f_i(\phi)$, то:
+  \[
+  V = V_1 \oplus V_2
+  \]
+  Причём $V_1$ и $V_2$ --- инвариантны относительно $\phi$.
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+  \item [a) ] $\phi$ --- инв-ть?
+    \[
+    f_i(\phi) \cdot \phi = \phi \cdot f_i(\phi) \Rightarrow V_i = \ker f_i(\phi)     \]
+
+        $\ker f_i(\phi) \text{ --- } \phi$ инвариантно по утв. о коммутирующих операторах.
+\item [б) ]
+    \[
+    \exists u_1, u_2 \in F(t)\colon 
+    \]
+    \[
+    u_1(t) f_1(t) + u_2(t) f_2(t) = 1
+    \]
+    Покажем, что $\Image f_1(\phi) \subset V_2$ и $\Image f_2(\phi) \subset V_1$.
+    \[
+    y \in \Image f_1(\phi) \colon \exists x \in V \colon y = f_1(\phi)(x)
+    \]
+    \[
+    f_2(y) = \underbrace{f_1(\phi) \circ f_2(\phi)}_{f(\phi)} (x) = 0
+    \]
+  \item [в) ] Покажем, что $x \in V \overset{?}{=} V_1 + V_2$
+    \[
+    x = id \cdot x = (f_1(\phi) \cdot u_1(\phi) + f_2(\phi) \cdot u_2(\phi))(x) = 
+    \]
+    \[
+    = \underbrace{f_1(\phi)(x')}_{x_2} + \underbrace{f_2(\phi) (x'')}_{x_1} = x_1 + x_2
+    \]
+  \item [г) ] Проверим, что $V_1 \cap V_2 = \set{0}$. Пусть $x \in V_1 \cap V_2$, т. е.:
+    \[
+    f_1(\phi)(x) = f_2(\phi)(x) = 0
+    \]
+    \[
+    x = id \cdot x = (u_1(\phi) f_1(\phi) + u_2(\phi) \cdot f_2(\phi))(x) = 0 + 0 = 0
+    \]
+\end{itemize}
+\end{proof}
+\begin{consequence}
+\label{consequence:05_4}
+\[
+  \phi \colon V \rightarrow V \text{ --- лин. оп.}, f \text{ --- аннул. $\phi$}
+\]
+\[
+  f = f_1 \cdot f_2 \cdot f_3 \cdot \ldots \cdot f_s, f_i \text{ -- причём $f_i$ попарно взаимнопросты.}
+\]
+\[
+  V_i = \ker f_i(\phi_i) \Rightarrow V = V_1 \oplus V_2 \oplus \ldots \oplus V_s
+\]
+\end{consequence}
+\begin{proof}
+ММИ по $s$:
+\begin{itemize}
+  \item База:  $s = 2$ --- доказано в теореме ($\ref{theorem:05_1}$)
+  \item Переход: пусть для $s - 1$ взаимнопростых делителей утверждение доказано, докажем для $s$:
+    \[
+    f = \underbrace{(f_1 \cdot \ldots \cdot f_{s - 1})}_{p} \cdot \underbrace{f_s}_{q}, \text{ где $p$ и $q$ взаимнопросты.}
+    \]
+    \[
+    \overset{\text{по теореме $(\ref{theorem:05_1})$}}{\Rightarrow} V = \underbrace{\ker(f_1(\phi) \cdot \ldots \cdot f_{s - 1}(\phi))}_{V'} \oplus V_s
+    \]
+    Рассмотрим $\phi|_{V'}$, $f_1 \cdot \ldots \cdot f_{s - 1}$ --- аннулирует $\phi|_{V'}$, тогда по предположению индукции:
+    \[
+    V' = \ker(f_1(\phi)|_{V'}) \oplus \ldots \oplus \ker(f_{s - 1}(\phi)|_{V'})
+    \]
+    Покажем, что:
+    \[
+    \ker(f_i(\phi)|_{V'}) = \ker(f_i(\phi))
+    \]
+    \begin{itemize}
+      \item $\subseteq$: $x \in \ker(f_i(\phi)|_{V'}) \Rightarrow x \in V'$ на $V'$ $\phi$ и $\phi|_{V'}$ совпадают $\Rightarrow$ включение доказано.
+      \item $\supseteq:$ пусть $x \in \ker f_{i}(\phi)$, т. е. $f_i(\phi)(x) = 0$
+        \[
+          (f_1(\phi) \cdot \ldots \cdot f_i(\phi) \cdot \ldots \cdot f_{s - 1}(\phi))(x) = 
+        \]
+        \[
+          (f_1(\phi) \cdot \ldots \cdot f_{i - 1}(\phi) \cdot f_{i + 1}(\phi) \cdot \ldots f_{s - 1}(\phi)) \cdot f_{i}(\phi)(x) = 0
+        \]
+        \[
+        \Rightarrow x \in \ker(f_1(\phi) \cdot \ldots \cdot f_i(\phi) \cdot \ldots \cdot f_{s - 1}(\phi)) \Rightarrow x \in V' \Rightarrow 
+        \]
+        \[
+        \Rightarrow \ker f_i(\phi) \subseteq \ker (f_i(\phi|_{V'}))
+        \]
+    \end{itemize}
+\end{itemize}
+\end{proof}
+\subsection{Корневые подпространства}
+\[
+\phi \colon V \rightarrow V \text{ --- лин. оператор.}
+\]
+\begin{definition}
+  Вектор $x$ называется \textbf{корневым} для $\phi_i$ отвечающим $\lambda \in \mathbb{F}$, если $\exists k \in \N\colon$
+  \begin{equation}
+    \label{equation:05_2}
+    (\phi - \lambda id)^{k}(x) = 0
+  \end{equation}
+  Наименьшее $k$, удовлетворяющее $(\ref{equation:05_2})$ называется \textbf{высотой корневого вектора}.
+\end{definition}
+\begin{note}
+  Будем считать, что $0$ --- корневой, высоты $0$
+\end{note}
+Корневые векторы высоты $1$, отвечающие $\lambda$ --- это собственные векторы $\phi$, отвеч. $\lambda$, и только они.
+\begin{example}
+  \[
+  \phi = D = \frac{d}{dx}
+\]
+ \[
+ V = \R_{n}[x] = \set{f \in \R[x] | \deg f \leq n}
+ \] 
+ \[
+  x^{n} \text{ --- наибольший вектор и $n + 1$ --- его высота}
+ \]
+ \[
+ \Rightarrow D^{n + 1}(V) = 0
+ \]
+ $\Rightarrow V$ --- корневое для $D$, отвечающее $\lambda = 0$
+\end{example}
+\[
+\underbrace{x^{n}}_{n + 1} \overset{D}{\mapsto} \underbrace{n x^{n - 1}}_{n} \mapsto \ldots \mapsto \underbrace{n! \cdot 1}_{1} \mapsto \underbrace{0}_{0}
+\]
+(Вектора и их высоты)
+\begin{statement}
+  \label{statement:05_2}
+  Множество всех корневых векторов для оператора $\phi$, отвечающее $\lambda$, является подпространством в $V$.
+\end{statement}
+\begin{proof}
+  Пусть $x$ --- корневое высторы $m$, $y$ --- корневое высоты $l$, $k = \max \set{m, l}$
+  \[
+    (\phi - \lambda id)^{k}(x + y) = (\phi - \lambda id)^{k}(x) + (\phi - \lambda id)^{k}(y) = 0 + 0 = 0
+  \]
+\end{proof}
+\begin{symb}
+  $V^{\lambda}$ --- корневое для $\phi$, отвечающее $\lambda$.
+\end{symb}
+\begin{statement}
+  \label{statement:05_3}
+  Подпространство $V^{\lambda} \neq \set{0} \iff \lambda$ --- собсвтенное значение оп. $\phi$.
+\end{statement}
+\begin{proof}
+  \begin{itemize}
+    \item $\Rightarrow$
+  Пусть $V^{\lambda} \neq \set{0}$, т. е. $\exists y \neq 0, y \in V^{\lambda}$
+  \[
+  \exists k \in \N\colon \begin{cases}
+    (\phi - \lambda id)^{k} (y) = 0 \\
+    x = (\phi - \lambda id)^{k - 1}(y) \neq 0
+  \end{cases} \Rightarrow (\phi - \lambda id)(x) = 0
+  \]
+  \[
+  \phi(x) = \lambda x \Rightarrow \lambda \text{ --- собств. знач. $\phi$}
+  \]
+\item $\Leftarrow$ $\lambda...$
+  \end{itemize}
+\end{proof}
+\begin{theorem}[О свойствах корневых подпространств.]
+\label{theorem:05_2}
+$\phi \colon V \rightarrow V$ --- лин. оп., $V^{\lambda}$ --- его корневое подпространство, отвечающее собственному значению $\lambda$. Тогда:
+\begin{itemize}
+  \item [a) ] $V^{\lambda}$ --- инвариантное относительно $\phi$
+  \item [б) ] На $V^{\lambda}$ оператор $\phi$ имеет единственное собственное значение, которое равно $\lambda$.
+  \item [в) ] Если $W$ --- дополнительные к $V^{\lambda}$, т. е.  $V = V^{\lambda} \oplus W$; тогда:
+    \[
+      (\phi - \lambda id)|_{W} \text{ --- невырожден}
+    \]
+\end{itemize}
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item [а) ] Пусть $m$ --- максимальная высота векторов из $V^{\lambda}$:
+      \[
+      V^{\lambda} = \ker(\phi - \lambda id)^{m}, (\phi - \lambda id)^{m} \phi = \phi (\phi - \lambda id)^{m}
+      \]
+      По утв. о коммут. операторах $V^{\lambda}$ --- инв. относительно $\phi$.
+    \item [б) ] От противного, пусть $\mu \neq \lambda$ и $\mu$ тоже явл. собственным значением $V^{\lambda}$
+      \[
+      \exists x \in V^{\lambda} \colon \phi(x) = \mu x \Rightarrow (\phi - \lambda id)(x) = \mu x - \lambda x = (\mu - \lambda) x 
+      \]
+      \[
+        (\phi - \lambda id)^{m}(x) = (\mu - \lambda)^{m}x = 0 \Rightarrow (\mu - \lambda)^{m} = 0
+      \]
+      \[
+       \Rightarrow \mu = \lambda \Rightarrow \perp
+      \]
+    \item [в) ] Выберем базим в $V$, согласованный с разлложением:
+      \[
+      V = V^{\lambda} \oplus W
+      \]
+      \[
+        (\phi - \lambda id)_e = \begin{pmatrix} \frac{A - \lambda E}{O} & \frac{O}{B - \lambda E} \end{pmatrix}
+      \]
+      \[
+      B - \lambda E = (\phi - \lambda id)|_{W}
+      \]
+      От противного, пусть $\deg (B - \lambda E) = 0 \Rightarrow \ker (\phi - \lambda id)|_{W} \neq \set{0}$
+      \[
+      \Rightarrow \exists x \neq 0 \in W\colon (\phi - \lambda id)(x) = 0 \Rightarrow x \in V^{\lambda}
+      \]
+  \end{itemize}
+\end{proof}
+\begin{theorem}[О разложении пространства $V$, в котором действует лин. факт. оп. $\phi$, в прямую сумму корневых]
+\label{theorem:05_3}
+  $\phi \colon V \rightarrow V$, $V$ --- над $\mathbb{F}$
+  \[
+  \chi_\phi \text{ --- лин. факт. над $\mathbb{F}$}
+  \]
+  Тогда, если $\lambda_1, \lambda_2, \ldots, \lambda_s$ --- все попарно различные собств. знач.:
+  \[
+  \Rightarrow V = V^{\lambda_1} \oplus \ldots \oplus V_{\lambda_s}
+  \]
+\end{theorem}
+\begin{proof}
+  \[
+  \chi_\phi(t) = (-1)^{n} \prod_{i = 1}^{s}(t - \lambda_i)^{m_i}
+  \]
+  \[
+  m_i = \alg(\lambda_i)
+  \]
+  \[
+    (t - \lambda_1)^{m_1}, (t - \lambda_2)^{m_2}, \ldots, (t - \lambda_s)^{m_s} \text{ --- попарно взаимнопросты.}
+  \]
+  \[
+  \overset{\text{по теореме $(\ref{theorem:05_2})$}}{\Rightarrow} V = \ker(\phi - \lambda_1 id)^{m_1} \oplus \ldots \oplus \ker(\phi - \lambda_s id)^{m_s}
+  \]
+  \[
+  x \in V \Rightarrow x = x_1 + \ldots + x_s, x_i \in V^{\lambda_i}
+  \]
+  Покажем, что $V^{\lambda_i} \subseteq \ker(\phi - \lambda_i id)^{m_i}$. \\
+  От противного, пусть $0 \neq x \in V^{\lambda_i}$, но $x \not\in \ker(\phi - \lambda_i id)^{m_i}$, т. е. $x$ --- корневое для $\phi$, но высота $x$ равна $M > m_i$:
+  \[
+  \chi_\phi(\phi)(x) = \left((-1)^{n}\prod_{i = 1}^{s} (\phi - \lambda_i id)^{m_i}\right)(x) =
+  \]
+  \[
+   = (-1)^{n} \left(\prod_{j \neq i} (\phi - \lambda_j id)^{m_j}\right) \underbrace{(\phi - \lambda_i id)^{m_i} x}_{\neq 0} \neq 0
+  \]
+  \[
+    (\phi - \lambda_j id)|_{V^{\lambda_i}} \text{ --- невырожд.}
+  \]
+  Однако, это противоречит теореме Гамильтона-Кэли. $\Rightarrow V^{\lambda_i} = \ker(\phi - \lambda_i id)^{m_i}$, Ч. Т. Д.
+\end{proof}
+\begin{consequence}
+\label{consequence:05_31}
+Пусть $\phi$ --- лин. факториз. оператора $\colon V \rightarrow V$:
+\[
+  \chi_\phi(t) = (-1)^{n} \prod_{i = 1}^{s} (t - \lambda_i)^{m_i}, \lambda_i \text{ --- попарно разл. $m_i = \alg(\lambda_i)$}
+\]
+Тогда $\dim V^{\lambda_i} = m_i$
+\end{consequence}
+\begin{proof}
+Пусть $e$ --- базис в $V$, согласов. с теоремой$(\ref{theorem:05_3})$. Тогда:
+\[
+  \phi = \begin{pmatrix} A_1 & & & 0 \\ & A_2 & \\ & & \ddots & \\ 0 & & & A_s\end{pmatrix}
+\]
+где $A_i = \phi|_{V^{\lambda_i}}$
+\[
+\chi_\phi(t) = (-1)^{n} \prod_{i = 1}^{s} \chi_{\phi|_{V^{\lambda_i}}}
+\]
+\[
+\Rightarrow \chi_{\phi|_{V^{\lambda_i}}} \text{ --- тоже лин. факт.}
+\]
+\[
+\Rightarrow \chi_{\phi|_{V^{\lambda_i}}} = (t - \lambda_i)^{n_i}, n_i \leq m_i
+\]
+\[
+\Rightarrow \sum_{i}^{} \chi_{\phi|_{V^{\lambda_i}}} = \sum_{i}^{} n_i = \deg \chi_{\phi} = n = \sum_{i}^{} m_i \Rightarrow \forall i, n_i \leq m_i
+\]
+\[
+\Rightarrow n_i = \dim V^{\lambda_i} = m_i
+\]
+\end{proof}
+\begin{consequence}
+\label{consequence:05_32}
+Корневое подпространство $V^{\lambda}$ --- это наибольшее (по включению) подпространство в $V_i$, на котором оператор $\phi$ имеет $\lambda$ единственным собственным значением.
+\end{consequence}
+\begin{proof}
+  \[
+  V^{\lambda} \subset U \text{ --- такое подпр-во} \Rightarrow \text{кратность $\lambda$ больше $\alg(\lambda)$} \Rightarrow \perp
+  \]
+\end{proof}
+\subsection{Нильпотентные операторы}
+\begin{definition}
+$\phi \colon V \rightarrow V$ --- называется нильпотентным, если
+\[
+  \exists k \in \N \colon \phi^{k} = 0
+\]
+Наименьшее $k$, для которого выполняется это условие называется \textbf{индексом нильпотнентности} $\phi$
+\end{definition}
+\begin{example}
+$V^{\lambda}, \exists m \colon \forall x \in V^{\lambda} \Rightarrow (\phi - \lambda id)^{m}(x) = 0$
+\[
+\Rightarrow \phi - \lambda id \text{ --- нильпонтен на $V^{\lambda}$}
+\]
+\end{example}
+Вопрос: какие бывают собств. знач. у нильп. оператора?
+\[
+\phi(x) = \lambda x \Rightarrow \phi^{k}(x) = \lambda^{k} x = 0 \Rightarrow \lambda = 0
+\]
+\begin{note}
+Всякий нильпотентным оператор не имеет собственных значений, кроме $0$.
+\end{note}
+\begin{definition}
+Пусть $\phi$ --- нильпотентный оператор с инд. нильпотентности $k$, тогда
+\[
+  \exists x \in V \colon \phi^{k}(x) = 0, \phi^{k - 1}(x) \neq 0
+\]
+Тогда лин. оболочка:
+\[
+  U = <x, \phi(x), \ldots, \phi^{k - 1}(x)>
+\]
+называется \textbf{циклическим пространством} для $\phi$, порожд. вектором $x$.
+\end{definition}
+\begin{note}
+  Циклическое пространство инв. отн-но $\phi$.
+\end{note}
+\begin{statement}
+\label{statement:05_4}
+Векторы $x, \phi(x), \ldots, \phi^{k - 1}(x)$ образуют базис цикл. подпр-ва $U$:
+\end{statement}
+\begin{proof}
+Проверим ЛНЗ. От прот.:
+\[
+  \alpha_0 x + \alpha_1 \phi(x) + \ldots + \alpha_{k - 1} \phi^{k - 1}(x) = 0
+\]
+Пусть $\alpha_j$ --- лидер (т. е. не равен $0$, но для $i < j$ $\alpha_i = 0$). Умножим рав-во на $\phi^{k - 1 - j}$
+\[
+\alpha_j \phi^{k - 1}(x) + \phi_{j + 1}\underbrace{\phi^{k}(x)}_{0} + \underbrace{\ldots}_{0} = 0 \Rightarrow \alpha_j = 0 \Rightarrow \perp
+\]
+\end{proof}
+\[
+\underbrace{\phi^{k - 1}(x)}_{e_1}, \underbrace{\phi^{k - 2}(x)}_{e_2}, \ldots, \underbrace{x}_{e_k}
+\]
+\[
+\phi(e_1) = 0
+\]
+\[
+\phi(e_2) = e_1
+\]
+\[
+\phi(e_k) = e_{k - 1}
+\]
+\[
+  A_{\phi}^{e} = \begin{pmatrix} 0 & 1 & 0 & 0 & \ldots & 0 \\ 0 & 0 & 1 & 0 & \ldots & 0 \\ \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\ 0 & 0 & 0 & 0 & \ldots & 1 \\ 0 & 0 & 0 & 0 & \ldots & 0 \end{pmatrix} = J_k(0)
+\]
+\[
+  \begin{pmatrix} \lambda & 1 & 0 & 0 & \ldots & 0 \\ 0 & \lambda & 1 & 0 & \ldots & 0 \\ \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\ 0 & 0 & 0 & 0 & \ldots & 1 \\ 0 & 0 & 0 & 0 & \ldots & \lambda \end{pmatrix} = J_k(\lambda)
+\]
+
+\begin{theorem}(О нильпотентном операторе)
+\label{theorem:05_4}
+  $\phi \colon V \rightarrow V$ --- нильпотентный оператора (инд. нильпотнентности $= k$). Пусть $x$ --- вектор высоты $k$, т. е.
+  \[
+    \phi^{k}(x) = 0, \phi^{k - 1}(x) \neq 0
+  \]
+  \[
+  U = <x, \phi(x), \ldots, \phi^{k - 1}(x)>
+  \]
+  Тогда в $V$ найдётся $W$ --- дополнительное к $U$ $\phi$ инвариантное подпр-во.
+  \[
+    V = U \oplus W
+  \]
+\end{theorem}
+\begin{proof}
+\underline{Идея}: 
+\[
+\begin{cases}
+  U \cap W = \set{0} \\
+  V = U + W
+\end{cases}
+\]
+Первому условию (и $\phi$ инвариатности) удовлетворяет $\set{0}$. Далее надо выбрать максимальное по размерности $\phi$ инвариатное подпространство, удовл. этому условию. Пусть $W$ --- такое подпр-во. Покажем, что если второе условие не удовл., то всегда существует большее подпространство. \\
+\begin{itemize}
+  \item [а) ]
+Пусть для $W$, макс. размерность, не выполняется второе условие, т. е. $U + W < V \iff \exists a \in V$, т. ч. $a \not\in U + W$.
+\[
+  <a, \phi(a), \phi^{2}(a), \ldots, \underbrace{\phi^{k}(a)}_{0 \in U + W}>
+\]
+Пусть $z \not\in U + W$, а $\phi(z) \in U + W$:
+\[
+  \phi(z) = \underbrace{\sum_{s = 0}^{k - 1}\alpha_s \phi^{s}(x)}_{\in U} + \underbrace{w}_{\in W}
+\]
+\begin{task}
+  Докажите, что тогда $\alpha_0 = 0$
+\end{task} 
+\end{itemize}
+\end{proof}

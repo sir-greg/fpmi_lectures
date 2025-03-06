@@ -1,0 +1,158 @@
+\section{Лекция 4}
+\subsection{Распределение простых}
+\[
+  \pi(x) = \left|\set{p \leq x \colon p \text{ --- простое}}\right| = \sum_{p \leq x}^{} 1
+\]
+\begin{theorem}[Асимптотический закон распределения простых чисел (б/д)]
+\label{theorem:04_1}
+\[
+\pi(x) \sim \frac{x}{\ln x}
+\]
+Доказана Адамаром и Валле-Пуссеном.
+\end{theorem}
+\begin{theorem}[Чебышёв]
+\label{theorem:04_2}
+\[
+\forall \varepsilon > 0, \exists x_0, \forall x \geq x_0
+\]
+\[
+  (1 - \varepsilon) \frac{x \ln 2}{\ln x} \leq \pi(x) \leq (1 + \varepsilon) \frac{x \cdot 4\ln 2}{\ln x}
+\]
+\end{theorem}
+\begin{proof}
+Введём вспомогательные функции:
+\[
+  \theta(x) = \sum_{p \leq x}^{} \ln p
+\]
+\[
+  \psi(x) = \sum_{(p, \alpha) \colon p ^{\alpha} \leq x}^{} \ln p = \sum_{p \leq x}^{} (\ln p)\floor{ \frac{\ln x}{\ln p}}
+\]
+Заметим:
+\[
+  \psi(x) \leq \sum_{p \leq x}^{} \ln x
+\]
+Положим:
+\[
+\lambda_1 = \overline{\lim_{x\to +\infty}} \frac{\theta(x)}{x}, \lambda_2 = \overline{\lim_{x\to +\infty}} \frac{\psi(x)}{x}, \lambda_3 = \overline{\lim_{x\to +\infty}} \frac{\pi(x)}{\sfrac{x}{\ln x}}
+\]
+\[
+\mu_1, \mu_2, \mu_3 \text{ --- то же, что и $\lambda_1, \lambda_2, \lambda_3$, но предел нижний}
+\]
+\begin{lemma}
+  \[
+  \lambda_1 = \lambda_2 = \lambda_3, \mu_1 = \mu_2 = \mu_3
+  \]
+\end{lemma}
+\begin{proof}
+\[
+\theta(x) = \sum_{p \leq x}^{} \ln p \leq \psi(x) \leq \sum_{p \leq x}^{} \ln x = (\ln x)\pi(x)
+\]
+\[
+  \Rightarrow \frac{\theta(x)}{x} \leq \frac{\psi(x)}{x} \leq \frac{\pi(x)}{\sfrac{x}{\ln x}} \Rightarrow \lambda_1 \leq \lambda_2 \leq \lambda_3
+\]
+Зафикс. $\beta \in [0, 1)$:
+\[
+  \theta(x) = \sum_{p \leq x}^{} \ln p \geq \sum_{x^{\beta} < p \leq x}^{} \ln p > \sum_{x^{\beta} < p \leq x}^{} \ln (x^{\beta}) = \beta \ln x (\pi(x) - \pi(x^{\beta})) \geq 
+\]
+  Т. к. $\pi(x) \leq x$:
+\[
+ \geq \beta \ln x (\pi(x) - x^{\beta})
+\]
+\[
+\Rightarrow \frac{\theta(x)}{x} \geq \frac{\beta \pi(x)}{\sfrac{x}{\ln x}} - \frac{\beta x^{\beta} \ln x}{x}
+\]
+  Переходя к верхнему пределу по $x$:
+\[
+\Rightarrow \lambda_1 \geq \beta \lambda_3
+\]
+  Затем переходим к $\sup$ по $\beta$:
+  \[
+  \lambda_1 \geq \lambda_3 \Rightarrow \lambda_1 = \lambda_2 = \lambda_3
+  \]
+  Лемма доказана ($\mu_1 = \mu_2 = \mu_3$ --- аналогично)
+\end{proof}
+Рассмотрим $C_{2n}^{n}$. Заметим, что $C_{2n}^{n} < 2^{2n}$:
+\[
+  \ln C_{2n}^{n} \leq 2n \ln 2
+\]
+\[
+  C_{2n}^{n} = \frac{(2n)!}{(n!)^{2}} \geq \prod_{n < p \leq 2n} p
+\]
+\[
+\Rightarrow \ln C_{2n}^{n} \geq \sum_{n < p \leq 2n}^{} \ln p = \theta(2n) - \th(n)
+\]
+Рассм. $n = 1, 2, 4, 8, \ldots, 2^{k}$:
+\[
+2n\ln 2 > \ln C_{2n}^{n} \geq \theta(2n) - \theta(n)
+\]
+Сложим нер-ва:
+\[
+  2n \ln 2 \geq \theta(2n) - \theta(n)
+\]
+Получаем:
+\[
+  2(1 + 2 + \ldots + 2^{k})\ln 2 > \theta(2^{k + 1})
+\]
+\[
+  \Rightarrow 2^{k + 2}\ln 2 > \theta(2^{k + 1})
+\]
+\[
+2^{k} < x \leq 2^{k + 1}
+\]
+\[
+\theta(x) \leq \theta(2^{k + 1}) < 2^{k + 2}\ln 2 < 4 x \ln 2
+\]
+\[
+\Rightarrow \frac{\theta(x)}{x} \leq 4\ln 2 \Rightarrow \lambda_1 \leq 4\ln 2 \Rightarrow \lambda_3 \leq 4 \ln 2
+\]
+Заметим:
+\[
+  C_{2n}^{n} > \frac{2^{2n}}{2n + 1} \text{ --- среднее арифм. C-шек}
+\]
+\[
+  \ln C_{2n}^{n} > 2n \ln 2 - \ln(2n + 1)
+\]
+\[
+  C_{2n}^{n} = \frac{(2n)!}{(n!)^{2}} = \frac{\prod_{p \leq 2n} p ^{\floor{\frac{2n}{p}} + \floor{\frac{2n}{p ^{2}}} + \ldots}}{\left(\prod_{p \leq n} \ldots\right)^{2}} = 
+\]
+\[
+= \prod_{p \leq 2n} p ^{\underbrace{\left(\floor{\frac{2n}{p}} - 2 \floor{\frac{n}{p}}\right)}_{\leq 1} + \underbrace{\left(\floor{\frac{2n}{p ^{2}}} - 2 \floor{\frac{n}{p ^{2}}}\right)}_{\leq 1} + \ldots} \leq \prod_{p \leq 2n} p ^{\floor{\log_p {2n}}} = 
+\]
+\[
+ = e^{\psi(2n)} 
+\]
+Получили:
+\[
+  \ln C_{2n}^{n} \leq \psi(2n)
+\]
+\[
+  \psi(2n) \geq 2n \ln 2 - \ln(2n + 1)
+\]
+Зафикс. $x \in [2n, 2n + 2)$:
+\[
+  x \in [2n, 2n + 2) \Rightarrow \psi(x) > \psi(2n) \geq 2n \ln 2 - \ln(2n + 1) > 
+\]
+\[
+  > (x - 2)\ln 2 - \ln(x + 1)
+\]
+\[
+  \Rightarrow \frac{\psi(x)}{x} \geq \frac{x - 2}{x} \ln 2 - \frac{\ln (x + 1)}{x}
+\]
+\[
+  \mu_2 \geq \ln 2 \Rightarrow \mu_3 \geq \ln 2
+\]
+Ч. Т. Д. 
+\end{proof}
+\begin{theorem}[Постулат Бертрана]
+\label{theorem:04_3}
+  \[
+  \forall x \geq 2, \exists p \in [x, 2x] = [x, x + x]
+  \]
+\end{theorem}
+Давайте вместо правой границы $[x, 2x]$ рассмотрим $[x, x + f(x)]$. Вопрос: при каких $f(x)$ можно расчитывать на $\exists p \in [x, x + f(x)]$ хотя бы при $x \geq x_0$.
+\begin{note}
+АЗРП $\Rightarrow f(x) = o(x)$. На сегодняшний день известна оценка $f(x) = O(x^{0.525})$
+\end{note}
+\begin{statement}[Гипотеза]
+  $f(x) = O(\ln ^{2} x)$
+\end{statement}
