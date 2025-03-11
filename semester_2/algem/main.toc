@@ -1,9 +1,12 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 4}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Структура линейного оператора}{3}{}%
-\contentsline {subsubsection}{\numberline {1.1.1}Алгебраическая и геометрическая кратности собственных значений}{6}{}%
-\contentsline {subsection}{\numberline {1.2}Приведение линейно факторизуемого лин. оператора к верхнетреугольному виду}{9}{}%
-\contentsline {section}{\numberline {2}Лекция 5}{13}{}%
-\contentsline {subsection}{\numberline {2.1}Аннулирующие многочлены}{13}{}%
-\contentsline {subsection}{\numberline {2.2}Корневые подпространства}{17}{}%
-\contentsline {subsection}{\numberline {2.3}Нильпотентные операторы}{21}{}%
+\contentsline {section}{\numberline {1}Лекция 3}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Инвариантные подпространства}{3}{}%
+\contentsline {subsubsection}{\numberline {1.1.1}Собственные векторы и собств. значение лин. оператора}{6}{}%
+\contentsline {section}{\numberline {2}Лекция 4}{8}{}%
+\contentsline {subsection}{\numberline {2.1}Структура линейного оператора}{8}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Алгебраическая и геометрическая кратности собственных значений}{12}{}%
+\contentsline {subsection}{\numberline {2.2}Приведение линейно факторизуемого лин. оператора к верхнетреугольному виду}{15}{}%
+\contentsline {section}{\numberline {3}Лекция 5}{18}{}%
+\contentsline {subsection}{\numberline {3.1}Аннулирующие многочлены}{18}{}%
+\contentsline {subsection}{\numberline {3.2}Корневые подпространства}{22}{}%
+\contentsline {subsection}{\numberline {3.3}Нильпотентные операторы}{26}{}%
