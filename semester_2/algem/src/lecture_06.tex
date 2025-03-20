@@ -1,0 +1,244 @@
+\section{Лекция 6}
+\subsection{ЖНФ}
+\begin{theorem}[О нильпотентном операторе (напомин.)]
+\label{theorem:recall_5}
+$\phi \colon V \rightarrow V$ --- нильп. оператор ранга нильпотентности $k$. Пусть $x$ - вектор наиб. высоты ($k$). Пусть $U = <x, \phi(x), \ldots, \phi^{k - 1}(x)>$. Тогда в $V$ найдётся $\phi$ инв-е, дополнительное к $U$ подпространство:
+\[
+    V = U \oplus W
+\]
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+    \item [a) ]
+Хотим:
+\[
+    \begin{cases}
+    U \cap W = \set{0} \\
+    V = U + W \\
+    W \text{ --- $\phi$ инв.}
+    \end{cases}
+\]
+Докажем, что $\max$ по размерности $W \colon U \cap W \land W \text{ --- $\phi$ инв.}$ --- является дополнительным к $U$. Пусть $U + W < V$, тогда: 
+\[
+    \exists z \colon z \not \in U + W, \text{ но } \phi(z) \in U + W
+\]
+    \begin{equation}
+        \label{equation:06_1}
+    \phi(z) = \sum_{s = 0}^{k - 1} \alpha_s \phi^{s}(x) + w
+    \end{equation}
+\item [б) ] Покажем, что в $(\ref{equation:06_1})$: $\alpha_0 = 0$.
+    \[
+    \phi^{k - 1} \text{ --- применим к $(\ref{equation:06_1})$}.
+    \]
+    \[
+    0 = \alpha_0 \phi^{k - 1}(x) + \alpha_1 \underbrace{\phi^{k}(x)}_{0} + 0 + \ldots + 0 + \phi^{k - 1}(w)
+    \]
+    \[
+    U \Rightarrow \alpha_0 \phi^{k - 1}(x) = -\phi^{k - 1}(w) \in W \Rightarrow \alpha_0 = 0
+    \]
+\item [в) ] Пусть $y = z - \sum_{s = 1}^{k - 1} \underbrace{\alpha_s \phi^{s - 1}(x)}_{\in U} \not \in U + W$. Пусть $W' = W \oplus <y>$, откуда
+    \[
+        \dim W' = \dim W + 1
+    \]
+    \item [г) ] Покажем, что $W'$ --- $\phi$-инв.
+        \[
+        \phi(y) = \phi(z)  - \sum_{s = 1}^{k - 1} \alpha_s \phi^{s}(x) = \phi(z) - \sum_{s = 0}^{k - 1} \alpha_s \phi^{s}(x) = w \in W
+        \]
+    \item [е) ] Покажем, что $U \cap W' = \set{0}$. Пусть $\exists u \neq 0 \colon u \in U \cap W'$ 
+        \[
+        \Rightarrow u = \tilde{w} + \lambda y, \lambda \neq 0
+        \]
+        (Если бы $\lambda = 0$, то $u \in U \cap W = \set{0}$)
+        \[
+        \Rightarrow y = \frac{1}{\lambda}(u - \tilde{w}) = \frac{u}{\lambda} - \frac{\tilde{w}}{\lambda} \in U + W \Rightarrow \perp
+        \]
+        Следовательно $W$ --- не максимально.
+\end{itemize}
+\end{proof}
+\begin{note}
+    Доказательство проходит и в том частном случае, когда макс. подпр-во $W = \set{0}$.
+    \[
+    \exists z \not \in U \land \phi(z) \in U
+    \]
+    \[
+    y = z - \alpha_1 x - \alpha_2 \phi(x) - \ldots - \alpha_{k - 1}\phi^{k - 2}(x) \not \in U
+    \]
+    \[
+    W' = <y> , W' = U \oplus <y>
+    \]
+    \[
+    \phi(y) = 0 \in U
+    \]
+\end{note}
+\begin{theorem}[О структуре нильпотентного оператора]
+\label{theorem:06_1}
+    $\phi \colon V \rightarrow V$ --- нильп. оператор, тогда $V$ раскладывается в прямую сумму $\phi$ инв. циклических подпространств.
+    \[
+        V = V_1 \oplus \ldots \oplus V_k
+    \]
+    Более того, число слагаемых в разложении определено однозначно и равно:
+    \[
+        k = \dim \ker \phi = \dim V^{0} = \gem(0)
+    \]
+\end{theorem}
+\begin{proof}
+    Индукция по $\dim V$:
+    \begin{itemize}
+        \item [а) ] База: $\dim V = 1, \phi = 0$
+            \[
+            V = \text{ собств } = \text{ циклич., порожд. $x \neq 0$}
+            \]
+            \[
+            k = 1 = \gem(0) = \alg(0)
+            \]
+        \item [б) ] Пусть для $\phi \colon V\rightarrow V, \dim V < n$ утв-е справедливо. Покажем для $\phi \colon V \rightarrow V$, $\dim V = n$:
+            \[
+            U(x) = <x, \phi(x), \ldots, \phi^{l - 1}(x)>
+            \]
+            \[
+            \Rightarrow \exists V = U(x) \oplus W
+            \]
+            По предположению индукции, примен. к $\phi \colon W \rightarrow W$, разложим его на сумму циклических подпространств:
+            \[
+            U(x) = V_1, W = V_2 \oplus \ldots \oplus V_k
+            \]
+            \[
+            \Rightarrow V = \underbrace{V_1 \oplus \ldots \oplus V_k}_{\text{циклические}}
+            \]
+            \[
+            x \in \ker \phi \Rightarrow x = x_1 + x_2 + \ldots + x_k
+            \]
+            \[
+            \phi(x) = 0 \Rightarrow \phi(x_i) = 0 \text{ --- в силу инвариатности пр-ва $V_i$}
+            \]
+            \[
+            \Rightarrow \ker \phi = \ker(\phi|_{V_1}) \oplus \ker(\phi|_{V_2}) \oplus \ldots \oplus \ker(\phi|_{V_k})
+            \]
+            \[
+            V_i = <x_i, \phi(x_i), \ldots, \phi^{l - 1}(x)> \Rightarrow \phi|_{V_i} = J_{l}(0)
+            \]
+            \[
+            \Rightarrow \dim \ker \phi = 1 + \ldots + 1 = k
+            \]
+    \end{itemize}
+\end{proof}
+\[
+    \phi \colon V \rightarrow V, V^{\lambda} \text{--- корневое для $\lambda$}
+\]
+\[
+    \phi_{\lambda} = \phi - \lambda id \text{ --- нильпотентный на $V^{\lambda}$}
+\]
+\[
+    U = <x, \phi(x), \ldots, \phi^{l - 1}(x)>
+\]
+\[
+    \phi_{\lambda}|_{U} = (\phi - \lambda id)|_{U} = J_{l}(0) \Rightarrow \phi|_{U} = J_l(\lambda)
+\]
+\begin{definition}
+    \textbf{Жордановой матрицей (и ЖНФ)} называется матрица $J$:
+    \[
+        J = \begin{pmatrix} J_{l_1}(\lambda_1) \\ & J_{l_2} \\ & & \ddots \\ & & & J_{l_n}(\lambda_n)\end{pmatrix}
+    \]
+\end{definition}
+\begin{definition}
+    \textbf{Базис $f$ в $V$ наз-ся ЖБ (жорданов базис)}, если $\phi$ имеет в $f$ ЖНФ.
+\end{definition}[Камиль Жордан, 1870 г.]
+\begin{theorem}
+\label{theorem:06_2}
+    Пусть $\phi \colon V \rightarrow V$ --- лин. оператор и $\chi_\phi$ линейно факторизуем над $\mathbb{F}$. Тогда в $V$, $\exists$ ЖБ.
+\end{theorem}
+\begin{proof}
+    По теореме $(\ref{theorem:05_3})$ из предыдущей лекции:
+    \[
+        V = V^{\lambda_1} \oplus \ldots \oplus V^{\lambda_s}
+    \]
+    На $V^{\lambda_i}, \phi_{\lambda_i} = \phi - \lambda_i id$ --- нильпотентен. Поэтому по теореме $(\ref{theorem:06_1})$ $V^{\lambda_i}$ раскладывается в прямую сумму циклических для $\phi_{\lambda_i}$. Пусть в $V_{ij}$ выбран циклический базис $(f_{ij})$, тогда:
+    \[
+    \phi|_{V_{ij}} \underset{(f_{ij})}{\longleftrightarrow} J_{l_j}(\lambda_i)
+    \]
+    По теореме о характеризации прямой суммы, объединение по всем базисам $(f_{ij})$ даёт ЖБ $f$ в $V$
+\end{proof}
+\begin{consequence}
+    Если $\phi$ действует в ЛП над $\C$ (или над алг. замкнутым полем), то у него обязательно есть ЖБ.
+\end{consequence}
+
+\subsubsection{Жорданова диаграмма и её свойства}
+\begin{example}
+    \[
+        \phi \underset{f}{\longleftrightarrow} \begin{pmatrix} \lambda & 1 & 0 \\ 0 & \lambda & 1 \\ 0 & 0 & \lambda \\ & & & \lambda & 1 \\ & & & 0 & \lambda \\ & & & & & \mu & 1 \\ & & & & & 0 & \mu \\ & & & & & & & \nu \end{pmatrix} \begin{matrix} f_{11} \\ f_{12} \\ f_{13} \\ f_{21} \\ f_{22} \\ f_{31} \\ f_{32} \\ f_{33} \end{matrix}
+    \]
+    (Фото в телефоне)
+\end{example}
+\begin{definition}
+    ЖД наз-ся набор из $\dim V$ точек на плоскости, где точке $(i, j) \underset{}{\longleftrightarrow} f_{ij}$ ЖБ. Над каждым столбцом ЖД указывается соотв. собств. значение.
+\end{definition}
+Свойства:
+\begin{itemize}
+    \item [1) ] Соответствие $J \underset{}{\longleftrightarrow} \text{ЖД}(J)$ --- биекция. 
+    \item [2) ] Столбцы ЖД, отвечающие собств. значениям $\lambda_i$, изображают базис $V^{\lambda_i}$
+    \item [3) ] Вектор $f_{ij}$ в ЖД является вектором высоты $j$ для оператора $\phi_{\lambda_i}$
+    \item [4) ] \[
+    \phi_{\lambda_i}(f_{ij}) = (\phi - \lambda_i id)(f_{ij}) = f_{i, j - 1}
+    \]
+\item [5) ] Каждый столбцец ЖД --- это циклическое подпространство, порождённое вектором наибольшей высоты.
+\end{itemize}
+\textbf{Вопрос: можно ли ЖД диаграмму построить до построения ЖБ?}
+\begin{statement}
+\label{statement:06_1}
+$\phi \colon V \rightarrow V$ --- лин. оп. Тогда справедливо включения:
+\[
+    \set{0} = \ker \phi^{0} \subseteq \ker \phi \subseteq \ker \phi^{2} \subseteq \ldots \subseteq \ker \phi^{m} \subseteq \ker \phi^{m + 1} \subseteq \ldots
+\]
+\[
+    V = \Image \phi_0 \supseteq \Image \phi \supseteq \Image \phi^{2} \supseteq \ldots 
+\]
+Причём эти последовательности стабилизируются, начиная с некоторого $m \in \N$
+\end{statement}
+\begin{proof}
+    \[
+    \underbrace{\ker \phi^{m}}_{x \in} \subseteq \ker \phi^{m + 1}
+    \]
+    \[
+    \Rightarrow  \phi^{m}(x) = 0 \Rightarrow \phi^{m + 1} (x) = \phi(\phi^{m}(x)) = \phi(0) = 0
+    \]
+    \[
+    \Image \phi^{m} \supseteq \underbrace{\Image \phi^{m + 1}}_{y \in}
+    \]
+    \[
+    \Rightarrow y = \phi^{m + 1}(x) = \phi^{m}(\underbrace{\phi(x)}_{x'}) = \phi^{m}(x') \in \Image \phi^{m}
+    \]
+\end{proof}
+Обозначим: $n_j = \dim(\ker(\phi_{\lambda}^{j}))$
+\[
+    n_{j - 1} = \dim(\ker(\phi_{\lambda}^{j - 1}))
+\]
+Положим $d_j$ --- число точек на ЖД, находящихся на высоте $j$:
+\begin{equation}
+    \label{equation:06_3}
+    d_j = n_j - n_{j - 1}, n_0 = 0
+\end{equation}
+Формула $(\ref{equation:06_3})$ позволяет восстановить ЖБ по ЖД:
+\[
+\ker \phi_i, d_1 = n_1 - n_0 = 2 - 0 = 2
+\]
+\[
+    \phi_\lambda = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \\ & & & 0 & 1 \\ & & & 0 & 0 \\ & & & & & \mu - \lambda & 1 \\ & & & & & 0 & \mu - \lambda \\ & & & & & & & \nu - \lambda \end{pmatrix}
+\]
+\[
+    \Rightarrow \ker \phi = <e_1, e_4> 
+\]
+\[
+    d_2 = n_2 - n_1 = 2
+\]
+\[
+    \phi_\lambda^{2} =  \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \\ & & & 0 & 0 \\ & & & 0 & 0 \\ & & & & & \ddots \\ & & & & &  & \ddots \\ & & & & & & & \ddots \end{pmatrix}
+\]
+\[
+    \Rightarrow \ker \phi_{\lambda}^{2} = <e_1, e_2, e_4, e_5>
+\]
+\[
+    d_3 = 5 - 4 = 1
+\]
+\[
+\ker \phi_{\lambda}^{3} = <e_1, e_2, e_3, e_4, e_5>
+\]

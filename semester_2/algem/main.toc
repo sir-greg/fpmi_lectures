@@ -1,12 +1,7 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Лекция 3}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Инвариантные подпространства}{3}{}%
-\contentsline {subsubsection}{\numberline {1.1.1}Собственные векторы и собств. значение лин. оператора}{6}{}%
-\contentsline {section}{\numberline {2}Лекция 4}{8}{}%
-\contentsline {subsection}{\numberline {2.1}Структура линейного оператора}{8}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Алгебраическая и геометрическая кратности собственных значений}{12}{}%
-\contentsline {subsection}{\numberline {2.2}Приведение линейно факторизуемого лин. оператора к верхнетреугольному виду}{15}{}%
-\contentsline {section}{\numberline {3}Лекция 5}{18}{}%
-\contentsline {subsection}{\numberline {3.1}Аннулирующие многочлены}{18}{}%
-\contentsline {subsection}{\numberline {3.2}Корневые подпространства}{22}{}%
-\contentsline {subsection}{\numberline {3.3}Нильпотентные операторы}{26}{}%
+\contentsline {section}{\numberline {1}Лекция 7}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Приложения ЖНФ}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Вычисление многочлена от линейноного оператора}{4}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}Аналитические функции от линейных операторов}{6}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}Операторная норма}{7}{}%
+\contentsline {subsubsection}{\numberline {1.2.3}Линейные рекурренты}{9}{}%

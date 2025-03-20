@@ -1,0 +1,272 @@
+\section{Лекция 6}
+\subsection{Тесты на простоту}
+\begin{center}
+    Полиномиальные:
+    ~\newline
+\begin{tabular}{ |c|c| } 
+ \hline
+    Вероятностные & Детерминированные \\
+\hline
+    Проверяет, что числа простые с "большой вероятностью" & числа Мерсенна $2^{p} - 1$ \\
+                                                          & AKS(2003) \\
+ \hline
+\end{tabular}
+\end{center}
+\subsubsection{Тест Ферма на простоту}
+\[
+a^{p - 1} \equiv 1 \pmod p, \text{ если $p$ простое}
+\]
+$N$ --- кандидат $\Rightarrow a^{N-1} \overset{?}{\equiv} 1 \pmod N$
+~\newline
+Алгоритм:
+\begin{enumerate}
+    \item  Выбрали $N$, проверили, что оно не делится на маленькие простые.
+    \item  Выбираем $a < N, (a, N) = 1$, (если $(a, N)$, то $N$ --- составное)
+        \[
+        a^{N - 1} \overset{?}{\equiv} 1 \pmod N
+        \]
+    \item Если $a^{N - 1} \not\equiv N \pmod N \Rightarrow $ $N$ --- составное
+    \item Если $a^{N - 1} \equiv N \pmod N \Rightarrow$ выбираем следующий остаток $b$, и т. д.
+\end{enumerate}
+Рассмотрим $B_{F} \subseteq \Z_{N}^{*}$, где:
+\[
+    B_F = \set{a \in \Z_{N}^{*} | a^{N - 1} \equiv 1 \pmod N}
+\]
+\begin{statement}
+Если $B_F \neq \Z_{N}^{*} \Rightarrow \left|B_F\right| \leq \frac{1}{2}\left|\Z_{N}^{*}\right|$
+\end{statement}
+\begin{proof}
+По умному: т. к. $B_F$ --- подгруппа $\Z_{N}^{*}$, то по т. Лагранжа:
+\[
+    \left|\Z_{N}^{*}\right| \vdots \left|B_F\right| \Rightarrow \left|B_F\right| \leq \frac{1}{2} \left|\Z_{N}^{*}\right| \lor B_F = \Z_{N}^{*}
+\]
+Альтернативно:
+\[
+    b \not \in B_F, a \in B_F \Rightarrow ba \not \in B_F
+\]
+Следовательно:
+\[
+    \#\set{\text{остатки, проходящие тест Ферма}} \leq \#\set{\text{остальные}}
+\]
+\end{proof}
+\begin{definition}
+$N$ --- число Кармайкла, если:
+\[
+    B_F = \Z_{N}^{*}
+\]
+\end{definition}
+\begin{note}
+    $561$ --- минимальное числа Кармайлка.
+\end{note}
+\begin{statement}
+Если $N$ --- не простое и не число Кармайкла, то после $k$ независимых проверок:
+\[
+    P(N \text{ --- псевдопростое}) = \frac{1}{2^{k}}
+\]
+\end{statement}
+\begin{theorem}
+\label{theorem:6_01}
+$N$ --- число Кармайкла $\iff$
+\begin{enumerate}
+    \item $N \not\vdots p ^{2}$ (Ни для какого простого $p$)
+    \item $N = p_1 \cdot \ldots \cdot p_s$ и для $\forall i \colon (N - 1) \vdots (p_i - 1)$
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+    \begin{itemize}
+        \item [$\Leftarrow$)]
+            \[
+                a \in \Z_{N}^{*} \overset{?}{\Rightarrow} a^{N - 1} \overset{?}{\equiv} 1 \pmod N
+            \]
+            Заметим, что:
+            \[
+            \forall i \colon a^{N - 1} \equiv 1 \pmod p_i
+            \]
+            Т. к. $a^{p_i - 1} \equiv 1 \pmod p_i$. Следовательно по КТО:
+            \[
+            \begin{cases}
+            a^{N - 1} \equiv 1 \pmod p_1 \\
+            \vdots \\
+            a^{N - 1} \equiv 1 \pmod p_s
+            \end{cases}
+            \]
+            \[
+            \Rightarrow a^{N - 1} \equiv 1 \pmod N
+            \]
+        \item [$\Rightarrow)$]
+            \begin{itemize}
+                \item [1) ] От противного, пусть:
+                    \[
+                    n = p ^{k} \cdot s, k\geq 2
+                    \]
+                    \[
+                    a^{N - 1} \equiv 1 \pmod N \Rightarrow a^{N - 1} \equiv 1 \pmod p ^{k} \Rightarrow 
+                    \]
+                    \[
+                    \Rightarrow a^{N - 1} \equiv 1 \pmod p ^{2}
+                    \]
+                    Пусть $g$ --- первообразный корень $\mod p ^{2}$:
+                    \[
+                   \ord (g) = p (p - 1)
+                    \]
+                    Найдём $a\colon$
+                    \[
+                    \begin{cases}
+                    a \equiv g \pmod p ^{k} \\
+                    a \equiv 1 \pmod s
+                    \end{cases} \Rightarrow \text{КТО}
+                    \]
+                    \[
+                    a^{N - 1} \equiv g^{N - 1} \equiv 1 \pmod p ^{2}
+                    \]
+                    Получаем:
+                    \[
+                    \begin{cases}
+                        (N - 1) \vdots p(p - 1) \\
+                        N \vdots p
+                    \end{cases} \Rightarrow \perp!
+                    \]
+                \item [2) ]
+                    \[
+                        N = p_1 \ldots p_s
+                    \]
+                    \[
+                        g_i \text{ --- первообразный корень по $\mod p_i$}
+                    \]
+                    Найдём $a$:
+                    \[
+                    \begin{cases}
+                    a = g_i \mod p_i \\
+                    a \equiv 1 \mod p_j, j \neq i
+                    \end{cases}
+                    \]
+                    \[
+                    a^{N - 1} \equiv 1 \pmod N
+                    \]
+                    \[
+                    \Rightarrow g_i ^{N - 1} \equiv 1 \mod p_i
+                    \]
+                    \[
+                   \Rightarrow (N - 1) \vdots  \ord(g_i) \Rightarrow (N - 1) \vdots (p_i - 1)
+                    \]
+            \end{itemize}
+    \end{itemize}
+\end{proof}
+\begin{example}
+    \[
+    561 = 3 \cdot 11 \cdot 17
+    \]
+    \[
+    560 \vdots 2, 10, 16
+    \]
+\end{example}
+\textbf{Свойства чисел Кармайкла:}
+\begin{enumerate}
+    \item Число Кармайкла нечётно
+    \item Число Кармайкла $N = p_1 \ldots p_s, s \geq 3$
+    \item Если для некоторого $k$:
+        \[
+        6k + 1, 12k + 1, 18k + 1 \text{ --- простые} \Rightarrow
+        \]
+        \[
+        \Rightarrow (6k + 1)(12k + 1)(18k + 1) \text{ --- число Кармайкла}
+        \]
+\end{enumerate}
+\[
+a^{N - 1} \equiv 1 \pmod N \Rightarrow a^{\frac{N - 1}{2}} \equiv \pm 1 \pmod N
+\]
+\[
+p \text{ --- просто} \Rightarrow a^{\frac{p - 1}{2}} = \left(\frac{a}{p}\right) \pmod p
+\]
+\subsubsection{Символ Якоби}
+\begin{definition}
+Если $N$ --- нечётно ($N = p_1 \ldots p_s$, $p_i$ --- нечётное простое, с повторами):
+\[
+    \underbrace{\left(\frac{a}{N}\right)}_{\text{Символ Якоби}} = \underbrace{\left(\frac{a}{p_1}\right) \ldots \left(\frac{a}{p_s}\right)}_{\text{Символы Лежандра}}
+\]
+\end{definition}
+\begin{note}
+    Теперь можем написать $a^{\frac{N - 1}{2}} \equiv \left(\frac{a}{N}\right) \pmod N$
+\end{note}
+\textbf{Свойства символа Якоби}:
+\begin{enumerate}
+    \item \[
+    \left(\frac{-1}{N}\right) = (-1)^{\frac{N - 1}{2}}
+    \]
+\item \[
+   \begin{pmatrix}\frac{2}{N} \end{pmatrix} = (-1)^{\frac{N^{2} - 1}{8}}
+\]
+\item \[
+    \left(\frac{ab}{N}\right) = \left(\frac{a}{N}\right)\left(\frac{b}{N}\right)
+\]
+\item $N, M$ --- нечётные, $(N, M) = 1 \Rightarrow$
+    \[
+    \Rightarrow \left(\frac{N}{M}\right)\left(\frac{M}{N}\right) = (-1)^{\frac{N - 1}{2}\cdot \frac{M - 1}{2}}
+    \]
+\end{enumerate}
+\subsubsection{Тест Соловея-Штрассена}
+\[
+B_{SS} = \set{a \in \Z_{N}^{*} | a^{\frac{N - 1}{2}} \equiv \left(\frac{a}{N}\right) \pmod N}
+\]
+\begin{theorem}
+\label{theorem:6_02}
+\begin{enumerate}
+    \item $B_{SS}(N) = \Z_{N}^{*} \iff N \text{ --- простое} $ 
+    \item $N$ --- составное $ \Rightarrow \left|B_{S S}(N)\right|\leq \frac{1}{2}\left|\Z_{N}^{*}\right|$ 
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\begin{proof}
+    \begin{itemize}
+        \item [2) ] $B_{S S} (N) \neq \Z_{N}^{*}$, опять же по т. Лагранжа.
+        \item [1) ] 
+            \begin{itemize}
+                \item [$\Leftarrow$)] По св-ву символа Лежандра
+                \item [$\Rightarrow$)] $B_{S S} = \Z_{N}^{*} \Rightarrow B_{F} = \Z_{N}^{*} $, т. е. если $N$ --- не простое, то $N$ --- число Кармайкла:
+                    \[
+                    N = p_1\ldots p_s
+                    \]
+                    Пусть $b$ --- квадратичный невычет по $\mod p_1$:
+                    \[
+                    \left(\frac{b}{p_1}\right) = -1
+                    \]
+                    \[
+                    a \colon \begin{cases}
+                    a \equiv b \mod p_1 \\
+                    a \equiv 1 \mod p_2, \ldots, p_s
+                    \end{cases}
+                    \]
+                    \[
+                    a \in B_{S S} \Rightarrow a^{\frac{n - 1}{2}} = \left(\frac{a}{N}\right) \pmod N
+                    \]
+                    \[
+                    \left(\frac{a}{N}\right) = \left(\frac{a}{p_1}\right) \ldots \left(\frac{a}{p_s}\right) \equiv \left(\frac{b}{p_1}\right)\left(\frac{1}{p_2}\right)\ldots \left(\frac{1}{p_s}\right) = -1
+                    \]
+                    \[
+                    \Rightarrow a^{\frac{N - 1}{2}} \equiv -1 \pmod N
+                    \]
+                Тогда подставим $p_2$:
+                \[
+                a^{\frac{N - 1}{2}} \equiv 1 \equiv -1 \mod p_2 \Rightarrow \perp!
+                \]
+            \end{itemize}
+    \end{itemize}
+\end{proof}
+\end{proof}
+\begin{note}
+    \[
+    B_{SS} \subseteq B_{F}
+    \]
+\end{note}
+\begin{example}
+$N = 15 \Rightarrow a^{14} \equiv 1 \mod 15$
+\[
+\Z_{15}^{*} = \set{1, 2, 4, 7, 8, 11, 13, 14}
+\]
+\[
+    \ord (1) = 1
+\]
+\[
+    14^{2} \equiv 1 
+\]
+\end{example}

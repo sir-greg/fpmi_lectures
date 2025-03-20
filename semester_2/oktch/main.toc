@@ -21,3 +21,8 @@
 \contentsline {section}{\numberline {6}Лекция 5}{22}{}%
 \contentsline {subsection}{\numberline {6.1}Первообразные корни}{22}{}%
 \contentsline {subsubsection}{\numberline {6.1.1}Немного о шифровании}{26}{}%
+\contentsline {section}{\numberline {7}Лекция 6}{27}{}%
+\contentsline {subsection}{\numberline {7.1}Тесты на простоту}{27}{}%
+\contentsline {subsubsection}{\numberline {7.1.1}Тест Ферма на простоту}{27}{}%
+\contentsline {subsubsection}{\numberline {7.1.2}Символ Якоби}{30}{}%
+\contentsline {subsubsection}{\numberline {7.1.3}Тест Соловея-Штрассена}{31}{}%

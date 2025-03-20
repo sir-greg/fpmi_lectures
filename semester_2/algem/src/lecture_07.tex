@@ -1,0 +1,401 @@
+\section{Лекция 7}
+\subsection{Приложения ЖНФ}
+\begin{theorem}[Об минимальной аннулир. мн-не лин. оператора]
+\label{theorem:07_1}
+    $\phi \colon V \rightarrow V, \dim V = n$,
+    \[
+        \chi_\phi(t) = (-1)^{n} \prod_{i = 1}^{s} (t - \lambda_i)^{m_i}, m_i = \alg(\lambda_i)
+    \]
+    \[
+    \lambda_1, \ldots, \lambda_s \text{ --- попарно различные}
+    \]
+    Тогда $\mu_\phi(t) = \prod_{i = 1}^{s} (t - \lambda_i)^{l_i}, l_i \text{ --- максимальный порядок ЖК, отвечающих $\lambda_i$}$
+\end{theorem}
+\begin{proof}
+    \begin{itemize}
+        \item [a) ] Вычислим мин. многочлен для $\phi = J_k(\lambda)$
+            \[
+            \chi_\phi(t) = (-1)^{k}(t - \lambda)^{k} \Rightarrow \mu_\phi = \mu_{J_k(\lambda)} = (t - \lambda)^{i}, i \leq k
+            \]
+            Из ЖД заключаем, что  $\phi_{\lambda}^{i} \neq 0$, если $i < k$, следовательно:
+            \[
+                (t - \lambda)^{i} \text{ --- не является аннулирующим для оператора $\phi$}
+            \]
+            \[
+            \Rightarrow \mu_\phi(t) = (t - \lambda)^{k}
+            \]
+        \item [б) ] $V^{\lambda} = \underbrace{V_1 \oplus \ldots \oplus V_n}_{\text{циклич. подпр-ва для $\phi$}}$. По следствию из утв. 2:
+            \[
+                \mu_{\phi}|V_{\lambda} = \text{НОК}((t - \lambda)^{k_1}, \ldots, (t - \lambda)^{k_n}) = (t - \lambda)^{\underset{1 \leq i \leq n}{\max} k_i}
+            \]
+            \[
+            V = V^{\lambda_1} \oplus \ldots \oplus V^{\lambda_s}
+            \]
+            \[
+            \mu_\phi = (t - \lambda_1)^{l_1} \ldots (t - \lambda_s)^{l_s}, l_i = \max (k_{ij})
+            \]
+    \end{itemize}
+\end{proof}
+\begin{consequence}[Критерий диагонализируемости лин. оп. в терминах мин. мн-на]
+    $\phi \colon V \rightarrow V, \phi$ --- лин. факт. над $\mathbb{F}$, тогда $\phi$ --- диагонализируем $\iff$ все корни минимального многочлена $\mu_\phi(t)$ --- простые (т. е. кратность каждого корня $= 1$).
+\end{consequence}
+\begin{proof}
+    \begin{itemize}
+        \item [а) ] Необх. $\phi$ --- диагонализируем:
+            \[
+            \forall \lambda_i \Rightarrow l_i = 1 \Rightarrow \mu_\phi(t) = \prod_{i = 1}^{s} (t - \lambda_i) \Rightarrow \lambda_i \text{ --- простые}
+            \]
+        \item [б) ] Дост.: $\mu_\phi(t)$ имеет кратности $\forall i \colon l_i = 1 \Rightarrow $ ЖНФ имеет диагональный вид.
+    \end{itemize}
+\end{proof}
+\begin{example}
+    $\phi \colon V \rightarrow V$, $V$ --- над $\C$. Пусть $\phi^{n} = id$. Тогда $\phi$ --- диагонализируем.
+    \[
+    p(t) = t^{n} - 1 \text{ --- аннулирующий многочлен}
+    \]
+    \[
+    p(t) = 0 \iff t \in \Set{\cos \frac{2\pi k}{n} + i \sin \frac{2 \pi k}{n}, k \in \set{0, 1, \ldots, n - 1}}
+    \]
+    \[
+    \mu_\phi | p
+    \]
+    Корни кратности $1 \Rightarrow \phi$ --- диагонализируем.
+\end{example} 
+Вопрос: при каком условии на лин. оператор, минимальный многочлен совпадает с характеристическим? \\
+Ответ: когда у каждого собственного значения есть ровно одна ЖК.
+\subsection{Вычисление многочлена от линейноного оператора}
+$\phi \colon V \rightarrow V$, $\phi$ --- лин. фактор. $V$ над $\mathbb{F}$:
+\[
+f(t) = t^{n}
+\]
+Цель: найти $f(\phi), f(A_\phi)$
+\[
+    J = \begin{pmatrix} J_{k_1}(\lambda_1) \\ & J_{k_2}(\lambda_2) \\ & & \ddots \end{pmatrix}
+\]
+\[
+    J^{n} = \begin{pmatrix} J_{k_1}^{n}(\lambda_1) \\ & J_{k_2}^{n}(\lambda_2) \\ & & \ddots \end{pmatrix}
+\]
+Для начала вычислим $f(J_{k}(\lambda)), f = t^{n}$:
+\[
+    J_{k}(\lambda) = \underbrace{\begin{pmatrix} \lambda \\ & \lambda \\ & & \ddots \\ & & & \lambda\end{pmatrix}}_{\lambda E} + \underbrace{\begin{pmatrix}0 & 1 \\ 0 & 0 & 1 \\ & & & \ddots \\ & & & & 1 \\ & & & & 0\end{pmatrix}}_{N}
+\]
+причём $N^{k} = 0$, но $N^{k - 1} \neq 0$ \\
+Считая, что $n \geq k$, воспользуемся биномом Ньютона:
+\[
+    J_k(\lambda)^{n} = (\lambda E + N)^{n} = \sum_{s = 0}^{k - 1} C_{n}^{s} (\lambda E)^{n - s} N^{s} = 
+\]
+\[
+    = \lambda^{n} E + C_{n}^{1} \lambda^{n - 1} N + \ldots + C_{n}^{k - 1} \lambda^{n - k + 1} N^{k - 1} = 
+\]
+\begin{equation}
+    \label{eq:07_jordan_power}
+    = \begin{pmatrix}\lambda^{n} & C_{n}^{1} \lambda^{n - 1} & & & C_{n}^{k - 1} \lambda^{n - k + 1}\\ & \lambda^{n} & C_{n}^{1}\lambda^{n - 1} \\ & & \lambda^{n} & C_{n}^{1}\lambda^{n - 1} \\ & & & \ddots \\ & & & & \lambda^{n} \end{pmatrix} =
+\end{equation}
+Заметим, что $n \lambda^{n - 1} = (\lambda^{n})'$. Т. е, в терминах многочлена $f$, это:
+\[
+    = \begin{pmatrix} f(\lambda) & \frac{f'(\lambda)}{1!} & \ldots & \frac{f^{(k - 1)}(\lambda)}{(k - 1)!} \\ & f(\lambda) & \frac{f'(\lambda)}{1!} & \ldots \\ & & \ddots \\ & & & f(\lambda)\end{pmatrix}
+\]
+В случае, когда $n < k$, формула будет справ-ва, но будет заполнено только $n$ диагоналей над главной. \\
+Проверим:
+\[
+    f^{(k - 1)}(\lambda) = (k - 1)! C_{n}^{k - 1} \lambda^{n - k + 1}
+\]
+\[
+    (t^{n})^{(k - 1)} = n \cdot (n - 1) \cdot \ldots \cdot (n - k + 2) t^{n - k + 1} = 
+\]
+\[
+    f^{(k - 1)}(\lambda) = \frac{n!}{(n - k + 1)!} \lambda^{n - k + 1} \cdot \frac{(k - 1)!}{(k - 1)!} = (k - 1)! C_{n}^{k - 1} \lambda^{n - k + 1}
+\]
+Пусть дана матрица $A$ и её матрица перехода к жордановому базису:
+\[
+    J = S^{-1}A S, S = S_{e \rightarrow A}
+\]
+\[
+    A = SJS^{-1}
+\]
+\[
+    A^{n} = (SJS^{-1})(SJS^{-1}) \ldots (SJS^{-1}) = SJ^{n}S^{-1}
+\]
+\subsubsection{Аналитические функции от линейных операторов}
+\[
+    \phi \colon V \rightarrow V, \mathbb{F} = \R \lor \mathbb{F} = \C
+\]
+\begin{definition}
+    \textbf{Норма} в ЛП $V$ --- функция $||\cdot|| \colon V \rightarrow \R_+$, удовлетворяющая аксиомам:
+    \begin{enumerate}
+        \item $\forall x \neq 0, ||x|| > 0$ (положительная определённость)
+        \item $|| \lambda x || = |\lambda| ||x||$ (однородность)
+        \item $|| x + y || \leq ||x|| + ||y||$ (нер-во треугольника)
+    \end{enumerate}
+\end{definition}
+\begin{example}
+$\mathbb{F}^{n}$:
+\begin{enumerate}
+    \item $||x|| = \underset{i}{\max} |x_i|$
+    \item Евклидова (эрмитова) норма:
+        \[
+        ||x|| = \sqrt{\sum_{i = 1}^{n} |x_i|^{2}}
+        \]
+    \item Манхэттенская норма:
+        \[
+        ||x|| = \sum_{i = 1}^{n} |x_i|
+        \]
+\end{enumerate}
+\end{example}
+\begin{definition}[Сходимость по норме]
+   $\set{x^{m}}$ (верхний индекс)  сходится к $x$ по норме, если $||x^{m} - x|| \rightarrow 0$ при $m \rightarrow \infty$
+\end{definition}
+\begin{note}
+    В случае норм ($1$ - $3$) сходимость по норме эквивалентна покоординатной сходимости:
+    \[
+    \forall i\colon x_i^{m} \rightarrow x_i
+    \]
+    Ряд $\sum_{m = 1}^{\infty} x_m$ --- сходится абсолютно, если $\sum_{m  1}^{\infty} ||x_m||$ --- сх-ся.
+\end{note}
+\begin{statement}
+    Если ряд $\sum_{}^{} x_m$ сходится абсолютно, то он сх-ся.
+    \[
+    \left|\left|\sum_{}^{} x_m\right|\right| \leq \sum_{}^{} ||x_m||
+    \]
+\end{statement}
+\begin{statement}
+    Если ряд $\sum_{}^{} x_m$ сходится абсолютно, то его члены можно переставлять как угодно, а сумма будет та же.
+\end{statement}
+\subsubsection{Операторная норма}
+$(V, ||\cdot||)$ --- линейное нормированное пр-во.
+\[
+    \phi \in \mathcal{L}(V), \dim \mathcal{L}(V) = (\dim V)^{2}
+\]
+\begin{definition}
+    \[
+    ||\phi|| = \underset{x \neq 0}{\sup} \frac{||\phi(x)||}{||x||} = \underset{||x|| = 1}{\sup} ||\phi(x)|| = \underset{||x|| = 1}{\max} ||\phi(x)||
+    \]
+    (можем писать $\max$, т. к. норма непрерывна и определена на компакте)
+\end{definition}
+\begin{theorem}
+\label{theorem:07_2}
+    Пусть $f(t) = \sum_{m = 0}^{\infty} a_m t^{m}$ --- степенной ряд с радиусом сходимости $R$. Пусть $\phi \colon V \rightarrow V$, т. ч. $||\phi|| < R$. Тогда:
+    \[
+    f(\phi) = \sum_{m = 0}^{\infty} a_m \phi^{m} 
+    \]
+сходится по операторной норме, и его сумма --- лин. оператор.
+\end{theorem}
+\begin{lemma}[О свойствах операторной нормы]
+    \label{lemma:07_1}
+    \begin{itemize}
+        \item [a) ] $||\phi + \psi|| \leq ||\phi|| + ||\psi||$ (нер-во треугольника)
+        \item [б) ] $||\phi \cdot \psi|| \leq ||\phi||\cdot||\psi||$
+    \end{itemize}
+\end{lemma}
+\begin{proof}
+    \begin{itemize}
+        \item [а) ] $x \neq 0$:
+            \[
+            ||(\phi + \psi)(x)|| = ||\phi(x) + \psi(x)|| \leq ||\phi(x)|| + ||\psi(x)||
+            \]
+            \[
+        \underset{||x||\neq 0}{\sup} \frac{||(\phi + \psi)(x)||}{||x||} \leq \underset{||x|| \neq 0}{\sup} \frac{||\phi(x)||}{||x||} + \underset{||x|| \neq 0}{\sup} \frac{||\psi(x)||}{||x||}
+            \]
+         \[
+            ||\phi(x)|| = \frac{||\phi(x)|| \cdot ||x||}{||x||} \leq \left(\underset{||x|| \neq 0}{\sup} \frac{||\phi(x)||}{||x||}\right) \cdot ||x|| = ||\phi|| \cdot ||x||
+        \]
+        \[
+        x \neq 0 \colon \forall x \in V \hookrightarrow ||\phi(x)|| \leq ||\phi|| \cdot ||x||
+        \]
+\item [б) ] $||\phi \cdot \psi(x)|| = ||\phi(\psi(x))|| \leq ||\phi|| \cdot ||\psi(x)|| \leq ||\phi|| \cdot ||\psi|| \cdot ||x||$
+    \[
+    x \neq 0 \Rightarrow \frac{||\phi|| \cdot \psi(x)||}{||x||} \leq ||\phi|| \cdot ||\psi||
+    \]
+    \[
+    ||\phi \cdot \psi || = \sup \frac{||\phi \cdot \psi(x)||}{||x||} \leq ||\phi|| \cdot ||\psi||
+    \]
+    \end{itemize}
+\end{proof}
+\begin{proof}
+    \begin{itemize}
+        \item [а) ] $\sum_{m = 0}^{\infty} a_m \phi^{m}(x)$ --- покажем, что ряд сходится абсолютно:
+            \[
+            \sum_{m = 0}^{\infty} |a_m| ||\phi^{m}(x)|| \leq \sum_{m = 0}^{\infty} |a_m| ||\phi^{m}|| \cdot ||x|| = ||x|| \sum_{m}^{} |a_m| \left|\left|\phi^{m}\right|\right| \leq
+            \]
+            \[
+            \leq ||x|| \cdot \sum_{m = 0}^{\infty} |a_m| \cdot ||\phi||^{m} = 
+            \]
+            \[
+            ||\phi|| = R_0 < R
+            \]
+            \[
+             = ||x|| \cdot \sum_{m = 0}^{\infty} |a_m| \cdot R_0^{m} \text{ --- сх-ся}
+            \]
+        По теореме Абеля, внутри круга сходимости сходимость степенного ряда является равномерной и абсолютной.
+        \[
+        f(\phi)(x) := \sum_{m}^{} a_m \phi^{m}(x)
+        \]
+        \[
+        x \underset{\text{лин. оп?}}{\mapsto} f(\phi)(x)
+        \]
+        \[
+        S_n = \sum_{m = 0}^{n} a_m \phi^{m} \text{ --- это лин. оп.}
+        \]
+        Пределом при $n \rightarrow \infty$ получаем, что $f(\phi)$ --- лин. оператор.
+    \end{itemize}
+\end{proof}
+\begin{example}
+Посчитаем экспоненту от Жордановой клетки:
+\[
+    \exp (J_k(\lambda)) = \begin{pmatrix}e^{\lambda} & \frac{e^{\lambda}}{1!}\\ & e^{\lambda} & \frac{e^{\lambda}}{1!} \\ & & e^{\lambda} & \frac{e^{\lambda}}{1!}\\ & & & \ddots \\ & & & & e^{\lambda} \end{pmatrix}
+\]
+\[
+    \exp(A) = S \exp(J) S^{-1}
+\]
+\end{example}
+\subsubsection{Линейные рекурренты}
+$\mathbb{F}$ --- произвольное поле, $\mathbb{F}[x]$ --- кольцо многочленов.
+\[
+p(x) = x^{s} + p_{s - 1} x^{s - 1} + \ldots + p_1 x + p_0, \deg p = s, p_0 \neq 0
+\]
+\begin{definition}
+\textbf{Линейной рекуррентной} с характеристическим многочленом $p$ называется последовательностью:
+\[
+    \set{a_n} \in F^{\infty}
+\]
+причём для $\forall n > 0$:
+\begin{equation}
+    \label{eq:07_linear_reccurence}
+    a_{n + s} + p_{s - 1}a_{n + s - 1} + \ldots + p_1 a_{n + 1} + p_0 a_n = 0
+\end{equation}
+\end{definition}
+\[
+    F^{\infty} \ni (a_0, a_1, \ldots, a_{s - 1}, a_s, \ldots, a_n, \ldots)
+\]
+\begin{statement}
+    \label{statement:07_1}
+    Пусть $V_p$ --- мн-во всех линейных рекуррент с характристическим многочленом $p(x)$. Тогда $V_p$ --- линейное пр-во над полем $F$, $\dim V_p = s$
+\end{statement}
+\begin{proof}
+    $\set{a_n}$ и $\set{b_n} \in V_p < F^{\infty}$. Стандартный базис пр-ва $V_p$:
+    \[
+    e_0 = (\underset{0}{1}, 0, 0, 0, \ldots, \underset{s - 1}{0}, \underset{s}{-p_0}, \ldots)
+    \]
+    \[
+    e_1 = (0, 1, 0, 0, \ldots, 0, -p_1, \ldots)
+    \]
+    \[
+    \vdots
+    \]
+    \[
+    e_{s - 1} = (0, 0, 0, 0, \ldots, 1, -p_{s - 1}, \ldots)
+    \]
+    \[
+    \phi \colon V_p \rightarrow V_p
+    \]
+    \[
+    \phi(a_0, a_1, \ldots, a_n, \ldots) = (a_1, a_2, \ldots, a_n, \ldots)
+    \]
+\end{proof}
+\begin{statement}
+    \label{statement:07_2}
+    $\set{a_n} \in V_p \iff p(\phi)(a_n) = 0$
+\end{statement}
+\begin{proof}
+    \[
+        a_n \in V_p \iff a_{n + s} p_{s - 1} a_{n + s - 1} + \ldots + p_1 a_{n + 1} + p_0 a_n = 0 =
+    \]
+    \[
+    = (\phi^{s} + p_{s - 1}\phi^{s - 1} + \ldots + p_1 \phi + p_0 id)(a_n) = 0 \iff
+    \]
+    \[
+    \iff p(\phi)(a_n) = 0
+    \]
+\end{proof}
+\begin{consequence}
+    \[
+    V_p = \ker p(\phi)
+    \]
+    \[
+    \phi|_{V_p} = \psi_p
+    \]
+\end{consequence}
+\begin{statement}
+    \label{statement:07_3}
+    Пусть $\mu$ --- минимальный многочлен лин. оператора $\phi_p$. Тогда:
+    \[
+        \mu = p
+    \]
+\end{statement}
+\begin{proof}
+    \[
+    \mu(\psi_p) = \mu(\phi) |_{V_p} = 0 \text{(по опр. мин. мн-на)}
+    \]
+    \[
+    \Rightarrow V_p \subseteq \ker \mu(\phi) \subseteq V_\mu
+    \]
+    \[
+    \dim V_p = s \leq \dim V_{\mu} = \deg \mu
+    \]
+    \[
+    \Rightarrow p \text{ --- аннулир. мн-н для $\phi | V_p = \psi_p$}
+    \]
+    \[
+    \Rightarrow \mu | p
+    \]
+    \[
+    \deg \mu \leq \deg p \Rightarrow \mu \sim p
+    \]
+\end{proof}
+\begin{definition}
+    Матрицу вида:
+    \[
+        A_p = \begin{pmatrix}0 & 1 & 0 & \ldots & 0 \\ 0 & 0 & 1 & \ldots & 0 \\ 0 & 0 & 0 & \ddots & 0 \\ 0 & 0 & 0 & \ldots & 1 \\ -p_0 & -p_1 & -p_2 & \ldots & -p_{s - 1}\end{pmatrix}
+    \]
+\end{definition}
+\begin{statement}
+\label{statement:07_4}
+    Оператор $\psi_p = \phi|_{V_p}$ имеет в стандартном базисе $(e_0, \ldots, e_{s - 1})$ пр-ве $V_p$ или $A_p$
+\end{statement}
+\begin{proof}
+    \[
+    \psi_p(e_0) = \psi_p(1, 0, \ldots, \underset{s - 1}{0}, -p_0, \ldots, 0) = (0, 0, \ldots, \underset{s - 1}{-p_0}, 0, \ldots, 0) = -p_0 e_{s - 1}
+    \]
+    \[
+    0 < i \leq s - 1
+    \]
+    \[
+    \psi_p(e_i) = \psi(p)(0, 0, \ldots, \underset{i}{1}, \ldots, \underset{s}{-p_i}, \ldots) = (0, \ldots, \underset{i - 1}{1}, \ldots, \underset{s - 1}{-p_i}, \ldots) =
+    \]
+    \[
+     = e_{i - 1} - p_i e_{s - 1}
+    \]
+\end{proof}
+\begin{statement}
+\label{statement:07_5}
+    \[
+    \chi_{\psi_p}(x) = \chi_{A_p}(x) = (-1)^{s} p(x) = 
+    \]
+    \[
+     = (-1)^{s}(x^{s} + p_{s - 1}x^{s - 1} + \ldots + p_1 x + p_0)
+    \]
+\end{statement}
+\begin{proof}
+    \[
+        \chi_{A_p}(x) = \begin{vmatrix}-x & 1 & 0 & \ldots & 0 \\ 0 & -x & 1 & \ldots & 0 \\ 0 & 0 & -x & \ldots & 0 \\ \\ -p_0 & -p_1 & -p_2 & \ldots & -p_{s - 1} - x \end{vmatrix} =
+    \]
+    Раскладываем по последней строке и получаем ответ.
+    \[
+        = (-p_{s - 1} - x) \begin{vmatrix} -x \\ & -x \\ & & \ddots \\  & & & -x\end{vmatrix} + \ldots
+    \]
+\end{proof}
+\begin{consequence}
+    Оператор $\psi_p$ имеет только одну ЖК, отвечающему каждому СЗ.
+\end{consequence}
+\begin{theorem}[Основная теорема о линейных реккурентах]
+\label{theorem:07_3}
+    Пусть $p(x) \in \mathbb{F}[x]; p_0 \neq 0, \deg p = s$:
+    \[
+    p(x) = x^{s} + p_{s - 1}x^{s - 1} + \ldots + p_1 x + p_0
+    \]
+    Пусть $\set{a_n}$ --- лин. рекуррента относящаяся к характеристическому многочлену $p(x)$, тогда:
+    \[
+    a_n = \sum_{i = 1}^{u} \sum_{k = 1}^{l_i} c_{ik} C_{n}^{k - 1} \lambda_i^{n - k + 1}
+    \]
+    где $u$ --- число различных СЗ оператора $\psi_p$, $l_i$ --- размер единственной ЖК, относящ. к $\lambda_i$ 
+\end{theorem}

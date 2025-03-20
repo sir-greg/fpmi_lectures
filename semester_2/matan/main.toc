@@ -1,0 +1,3 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\textsection 5. Метрические пространства}{3}{}%
+\contentsline {subsection}{5. 1. Метрики и нормы}{3}{}%

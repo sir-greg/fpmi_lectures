@@ -1,0 +1,102 @@
+\section{\textsection 5. Метрические пространства}
+\subsection{5. 1. Метрики и нормы}
+Обобщим понятие расстояния:
+\begin{definition}
+    Пусть $X \neq \emptyset$. Функция $\rho \colon X \times X \rightarrow \R$ называется \textbf{метрикой} (на $X$), если $\forall x, y, z \in X$:
+    \begin{enumerate}
+        \item $\rho(x, y) \geq 0$
+        \item $\rho(x, y) = 0 \iff x = y$
+        \item $\rho(x, y) = \rho(y, x)$
+        \item $\rho(x, y) \leq \rho(x, z) + \rho(z, y)$ (Неравенство треугольника)
+    \end{enumerate}
+    Пара $(X, \rho)$ называется \textbf{метрическим пространством} (МП)
+\end{definition}
+\begin{example}
+    \[
+        X \neq \emptyset, \rho(x, y) = \begin{cases}
+            1 & x \neq y \\
+            0 & x = y
+        \end{cases}
+    \]
+    Непосредственная проверка показывает, что $(X, \rho)$ --- МП.
+\end{example}
+
+Обобщим понятие длины вектора:
+\begin{definition}
+    Пусть $V$ --- линейное пространство (над $\R$ или $\C$). Функция $||\cdot|| \colon V \rightarrow \R$ называется \textbf{нормой} (на $V$), если $\forall x, y \in V, \forall \alpha$:
+    \begin{enumerate}
+        \item $||x|| \geq 0, ||x|| = 0 \iff x = 0$
+        \item $||\alpha x|| = \left|\alpha\right| ||x||$
+        \item $||x + y|| \leq ||x|| + ||y||$ (Неравенство треугольника)
+    \end{enumerate}
+    Пара $(V, ||\cdot||)$ называется \textbf{нормированным пространством} (НП).
+\end{definition}
+\begin{lemma}
+    Всякое нормированное пр-во является метрическим пространством относительно $\rho(x, y) = ||x - y||$
+\end{lemma}
+\begin{proof}
+    Проверим неравенство треугльника:
+    \[
+    \rho(x, z) = ||x - z||
+    \]
+    \[
+    \rho(z, y) = ||z - y||
+    \]
+    Тогда, действительно:
+    \[
+    \rho(x, y) \leq \rho(x, z) + \rho(z, y)
+    \]
+\end{proof}
+\begin{example}
+    \[
+    X = \R^{n}, x = (x_1, \ldots, x_n)^{T}, \forall i, x_i \in \R
+    \]
+    \[
+    y = (y_1, \ldots, y_n)^{T}
+    \]
+    \begin{enumerate}
+        \item $||x|| = \sqrt{\sum_{i = 1}^{n} x_i^{2}}$ (евклидова норма), $\rho_2(x, y) = \sqrt{\sum_{k = 1}^{n} \left|x_k - y_k\right|^{2}}$
+        \item $||x||_p = \left(\sum_{k = 1}^{n} |x_k|^{p}\right)^{\frac{1}{p}}, \rho_p(x, y) = \left(\sum_{k = 1}^{n} \left|x_k - y_k\right|^{p}\right)^{\frac{1}{p}}, p > 1$
+        \item $||x||_{\infty} = \underset{1 \leq k \leq n}{\max} \left|x_k\right|, \rho_{\infty}(x, y) = \underset{1 \leq k \leq n}{\max} |x_k - y_k|$ 
+    \end{enumerate}
+\end{example}
+\begin{proof}
+    Докажем, что $||\cdot||_p$ удовлетворяет нер-ву треугольника. Действительно, вспомним неравенство Минковского:
+    \[
+        (a_1, \ldots, a_n), (b_1, \ldots, b_n), p > 1 \Rightarrow
+    \]
+    \[
+        \Rightarrow \left(\sum_{k = 1}^{n} (a_k + b_k)^{p}\right)^{\frac{1}{p}} \leq \left(\sum_{k = 1}^{n} a_k^{p}\right)^{\frac{1}{p}} + \left(\sum_{k = 1}^{n} b_k^{p}\right)^{\frac{1}{p}}
+    \] 
+    при $a_k = \left|x_k\right|, b_k = \left|y_k\right|$:
+    \[
+    ||x + y||_k \leq ||x||_k + ||y||_k
+    \]
+    Для $||\cdot||_p$ непосредственная проверка свойств очевидна.
+\end{proof}
+
+\begin{definition}
+Пусть $(X, \rho)$ --- МП, $a \in X, r > 0$:
+\[
+    B_r(a) = \set{x \in X \colon \rho(x, a) \leq r}
+\]
+    называется \textbf{открытым шаром} с центром в $a$ и радиусом $r$.
+    \[
+    \overline{B}_r(a) = \set{x \in X \colon \rho(x, a) \leq r}
+    \]
+    называется \textbf{замкнутым шаром} с центром в $a$ и радиусом $r$.
+\end{definition}
+\begin{definition}
+    Множество $E \subset X$ называется \textbf{ограниченным}, если:
+    \[
+    \exists a \in X, r > 0 (E \subset B_r(a))
+    \]
+\end{definition}
+\begin{example}
+    \[
+    X = \R^{2}, (x, y), B_1(0, 0)
+    \]
+    При норме $||\cdot||_1 (||x|| = |x|)$, это ромб с точками $(-1, 0), (0, 1), (1, 0), (0, -1)$ \\
+    При норме $||\cdot||_p$, форма фигуры приближается к кругу. \\
+    При $||\cdot||_{\infty}$ --- это квадрат.
+\end{example}
